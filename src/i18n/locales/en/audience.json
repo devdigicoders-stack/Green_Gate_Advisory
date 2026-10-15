@@ -1,0 +1,211 @@
+{
+  "meta": {
+    "title": "Who We Serve | Green Gate Advisory",
+    "description": "Tailored climate advisory for governments, exporters, companies, project developers, investors, NGOs and international organisations."
+  },
+  "hero": {
+    "breadcrumbHome": "Home",
+    "breadcrumbCurrent": "Who We Serve",
+    "eyebrow": "Client & Stakeholder Ecosystem",
+    "title": "Who We Serve",
+    "lead": "Green Gate Advisory supports public institutions, industrial exporters, carbon developers, investors and international organisations as they navigate climate complexity, regulatory exposure and sustainable project delivery."
+  },
+  "intro": {
+    "eyebrow": "Client Diversity",
+    "heading": "Tailored Advisory for Distinct Institutional Mandates",
+    "p1": "Organisations encounter climate imperatives from diverse vantage points. A sovereign government designing compliance carbon pricing requires different analytical frameworks than an exporter calculating embedded emissions for the EU CBAM, or an institutional investor assessing transition risk across an infrastructure portfolio.",
+    "p2": "We tailor our technical, regulatory, and finance advisory to each client's specific operational context, institutional maturity, and strategic objectives."
+  },
+  "stakeholders": {
+    "notice": "Engagement integrity: Our recommendations reflect client realities without claiming guaranteed financial access, project approvals, or regulatory exemptions."
+  },
+  "categoriesBadge": "Tailored Support",
+  "categoriesTitle": "Five Key Stakeholder Categories",
+  "categoriesSubtitle": "Deep-dive into the specific climate challenges, advisory support areas, and deliverables tailored to your organisation.",
+  "categories": [
+    {
+      "id": "governments",
+      "number": "01",
+      "name": "Governments and Public Institutions",
+      "iconName": "Building2",
+      "summary": "National ministries, environmental agencies, regional authorities, and public institutions developing domestic climate frameworks.",
+      "supportAreas": [
+        "National climate policy design, review, and sectoral roadmap alignment",
+        "Emissions trading systems (ETS) and carbon pricing mechanism design",
+        "Article 6 readiness, ITMO institutional architecture, and registry rules",
+        "National MRV systems under the Paris Agreement Enhanced Transparency Framework",
+        "National Adaptation Plan (NAP) and NDC implementation planning",
+        "Climate finance programming and multilateral fund access",
+        "Institutional capacity building and ministry personnel training"
+      ],
+      "relevantServices": [
+        { "name": "Environmental & Climate Policy", "slug": "climate-policy-advisory" },
+        { "name": "ETS & Carbon Pricing", "slug": "ets-carbon-pricing-article-6" },
+        { "name": "Climate Finance Advisory", "slug": "climate-finance-advisory" }
+      ]
+    },
+    {
+      "id": "companies",
+      "number": "02",
+      "name": "Companies, Manufacturers and Exporters",
+      "iconName": "Factory",
+      "summary": "Industrial operators, manufacturing corporations, supply-chain entities, and export businesses managing compliance and transition mandates.",
+      "supportAreas": [
+        "Climate-related compliance requirements and risk assessments",
+        "EU Carbon Border Adjustment Mechanism (CBAM) exposure and readiness",
+        "Compliance ETS exposure analysis, allowance allocation, and surrender strategies",
+        "Greenhouse gas emissions inventories across Scope 1, Scope 2, and Scope 3",
+        "Decarbonisation roadmaps and operational abatement option evaluation",
+        "Corporate sustainability planning, ESG strategy, and reporting readiness",
+        "Supplier engagement and primary emissions data collection workflows"
+      ],
+      "relevantServices": [
+        { "name": "CBAM Advisory", "slug": "cbam-advisory" },
+        { "name": "Corporate Climate & ESG", "slug": "corporate-climate-esg" },
+        { "name": "ETS & Carbon Pricing", "slug": "ets-carbon-pricing-article-6" }
+      ]
+    },
+    {
+      "id": "developers",
+      "number": "03",
+      "name": "Carbon Project Developers",
+      "iconName": "Sparkles",
+      "summary": "Project developers, land managers, technology sponsors, and conservation entities structuring high-integrity carbon credits.",
+      "supportAreas": [
+        "Project opportunity screening and preliminary eligibility assessment",
+        "Detailed technical, environmental, and financial feasibility studies",
+        "Carbon methodology selection, baseline determination, and additionality testing",
+        "Project Design Document (PDD) drafting and activity boundary establishment",
+        "MRV planning and digital monitoring framework implementation",
+        "Preparation for independent validation and registry registration steps",
+        "Carbon credit commercialisation considerations, buyer engagement, and offtake strategy"
+      ],
+      "relevantServices": [
+        { "name": "Carbon Market Advisory", "slug": "carbon-market-advisory" },
+        { "name": "Nature-Based Solutions", "slug": "nature-based-solutions" },
+        { "name": "Climate Finance Advisory", "slug": "climate-finance-advisory" }
+      ]
+    },
+    {
+      "id": "investors",
+      "number": "04",
+      "name": "Investors and Financial Institutions",
+      "iconName": "Landmark",
+      "summary": "Commercial banks, asset managers, private equity funds, development finance institutions, and philanthropic facilities.",
+      "supportAreas": [
+        "Climate-related investment opportunities and green pipeline origination",
+        "Project pipeline assessment, technical screening, and carbon yield due diligence",
+        "Regulatory and policy risk assessment across diverse jurisdictions",
+        "Climate-related transition risk awareness and portfolio emissions accounting",
+        "Financing considerations, grant-to-concessional structuring, and blended finance",
+        "Verification of ESG and environmental integrity standards for climate assets"
+      ],
+      "relevantServices": [
+        { "name": "Climate Finance Advisory", "slug": "climate-finance-advisory" },
+        { "name": "Carbon Market Advisory", "slug": "carbon-market-advisory" },
+        { "name": "Corporate Climate & ESG", "slug": "corporate-climate-esg" }
+      ]
+    },
+    {
+      "id": "international-ngos",
+      "number": "05",
+      "name": "International Organisations, NGOs and Research Institutions",
+      "iconName": "Globe2",
+      "summary": "Multilateral agencies, non-governmental organisations, academic institutions, and international climate development partnerships.",
+      "supportAreas": [
+        "Technical advisory for international climate cooperation initiatives",
+        "Programme design and multilateral intervention logic formulation",
+        "Climate finance funding proposals for GCF, GEF, Adaptation Fund, and bilateral facilities",
+        "Climate policy diagnostics, MRV architecture, and transparency analysis",
+        "Ecosystem and social monitoring frameworks, community safeguards, and FPIC",
+        "Applied knowledge development, technical briefings, and sector reports",
+        "Institutional capacity building and stakeholder training programmes"
+      ],
+      "relevantServices": [
+        { "name": "Climate Finance Advisory", "slug": "climate-finance-advisory" },
+        { "name": "Nature-Based Solutions", "slug": "nature-based-solutions" },
+        { "name": "Environmental & Climate Policy", "slug": "climate-policy-advisory" }
+      ]
+    }
+  ],
+  "adaptation": {
+    "eyebrow": "Engagement Flexibility",
+    "heading": "Tailored to Your Context & Objectives",
+    "subtitle": "Rather than enforcing a rigid template, Green Gate Advisory adapts its advisory scope to each organisation's unique operating environment.",
+    "dimensions": [
+      {
+        "title": "Organisation Objectives",
+        "desc": "Aligning support with commercial goals, public policy mandates, or institutional investment priorities."
+      },
+      {
+        "title": "Regulatory Environment",
+        "desc": "Structuring advice around specific jurisdictional legislation, compliance rules, and international regimes."
+      },
+      {
+        "title": "Sector & Operating Context",
+        "desc": "Calibrating methodologies to industry characteristics, technology maturity, and capital cycles."
+      },
+      {
+        "title": "Project Readiness",
+        "desc": "Engaging across any stage—from early concept screening to bankable documentation and registry submission."
+      },
+      {
+        "title": "Data Availability",
+        "desc": "Addressing information gaps with targeted data collection protocols, proxy modeling, and supplier workflows."
+      },
+      {
+        "title": "Institutional Capacity",
+        "desc": "Designing workstreams that complement in-house technical resources with tailored capability building."
+      },
+      {
+        "title": "Programme Requirements",
+        "desc": "Meeting specific fund criteria, registry standards, or validation protocols with precision."
+      }
+    ]
+  },
+  "solutions": {
+    "eyebrow": "Core Workstreams",
+    "heading": "Featured Advisory Solutions",
+    "subtitle": "High-priority advisory workstreams addressing immediate regulatory deadlines, compliance mandates, and project readiness.",
+    "items": [
+      {
+        "title": "CBAM Exposure & Readiness Assessment",
+        "desc": "Product screening, embedded emissions calculations, supplier engagement workflows, and reporting readiness.",
+        "slug": "cbam-advisory"
+      },
+      {
+        "title": "Carbon Project Feasibility & Development",
+        "desc": "Opportunity screening, methodology evaluation, PDD drafting, MRV frameworks, and validation coordination.",
+        "slug": "carbon-market-advisory"
+      },
+      {
+        "title": "Climate Finance Concept Notes & Proposals",
+        "desc": "Theory of change, climate rationale, budgeting, safeguards, and funding proposals for international facilities.",
+        "slug": "climate-finance-advisory"
+      },
+      {
+        "title": "ETS & Carbon Pricing Readiness",
+        "desc": "Allowance allocation modeling, compliance systems, and Article 6 / ITMO international transfer advisory.",
+        "slug": "ets-carbon-pricing-article-6"
+      },
+      {
+        "title": "Corporate GHG Inventory & Decarbonisation",
+        "desc": "Scope 1, 2 & 3 emissions measurement, abatement modeling, transition planning, and ESG reporting.",
+        "slug": "corporate-climate-esg"
+      },
+      {
+        "title": "Climate Policy, MRV & Article 6 Advisory",
+        "desc": "NDC updates, National Adaptation Plans, transparency systems, and capacity building for ministries.",
+        "slug": "climate-policy-advisory"
+      }
+    ]
+  },
+  "cta": {
+    "eyebrow": "Institutional Engagement",
+    "heading": "Tell Us About Your Organisation's Priorities",
+    "description": "Whether you are assessing CBAM exposure, structuring a carbon project, preparing a funding proposal or designing a climate policy, our team is ready to discuss the appropriate scope of support.",
+    "primaryBtn": "Request a Consultation",
+    "secondaryBtn": "Explore Advisory Services",
+    "disclaimer": "Independent technical, regulatory and finance advisory. Engagement deliverables are structured around verified client priorities and applicable official rules. We do not guarantee funding approvals or carbon credit issuances."
+  }
+}

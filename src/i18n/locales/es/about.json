@@ -1,0 +1,209 @@
+{
+  "meta": {
+    "title": "Sobre Green Gate Advisory | Consultores Climáticos y Ambientales",
+    "description": "Conozca cómo Green Gate Advisory conecta política climática, mercados de carbono, finanzas del clima e implementación práctica para el sector público y privado."
+  },
+  "hero": {
+    "breadcrumbHome": "Inicio",
+    "breadcrumbCurrent": "Quiénes Somos",
+    "eyebrow": "Consultoría Climática Especializada",
+    "title": "Sobre Green Gate Advisory",
+    "lead": "Apoyando a gobiernos, empresas, exportadores, desarrolladores de proyectos, inversores e instituciones mientras responden al cambio climático, la regulación en evolución y la transición hacia una economía descarbonizada y resiliente.",
+    "credibility1": "Asesoría técnica, regulatoria y financiera independiente",
+    "credibility2": "Conectando la política con la ejecución práctica",
+    "credibility3": "Cero afirmaciones especulativas o emisiones garantizadas de créditos"
+  },
+  "whoWeAre": {
+    "eyebrow": "Quiénes Somos",
+    "heading": "Conectando Visión Estratégica, Claridad Regulatoria y Ejecución Práctica",
+    "p1": "Green Gate Advisory es una consultoría especializada en asesoramiento climático y ambiental que apoya a gobiernos, empresas, exportadores, desarrolladores de proyectos, inversores e instituciones en su respuesta al cambio climático, la regulación en constante evolución y la transición hacia una economía baja en carbono y resiliente al clima.",
+    "p2": "Brindamos soporte de asesoría en mercados de carbono, finanzas climáticas, CBAM, sistemas de comercio de emisiones, soluciones basadas en la naturaleza, política ambiental, contabilidad de gases de efecto invernadero y sostenibilidad corporativa. Nuestro enfoque conecta el análisis técnico y la comprensión regulatoria con la preparación práctica de proyectos, ayudando a los clientes a avanzar desde la ambición y la presión de cumplimiento hacia planes estructurados y resultados medibles.",
+    "imageAlt": "Perspectiva aérea de una cuenca fluvial y dosel forestal templado que representa la resiliencia climática y el capital natural",
+    "caption": "Asesoramiento técnico, regulatorio y financiero integrado, diseñado para resultados ambientales duraderos.",
+    "badgeIntegrity": "Integridad Técnica",
+    "capability1": "Análisis Regulatorio y Cumplimiento",
+    "capability2": "Factibilidad de Proyectos de Carbono y MRV",
+    "capability3": "Estructuración de Finanzas Climáticas",
+    "capability4": "Planes de Implementación Cuantificables"
+  },
+  "purpose": {
+    "eyebrow": "Nuestro Propósito Fundamental",
+    "heading": "Por Qué Existimos",
+    "text": "Nuestro propósito es ayudar a las organizaciones públicas y privadas a responder eficazmente a la creciente complejidad de la regulación climática, la fijación de precios al carbono, la política ambiental y el financiamiento climático. Creemos que la acción climática debe ser técnicamente creíble, financieramente realista y diseñada para generar un valor ambiental, social y económico cuantificable.",
+    "tagline": "Técnicamente Creíble · Financieramente Realista · Valor Ambiental y Social Medible",
+    "pillar1": "Técnicamente Creíble",
+    "pillar2": "Financieramente Realista",
+    "pillar3": "Valor Cuantificable"
+  },
+  "missionVision": {
+    "missionEyebrow": "Nuestro Mandato Rector",
+    "missionTitle": "Nuestra Misión",
+    "missionText": "Proporcionar servicios de asesoría claros y de alta calidad que ayuden a los clientes a diseñar, preparar, financiar, implementar y reportar soluciones climáticas y ambientales creíbles en los mercados de carbono, el financiamiento climático, los mecanismos de cumplimiento y los marcos de sostenibilidad.",
+    "missionFooter": "Diseño, preparación, estructuración financiera y reporte rigurosos",
+    "visionEyebrow": "Nuestro Horizonte Estratégico",
+    "visionTitle": "Nuestra Visión",
+    "visionText": "Ser un socio de asesoría de confianza para organizaciones que buscan desbloquear oportunidades vinculadas al clima, gestionar riesgos regulatorios y desarrollar proyectos bancables que contribuyan a un futuro más sostenible y resiliente.",
+    "visionFooter": "Desbloqueando oportunidades y proyectos sostenibles bancables"
+  },
+  "differentiators": {
+    "eyebrow": "Capacidades Distintivas",
+    "heading": "Qué Nos Diferencia",
+    "subtitle": "Cómo nuestra perspectiva de asesoría une los mandatos climáticos de alto nivel con una rigurosa ejecución sobre el terreno.",
+    "items": [
+      {
+        "title": "Perspectiva integral de principio a fin",
+        "description": "Soporte a lo largo de estrategia, factibilidad, diseño de proyectos, preparación financiera, MRV, cumplimiento normativo y reporte."
+      },
+      {
+        "title": "Materia temática especializada",
+        "description": "Enfoque riguroso en mercados de carbono, precios al carbono, CBAM, ETS, Artículo 6 y desarrollo de proyectos de mitigación."
+      },
+      {
+        "title": "Preparación de proyectos consciente de las finanzas",
+        "description": "Conexión directa entre justificación climática, requerimientos de fondos, salvaguardas socioambientales, presupuestos y marcos de monitoreo."
+      },
+      {
+        "title": "Pensamiento de naturaleza positiva",
+        "description": "Consideración de la mitigación y adaptación climática junto con la biodiversidad, la resiliencia ecosistémica y los beneficios comunitarios."
+      },
+      {
+        "title": "Enfoque de la política a la práctica",
+        "description": "Traducción de complejos marcos multilaterales y normativos en planes de trabajo estructurados y recomendaciones listas para la toma de decisiones."
+      },
+      {
+        "title": "Entrega orientada al cliente",
+        "description": "Adaptación precisa del alcance y los entregables al contexto, los objetivos estratégicos y la capacidad operativa de la organización."
+      }
+    ]
+  },
+  "expertise": {
+    "eyebrow": "Dominios de Asesoría Técnica",
+    "heading": "Nuestras Áreas de Especialización",
+    "subtitle": "Nueve áreas temáticas clave que conectan el cumplimiento internacional, las ciencias ambientales y la estructuración de proyectos.",
+    "exploreService": "Explorar Servicio",
+    "items": [
+      {
+        "number": "01",
+        "title": "Mercados voluntarios de carbono y desarrollo de proyectos de carbono",
+        "route": "/services/carbon-market-advisory"
+      },
+      {
+        "number": "02",
+        "title": "Mercados regulados de carbono, ETS y precios al carbono",
+        "route": "/services/ets-carbon-pricing"
+      },
+      {
+        "number": "03",
+        "title": "Preparación para CBAM, emisiones implícitas y procesos de reporte",
+        "route": "/services/cbam-advisory"
+      },
+      {
+        "number": "04",
+        "title": "Preparación de proyectos de financiamiento climático y formulación de propuestas de fondos",
+        "route": "/services/climate-finance-advisory"
+      },
+      {
+        "number": "05",
+        "title": "Mapeo de oportunidades en fondos climáticos y mecanismos de finanzas combinadas",
+        "route": "/services/climate-finance-advisory"
+      },
+      {
+        "number": "06",
+        "title": "Soluciones basadas en la naturaleza, carbono azul, restauración de tierras y biodiversidad",
+        "route": "/services/nature-based-solutions"
+      },
+      {
+        "number": "07",
+        "title": "Política climática, NDC, NAP, sistemas MRV y marcos de transparencia",
+        "route": "/services/climate-policy-advisory"
+      },
+      {
+        "number": "08",
+        "title": "Contabilidad de gases de efecto invernadero corporativa, ESG y planes de descarbonización",
+        "route": "/services/corporate-climate-esg"
+      },
+      {
+        "number": "09",
+        "title": "Capacitación y desarrollo de capacidades para instituciones públicas y privadas",
+        "route": "/training"
+      }
+    ]
+  },
+  "whoWeWorkWith": {
+    "eyebrow": "Ecosistema de Clientes",
+    "heading": "Con Quién Trabajamos",
+    "intro": "Trabajamos con instituciones públicas, empresas privadas, exportadores, operadores industriales, desarrolladores de proyectos, inversores, organizaciones internacionales, ONG e instituciones de investigación. Apoyamos a los clientes en diferentes etapas de su trayectoria climática, desde comprender un requisito regulatorio o evaluar una idea de proyecto hasta formular una propuesta de financiamiento o diseñar una estrategia climática a largo plazo.",
+    "cta": "Conozca Más Sobre a Quién Servimos",
+    "groups": [
+      {
+        "title": "Instituciones Públicas",
+        "description": "Gobiernos, ministerios y organismos reguladores que diseñan políticas climáticas, fijación de precios al carbono, mecanismos del Artículo 6 y sistemas MRV."
+      },
+      {
+        "title": "Empresas Privadas",
+        "description": "Corporaciones que evalúan huellas de carbono corporativas, inventarios de Alcance 1, 2 y 3, hojas de ruta de descarbonización y preparación ESG."
+      },
+      {
+        "title": "Exportadores y Operadores Industriales",
+        "description": "Fabricantes y exportadores que gestionan la exposición al CBAM de la UE, datos de emisiones implícitas, información de proveedores y costos de carbono."
+      },
+      {
+        "title": "Desarrolladores de Proyectos de Carbono",
+        "description": "Promotores de proyectos que buscan análisis de factibilidad, selección metodológica, redacción de PDD, diseño de MRV y coordinación registral."
+      },
+      {
+        "title": "Inversores e Instituciones Financieras",
+        "description": "Gestores de activos, banca de desarrollo y entidades comerciales que evalúan pipelines de proyectos climáticos, riesgos de transición y financiamiento combinado."
+      },
+      {
+        "title": "Organizaciones Internacionales",
+        "description": "Agencias multilaterales y programas de cooperación que requieren insumos técnicos, diseño programático y documentación para facilidades multilaterales."
+      },
+      {
+        "title": "ONG e Instituciones de Investigación",
+        "description": "Organizaciones de la sociedad civil y centros de estudio enfocados en soluciones basadas en la naturaleza, salvaguardas comunitarias e investigación aplicada."
+      }
+    ]
+  },
+  "approach": {
+    "eyebrow": "Metodología Estructurada",
+    "heading": "Nuestro Enfoque",
+    "subtitle": "Un marco riguroso de cinco etapas adaptado al contexto operativo, sectorial y regulatorio particular de cada mandato.",
+    "scopeNotice": "Nota de alcance: Los mandatos se estructuran según las prioridades acordadas con el cliente; el monitoreo continuo, el reporte y el refinamiento de la implementación se brindan cuando están explícitamente contemplados en el alcance contratado.",
+    "phase": "Fase",
+    "steps": [
+      {
+        "step": "01",
+        "title": "Comprender el contexto",
+        "description": "Clarificar objetivos estratégicos, entorno operativo, exposición regulatoria, datos disponibles y capacidad institucional instalada."
+      },
+      {
+        "step": "02",
+        "title": "Evaluar el desafío",
+        "description": "Identificar requisitos normativos aplicables, oportunidades de proyectos, brechas de datos, riesgos operacionales y puntos de decisión clave."
+      },
+      {
+        "step": "03",
+        "title": "Desarrollar una ruta a medida",
+        "description": "Definir opciones prácticas de intervención, líneas de trabajo especializadas, entregables técnicos y prioridades de implementación."
+      },
+      {
+        "step": "04",
+        "title": "Apoyar la preparación y entrega",
+        "description": "Contribuir a la redacción y desarrollo de la documentación técnica, marcos metodológicos y planes de acción requeridos para el alcance acordado."
+      },
+      {
+        "step": "05",
+        "title": "Medir y optimizar",
+        "description": "Cuando esté contemplado en el mandato, apoyar en el monitoreo, reporte sistemático y refinamiento continuo del enfoque adoptado."
+      }
+    ]
+  },
+  "cta": {
+    "badge": "Ejecución Climática Estratégica",
+    "statement": "Green Gate Advisory conecta estrategia, regulación, finanzas e implementación para ayudar a los clientes a tomar decisiones informadas y avanzar en una acción climática creíble.",
+    "primaryBtn": "Solicitar una Consulta",
+    "secondaryBtn": "Explorar Nuestros Servicios",
+    "disclaimer": "Asesoría técnica, regulatoria y financiera independiente. Las decisiones de aprobación de financiamiento y la emisión de créditos de carbono están sujetas a auditorías de terceras partes independientes, registros oficiales y la normativa de cada programa."
+  }
+}

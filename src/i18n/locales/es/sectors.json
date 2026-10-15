@@ -1,0 +1,190 @@
+{
+  "meta": {
+    "title": "Sectores que Apoyamos | Green Gate Advisory",
+    "description": "Asesoría climática, ambiental y de mercados de carbono para energía, industria pesada, manufactura, uso del suelo, infraestructuras y sector financiero."
+  },
+  "hero": {
+    "breadcrumbHome": "Inicio",
+    "breadcrumbCurrent": "Sectores",
+    "eyebrow": "Práctica de Asesoría Sectorial",
+    "title": "Sectores que Apoyamos",
+    "lead": "Los riesgos climáticos, la regulación aplicable y las oportunidades de financiamiento difieren notablemente entre sectores. Green Gate Advisory adapta su asesoría al entorno operativo, marcos de política, disponibilidad de datos y metas concretas de cada sector."
+  },
+  "intro": {
+    "eyebrow": "Enfoque Personalizado",
+    "heading": "Alineando las Realidades Sectoriales con la Regulación e Inversión Climática",
+    "p1": "Cada industria opera bajo presiones comerciales, ciclos de vida de activos, perfiles de emisiones y calendarios de cumplimiento diferenciados. Una estrategia de descarbonización para la industria pesada requiere herramientas técnicas y económicas sustancialmente distintas a las de un proyecto de restauración ecosistémica o una facilidad internacional de financiamiento climático.",
+    "p2": "Green Gate Advisory ayuda a las organizaciones a desglosar los marcos regulatorios específicos, mecanismos de fijación de precios al carbono y riesgos de transición que impactan a su sector, traduciendo metas climáticas generales en líneas de trabajo prácticas y bancables."
+  },
+  "expertise": {
+    "cards": {
+      "reg": {
+        "title": "Regulaciones Diferenciadas",
+        "desc": "Obligaciones como el CBAM de la UE, esquemas nacionales ETS y transferencias del Artículo 6 aplican selectivamente según umbrales industriales, flujos de comercio y tecnologías de producción."
+      },
+      "decarb": {
+        "title": "Realidades de Mitigación Específicas",
+        "desc": "Sectores industriales pesados requieren reingeniería profunda de procesos, mientras proyectos de uso de suelo, forestales y carbono azul se enfocan en adicionalidad biológica, permanencia y salvaguardas sociales."
+      },
+      "finance": {
+        "title": "Capital y Financiamiento Focalizado",
+        "desc": "La deuda comercial, fondos climáticos concesionales (GCF, GEF) y los mercados voluntarios de carbono cuentan con criterios de debida diligencia, rentabilidad y monitoreo específicos."
+      }
+    },
+    "notice": "Rigor metodológico: Todo asesoramiento sectorial se alinea rigurosamente con estándares reconocidos (GHG Protocol, ISO 14064, CMNUCC) y los instrumentos legales vigentes en cada jurisdicción."
+  },
+  "gridBadge": "Cobertura Industrial",
+  "gridTitle": "Once Sectores Industriales Prioritarios",
+  "gridSubtitle": "Asesoría técnica estructurada en torno a las realidades operativas, activos de capital y perfiles de emisiones de cada sector.",
+  "relatedBadge": "Servicios de Asesoría",
+  "relatedTitle": "Prácticas de Asesoría Relacionadas para Operaciones Sectoriales",
+  "relatedSubtitle": "Vincule requerimientos sectoriales específicos con nuestras prácticas de asesoría técnica basadas en normativas vigentes.",
+  "sectors": [
+    {
+      "id": "energy-utilities",
+      "number": "01",
+      "title": "Energía y Servicios Públicos",
+      "iconName": "Zap",
+      "summary": "Generación, transmisión, expansión de energías renovables y gestión de emisiones en empresas de servicios públicos bajo mandatos regulatorios estrictos.",
+      "challenges": "Descarbonización de la red, generación de créditos de carbono en renovables, cumplimiento en sistemas ETS y riesgos de transición.",
+      "services": ["ETS y Precios al Carbono", "Mercados de Carbono", "Contabilidad de GEI Corporativa"],
+      "serviceSlug": "ets-carbon-pricing-article-6"
+    },
+    {
+      "id": "oil-gas",
+      "number": "02",
+      "title": "Petróleo y Gas",
+      "iconName": "Flame",
+      "summary": "Operaciones de upstream, midstream y downstream que abordan mitigación de metano, inventarios de Alcance 1 y 2 y transición energética.",
+      "challenges": "Estándares de detección y mitigación de fugas de metano, eliminación de venteo, captura de carbono y escrutinio en divulgación de transición.",
+      "services": ["Contabilidad de GEI Corporativa", "Política Climática", "Hojas de Ruta de Descarbonización"],
+      "serviceSlug": "corporate-climate-esg"
+    },
+    {
+      "id": "industry-manufacturing",
+      "number": "03",
+      "title": "Industria y Manufactura",
+      "iconName": "Factory",
+      "summary": "Plantas de producción industrial que gestionan emisiones operativas, mejoras de eficiencia energética y rendición de cuentas en la cadena de valor.",
+      "challenges": "Opciones de mitigación de capital intensivo, sustitución de combustibles fósiles, mapeo complejo de proveedores Alcance 3 y costes competitivos.",
+      "services": ["Contabilidad de GEI", "Planificación de Descarbonización", "Asesoría CBAM"],
+      "serviceSlug": "corporate-climate-esg"
+    },
+    {
+      "id": "cement-steel-aluminium-fertilisers",
+      "number": "04",
+      "title": "Cemento, Acero, Aluminio y Fertilizantes",
+      "iconName": "Box",
+      "summary": "Productores de materiales de difícil abatimiento sujetos a costes de carbono en frontera, reporte transitorio y umbrales de referencia.",
+      "challenges": "Cálculo de emisiones implícitas para el CBAM de la UE, brechas de datos de proveedores, alta intensidad de carbono y calendarios tecnológicos.",
+      "services": ["Asesoría CBAM", "Preparación ETS", "Mapeo de Datos de Proveedores"],
+      "serviceSlug": "cbam-advisory"
+    },
+    {
+      "id": "transport-logistics",
+      "number": "05",
+      "title": "Transporte y Logística",
+      "iconName": "Truck",
+      "summary": "Operadores de transporte de carga, marítimo, aviación y logística que navegan la descarbonización de flotas y normativas internacionales.",
+      "challenges": "Inclusión del transporte marítimo y la aviación en esquemas de derechos de emisión, transición hacia flotas cero emisiones y cálculo de Alcance 3.",
+      "services": ["ETS y Precios al Carbono", "GHG Protocol Alcance 3", "Hojas de Ruta de Flota"],
+      "serviceSlug": "ets-carbon-pricing-article-6"
+    },
+    {
+      "id": "agriculture-forestry-land-use",
+      "number": "06",
+      "title": "Agricultura, Silvicultura y Uso del Suelo",
+      "iconName": "Sprout",
+      "summary": "Productores agrícolas, gestores forestales y desarrolladores territoriales que estructuran iniciativas de carbono biológico y restauración del suelo.",
+      "challenges": "Precisión en líneas base, gestión del riesgo de permanencia, tenencia de la tierra y cumplimiento con estándares certificados de carbono.",
+      "services": ["Soluciones Basadas en la Naturaleza", "Mercados de Carbono", "Sistemas MRV"],
+      "serviceSlug": "nature-based-solutions"
+    },
+    {
+      "id": "biodiversity-coastal-ecosystems",
+      "number": "07",
+      "title": "Biodiversidad, Zonas Costeras y Restauración Ecosistémica",
+      "iconName": "Waves",
+      "summary": "Autoridades costeras, organizaciones conservacionistas y promotores de proyectos que implementan programas de carbono azul y adaptación.",
+      "challenges": "Financiamiento para conservación de manglares y humedales, métricas de ganancia neta en biodiversidad, distribución comunitaria y resiliencia.",
+      "services": ["Asesoría en Carbono Azul", "Soluciones Basadas en la Naturaleza", "Propuestas de Financiamiento"],
+      "serviceSlug": "nature-based-solutions"
+    },
+    {
+      "id": "waste-management-circular-economy",
+      "number": "08",
+      "title": "Gestión de Residuos y Economía Circular",
+      "iconName": "Recycle",
+      "summary": "Operadores de residuos municipales e industriales que capturan metano, desvían corrientes orgánicas e implementan modelos circulares.",
+      "challenges": "Abatimiento de metano en vertederos, contabilidad de materiales circulares, elegibilidad metodológica para créditos y valorización energética.",
+      "services": ["Factibilidad de Proyectos de Carbono", "Contabilidad de GEI", "Planificación de Sistemas MRV"],
+      "serviceSlug": "carbon-market-advisory"
+    },
+    {
+      "id": "water-security-climate-adaptation",
+      "number": "09",
+      "title": "Seguridad Hídrica y Adaptación Climática",
+      "iconName": "Droplets",
+      "summary": "Empresas de agua, autoridades de cuencas fluviales y comunidades vulnerables que gestionan estrés hídrico y resiliencia frente a inundaciones.",
+      "challenges": "Alta vulnerabilidad climática, degradación de cuencas, brechas de financiamiento a largo plazo y estructuración de proyectos de adaptación no tarifarios.",
+      "services": ["Finanzas Climáticas", "Planificación de Adaptación", "Propuestas Multilaterales"],
+      "serviceSlug": "climate-finance-advisory"
+    },
+    {
+      "id": "cities-buildings-infrastructure",
+      "number": "10",
+      "title": "Ciudades, Edificios e Infraestructura",
+      "iconName": "Building2",
+      "summary": "Autoridades urbanas, desarrolladores y propietarios de activos que abordan el carbono incorporado, estándares edilicios y resiliencia climática.",
+      "challenges": "Emisiones incorporadas en materiales de construcción, mitigación de islas de calor urbanas, cumplimiento energético municipal y financiamiento verde.",
+      "services": ["Contabilidad de GEI", "Política Climática", "Hojas de Ruta de Descarbonización"],
+      "serviceSlug": "corporate-climate-esg"
+    },
+    {
+      "id": "financial-institutions-investment",
+      "number": "11",
+      "title": "Instituciones Financieras e Inversión Sostenible",
+      "iconName": "Landmark",
+      "summary": "Banca comercial, gestores de activos, instituciones financieras de desarrollo y fondos de capital privado que evalúan riesgos climáticos y carteras verdes.",
+      "challenges": "Divulgación de emisiones de cartera, valoración de activos de carbono, cribado de riesgos de transición y estructuración de financiamiento combinado.",
+      "services": ["Asesoría en Finanzas Climáticas", "Diligencia en Mercados de Carbono", "Estrategia ESG"],
+      "serviceSlug": "climate-finance-advisory"
+    }
+  ],
+  "framework": {
+    "eyebrow": "Metodología de Entrega",
+    "heading": "Nuestro Marco de Asesoría Sectorial",
+    "subtitle": "Cómo Green Gate Advisory estructura sus servicios en torno a realidades industriales concretas en lugar de plantillas genéricas.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Desafíos y Exposición Sectorial",
+        "desc": "Identificación de los retos climáticos operativos, regulatorios y financieros propios de la industria y la geografía del cliente."
+      },
+      {
+        "number": "02",
+        "title": "Alcance de Asesoría Focalizado",
+        "desc": "Selección de los servicios pertinentes: mercados de carbono, CBAM, financiamiento climático o instrumentos de política ambiental."
+      },
+      {
+        "number": "03",
+        "title": "Entregables Técnicos Estructurados",
+        "desc": "Elaboración de modelos cuantitativos, documentación técnica de proyectos o propuestas de fondos listas para su ejecución."
+      },
+      {
+        "number": "04",
+        "title": "Pasos Prácticos de Implementación",
+        "desc": "Establecimiento de hojas de ruta prácticas que permiten al cliente avanzar con datos verificados y resultados medibles."
+      }
+    ],
+    "notice": "Aviso aclaratorio: Los entregables y las rutas se adaptan al contexto operativo del cliente y al alcance acordado. No publicamos resultados de clientes no confirmados ni resoluciones regulatorias garantizadas."
+  },
+  "cta": {
+    "eyebrow": "Consulta Sectorial",
+    "heading": "Navegue los Desafíos Climáticos en su Sector",
+    "description": "Comuníquese con Green Gate Advisory para evaluar la exposición regulatoria, opciones de descarbonización u oportunidades de proyectos en su industria.",
+    "primaryBtn": "Solicitar una Consulta",
+    "secondaryBtn": "Explorar Nuestros Servicios",
+    "disclaimer": "Asesoría técnica, regulatoria y financiera independiente. Las recomendaciones se personalizan según la legislación sectorial aplicable, normas reconocidas de contabilidad de carbono y reglas de fondos internacionales."
+  }
+}

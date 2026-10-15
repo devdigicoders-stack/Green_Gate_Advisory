@@ -1,0 +1,31 @@
+{
+  "exploreServices": "Explorar Servicios",
+  "requestConsultation": "Solicitar una Consulta",
+  "contactOurTeam": "Contactar al Equipo",
+  "discussCbam": "Analizar su Exposición al CBAM",
+  "developCarbonProject": "Desarrollar Proyecto de Carbono",
+  "discussEts": "Consultar sobre ETS o Precios al Carbono",
+  "discussClimateFunding": "Consultar Financiación Climática",
+  "exploreNatureProject": "Explorar Proyectos Basados en la Naturaleza",
+  "discussPolicySupport": "Consultar Apoyo en Política Climática",
+  "assessCorporatePriorities": "Evaluar Prioridades Climáticas Corporativas",
+  "discussTraining": "Consultar Programa de Capacitación",
+  "learnMore": "Conocer Más",
+  "viewDetails": "Ver Detalles",
+  "viewAll": "Ver Todo",
+  "backToHome": "Volver al Inicio",
+  "loading": "Cargando Green Gate Advisory...",
+  "languageLabel": "Selección de idioma",
+  "closeMenu": "Cerrar menú",
+  "openMenu": "Abrir menú",
+  "underDevelopment": "Fase 3: Desarrollo en Progreso",
+  "disclaimer": "Aviso de asesoría: La aprobación de fondos, emisión de créditos y certificaciones dependen exclusivamente de secretarías y estándares independientes.",
+  "notFound": {
+    "title": "Página No Encontrada",
+    "description": "La página solicitada no existe o ha sido reubicada. Explore nuestros servicios de asesoría o regrese a la página principal.",
+    "returnHome": "Volver al Inicio",
+    "exploreServices": "Explorar Servicios",
+    "metaTitle": "Página No Encontrada | Green Gate Advisory",
+    "metaDescription": "No se pudo localizar la página solicitada."
+  }
+}

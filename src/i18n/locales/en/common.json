@@ -1,0 +1,31 @@
+{
+  "exploreServices": "Explore Our Services",
+  "requestConsultation": "Request a Consultation",
+  "contactOurTeam": "Contact Our Team",
+  "discussCbam": "Discuss Your CBAM Exposure",
+  "developCarbonProject": "Develop a Carbon Project",
+  "discussEts": "Discuss ETS or Carbon Pricing",
+  "discussClimateFunding": "Discuss Climate Project Funding",
+  "exploreNatureProject": "Explore a Nature-Based Project",
+  "discussPolicySupport": "Discuss Climate Policy Support",
+  "assessCorporatePriorities": "Assess Your Corporate Climate Priorities",
+  "discussTraining": "Discuss a Training Programme",
+  "learnMore": "Learn More",
+  "viewDetails": "View Details",
+  "viewAll": "View All",
+  "backToHome": "Return to Home",
+  "loading": "Loading Green Gate Advisory...",
+  "languageLabel": "Language selection",
+  "closeMenu": "Close menu",
+  "openMenu": "Open menu",
+  "underDevelopment": "Phase 3 Development In Progress",
+  "disclaimer": "Advisory notice: Funding outcomes, carbon credit issuances, and validation approvals depend on independent secretariats and statutory standards.",
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "The requested route does not exist or has been relocated. Explore our advisory services or return to the homepage.",
+    "returnHome": "Return Home",
+    "exploreServices": "Explore Services",
+    "metaTitle": "Page Not Found | Green Gate Advisory",
+    "metaDescription": "The requested page could not be located."
+  }
+}

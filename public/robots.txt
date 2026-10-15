@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /case-studies
+
+# Host & Sitemap specifications
+Sitemap: https://greengateadvisory.com/sitemap.xml

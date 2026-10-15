@@ -1,0 +1,247 @@
+{
+  "hero": {
+    "eyebrow": "ASESORÍA CLIMÁTICA Y AMBIENTAL",
+    "headline": "Transformando la Complejidad Climática en Oportunidad Estratégica",
+    "subheadline": "Green Gate Advisory apoya a gobiernos, empresas, exportadores y desarrolladores de proyectos con estrategia de mercados de carbono, preparación CBAM y ETS, finanzas climáticas, soluciones basadas en la naturaleza y política ambiental, transformando las prioridades climáticas en acciones prácticas y medibles.",
+    "ctaPrimary": "Explorar Nuestros Servicios",
+    "ctaSecondary": "Solicitar una Consulta",
+    "quickLinkCbam": "Analizar su Exposición al CBAM",
+    "quickLinkCarbon": "Desarrollar Proyecto de Carbono",
+    "scrollText": "Desplácese para conocer el alcance de asesoría"
+  },
+  "whatWeDo": {
+    "eyebrow": "Qué Hacemos",
+    "heading": "Asesoría Climática y Ambiental Integrada",
+    "lead": "La regulación climática, los mercados de carbono y las finanzas sostenibles están transformando la forma en que las organizaciones planifican, invierten y operan. Green Gate Advisory proporciona servicios integrados de asesoría climática y ambiental para ayudar a los clientes a comprender sus obligaciones, evaluar oportunidades y desarrollar vías creíbles de implementación.",
+    "paragraph": "Nuestro trabajo abarca mercados de carbono voluntarios y de cumplimiento, desarrollo de proyectos de carbono, sistemas de comercio de emisiones, preparación para el Mecanismo de Ajuste en Frontera por Carbono (CBAM), formulación de propuestas de finanzas climáticas, soluciones basadas en la naturaleza, política ambiental, contabilidad de gases de efecto invernadero y sostenibilidad corporativa. Combinamos análisis técnico, comprensión regulatoria y visión orientada a proyectos para fundamentar decisiones estratégicas.",
+    "pillarsTitle": "Pilares de Práctica Integrada",
+    "pillars": [
+      {
+        "title": "Visión Regulatoria",
+        "desc": "Conocimiento exhaustivo de directivas CBAM de la UE, normativas ETS, reglas del Artículo 6 y obligaciones de reporte."
+      },
+      {
+        "title": "Análisis Técnico",
+        "desc": "Contabilidad rigurosa de emisiones de GEI, modelado de líneas base, cribado de adicionalidad y protocolos MRV."
+      },
+      {
+        "title": "Estructuración de Finanzas Climáticas",
+        "desc": "Traducción de conceptos climáticos en propuestas bancables para fondos multilaterales y capital privado."
+      },
+      {
+        "title": "Planificación de Ejecución",
+        "desc": "Paquetes de trabajo viables, marcos de gobernanza y documentación ejecutiva diseñada para su implementación."
+      }
+    ],
+    "imageAlt": "Infraestructura eólica marina sostenible y ecosistema costero que representa la transición climática"
+  },
+  "coreServices": {
+    "eyebrow": "Capacidades Principales",
+    "heading": "Nuestros Servicios de Asesoría Principal",
+    "subtitle": "Seis pilares integrados de asesoría que articulan comprensión normativa, análisis cuantitativo y ejecución de proyectos.",
+    "exploreService": "Explorar Servicio",
+    "services": [
+      {
+        "key": "carbonMarket",
+        "title": "Asesoría en Mercados de Carbono",
+        "summary": "Explore oportunidades en mercados de carbono, evalúe la factibilidad técnica y gestione el desarrollo de créditos. Apoyamos en planificación, cribado metodológico, PDD, sistemas MRV, validación, verificación, registro y comercialización.",
+        "link": "/services/carbon-market-advisory"
+      },
+      {
+        "key": "cbamEts",
+        "title": "Asesoría en CBAM y ETS",
+        "summary": "Diagnostique la exposición al Mecanismo de Ajuste en Frontera por Carbono (CBAM) y a los requisitos de comercio de emisiones. Asistimos en cribado de productos, estructuración de datos de emisiones, identificación de brechas y análisis de coste de carbono.",
+        "cbamLink": "/services/cbam-advisory",
+        "cbamLabel": "Asesoría CBAM",
+        "etsLink": "/services/ets-carbon-pricing-article-6",
+        "etsLabel": "ETS y Artículo 6"
+      },
+      {
+        "key": "climateFinance",
+        "title": "Asesoría en Finanzas Climáticas",
+        "summary": "Estructure conceptos de proyecto y propuestas de financiamiento con una justificación de inversión transparente. Soporte en notas conceptuales, justificación climática, teoría del cambio, marco lógico, presupuestos, salvaguardas y matrices de monitoreo.",
+        "link": "/services/climate-finance-advisory"
+      },
+      {
+        "key": "natureBased",
+        "title": "Soluciones Basadas en la Naturaleza",
+        "summary": "Desarrolle iniciativas climáticas basadas en ecosistemas que aporten a la mitigación, adaptación, biodiversidad y resiliencia comunitaria. Áreas de proyecto: bosques, manglares, humedales, restauración de suelos y resiliencia de cuencas.",
+        "link": "/services/nature-based-solutions"
+      },
+      {
+        "key": "climatePolicy",
+        "title": "Política Ambiental y Climática",
+        "summary": "Apoye el diseño e implementación de políticas climáticas mediante análisis normativo, planificación de NDC, Planes Nacionales de Adaptación (PNA), sistemas MRV, transparencia de París, precios al carbono y preparación para el Artículo 6.",
+        "link": "/services/climate-policy-advisory"
+      },
+      {
+        "key": "corporateClimate",
+        "title": "Clima Corporativo y ESG",
+        "summary": "Cuantifique con precisión las emisiones corporativas, identifique riesgos climáticos y defina prioridades de sostenibilidad. Servicios: inventarios Alcance 1, 2 y 3, hojas de ruta de descarbonización, planes de transición y reporte ESG.",
+        "link": "/services/corporate-climate-esg"
+      }
+    ]
+  },
+  "carbonProcess": {
+    "eyebrow": "Ciclo de Proyecto",
+    "heading": "Apoyo Integral de Extremo a Extremo en Mercados de Carbono",
+    "description": "Desde la concepción inicial hasta la potencial emisión y comercialización de créditos de carbono, Green Gate Advisory orienta a los clientes en los pasos, requisitos y decisiones clave. El apoyo se adapta al contexto del proyecto, metodología aplicable, reglas del programa y estándares pertinentes.",
+    "timelineTitle": "Nuestra Vía Típica de Desarrollo de Proyectos",
+    "disclaimer": "Las secretarías de estándares y registros independientes determinan la validación, el registro y la emisión de créditos. La labor de asesoría optimiza la calidad técnica sin garantizar resoluciones externas.",
+    "cta": "Consultar un Proyecto de Carbono",
+    "steps": [
+      { "num": "01", "name": "Identificar oportunidades", "desc": "Cribado de conceptos iniciales de proyecto e identificación de mecanismos elegibles." },
+      { "num": "02", "name": "Filtrar elegibilidad", "desc": "Evaluación de aplicabilidad normativa, alcance territorial y requisitos preliminares." },
+      { "num": "03", "name": "Evaluar factibilidad", "desc": "Modelado de rendimiento de carbono, viabilidad económica y análisis de adicionalidad." },
+      { "num": "04", "name": "Seleccionar metodología", "desc": "Identificación de protocolos reconocidos (Verra, Gold Standard, mecanismos Artículo 6)." },
+      { "num": "05", "name": "Diseñar el proyecto", "desc": "Elaboración del Documento de Diseño de Proyecto (PDD) y acuerdos comunitarios." },
+      { "num": "06", "name": "Establecer sistema MRV", "desc": "Diseño de procedimientos de monitoreo, reporte y verificación de alta integridad." },
+      { "num": "07", "name": "Apoyar validación y registro", "desc": "Coordinación con auditores externos acreditados y secretarías de registro." },
+      { "num": "08", "name": "Monitorear y verificar resultados", "desc": "Consolidación de datos operativos de monitoreo y apoyo en auditorías de verificación." },
+      { "num": "09", "name": "Preparar emisión y comercialización", "desc": "Estrategia comercial, contratos de offtake y procedimientos de emisión en cuenta." }
+    ]
+  },
+  "climateFinance": {
+    "eyebrow": "Capital y Propuestas",
+    "heading": "Finanzas Climáticas: Del Concepto a la Propuesta Financiable",
+    "description": "Una propuesta de financiamiento climático sólida conecta un desafío climático rigurosamente definido con una intervención creíble, resultados medibles, presupuesto realista y plan de ejecución viable. Green Gate Advisory apoya a los equipos estructurando conceptos, elaborando documentación técnica y preparando marcos de monitoreo para las ventanillas de financiamiento pertinentes.",
+    "landscapeTitle": "Ecosistema de Fondos Evaluados",
+    "landscapeNote": "Canales evaluados en función de la elegibilidad y reglas de cada ventanilla:",
+    "funds": [
+      { "name": "Fondo Verde para el Clima (GCF)", "desc": "Notas conceptuales y propuestas completas alineadas con criterios de inversión del GCF." },
+      { "name": "Fondo para el Medio Ambiente Mundial (GEF)", "desc": "Formularios de identificación de proyectos (PIF) y documentación ejecutiva." },
+      { "name": "Fondo de Adaptación (Adaptation Fund)", "desc": "Intervenciones concretas de adaptación y fundamentación de vulnerabilidad." },
+      { "name": "Programas de Inversión Climática (CIF)", "desc": "Vehículos de financiamiento concesional e iniciativas sectoriales." },
+      { "name": "Bancos Multilaterales de Desarrollo", "desc": "Asistencia técnica especializada y esquemas de cofinanciamiento climático." },
+      { "name": "Facilidades Bilaterales y Finanzas Combinadas", "desc": "Estructuración de capital catalítico e instrumentos de mitigación de riesgo." }
+    ],
+    "cta": "Explorar Asesoría en Finanzas Climáticas"
+  },
+  "whoWeServe": {
+    "eyebrow": "Grupos de Clientes",
+    "heading": "A Quién Servimos",
+    "subtitle": "Asesoría climática a medida para gobiernos, exportadores, empresas, desarrolladores de proyectos, inversores e instituciones.",
+    "cta": "Explorar Capacidades por Segmento",
+    "audiences": [
+      {
+        "id": "governments",
+        "title": "Gobiernos e instituciones públicas",
+        "summary": "Apoyo en diseño de política climática, precios al carbono, preparación para el Artículo 6, sistemas MRV, planificación de adaptación y finanzas climáticas."
+      },
+      {
+        "id": "companies",
+        "title": "Empresas y exportadores",
+        "summary": "Apoyo para comprender obligaciones climáticas, evaluar la exposición a CBAM o ETS, estructurar datos de emisiones y fortalecer la descarbonización."
+      },
+      {
+        "id": "developers",
+        "title": "Desarrolladores de proyectos de carbono",
+        "summary": "Apoyo en cribado de oportunidades, factibilidad técnica, selección metodológica, elaboración de documentos PDD, diseño de MRV y comercialización."
+      },
+      {
+        "id": "investors",
+        "title": "Inversores e instituciones financieras",
+        "summary": "Apoyo para evaluar oportunidades de inversión climática, analizar carteras de proyectos y examinar aspectos técnicos y de estructuración financiera."
+      },
+      {
+        "id": "institutions",
+        "title": "Organismos internacionales, ONGs y centros de investigación",
+        "summary": "Asesoría técnica para formulación de programas, propuestas de financiamiento, política climática, marcos de monitoreo y capacitación."
+      }
+    ]
+  },
+  "whyUs": {
+    "eyebrow": "Nuestros Diferenciales",
+    "heading": "Por Qué Green Gate Advisory",
+    "subtitle": "Conectando visión política, análisis técnico, estructuración financiera y planificación de ejecución.",
+    "pillars": [
+      {
+        "num": "01",
+        "title": "Perspectiva integrada",
+        "desc": "Conecta política pública, análisis técnico, estructuración financiera y planificación de ejecución."
+      },
+      {
+        "num": "02",
+        "title": "Especialización en mercados de carbono",
+        "desc": "Apoya a clientes navegando mercados voluntarios, esquemas de cumplimiento y desarrollo de proyectos."
+      },
+      {
+        "num": "03",
+        "title": "Orientación a finanzas climáticas",
+        "desc": "Traduce prioridades climáticas en conceptos bancables y propuestas de financiamiento estructuradas."
+      },
+      {
+        "num": "04",
+        "title": "Entrega práctica",
+        "desc": "Desglosa requisitos complejos en paquetes de trabajo claros, documentación técnica y próximos pasos ejecutables."
+      },
+      {
+        "num": "05",
+        "title": "Asesoría específica al contexto",
+        "desc": "Adapta recomendaciones a los objetivos, sector, jurisdicción y marcos normativos específicos del cliente."
+      }
+    ]
+  },
+  "featuredSolutions": {
+    "eyebrow": "Paquetes de Asesoría Estructurados",
+    "heading": "Soluciones Destacadas",
+    "subtitle": "Líneas de trabajo prioritarias para responder a plazos regulatorios inminentes, mandatos de cumplimiento y estructuración de proyectos.",
+    "solutions": [
+      {
+        "title": "Evaluación de exposición y preparación para CBAM",
+        "desc": "Cribado de códigos HS, mapeo de emisiones directas e indirectas incorporadas, resolución de vacíos de proveedores y reportes de cumplimiento.",
+        "link": "/services/cbam-advisory"
+      },
+      {
+        "title": "Factibilidad y soporte en desarrollo de proyectos de carbono",
+        "desc": "Cribado metodológico, pruebas de adicionalidad, modelado de líneas base, redacción de PDD y diseño de sistemas MRV.",
+        "link": "/services/carbon-market-advisory"
+      },
+      {
+        "title": "Notas conceptuales y propuestas de finanzas climáticas",
+        "desc": "Formulación de justificación climática, teoría del cambio, marcos lógicos, presupuestos y salvaguardas ambientales y sociales.",
+        "link": "/services/climate-finance-advisory"
+      },
+      {
+        "title": "Preparación para ETS y fijación de precios al carbono",
+        "desc": "Evaluación de obligaciones de entrega de derechos, análisis de asignación, dinámica de mercados y exposición corporativa.",
+        "link": "/services/ets-carbon-pricing-article-6"
+      },
+      {
+        "title": "Inventario corporativo de GEI y hoja de ruta de descarbonización",
+        "desc": "Contabilidad Alcance 1, 2 y 3, interacción con proveedores, curvas de abatimiento y planificación de transición ESG.",
+        "link": "/services/corporate-climate-esg"
+      },
+      {
+        "title": "Asesoría en política climática, MRV y Artículo 6",
+        "desc": "Soporte técnico para actualización de NDC, marcos nacionales de transparencia, preparación de ITMO y fortalecimiento institucional.",
+        "link": "/services/climate-policy-advisory"
+      }
+    ]
+  },
+  "insights": {
+    "eyebrow": "Conocimiento y Análisis",
+    "heading": "Perspectivas y Recursos",
+    "description": "Explore orientación práctica sobre novedades en mercados de carbono, reportes CBAM, sistemas ETS, financiamiento climático, Artículo 6, soluciones basadas en la naturaleza, contabilidad de GEI y política ambiental. Diseñados para orientar decisiones estratégicas.",
+    "cta": "Explorar Todas las Líneas de Conocimiento",
+    "notice": "Las publicaciones proporcionan orientación técnica estratégica y se revisan periódicamente frente a estándares vigentes.",
+    "streams": [
+      { "title": "Regulación CBAM y Normativa UE", "focus": "Contabilidad de emisiones incorporadas, valores por defecto y preparación de exportadores." },
+      { "title": "Mercados Voluntarios de Carbono", "focus": "Diseño de proyectos, líneas base, pruebas de adicionalidad y criterios de integridad." },
+      { "title": "Sistemas ETS y Precios al Carbono", "focus": "Esquemas cap-and-trade, asignación de derechos y cumplimiento operativo." },
+      { "title": "Propuestas de Finanzas Climáticas", "focus": "Justificación climática, teoría del cambio y estructuración para GCF y GEF." },
+      { "title": "Artículo 6 y Enfoques Cooperativos", "focus": "Acuerdos bilaterales de ITMO, ajustes correspondientes y autorizaciones nacionales." },
+      { "title": "Soluciones Basadas en la Naturaleza", "focus": "Carbono azul, manglares, metodologías AFOLU y salvaguardas de biodiversidad." },
+      { "title": "Contabilidad Corporativa de GEI", "focus": "Inventarios Alcance 1, 2 y 3, datos de proveedores y hojas de ruta de transición." },
+      { "title": "Política Climática y Transparencia", "focus": "NDC, Planes Nacionales de Adaptación y Marco de Transparencia de París." }
+    ]
+  },
+  "cta": {
+    "eyebrow": "Compromiso de Asesoría",
+    "headline": "¿Listo para pasar de la complejidad climática a la acción práctica?",
+    "description": "Póngase en contacto con Green Gate Advisory para abordar sus prioridades en mercados de carbono, CBAM, ETS, finanzas climáticas, soluciones basadas en la naturaleza o sostenibilidad corporativa.",
+    "btnPrimary": "Solicitar una Consulta",
+    "btnSecondary": "Contactar al Equipo",
+    "disclaimer": "Green Gate Advisory presta asesoría técnica independiente. La emisión de créditos y aprobación de fondos quedan sujetas a estándares y secretarías independientes."
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "meta": {
+    "title": "Climate Insights & Resources | Green Gate Advisory",
+    "description": "Practical guidance on CBAM, carbon markets, ETS, climate finance, Article 6, nature-based solutions and corporate greenhouse gas accounting."
+  },
+  "hero": {
+    "breadcrumbHome": "Home",
+    "breadcrumbCurrent": "Insights & Resources",
+    "eyebrow": "Knowledge & Technical Publications",
+    "title": "Insights & Resources",
+    "lead": "Green Gate Advisory shares practical knowledge to help decision-makers understand climate requirements, carbon markets, climate finance and emerging environmental policy considerations."
+  },
+  "hubIntro": {
+    "eyebrow": "Editorial Foundation",
+    "heading": "Navigating Climate Complexity Through Practical Analysis",
+    "p1": "As global climate regulation accelerates and compliance regimes mature, public and private organisations require clear, technically grounded analysis to inform capital allocation and regulatory readiness. The Green Gate Advisory knowledge hub synthesises complex statutory developments into structured, actionable intelligence.",
+    "p2": "All published briefings, analytical tools, and technical checklists reflect current international frameworks—spanning the UNFCCC Paris Agreement, the EU CBAM, compliance emissions trading schemes, and multilateral climate fund architectures.",
+    "pillars": {
+      "regulatory": {
+        "title": "Regulatory Clarity",
+        "desc": "Unpacking evolving compliance requirements, carbon border adjustments, and cross-border trade implications."
+      },
+      "carbonMarkets": {
+        "title": "Carbon Market Architecture",
+        "desc": "Examining integrity standards, baseline calculation rules, and commercial crediting structures."
+      },
+      "climateFinance": {
+        "title": "Climate Finance Readiness",
+        "desc": "Translating multilateral fund criteria into bankable project concepts and structured proposals."
+      },
+      "environmentalPolicy": {
+        "title": "Environmental Policy & NDCs",
+        "desc": "Assessing national adaptation roadmaps, Article 6 transfer agreements, and institutional governance."
+      },
+      "projectPrep": {
+        "title": "Project Design & MRV",
+        "desc": "Structuring robust monitoring frameworks, baseline methodologies, and validation pathways."
+      },
+      "ghgAccounting": {
+        "title": "Corporate GHG Accounting",
+        "desc": "Guiding Scope 1, 2, and 3 measurement boundaries, supplier primary data, and transition plans."
+      }
+    },
+    "notice": "Editorial standard: Content is reviewed by subject-matter experts and updated when official rules, funding windows, or market conditions change. We do not publish speculative news or unverified claims."
+  },
+  "categories": {
+    "badge": "Subject Coverage",
+    "heading": "Explore Technical Knowledge Areas",
+    "subtitle": "Filter publications and resources across our eight core climate and environmental practice areas.",
+    "all": {
+      "title": "All Practice Areas",
+      "desc": "Browse all publications and analytical guidance across Green Gate Advisory's complete practice scope."
+    },
+    "cbam": {
+      "title": "CBAM & EU Climate Regulation",
+      "desc": "Cross-border carbon adjustments, embedded emissions calculation rules, importer reporting, and EU supply chain compliance."
+    },
+    "vcm": {
+      "title": "Voluntary Carbon Markets & Project Development",
+      "desc": "Methodology selection, additionality analysis, baseline standards, PDD drafting, and verified credit generation."
+    },
+    "ets": {
+      "title": "ETS & Carbon Pricing",
+      "desc": "Compliance cap-and-trade systems, allowance allocation benchmarks, auction dynamics, and surrender roadmaps."
+    },
+    "climateFinance": {
+      "title": "Climate Finance Opportunities & Proposals",
+      "desc": "Multilateral fund architecture (GCF, GEF), concessional capital access, theory of change, and bankable proposal design."
+    },
+    "article6": {
+      "title": "Article 6 & International Carbon Cooperation",
+      "desc": "ITMO transfer frameworks, bilateral cooperative approaches under 6.2, multilateral crediting under 6.4, and corresponding adjustments."
+    },
+    "natureBased": {
+      "title": "Nature-Based Solutions & Blue Carbon",
+      "desc": "Ecosystem restoration, coastal mangrove conservation, agroforestry, soil carbon, and biodiversity net-gain metrics."
+    },
+    "corporateEsg": {
+      "title": "Corporate GHG Accounting & ESG",
+      "desc": "Scope 1, 2, and 3 corporate inventories, supplier engagement workflows, transition planning, and sustainability reporting."
+    },
+    "climatePolicy": {
+      "title": "Climate Policy, MRV & Adaptation",
+      "desc": "National Adaptation Plans (NAPs), NDC revisions, ETF transparency systems, and national greenhouse gas monitoring."
+    }
+  },
+  "articles": {
+    "eyebrow": "Analytical Briefings",
+    "heading": "Featured Insights & Briefings",
+    "subtitle": "In-depth technical papers and regulatory interpretations prepared by our advisory team.",
+    "filterLabel": "Filter by Practice Area",
+    "emptyState": {
+      "badge": "Publication Pipeline",
+      "title": "Insights and resources will be available here as they are published.",
+      "lead": "Our knowledge resources are currently being prepared and reviewed in accordance with verified technical standards. To discuss specific sector requirements or regulatory guidance, connect with our advisory practice.",
+      "primaryBtn": "Explore Advisory Services",
+      "secondaryBtn": "Request a Consultation"
+    }
+  },
+  "resources": {
+    "badge": "Practical Guidance",
+    "heading": "Technical Checklists & Planning Guides",
+    "subtitle": "Structured frameworks designed to support compliance screening, project eligibility, and funding proposal preparation.",
+    "statusComingSoon": "Coming Soon",
+    "statusAvailable": "Download Document",
+    "notice": "Download notice: Resources are published only following formal technical verification and legal review. Checklists provide guidance and do not constitute formal regulatory determinations.",
+    "cbamChecklist": {
+      "title": "CBAM Exposure Checklist for Exporters",
+      "desc": "Structured checklist for evaluating goods classification, HS codes, direct and indirect precursor emissions, and EU importer data requests."
+    },
+    "carbonProjectChecklist": {
+      "title": "Carbon Project Preliminary Eligibility Checklist",
+      "desc": "Essential criteria for land tenure, baseline scenario definition, regulatory surplus, and carbon methodology screening."
+    },
+    "climateFinanceChecklist": {
+      "title": "Climate Finance Readiness Checklist",
+      "desc": "Diagnostic checklist covering fiduciary standards, environmental and social safeguards (ESS), gender action planning, and legal feasibility."
+    },
+    "conceptNoteGuide": {
+      "title": "Climate Finance Concept Note Planning Guide",
+      "desc": "Step-by-step guidance on structuring the climate rationale, intervention logic, co-financing architecture, and monitoring indicators."
+    },
+    "etsChecklist": {
+      "title": "ETS Readiness Checklist",
+      "desc": "Readiness criteria for industrial facilities evaluating monitoring plans, allowance requirements, verifier accreditation, and surrender compliance."
+    },
+    "emissionsTemplate": {
+      "title": "Corporate Emissions Data Request Template",
+      "desc": "Standardised primary data collection framework for suppliers and operational facilities aligned with GHG Protocol calculation boundaries."
+    }
+  },
+  "relatedServices": {
+    "badge": "Advisory Practice",
+    "heading": "Browse Interconnected Advisory Practices",
+    "subtitle": "Connect research and technical knowledge directly to our six dedicated implementation practices.",
+    "exploreService": "Explore Service Practice"
+  },
+  "cta": {
+    "eyebrow": "Technical Advisory Support",
+    "heading": "Need Guidance on a Climate or Environmental Challenge?",
+    "description": "Whether preparing for CBAM compliance, developing a carbon credit project, or structuring a multilateral funding proposal, our advisory team provides tailored technical support.",
+    "primaryBtn": "Explore Our Services",
+    "secondaryBtn": "Request a Consultation",
+    "disclaimer": "Independent technical, regulatory and finance advisory. Recommendations reflect current statutory frameworks and accredited methodologies without speculative commitments."
+  }
+}

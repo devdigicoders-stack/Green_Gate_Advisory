@@ -1,0 +1,915 @@
+{
+  "meta": {
+    "siteTitle": "Green Gate Advisory",
+    "home": {
+      "title": "Green Gate Advisory | Carbon Markets, CBAM & Climate Finance",
+      "description": "Expert climate and environmental advisory across carbon markets, CBAM, ETS, climate finance, nature-based solutions and corporate sustainability."
+    },
+    "about": {
+      "title": "About Green Gate Advisory | Climate & Environmental Consultants",
+      "description": "Learn how Green Gate Advisory connects climate policy, carbon markets, climate finance and practical implementation support for public and private sector clients."
+    },
+    "services": {
+      "title": "Climate Advisory Services | Green Gate Advisory",
+      "description": "Explore carbon market advisory, CBAM and ETS support, climate finance, nature-based solutions, climate policy and corporate climate services."
+    },
+    "carbonMarket": {
+      "title": "Carbon Market Advisory & Carbon Credit Project Development",
+      "description": "Assess carbon project opportunities and navigate feasibility, methodology selection, project documentation, MRV, validation, registration and carbon credit commercialisation."
+    },
+    "etsCarbonPricing": {
+      "title": "ETS & Carbon Pricing Advisory | Green Gate Advisory",
+      "description": "Explore emissions trading system readiness, carbon pricing policy, compliance analysis and Article 6 advisory for public and private sector organisations."
+    },
+    "cbam": {
+      "title": "CBAM Advisory & EU Carbon Border Adjustment Mechanism Readiness",
+      "description": "Prepare for CBAM-related requirements with product screening, embedded emissions data, supplier engagement, reporting processes and carbon-cost risk assessment."
+    },
+    "climateFinance": {
+      "title": "Climate Finance Advisory & Funding Proposal Development",
+      "description": "Prepare climate project concepts and funding proposals with support for climate rationale, theory of change, safeguards, budgets, monitoring and implementation planning."
+    },
+    "natureBased": {
+      "title": "Nature-Based Solutions & Blue Carbon Advisory",
+      "description": "Develop nature-based climate initiatives spanning ecosystem restoration, blue carbon, biodiversity, adaptation, resilience and climate finance readiness."
+    },
+    "climatePolicy": {
+      "title": "Environmental & Climate Policy Advisory | Green Gate Advisory",
+      "description": "Policy and technical support for NDCs, National Adaptation Plans, climate governance, carbon pricing, MRV and Paris Agreement transparency frameworks."
+    },
+    "corporateClimate": {
+      "title": "Corporate Climate Advisory, GHG Accounting & ESG",
+      "description": "Understand corporate emissions and climate risks with support for Scope 1, 2 and 3 inventories, decarbonisation roadmaps, transition planning and ESG reporting readiness."
+    },
+    "sectors": {
+      "title": "Sectors We Support | Green Gate Advisory",
+      "description": "Climate, carbon market and environmental advisory for energy, industry, manufacturing, land use, infrastructure and financial sector organisations."
+    },
+    "whoWeServe": {
+      "title": "Who We Serve | Green Gate Advisory",
+      "description": "Tailored climate advisory for governments, exporters, companies, project developers, investors, NGOs and international organisations."
+    },
+    "insights": {
+      "title": "Climate Insights & Resources | Green Gate Advisory",
+      "description": "Practical guidance on CBAM, carbon markets, ETS, climate finance, Article 6, nature-based solutions and corporate greenhouse gas accounting."
+    },
+    "training": {
+      "title": "Climate, Carbon Markets & Climate Finance Training",
+      "description": "Build practical knowledge through training on carbon markets, CBAM, ETS, climate finance, Article 6, MRV, GHG accounting and climate policy."
+    },
+    "contact": {
+      "title": "Contact Green Gate Advisory | Request a Climate Advisory Consultation",
+      "description": "Contact Green Gate Advisory to discuss carbon markets, CBAM, ETS, climate finance, nature-based solutions, climate policy or corporate sustainability."
+    },
+    "privacy": {
+      "title": "Privacy Policy | Green Gate Advisory",
+      "description": "Understand how Green Gate Advisory handles data collection, contact requests, and regulatory privacy compliance."
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "sectors": "Sectors",
+    "whoWeServe": "Who We Serve",
+    "insights": "Insights & Resources",
+    "training": "Training & Capacity",
+    "contact": "Contact Us",
+    "requestConsultation": "Request a Consultation",
+    "allServices": "All Services"
+  },
+  "common": {
+    "exploreServices": "Explore Our Services",
+    "requestConsultation": "Request a Consultation",
+    "contactOurTeam": "Contact Our Team",
+    "discussCbam": "Discuss Your CBAM Exposure",
+    "developCarbonProject": "Develop a Carbon Project",
+    "discussEts": "Discuss ETS or Carbon Pricing",
+    "discussClimateFunding": "Discuss Climate Project Funding",
+    "exploreNatureProject": "Explore a Nature-Based Project",
+    "discussPolicySupport": "Discuss Climate Policy Support",
+    "assessCorporatePriorities": "Assess Your Corporate Climate Priorities",
+    "discussTraining": "Discuss a Training Programme",
+    "tellUsPriorities": "Tell Us About Your Priorities",
+    "learnMore": "Learn More",
+    "viewDetails": "View Details",
+    "viewAll": "View All",
+    "keyDeliverables": "Key Deliverables",
+    "challenges": "Challenges Addressed",
+    "ourRole": "How We Advise",
+    "downloadResource": "Request Resource Guide",
+    "step": "Step",
+    "disclaimer": "Advisory notice: Funding outcomes, carbon credit issuances, and validation approvals depend on independent secretariats and statutory standards."
+  },
+  "home": {
+    "hero": {
+      "badge": "Climate, Carbon Markets & Sustainable Finance",
+      "headline": "Turning Climate Complexity into Strategic Opportunity",
+      "subheadline": "Green Gate Advisory supports governments, companies, exporters and project developers with carbon market strategy, CBAM and ETS readiness, climate finance, nature-based solutions and environmental policy—helping turn climate priorities into practical, measurable action."
+    },
+    "whatWeDo": {
+      "badge": "Introduction",
+      "title": "What We Do",
+      "lead": "Climate regulation, carbon markets and sustainable finance are changing how organisations plan, invest and operate. Green Gate Advisory provides integrated climate and environmental advisory services to help clients understand their obligations, assess opportunities and develop credible pathways to implementation.",
+      "body": "Our work spans voluntary and compliance carbon markets, carbon project development, emissions trading systems, Carbon Border Adjustment Mechanism (CBAM) readiness, climate finance proposal development, nature-based solutions, environmental policy, greenhouse gas accounting and corporate sustainability. We combine technical analysis, regulatory understanding and project-focused thinking to help clients make informed decisions."
+    },
+    "coreServices": {
+      "badge": "Capabilities",
+      "title": "Our Core Advisory Services",
+      "subtitle": "Integrated technical, financial, and regulatory expertise spanning global compliance and project mechanisms."
+    },
+    "carbonSupport": {
+      "badge": "Project Lifecycle",
+      "title": "End-to-End Carbon Market Support",
+      "description": "From an early project idea to potential carbon credit issuance and commercialisation, Green Gate Advisory helps clients understand the steps, requirements and decisions involved in developing a carbon project. Support is tailored to project context, applicable methodology, programme rules and relevant standards.",
+      "pathwayTitle": "Our Typical Project Pathway",
+      "steps": [
+        "Identify Opportunities",
+        "Screen Eligibility",
+        "Assess Feasibility",
+        "Select Methodology",
+        "Design the Project",
+        "Establish MRV",
+        "Support Validation & Registration",
+        "Monitor & Verify Outcomes",
+        "Prepare for Issuance & Commercialisation"
+      ]
+    },
+    "climateFinance": {
+      "badge": "Capital & Proposals",
+      "title": "Climate Finance: From Concept to Fundable Proposal",
+      "description": "Strong climate finance proposals connect a clearly defined climate challenge with a credible intervention, measurable outcomes, a realistic budget and a delivery plan. Green Gate Advisory supports project teams in shaping climate concepts, developing funding documentation and preparing implementation and monitoring frameworks for relevant funding windows.",
+      "landscapeTitle": "Potential Funding Landscape Assessed",
+      "landscapeDesc": "Depending on eligibility and programme rules, assessed pathways include:",
+      "funds": [
+        "Green Climate Fund (GCF)",
+        "Global Environment Facility (GEF)",
+        "Adaptation Fund",
+        "Climate Investment Programmes",
+        "Multilateral Development Banks (MDBs)",
+        "Bilateral Facilities & Blended Finance"
+      ]
+    },
+    "whoWeServe": {
+      "badge": "Client Segments",
+      "title": "Who We Serve",
+      "subtitle": "Trusted advisory support across institutional, private, and international climate domains."
+    },
+    "whyUs": {
+      "badge": "Our Differentiation",
+      "title": "Why Green Gate Advisory",
+      "subtitle": "Bridging policy insight, quantitative analysis, finance preparation, and on-the-ground delivery.",
+      "pillars": [
+        {
+          "title": "Integrated Perspective",
+          "desc": "Connects policy, technical analysis, finance and implementation planning."
+        },
+        {
+          "title": "Carbon Market Focus",
+          "desc": "Supports clients navigating voluntary markets, compliance mechanisms and carbon project development."
+        },
+        {
+          "title": "Climate Finance Orientation",
+          "desc": "Helps translate climate priorities into structured concepts and funding proposals."
+        },
+        {
+          "title": "Practical Delivery",
+          "desc": "Breaks complex requirements into clear workstreams, documentation and next steps."
+        },
+        {
+          "title": "Context-Specific Advice",
+          "desc": "Tailors recommendations to client objectives, sector, jurisdiction and applicable rules."
+        }
+      ]
+    },
+    "featuredSolutions": {
+      "badge": "Structured Packages",
+      "title": "Featured Solutions",
+      "subtitle": "High-priority advisory workstreams addressing immediate regulatory deadlines and project readiness.",
+      "items": [
+        "CBAM exposure and readiness assessment",
+        "Carbon project feasibility and development support",
+        "Climate finance concept notes and funding proposals",
+        "ETS and carbon pricing readiness",
+        "Corporate greenhouse gas inventory and decarbonisation roadmap",
+        "Climate policy, MRV and Article 6 advisory"
+      ]
+    },
+    "insightsIntro": {
+      "badge": "Knowledge & Briefings",
+      "title": "Insights & Resources",
+      "description": "Explore practical guidance on carbon market developments, CBAM reporting, ETS, climate finance, Article 6, nature-based solutions, greenhouse gas accounting and sustainability policy. Our knowledge resources are designed to help decision-makers understand emerging requirements and identify relevant next steps."
+    },
+    "closingCta": {
+      "headline": "Ready to Move from Climate Complexity to Practical Action?",
+      "description": "Contact Green Gate Advisory to discuss your carbon market, CBAM, ETS, climate finance, nature-based solutions or corporate sustainability priorities."
+    }
+  },
+  "about": {
+    "hero": {
+      "badge": "About Green Gate Advisory",
+      "title": "Climate & Environmental Advisory Consultancy",
+      "lead": "Green Gate Advisory is a specialised climate and environmental advisory consultancy supporting governments, businesses, exporters, project developers, investors and institutions as they respond to climate change, evolving regulation and the transition to a low-carbon, climate-resilient economy.",
+      "body": "We provide advisory support across carbon markets, climate finance, CBAM, emissions trading systems, nature-based solutions, environmental policy, greenhouse gas accounting and corporate sustainability. Our approach connects technical analysis and regulatory understanding with practical project preparation, helping clients move from ambition and compliance pressure towards structured plans and measurable outcomes."
+    },
+    "purpose": {
+      "title": "Our Purpose",
+      "text": "Our purpose is to help public and private organisations respond effectively to the growing complexity of climate regulation, carbon pricing, environmental policy and climate finance. We believe climate action should be technically credible, financially realistic and designed to deliver measurable environmental, social and economic value."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "text": "To provide clear, high-quality advisory services that help clients design, prepare, finance, implement and report credible climate and environmental solutions across carbon markets, climate finance, compliance mechanisms and sustainability frameworks."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "text": "To be a trusted advisory partner for organisations seeking to unlock climate-related opportunities, manage regulatory risks and develop bankable projects that contribute to a more sustainable and resilient future."
+    },
+    "differentiation": {
+      "title": "What Makes Us Different",
+      "items": [
+        {
+          "title": "End-to-end perspective",
+          "desc": "Support across strategy, feasibility, project design, finance preparation, MRV, compliance and reporting."
+        },
+        {
+          "title": "Specialist subject matter",
+          "desc": "Focus on carbon markets, carbon pricing, CBAM, ETS, Article 6 and carbon project development."
+        },
+        {
+          "title": "Finance-aware project preparation",
+          "desc": "Connect project rationale, funding requirements, safeguards, budgets and monitoring frameworks."
+        },
+        {
+          "title": "Nature-positive thinking",
+          "desc": "Consider climate mitigation and adaptation alongside biodiversity, ecosystem resilience and community outcomes."
+        },
+        {
+          "title": "Policy-to-practice approach",
+          "desc": "Translate complex frameworks into structured workplans and decision-ready recommendations."
+        },
+        {
+          "title": "Client-focused delivery",
+          "desc": "Tailor the scope and outputs to the organisation’s context, objectives and capacity."
+        }
+      ]
+    },
+    "expertise": {
+      "title": "Our Areas of Expertise",
+      "items": [
+        "Voluntary carbon markets and carbon project development",
+        "Compliance carbon markets, ETS and carbon pricing",
+        "CBAM readiness, embedded emissions and reporting processes",
+        "Climate finance project preparation and funding proposal development",
+        "Climate funds and blended finance opportunity mapping",
+        "Nature-based solutions, blue carbon, land restoration and biodiversity",
+        "Climate policy, NDCs, NAPs, MRV and transparency frameworks",
+        "Corporate greenhouse gas accounting, ESG and decarbonisation planning",
+        "Training and capacity building for public and private institutions"
+      ]
+    },
+    "whoWeWorkWith": {
+      "title": "Who We Work With",
+      "text": "We work with public institutions, private companies, exporters, industrial operators, project developers, investors, international organisations, NGOs and research institutions. We support clients at different stages of their climate journey—from understanding a regulatory requirement or screening a project idea to preparing a funding proposal or developing a longer-term climate strategy."
+    },
+    "approach": {
+      "title": "Our Five-Stage Advisory Approach",
+      "steps": [
+        {
+          "num": "01",
+          "title": "Understand the context",
+          "desc": "Clarify objectives, operating environment, regulatory exposure, available data and institutional capacity."
+        },
+        {
+          "num": "02",
+          "title": "Assess the challenge",
+          "desc": "Identify relevant requirements, project opportunities, data gaps, risks and decision points."
+        },
+        {
+          "num": "03",
+          "title": "Develop a tailored pathway",
+          "desc": "Define practical options, workstreams, deliverables and implementation priorities."
+        },
+        {
+          "num": "04",
+          "title": "Support preparation and delivery",
+          "desc": "Help develop the documentation, frameworks and plans needed for the agreed scope."
+        },
+        {
+          "num": "05",
+          "title": "Measure and improve",
+          "desc": "Where included in the engagement, support monitoring, reporting and refinement of the approach."
+        }
+      ]
+    },
+    "closing": "Green Gate Advisory connects strategy, regulation, finance and implementation to help clients make informed decisions and advance credible climate action."
+  },
+  "services": {
+    "overview": {
+      "badge": "Practice Areas",
+      "title": "Climate & Environmental Advisory Services",
+      "lead": "Green Gate Advisory provides seven specialised advisory services spanning voluntary carbon projects, mandatory emissions trading, cross-border carbon border tariffs, international climate funds, nature-based conservation, national policy frameworks, and corporate decarbonisation.",
+      "note": "Each service combines technical rigor, economic alignment, and practical delivery plans."
+    },
+    "carbonMarket": {
+      "nav": "Carbon Market Advisory",
+      "title": "Carbon Market Advisory & Carbon Credit Project Development",
+      "slug": "carbon-market-advisory",
+      "tagline": "Voluntary & Compliance Carbon Projects",
+      "intro": "Green Gate Advisory supports organisations exploring voluntary carbon markets and relevant compliance-related carbon opportunities. We help clients assess project concepts, understand applicable methodologies and requirements, and plan the technical and documentation work needed to progress a carbon project.",
+      "howWeSupportTitle": "How We Can Support",
+      "supportPoints": [
+        "Carbon market strategy and opportunity mapping",
+        "Carbon project identification and preliminary feasibility assessment",
+        "Methodology screening, baseline assessment and additionality analysis",
+        "Project Design Document (PDD) preparation support",
+        "MRV system planning and monitoring framework development",
+        "Coordination support for validation, verification and registration processes",
+        "Registry and issuance process guidance, where applicable",
+        "Buyer engagement, commercialisation and offtake strategy support",
+        "Article 6 readiness and international cooperation advisory"
+      ],
+      "pathwayTitle": "Typical Project Pathway",
+      "pathway": [
+        "Opportunity identification",
+        "Eligibility screening",
+        "Feasibility and business case",
+        "Methodology selection",
+        "Project design",
+        "MRV development",
+        "Validation and registration support",
+        "Monitoring",
+        "Verification",
+        "Potential credit issuance",
+        "Commercialisation"
+      ],
+      "cta": "Discuss a Carbon Project"
+    },
+    "etsCarbonPricing": {
+      "nav": "ETS & Article 6",
+      "title": "ETS & Carbon Pricing Advisory",
+      "slug": "ets-carbon-pricing-article-6",
+      "tagline": "Compliance Systems & Article 6 Mechanisms",
+      "intro": "Emissions trading systems (ETS) and carbon pricing mechanisms can affect policy design, investment decisions and operational planning. Green Gate Advisory helps public institutions and organisations assess relevant frameworks, understand potential obligations and prepare practical roadmaps aligned with the applicable jurisdiction and programme rules.",
+      "howWeSupportTitle": "How We Can Support",
+      "supportPoints": [
+        "ETS design and implementation advisory",
+        "ETS readiness assessments for governments and companies",
+        "Allowance allocation and compliance obligation analysis",
+        "Carbon pricing policy and market framework support",
+        "Article 6 policy advisory, including ITMO and corresponding adjustment readiness",
+        "National carbon market frameworks and sectoral roadmaps",
+        "Capacity building for regulators and regulated entities"
+      ],
+      "cta": "Discuss ETS or Carbon Pricing Requirements"
+    },
+    "cbam": {
+      "nav": "CBAM Advisory",
+      "title": "CBAM Advisory & EU Carbon Border Adjustment Mechanism Readiness",
+      "slug": "cbam-advisory",
+      "tagline": "EU Import Carbon Tariffs & Supplier Data",
+      "intro": "The European Union’s Carbon Border Adjustment Mechanism (CBAM) can create new data, reporting and carbon-cost considerations for certain imported goods and the companies that produce or export them. Green Gate Advisory helps businesses assess potential exposure, organise emissions information and establish a practical readiness plan based on current applicable rules.",
+      "howWeSupportTitle": "How We Can Support",
+      "supportPoints": [
+        "Initial CBAM exposure assessment by product, sector and export destination",
+        "Product and HS code screening, subject to product and regulatory review",
+        "Embedded emissions data mapping and calculation support",
+        "Data-gap assessment and supplier data collection processes",
+        "CBAM reporting workflow and internal procedure development",
+        "Carbon-cost risk analysis and scenario considerations",
+        "Decarbonisation roadmap support for CBAM-exposed operations",
+        "Training for exporters, suppliers and compliance teams"
+      ],
+      "pathwayTitle": "CBAM Readiness Pathway",
+      "pathway": [
+        "Identify potentially affected products",
+        "Map export and supply-chain exposure",
+        "Review applicable rules",
+        "Assess embedded emissions data",
+        "Identify supplier data gaps",
+        "Establish reporting processes",
+        "Evaluate carbon-intensity reduction options",
+        "Review ongoing compliance needs"
+      ],
+      "editorialNote": "Editorial note: CBAM rules, product coverage, timelines and reporting obligations can change. Review this page against current official EU requirements before launch and during future updates.",
+      "cta": "Request a CBAM Readiness Discussion"
+    },
+    "climateFinance": {
+      "nav": "Climate Finance Advisory",
+      "title": "Climate Finance Advisory & Funding Proposal Development",
+      "slug": "climate-finance-advisory",
+      "tagline": "Bankable Proposals & Fund Mapping",
+      "intro": "Green Gate Advisory helps public institutions, project developers, NGOs and other eligible organisations turn climate priorities into structured project concepts and funding proposals. We support the development of a clear climate rationale, intervention logic, implementation approach, budget and monitoring framework, with requirements tailored to the relevant funding programme.",
+      "howWeSupportTitle": "How We Can Support",
+      "supportPoints": [
+        "Climate finance opportunity mapping and eligibility screening",
+        "Project idea development and concept note preparation",
+        "Climate rationale, theory of change and logical framework development",
+        "Full funding proposal preparation support",
+        "Budget and financing structure development",
+        "Environmental and social safeguards planning",
+        "Gender action planning and stakeholder engagement frameworks",
+        "Monitoring, evaluation and learning frameworks",
+        "Implementation readiness and reporting support",
+        "Institutional readiness and accreditation-related support, where within scope"
+      ],
+      "pathwayTitle": "Potential Funding Pathways",
+      "pathwaysIntro": "Depending on project eligibility, country context and current programme rules, relevant opportunities may include:",
+      "funds": [
+        "Green Climate Fund (GCF)",
+        "Global Environment Facility (GEF)",
+        "Adaptation Fund",
+        "Climate investment programmes",
+        "Multilateral development banks (MDBs)",
+        "Bilateral climate finance and blended finance mechanisms"
+      ],
+      "cta": "Discuss Climate Project Funding"
+    },
+    "natureBased": {
+      "nav": "Nature-Based Solutions",
+      "title": "Nature-Based Solutions & Blue Carbon Advisory",
+      "slug": "nature-based-solutions",
+      "tagline": "Ecosystem Restoration & Biodiversity",
+      "intro": "Nature-based solutions (NbS) can help address climate change while supporting biodiversity, ecosystem health, water security, resilience and sustainable livelihoods. Green Gate Advisory supports the assessment and development of nature-based project concepts, with attention to environmental integrity, community engagement, safeguards and suitable monitoring approaches.",
+      "howWeSupportTitle": "Potential Project Areas",
+      "supportPoints": [
+        "Mangrove restoration and coastal resilience",
+        "Wetland conservation and restoration",
+        "Forest protection, restoration, afforestation and reforestation",
+        "Land restoration and sustainable land management",
+        "Sustainable agriculture and soil carbon opportunities",
+        "Watershed management and water resilience",
+        "Blue carbon and land-based carbon project feasibility",
+        "Biodiversity-positive climate initiatives",
+        "Integration of nature-based solutions into relevant climate finance proposals",
+        "MRV approaches for ecosystem, carbon, resilience and biodiversity outcomes",
+        "Community engagement, safeguards and benefit-sharing frameworks"
+      ],
+      "cta": "Explore a Nature-Based Project"
+    },
+    "climatePolicy": {
+      "nav": "Climate Policy Advisory",
+      "title": "Environmental & Climate Policy Advisory",
+      "slug": "climate-policy-advisory",
+      "tagline": "NDCs, NAPs & Paris Agreement Transparency",
+      "intro": "Effective climate policy connects national priorities, institutional responsibilities, credible data and implementation capacity. Green Gate Advisory supports public institutions and partner organisations with policy analysis, framework development and capacity building tailored to their context and objectives.",
+      "howWeSupportTitle": "How We Can Support",
+      "supportPoints": [
+        "National climate policy development and review",
+        "NDC update and implementation planning",
+        "National Adaptation Plan (NAP) advisory",
+        "Long-term low-emission development strategy support",
+        "Carbon pricing policy and climate governance frameworks",
+        "Environmental regulation analysis",
+        "International climate negotiation and technical briefing support",
+        "MRV and transparency systems under the Paris Agreement",
+        "Capacity building for ministries, agencies and public institutions"
+      ],
+      "cta": "Discuss Climate Policy Support"
+    },
+    "corporateClimate": {
+      "nav": "Corporate Climate & ESG",
+      "title": "Corporate Climate Advisory, GHG Accounting & ESG",
+      "slug": "corporate-climate-esg",
+      "tagline": "Scope 1-3 Inventories & Transition Roadmaps",
+      "intro": "Businesses are increasingly expected to understand their greenhouse gas emissions, climate-related risks and sustainability priorities. Green Gate Advisory helps organisations build a structured view of their emissions and identify practical steps towards emissions management, decarbonisation and sustainability reporting readiness.",
+      "howWeSupportTitle": "How We Can Support",
+      "supportPoints": [
+        "Corporate carbon footprint assessment and greenhouse gas accounting",
+        "Scope 1, Scope 2 and Scope 3 emissions inventory support",
+        "Emissions data collection and supplier engagement",
+        "Decarbonisation strategy and roadmap development",
+        "Climate risk assessment and transition planning",
+        "ESG strategy and sustainability reporting readiness",
+        "TCFD and ISSB readiness assessments, where relevant",
+        "Internal carbon pricing considerations",
+        "Value-chain emissions management"
+      ],
+      "cta": "Assess Your Corporate Climate Priorities"
+    }
+  },
+  "sectors": {
+    "badge": "Industry & Systems",
+    "title": "Sectors We Support",
+    "lead": "Climate risks, regulation and investment opportunities vary by sector. Green Gate Advisory tailors its advisory approach to the operating context, applicable policy frameworks, available data and intended outcomes of each client.",
+    "subtext": "We provide targeted advisory for 11 critical emitting and ecosystem domains.",
+    "items": [
+      {
+        "id": "energy-utilities",
+        "title": "Energy and Utilities",
+        "challenge": "Grid decarbonisation, renewable integration, clean fuel transitions, and compliance under emerging carbon pricing frameworks.",
+        "services": "ETS compliance analysis, carbon asset development, and green investment structuring.",
+        "deliverables": "Decarbonisation pathways, emissions exposure models, and renewable project carbon feasibility.",
+        "cta": "Discuss Energy Advisory"
+      },
+      {
+        "id": "oil-gas",
+        "title": "Oil and Gas",
+        "challenge": "Methane abatement, transition risk management, carbon accounting, and regulatory scrutiny on Scope 1-3 profiles.",
+        "services": "MRV protocols, methane reduction valuation, and corporate transition roadmap design.",
+        "deliverables": "GHG accounting frameworks, marginal abatement cost curves, and compliance readiness.",
+        "cta": "Discuss Transition Support"
+      },
+      {
+        "id": "industry-manufacturing",
+        "title": "Industry and Manufacturing",
+        "challenge": "Electrification of thermal processes, material efficiency, and rising costs from domestic and cross-border carbon pricing.",
+        "services": "Industrial decarbonisation roadmaps, energy audit alignment, and CBAM impact assessments.",
+        "deliverables": "Site-level emission reduction plans and supply-chain carbon data frameworks.",
+        "cta": "Discuss Manufacturing Scope"
+      },
+      {
+        "id": "cement-steel-aluminium",
+        "title": "Cement, Steel, Aluminium and Fertilisers",
+        "challenge": "Hard-to-abate process emissions, heavy capital intensity, and direct exposure to the EU CBAM tariff structure.",
+        "services": "Embedded emissions calculations, supplier data collection, and CBAM compliance filings.",
+        "deliverables": "Product carbon footprint reports, HS code emissions mapping, and carbon-cost scenarios.",
+        "cta": "Assess Heavy Industry CBAM"
+      },
+      {
+        "id": "transport-logistics",
+        "title": "Transport and Logistics",
+        "challenge": "Fleet electrification, maritime and aviation fuel mandates, multimodal emissions tracking, and Scope 3 freight data.",
+        "services": "Fleet decarbonisation strategies, sustainable fuel evaluation, and transport carbon credits.",
+        "deliverables": "Logistics emissions inventories, route optimization carbon baselines, and green freight roadmaps.",
+        "cta": "Discuss Freight Decarbonisation"
+      },
+      {
+        "id": "agriculture-forestry",
+        "title": "Agriculture, Forestry and Land Use (AFOLU)",
+        "challenge": "Complex baseline modeling, land tenure safeguards, permanence risks, and evolving methodology requirements.",
+        "services": "Agroforestry carbon feasibility, soil carbon assessment, and Verra/Gold Standard methodology screening.",
+        "deliverables": "Project Design Documents (PDD), community benefit-sharing models, and satellite MRV plans.",
+        "cta": "Develop Land Carbon Projects"
+      },
+      {
+        "id": "biodiversity-coastal",
+        "title": "Biodiversity, Coastal Zones and Ecosystem Restoration",
+        "challenge": "Ecosystem degradation, coastal storm vulnerability, and securing long-term capital for ecological conservation.",
+        "services": "Blue carbon project structuring (mangroves, seagrass), biodiversity crediting, and nature safeguards.",
+        "deliverables": "Blue carbon feasibility studies, ecosystem service valuations, and coastal resilience proposals.",
+        "cta": "Explore Blue Carbon"
+      },
+      {
+        "id": "waste-circular",
+        "title": "Waste Management and Circular Economy",
+        "challenge": "Landfill methane emissions, recycling infrastructure economics, and compliance with national waste targets.",
+        "services": "Methane capture carbon credit design, circularity audits, and waste-to-energy feasibility.",
+        "deliverables": "Methane baseline calculations, carbon project documentation, and organic waste diversion roadmaps.",
+        "cta": "Discuss Circular Advisory"
+      },
+      {
+        "id": "water-adaptation",
+        "title": "Water Security and Climate Adaptation",
+        "challenge": "Drought vulnerability, watershed degradation, and developing bankable proposals for public water infrastructure.",
+        "services": "Adaptation project rationale development, GCF/Adaptation Fund proposal writing, and vulnerability mapping.",
+        "deliverables": "Climate rationale briefs, theory of change matrices, and adaptation monitoring frameworks.",
+        "cta": "Discuss Water Adaptation"
+      },
+      {
+        "id": "cities-infrastructure",
+        "title": "Cities, Buildings and Infrastructure",
+        "challenge": "Embodied carbon in construction, municipal transition plans, and securing concessional municipal green bonds.",
+        "services": "Urban climate action plans, building lifecycle emissions accounting, and municipal project pipelines.",
+        "deliverables": "City-wide GHG inventories, green building certification alignment, and capital investment plans.",
+        "cta": "Discuss Urban Climate Action"
+      },
+      {
+        "id": "financial-institutions",
+        "title": "Financial Institutions and Sustainable Investment",
+        "challenge": "Financed emissions reporting (PCAF), greenwashing risk, climate portfolio stress testing, and pipeline origination.",
+        "services": "Climate due diligence, Article 6 transaction advisory, fund structuring, and ESG portfolio alignment.",
+        "deliverables": "Technical due diligence reports, investment climate rationale assessments, and risk frameworks.",
+        "cta": "Discuss Sustainable Investment"
+      }
+    ]
+  },
+  "whoWeServe": {
+    "badge": "Audiences & Stakeholders",
+    "title": "Who We Serve",
+    "lead": "Green Gate Advisory provides specialized, technically rigorous advisory across five institutional and private client segments, bridging regulation, carbon finance, and project execution.",
+    "clients": [
+      {
+        "id": "governments",
+        "title": "Governments and Public Institutions",
+        "focus": "Policy, Sovereign Carbon & International Climate Architecture",
+        "desc": "Support for climate policy, carbon pricing, Article 6 readiness, MRV systems, adaptation planning, climate finance and institutional capacity building.",
+        "capabilities": [
+          "National climate policy design & NDC enhancement",
+          "Domestic ETS and carbon tax architecture",
+          "Article 6 ITMO cooperative mechanism readiness",
+          "Institutional capacity building & ministry briefings"
+        ]
+      },
+      {
+        "id": "companies-exporters",
+        "title": "Companies, Manufacturers and Exporters",
+        "focus": "Compliance, CBAM Readiness & Corporate Decarbonisation",
+        "desc": "Support to understand relevant climate-related requirements, assess CBAM or ETS exposure where applicable, organise emissions data, consider decarbonisation options and strengthen sustainability planning.",
+        "capabilities": [
+          "EU CBAM product exposure and supplier data mapping",
+          "Scope 1, 2, and 3 emissions inventory accounting",
+          "Decarbonisation roadmaps & transition planning",
+          "Regulatory compliance filings & audit readiness"
+        ]
+      },
+      {
+        "id": "project-developers",
+        "title": "Carbon Project Developers",
+        "focus": "Origination, Methodology Screening & Credit Commercialisation",
+        "desc": "Support for project opportunity screening, feasibility assessment, methodology selection, project documentation, MRV planning and preparation for relevant validation, registration and commercialisation steps.",
+        "capabilities": [
+          "Project Design Document (PDD) preparation",
+          "Verra, Gold Standard & domestic registry alignment",
+          "Additionality, baseline & leakage analysis",
+          "Offtake strategy & commercial buyer engagement"
+        ]
+      },
+      {
+        "id": "investors",
+        "title": "Investors and Financial Institutions",
+        "focus": "Climate Due Diligence & Bankable Pipeline Structuring",
+        "desc": "Support to assess climate-related opportunities, understand project pipelines and review the technical, policy and financing considerations relevant to climate investments.",
+        "capabilities": [
+          "Technical climate due diligence for project finance",
+          "Carbon yield risk assessment & integrity vetting",
+          "Blended finance structure review & fund mapping",
+          "Portfolio emissions & transition risk screening"
+        ]
+      },
+      {
+        "id": "international-orgs",
+        "title": "International Organisations, NGOs & Research Institutions",
+        "focus": "Programme Design, Multilateral Funds & Knowledge Delivery",
+        "desc": "Technical advisory for programme design, funding proposals, climate policy, monitoring frameworks, knowledge development and capacity building.",
+        "capabilities": [
+          "GCF, GEF, and Adaptation Fund proposal writing",
+          "Theory of change & environmental-social safeguards",
+          "Capacity building curricula & training delivery",
+          "Independent policy evaluation & technical research"
+        ]
+      }
+    ],
+    "cta": "Tell Us About Your Organisation’s Priorities"
+  },
+  "insights": {
+    "badge": "Research & Guidance",
+    "title": "Climate Insights & Resources",
+    "lead": "The Green Gate Advisory Insights hub shares clear, practical information to help decision-makers understand changing climate requirements and evaluate relevant opportunities.",
+    "disclaimer": "Editorial notice: Our knowledge briefings are authored for strategic orientation and regularly reviewed against active regulatory standards. They do not constitute formal legal counsel.",
+    "categoriesTitle": "Recommended Content Categories",
+    "categories": [
+      "CBAM and EU climate regulation updates",
+      "Voluntary carbon markets and carbon project development",
+      "ETS and carbon pricing explainers",
+      "Climate finance opportunities and proposal guidance",
+      "Article 6 and international carbon cooperation",
+      "Nature-based solutions, blue carbon and biodiversity",
+      "Corporate GHG accounting, ESG and decarbonisation",
+      "Climate policy, MRV and adaptation"
+    ],
+    "downloadablesTitle": "Practical Downloadable Resource Guides",
+    "downloadablesLead": "Structured tools and checklists designed for technical teams and corporate compliance managers:",
+    "downloadables": [
+      {
+        "id": "cbam-checklist",
+        "title": "CBAM Exposure Checklist for Exporters",
+        "desc": "A step-by-step diagnostic checklist covering HS code screening, direct/indirect embedded emissions, and supplier data boundaries."
+      },
+      {
+        "id": "carbon-eligibility-checklist",
+        "title": "Carbon Project Preliminary Eligibility Checklist",
+        "desc": "Screening criteria for project scale, baseline eligibility, land tenure documentation, and additionality prerequisites."
+      },
+      {
+        "id": "climate-finance-checklist",
+        "title": "Climate Finance Readiness Checklist",
+        "desc": "Essential institutional components required before submitting concept notes to multilateral funds."
+      },
+      {
+        "id": "concept-note-guide",
+        "title": "Climate Finance Concept Note Planning Guide",
+        "desc": "Template structures for climate rationale, theory of change, and logframe formulation."
+      },
+      {
+        "id": "ets-checklist",
+        "title": "ETS Readiness Checklist",
+        "desc": "Readiness audit checklist for installations anticipating mandatory emissions cap and reporting obligations."
+      },
+      {
+        "id": "emissions-data-template",
+        "title": "Corporate Emissions Data Request Template",
+        "desc": "Standardized data intake format for gathering Scope 1, 2, and supplier Scope 3 activity figures."
+      }
+    ],
+    "featuredArticles": [
+      {
+        "slug": "understanding-cbam-implications-exporters",
+        "category": "CBAM Updates",
+        "title": "Navigating CBAM: Critical Preparation Steps for Non-EU Manufacturers",
+        "date": "Strategic Briefing",
+        "readTime": "6 min read",
+        "summary": "How industrial exporters can assess embedded emissions, avoid default values, and build resilient reporting pipelines before definitive implementation phases.",
+        "content": [
+          "The European Union's Carbon Border Adjustment Mechanism (CBAM) represents a major structural shift in global trade and climate policy. Designed to equalize the carbon price paid by European domestic producers under the EU ETS and foreign producers exporting to the European single market, CBAM requires meticulous carbon accounting across covered goods including steel, aluminium, cement, fertilisers, hydrogen, and electricity.",
+          "For manufacturers and exporters outside the European Union, the immediate challenge centers on embedded emissions calculation. Default values provided by the European Commission are punitive and will lead to higher financial liabilities once certificate purchasing commences. Establishing actual supplier-specific greenhouse gas accounting is the single most effective way to protect commercial margins.",
+          "Green Gate Advisory recommends that exporting enterprises implement a 4-step readiness framework: (1) Confirm tariff classification and HS codes; (2) Demarcate installation boundaries and direct vs indirect energy inputs; (3) Engage Tier-1 precursors suppliers for verified emissions data; and (4) Establish automated quarterly data collation protocols to avoid trade friction."
+        ]
+      },
+      {
+        "slug": "article-6-and-voluntary-carbon-markets",
+        "category": "Carbon Markets",
+        "title": "Article 6 and the Voluntary Market: Convergence, Integrity, and ITMOs",
+        "date": "Technical Analysis",
+        "readTime": "8 min read",
+        "summary": "Analyzing the operational interface between Article 6.2 bilateral agreements, Corresponding Adjustments, and high-integrity voluntary carbon credits.",
+        "content": [
+          "As Article 6 of the Paris Agreement moves into active bilateral implementation, carbon project developers face a bifurcated market. On one side are Internationally Transferred Mitigation Outcomes (ITMOs) authorized under Article 6.2 or 6.4 with Corresponding Adjustments; on the other are non-adjusted credits utilized for voluntary corporate claims.",
+          "Understanding the regulatory architecture of host countries is now mandatory for developers. A project's financial model cannot rely purely on historical voluntary market assumptions; it must account for whether host country governments will authorize credits for international transfer or retain them toward their own Nationally Determined Contributions (NDCs).",
+          "High-integrity project preparation requires early baseline screening, robust additionality tests that surpass national policy targets, and community benefit-sharing agreements that withstand international regulatory scrutiny."
+        ]
+      },
+      {
+        "slug": "bankable-climate-finance-proposals",
+        "category": "Climate Finance",
+        "title": "Structuring Bankable Climate Proposals for Multilateral Facilities",
+        "date": "Advisory Note",
+        "readTime": "7 min read",
+        "summary": "Key elements of climate rationale, theories of change, and financial structuring required by international funds including the GCF and GEF.",
+        "content": [
+          "Securing concessional capital from multilateral climate funds like the Green Climate Fund (GCF) or Global Environment Facility (GEF) remains an intensive, evidence-driven process. The primary bottleneck is rarely financial desire, but the technical robustness of the project's climate rationale.",
+          "A successful proposal must establish an explicit causal link: demonstrating clearly how climate change is altering local conditions, why the proposed intervention is fundamentally a climate solution rather than traditional development assistance, and how economic sustainability will be maintained beyond the disbursement window.",
+          "Integrating environmental and social safeguards (ESS), gender action planning, and measurable monitoring, reporting, and verification (MRV) matrices from day one is essential to avoid multi-year revision cycles."
+        ]
+      }
+    ]
+  },
+  "training": {
+    "badge": "Capacity Building",
+    "title": "Climate, Carbon Markets & Climate Finance Training",
+    "lead": "Green Gate Advisory supports training and capacity-building programmes designed around the knowledge needs of public institutions, businesses, exporters, project teams and other stakeholders.",
+    "formatsNote": "Training formats, duration, and curriculum depth are tailored to organizational objectives, prior knowledge, and regional regulatory environments.",
+    "topicsTitle": "Potential Training Topics",
+    "topics": [
+      {
+        "title": "Carbon markets fundamentals",
+        "desc": "Foundational understanding of voluntary and compliance market mechanisms, registries, and crediting lifecycles."
+      },
+      {
+        "title": "Voluntary carbon market project development",
+        "desc": "Hands-on walkthrough of PDD preparation, baseline determination, and additionality demonstration."
+      },
+      {
+        "title": "ETS and carbon pricing mechanisms",
+        "desc": "Understanding cap-and-trade systems, allowance allocation, market liquidity, and compliance compliance cycles."
+      },
+      {
+        "title": "CBAM requirements and embedded emissions data",
+        "desc": "Deep dive into EU CBAM legislation, HS codes, embedded emission formulas, and supplier data collection."
+      },
+      {
+        "title": "Climate finance proposal writing",
+        "desc": "Mastering climate rationale, intervention logic, theories of change, and logframe formulation for international funders."
+      },
+      {
+        "title": "GCF, GEF and Adaptation Fund programme orientation",
+        "desc": "Navigating accreditation modalities, funding windows, investment criteria, and proposal approval cycles."
+      },
+      {
+        "title": "Climate finance programming related to loss and damage",
+        "desc": "Emerging architectures, vulnerability assessments, and financing mechanisms for non-economic and economic loss."
+      },
+      {
+        "title": "Article 6 and cooperative approaches",
+        "desc": "Decoding Article 6.2 ITMOs, Article 6.4 crediting, corresponding adjustments, and host country authorization."
+      },
+      {
+        "title": "Nature-based solutions, blue carbon and land restoration",
+        "desc": "Science, methodologies, safeguards, and carbon valuation of mangrove, wetland, and forest restoration."
+      },
+      {
+        "title": "MRV, transparency and greenhouse gas accounting",
+        "desc": "Operationalizing Scope 1, 2, and 3 accounting, Paris Agreement Enhanced Transparency Framework (ETF) metrics."
+      },
+      {
+        "title": "Climate policy and climate negotiation support",
+        "desc": "Briefings on COP negotiation streams, NDC updating processes, and climate governance design."
+      }
+    ],
+    "cta": "Discuss a Training Programme"
+  },
+  "contact": {
+    "badge": "Engagement & Enquiries",
+    "headline": "Let’s Discuss Your Climate and Environmental Priorities",
+    "lead": "Whether you are assessing CBAM exposure, exploring a carbon project, preparing a climate finance proposal or developing a corporate climate strategy, Green Gate Advisory can help you identify practical next steps. Share a brief overview of your needs and our team can discuss the appropriate scope of support.",
+    "form": {
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "e.g. Elena Rostova",
+      "organisation": "Organisation",
+      "organisationPlaceholder": "e.g. Industrial Solutions Ltd / Ministry of Environment",
+      "workEmail": "Work Email",
+      "workEmailPlaceholder": "e.g. e.rostova@enterprise.com",
+      "countryOrRegion": "Country / Region",
+      "countryOrRegionPlaceholder": "e.g. Spain, Germany, Mexico, Kenya",
+      "role": "Your Role (optional)",
+      "rolePlaceholder": "e.g. Sustainability Director / Head of Climate Finance",
+      "serviceInterest": "Service of Interest",
+      "servicePlaceholder": "Select the primary advisory service",
+      "servicesOptions": [
+        "Carbon Markets",
+        "CBAM",
+        "ETS and Carbon Pricing",
+        "Climate Finance",
+        "Nature-Based Solutions",
+        "Environmental and Climate Policy",
+        "Corporate Climate and ESG",
+        "MRV and GHG Accounting",
+        "Training and Capacity Building",
+        "Other"
+      ],
+      "requirementDescription": "Brief Description of Your Requirement",
+      "requirementDescriptionPlaceholder": "Please share details on your objectives, timeline, project stage, or specific regulatory questions...",
+      "preferredContactMethod": "Preferred Contact Method (optional)",
+      "contactMethods": [
+        "Email",
+        "Phone",
+        "Virtual Call",
+        "No Preference"
+      ],
+      "privacyNotice": "I acknowledge that the information provided will be processed in accordance with the Privacy Policy to respond to this advisory enquiry.",
+      "submitButton": "Request a Consultation",
+      "secondaryButton": "Request a Proposal",
+      "submitting": "Submitting Enquiry...",
+      "successTitle": "Enquiry Received",
+      "successMessage": "Thank you for contacting Green Gate Advisory. Your enquiry has been received. Our team will review the information provided and follow up using the contact details you supplied.",
+      "errorTitle": "Submission Notice",
+      "errorMessage": "Unable to send your enquiry right now. Please verify all required fields or reach out directly via contact@greengateadvisory.com."
+    }
+  },
+  "faqs": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Clear answers regarding advisory scope, credentials, regulatory procedures, and outcomes.",
+    "items": [
+      {
+        "q": "What does a climate advisory consultancy do?",
+        "a": "A climate advisory consultancy helps organisations understand climate-related risks, regulations, funding opportunities and project options. Depending on the scope, support may include climate strategy, carbon markets, climate finance, emissions accounting, policy advice and implementation planning."
+      },
+      {
+        "q": "What is CBAM and why might exporters need to assess it?",
+        "a": "The EU Carbon Border Adjustment Mechanism is a regulatory framework concerning the embedded emissions of certain imported goods. Exporters and supply-chain businesses may need to determine whether their products and commercial relationships fall within the applicable rules and what data or reporting processes are required."
+      },
+      {
+        "q": "What is an emissions trading system (ETS)?",
+        "a": "An emissions trading system is a carbon-pricing mechanism in which regulated entities may need to manage emissions allowances under the rules of a particular scheme. Scope, obligations and procedures differ by jurisdiction."
+      },
+      {
+        "q": "Can Green Gate Advisory help develop a carbon credit project?",
+        "a": "Green Gate Advisory’s proposed service scope includes opportunity screening, feasibility, methodology assessment, project documentation and MRV planning, as well as support through relevant validation, registration and commercialisation processes. Actual requirements and outcomes depend on project eligibility, programme rules and independent review."
+      },
+      {
+        "q": "What support is available for climate finance proposals?",
+        "a": "Depending on eligibility and programme requirements, support may include opportunity mapping, concept note development, climate rationale, theory of change, logical framework, budgets, safeguards, gender considerations and monitoring plans."
+      },
+      {
+        "q": "Does Green Gate Advisory guarantee funding or carbon credit issuance?",
+        "a": "No. Funding decisions, validation, verification, registration and issuance are determined by the relevant funders, standards, registries or independent bodies. Advisory support can help improve project preparation but cannot guarantee approval or issuance."
+      },
+      {
+        "q": "Can training be tailored to our organisation?",
+        "a": "Training topics, depth, format and duration can be discussed based on the audience, prior knowledge, institutional objectives and intended learning outcomes."
+      }
+    ]
+  },
+  "privacy": {
+    "badge": "Data Governance",
+    "title": "Privacy Policy & Data Handling",
+    "lead": "Green Gate Advisory is committed to handling professional enquiries with confidentiality, transparency, and compliance with applicable data protection legislation.",
+    "sections": [
+      {
+        "title": "Information We Collect",
+        "body": "When you submit a consultation enquiry or download advisory checklists, we collect the details you provide: full name, organisation, work email, country/region, professional role, service interest, and requirement details. We process this information solely to evaluate your advisory requirements and respond to your enquiry."
+      },
+      {
+        "title": "Legal Basis & Purpose of Processing",
+        "body": "Data is processed on the basis of legitimate interest in responding to commercial enquiries and preliminary advisory requests initiated by you. We do not sell, rent, or distribute contact lists to third-party commercial brokers."
+      },
+      {
+        "title": "Data Retention & Security",
+        "body": "We apply technical measures to safeguard submissions. Information is retained only as long as necessary to fulfill the initial advisory dialogue or comply with applicable legal recordkeeping rules."
+      },
+      {
+        "title": "Your Rights",
+        "body": "You have the right to request access to, rectification of, or erasure of your personal details at any time by contacting our privacy team at privacy@greengateadvisory.com."
+      }
+    ]
+  },
+  "footer": {
+    "brandTagline": "Environmental, climate and carbon market advisory consultancy supporting governments, businesses, exporters, project developers, investors and institutions.",
+    "pillarsTitle": "Core Advisory Services",
+    "quickLinksTitle": "Navigation",
+    "contactTitle": "Advisory Inquiries",
+    "contactEmail": "contact@greengateadvisory.com",
+    "rights": "All rights reserved. Green Gate Advisory.",
+    "disclaimer": "Green Gate Advisory provides independent technical, regulatory and project advisory. We do not provide guaranteed funding outcomes or carbon credit issuances, which remain subject to independent registries and funding bodies.",
+    "confidentialityNote": "Case studies and specific client references are published only following formal verification and client consent."
+  }
+}

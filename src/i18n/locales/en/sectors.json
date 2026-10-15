@@ -1,0 +1,190 @@
+{
+  "meta": {
+    "title": "Sectors We Support | Green Gate Advisory",
+    "description": "Climate, carbon market and environmental advisory for energy, industry, manufacturing, land use, infrastructure and financial sector organisations."
+  },
+  "hero": {
+    "breadcrumbHome": "Home",
+    "breadcrumbCurrent": "Sectors",
+    "eyebrow": "Sectoral Advisory Practice",
+    "title": "Sectors We Support",
+    "lead": "Climate risks, regulation and investment opportunities vary by sector. Green Gate Advisory tailors its advisory approach to the operating context, applicable policy frameworks, available data and intended outcomes of each client."
+  },
+  "intro": {
+    "eyebrow": "Tailored Engagement",
+    "heading": "Aligning Sector Realities with Climate Regulation & Investment",
+    "p1": "Every industry operates under distinct commercial pressures, asset life-cycles, emissions profiles, and compliance timelines. A decarbonisation strategy for heavy manufacturing requires fundamentally different technical and economic tools than an ecosystem restoration project or an international climate finance facility.",
+    "p2": "Green Gate Advisory helps organisations unpack the specific regulatory frameworks, carbon pricing mechanisms, and transition risks impacting their sector—translating overarching climate goals into practical, bankable workstreams."
+  },
+  "expertise": {
+    "cards": {
+      "reg": {
+        "title": "Differentiated Regulations",
+        "desc": "Compliance obligations such as EU CBAM, national ETS rules, and Article 6 transfers apply selectively based on industrial thresholds, trade flows, and production technologies."
+      },
+      "decarb": {
+        "title": "Bespoke Abatement Realities",
+        "desc": "Heavy industrial sectors require deep process re-engineering, while land use, forestry, and blue carbon projects centre on biological additionality, permanency, and community safeguards."
+      },
+      "finance": {
+        "title": "Targeted Capital & Finance",
+        "desc": "Commercial debt, concessional climate funds (GCF, GEF), and voluntary carbon markets have distinct due diligence criteria, return hurdles, and monitoring protocols."
+      }
+    },
+    "notice": "Scope discipline: All sectoral guidance is strictly aligned with approved methodologies, verified standards (GHG Protocol, ISO 14064, UNFCCC), and jurisdiction-specific statutory instruments."
+  },
+  "gridBadge": "Industry Coverage",
+  "gridTitle": "Eleven Priority Industry Sectors",
+  "gridSubtitle": "Tailored technical advisory structured around specific operational realities, capital assets, and emissions profiles.",
+  "relatedBadge": "Advisory Services",
+  "relatedTitle": "Related Advisory Practices for Sector Operations",
+  "relatedSubtitle": "Connect sector-specific requirements to our specialised, source-grounded technical advisory practices.",
+  "sectors": [
+    {
+      "id": "energy-utilities",
+      "number": "01",
+      "title": "Energy and Utilities",
+      "iconName": "Zap",
+      "summary": "Power generation, transmission, renewable energy expansion, and utility-scale emissions management under tightening regulatory mandates.",
+      "challenges": "Grid decarbonisation, renewable asset carbon crediting, utility compliance under emissions trading systems, and transition risk.",
+      "services": ["ETS & Carbon Pricing", "Carbon Market Advisory", "Corporate GHG Accounting"],
+      "serviceSlug": "ets-carbon-pricing-article-6"
+    },
+    {
+      "id": "oil-gas",
+      "number": "02",
+      "title": "Oil and Gas",
+      "iconName": "Flame",
+      "summary": "Upstream, midstream, and downstream operations addressing methane abatement, Scope 1 & 2 inventories, and energy transition strategies.",
+      "challenges": "Methane detection and reduction standards, flaring phaseout, carbon capture integration, and transition disclosure scrutiny.",
+      "services": ["Corporate GHG Accounting", "Climate Policy Advisory", "Decarbonisation Roadmaps"],
+      "serviceSlug": "corporate-climate-esg"
+    },
+    {
+      "id": "industry-manufacturing",
+      "number": "03",
+      "title": "Industry and Manufacturing",
+      "iconName": "Factory",
+      "summary": "Industrial production facilities managing operational emissions, energy efficiency upgrades, and supply-chain carbon accountability.",
+      "challenges": "Capital-intensive abatement options, fossil fuel replacement, complex Scope 3 supplier mapping, and competitive cost pressures.",
+      "services": ["Corporate GHG Accounting", "Decarbonisation Planning", "CBAM Advisory"],
+      "serviceSlug": "corporate-climate-esg"
+    },
+    {
+      "id": "cement-steel-aluminium-fertilisers",
+      "number": "04",
+      "title": "Cement, Steel, Aluminium and Fertilisers",
+      "iconName": "Box",
+      "summary": "Hard-to-abate materials producers facing immediate cross-border carbon cost exposure, transitional reporting, and benchmark thresholds.",
+      "challenges": "EU CBAM embedded emissions calculation, supplier data gaps, high carbon intensity per unit, and technological abatement timelines.",
+      "services": ["CBAM Advisory", "ETS Readiness", "Supplier Data Mapping"],
+      "serviceSlug": "cbam-advisory"
+    },
+    {
+      "id": "transport-logistics",
+      "number": "05",
+      "title": "Transport and Logistics",
+      "iconName": "Truck",
+      "summary": "Freight, shipping, aviation, and fleet logistics operators navigating transport decarbonisation and international emissions regimes.",
+      "challenges": "Maritime and aviation inclusion in emissions trading schemes, zero-emission fleet transition, and Scope 3 transport data accounting.",
+      "services": ["ETS & Carbon Pricing", "GHG Protocol Scope 3", "Decarbonisation Roadmaps"],
+      "serviceSlug": "ets-carbon-pricing-article-6"
+    },
+    {
+      "id": "agriculture-forestry-land-use",
+      "number": "06",
+      "title": "Agriculture, Forestry and Land Use",
+      "iconName": "Sprout",
+      "summary": "Agricultural producers, forestry managers, and land developers developing high-integrity biological carbon and soil restoration initiatives.",
+      "challenges": "Baseline measurement accuracy, permanence risk, land tenure clarification, and compliance with verified carbon standards.",
+      "services": ["Nature-Based Solutions", "Carbon Market Advisory", "MRV Systems"],
+      "serviceSlug": "nature-based-solutions"
+    },
+    {
+      "id": "biodiversity-coastal-ecosystems",
+      "number": "07",
+      "title": "Biodiversity, Coastal Zones and Ecosystem Restoration",
+      "iconName": "Waves",
+      "summary": "Coastal authorities, conservancies, and project sponsors establishing blue carbon and ecosystem-based adaptation programmes.",
+      "challenges": "Mangrove and wetland conservation finance, biodiversity net-gain metrics, community benefit-sharing, and climate adaptation resilience.",
+      "services": ["Blue Carbon Advisory", "Nature-Based Solutions", "Climate Finance Proposals"],
+      "serviceSlug": "nature-based-solutions"
+    },
+    {
+      "id": "waste-management-circular-economy",
+      "number": "08",
+      "title": "Waste Management and Circular Economy",
+      "iconName": "Recycle",
+      "summary": "Municipal and industrial waste operators capturing methane, diverting organic streams, and implementing resource recovery models.",
+      "challenges": "Landfill methane mitigation, circular materials accounting, carbon credit methodology eligibility, and waste-to-energy feasibility.",
+      "services": ["Carbon Project Feasibility", "GHG Accounting", "MRV System Planning"],
+      "serviceSlug": "carbon-market-advisory"
+    },
+    {
+      "id": "water-security-climate-adaptation",
+      "number": "09",
+      "title": "Water Security and Climate Adaptation",
+      "iconName": "Droplets",
+      "summary": "Water utilities, river basin authorities, and vulnerable communities managing hydrological stress and flood/drought resilience.",
+      "challenges": "Severe climate vulnerability, watershed degradation, long-term financing gaps, and structuring non-revenue adaptation interventions.",
+      "services": ["Climate Finance Advisory", "Adaptation Planning", "Multilateral Proposals"],
+      "serviceSlug": "climate-finance-advisory"
+    },
+    {
+      "id": "cities-buildings-infrastructure",
+      "number": "10",
+      "title": "Cities, Buildings and Infrastructure",
+      "iconName": "Building2",
+      "summary": "Urban authorities, developers, and asset owners addressing embodied carbon, building performance standards, and climate resilience.",
+      "challenges": "Embodied emissions in construction materials, urban heat island mitigation, building energy compliance, and municipal climate financing.",
+      "services": ["Corporate GHG Accounting", "Climate Policy Advisory", "Decarbonisation Roadmaps"],
+      "serviceSlug": "corporate-climate-esg"
+    },
+    {
+      "id": "financial-institutions-investment",
+      "number": "11",
+      "title": "Financial Institutions and Sustainable Investment",
+      "iconName": "Landmark",
+      "summary": "Commercial banks, asset managers, DFIs, and private equity funds evaluating climate risk, portfolio emissions, and green finance pipelines.",
+      "challenges": "Climate portfolio disclosure, carbon asset valuation, transition risk screening, and structuring blended finance vehicles.",
+      "services": ["Climate Finance Advisory", "Carbon Market Diligence", "ESG Strategy"],
+      "serviceSlug": "climate-finance-advisory"
+    }
+  ],
+  "framework": {
+    "eyebrow": "Delivery Architecture",
+    "heading": "Our Sector-Specific Advisory Framework",
+    "subtitle": "How Green Gate Advisory structures engagements around industry-specific realities rather than generic templates.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Sector Challenges & Exposure",
+        "desc": "Identify key operational, regulatory, and financial climate challenges specific to the client's industry and geography."
+      },
+      {
+        "number": "02",
+        "title": "Targeted Advisory Scope",
+        "desc": "Select the appropriate advisory services—spanning carbon markets, CBAM, climate finance, or policy mechanisms."
+      },
+      {
+        "number": "03",
+        "title": "Structured Deliverables",
+        "desc": "Develop tailored technical outputs, calculation models, project documentation, or funding proposals built for execution."
+      },
+      {
+        "number": "04",
+        "title": "Practical Next Steps",
+        "desc": "Establish decision-ready roadmaps that enable clients to move forward with verified data and measurable outcomes."
+      }
+    ],
+    "notice": "Illustrative notice: Deliverables and pathways are tailored to client context and agreed engagement scope. We do not publish unverified client outcomes or guaranteed regulatory determinations."
+  },
+  "cta": {
+    "eyebrow": "Sectoral Consultation",
+    "heading": "Navigate Climate Challenges in Your Sector",
+    "description": "Connect with Green Gate Advisory to discuss regulatory exposure, decarbonisation options, or project opportunities tailored to your sector.",
+    "primaryBtn": "Request a Consultation",
+    "secondaryBtn": "Explore Our Services",
+    "disclaimer": "Independent technical, regulatory and finance advisory. Recommendations are customized to sector-specific legislation, verified carbon accounting standards, and international funding rules."
+  }
+}

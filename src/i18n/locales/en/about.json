@@ -1,0 +1,209 @@
+{
+  "meta": {
+    "title": "About Green Gate Advisory | Climate & Environmental Consultants",
+    "description": "Learn how Green Gate Advisory connects climate policy, carbon markets, climate finance and practical implementation support for public and private sector clients."
+  },
+  "hero": {
+    "breadcrumbHome": "Home",
+    "breadcrumbCurrent": "About Us",
+    "eyebrow": "Specialised Climate Consultancy",
+    "title": "About Green Gate Advisory",
+    "lead": "Supporting governments, businesses, exporters, project developers, investors and institutions as they respond to climate change, evolving regulation and the transition to a low-carbon, climate-resilient economy.",
+    "credibility1": "Independent technical, regulatory and finance advisory",
+    "credibility2": "Connecting policy to practical delivery",
+    "credibility3": "Zero speculative claims or guaranteed credit issuances"
+  },
+  "whoWeAre": {
+    "eyebrow": "Who We Are",
+    "heading": "Connecting Strategic Insight, Regulatory Clarity & Practical Execution",
+    "p1": "Green Gate Advisory is a specialised climate and environmental advisory consultancy supporting governments, businesses, exporters, project developers, investors and institutions as they respond to climate change, evolving regulation and the transition to a low-carbon, climate-resilient economy.",
+    "p2": "We provide advisory support across carbon markets, climate finance, CBAM, emissions trading systems, nature-based solutions, environmental policy, greenhouse gas accounting and corporate sustainability. Our approach connects technical analysis and regulatory understanding with practical project preparation, helping clients move from ambition and compliance pressure towards structured plans and measurable outcomes.",
+    "imageAlt": "Aerial perspective of river basin and temperate forest canopy representing climate resilience and natural capital",
+    "caption": "Integrated technical, regulatory, and financial advisory built for enduring environmental outcomes.",
+    "badgeIntegrity": "Technical Integrity",
+    "capability1": "Regulatory Analysis & Compliance",
+    "capability2": "Carbon Project Feasibility & MRV",
+    "capability3": "Climate Finance Structuring",
+    "capability4": "Measurable Implementation Plans"
+  },
+  "purpose": {
+    "eyebrow": "Our Core Purpose",
+    "heading": "Why We Exist",
+    "text": "Our purpose is to help public and private organisations respond effectively to the growing complexity of climate regulation, carbon pricing, environmental policy and climate finance. We believe climate action should be technically credible, financially realistic and designed to deliver measurable environmental, social and economic value.",
+    "tagline": "Technically Credible · Financially Realistic · Measurable Environmental & Social Value",
+    "pillar1": "Technically Credible",
+    "pillar2": "Financially Realistic",
+    "pillar3": "Measurable Value"
+  },
+  "missionVision": {
+    "missionEyebrow": "Our Driving Mandate",
+    "missionTitle": "Our Mission",
+    "missionText": "To provide clear, high-quality advisory services that help clients design, prepare, finance, implement and report credible climate and environmental solutions across carbon markets, climate finance, compliance mechanisms and sustainability frameworks.",
+    "missionFooter": "Rigorous design, preparation, finance, and reporting",
+    "visionEyebrow": "Our Long-Term Horizon",
+    "visionTitle": "Our Vision",
+    "visionText": "To be a trusted advisory partner for organisations seeking to unlock climate-related opportunities, manage regulatory risks and develop bankable projects that contribute to a more sustainable and resilient future.",
+    "visionFooter": "Unlocking opportunities and bankable sustainable projects"
+  },
+  "differentiators": {
+    "eyebrow": "Distinctive Capabilities",
+    "heading": "What Makes Us Different",
+    "subtitle": "How our advisory perspective bridges high-level climate mandates and rigorous on-the-ground execution.",
+    "items": [
+      {
+        "title": "End-to-end perspective",
+        "description": "Support across strategy, feasibility, project design, finance preparation, MRV, compliance and reporting."
+      },
+      {
+        "title": "Specialist subject matter",
+        "description": "Focus on carbon markets, carbon pricing, CBAM, ETS, Article 6 and carbon project development."
+      },
+      {
+        "title": "Finance-aware project preparation",
+        "description": "Connect project rationale, funding requirements, safeguards, budgets and monitoring frameworks."
+      },
+      {
+        "title": "Nature-positive thinking",
+        "description": "Consider climate mitigation and adaptation alongside biodiversity, ecosystem resilience and community outcomes."
+      },
+      {
+        "title": "Policy-to-practice approach",
+        "description": "Translate complex frameworks into structured workplans and decision-ready recommendations."
+      },
+      {
+        "title": "Client-focused delivery",
+        "description": "Tailor the scope and outputs to the organisation’s context, objectives and capacity."
+      }
+    ]
+  },
+  "expertise": {
+    "eyebrow": "Technical Advisory Domains",
+    "heading": "Our Areas of Expertise",
+    "subtitle": "Nine core thematic specialisations bridging international compliance, environmental science, and project finance.",
+    "exploreService": "Explore Service",
+    "items": [
+      {
+        "number": "01",
+        "title": "Voluntary carbon markets and carbon project development",
+        "route": "/services/carbon-market-advisory"
+      },
+      {
+        "number": "02",
+        "title": "Compliance carbon markets, ETS and carbon pricing",
+        "route": "/services/ets-carbon-pricing"
+      },
+      {
+        "number": "03",
+        "title": "CBAM readiness, embedded emissions and reporting processes",
+        "route": "/services/cbam-advisory"
+      },
+      {
+        "number": "04",
+        "title": "Climate finance project preparation and funding proposal development",
+        "route": "/services/climate-finance-advisory"
+      },
+      {
+        "number": "05",
+        "title": "Climate funds and blended finance opportunity mapping",
+        "route": "/services/climate-finance-advisory"
+      },
+      {
+        "number": "06",
+        "title": "Nature-based solutions, blue carbon, land restoration and biodiversity",
+        "route": "/services/nature-based-solutions"
+      },
+      {
+        "number": "07",
+        "title": "Climate policy, NDCs, NAPs, MRV and transparency frameworks",
+        "route": "/services/climate-policy-advisory"
+      },
+      {
+        "number": "08",
+        "title": "Corporate greenhouse gas accounting, ESG and decarbonisation planning",
+        "route": "/services/corporate-climate-esg"
+      },
+      {
+        "number": "09",
+        "title": "Training and capacity building for public and private institutions",
+        "route": "/training"
+      }
+    ]
+  },
+  "whoWeWorkWith": {
+    "eyebrow": "Client Ecosystem",
+    "heading": "Who We Work With",
+    "intro": "We work with public institutions, private companies, exporters, industrial operators, project developers, investors, international organisations, NGOs and research institutions. We support clients at different stages of their climate journey—from understanding a regulatory requirement or screening a project idea to preparing a funding proposal or developing a longer-term climate strategy.",
+    "cta": "Learn More About Who We Serve",
+    "groups": [
+      {
+        "title": "Public Institutions",
+        "description": "Governments, ministries, and regulatory agencies developing climate policy, carbon pricing, Article 6 mechanisms, and MRV infrastructure."
+      },
+      {
+        "title": "Private Companies",
+        "description": "Corporations assessing corporate carbon footprints, Scope 1, 2 & 3 accounting, decarbonisation roadmaps, and ESG disclosure requirements."
+      },
+      {
+        "title": "Exporters & Industrial Operators",
+        "description": "Manufacturers and exporters managing EU CBAM exposure, embedded emissions calculations, data collection, and supplier compliance."
+      },
+      {
+        "title": "Carbon Project Developers",
+        "description": "Project sponsors seeking opportunity screening, feasibility assessment, methodology selection, PDD drafting, and verification coordination."
+      },
+      {
+        "title": "Investors & Financial Institutions",
+        "description": "Asset managers, private equity, and commercial banks evaluating climate pipeline opportunities, transition risks, and blended finance structures."
+      },
+      {
+        "title": "International Organisations",
+        "description": "Multilateral agencies and development programmes requiring technical expertise, project preparation, and knowledge development."
+      },
+      {
+        "title": "NGOs & Research Institutions",
+        "description": "Non-profit organisations and research bodies focused on nature-based solutions, community safeguards, and applied policy frameworks."
+      }
+    ]
+  },
+  "approach": {
+    "eyebrow": "Structured Methodology",
+    "heading": "Our Approach",
+    "subtitle": "A disciplined, five-stage framework tailored to the specific context, sector, and regulatory environment of each engagement.",
+    "scopeNotice": "Scope qualification: Advisory engagements are structured around confirmed client priorities. Ongoing monitoring, reporting, and implementation refinement are supported where explicitly included in the agreed scope of work.",
+    "phase": "Phase",
+    "steps": [
+      {
+        "step": "01",
+        "title": "Understand the context",
+        "description": "Clarify objectives, operating environment, regulatory exposure, available data and institutional capacity."
+      },
+      {
+        "step": "02",
+        "title": "Assess the challenge",
+        "description": "Identify relevant requirements, project opportunities, data gaps, risks and decision points."
+      },
+      {
+        "step": "03",
+        "title": "Develop a tailored pathway",
+        "description": "Define practical options, workstreams, deliverables and implementation priorities."
+      },
+      {
+        "step": "04",
+        "title": "Support preparation and delivery",
+        "description": "Help develop the documentation, frameworks and plans needed for the agreed scope."
+      },
+      {
+        "step": "05",
+        "title": "Measure and improve",
+        "description": "Where included in the engagement, support monitoring, reporting and refinement of the approach."
+      }
+    ]
+  },
+  "cta": {
+    "badge": "Strategic Climate Execution",
+    "statement": "Green Gate Advisory connects strategy, regulation, finance and implementation to help clients make informed decisions and advance credible climate action.",
+    "primaryBtn": "Request a Consultation",
+    "secondaryBtn": "Explore Our Services",
+    "disclaimer": "Independent technical, regulatory, and finance advisory. Funding decisions and carbon credit issuances remain subject to independent third-party audit, registry review, and applicable programme regulations."
+  }
+}

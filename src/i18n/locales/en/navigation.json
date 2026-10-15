@@ -1,0 +1,41 @@
+{
+  "home": "Home",
+  "about": "About",
+  "services": "Services",
+  "ourServices": "Our services",
+  "sectors": "Sectors",
+  "ourPortfolio": "Sectors",
+  "whoWeServe": "Who We Serve",
+  "insights": "Insights",
+  "latest": "Latest",
+  "training": "Training",
+  "contact": "Contact",
+  "requestConsultation": "Request Consultation",
+  "allServices": "All Services",
+  "menu": {
+    "news": "News & Insights",
+    "events": "Events & Workshops",
+    "resources": "Resources & Briefings",
+    "consultations": "Consultations",
+    "training": "Training & Masterclasses",
+    "overview": "View All Services",
+    "whoWeAre": "Who We Are",
+    "purpose": "Purpose & Mission",
+    "approach": "Our Approach",
+    "whyUs": "Why Green Gate"
+  },
+  "topStrip": {
+    "badge": "Climate, Carbon Markets & Sustainable Finance Advisory",
+    "cbam": "EU CBAM Readiness",
+    "carbon": "Carbon Markets & Article 6"
+  },
+  "servicesMenu": {
+    "carbonMarket": "Carbon Market Advisory",
+    "ets": "ETS, Carbon Pricing & Article 6",
+    "cbam": "CBAM Advisory",
+    "climateFinance": "Climate Finance Advisory",
+    "natureBased": "Nature-Based Solutions",
+    "climatePolicy": "Environmental & Climate Policy",
+    "corporateClimate": "Corporate Climate, GHG Accounting & ESG"
+  }
+}

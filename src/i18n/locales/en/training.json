@@ -1,0 +1,166 @@
+{
+  "meta": {
+    "title": "Climate, Carbon Markets & Climate Finance Training | Green Gate Advisory",
+    "description": "Build practical knowledge through training on carbon markets, CBAM, ETS, climate finance, Article 6, MRV, GHG accounting and climate policy."
+  },
+  "hero": {
+    "breadcrumbHome": "Home",
+    "breadcrumbCurrent": "Training & Capacity Building",
+    "eyebrow": "Institutional Capability",
+    "title": "Training & Capacity Building",
+    "lead": "Green Gate Advisory supports training and capacity-building programmes tailored to the knowledge requirements of public institutions, businesses, exporters, project teams and other stakeholders. Training formats, scope and depth are discussed and confirmed based on institutional objectives.",
+    "primaryBtn": "Discuss a Training Programme"
+  },
+  "intro": {
+    "eyebrow": "Knowledge & Institutional Capability",
+    "heading": "Building Climate Knowledge & Practical Delivery Capacity",
+    "p1": "Climate regulation, international carbon mechanisms, and sustainable finance requirements demand specialized institutional competencies. Green Gate Advisory designs bespoke training and capacity-building programmes to bridge the gap between high-level climate ambition and day-to-day technical execution.",
+    "p2": "Our training programmes support public ministries, industrial compliance teams, project sponsors, and financial analysts—equipping teams with the technical tools, regulatory clarity, and methodological frameworks needed to deliver credible climate outcomes.",
+    "pillars": {
+      "policy": "National climate policy design, NDC alignment, and international negotiation mechanics",
+      "markets": "Voluntary carbon market methodologies, baseline rules, and additionality testing",
+      "compliance": "EU CBAM embedded emissions calculations and ETS allowance compliance obligations",
+      "finance": "Climate finance proposal formulation for GCF, GEF, Adaptation Fund, and bilateral facilities",
+      "preparation": "Project Design Document (PDD) preparation, feasibility studies, and digital MRV planning",
+      "reporting": "GHG Protocol Scope 1, 2, and 3 accounting boundaries and primary supplier data workflows",
+      "governance": "Environmental decision-making frameworks, safeguards, and Paris Agreement transparency"
+    },
+    "notice": "Scope discipline: Training scope, format, depth and duration are confirmed collaboratively with the client based on specific learning requirements and existing participant expertise. We do not publish pre-set course fees, rigid curricula or unverified certificates."
+  },
+  "topics": {
+    "badge": "Curriculum Modules",
+    "heading": "Eleven Potential Training Topics",
+    "subtitle": "Modular technical subjects tailored to your organisation's operational, compliance, or project development priorities.",
+    "expandDetails": "View Detailed Scope",
+    "collapseDetails": "Hide Scope",
+    "enquireTopic": "Enquire About This Topic",
+    "items": {
+      "fundamentals": {
+        "title": "Carbon Markets Fundamentals",
+        "desc": "Foundational architecture of voluntary carbon markets, crediting standards, compliance systems, registries, and carbon credit life-cycles.",
+        "scope": "Examines Verra, Gold Standard, baseline methodologies, additionality criteria, validation cycles, registries, and commercial credit trading dynamics."
+      },
+      "vcmDevelopment": {
+        "title": "Voluntary Carbon Market Project Development",
+        "desc": "Comprehensive walkthrough of project design documents (PDDs), stakeholder consultations, digital MRV, and registration milestones.",
+        "scope": "Focus on opportunity screening, additionality demonstration, leakage risk management, independent validation preparation, and issuance procedures."
+      },
+      "etsPricing": {
+        "title": "ETS & Carbon Pricing Mechanisms",
+        "desc": "Structure and operation of compliance emissions trading schemes, allowance allocation formulas, auctions, and surrender protocols.",
+        "scope": "Examines cap-and-trade systems, carbon taxes, internal carbon pricing, benchmark thresholds, and portfolio compliance management."
+      },
+      "cbamEmissions": {
+        "title": "CBAM Requirements & Embedded Emissions Data",
+        "desc": "Regulatory compliance under the EU Carbon Border Adjustment Mechanism, calculation methodologies, and supplier data collection.",
+        "scope": "Covers CN codes, direct and indirect emissions boundaries, precursor accounting, default vs. primary values, and quarterly reporting communication."
+      },
+      "proposalWriting": {
+        "title": "Climate Finance Proposal Writing",
+        "desc": "Formulation of competitive concept notes and funding proposals aligned with international climate fund criteria.",
+        "scope": "Focus on climate rationale drafting, theory of change design, logframes, risk matrices, gender action plans, and budget justifications."
+      },
+      "multilateralFunds": {
+        "title": "GCF, GEF & Adaptation Fund Programme Orientation",
+        "desc": "Navigating access windows, accreditation types, country ownership, and strategic priorities of major multilateral funds.",
+        "scope": "Detailed review of investment criteria, simplified approval processes, direct access entities, ESS standards, and co-financing rules."
+      },
+      "lossAndDamage": {
+        "title": "Climate Finance Programming Related to Loss and Damage",
+        "desc": "Emerging funding mechanisms, vulnerability diagnostics, and financial instruments addressing slow-onset events and climate extremes.",
+        "scope": "Review of UNFCCC Fund for Responding to Loss and Damage frameworks, parametric risk transfer, non-economic loss methodologies, and community resilience."
+      },
+      "article6": {
+        "title": "Article 6 & Cooperative Approaches",
+        "desc": "Operationalisation of Paris Agreement Article 6.2 bilateral agreements, Article 6.4 crediting mechanisms, and ITMO governance.",
+        "scope": "Corresponding adjustments, authorization processes, national registries, transfer agreements, and double-counting prevention mechanisms."
+      },
+      "natureBased": {
+        "title": "Nature-Based Solutions, Blue Carbon & Land Restoration",
+        "desc": "Designing high-integrity terrestrial and coastal ecosystem interventions that integrate carbon, biodiversity, and community benefits.",
+        "scope": "Mangrove restoration, peatland rewetting, agroforestry carbon estimation, Free Prior and Informed Consent (FPIC), and permanence buffers."
+      },
+      "mrvAccounting": {
+        "title": "MRV, Transparency & Greenhouse Gas Accounting",
+        "desc": "Rigorous emissions accounting frameworks under GHG Protocol Corporate Standard, ISO 14064, and Paris Agreement ETF.",
+        "scope": "Scope 1, 2, and 3 accounting boundaries, activity data collection, emission factor selection, and independent verification readiness."
+      },
+      "policyNegotiations": {
+        "title": "Climate Policy & Climate Negotiation Support",
+        "desc": "Institutional capacity building for climate delegations, NDC updating processes, and domestic policy alignment.",
+        "scope": "UNFCCC negotiation tracks, global stocktake implications, Long-Term Low Emission Development Strategies (LT-LEDS), and stakeholder consultations."
+      }
+    }
+  },
+  "audiences": {
+    "badge": "Target Stakeholders",
+    "heading": "Potential Audiences for Capacity Building",
+    "subtitle": "Programmes are customized for distinct institutional structures, technical backgrounds, and operating environments.",
+    "items": {
+      "governments": {
+        "title": "Government Institutions",
+        "desc": "National ministries, environmental directorates, and regional authorities building domestic policy, climate finance pipelines, and transparency frameworks."
+      },
+      "regulators": {
+        "title": "Regulators & Policymakers",
+        "desc": "Agencies establishing compliance carbon markets, MRV protocols, registry infrastructure, and emissions allowance allocation rules."
+      },
+      "businesses": {
+        "title": "Businesses & Exporters",
+        "desc": "Corporate sustainability teams, industrial compliance directors, and trade associations managing CBAM, ETS, and Scope 3 data obligations."
+      },
+      "developers": {
+        "title": "Project Development Teams",
+        "desc": "Carbon project sponsors, landholders, and conservation managers structuring voluntary carbon projects and community benefit frameworks."
+      },
+      "ngos": {
+        "title": "NGOs & International Organisations",
+        "desc": "Development practitioners, research bodies, and international partners preparing multilateral funding applications and monitoring frameworks."
+      },
+      "professionals": {
+        "title": "Sustainability Professionals",
+        "desc": "Environmental practitioners and technical analysts seeking advanced competency in GHG accounting boundaries, carbon pricing, and disclosure regimes."
+      }
+    }
+  },
+  "approach": {
+    "badge": "Collaborative Scoping",
+    "heading": "Our Tailored Training Approach",
+    "subtitle": "A structured six-step framework for designing purposeful, outcome-oriented learning engagements.",
+    "frameworkNotice": "Collaborative planning: The 6-step framework above outlines our proposed curriculum design process. Actual delivery schedules, interactive workshops, and technical clinics are tailored directly to client operational timelines.",
+    "items": {
+      "learningRequirements": {
+        "title": "Organisational Learning Requirements",
+        "desc": "Clarifying institutional mandates, commercial deadlines, or regulatory pressures driving the training initiative."
+      },
+      "audienceBackground": {
+        "title": "Audience Background & Existing Knowledge",
+        "desc": "Assessing baseline competencies, technical specialisations, and practical experience of participants."
+      },
+      "technicalTopics": {
+        "title": "Relevant Technical & Regulatory Topics",
+        "desc": "Selecting the precise combination of carbon markets, CBAM, climate finance, or policy modules required."
+      },
+      "learningObjectives": {
+        "title": "Clear Learning Objectives",
+        "desc": "Defining tangible capabilities participants should acquire—from emissions calculation to proposal drafting."
+      },
+      "programmeFormat": {
+        "title": "Proposed Programme Content & Format",
+        "desc": "Designing modular sessions, case-based workshops, executive briefings, or interactive technical clinics."
+      },
+      "feedbackNextSteps": {
+        "title": "Feedback & Next Steps",
+        "desc": "Evaluating participant outcomes and outlining follow-on technical support or implementation pathways where agreed."
+      }
+    }
+  },
+  "cta": {
+    "eyebrow": "Capacity Scoping",
+    "heading": "Strengthen Your Team's Climate & Environmental Knowledge",
+    "description": "Discuss your organisation's capacity-building objectives, target audience, and preferred technical focus with Green Gate Advisory.",
+    "primaryBtn": "Discuss a Training Programme",
+    "secondaryBtn": "Contact Our Team",
+    "disclaimer": "Independent technical advisory. Training programmes are scoped and delivered based on agreed institutional requirements. We do not offer fixed public enrolment courses or standardized certificates."
+  }
+}

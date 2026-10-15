@@ -1,0 +1,41 @@
+{
+  "home": "Inicio",
+  "about": "Acerca de",
+  "services": "Servicios",
+  "ourServices": "Nuestros servicios",
+  "sectors": "Sectores",
+  "ourPortfolio": "Sectores",
+  "whoWeServe": "A Quién Servimos",
+  "insights": "Perspectivas",
+  "latest": "Novedades",
+  "training": "Capacitación",
+  "contact": "Contacto",
+  "requestConsultation": "Solicitar Consulta",
+  "allServices": "Todos los Servicios",
+  "menu": {
+    "news": "Noticias y Perspectivas",
+    "events": "Eventos y Talleres",
+    "resources": "Recursos y Publicaciones",
+    "consultations": "Consultas",
+    "training": "Capacitación y Cursos",
+    "overview": "Ver Todos los Servicios",
+    "whoWeAre": "Quiénes Somos",
+    "purpose": "Propósito y Misión",
+    "approach": "Nuestro Enfoque",
+    "whyUs": "Por Qué Green Gate"
+  },
+  "topStrip": {
+    "badge": "Asesoría en Clima, Mercados de Carbono y Finanzas Sostenibles",
+    "cbam": "Preparación para EU CBAM",
+    "carbon": "Mercados de Carbono y Artículo 6"
+  },
+  "servicesMenu": {
+    "carbonMarket": "Asesoría en Mercados de Carbono",
+    "ets": "ETS, Precios al Carbono y Artículo 6",
+    "cbam": "Asesoría CBAM",
+    "climateFinance": "Asesoría en Finanzas Climáticas",
+    "natureBased": "Soluciones Basadas en la Naturaleza",
+    "climatePolicy": "Política Ambiental y Climática",
+    "corporateClimate": "Clima Corporativo, GEI y ESG"
+  }
+}

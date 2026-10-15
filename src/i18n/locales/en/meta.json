@@ -1,0 +1,67 @@
+{
+  "siteTitle": "Green Gate Advisory",
+  "home": {
+    "title": "Green Gate Advisory | Carbon Markets, CBAM & Climate Finance",
+    "description": "Expert climate and environmental advisory across carbon markets, CBAM, ETS, climate finance, nature-based solutions and corporate sustainability."
+  },
+  "about": {
+    "title": "About Green Gate Advisory | Climate & Environmental Consultants",
+    "description": "Learn how Green Gate Advisory connects climate policy, carbon markets, climate finance and practical implementation support for public and private sector clients."
+  },
+  "services": {
+    "title": "Climate Advisory Services | Green Gate Advisory",
+    "description": "Explore carbon market advisory, CBAM and ETS support, climate finance, nature-based solutions, climate policy and corporate climate services."
+  },
+  "carbonMarket": {
+    "title": "Carbon Market Advisory & Carbon Credit Project Development",
+    "description": "Assess carbon project opportunities and navigate feasibility, methodology selection, project documentation, MRV, validation, registration and carbon credit commercialisation."
+  },
+  "ets": {
+    "title": "ETS & Carbon Pricing Advisory | Green Gate Advisory",
+    "description": "Explore emissions trading system readiness, carbon pricing policy, compliance analysis and Article 6 advisory for public and private sector organisations."
+  },
+  "cbam": {
+    "title": "CBAM Advisory & EU Carbon Border Adjustment Mechanism Readiness",
+    "description": "Prepare for CBAM-related requirements with product screening, embedded emissions data, supplier engagement, reporting processes and carbon-cost risk assessment."
+  },
+  "climateFinance": {
+    "title": "Climate Finance Advisory & Funding Proposal Development",
+    "description": "Prepare climate project concepts and funding proposals with support for climate rationale, theory of change, safeguards, budgets, monitoring and implementation planning."
+  },
+  "natureBased": {
+    "title": "Nature-Based Solutions & Blue Carbon Advisory",
+    "description": "Develop nature-based climate initiatives spanning ecosystem restoration, blue carbon, biodiversity, adaptation, resilience and climate finance readiness."
+  },
+  "climatePolicy": {
+    "title": "Environmental & Climate Policy Advisory | Green Gate Advisory",
+    "description": "Policy and technical support for NDCs, National Adaptation Plans, climate governance, carbon pricing, MRV and Paris Agreement transparency frameworks."
+  },
+  "corporateClimate": {
+    "title": "Corporate Climate Advisory, GHG Accounting & ESG",
+    "description": "Understand corporate emissions and climate risks with support for Scope 1, 2 and 3 inventories, decarbonisation roadmaps, transition planning and ESG reporting readiness."
+  },
+  "sectors": {
+    "title": "Sectors We Support | Green Gate Advisory",
+    "description": "Climate, carbon market and environmental advisory for energy, industry, manufacturing, land use, infrastructure and financial sector organisations."
+  },
+  "whoWeServe": {
+    "title": "Who We Serve | Green Gate Advisory",
+    "description": "Tailored climate advisory for governments, exporters, companies, project developers, investors, NGOs and international organisations."
+  },
+  "insights": {
+    "title": "Climate Insights & Resources | Green Gate Advisory",
+    "description": "Practical guidance on CBAM, carbon markets, ETS, climate finance, Article 6, nature-based solutions and corporate greenhouse gas accounting."
+  },
+  "training": {
+    "title": "Climate, Carbon Markets & Climate Finance Training",
+    "description": "Build practical knowledge through training on carbon markets, CBAM, ETS, climate finance, Article 6, MRV, GHG accounting and climate policy."
+  },
+  "contact": {
+    "title": "Contact Green Gate Advisory | Request a Climate Advisory Consultation",
+    "description": "Contact Green Gate Advisory to discuss carbon markets, CBAM, ETS, climate finance, nature-based solutions, climate policy or corporate sustainability."
+  },
+  "privacy": {
+    "title": "Privacy Policy | Green Gate Advisory",
+    "description": "Understand how Green Gate Advisory handles data collection, contact requests, and regulatory privacy compliance."
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "meta": {
+    "title": "Contact Green Gate Advisory | Request a Climate Advisory Consultation",
+    "description": "Contact Green Gate Advisory to discuss carbon markets, CBAM, ETS, climate finance, nature-based solutions, climate policy or corporate sustainability."
+  },
+  "hero": {
+    "breadcrumbHome": "Home",
+    "breadcrumbCurrent": "Contact",
+    "eyebrow": "Direct Technical Consultation",
+    "headline": "Let's Discuss Your Climate and Environmental Priorities",
+    "subheadline": "Whether you are assessing CBAM exposure, exploring a carbon project, preparing a climate finance proposal or developing a corporate climate strategy, Green Gate Advisory can help you identify practical next steps. Share a brief overview of your needs and our team can discuss the appropriate scope of support."
+  },
+  "intro": {
+    "eyebrow": "Consultation Scope",
+    "heading": "Structured Discussion Across Eight Specialized Areas",
+    "lead": "Every advisory engagement begins with clarifying your operating context, statutory obligations, data availability, and strategic milestones.",
+    "areas": [
+      {
+        "title": "Carbon Market Development",
+        "desc": "Project feasibility, methodology selection, PDD drafting, and credit issuance pathways."
+      },
+      {
+        "title": "CBAM Readiness",
+        "desc": "Exposure assessment, embedded emissions calculation, and supply-chain reporting."
+      },
+      {
+        "title": "ETS & Carbon Pricing",
+        "desc": "Compliance readiness, allowance surrender management, and Article 6 transfers."
+      },
+      {
+        "title": "Climate Finance Proposals",
+        "desc": "Concept note structuring, theory of change, and multilateral fund applications."
+      },
+      {
+        "title": "Nature-Based Solutions",
+        "desc": "Ecosystem restoration, blue carbon, agroforestry, and biodiversity net gain."
+      },
+      {
+        "title": "Environmental Policy & NDCs",
+        "desc": "National Adaptation Plans, policy review, and Paris Agreement transparency."
+      },
+      {
+        "title": "Corporate Climate & ESG",
+        "desc": "Scope 1, 2, and 3 accounting, decarbonisation roadmaps, and reporting readiness."
+      },
+      {
+        "title": "Training & Capacity Building",
+        "desc": "Customized technical workshops and institutional capability programmes."
+      }
+    ],
+    "notice": "Consultation discipline: All discussions are strictly preliminary and focused on scoping technical feasibility and regulatory requirements. We do not make speculative funding promises or guaranteed outcomes."
+  },
+  "form": {
+    "badge": "Enquiry Submission",
+    "heading": "Submit Your Advisory Enquiry",
+    "subtitle": "Complete the form below to connect directly with our advisory specialists.",
+    "enquiryType": {
+      "label": "Select Enquiry Objective",
+      "consultation": "Advisory Consultation",
+      "proposal": "Proposal Request"
+    },
+    "fields": {
+      "fullName": {
+        "label": "Full Name",
+        "placeholder": "Enter your full name",
+        "required": "Full name is required."
+      },
+      "organisation": {
+        "label": "Organisation / Company",
+        "placeholder": "Your organisation name"
+      },
+      "workEmail": {
+        "label": "Work Email",
+        "placeholder": "name@organisation.com",
+        "required": "Work email is required.",
+        "invalid": "Please provide a valid corporate or professional email address."
+      },
+      "countryOrRegion": {
+        "label": "Country / Region",
+        "placeholder": "e.g., Spain, Germany, United Kingdom, Colombia",
+        "required": "Country or region is required."
+      },
+      "role": {
+        "label": "Your Role / Position (Optional)",
+        "placeholder": "e.g., Sustainability Director, Head of Compliance, Project Manager"
+      },
+      "serviceInterest": {
+        "label": "Service of Interest",
+        "placeholder": "Select a primary advisory service",
+        "required": "Please select a service of interest."
+      },
+      "requirementDescription": {
+        "label": "Brief Description of Your Requirement",
+        "placeholder": "Please provide context regarding your organisation's objectives, project timeline, or specific regulatory challenges...",
+        "required": "A brief description of your requirement is required.",
+        "minLength": "Description must be at least 10 characters."
+      },
+      "preferredContactMethod": {
+        "label": "Preferred Contact Method",
+        "options": {
+          "email": "Email",
+          "phone": "Telephone Call",
+          "virtual": "Virtual Conference Call",
+          "none": "No Preference"
+        }
+      },
+      "phone": {
+        "label": "Direct Telephone Number",
+        "placeholder": "+34 600 000 000",
+        "required": "Telephone number is required when telephone is selected.",
+        "hint": "Include country dialling code for international routing."
+      },
+      "privacy": {
+        "text": "I acknowledge and agree to the processing of my contact information in accordance with the",
+        "linkText": "Privacy Policy",
+        "required": "You must acknowledge the privacy notice to proceed."
+      }
+    },
+    "buttons": {
+      "submitConsultation": "Request a Consultation",
+      "submitProposal": "Request a Proposal",
+      "submitting": "Submitting Enquiry..."
+    },
+    "feedback": {
+      "successTitle": "Enquiry Received",
+      "successMessage": "Thank you for contacting Green Gate Advisory. Your enquiry has been received. Our team will review the information provided and follow up using the contact details you supplied.",
+      "submitAnother": "Submit Another Enquiry",
+      "errorTitle": "Submission Error",
+      "defaultError": "An error occurred while submitting your enquiry. Please check your network connection or contact contact@greengateadvisory.com directly."
+    }
+  },
+  "serviceOptions": {
+    "Carbon Markets": "Carbon Markets",
+    "CBAM": "CBAM",
+    "ETS and Carbon Pricing": "ETS and Carbon Pricing",
+    "Climate Finance": "Climate Finance",
+    "Nature-Based Solutions": "Nature-Based Solutions",
+    "Environmental and Climate Policy": "Environmental and Climate Policy",
+    "Corporate Climate and ESG": "Corporate Climate and ESG",
+    "MRV and GHG Accounting": "MRV and GHG Accounting",
+    "Training and Capacity Building": "Training and Capacity Building",
+    "Other": "Other"
+  },
+  "auxiliary": {
+    "confidentialityTitle": "Client Confidentiality",
+    "confidentialityText": "All technical, commercial, and operational information shared in enquiries is treated under strict professional confidentiality.",
+    "directEmailTitle": "General Enquiries",
+    "directEmailText": "For corporate inquiries or formal vendor communications, email our administrative team at",
+    "scopingTitle": "Independent Scoping",
+    "scopingText": "We provide objective technical advice tailored to international compliance frameworks and accredited greenhouse gas standards."
+  }
+}

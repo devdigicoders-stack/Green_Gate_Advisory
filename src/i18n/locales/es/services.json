@@ -1,0 +1,693 @@
+{
+  "overview": {
+    "hero": {
+      "breadcrumbHome": "Inicio",
+      "breadcrumbCurrent": "Servicios",
+      "eyebrow": "Asesoría Climática y Ambiental",
+      "title": "Nuestros Servicios de Asesoría Climática y Ambiental",
+      "lead": "Green Gate Advisory brinda soporte de asesoría especializada en mercados de carbono, mecanismos de cumplimiento normativo, financiamiento climático, soluciones basadas en la naturaleza y sostenibilidad corporativa, transformando prioridades climáticas en acciones prácticas y medibles."
+    },
+    "intro": {
+      "eyebrow": "Capacidad Integrada",
+      "heading": "Navegando la Complejidad Climática con Rigor Técnico y Estratégico",
+      "p1": "La regulación climática, los mercados de carbono y las finanzas sostenibles están transformando la forma en que las organizaciones planifican, invierten y operan. Green Gate Advisory ofrece servicios de asesoría integrados para ayudar a los clientes a comprender sus obligaciones, evaluar oportunidades estratégicas y diseñar rutas creíbles hacia la implementación.",
+      "p2": "Nuestro trabajo conecta el análisis técnico y la comprensión regulatoria con la preparación práctica de proyectos y la estructuración financiera. Ayudamos a los clientes a avanzar desde la ambición y la presión de cumplimiento hacia planes estructurados, propuestas bancables y resultados medibles."
+    },
+    "grid": {
+      "eyebrow": "Prácticas de Asesoría",
+      "heading": "Siete Líneas de Trabajo Especializadas",
+      "subtitle": "Explore nuestras áreas de práctica que conectan la política internacional, la ciencia ambiental cuantitativa, el financiamiento de proyectos y la ejecución operativa.",
+      "exploreService": "Explorar Servicio"
+    },
+    "approach": {
+      "eyebrow": "Perspectiva Integrada",
+      "heading": "Conectando Estrategia, Regulación, Finanzas y Ejecución",
+      "p1": "En lugar de abordar la estrategia climática en silos aislados, Green Gate Advisory vincula el análisis regulatorio, la contabilidad de gases de efecto invernadero, la factibilidad de proyectos, la estructuración de finanzas climáticas y la gobernanza de implementación en un marco de asesoría cohesivo.",
+      "pillars": [
+        {
+          "number": "01",
+          "title": "Visión Regulatoria y Política",
+          "description": "Comprensión profunda del CBAM de la UE, directivas ETS, reglas del Artículo 6 y obligaciones de cumplimiento en evolución."
+        },
+        {
+          "number": "02",
+          "title": "Análisis Técnico y Científico",
+          "description": "Contabilidad rigurosa de emisiones de GEI, modelización de líneas base, evaluación de adicionalidad y marcos MRV conforme a estándares internacionales."
+        },
+        {
+          "number": "03",
+          "title": "Estructuración de Finanzas Climáticas",
+          "description": "Traducción de conceptos de proyectos en propuestas de financiamiento bancables para facilidades multilaterales, fondos climáticos y capital mixto."
+        },
+        {
+          "number": "04",
+          "title": "Planificación para la Implementación",
+          "description": "Líneas de trabajo prácticas, salvaguardas ambientales y sociales, y documentación lista para la toma de decisiones diseñada para una ejecución duradera."
+        }
+      ]
+    },
+    "cta": {
+      "eyebrow": "Consulta Estratégica",
+      "heading": "Conversemos Sobre sus Prioridades Climáticas",
+      "description": "Ya sea que esté evaluando su exposición al CBAM, explorando un proyecto de carbono, preparando una propuesta de financiamiento climático o desarrollando una estrategia corporativa, Green Gate Advisory puede orientarle con pasos prácticos.",
+      "primaryBtn": "Solicitar una Consulta",
+      "secondaryBtn": "Contactar al Equipo",
+      "disclaimer": "Asesoría técnica, regulatoria y financiera independiente. Las recomendaciones se adaptan al contexto del cliente, las reglas aplicables de cada programa y los estándares regulatorios vigentes."
+    }
+  },
+  "items": {
+    "carbonMarket": {
+      "number": "01",
+      "title": "Asesoría en Mercados de Carbono y Desarrollo de Proyectos",
+      "shortTitle": "Mercados de Carbono",
+      "slug": "carbon-market-advisory",
+      "eyebrow": "Mercados de Carbono y Créditos",
+      "lead": "Explore oportunidades en mercados de carbono, evalúe la factibilidad de proyectos y gestione el desarrollo de créditos de carbono. Apoyamos la planificación, cribado metodológico, documentación PDD, monitoreo, reporte y verificación (MRV), coordinación de validación, registro y comercialización.",
+      "intro": "Green Gate Advisory apoya a organizaciones que exploran mercados voluntarios de carbono y oportunidades de cumplimiento pertinentes. Ayudamos a evaluar conceptos de proyectos, comprender metodologías y requisitos aplicables, y planificar los trabajos técnicos y documentales necesarios para avanzar en el desarrollo de créditos.",
+      "scopeHeading": "Cómo Podemos Apoyar",
+      "scopeSubtitle": "Asesoría integral en cada etapa del ciclo de vida del proyecto de carbono.",
+      "scopeItems": [
+        "Estrategia de mercados de carbono y mapeo de oportunidades",
+        "Identificación de proyectos de carbono y evaluación preliminar de factibilidad",
+        "Cribado metodológico, evaluación de línea base y análisis de adicionalidad",
+        "Apoyo en la preparación del Documento de Diseño del Proyecto (PDD)",
+        "Planificación del sistema MRV y desarrollo del marco de monitoreo",
+        "Soporte de coordinación para procesos de validación, verificación y registro",
+        "Orientación en procesos registrales y de emisión, cuando corresponda",
+        "Estrategia de vinculación con compradores, acuerdos de compra (offtake) y comercialización",
+        "Preparación para el Artículo 6 y asesoría en cooperación internacional"
+      ],
+      "processHeading": "Ruta Típica de Desarrollo de Proyectos",
+      "processSubtitle": "Un ciclo estructurado de once etapas desde la concepción preliminar hasta la potencial emisión y comercialización de créditos.",
+      "processSteps": [
+        {
+          "step": "01",
+          "title": "Identificación de oportunidades",
+          "desc": "Evaluación del concepto inicial del proyecto y los objetivos estratégicos."
+        },
+        {
+          "step": "02",
+          "title": "Cribado de elegibilidad",
+          "desc": "Revisión de tipologías de proyecto frente a estándares y registros reconocidos."
+        },
+        {
+          "step": "03",
+          "title": "Factibilidad y caso de negocio",
+          "desc": "Evaluación de viabilidad técnica, potencial de mitigación y costos económicos."
+        },
+        {
+          "step": "04",
+          "title": "Selección de metodología",
+          "desc": "Identificación y aplicación de metodologías de contabilidad aprobadas."
+        },
+        {
+          "step": "05",
+          "title": "Diseño del proyecto",
+          "desc": "Redacción técnica del Documento de Diseño del Proyecto (PDD) y límites operativos."
+        },
+        {
+          "step": "06",
+          "title": "Desarrollo del MRV",
+          "desc": "Establecimiento de protocolos de monitoreo, reporte y verificación continua."
+        },
+        {
+          "step": "07",
+          "title": "Validación y registro",
+          "desc": "Coordinación con auditores independientes (DOE/VVB) y presentación al registro."
+        },
+        {
+          "step": "08",
+          "title": "Monitoreo",
+          "desc": "Recopilación sistemática de datos operativos y mediciones de reducción de emisiones."
+        },
+        {
+          "step": "09",
+          "title": "Verificación",
+          "desc": "Auditorías periódicas de desempeño con verificadores externos acreditados."
+        },
+        {
+          "step": "10",
+          "title": "Potencial emisión de créditos",
+          "desc": "Acompañamiento en los procedimientos registrales tras una verificación exitosa."
+        },
+        {
+          "step": "11",
+          "title": "Comercialización",
+          "desc": "Apoyo en acuerdos de compraventa, contratos de offtake y gestión de cartera."
+        }
+      ],
+      "ctaHeading": "Conversemos Sobre un Proyecto de Carbono",
+      "ctaText": "Conecte con nuestro equipo especializado para evaluar conceptos de proyecto, ajuste metodológico y requisitos de factibilidad.",
+      "ctaBtn": "Discutir un Proyecto de Carbono",
+      "disclaimer": "Aviso regulatorio: Green Gate Advisory proporciona asesoramiento de preparación y documentación técnica. La emisión de créditos y la aprobación registral están sujetas a auditorías independientes de terceras partes, juntas de estándares y reglas del registro aplicable. Los volúmenes y la emisión no pueden ser garantizados.",
+      "faqs": [
+        {
+          "q": "¿Puede Green Gate Advisory ayudar a desarrollar un proyecto de créditos de carbono?",
+          "a": "El alcance de servicios incluye cribado de oportunidades, factibilidad preliminar, selección metodológica, documentación PDD y diseño de sistemas MRV, así como apoyo en los procesos de validación, registro y comercialización. Los resultados dependen de la elegibilidad del proyecto, las normas del programa y la auditoría independiente."
+        },
+        {
+          "q": "¿Garantiza Green Gate Advisory financiamiento o emisión de créditos de carbono?",
+          "a": "No. Las decisiones de financiamiento, validación, verificación, registro y emisión corresponden exclusivamente a los financiadores, estándares, registros o entidades auditoras independientes. La asesoría optimiza la calidad de preparación pero no puede garantizar la aprobación o emisión."
+        }
+      ],
+      "introEyebrow": "Panorama de Mercado",
+      "introHeading": "Navegando el Desarrollo de Proyectos de Carbono desde la Factibilidad hasta la Comercialización",
+      "quickTags": [
+        "Mercado Voluntario de Carbono",
+        "Artículo 6",
+        "Sistemas MRV",
+        "Guía de Registros"
+      ],
+      "sideCard": {
+        "title": "Estándares de Integridad Técnica",
+        "desc": "El soporte de asesoría conecta el cribado metodológico, la adicionalidad de línea base y la redacción del PDD con entidades independientes de validación y verificación (VVB) y estándares reconocidos.",
+        "points": [
+          "Alineación con Registros Voluntarios y de Cumplimiento",
+          "Artículo 6 y Ajustes Correspondientes"
+        ]
+      }
+    },
+    "ets": {
+      "number": "02",
+      "title": "Asesoría en ETS, Precios al Carbono y Artículo 6",
+      "shortTitle": "ETS y Precios al Carbono",
+      "slug": "ets-carbon-pricing-article-6",
+      "eyebrow": "Mercados Regulados de Carbono",
+      "lead": "Explore preparación para sistemas de comercio de emisiones, políticas de fijación de precios al carbono, análisis de cumplimiento y Artículo 6 para el sector público y privado.",
+      "intro": "Los sistemas de comercio de emisiones (ETS) y los mecanismos de fijación de precios al carbono inciden en el diseño de políticas públicas, decisiones de inversión y planificación operativa. Green Gate Advisory ayuda a instituciones y empresas a evaluar marcos normativos, estimar obligaciones potenciales y formular hojas de ruta prácticas según la jurisdicción.",
+      "scopeHeading": "Cómo Podemos Apoyar",
+      "scopeSubtitle": "Soporte técnico para reguladores, ministerios y operadores industriales sujetos a cumplimiento.",
+      "scopeItems": [
+        "Asesoría en diseño e implementación de sistemas ETS",
+        "Evaluaciones de preparación para ETS dirigidas a gobiernos y empresas",
+        "Asignación de derechos de emisión y análisis de obligaciones de cumplimiento",
+        "Políticas de fijación de precios al carbono y diseño de marcos de mercado",
+        "Asesoría en Artículo 6, incluyendo preparación para ITMOs y ajustes correspondientes",
+        "Marcos nacionales para mercados de carbono y hojas de ruta sectoriales",
+        "Desarrollo de capacidades para reguladores y entidades reguladas"
+      ],
+      "processHeading": "Ruta de Cumplimiento y Arquitectura de Mercado",
+      "processSubtitle": "Gestión de ciclos regulatorios en esquemas de comercio de derechos y precios al carbono.",
+      "processSteps": [
+        {
+          "step": "01",
+          "title": "Revisión de Jurisdicción y Marco Legal",
+          "desc": "Análisis de límites de cobertura, mandatos legales e instrumentos normativos."
+        },
+        {
+          "step": "02",
+          "title": "Modelización de Emisiones y Asignaciones",
+          "desc": "Cuantificación de líneas base históricas, referencias de asignación y umbrales."
+        },
+        {
+          "step": "03",
+          "title": "Estrategia de Precios y Riesgo de Costes",
+          "desc": "Modelado de traslado de costes de carbono, costes marginales de mitigación y volatilidad."
+        },
+        {
+          "step": "04",
+          "title": "Integración del Artículo 6 e ITMOs",
+          "desc": "Estructuración de reglas institucionales para transferencias internacionales y registros."
+        },
+        {
+          "step": "05",
+          "title": "Sistemas Operativos de Cumplimiento",
+          "desc": "Establecimiento de flujos de reporte, entrega de derechos y cuentas de registro."
+        }
+      ],
+      "ctaHeading": "Discutir Requisitos de ETS o Precios al Carbono",
+      "ctaText": "Evalúe sus obligaciones regulatorias, estrategia de derechos o políticas nacionales de fijación de precios al carbono.",
+      "ctaBtn": "Discutir ETS o Precios al Carbono",
+      "disclaimer": "Aviso regulatorio: Los marcos normativos, las subastas de derechos y las entregas de cumplimiento se rigen por la legislación específica de cada jurisdicción y las autoridades competentes.",
+      "faqs": [
+        {
+          "q": "¿Qué es un sistema de comercio de emisiones (ETS)?",
+          "a": "Un sistema de comercio de emisiones es un mecanismo económico de fijación de precios al carbono en el cual las entidades reguladas deben gestionar y entregar derechos de emisión conforme a las normas del esquema. El alcance y las obligaciones varían según la jurisdicción."
+        },
+        {
+          "q": "¿Cómo incide el Artículo 6 en la fijación de precios al carbono?",
+          "a": "El Artículo 6 del Acuerdo de París habilita la cooperación bilateral (6.2) y mecanismos centralizados (6.4). Gobiernos y empresas requieren asesoría sobre ajustes correspondientes y registros nacionales para salvaguardar la integridad ambiental y evitar el doble cómputo."
+        }
+      ],
+      "introEyebrow": "Arquitectura Regulatoria",
+      "introHeading": "Estructuración de Marcos de Cumplimiento Robustos y Estrategias de Precios al Carbono",
+      "quickTags": [
+        "Sistemas de Comercio de Emisiones",
+        "Precios al Carbono",
+        "ITMOs Artículo 6",
+        "Asignación de Derechos"
+      ],
+      "sideCard": {
+        "title": "Dinámica de Mercados de Cumplimiento",
+        "desc": "Los mercados de cumplimiento requieren una alineación rigurosa con topes de asignación, calendarios de entrega, mecanismos de estabilidad de precios y ajustes transfronterizos.",
+        "points": [
+          "Preparación para Sistemas de Comercio (Cap-and-Trade)",
+          "Impuestos al Carbono y Mecanismos de Precios"
+        ]
+      }
+    },
+    "cbam": {
+      "number": "03",
+      "title": "Asesoría CBAM y Preparación para el Mecanismo de Ajuste en Frontera de la UE",
+      "shortTitle": "Asesoría CBAM",
+      "slug": "cbam-advisory",
+      "eyebrow": "Regulación de Carbono en Frontera",
+      "lead": "Prepárese para los requisitos del CBAM con cribado de productos, cálculo de emisiones incorporadas, datos de proveedores, flujos de reporte y evaluación de riesgos de coste de carbono.",
+      "intro": "El Mecanismo de Ajuste en Frontera por Carbono (CBAM) de la Unión Europea introduce nuevas exigencias de información, reporte y costes de carbono para bienes importados y empresas productoras o exportadoras. Green Gate Advisory asiste a las empresas en evaluar su exposición, estructurar datos de emisiones e implementar un plan práctico de cumplimiento.",
+      "scopeHeading": "Cómo Podemos Apoyar",
+      "scopeSubtitle": "Acompañamiento a operadores industriales, exportadores e importadores en el cumplimiento del CBAM.",
+      "scopeItems": [
+        "Evaluación inicial de exposición al CBAM por producto, sector y destino de exportación",
+        "Cribado de productos y códigos arancelarios (código SA), sujeto a revisión técnica",
+        "Mapeo de datos y cálculo de emisiones implícitas (directas e indirectas)",
+        "Evaluación de brechas de datos y procesos de recolección con proveedores",
+        "Desarrollo de procedimientos internos y flujos de trabajo de reporte CBAM",
+        "Análisis de riesgo de costes de carbono y modelización de escenarios",
+        "Apoyo en hojas de ruta de descarbonización para operaciones expuestas al CBAM",
+        "Capacitación técnica para exportadores, proveedores y equipos de cumplimiento"
+      ],
+      "processHeading": "Ruta de Preparación para el CBAM",
+      "processSubtitle": "Un proceso estructurado de ocho pasos para la conformidad con el ajuste fronterizo de carbono.",
+      "processSteps": [
+        {
+          "step": "01",
+          "title": "Identificar productos afectados",
+          "desc": "Cribado de mercancías frente a los anexos cubiertos por el CBAM y códigos arancelarios."
+        },
+        {
+          "step": "02",
+          "title": "Mapear exposición de la cadena",
+          "desc": "Determinación de volúmenes de exportación, destinos de entrega y rutas de fabricación."
+        },
+        {
+          "step": "03",
+          "title": "Revisar normativa aplicable",
+          "desc": "Seguimiento a los reglamentos de la UE, directrices transitorias y valores por defecto."
+        },
+        {
+          "step": "04",
+          "title": "Evaluar datos de emisiones",
+          "desc": "Recopilación de datos primarios de instalaciones para emisiones implícitas directas e indirectas."
+        },
+        {
+          "step": "05",
+          "title": "Identificar brechas de información",
+          "desc": "Detección de carencias de datos en proveedores y diseño de protocolos de recolección."
+        },
+        {
+          "step": "06",
+          "title": "Establecer procesos de reporte",
+          "desc": "Implementación de procedimientos operativos para presentaciones trimestrales de cumplimiento."
+        },
+        {
+          "step": "07",
+          "title": "Evaluar opciones de descarbonización",
+          "desc": "Modelado de medidas operativas de mitigación para reducir el coste futuro de certificados."
+        },
+        {
+          "step": "08",
+          "title": "Revisar necesidades continuas",
+          "desc": "Mantenimiento de preparación para auditorías y adaptación a ampliaciones del alcance normativo."
+        }
+      ],
+      "ctaHeading": "Solicitar una Sesión de Preparación CBAM",
+      "ctaText": "Evalúe la cobertura de sus productos, la preparación de datos de emisiones en su cadena de suministro y la exposición a costes de carbono.",
+      "ctaBtn": "Solicitar Discusión CBAM",
+      "disclaimer": "Nota editorial: Las normas del CBAM, la cobertura de productos, los calendarios y las obligaciones de reporte están sujetos a modificaciones regulatorias. Revise los procesos frente a las exigencias oficiales vigentes de la UE.",
+      "faqs": [
+        {
+          "q": "¿Qué es el CBAM y por qué los exportadores deben evaluarlo?",
+          "a": "El Mecanismo de Ajuste en Frontera por Carbono de la UE regula las emisiones incorporadas en determinadas mercancías importadas. Productores y exportadores deben determinar si sus productos y relaciones comerciales están cubiertos y qué sistemas de datos o reportes se exigen."
+        },
+        {
+          "q": "¿Sustituye la asesoría el registro oficial como declarante autorizado?",
+          "a": "No. Los importadores en la UE deben registrarse como declarantes autorizados del CBAM ante la Comisión Europea y las autoridades nacionales. Green Gate Advisory ofrece análisis técnico, cálculo de emisiones incorporadas y planificación de preparación para el cumplimiento."
+        }
+      ],
+      "introEyebrow": "Cumplimiento Obligatorio de la UE",
+      "introHeading": "Preparación de Exportadores e Importadores ante el Mecanismo de Ajuste en Frontera",
+      "quickTags": [
+        "CBAM de la UE",
+        "Emisiones Incorporadas",
+        "Cribado de Códigos SA",
+        "Verificación de Proveedores"
+      ],
+      "sideCard": {
+        "title": "Alcance Regulatorio de la UE",
+        "desc": "Enfocado en sectores cubiertos: cemento, hierro y acero, aluminio, fertilizantes, electricidad e hidrógeno, apoyando a exportadores en sus cadenas de suministro.",
+        "mandateTitle": "Mandato de Cumplimiento",
+        "mandateDesc": "Transición desde reportes preliminares hacia la compra obligatoria de certificados. La recopilación de datos primarios precisos es crítica para evitar ajustes punitivos por defecto.",
+        "points": [
+          "Emisiones Incorporadas Directas e Indirectas",
+          "Flujos de Trabajo y Plantillas de Datos con Proveedores"
+        ]
+      }
+    },
+    "climateFinance": {
+      "number": "04",
+      "title": "Asesoría en Finanzas Climáticas y Desarrollo de Propuestas de Fondos",
+      "shortTitle": "Finanzas Climáticas",
+      "slug": "climate-finance-advisory",
+      "eyebrow": "Estructuración de Proyectos Bancables",
+      "lead": "Prepare conceptos de proyectos climáticos y propuestas de financiación con justificación climática, teoría del cambio, salvaguardas, presupuestos, monitoreo y planes de implementación.",
+      "intro": "Green Gate Advisory apoya a instituciones públicas, desarrolladores de proyectos, ONGs y entidades elegibles a transformar prioridades climáticas en conceptos estructurados y propuestas de fondos bancables. Desarrollamos la justificación climática, la lógica de intervención, el enfoque de implementación, el presupuesto y el marco de monitoreo ajustado a cada facilidad.",
+      "scopeHeading": "Cómo Podemos Apoyar",
+      "scopeSubtitle": "Estructuración técnica de propuestas de intervención para mecanismos multilaterales y bilaterales.",
+      "scopeItems": [
+        "Mapeo de oportunidades de financiamiento climático y cribado de elegibilidad",
+        "Desarrollo de ideas de proyectos y redacción de notas conceptuales (Concept Notes)",
+        "Formulación de justificación climática, teoría del cambio y marco lógico",
+        "Soporte integral en la redacción y preparación de propuestas completas de fondos",
+        "Desarrollo de presupuestos y estructuración financiera del proyecto",
+        "Planificación de salvaguardas ambientales y sociales (ESMS)",
+        "Planes de acción de género y marcos de involucramiento de partes interesadas",
+        "Marcos de monitoreo, evaluación y aprendizaje (MEL)",
+        "Preparación para la implementación y soporte en sistemas de reporte",
+        "Preparación institucional y soporte vinculado a procesos de acreditación"
+      ],
+      "processHeading": "Del Concepto a la Propuesta Bancable",
+      "processSubtitle": "Un ciclo riguroso de preparación en seis etapas para fondos multilaterales y bilaterales.",
+      "processSteps": [
+        {
+          "step": "01",
+          "title": "Mapeo de Oportunidades",
+          "desc": "Cribado de proyectos frente a ventanas activas de financiamiento, criterios y entidades acreditadas."
+        },
+        {
+          "step": "02",
+          "title": "Nota Conceptual y Justificación",
+          "desc": "Fundamentación técnica del problema climático, datos científicos de base y lógica de intervención."
+        },
+        {
+          "step": "03",
+          "title": "Teoría del Cambio y Marco Lógico",
+          "desc": "Definición clara de insumos, productos, resultados intermedios, impacto transformacional e indicadores."
+        },
+        {
+          "step": "04",
+          "title": "Estructuración Financiera",
+          "desc": "Modelado de donaciones, préstamos concesionales, cofinanciamiento y esquemas de finanzas combinadas."
+        },
+        {
+          "step": "05",
+          "title": "Salvaguardas y Plan de Género",
+          "desc": "Evaluación rigurosa de riesgos socioambientales, planes de mitigación y transversalización de género."
+        },
+        {
+          "step": "06",
+          "title": "Propuesta Completa",
+          "desc": "Elaboración de la propuesta integral de financiamiento y sus anexos técnicos para presentación formal."
+        }
+      ],
+      "fundingHeading": "Ecosistema Potencial de Financiamiento",
+      "fundingText": "Sujeto a la elegibilidad del proyecto, el contexto de país y las normas activas de cada programa, las oportunidades pueden incluir:",
+      "fundingPillars": [
+        "Fondo Verde del Clima (GCF)",
+        "Fondo para el Medio Ambiente Mundial (GEF)",
+        "Fondo de Adaptación",
+        "Bancos Multilaterales de Desarrollo (BMD)",
+        "Facilidades Climáticas Bilaterales",
+        "Mecanismos de Finanzas Combinadas (Blended Finance)"
+      ],
+      "ctaHeading": "Discutir Financiamiento para Proyectos Climáticos",
+      "ctaText": "Consulte con nuestros especialistas en finanzas climáticas para evaluar ideas de proyectos, criterios de elegibilidad y requerimientos de formulación.",
+      "ctaBtn": "Discutir Financiamiento Climático",
+      "disclaimer": "Nota regulatoria: Las decisiones de aprobación de financiamiento son adoptadas de forma soberana por las juntas directivas de los fondos, comités de inversión y entidades acreditadas. La asesoría optimiza la calidad técnica pero no garantiza la adjudicación.",
+      "faqs": [
+        {
+          "q": "¿Qué soporte se ofrece para propuestas de financiamiento climático?",
+          "a": "Según la elegibilidad y los requerimientos del programa, el soporte puede incluir mapeo de oportunidades, desarrollo de notas conceptuales, justificación climática, teoría del cambio, marco lógico, presupuestos, salvaguardas, consideraciones de género y planes de monitoreo."
+        },
+        {
+          "q": "¿Garantiza Green Gate Advisory la aprobación de fondos como el GCF o el GEF?",
+          "a": "No. Las decisiones de aprobación, asignación y desembolso corresponden exclusivamente a los órganos de gobierno de cada fondo y a las entidades acreditadas competentes."
+        }
+      ],
+      "introEyebrow": "Desarrollo de Propuestas",
+      "introHeading": "Estructuración de Intervenciones Bancables ante Fondos Climáticos Internacionales",
+      "quickTags": [
+        "GCF y GEF",
+        "Fondo de Adaptación",
+        "Finanzas Mixtas",
+        "Teoría del Cambio"
+      ],
+      "sideCard": {
+        "title": "Alineación con Mecanismos Multilaterales",
+        "desc": "Alineación de propuestas con los criterios de inversión de fondos globales, abordando tasas de retorno económico, niveles de concesionalidad e impacto transformador.",
+        "points": [
+          "Teoría del Cambio y Marcos Lógicos",
+          "Salvaguardas Ambientales y Sociales (SGAS)",
+          "Planes de Acción de Género e Inclusión Social"
+        ]
+      }
+    },
+    "natureBased": {
+      "number": "05",
+      "title": "Soluciones Basadas en la Naturaleza y Asesoría en Carbono Azul",
+      "shortTitle": "Soluciones Basadas en la Naturaleza",
+      "slug": "nature-based-solutions",
+      "eyebrow": "Resiliencia Ecosistémica y Capital Natural",
+      "lead": "Desarrolle iniciativas climáticas basadas en ecosistemas: restauración ecológica, carbono azul, biodiversidad, adaptación, resiliencia y preparación para finanzas climáticas.",
+      "intro": "Las soluciones basadas en la naturaleza (SbN) permiten hacer frente al cambio climático al tiempo que fortalecen la biodiversidad, la salud ecosistémica, la seguridad hídrica, la resiliencia comunitaria y los medios de vida sostenibles. Green Gate Advisory apoya la evaluación y formulación de proyectos de SbN con estricta atención a la integridad ambiental, la participación comunitaria, las salvaguardas y el monitoreo riguroso.",
+      "scopeHeading": "Áreas Potenciales de Proyecto",
+      "scopeSubtitle": "Iniciativas de alta integridad ecosistémica que generan impactos verificables en mitigación y adaptación.",
+      "scopeItems": [
+        "Restauración de manglares y resiliencia costera",
+        "Conservación y restauración de humedales",
+        "Protección de bosques, restauración, forestación y reforestación",
+        "Restauración de tierras degradadas y gestión territorial sostenible",
+        "Agricultura sostenible y oportunidades en carbono orgánico del suelo",
+        "Gestión de cuencas hidrográficas y resiliencia del agua",
+        "Factibilidad de proyectos de carbono azul y carbono terrestre",
+        "Iniciativas climáticas con impacto neto positivo en biodiversidad",
+        "Integración de SbN en propuestas de financiamiento climático multilateral",
+        "Metodologías MRV para ecosistemas, carbono, resiliencia y biodiversidad",
+        "Participación comunitaria, salvaguardas y distribución equitativa de beneficios"
+      ],
+      "processHeading": "Ciclo de Desarrollo de Proyectos SbN",
+      "processSubtitle": "Articulación equilibrada entre captura de carbono, integridad biológica y beneficios locales.",
+      "processSteps": [
+        {
+          "step": "01",
+          "title": "Diagnóstico de Paisaje y Ecosistemas",
+          "desc": "Identificación de áreas degradadas, dinámicas hidrológicas y potencial ecológico."
+        },
+        {
+          "step": "02",
+          "title": "Diálogo Comunitario y Salvaguardas",
+          "desc": "Establecimiento de procesos de consulta previa (CLPI) y acuerdos de gobernanza local."
+        },
+        {
+          "step": "03",
+          "title": "Línea Base y Modelado de Carbono",
+          "desc": "Muestreo biométrico de campo, sensores remotos y cuantificación de reservas de carbono."
+        },
+        {
+          "step": "04",
+          "title": "Diseño de Intervención Ecológica",
+          "desc": "Definición de planes de restauración hidrológica, reforestación o manejo sostenible."
+        },
+        {
+          "step": "05",
+          "title": "MRV Continuo y Mecanismos Financieros",
+          "desc": "Implantación de monitoreo a largo plazo, métricas de biodiversidad y monetización de créditos."
+        }
+      ],
+      "ctaHeading": "Explorar un Proyecto Basado en la Naturaleza",
+      "ctaText": "Consulte con nuestro equipo especializado para estructurar iniciativas de carbono azul, restauración forestal o resiliencia de cuencas.",
+      "ctaBtn": "Explorar Proyecto de SbN",
+      "disclaimer": "Aviso de integridad ecológica: El éxito ecológico y el rendimiento de carbono dependen de factores biofísicos propios del sitio, la gestión del riesgo de permanencia y la custodia comunitaria a largo plazo.",
+      "faqs": [
+        {
+          "q": "¿Qué caracteriza a una solución basada en la naturaleza de alta integridad?",
+          "a": "Exige demostrar reducciones o remociones de carbono reales y cuantificables, acompañadas de ganancias verificadas en biodiversidad, salvaguardas sociales robustas y una distribución transparente de beneficios con las comunidades locales."
+        },
+        {
+          "q": "¿Pueden combinarse proyectos de SbN con financiamiento climático internacional?",
+          "a": "Sí. Las intervenciones de SbN se integran frecuentemente en propuestas para facilidades como el GCF, GEF o Fondo de Adaptación, así como en proyectos de créditos en mercados voluntarios de carbono."
+        }
+      ],
+      "introEyebrow": "Capital Natural y Resiliencia",
+      "introHeading": "Escalamiento de Mitigación, Adaptación y Biodiversidad Basadas en Ecosistemas",
+      "quickTags": [
+        "Carbono Azul",
+        "Restauración de Manglares",
+        "Ganancia Neta en Biodiversidad",
+        "Salvaguardas Comunitarias"
+      ],
+      "sideCard": {
+        "title": "Enfoque en Integridad Ecosistémica",
+        "desc": "Priorización de ecosistemas terrestres y costeros que integran mitigación, adaptación climática, conservación de biodiversidad y cobeneficios comunitarios verificados.",
+        "points": [
+          "Carbono Azul: Manglares y Marismas",
+          "Protección Forestal, ARR y Restauración de Tierras",
+          "Carbono en Suelo y Manejo de Cuencas"
+        ]
+      }
+    },
+    "climatePolicy": {
+      "number": "06",
+      "title": "Asesoría en Política Ambiental y Climática",
+      "shortTitle": "Política Ambiental y Climática",
+      "slug": "climate-policy-advisory",
+      "eyebrow": "Diseño Normativo y Gobernanza",
+      "lead": "Soporte técnico y normativo para NDC, Planes Nacionales de Adaptación (PNA), gobernanza climática, precios al carbono, MRV y marcos de transparencia del Acuerdo de París.",
+      "intro": "Una política climática efectiva articula prioridades de desarrollo nacional, responsabilidades institucionales, datos técnicos fiables y capacidad operativa de ejecución. Green Gate Advisory asesora a instituciones públicas y entidades cooperantes en el análisis de políticas, diseño de marcos normativos y fortalecimiento de capacidades.",
+      "scopeHeading": "Cómo Podemos Apoyar",
+      "scopeSubtitle": "Asesoramiento para ministerios, agencias sectoriales y socios multilaterales de cooperación.",
+      "scopeItems": [
+        "Desarrollo y revisión de políticas climáticas nacionales",
+        "Actualización y planificación de la implementación de NDC",
+        "Asesoría para Planes Nacionales de Adaptación (PNA/NAP)",
+        "Estrategias de desarrollo bajo en emisiones a largo plazo (LT-LEDS)",
+        "Políticas de fijación de precios al carbono y gobernanza climática",
+        "Análisis de regulación y normativa ambiental sectorial",
+        "Apoyo técnico e informes para negociaciones climáticas internacionales",
+        "Sistemas MRV y marcos de transparencia bajo el Acuerdo de París",
+        "Desarrollo de capacidades para ministerios, agencias y entidades públicas"
+      ],
+      "processHeading": "Marco de Formulación y Ejecución de Políticas",
+      "processSubtitle": "Transformando compromisos multilaterales en instrumentos normativos domésticos eficaces.",
+      "processSteps": [
+        {
+          "step": "01",
+          "title": "Diagnóstico y Mapeo Institucional",
+          "desc": "Evaluación de marcos normativos vigentes, metas sectoriales y competencias."
+        },
+        {
+          "step": "02",
+          "title": "Modelado de Líneas Base y Vulnerabilidad",
+          "desc": "Análisis cuantitativo de trayectorias de emisiones y riesgos de vulnerabilidad."
+        },
+        {
+          "step": "03",
+          "title": "Consulta Sectorial e Interministerial",
+          "desc": "Coordinación técnica entre sectores económicos, sociedad civil y niveles de gobierno."
+        },
+        {
+          "step": "04",
+          "title": "Diseño de Instrumentos Normativos",
+          "desc": "Redacción de hojas de ruta de políticas, incentivos y marcos de precios al carbono."
+        },
+        {
+          "step": "05",
+          "title": "Transparencia Reforzada y Sistemas MRV",
+          "desc": "Implantación de sistemas de reporte nacional conforme al marco de transparencia (ETF)."
+        }
+      ],
+      "ctaHeading": "Discutir Soporte en Políticas Climáticas",
+      "ctaText": "Consulte con nuestros especialistas sobre actualización de NDCs, planificación de adaptación o diseño de sistemas MRV nacionales.",
+      "ctaBtn": "Discutir Soporte de Política",
+      "disclaimer": "Aviso institucional: La promulgación de normas, la presentación de NDCs y la regulación jurídica son facultades soberanas exclusivas de los Estados y sus autoridades públicas.",
+      "faqs": [
+        {
+          "q": "¿Qué funciones desempeña una consultoría de asesoría en política climática?",
+          "a": "Ayuda a instituciones públicas y alianzas de desarrollo a diseñar políticas fundamentadas en ciencia, alinear NDCs y planes de adaptación con metas de desarrollo, estructurar instrumentos económicos de carbono y capacitar equipos gubernamentales."
+        },
+        {
+          "q": "¿De qué manera el MRV apoya el Marco de Transparencia Reforzada (ETF)?",
+          "a": "Un sistema MRV estructurado permite contabilizar con precisión la trayectoria de emisiones y los avances de las NDCs, suministrando la evidencia requerida para los Informes Bienales de Transparencia (BTR)."
+        }
+      ],
+      "introEyebrow": "Diseño de Políticas y Gobernanza",
+      "introHeading": "Conectando Compromisos Climáticos Multilaterales con la Implementación Nacional",
+      "quickTags": [
+        "Asesoría en NDC y PNA",
+        "Marco de Transparencia de París (ETF)",
+        "Sistemas MRV",
+        "Gobernanza Institucional"
+      ],
+      "sideCard": {
+        "title": "Arquitectura del Acuerdo de París",
+        "desc": "Asesoramiento a ministerios nacionales y socios de desarrollo en el diseño de instrumentos normativos, actualización de NDC y creación de sistemas de transparencia institucional.",
+        "points": [
+          "Marco de Transparencia Reforzado (ETF)",
+          "Planes Nacionales de Adaptación (PNA)",
+          "Estrategias a Largo Plazo (LT-LEDS)"
+        ]
+      }
+    },
+    "corporateClimate": {
+      "number": "07",
+      "title": "Asesoría en Clima Corporativo, Contabilidad de GEI y ESG",
+      "shortTitle": "Clima Corporativo y ESG",
+      "slug": "corporate-climate-esg",
+      "eyebrow": "Sostenibilidad Corporativa y Descarbonización",
+      "lead": "Comprenda las emisiones corporativas y riesgos climáticos con inventarios de Alcance 1, 2 y 3, hojas de ruta de descarbonización, planificación de transición y preparación ESG.",
+      "intro": "Las empresas enfrentan crecientes expectativas para medir sus emisiones de gases de efecto invernadero, gestionar riesgos físicos y de transición climática, y responder a normas de sostenibilidad. Green Gate Advisory ayuda a construir una visión estructurada de emisiones y definir medidas prácticas para su gestión y reporte.",
+      "scopeHeading": "Cómo Podemos Apoyar",
+      "scopeSubtitle": "Contabilidad rigurosa de emisiones, hojas de ruta de descarbonización y preparación para divulgación ESG.",
+      "scopeItems": [
+        "Evaluación de huella de carbono corporativa y contabilidad de GEI",
+        "Inventarios de emisiones de Alcance 1, Alcance 2 y Alcance 3",
+        "Procesos de recopilación de datos y relacionamiento con proveedores",
+        "Estrategia de descarbonización y hojas de ruta de mitigación operativa",
+        "Evaluación de riesgos climáticos y planificación de la transición",
+        "Estrategia ESG y preparación para reporte de sostenibilidad",
+        "Evaluaciones de preparación frente a marcos TCFD e ISSB",
+        "Consideraciones e implementación de precios internos al carbono",
+        "Gestión de emisiones en la cadena de valor"
+      ],
+      "processHeading": "Ruta de Descarbonización Corporativa",
+      "processSubtitle": "De la medición de huella a planes de transición climática respaldados por datos.",
+      "processSteps": [
+        {
+          "step": "01",
+          "title": "Definición de Límites y Alcances",
+          "desc": "Determinación de límites organizacionales y protocolos según el GHG Protocol."
+        },
+        {
+          "step": "02",
+          "title": "Inventario Alcance 1, 2 y 3",
+          "desc": "Cálculo de emisiones directas, electricidad comprada y categorías de la cadena de valor."
+        },
+        {
+          "step": "03",
+          "title": "Análisis de Puntos Críticos y Riesgos",
+          "desc": "Identificación de fuentes prioritarias de emisión y riesgos físicos o normativos."
+        },
+        {
+          "step": "04",
+          "title": "Hoja de Ruta de Mitigación",
+          "desc": "Modelado de medidas de eficiencia energética, renovables y tecnologías de abatimiento."
+        },
+        {
+          "step": "05",
+          "title": "Reporte y Divulgación ESG",
+          "desc": "Preparación de informes conforme a estándares internacionales (TCFD, ISSB) y grupos de interés."
+        }
+      ],
+      "ctaHeading": "Evalúe sus Prioridades Climáticas Corporativas",
+      "ctaText": "Conecte con nuestro equipo corporativo para estructurar inventarios de emisiones, hojas de ruta de descarbonización o preparación de reportes ESG.",
+      "ctaBtn": "Evaluar Prioridades Corporativas",
+      "disclaimer": "Aviso corporativo: Los reportes de sostenibilidad e inventarios de emisiones deben formularse conforme a las normas contables reconocidas y la legislación aplicable a cada entidad.",
+      "faqs": [
+        {
+          "q": "¿Qué comprenden los Alcances 1, 2 y 3 en la contabilidad de emisiones?",
+          "a": "El Alcance 1 abarca emisiones directas de fuentes propias o controladas. El Alcance 2 cubre emisiones indirectas por consumo de electricidad y calor adquiridos. El Alcance 3 abarca todas las demás emisiones indirectas en la cadena de valor, aguas arriba y aguas abajo."
+        },
+        {
+          "q": "¿Cómo apoya Green Gate Advisory en la preparación para TCFD e ISSB?",
+          "a": "Asistimos a las empresas en evaluar riesgos y oportunidades climáticas en cuatro pilares: gobernanza, estrategia, gestión de riesgos y métricas/objetivos, estableciendo la información estructurada requerida para las declaraciones formales."
+        }
+      ],
+      "introEyebrow": "Sostenibilidad y Descarbonización Corporativa",
+      "introHeading": "Transformando la Contabilidad de Emisiones en Estrategia Climática Basada en Datos",
+      "quickTags": [
+        "Alcances 1, 2 y 3",
+        "Hoja de Ruta de Descarbonización",
+        "Reportes ESG",
+        "TCFD e ISSB"
+      ],
+      "sideCard": {
+        "title": "Enfoque en Descarbonización Empresarial",
+        "desc": "Capacitación de empresas para cuantificar emisiones con precisión, identificar riesgos climáticos materiales, modelar medidas de mitigación eficientes y cumplir estándares de divulgación.",
+        "points": [
+          "Conformidad con GHG Protocol Alcances 1, 2 y 3",
+          "Preparación para Divulgaciones TCFD e ISSB",
+          "Precios Internos al Carbono y Planes de Transición"
+        ]
+      }
+    }
+  }
+}

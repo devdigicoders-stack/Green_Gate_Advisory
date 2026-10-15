@@ -1,0 +1,146 @@
+{
+  "meta": {
+    "title": "Perspectivas y Recursos Climáticos | Green Gate Advisory",
+    "description": "Orientación práctica sobre CBAM, mercados de carbono, ETS, finanzas climáticas, Artículo 6, soluciones basadas en la naturaleza y contabilidad de GEI."
+  },
+  "hero": {
+    "breadcrumbHome": "Inicio",
+    "breadcrumbCurrent": "Perspectivas y Recursos",
+    "eyebrow": "Publicaciones Técnicas y Conocimiento",
+    "title": "Perspectivas y Recursos",
+    "lead": "Green Gate Advisory comparte conocimiento práctico para ayudar a tomadores de decisiones a comprender requerimientos climáticos, mercados de carbono, finanzas climáticas y políticas ambientales emergentes."
+  },
+  "hubIntro": {
+    "eyebrow": "Fundamento Editorial",
+    "heading": "Orientando la Complejidad Climática Mediante Análisis Práctico",
+    "p1": "A medida que la regulación climática global se intensifica y los regímenes de cumplimiento maduran, las organizaciones públicas y privadas requieren análisis claros y técnicamente fundamentados para orientar su capital y preparación regulatoria. El centro de conocimiento de Green Gate Advisory sintetiza desarrollos normativos complejos en inteligencia estructurada y aplicable.",
+    "p2": "Todas las notas técnicas, herramientas analíticas y listas de verificación publicadas reflejan los marcos internacionales vigentes: el Acuerdo de París de la CMNUCC, el CBAM de la UE, los sistemas regulados de comercio de emisiones y los fondos multilaterales para el clima.",
+    "pillars": {
+      "regulatory": {
+        "title": "Claridad Regulatoria",
+        "desc": "Desglose de obligaciones de cumplimiento, mecanismos de ajuste en frontera por carbono e implicaciones en el comercio internacional."
+      },
+      "carbonMarkets": {
+        "title": "Mercados de Carbono",
+        "desc": "Análisis de estándares de integridad, normas de cálculo de líneas base y estructuración comercial de créditos."
+      },
+      "climateFinance": {
+        "title": "Financiamiento Climático",
+        "desc": "Traducción de criterios de fondos multilaterales en conceptos de proyectos bancables y propuestas estructuradas."
+      },
+      "environmentalPolicy": {
+        "title": "Política Ambiental y NDC",
+        "desc": "Evaluación de hojas de ruta de adaptación, acuerdos de transferencia del Artículo 6 y gobernanza institucional."
+      },
+      "projectPrep": {
+        "title": "Diseño de Proyectos y MRV",
+        "desc": "Estructuración de sistemas de monitoreo robustos, metodologías de línea base y vías de validación."
+      },
+      "ghgAccounting": {
+        "title": "Contabilidad de GEI",
+        "desc": "Orientación para límites de cálculo Alcance 1, 2 y 3, datos primarios de proveedores y planes de transición."
+      }
+    },
+    "notice": "Criterio editorial: Los contenidos son revisados por especialistas y se actualizan ante modificaciones de normativas oficiales, ventanas de financiamiento o condiciones de mercado. No publicamos noticias especulativas ni afirmaciones no verificadas."
+  },
+  "categories": {
+    "badge": "Áreas Temáticas",
+    "heading": "Explore Áreas de Conocimiento Técnico",
+    "subtitle": "Filtre publicaciones y recursos en nuestras ocho áreas de práctica climática y ambiental.",
+    "all": {
+      "title": "Todas las Áreas",
+      "desc": "Consulte todas las publicaciones y guías analíticas en el alcance completo de Green Gate Advisory."
+    },
+    "cbam": {
+      "title": "CBAM y Regulación Climática UE",
+      "desc": "Ajustes de carbono en frontera, normas de emisiones incorporadas, reportes de importadores y cumplimiento en cadenas de suministro."
+    },
+    "vcm": {
+      "title": "Mercados Voluntarios y Proyectos",
+      "desc": "Selección de metodologías, análisis de adicionalidad, estándares de línea base, elaboración de PDD y créditos verificados."
+    },
+    "ets": {
+      "title": "ETS y Precios al Carbono",
+      "desc": "Sistemas de comercio de derechos de emisión (cap-and-trade), puntos de referencia para asignación, subastas y cumplimiento."
+    },
+    "climateFinance": {
+      "title": "Financiamiento Climático y Propuestas",
+      "desc": "Arquitectura de fondos multilaterales (GCF, GEF), acceso a capital concesional, teoría del cambio y diseño de proyectos bancables."
+    },
+    "article6": {
+      "title": "Artículo 6 y Cooperación Internacional",
+      "desc": "Marcos de transferencia de ITMO, enfoques cooperativos bajo 6.2, mecanismos de crédito bajo 6.4 y ajustes correspondientes."
+    },
+    "natureBased": {
+      "title": "Soluciones Basadas en la Naturaleza",
+      "desc": "Restauración de ecosistemas, manglares costeros (carbono azul), agroforestería, carbono en suelos y métricas de biodiversidad."
+    },
+    "corporateEsg": {
+      "title": "Contabilidad de GEI y ESG Corporativo",
+      "desc": "Inventarios corporativos Alcance 1, 2 y 3, gestión de datos con proveedores, planes de transición y reportes de sostenibilidad."
+    },
+    "climatePolicy": {
+      "title": "Política Climática, MRV y Adaptación",
+      "desc": "Planes Nacionales de Adaptación (PNA), actualización de NDC, sistemas de transparencia ETF y monitoreo nacional de emisiones."
+    }
+  },
+  "articles": {
+    "eyebrow": "Documentos Analíticos",
+    "heading": "Perspectivas y Notas Técnicas",
+    "subtitle": "Artículos analíticos e interpretaciones regulatorias preparadas por nuestro equipo asesor.",
+    "filterLabel": "Filtrar por Área de Práctica",
+    "emptyState": {
+      "badge": "Próximas Publicaciones",
+      "title": "Las perspectivas y recursos estarán disponibles aquí a medida que se publiquen.",
+      "lead": "Nuestros recursos de conocimiento se están preparando y revisando conforme a rigurosos estándares técnicos. Para consultar sobre requerimientos sectoriales o normativas específicas, póngase en contacto con nuestro equipo.",
+      "primaryBtn": "Explorar Servicios de Asesoría",
+      "secondaryBtn": "Solicitar una Consulta"
+    }
+  },
+  "resources": {
+    "badge": "Guías Prácticas",
+    "heading": "Listas de Verificación y Guías de Planificación",
+    "subtitle": "Marcos estructurados para apoyar la evaluación de cumplimiento, elegibilidad de proyectos y preparación de financiamiento.",
+    "statusComingSoon": "Próximamente",
+    "statusAvailable": "Descargar Documento",
+    "notice": "Aviso de descarga: Los recursos se publican únicamente tras verificación técnica y revisión jurídica formal. Las listas de verificación constituyen guías orientativas y no suponen determinaciones regulatorias oficiales.",
+    "cbamChecklist": {
+      "title": "Lista de Verificación de Exposición al CBAM para Exportadores",
+      "desc": "Herramienta estructurada para clasificar productos, códigos arancelarios, emisiones directas e indirectas de precursores y requerimientos de importadores de la UE."
+    },
+    "carbonProjectChecklist": {
+      "title": "Lista de Verificación de Elegibilidad Preliminar para Proyectos de Carbono",
+      "desc": "Criterios esenciales sobre tenencia de la tierra, escenario de línea base, adicionalidad regulatoria y selección metodológica."
+    },
+    "climateFinanceChecklist": {
+      "title": "Lista de Verificación de Preparación para Financiamiento Climático",
+      "desc": "Diagnóstico de cumplimiento fiduciario, salvaguardas ambientales y sociales (ESS), planes de acción de género y viabilidad jurídica."
+    },
+    "conceptNoteGuide": {
+      "title": "Guía de Planificación de Notas Conceptuales de Financiamiento Climático",
+      "desc": "Orientación paso a paso para formular la justificación climática, lógica de intervención, cofinanciamiento e indicadores de seguimiento."
+    },
+    "etsChecklist": {
+      "title": "Lista de Verificación de Preparación para ETS",
+      "desc": "Criterios para instalaciones industriales sobre planes de monitoreo, asignación y entrega de derechos, y acreditación de verificadores."
+    },
+    "emissionsTemplate": {
+      "title": "Plantilla de Solicitud de Datos de Emisiones Corporativas",
+      "desc": "Estructura estandarizada de recolección de datos primarios de proveedores e instalaciones conforme a los límites del GHG Protocol."
+    }
+  },
+  "relatedServices": {
+    "badge": "Práctica Asesora",
+    "heading": "Prácticas de Asesoría Interconectadas",
+    "subtitle": "Conecte la investigación y el conocimiento técnico directamente con nuestras seis prácticas de implementación.",
+    "exploreService": "Explorar Práctica de Asesoría"
+  },
+  "cta": {
+    "eyebrow": "Asesoría Técnica Especializada",
+    "heading": "¿Necesita Orientación sobre un Desafío Climático o Ambiental?",
+    "description": "Ya sea preparándose para el cumplimiento del CBAM, desarrollando un proyecto de créditos de carbono o estructurando una propuesta de fondos multilaterales, nuestro equipo brinda asesoramiento técnico a medida.",
+    "primaryBtn": "Explorar Nuestros Servicios",
+    "secondaryBtn": "Solicitar una Consulta",
+    "disclaimer": "Asesoría técnica, regulatoria y financiera independiente. Las recomendaciones reflejan normativas vigentes y estándares acreditados sin compromisos especulativos."
+  }
+}

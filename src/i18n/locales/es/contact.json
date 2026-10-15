@@ -1,0 +1,152 @@
+{
+  "meta": {
+    "title": "Contacto Green Gate Advisory | Solicitar una Consulta de Asesoría Climática",
+    "description": "Póngase en contacto con Green Gate Advisory para evaluar mercados de carbono, CBAM, ETS, finanzas climáticas, soluciones basadas en la naturaleza o sostenibilidad."
+  },
+  "hero": {
+    "breadcrumbHome": "Inicio",
+    "breadcrumbCurrent": "Contacto",
+    "eyebrow": "Consulta Técnica Directa",
+    "headline": "Conversemos sobre sus Prioridades Climáticas y Ambientales",
+    "subheadline": "Tanto si evalúa su exposición al CBAM, explora un proyecto de carbono, prepara una propuesta de financiamiento multilateral o estructura una estrategia corporativa de descarbonización, Green Gate Advisory puede orientarle hacia los pasos técnicos adecuados. Comparta una síntesis de sus requerimientos y nuestro equipo coordinará el alcance de apoyo idóneo."
+  },
+  "intro": {
+    "eyebrow": "Alcance de Consulta",
+    "heading": "Diálogo Estructurado en Ocho Áreas Especializadas",
+    "lead": "Todo proceso de asesoría se inicia aclarando su entorno operativo, obligaciones regulatorias, disponibilidad de datos y metas estratégicas.",
+    "areas": [
+      {
+        "title": "Desarrollo en Mercados de Carbono",
+        "desc": "Viabilidad de proyectos, selección de metodologías, redacción de PDD y vías de emisión de créditos."
+      },
+      {
+        "title": "Preparación para el CBAM",
+        "desc": "Evaluación de exposición, cálculo de emisiones incorporadas y reporte de cadenas de suministro."
+      },
+      {
+        "title": "ETS y Precios al Carbono",
+        "desc": "Preparación para el cumplimiento, gestión de entrega de derechos y transferencias del Artículo 6."
+      },
+      {
+        "title": "Propuestas de Financiamiento Climático",
+        "desc": "Estructuración de notas conceptuales, teoría del cambio y solicitudes a fondos multilaterales."
+      },
+      {
+        "title": "Soluciones Basadas en la Naturaleza",
+        "desc": "Restauración de ecosistemas, carbono azul, agroforestería y ganancias netas de biodiversidad."
+      },
+      {
+        "title": "Política Climática y NDC",
+        "desc": "Planes Nacionales de Adaptación, revisión de políticas y transparencia del Acuerdo de París."
+      },
+      {
+        "title": "Clima Corporativo y ESG",
+        "desc": "Contabilidad de Alcances 1, 2 y 3, hojas de ruta de descarbonización y preparación para informes."
+      },
+      {
+        "title": "Capacitación y Fortalecimiento",
+        "desc": "Talleres técnicos personalizados y programas de desarrollo de capacidades institucionales."
+      }
+    ],
+    "notice": "Rigor de la consulta: Toda sesión preliminar se enfoca en determinar la viabilidad técnica y los marcos normativos aplicables. No realizamos promesas especulativas ni garantizamos aprobaciones de fondos o registros."
+  },
+  "form": {
+    "badge": "Envío de Consulta",
+    "heading": "Envíe su Consulta de Asesoría",
+    "subtitle": "Complete el siguiente formulario para comunicarse directamente con nuestros especialistas.",
+    "enquiryType": {
+      "label": "Seleccione el Objetivo de la Consulta",
+      "consultation": "Consulta de Asesoría",
+      "proposal": "Solicitud de Propuesta"
+    },
+    "fields": {
+      "fullName": {
+        "label": "Nombre y Apellidos",
+        "placeholder": "Ingrese su nombre y apellidos",
+        "required": "El nombre completo es obligatorio."
+      },
+      "organisation": {
+        "label": "Organización / Empresa",
+        "placeholder": "Nombre de su entidad u organización"
+      },
+      "workEmail": {
+        "label": "Correo Electrónico Corporativo",
+        "placeholder": "nombre@organizacion.com",
+        "required": "El correo corporativo es obligatorio.",
+        "invalid": "Por favor introduzca una dirección de correo profesional válida."
+      },
+      "countryOrRegion": {
+        "label": "País / Región",
+        "placeholder": "ej., España, Colombia, México, Chile, Alemania",
+        "required": "El país o región es obligatorio."
+      },
+      "role": {
+        "label": "Cargo o Función (Opcional)",
+        "placeholder": "ej., Director de Sostenibilidad, Responsable de Cumplimiento"
+      },
+      "serviceInterest": {
+        "label": "Servicio de Interés",
+        "placeholder": "Seleccione un área de práctica principal",
+        "required": "Por favor seleccione un servicio de interés."
+      },
+      "requirementDescription": {
+        "label": "Descripción Breve de su Requerimiento",
+        "placeholder": "Por favor aporte contexto sobre los objetivos de su entidad, plazos de proyecto o retos normativos concretos...",
+        "required": "La descripción del requerimiento es obligatoria.",
+        "minLength": "La descripción debe contener al menos 10 caracteres."
+      },
+      "preferredContactMethod": {
+        "label": "Método de Contacto Preferido",
+        "options": {
+          "email": "Correo Electrónico",
+          "phone": "Llamada Telefónica",
+          "virtual": "Videollamada",
+          "none": "Sin Preferencia"
+        }
+      },
+      "phone": {
+        "label": "Número de Teléfono Directo",
+        "placeholder": "+34 600 000 000",
+        "required": "El número de teléfono es obligatorio si selecciona contacto telefónico.",
+        "hint": "Incluya el prefijo de marcación internacional."
+      },
+      "privacy": {
+        "text": "Reconozco y acepto el tratamiento de mis datos de contacto conforme a la",
+        "linkText": "Política de Privacidad",
+        "required": "Debe aceptar el aviso de privacidad para continuar."
+      }
+    },
+    "buttons": {
+      "submitConsultation": "Solicitar una Consulta",
+      "submitProposal": "Solicitar una Propuesta",
+      "submitting": "Enviando Consulta..."
+    },
+    "feedback": {
+      "successTitle": "Consulta Recibida",
+      "successMessage": "Gracias por contactar a Green Gate Advisory. Su consulta ha sido recibida. Nuestro equipo revisará la información facilitada y se pondrá en contacto utilizando los datos aportados.",
+      "submitAnother": "Enviar Otra Consulta",
+      "errorTitle": "Error en el Envío",
+      "defaultError": "Ocurrió un error al procesar su consulta. Por favor revise su conexión a internet o escriba a contact@greengateadvisory.com."
+    }
+  },
+  "serviceOptions": {
+    "Carbon Markets": "Mercados de Carbono",
+    "CBAM": "CBAM",
+    "ETS and Carbon Pricing": "ETS y Precios al Carbono",
+    "Climate Finance": "Finanzas Climáticas",
+    "Nature-Based Solutions": "Soluciones Basadas en la Naturaleza",
+    "Environmental and Climate Policy": "Política Ambiental y Climática",
+    "Corporate Climate and ESG": "Clima Corporativo y ESG",
+    "MRV and GHG Accounting": "MRV y Contabilidad de GEI",
+    "Training and Capacity Building": "Capacitación y Fortalecimiento",
+    "Other": "Otro Requerimiento Específico"
+  },
+  "auxiliary": {
+    "confidentialityTitle": "Confidencialidad Profesional",
+    "confidentialityText": "Toda información técnica, comercial u operativa compartida en consultas se gestiona bajo riguroso secreto profesional.",
+    "directEmailTitle": "Consultas Institucionales",
+    "directEmailText": "Para comunicaciones administrativas o institucionales directas, puede escribir a",
+    "scopingTitle": "Independencia Técnica",
+    "scopingText": "Proveemos análisis técnico independiente estructurado según las normativas vigentes y estándares internacionales de gases de efecto invernadero."
+  }
+}

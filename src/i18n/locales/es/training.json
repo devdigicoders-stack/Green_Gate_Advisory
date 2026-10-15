@@ -1,0 +1,166 @@
+{
+  "meta": {
+    "title": "Capacitación en Clima, Mercados de Carbono y Finanzas Climáticas | Green Gate Advisory",
+    "description": "Fortalezca conocimientos prácticos mediante capacitación en mercados de carbono, CBAM, ETS, financiamiento climático, Artículo 6, MRV y política climática."
+  },
+  "hero": {
+    "breadcrumbHome": "Inicio",
+    "breadcrumbCurrent": "Capacitación y Fortalecimiento de Capacidades",
+    "eyebrow": "Capacidad Institucional",
+    "title": "Capacitación y Fortalecimiento de Capacidades",
+    "lead": "Green Gate Advisory apoya programas de capacitación y desarrollo de capacidades adaptados a las necesidades de conocimiento de instituciones públicas, empresas, exportadores, equipos de proyectos y otros actores clave. El formato, alcance y profundidad se analizan y confirman según los objetivos institucionales.",
+    "primaryBtn": "Analizar un Programa de Capacitación"
+  },
+  "intro": {
+    "eyebrow": "Conocimiento y Capacidad Institucional",
+    "heading": "Desarrollando Conocimiento Climático y Capacidad Práctica de Ejecución",
+    "p1": "La regulación climática, los mecanismos internacionales de carbono y las finanzas sostenibles exigen competencias institucionales altamente especializadas. Green Gate Advisory diseña programas de capacitación a medida para cerrar la brecha entre la ambición climática estratégica y la ejecución técnica operativa.",
+    "p2": "Nuestros programas de capacitación respaldan a ministerios públicos, equipos de cumplimiento industrial, promotores de proyectos y analistas financieros, dotándolos de herramientas técnicas, claridad regulatoria y marcos metodológicos para generar resultados climáticos verificables.",
+    "pillars": {
+      "policy": "Diseño de políticas climáticas nacionales, alineación con NDC y mecánica de negociaciones internacionales",
+      "markets": "Metodologías de mercados voluntarios de carbono, normas de línea base y pruebas de adicionalidad",
+      "compliance": "Cálculo de emisiones incorporadas para el CBAM de la UE y obligaciones de cumplimiento en sistemas ETS",
+      "finance": "Formulación de propuestas de financiamiento climático para el GCF, GEF, Fondo de Adaptación y mecanismos bilaterales",
+      "preparation": "Elaboración de Documentos de Diseño de Proyecto (PDD), estudios de viabilidad y sistemas digitales de MRV",
+      "reporting": "Límites contables de GEI (Alcance 1, 2 y 3) según el GHG Protocol y gestión de datos primarios de proveedores",
+      "governance": "Toma de decisiones ambientales, salvaguardas sociales y marcos de transparencia del Acuerdo de París"
+    },
+    "notice": "Rigor en el alcance: El alcance, formato, profundidad y duración de la capacitación se definen en colaboración con el cliente, según las necesidades de aprendizaje y la experiencia previa de los participantes. No publicamos tarifas predefinidas, temarios rígidos ni certificados no verificados."
+  },
+  "topics": {
+    "badge": "Módulos de Capacitación",
+    "heading": "Once Temas Potenciales de Capacitación",
+    "subtitle": "Materias técnicas modulares adaptadas a las prioridades operativas, regulatorias o de desarrollo de proyectos de su organización.",
+    "expandDetails": "Ver Alcance Detallado",
+    "collapseDetails": "Ocultar Alcance",
+    "enquireTopic": "Consultar Sobre Este Tema",
+    "items": {
+      "fundamentals": {
+        "title": "Fundamentos de los Mercados de Carbono",
+        "desc": "Arquitectura esencial de los mercados voluntarios de carbono, estándares de acreditación, sistemas de cumplimiento, registros y ciclo de vida de los créditos.",
+        "scope": "Analiza estándares como Verra y Gold Standard, metodologías de línea base, criterios de adicionalidad, ciclos de validación, registros y dinámicas de comercialización."
+      },
+      "vcmDevelopment": {
+        "title": "Desarrollo de Proyectos en el Mercado Voluntario",
+        "desc": "Recorrido integral por los Documentos de Diseño de Proyecto (PDD), consultas a partes interesadas, MRV digital e hitos de registro.",
+        "scope": "Enfoque en detección de oportunidades, demostración de adicionalidad, gestión del riesgo de fuga, preparación para validación independiente y emisión de créditos."
+      },
+      "etsPricing": {
+        "title": "Mecanismos de ETS y Precios al Carbono",
+        "desc": "Estructura y funcionamiento de los sistemas de comercio de emisiones, fórmulas de asignación de derechos, subastas y protocolos de entrega.",
+        "scope": "Examina sistemas cap-and-trade, impuestos al carbono, precios internos del carbono, umbrales de referencia y gestión de cumplimiento en sectores intensivos."
+      },
+      "cbamEmissions": {
+        "title": "Requisitos de CBAM y Emisiones Incorporadas",
+        "desc": "Cumplimiento regulatorio bajo el Mecanismo de Ajuste en Frontera por Carbono de la UE, metodologías de cálculo y recopilación de datos de proveedores.",
+        "scope": "Abarca códigos NC, límites de emisiones directas e indirectas, precursores, valores por defecto frente a primarios y comunicación en reportes trimestrales."
+      },
+      "proposalWriting": {
+        "title": "Redacción de Propuestas de Financiamiento Climático",
+        "desc": "Formulación de notas conceptuales y propuestas de financiamiento competitivas alineadas con los criterios de fondos internacionales.",
+        "scope": "Redacción de justificación climática, diseño de teoría del cambio, marcos lógicos, matrices de riesgo, planes de acción de género y justificaciones presupuestarias."
+      },
+      "multilateralFunds": {
+        "title": "Orientación de Programas: GCF, GEF y Fondo de Adaptación",
+        "desc": "Navegación por ventanas de acceso, tipos de acreditación, apropiación nacional y prioridades estratégicas de los principales fondos multilaterales.",
+        "scope": "Revisión detallada de criterios de inversión, procesos de aprobación simplificados, entidades de acceso directo, salvaguardas ESS y reglas de cofinanciamiento."
+      },
+      "lossAndDamage": {
+        "title": "Programación de Financiamiento para Pérdidas y Daños",
+        "desc": "Mecanismos de financiamiento emergentes, diagnóstico de vulnerabilidades e instrumentos financieros ante eventos de evolución lenta y extremos climáticos.",
+        "scope": "Revisión de los marcos del Fondo para Pérdidas y Daños de la CMNUCC, transferencia paramétrica de riesgos, metodologías de pérdidas no económicas y resiliencia."
+      },
+      "article6": {
+        "title": "Artículo 6 y Enfoques Cooperativos",
+        "desc": "Operacionalización de acuerdos bilaterales bajo el Artículo 6.2 del Acuerdo de París, mecanismos de crédito bajo 6.4 y gobernanza de ITMO.",
+        "scope": "Ajustes correspondientes, procesos de autorización, registros nacionales, acuerdos de transferencia y mecanismos para evitar la doble contabilidad."
+      },
+      "natureBased": {
+        "title": "Soluciones Basadas en la Naturaleza y Restauración",
+        "desc": "Diseño de intervenciones de ecosistemas terrestres y costeros con alta integridad que integran carbono, biodiversidad y beneficios comunitarios.",
+        "scope": "Restauración de manglares, rehumidificación de turberas, estimación de carbono agroforestal, Consentimiento Libre, Previo e Informado (CLPI) y reservas de permanencia."
+      },
+      "mrvAccounting": {
+        "title": "MRV, Transparencia y Contabilidad de GEI",
+        "desc": "Marcos rigurosos de contabilidad de emisiones según el GHG Protocol Corporate Standard, ISO 14064 y el Marco de Transparencia Reforzado del Acuerdo de París.",
+        "scope": "Límites contables de Alcance 1, 2 y 3, recolección de datos de actividad, selección de factores de emisión y preparación para verificación independiente."
+      },
+      "policyNegotiations": {
+        "title": "Política Climática y Negociaciones Internacionales",
+        "desc": "Fortalecimiento institucional para delegaciones climáticas, procesos de actualización de NDC y alineación de políticas domésticas.",
+        "scope": "Vías de negociación de la CMNUCC, implicaciones del balance mundial (Global Stocktake), estrategias de desarrollo bajo en emisiones a largo plazo (LT-LEDS) y consultas."
+      }
+    }
+  },
+  "audiences": {
+    "badge": "Grupos de Interés",
+    "heading": "Audiencias Potenciales para el Fortalecimiento de Capacidades",
+    "subtitle": "Los programas se personalizan para estructuras institucionales, perfiles técnicos y entornos operativos diferenciados.",
+    "items": {
+      "governments": {
+        "title": "Instituciones Gubernamentales",
+        "desc": "Ministerios sectoriales, direcciones ambientales y autoridades regionales que estructuran políticas públicas, carteras de financiamiento y marcos de transparencia."
+      },
+      "regulators": {
+        "title": "Reguladores y Formuladores de Políticas",
+        "desc": "Entidades que diseñan mercados regulados de carbono, protocolos MRV, infraestructura de registros y reglas de asignación de derechos de emisión."
+      },
+      "businesses": {
+        "title": "Empresas y Exportadores",
+        "desc": "Equipos de sostenibilidad corporativa, directores de cumplimiento industrial y asociaciones gremiales que gestionan obligaciones de CBAM, ETS y Alcance 3."
+      },
+      "developers": {
+        "title": "Equipos de Desarrollo de Proyectos",
+        "desc": "Promotores de proyectos de carbono, propietarios de tierras y gestores de conservación que estructuran créditos voluntarios y acuerdos con comunidades."
+      },
+      "ngos": {
+        "title": "ONGs y Organismos Internacionales",
+        "desc": "Profesionales del desarrollo, centros de investigación y entidades internacionales que preparan solicitudes a fondos multilaterales y marcos de monitoreo."
+      },
+      "professionals": {
+        "title": "Profesionales de la Sostenibilidad",
+        "desc": "Especialistas ambientales y analistas técnicos que buscan competencias avanzadas en límites de contabilidad de GEI, precios al carbono y regímenes de divulgación."
+      }
+    }
+  },
+  "approach": {
+    "badge": "Planificación Colaborativa",
+    "heading": "Nuestro Enfoque de Capacitación a Medida",
+    "subtitle": "Un marco estructurado de seis fases para diseñar programas de aprendizaje orientados a resultados tangibles.",
+    "frameworkNotice": "Planificación colaborativa: El marco de 6 pasos anterior describe nuestro proceso de diseño curricular. Los calendarios de impartición, talleres interactivos y sesiones técnicas se adaptan directamente a los tiempos de la organización.",
+    "items": {
+      "learningRequirements": {
+        "title": "Requerimientos de Aprendizaje Organizacional",
+        "desc": "Clarificación de mandatos institucionales, plazos comerciales o presiones regulatorias que motivan la capacitación."
+      },
+      "audienceBackground": {
+        "title": "Perfil y Conocimientos Previos de la Audiencia",
+        "desc": "Evaluación de competencias base, especialidades técnicas y experiencia práctica de los participantes."
+      },
+      "technicalTopics": {
+        "title": "Temas Técnicos y Regulatorios Relevantes",
+        "desc": "Selección de la combinación precisa de módulos sobre mercados de carbono, CBAM, financiamiento o políticas."
+      },
+      "learningObjectives": {
+        "title": "Objetivos Claros de Aprendizaje",
+        "desc": "Definición de competencias tangibles que los participantes adquirirán: desde el cálculo de emisiones hasta la formulación de propuestas."
+      },
+      "programmeFormat": {
+        "title": "Formato y Contenido Propuesto del Programa",
+        "desc": "Diseño de sesiones modulares, talleres basados en casos de estudio, sesiones ejecutivas o clínicas técnicas interactivas."
+      },
+      "feedbackNextSteps": {
+        "title": "Retroalimentación y Próximos Pasos",
+        "desc": "Evaluación de resultados y planteamiento de líneas de soporte técnico o vías de implementación acordadas."
+      }
+    }
+  },
+  "cta": {
+    "eyebrow": "Alcance de Capacitación",
+    "heading": "Fortalezca el Conocimiento Climático y Ambiental de su Equipo",
+    "description": "Consulte con Green Gate Advisory sobre los objetivos de capacitación, audiencia meta y enfoque técnico de su organización.",
+    "primaryBtn": "Analizar un Programa de Capacitación",
+    "secondaryBtn": "Contactar a Nuestro Equipo",
+    "disclaimer": "Asesoría técnica independiente. Los programas de capacitación se definen e imparten conforme a requerimientos institucionales acordados. No ofrecemos cursos abiertos estándar ni certificados no verificados."
+  }
+}

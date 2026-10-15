@@ -1,0 +1,67 @@
+{
+  "siteTitle": "Green Gate Advisory",
+  "home": {
+    "title": "Green Gate Advisory | Mercados de Carbono, CBAM y Finanzas Climáticas",
+    "description": "Asesoría ambiental y climática experta en mercados de carbono, CBAM, ETS, finanzas climáticas, soluciones basadas en la naturaleza y sostenibilidad corporativa."
+  },
+  "about": {
+    "title": "Sobre Green Gate Advisory | Consultores Climáticos y Ambientales",
+    "description": "Conozca cómo Green Gate Advisory conecta política climática, mercados de carbono, finanzas climáticas e implementación práctica para clientes públicos y privados."
+  },
+  "services": {
+    "title": "Servicios de Asesoría Climática | Green Gate Advisory",
+    "description": "Explore asesoría en mercados de carbono, apoyo en CBAM y ETS, finanzas climáticas, soluciones basadas en la naturaleza, política ambiental y servicios corporativos."
+  },
+  "carbonMarket": {
+    "title": "Asesoría en Mercados de Carbono y Desarrollo de Proyectos",
+    "description": "Evalúe oportunidades de proyectos de carbono y gestione factibilidad, selección de metodologías, documentación PDD, MRV y comercialización."
+  },
+  "ets": {
+    "title": "Asesoría en ETS y Precios al Carbono | Green Gate Advisory",
+    "description": "Explore preparación para sistemas de comercio de emisiones, políticas de fijación de precios al carbono, análisis de cumplimiento y Artículo 6."
+  },
+  "cbam": {
+    "title": "Asesoría CBAM y Preparación para el Mecanismo de Ajuste en Frontera",
+    "description": "Prepárese para los requisitos del CBAM con cribado de productos, cálculo de emisiones incorporadas, datos de proveedores y evaluación de riesgos de coste de carbono."
+  },
+  "climateFinance": {
+    "title": "Asesoría en Finanzas Climáticas y Desarrollo de Propuestas de Fondos",
+    "description": "Prepare conceptos de proyectos climáticos y propuestas de financiación con justificación climática, teoría del cambio, salvaguardas y planes de monitoreo."
+  },
+  "natureBased": {
+    "title": "Soluciones Basadas en la Naturaleza y Asesoría en Carbono Azul",
+    "description": "Desarrolle iniciativas climáticas basadas en ecosistemas: restauración ecológica, carbono azul, biodiversidad, adaptación, resiliencia y finanzas climáticas."
+  },
+  "climatePolicy": {
+    "title": "Asesoría en Política Ambiental y Climática | Green Gate Advisory",
+    "description": "Soporte técnico y normativo para NDC, Planes Nacionales de Adaptación (PNA), gobernanza climática, precios al carbono, MRV y transparencia de París."
+  },
+  "corporateClimate": {
+    "title": "Asesoría en Clima Corporativo, Contabilidad de GEI y ESG",
+    "description": "Comprenda las emisiones corporativas y riesgos climáticos con inventarios Alcance 1, 2 y 3, hojas de ruta de descarbonización y preparación ESG."
+  },
+  "sectors": {
+    "title": "Sectores que Apoyamos | Green Gate Advisory",
+    "description": "Asesoría climática, ambiental y de mercados de carbono para energía, industria pesada, manufactura, uso del suelo, infraestructuras y sector financiero."
+  },
+  "whoWeServe": {
+    "title": "A Quién Servimos | Green Gate Advisory",
+    "description": "Asesoría climática a medida para gobiernos, exportadores, empresas, desarrolladores de proyectos, inversores, ONGs y organismos internacionales."
+  },
+  "insights": {
+    "title": "Perspectivas y Recursos Climáticos | Green Gate Advisory",
+    "description": "Orientación práctica sobre CBAM, mercados de carbono, ETS, finanzas climáticas, Artículo 6, soluciones basadas en la naturaleza y contabilidad de GEI."
+  },
+  "training": {
+    "title": "Capacitación en Clima, Mercados de Carbono y Finanzas Climáticas",
+    "description": "Desarrolle capacidades prácticas mediante programas especializados en mercados de carbono, CBAM, ETS, finanzas climáticas, Artículo 6 y política ambiental."
+  },
+  "contact": {
+    "title": "Contacto Green Gate Advisory | Solicite una Consulta de Asesoría Climática",
+    "description": "Contacte a Green Gate Advisory para abordar sus prioridades en mercados de carbono, CBAM, ETS, finanzas climáticas o sostenibilidad corporativa."
+  },
+  "privacy": {
+    "title": "Política de Privacidad | Green Gate Advisory",
+    "description": "Conozca cómo Green Gate Advisory gestiona la recopilación de datos, solicitudes de contacto y el cumplimiento normativo de privacidad."
+  }
+}

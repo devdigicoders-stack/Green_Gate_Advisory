@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://greengateadvisory.com/en</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://greengateadvisory.com/en" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://greengateadvisory.com/es" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://greengateadvisory.com/en" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://greengateadvisory.com/es</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://greengateadvisory.com/en" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://greengateadvisory.com/es" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://greengateadvisory.com/en" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- About Us -->
+  <url>
+    <loc>https://greengateadvisory.com/en/about-us</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://greengateadvisory.com/en/about-us" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://greengateadvisory.com/es/about-us" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://greengateadvisory.com/es/about-us</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://greengateadvisory.com/en/about-us" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://greengateadvisory.com/es/about-us" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Services Hub -->
+  <url>
+    <loc>https://greengateadvisory.com/en/services</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://greengateadvisory.com/en/services" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://greengateadvisory.com/es/services" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://greengateadvisory.com/es/services</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://greengateadvisory.com/en/services" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://greengateadvisory.com/es/services" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Service 1: Carbon Market Advisory -->
+  <url>
+    <loc>https://greengateadvisory.com/en/services/carbon-market-advisory</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://greengateadvisory.com/en/services/carbon-market-advisory" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://greengateadvisory.com/es/services/carbon-market-advisory" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://greengateadvisory.com/es/services/carbon-market-advisory</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://greengateadvisory.com/en/services/carbon-market-advisory" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://greengateadvisory.com/es/services/carbon-market-advisory" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Service 2: ETS Carbon Pricing -->
+  <url>
+    <loc>https://greengateadvisory.com/en/services/ets-carbon-pricing-article-6</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://greengateadvisory.com/en/services/ets-carbon-pricing-article-6" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://greengateadvisory.com/es/services/ets-carbon-pricing-article-6" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://greengateadvisory.com/es/services/ets-carbon-pricing-article-6</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://greengateadvisory.com/en/services/ets-carbon-pricing-article-6" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://greengateadvisory.com/es/services/ets-carbon-pricing-article-6" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Service 3: CBAM Advisory -->
+  <url>
+    <loc>https://greengateadvisory.com/en/services/cbam-advisory</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://greengateadvisory.com/en/services/cbam-advisory" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://greengateadvisory.com/es/services/cbam-advisory" />
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://greengateadvisory.com/es/services/cbam-advisory</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://greengateadvisory.com/en/services/cbam-advisory" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://greengateadvisory.com/es/services/cbam-advisory" />
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Service 4: Climate Finance Advisory -->
+  <url>
+    <loc>https://greengateadvisory.com/en/services/climate-finance-advisory</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://greengateadvisory.com/en/services/climate-finance-advisory" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://greengateadvisory.com/es/services/climate-finance-advisory" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://greengateadvisory.com/es/services/climate-finance-advisory</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://greengateadvisory.com/en/services/climate-finance-advisory" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://greengateadvisory.com/es/services/climate-finance-advisory" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Service 5: Nature-Based Solutions -->
+  <url>
+    <loc>https://greengateadvisory.com/en/services/nature-based-solutions</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://greengateadvisory.com/en/services/nature-based-solutions" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://greengateadvisory.com/es/services/nature-based-solutions" />
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://greengateadvisory.com/es/services/nature-based-solutions</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://greengateadvisory.com/en/services/nature-based-solutions" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://greengateadvisory.com/es/services/nature-based-solutions" />
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Service 6: Climate Policy Advisory -->
+  <url>
+    <loc>https://greengateadvisory.com/en/services/climate-policy-advisory</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://greengateadvisory.com/en/services/climate-policy-advisory" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://greengateadvisory.com/es/services/climate-policy-advisory" />
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://greengateadvisory.com/es/services/climate-policy-advisory</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://greengateadvisory.com/en/services/climate-policy-advisory" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://greengateadvisory.com/es/services/climate-policy-advisory" />
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Service 7: Corporate Climate ESG -->
+  <url>
+    <loc>https://greengateadvisory.com/en/services/corporate-climate-esg</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://greengateadvisory.com/en/services/corporate-climate-esg" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://greengateadvisory.com/es/services/corporate-climate-esg" />
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://greengateadvisory.com/es/services/corporate-climate-esg</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://greengateadvisory.com/en/services/corporate-climate-esg" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://greengateadvisory.com/es/services/corporate-climate-esg" />
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Sectors -->
+  <url>
+    <loc>https://greengateadvisory.com/en/sectors</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://greengateadvisory.com/en/sectors" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://greengateadvisory.com/es/sectors" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://greengateadvisory.com/es/sectors</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://greengateadvisory.com/en/sectors" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://greengateadvisory.com/es/sectors" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Who We Serve -->
+  <url>
+    <loc>https://greengateadvisory.com/en/who-we-serve</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://greengateadvisory.com/en/who-we-serve" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://greengateadvisory.com/es/who-we-serve" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://greengateadvisory.com/es/who-we-serve</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://greengateadvisory.com/en/who-we-serve" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://greengateadvisory.com/es/who-we-serve" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Insights -->
+  <url>
+    <loc>https://greengateadvisory.com/en/insights</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://greengateadvisory.com/en/insights" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://greengateadvisory.com/es/insights" />
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://greengateadvisory.com/es/insights</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://greengateadvisory.com/en/insights" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://greengateadvisory.com/es/insights" />
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Training -->
+  <url>
+    <loc>https://greengateadvisory.com/en/training</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://greengateadvisory.com/en/training" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://greengateadvisory.com/es/training" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://greengateadvisory.com/es/training</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://greengateadvisory.com/en/training" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://greengateadvisory.com/es/training" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://greengateadvisory.com/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://greengateadvisory.com/en/contact" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://greengateadvisory.com/es/contact" />
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://greengateadvisory.com/es/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://greengateadvisory.com/en/contact" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://greengateadvisory.com/es/contact" />
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://greengateadvisory.com/en/privacy-policy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://greengateadvisory.com/en/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://greengateadvisory.com/es/privacy-policy" />
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://greengateadvisory.com/es/privacy-policy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://greengateadvisory.com/en/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://greengateadvisory.com/es/privacy-policy" />
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>

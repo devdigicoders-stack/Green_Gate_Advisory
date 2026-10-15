@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  body {
+    background-color: #F4F7F1;
+    color: #182A24;
+    font-family: 'Inter', system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', 'Manrope', system-ui, sans-serif;
+    color: #123F32;
+    letter-spacing: -0.02em;
+    overflow-wrap: break-word;
+  }
+
+  /* Accessible focus indicators for keyboard navigation */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid #D2AD67;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* Container utility */
+  .content-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Editorial badge */
+  .badge-editorial {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wide uppercase;
+  }
+
+  /* Glass Card */
+  .glass-card {
+    @apply bg-white/95 backdrop-blur-sm border border-sand-border/80 shadow-subtle rounded-2xl transition-all duration-300;
+  }
+
+  .glass-card-hover {
+    @apply glass-card hover:shadow-premium hover:-translate-y-1 hover:border-deep-green/30;
+  }
+
+  /* Primary Button */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-forest text-white font-semibold text-sm hover:bg-forest-light active:bg-forest-dark transition-all duration-200 shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-gold/50 focus:ring-offset-2;
+  }
+
+  /* Secondary Button */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white border border-sand-border text-forest font-semibold text-sm hover:bg-sage hover:border-deep-green/30 active:bg-sand-surface transition-all duration-200 shadow-subtle focus:outline-none focus:ring-2 focus:ring-forest/20 focus:ring-offset-2;
+  }
+
+  /* Gold Accent Button */
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gold text-forest-dark font-semibold text-sm hover:bg-gold-light active:bg-gold-dark transition-all duration-200 shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-forest/30 focus:ring-offset-2;
+  }
+
+  /* Text link with underline transition */
+  .link-editorial {
+    @apply inline-flex items-center gap-1 font-semibold text-deep-green hover:text-forest transition-colors duration-150;
+  }
+}
+
+/* Reduced motion preference support for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F4F7F1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C4D1BF;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9BB095;
+}
