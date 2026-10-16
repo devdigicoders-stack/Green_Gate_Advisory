@@ -32,6 +32,7 @@
   "servicesMenu": {
     "carbonMarket": "Carbon Market Advisory",
     "ets": "ETS, Carbon Pricing & Article 6",
+    "etsCarbonPricing": "ETS, Carbon Pricing & Article 6",
     "cbam": "CBAM Advisory",
     "climateFinance": "Climate Finance Advisory",
     "natureBased": "Nature-Based Solutions",

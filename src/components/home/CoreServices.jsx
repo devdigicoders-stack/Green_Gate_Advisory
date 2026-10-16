@@ -29,8 +29,8 @@ export default function CoreServices() {
   const services = Array.isArray(rawServices) ? rawServices : [];
 
   return (
-    <section className="py-20 sm:py-28 bg-sand-surface/60">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+    <section className="py-14 sm:py-28 bg-sand-surface/60">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-16">
         
         <SectionHeader
           badge={t('home.coreServices.eyebrow', 'Core Capabilities')}
@@ -39,7 +39,7 @@ export default function CoreServices() {
         />
 
         {/* 3-Column Desktop / 2-Column Tablet / 1-Column Mobile Responsive Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
           {services.map((srv, idx) => {
             const meta = SERVICE_META[idx] || { icon: Sparkles, number: '01' };
             const IconComponent = meta.icon;
@@ -47,7 +47,7 @@ export default function CoreServices() {
             return (
               <div 
                 key={srv.key || idx}
-                className="bg-white rounded-3xl p-8 flex flex-col justify-between group shadow-premium hover:shadow-elevated hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
+                className="bg-white rounded-3xl p-6 sm:p-8 flex flex-col justify-between group shadow-premium hover:shadow-elevated hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
               >
                 {/* Gold top accent line - default active */}
                 <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-gold to-transparent opacity-100" />

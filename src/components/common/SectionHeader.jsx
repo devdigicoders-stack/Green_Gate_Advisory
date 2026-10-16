@@ -23,7 +23,7 @@ export default function SectionHeader({
       )}
 
       {title && (
-        <h2 className={`font-display font-bold text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-[1.15] ${
+        <h2 className={`font-display font-bold text-2xl xs:text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-[1.15] ${
           light ? 'text-white' : 'text-forest'
         }`}>
           {title}
@@ -31,7 +31,7 @@ export default function SectionHeader({
       )}
 
       {subtitle && (
-        <p className={`text-base sm:text-lg lg:text-xl font-normal leading-relaxed ${
+        <p className={`text-sm xs:text-base sm:text-lg lg:text-xl font-normal leading-relaxed ${
           light ? 'text-sand-surface/90' : 'text-charcoal-muted'
         }`}>
           {subtitle}

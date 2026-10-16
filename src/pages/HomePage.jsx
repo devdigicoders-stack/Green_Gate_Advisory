@@ -79,7 +79,7 @@ export default function HomePage() {
         <div className="absolute -top-32 right-1/4 w-96 h-96 rounded-full bg-deep-green/5 blur-3xl -z-10" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
+          <div className="max-w-3xl space-y-6 text-left items-start">
             
             {/* Editorial Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase bg-forest/5 text-deep-green border border-forest/10">
@@ -93,12 +93,12 @@ export default function HomePage() {
             </h1>
 
             {/* Subheadline directly from PDF */}
-            <p className="text-base sm:text-xl text-charcoal-muted leading-relaxed max-w-3xl mx-auto font-sans">
+            <p className="text-base sm:text-xl text-charcoal-muted leading-relaxed max-w-2xl font-sans">
               {t('home.hero.subheadline', 'Green Gate Advisory supports governments, companies, exporters and project developers with carbon market strategy, CBAM and ETS readiness, climate finance, nature-based solutions and environmental policy—helping turn climate priorities into practical, measurable action.')}
             </p>
 
             {/* Primary Calls to Action directly from PDF */}
-            <div className="pt-4 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+            <div className="pt-4 flex flex-wrap items-center justify-start gap-3 sm:gap-4">
               <Link to={getLocalizedPath('/services')} className="btn-primary">
                 <span>{t('common.exploreServices', 'Explore Our Services')}</span>
                 <ArrowRight className="w-4 h-4 text-gold-light" />
