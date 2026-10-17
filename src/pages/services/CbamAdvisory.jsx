@@ -9,6 +9,7 @@ import RelatedServices from '../../components/services/RelatedServices';
 import ServiceCTA from '../../components/services/ServiceCTA';
 import { useLocale } from '../../hooks/useLocale';
 import { ShieldCheck, AlertCircle, CheckCircle2 } from 'lucide-react';
+import cbamVideo from '../../assets/services-CBAM.mp4';
 
 export default function CbamAdvisory() {
   const { t } = useTranslation();
@@ -84,6 +85,8 @@ export default function CbamAdvisory() {
         shortTitle={serviceData.shortTitle}
         lead={serviceData.lead}
         quickTags={serviceData.quickTags || ['EU CBAM', 'Embedded Emissions', 'HS Code Screening', 'Supplier Verification']}
+        videoSrc={cbamVideo || '/services-CBAM.mp4'}
+        trimDuration={null}
       />
 
       <ServiceIntroduction

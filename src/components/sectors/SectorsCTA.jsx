@@ -49,11 +49,16 @@ export default function SectorsCTA() {
         </div>
 
         {/* Professional Disclaimer */}
-        <div className="pt-8 border-t border-white/10 flex items-center justify-center gap-2 text-xs text-sand-surface/70 font-sans max-w-2xl mx-auto">
-          <ShieldCheck className="w-4 h-4 text-gold flex-shrink-0" />
-          <span>
-            {t('sectors.cta.disclaimer', 'Independent technical, regulatory and finance advisory. Recommendations are customized to sector-specific legislation, verified carbon accounting standards, and international funding rules.')}
-          </span>
+        <div className="pt-8 border-t border-white/10 flex items-center justify-center text-xs text-sand-surface/75 font-sans max-w-4xl mx-auto text-center leading-relaxed">
+          <p className="inline-flex items-center justify-center flex-wrap gap-x-2 gap-y-1">
+            <span className="inline-flex items-center gap-1.5 font-medium text-white whitespace-nowrap">
+              <ShieldCheck className="w-4 h-4 text-gold flex-shrink-0" />
+              <span>Independent Advisory Notice:</span>
+            </span>
+            <span>
+              {t('sectors.cta.disclaimer', 'Recommendations are customized to sector-specific legislation, verified carbon accounting standards, and international funding rules.')}
+            </span>
+          </p>
         </div>
 
       </div>

@@ -3,30 +3,44 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { ChevronRight, ShieldCheck, BookOpen } from 'lucide-react';
 import { useLocale } from '../../hooks/useLocale';
+import insightsEcoVideo from '../../assets/insights-eco.mp4';
 
 export default function InsightsHero() {
   const { t } = useTranslation();
   const { getLocalizedPath } = useLocale();
 
   return (
-    <section className="relative overflow-hidden bg-forest-dark text-white pt-28 pb-20 sm:pt-36 sm:pb-28">
-      {/* Background Photography with Sophisticated Directional Lighting */}
-      <div className="absolute inset-0 z-0">
+    <section className="relative overflow-hidden bg-forest-dark text-white pt-24 pb-14 sm:pt-36 sm:pb-24">
+      {/* Background Photography & Video with Sophisticated Directional Lighting */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <video
+          key="insights-eco-video"
+          src={insightsEcoVideo || '/insights-eco.mp4'}
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover object-center opacity-85 scale-102 transform motion-safe:transition-transform motion-safe:duration-1000"
+        >
+          <source src={insightsEcoVideo || '/insights-eco.mp4'} type="video/mp4" />
+        </video>
         <img
-          src="/images/insights-hero.jpg"
+          // src="/images/insights-hero.jpg"
           alt="Modern climate research institute and ESG intelligence center"
-          className="w-full h-full object-cover object-right sm:object-center opacity-85 scale-102"
+          className="absolute inset-0 w-full h-full object-cover object-right sm:object-center opacity-85 scale-102 -z-10"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-forest-dark/95 via-forest-dark/75 via-50% to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/90 via-transparent to-black/30" />
+        {/* Mobile vertical gradient */}
+        <div className="absolute inset-0 bg-gradient-to-t from-forest-dark via-forest-dark/90 to-forest-dark/80 sm:hidden pointer-events-none" />
+        <div className="hidden sm:block absolute inset-0 bg-gradient-to-r from-forest-dark/95 via-forest-dark/75 via-50% to-transparent pointer-events-none" />
+        <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-forest-dark/90 via-transparent to-black/30 pointer-events-none" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
+
         {/* Breadcrumb Navigation */}
         <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-sans text-sand-surface/75">
-          <Link 
+          <Link
             to={getLocalizedPath('/')}
             className="hover:text-gold transition-colors focus:outline-none focus:underline"
           >
@@ -43,32 +57,32 @@ export default function InsightsHero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="max-w-3xl space-y-6"
+          className="max-w-3xl space-y-4 sm:space-y-6"
         >
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase bg-white/10 text-gold-light border border-white/20 backdrop-blur-md">
+          <div className="inline-flex items-center gap-2 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-semibold tracking-widest uppercase bg-white/10 text-gold-light border border-white/20 backdrop-blur-md">
             <BookOpen className="w-3.5 h-3.5 text-gold" />
             <span>{t('insights.hero.eyebrow', 'Knowledge & Technical Publications')}</span>
           </div>
 
-          <h1 className="font-display font-bold text-4xl sm:text-6xl lg:text-7xl text-white tracking-tight leading-[1.08]">
+          <h1 className="font-display font-bold text-3xl sm:text-5xl lg:text-6xl xl:text-7xl text-white tracking-tight leading-[1.12]">
             {t('insights.hero.title', 'Insights & Resources')}
           </h1>
 
-          <p className="text-base sm:text-xl text-sand-surface/90 leading-relaxed font-sans font-light">
+          <p className="text-sm sm:text-lg lg:text-xl text-sand-surface/90 leading-relaxed font-sans font-light">
             {t('insights.hero.lead', 'Green Gate Advisory shares practical knowledge to help decision-makers understand climate requirements, carbon markets, climate finance and emerging environmental policy considerations.')}
           </p>
         </motion.div>
 
         {/* Advisory Quality Notice */}
-        <div className="pt-6 border-t border-white/10 flex flex-wrap items-center gap-6 text-xs text-sand-surface/70 font-sans">
+        <div className="pt-5 sm:pt-6 border-t border-white/10 flex flex-wrap items-center gap-3 sm:gap-6 text-xs text-sand-surface/70 font-sans">
           <div className="flex items-center gap-2">
             <ShieldCheck className="w-4 h-4 text-gold flex-shrink-0" />
             <span>Subject-matter expert review · Current international frameworks</span>
           </div>
           <span className="hidden sm:inline text-white/20">|</span>
-          <span>Technical checklists & policy intelligence</span>
+          <span className="hidden xs:inline">Technical checklists & policy intelligence</span>
           <span className="hidden sm:inline text-white/20">|</span>
-          <span>Zero speculative or unverified claims</span>
+          <span className="hidden md:inline">Zero speculative or unverified claims</span>
         </div>
 
       </div>

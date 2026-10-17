@@ -9,6 +9,7 @@ import RelatedServices from '../../components/services/RelatedServices';
 import ServiceCTA from '../../components/services/ServiceCTA';
 import { useLocale } from '../../hooks/useLocale';
 import { CheckCircle2, Globe2 } from 'lucide-react';
+import sectorVideo from '../../assets/sectorpage.mp4';
 
 export default function ClimatePolicyAdvisory() {
   const { t } = useTranslation();
@@ -73,6 +74,8 @@ export default function ClimatePolicyAdvisory() {
         shortTitle={serviceData.shortTitle}
         lead={serviceData.lead}
         quickTags={serviceData.quickTags || ['NDC & NAP Advisory', 'Paris Agreement ETF', 'MRV Systems', 'Institutional Governance']}
+        videoSrc={sectorVideo || '/sectorpage.mp4'}
+        trimDuration={null}
       />
 
       <ServiceIntroduction

@@ -9,6 +9,7 @@ import RelatedServices from '../../components/services/RelatedServices';
 import ServiceCTA from '../../components/services/ServiceCTA';
 import { useLocale } from '../../hooks/useLocale';
 import { Scale, CheckCircle2 } from 'lucide-react';
+import serviceEtsVideo from '../../assets/service-ets.mp4';
 
 export default function EtsCarbonPricing() {
   const { t } = useTranslation();
@@ -73,6 +74,8 @@ export default function EtsCarbonPricing() {
         shortTitle={serviceData.shortTitle}
         lead={serviceData.lead}
         quickTags={serviceData.quickTags || ['Emissions Trading Systems', 'Carbon Pricing', 'Article 6 ITMO', 'Allowance Allocation']}
+        videoSrc={serviceEtsVideo || '/service-ets.mp4'}
+        trimDuration={null}
       />
 
       <ServiceIntroduction

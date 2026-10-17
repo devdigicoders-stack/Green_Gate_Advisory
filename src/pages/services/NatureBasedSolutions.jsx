@@ -9,6 +9,7 @@ import RelatedServices from '../../components/services/RelatedServices';
 import ServiceCTA from '../../components/services/ServiceCTA';
 import { useLocale } from '../../hooks/useLocale';
 import { Trees, CheckCircle2, Waves } from 'lucide-react';
+import homepageVideo from '../../assets/homepage.mp4';
 
 export default function NatureBasedSolutions() {
   const { t } = useTranslation();
@@ -77,6 +78,8 @@ export default function NatureBasedSolutions() {
         shortTitle={serviceData.shortTitle}
         lead={serviceData.lead}
         quickTags={serviceData.quickTags || ['Blue Carbon', 'Mangrove Restoration', 'Biodiversity Net Gain', 'Community Safeguards']}
+        videoSrc={homepageVideo || '/homepage.mp4'}
+        trimDuration={null}
       />
 
       <ServiceIntroduction

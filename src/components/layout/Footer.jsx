@@ -22,7 +22,7 @@ export default function Footer() {
           
           {/* Col 1: Brand & Purpose (5 cols) */}
           <div className="lg:col-span-5 space-y-6">
-            <Logo variant="light" imgClassName="h-11 sm:h-12 w-auto" />
+            <Logo variant="light" imgClassName="h-12 sm:h-15 md:h-16 w-auto" />
             <p className="text-sand-surface/80 text-sm leading-relaxed max-w-md font-sans pt-2">
               {t('footer.brandTagline', 'Green Gate Advisory connects climate policy, carbon markets, and project finance into practical, measurable action for public and private sector organisations.')}
             </p>
@@ -131,59 +131,7 @@ export default function Footer() {
 
         </div>
 
-        {/* Global Regional Advisory Hubs (Multi-Office Jurisdiction Grid) */}
-        <div className="py-8 border-b border-white/10">
-          <div className="flex items-center justify-between pb-4">
-            <span className="text-xs font-mono font-bold uppercase tracking-widest text-gold">
-              Global Advisory Hubs & Jurisdictional Corridors
-            </span>
-            <span className="text-[11px] font-mono text-sand-surface/60 hidden sm:inline">
-              Fiduciary Technical Counsel Across Multiple Timezones
-            </span>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-2">
-            <div className="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-1.5">
-              <div className="text-xs font-bold text-white flex items-center justify-between">
-                <span>🇬🇧 Europe & UK Hub</span>
-                <span className="text-[10px] font-mono text-gold">London / Geneva</span>
-              </div>
-              <p className="text-[11px] text-sand-surface/70 leading-relaxed font-sans">
-                EU CBAM declarants, EU ETS cap-and-trade modeling, CSRD/ESRS corporate Scope 1-3 assurance.
-              </p>
-            </div>
-
-            <div className="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-1.5">
-              <div className="text-xs font-bold text-white flex items-center justify-between">
-                <span>🇦🇪 Middle East & GCC Hub</span>
-                <span className="text-[10px] font-mono text-gold">Dubai / Riyadh</span>
-              </div>
-              <p className="text-[11px] text-sand-surface/70 leading-relaxed font-sans">
-                National carbon market infrastructure, Article 6 sovereign bilateral agreements & CCUS transition.
-              </p>
-            </div>
-
-            <div className="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-1.5">
-              <div className="text-xs font-bold text-white flex items-center justify-between">
-                <span>🇸🇬 Asia-Pacific Hub</span>
-                <span className="text-[10px] font-mono text-gold">Singapore / Delhi</span>
-              </div>
-              <p className="text-[11px] text-sand-surface/70 leading-relaxed font-sans">
-                Industrial export CBAM mitigation, thermal & renewable digital MRV, domestic carbon tax readiness.
-              </p>
-            </div>
-
-            <div className="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-1.5">
-              <div className="text-xs font-bold text-white flex items-center justify-between">
-                <span>🇰🇪 Africa & Emerging Markets</span>
-                <span className="text-[10px] font-mono text-gold">Nairobi Liaison</span>
-              </div>
-              <p className="text-[11px] text-sand-surface/70 leading-relaxed font-sans">
-                GCF & multilateral blended climate finance, nature-based ARR & mangrove carbon validation.
-              </p>
-            </div>
-          </div>
-        </div>
+         
 
         {/* Regulatory Disclaimer Banner */}
         <div className="py-6 border-b border-white/10 text-xs text-sand-surface/60 leading-relaxed font-sans">

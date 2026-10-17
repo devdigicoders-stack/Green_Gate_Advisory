@@ -16,7 +16,7 @@ export default function Logo({
   return (
     <Link 
       to={getLocalizedPath('/')}
-      className={`inline-flex items-center group focus:outline-none focus:ring-2 focus:ring-gold/50 rounded-xl transition-all duration-200 hover:opacity-95 ${className}`}
+      className={`inline-flex items-center group outline-none focus:outline-none focus:ring-0 focus-visible:outline-none focus:border-none border-none select-none transition-all duration-200 hover:opacity-95 ${className}`}
       aria-label="Green Gate Advisory Home"
     >
       <img

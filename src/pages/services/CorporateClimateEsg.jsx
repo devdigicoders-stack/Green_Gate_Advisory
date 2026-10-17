@@ -77,6 +77,7 @@ export default function CorporateClimateEsg() {
         shortTitle={serviceData.shortTitle}
         lead={serviceData.lead}
         quickTags={serviceData.quickTags || ['Scope 1, 2 & 3', 'Decarbonisation Roadmap', 'ESG Reporting', 'TCFD & ISSB']}
+        imageSrc="/images/sustainable-industry.jpg"
       />
 
       <ServiceIntroduction

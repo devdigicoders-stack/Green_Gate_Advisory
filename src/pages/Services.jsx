@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { 
-  ChevronRight, 
-  ArrowRight, 
-  Sparkles, 
-  Scale, 
-  ShieldCheck, 
-  Landmark, 
-  Trees, 
-  FileText, 
+import {
+  ChevronRight,
+  ArrowRight,
+  Sparkles,
+  Scale,
+  ShieldCheck,
+  Landmark,
+  Trees,
+  FileText,
   BarChart3,
   CheckCircle2,
   Layers,
@@ -60,21 +60,33 @@ export default function Services() {
       />
 
       {/* SECTION 1 — HERO */}
-      <section className="relative overflow-hidden bg-forest-dark text-white pt-28 pb-20 sm:pt-36 sm:pb-28">
-        <div className="absolute inset-0 z-0">
+      <section className="relative overflow-hidden bg-forest-dark text-white pt-24 pb-14 sm:pt-36 sm:pb-24">
+        {/* Background Photography & Video with Sophisticated Directional Lighting */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover object-center opacity-85 scale-102"
+          >
+            <source src="/videos/services-hero.webm" type="video/webm" />
+          </video>
           <img
             src="/images/sustainable-industry.jpg"
             alt="Sustainable clean industrial technologies and solar installations"
-            className="w-full h-full object-cover object-right sm:object-center opacity-85 scale-102"
+            className="absolute inset-0 w-full h-full object-cover object-right sm:object-center opacity-85 scale-102 -z-10"
             loading="eager"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-forest-dark/95 via-forest-dark/75 via-50% to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/90 via-transparent to-black/30" />
+          {/* Mobile vertical gradient */}
+          <div className="absolute inset-0 bg-gradient-to-t from-forest-dark via-forest-dark/90 to-forest-dark/80 sm:hidden pointer-events-none" />
+          <div className="hidden sm:block absolute inset-0 bg-gradient-to-r from-forest-dark/95 via-forest-dark/75 via-50% to-transparent pointer-events-none" />
+          <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-forest-dark/90 via-transparent to-black/30 pointer-events-none" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
           <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-sans text-sand-surface/75">
-            <Link 
+            <Link
               to={getLocalizedPath('/')}
               className="hover:text-gold transition-colors focus:outline-none focus:underline"
             >
@@ -86,30 +98,30 @@ export default function Services() {
             </span>
           </nav>
 
-          <div className="max-w-3xl space-y-6">
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase bg-white/10 text-gold-light border border-white/20 backdrop-blur-md">
+          <div className="max-w-3xl space-y-4 sm:space-y-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-semibold tracking-widest uppercase bg-white/10 text-gold-light border border-white/20 backdrop-blur-md">
               <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
               <span>{t('services.overview.hero.eyebrow', 'Climate & Environmental Advisory')}</span>
             </div>
 
-            <h1 className="font-display font-bold text-4xl sm:text-6xl lg:text-7xl text-white tracking-tight leading-[1.08]">
+            <h1 className="font-display font-bold text-3xl sm:text-5xl lg:text-6xl xl:text-7xl text-white tracking-tight leading-[1.12]">
               {t('services.overview.hero.title', 'Our Climate & Environmental Advisory Services')}
             </h1>
 
-            <p className="text-base sm:text-xl text-sand-surface/90 leading-relaxed font-sans font-light">
+            <p className="text-sm sm:text-lg lg:text-xl text-sand-surface/90 leading-relaxed font-sans font-light">
               {t('services.overview.hero.lead', 'Green Gate Advisory provides specialized advisory support across carbon markets, compliance mechanisms, climate finance, nature-based solutions and corporate sustainability—helping turn climate priorities into practical, measurable action.')}
             </p>
           </div>
 
-          <div className="pt-6 border-t border-white/10 flex flex-wrap items-center gap-6 text-xs text-sand-surface/70 font-sans">
+          <div className="pt-5 sm:pt-6 border-t border-white/10 flex flex-wrap items-center gap-3 sm:gap-6 text-xs text-sand-surface/70 font-sans">
             <div className="flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-gold" />
+              <ShieldCheck className="w-4 h-4 text-gold flex-shrink-0" />
               <span>Seven core advisory workstreams</span>
             </div>
             <span className="hidden sm:inline text-white/20">|</span>
-            <span>Connecting policy, science, finance and delivery</span>
+            <span className="hidden xs:inline">Connecting policy, science, finance and delivery</span>
             <span className="hidden sm:inline text-white/20">|</span>
-            <span>Zero speculative outcomes or guaranteed credit issuances</span>
+            <span className="hidden md:inline">Zero speculative outcomes or guaranteed credit issuances</span>
           </div>
         </div>
       </section>
@@ -118,7 +130,7 @@ export default function Services() {
       <section className="py-14 sm:py-20 bg-white border-b border-sand-border/70">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            
+
             <div className="lg:col-span-7 space-y-6">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-forest/5 text-deep-green border border-forest/10">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold"></span>
@@ -145,7 +157,7 @@ export default function Services() {
                   <Compass className="w-5 h-5 text-gold-dark" />
                   <span>Advisory Tenets</span>
                 </div>
-                
+
                 <ul className="space-y-3 text-xs sm:text-sm text-charcoal-muted font-sans font-light">
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-deep-green flex-shrink-0 mt-0.5" />
@@ -170,7 +182,7 @@ export default function Services() {
       {/* SECTION 3 — SEVEN CORE SERVICE CARDS */}
       <section className="py-14 sm:py-20 bg-sage/40 border-b border-sand-border/70">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-          
+
           <SectionHeader
             badge={t('services.overview.grid.eyebrow', 'Core Advisory Practices')}
             title={t('services.overview.grid.heading', 'Seven Specialized Service Workstreams')}
@@ -226,7 +238,7 @@ export default function Services() {
       {/* SECTION 4 — INTEGRATED ADVISORY APPROACH */}
       <section className="py-14 sm:py-20 bg-white border-b border-sand-border/70">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-          
+
           <SectionHeader
             badge={t('services.overview.approach.eyebrow', 'Integrated Perspective')}
             title={t('services.overview.approach.heading', 'Connecting Strategy, Regulation, Finance & Delivery')}
@@ -235,7 +247,7 @@ export default function Services() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {pillars.map((pil, idx) => (
-              <div 
+              <div
                 key={idx}
                 className="p-7 rounded-3xl bg-sage/30 border border-sand-border hover:bg-white hover:border-deep-green/30 hover:shadow-subtle transition-all duration-300 flex flex-col justify-between space-y-4 group"
               >

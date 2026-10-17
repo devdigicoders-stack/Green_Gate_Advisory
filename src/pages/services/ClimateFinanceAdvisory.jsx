@@ -9,6 +9,7 @@ import RelatedServices from '../../components/services/RelatedServices';
 import ServiceCTA from '../../components/services/ServiceCTA';
 import { useLocale } from '../../hooks/useLocale';
 import { Landmark, CheckCircle2, ShieldAlert } from 'lucide-react';
+import climateFinanceVideo from '../../assets/service-climate.mp4';
 
 export default function ClimateFinanceAdvisory() {
   const { t } = useTranslation();
@@ -74,6 +75,8 @@ export default function ClimateFinanceAdvisory() {
         shortTitle={serviceData.shortTitle}
         lead={serviceData.lead}
         quickTags={serviceData.quickTags || ['GCF & GEF', 'Adaptation Fund', 'Blended Finance', 'Theory of Change']}
+        videoSrc={climateFinanceVideo || '/service-climate.mp4'}
+        trimDuration={null}
       />
 
       <ServiceIntroduction

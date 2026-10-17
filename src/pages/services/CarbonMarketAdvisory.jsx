@@ -9,6 +9,7 @@ import RelatedServices from '../../components/services/RelatedServices';
 import ServiceCTA from '../../components/services/ServiceCTA';
 import { useLocale } from '../../hooks/useLocale';
 import { ShieldAlert, CheckCircle2 } from 'lucide-react';
+import servicecarbonVideo from '../../assets/servicecarbonpage.mp4';
 
 export default function CarbonMarketAdvisory() {
   const { t } = useTranslation();
@@ -73,6 +74,8 @@ export default function CarbonMarketAdvisory() {
         shortTitle={serviceData.shortTitle}
         lead={serviceData.lead}
         quickTags={serviceData.quickTags || ['Voluntary Carbon Market', 'Article 6', 'MRV Systems', 'Registry Guidance']}
+        videoSrc={servicecarbonVideo || '/servicecarbonpage.mp4'}
+        trimDuration={6.0}
       />
 
       <ServiceIntroduction

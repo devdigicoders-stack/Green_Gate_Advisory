@@ -150,6 +150,20 @@ export default function Header() {
     setActiveDropdown((prev) => (prev === name ? null : name));
   };
 
+  const handleSectionClick = (targetId, isMobile = false) => {
+    setActiveDropdown(null);
+    if (isMobile) {
+      setMobileMenuOpen(false);
+    }
+    // If already on /about-us, smoothly scroll to element
+    if (location.pathname.includes('/about-us')) {
+      const el = document.getElementById(targetId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <>
       {/* Floating Header Wrapper */}
@@ -172,7 +186,7 @@ export default function Header() {
               <div className="flex-shrink-0">
                 <Logo 
                   variant={isScrolled ? 'default' : 'light'} 
-                  imgClassName="h-8 sm:h-9 w-auto" 
+                  imgClassName="h-9 sm:h-11 md:h-12 w-auto" 
                 />
               </div>
 
@@ -510,8 +524,8 @@ export default function Header() {
                   </div>
                   <div className="space-y-1">
                     <Link
-                      to={getLocalizedPath('/about-us')}
-                      onClick={() => setActiveDropdown(null)}
+                      to={`${getLocalizedPath('/about-us')}#who-we-are`}
+                      onClick={() => handleSectionClick('who-we-are')}
                       className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-forest/5 transition-colors group"
                     >
                       <div className="w-8 h-8 rounded-lg bg-forest/5 flex items-center justify-center flex-shrink-0 text-forest group-hover:bg-forest group-hover:text-gold transition-colors">
@@ -526,8 +540,8 @@ export default function Header() {
                     </Link>
 
                     <Link
-                      to={getLocalizedPath('/about-us')}
-                      onClick={() => setActiveDropdown(null)}
+                      to={`${getLocalizedPath('/about-us')}#purpose-mission`}
+                      onClick={() => handleSectionClick('purpose-mission')}
                       className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-forest/5 transition-colors group"
                     >
                       <div className="w-8 h-8 rounded-lg bg-forest/5 flex items-center justify-center flex-shrink-0 text-forest group-hover:bg-forest group-hover:text-gold transition-colors">
@@ -542,8 +556,8 @@ export default function Header() {
                     </Link>
 
                     <Link
-                      to={getLocalizedPath('/about-us')}
-                      onClick={() => setActiveDropdown(null)}
+                      to={`${getLocalizedPath('/about-us')}#our-approach`}
+                      onClick={() => handleSectionClick('our-approach')}
                       className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-forest/5 transition-colors group"
                     >
                       <div className="w-8 h-8 rounded-lg bg-forest/5 flex items-center justify-center flex-shrink-0 text-forest group-hover:bg-forest group-hover:text-gold transition-colors">
@@ -558,8 +572,8 @@ export default function Header() {
                     </Link>
 
                     <Link
-                      to={getLocalizedPath('/about-us')}
-                      onClick={() => setActiveDropdown(null)}
+                      to={`${getLocalizedPath('/about-us')}#why-green-gate`}
+                      onClick={() => handleSectionClick('why-green-gate')}
                       className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-forest/5 transition-colors group"
                     >
                       <div className="w-8 h-8 rounded-lg bg-forest/5 flex items-center justify-center flex-shrink-0 text-forest group-hover:bg-forest group-hover:text-gold transition-colors">
@@ -776,32 +790,32 @@ export default function Header() {
                   {mobileExpandedSection === 'about' && (
                     <div className="px-2.5 pb-2.5 space-y-1 pt-1 border-t border-sand-border/60 bg-white animate-in fade-in duration-150">
                       <Link 
-                        to={getLocalizedPath('/about-us')} 
-                        onClick={() => setMobileMenuOpen(false)} 
+                        to={`${getLocalizedPath('/about-us')}#who-we-are`} 
+                        onClick={() => handleSectionClick('who-we-are', true)} 
                         className="flex items-center gap-2.5 p-2 rounded-xl text-xs font-medium text-forest-dark hover:bg-forest/5"
                       >
                         <Building2 className="w-3.5 h-3.5 text-deep-green" />
                         <span>{t('navigation.menu.whoWeAre', 'About Green Gate Advisory')}</span>
                       </Link>
                       <Link 
-                        to={getLocalizedPath('/about-us')} 
-                        onClick={() => setMobileMenuOpen(false)} 
+                        to={`${getLocalizedPath('/about-us')}#purpose-mission`} 
+                        onClick={() => handleSectionClick('purpose-mission', true)} 
                         className="flex items-center gap-2.5 p-2 rounded-xl text-xs font-medium text-forest-dark hover:bg-forest/5"
                       >
                         <Target className="w-3.5 h-3.5 text-deep-green" />
                         <span>{t('navigation.menu.purpose', 'Purpose, Mission & Vision')}</span>
                       </Link>
                       <Link 
-                        to={getLocalizedPath('/about-us')} 
-                        onClick={() => setMobileMenuOpen(false)} 
+                        to={`${getLocalizedPath('/about-us')}#our-approach`} 
+                        onClick={() => handleSectionClick('our-approach', true)} 
                         className="flex items-center gap-2.5 p-2 rounded-xl text-xs font-medium text-forest-dark hover:bg-forest/5"
                       >
                         <Layers className="w-3.5 h-3.5 text-deep-green" />
                         <span>{t('navigation.menu.approach', 'Our Approach & Methodology')}</span>
                       </Link>
                       <Link 
-                        to={getLocalizedPath('/about-us')} 
-                        onClick={() => setMobileMenuOpen(false)} 
+                        to={`${getLocalizedPath('/about-us')}#why-green-gate`} 
+                        onClick={() => handleSectionClick('why-green-gate', true)} 
                         className="flex items-center gap-2.5 p-2 rounded-xl text-xs font-medium text-forest-dark hover:bg-forest/5"
                       >
                         <Award className="w-3.5 h-3.5 text-deep-green" />

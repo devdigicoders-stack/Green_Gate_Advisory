@@ -5,7 +5,7 @@ export default function OurPurpose() {
   const { t } = useTranslation();
 
   return (
-    <section className="py-14 sm:py-20 bg-white border-b border-sand-border/70">
+    <section id="purpose-mission" className="py-14 sm:py-20 bg-white border-b border-sand-border/70 scroll-mt-24">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Highlighted Editorial Card */}

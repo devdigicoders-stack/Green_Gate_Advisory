@@ -6,9 +6,19 @@ import Footer from './Footer';
 export default function Layout() {
   const { pathname } = useLocation();
 
-  // Scroll to top on navigation
+  // Scroll to top on navigation or smooth scroll to hash
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' });
+    if (window.location.hash) {
+      const targetId = window.location.hash.replace('#', '');
+      setTimeout(() => {
+        const el = document.getElementById(targetId);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }
   }, [pathname]);
 
   return (

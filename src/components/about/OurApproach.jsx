@@ -9,7 +9,7 @@ export default function OurApproach() {
   const steps = Array.isArray(rawSteps) ? rawSteps : [];
 
   return (
-    <section className="py-14 sm:py-20 bg-sage/50 border-b border-sand-border/70">
+    <section id="our-approach" className="py-14 sm:py-20 bg-sage/50 border-b border-sand-border/70 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         
         <SectionHeader
