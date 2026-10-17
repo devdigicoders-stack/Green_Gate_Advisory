@@ -164,7 +164,15 @@ export default function Header() {
     }
     leaveTimerRef.current = setTimeout(() => {
       setActiveDropdown(null);
-    }, 180);
+    }, 50);
+  };
+
+  const handleItemHoverClear = () => {
+    if (leaveTimerRef.current) {
+      clearTimeout(leaveTimerRef.current);
+      leaveTimerRef.current = null;
+    }
+    setActiveDropdown(null);
   };
 
   const handleDropdownClick = (name, e) => {
@@ -199,7 +207,7 @@ export default function Header() {
         <div className="relative w-full">
           {/* Main Navigation Container - Seamlessly expands across full width when active */}
           <div 
-            className={`pointer-events-auto w-full transition-all duration-300 ease-out ${
+            className={`pointer-events-auto w-full transition-all duration-150 ease-out ${
               activeDropdown ? 'rounded-3xl' : 'rounded-full'
             } ${
               isScrolled
@@ -218,7 +226,10 @@ export default function Header() {
                 : ''
             }`}>
               {/* Left: Brand Logo (Flex item 1) */}
-              <div className="flex-1 flex justify-start items-center">
+              <div 
+                className="flex-1 flex justify-start items-center"
+                onMouseEnter={handleItemHoverClear}
+              >
                 <Logo 
                   variant={isScrolled ? 'default' : 'light'} 
                   imgClassName="h-9 sm:h-11 md:h-12 w-auto" 
@@ -261,6 +272,7 @@ export default function Header() {
                 {/* 2. Sectors */}
                 <NavLink
                   to={getLocalizedPath('/sectors')}
+                  onMouseEnter={handleItemHoverClear}
                   className={({ isActive }) =>
                     `px-3.5 py-1.5 text-sm sm:text-[14px] font-semibold tracking-normal transition-all duration-150 ${
                       isActive
@@ -279,6 +291,7 @@ export default function Header() {
                 {/* 3. Who We Serve */}
                 <NavLink
                   to={getLocalizedPath('/who-we-serve')}
+                  onMouseEnter={handleItemHoverClear}
                   className={({ isActive }) =>
                     `px-3.5 py-1.5 text-sm sm:text-[14px] font-semibold tracking-normal transition-all duration-150 ${
                       isActive
@@ -353,6 +366,7 @@ export default function Header() {
                 {/* 6. Contact Direct Link */}
                 <NavLink
                   to={getLocalizedPath('/contact')}
+                  onMouseEnter={handleItemHoverClear}
                   className={({ isActive }) =>
                     `px-3.5 py-1.5 text-sm sm:text-[14px] font-semibold tracking-normal transition-all duration-150 ${
                       isActive
@@ -370,7 +384,10 @@ export default function Header() {
               </nav>
 
               {/* Right: Language Selector & Mobile Trigger (Flex item 3 - Right aligned) */}
-              <div className="flex-1 flex justify-end items-center gap-3">
+              <div 
+                className="flex-1 flex justify-end items-center gap-3"
+                onMouseEnter={handleItemHoverClear}
+              >
                 <LanguageSwitcher isDark={isScrolled} />
 
                 {/* Mobile Menu Hamburger Button */}
@@ -394,7 +411,7 @@ export default function Header() {
             {/* Expanded Full-Width Inner Area (Covering the whole container area) */}
             {activeDropdown && (
               <div 
-                className="hidden lg:block px-6 sm:px-8 py-5 animate-in fade-in slide-in-from-top-1 duration-200"
+                className="hidden lg:block px-6 sm:px-8 py-5 animate-in fade-in slide-in-from-top-1 duration-150"
                 onMouseEnter={() => {
                   if (leaveTimerRef.current) {
                     clearTimeout(leaveTimerRef.current);
