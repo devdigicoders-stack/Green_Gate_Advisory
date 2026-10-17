@@ -48,6 +48,16 @@ const SERVICE_TITLES = {
   corporateClimate: 'Corporate Climate, GHG Accounting & ESG'
 };
 
+const SERVICE_DESCRIPTIONS = {
+  carbonMarket: 'Carbon crediting, project certification & Article 6 transfer strategy',
+  etsCarbonPricing: 'Cap-and-trade compliance, emissions allowances & carbon tax readiness',
+  ets: 'ETS, Carbon Pricing & Article 6',
+  cbam: 'EU CBAM exposure, embedded emissions calculations & reporting',
+  climateFinance: 'Bankable climate proposal design & multilateral concessional capital',
+  natureBased: 'High-integrity AFOLU, jurisdictional forestry & blue carbon assets',
+  climatePolicy: 'National regulatory architecture, NDC alignment & policy design',
+  corporateClimate: 'Scope 1-3 GHG accounting, SBTi net-zero roadmaps & ESG disclosure'
+};
 
 export default function Header() {
   const { t } = useTranslation();
@@ -187,15 +197,26 @@ export default function Header() {
         }`}
       >
         <div className="relative w-full">
-          {/* Main Navigation Pill - Constant height and shape */}
+          {/* Main Navigation Container - Seamlessly expands across full width when active */}
           <div 
-            className={`pointer-events-auto w-full transition-colors duration-200 rounded-full ${
+            className={`pointer-events-auto w-full transition-all duration-300 ease-out ${
+              activeDropdown ? 'rounded-3xl' : 'rounded-full'
+            } ${
               isScrolled
-                ? 'bg-white shadow-xl text-forest'
-                : 'bg-green-200/20 backdrop-blur-xl border border-white/10 shadow-2xl text-white'
+                ? 'bg-white/95 backdrop-blur-2xl shadow-xl border border-sand-border text-forest'
+                : activeDropdown
+                  ? 'bg-[#00281b]/98 backdrop-blur-2xl border border-white/15 shadow-2xl text-white'
+                  : 'bg-green-200/20 backdrop-blur-xl border border-white/10 shadow-2xl text-white'
             }`}
           >
-            <div className="flex items-center justify-between px-4 sm:px-8 py-2.5 sm:py-3">
+            {/* Top Navigation Row */}
+            <div className={`flex items-center justify-between px-4 sm:px-8 py-2.5 sm:py-3 transition-colors ${
+              activeDropdown 
+                ? isScrolled 
+                  ? 'border-b border-sand-border/80' 
+                  : 'border-b border-white/10' 
+                : ''
+            }`}>
               {/* Left: Brand Logo (Flex item 1) */}
               <div className="flex-1 flex justify-start items-center">
                 <Logo 
@@ -209,7 +230,7 @@ export default function Header() {
                 className="hidden lg:flex items-center justify-center gap-1 xl:gap-2.5 flex-none text-sm sm:text-[14px] font-semibold"
                 aria-label="Main Navigation"
               >
-                {/* 1. Our services Dropdown */}
+                {/* 1. Our services Trigger */}
                 <div 
                   className="relative"
                   onMouseEnter={() => handleMouseEnter('services')}
@@ -235,42 +256,6 @@ export default function Header() {
                       }`} 
                     />
                   </button>
-
-                  {/* Floating Dropdown Card */}
-                  {activeDropdown === 'services' && (
-                    <div 
-                      className="absolute top-full left-0 pt-2 z-50 w-[340px] animate-in fade-in slide-in-from-top-1 duration-150"
-                      onMouseEnter={() => handleMouseEnter('services')}
-                    >
-                      <div 
-                        className={`p-2 rounded-2xl shadow-2xl border backdrop-blur-2xl ${
-                          isScrolled
-                            ? 'bg-white/95 border-sand-border text-forest shadow-premium'
-                            : 'bg-[#002d1f]/95 border-white/15 text-white shadow-2xl'
-                        }`}
-                      >
-                        <div className="space-y-0.5">
-                          {SERVICES_LIST.map((srv) => {
-                            const title = t(`navigation.servicesMenu.${srv.key}`, SERVICE_TITLES[srv.key] || srv.slug);
-                            return (
-                              <Link
-                                key={srv.key}
-                                to={getLocalizedPath(`/services/${srv.slug}`)}
-                                onClick={() => setActiveDropdown(null)}
-                                className={`block px-3.5 py-2 rounded-xl text-[13.5px] font-medium transition-colors duration-150 leading-snug ${
-                                  isScrolled
-                                    ? 'text-forest/85 hover:text-forest hover:bg-forest/5 hover:font-bold'
-                                    : 'text-white/85 hover:text-white hover:bg-white/10 hover:font-bold'
-                                }`}
-                              >
-                                {title}
-                              </Link>
-                            );
-                          })}
-                        </div>
-                      </div>
-                    </div>
-                  )}
                 </div>
 
                 {/* 2. Sectors */}
@@ -309,7 +294,7 @@ export default function Header() {
                   {t('navigation.whoWeServe', 'Who We Serve')}
                 </NavLink>
 
-                {/* 4. Latest Dropdown */}
+                {/* 4. Latest Trigger */}
                 <div 
                   className="relative"
                   onMouseEnter={() => handleMouseEnter('latest')}
@@ -335,72 +320,9 @@ export default function Header() {
                       }`} 
                     />
                   </button>
-
-                  {/* Floating Dropdown Card */}
-                  {activeDropdown === 'latest' && (
-                    <div 
-                      className="absolute top-full left-1/2 -translate-x-1/2 pt-2 z-50 w-60 animate-in fade-in slide-in-from-top-1 duration-150"
-                      onMouseEnter={() => handleMouseEnter('latest')}
-                    >
-                      <div 
-                        className={`p-2 rounded-2xl shadow-2xl border backdrop-blur-2xl ${
-                          isScrolled
-                            ? 'bg-white/95 border-sand-border text-forest shadow-premium'
-                            : 'bg-[#002d1f]/95 border-white/15 text-white shadow-2xl'
-                        }`}
-                      >
-                        <div className="space-y-0.5">
-                          <Link
-                            to={getLocalizedPath('/insights')}
-                            onClick={() => setActiveDropdown(null)}
-                            className={`block px-3.5 py-2 rounded-xl text-[13.5px] font-medium transition-colors duration-150 leading-snug ${
-                              isScrolled
-                                ? 'text-forest/85 hover:text-forest hover:bg-forest/5 hover:font-bold'
-                                : 'text-white/85 hover:text-white hover:bg-white/10 hover:font-bold'
-                            }`}
-                          >
-                            {t('navigation.menu.news', 'News & Insights')}
-                          </Link>
-                          <Link
-                            to={getLocalizedPath('/training')}
-                            onClick={() => setActiveDropdown(null)}
-                            className={`block px-3.5 py-2 rounded-xl text-[13.5px] font-medium transition-colors duration-150 leading-snug ${
-                              isScrolled
-                                ? 'text-forest/85 hover:text-forest hover:bg-forest/5 hover:font-bold'
-                                : 'text-white/85 hover:text-white hover:bg-white/10 hover:font-bold'
-                            }`}
-                          >
-                            {t('navigation.menu.events', 'Events & Workshops')}
-                          </Link>
-                          <Link
-                            to={getLocalizedPath('/insights')}
-                            onClick={() => setActiveDropdown(null)}
-                            className={`block px-3.5 py-2 rounded-xl text-[13.5px] font-medium transition-colors duration-150 leading-snug ${
-                              isScrolled
-                                ? 'text-forest/85 hover:text-forest hover:bg-forest/5 hover:font-bold'
-                                : 'text-white/85 hover:text-white hover:bg-white/10 hover:font-bold'
-                            }`}
-                          >
-                            {t('navigation.menu.resources', 'Resources & Briefings')}
-                          </Link>
-                          <Link
-                            to={getLocalizedPath('/contact')}
-                            onClick={() => setActiveDropdown(null)}
-                            className={`block px-3.5 py-2 rounded-xl text-[13.5px] font-medium transition-colors duration-150 leading-snug ${
-                              isScrolled
-                                ? 'text-forest/85 hover:text-forest hover:bg-forest/5 hover:font-bold'
-                                : 'text-white/85 hover:text-white hover:bg-white/10 hover:font-bold'
-                            }`}
-                          >
-                            {t('navigation.menu.consultations', 'Consultations')}
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  )}
                 </div>
 
-                {/* 5. About Dropdown */}
+                {/* 5. About Trigger */}
                 <div 
                   className="relative"
                   onMouseEnter={() => handleMouseEnter('about')}
@@ -426,69 +348,6 @@ export default function Header() {
                       }`} 
                     />
                   </button>
-
-                  {/* Floating Dropdown Card */}
-                  {activeDropdown === 'about' && (
-                    <div 
-                      className="absolute top-full left-1/2 -translate-x-1/2 pt-2 z-50 w-72 animate-in fade-in slide-in-from-top-1 duration-150"
-                      onMouseEnter={() => handleMouseEnter('about')}
-                    >
-                      <div 
-                        className={`p-2 rounded-2xl shadow-2xl border backdrop-blur-2xl ${
-                          isScrolled
-                            ? 'bg-white/95 border-sand-border text-forest shadow-premium'
-                            : 'bg-[#002d1f]/95 border-white/15 text-white shadow-2xl'
-                        }`}
-                      >
-                        <div className="space-y-0.5">
-                          <Link
-                            to={`${getLocalizedPath('/about-us')}#who-we-are`}
-                            onClick={() => handleSectionClick('who-we-are')}
-                            className={`block px-3.5 py-2 rounded-xl text-[13.5px] font-medium transition-colors duration-150 leading-snug ${
-                              isScrolled
-                                ? 'text-forest/85 hover:text-forest hover:bg-forest/5 hover:font-bold'
-                                : 'text-white/85 hover:text-white hover:bg-white/10 hover:font-bold'
-                            }`}
-                          >
-                            {t('navigation.menu.whoWeAre', 'About Green Gate Advisory')}
-                          </Link>
-                          <Link
-                            to={`${getLocalizedPath('/about-us')}#purpose-mission`}
-                            onClick={() => handleSectionClick('purpose-mission')}
-                            className={`block px-3.5 py-2 rounded-xl text-[13.5px] font-medium transition-colors duration-150 leading-snug ${
-                              isScrolled
-                                ? 'text-forest/85 hover:text-forest hover:bg-forest/5 hover:font-bold'
-                                : 'text-white/85 hover:text-white hover:bg-white/10 hover:font-bold'
-                            }`}
-                          >
-                            {t('navigation.menu.purpose', 'Purpose, Mission & Vision')}
-                          </Link>
-                          <Link
-                            to={`${getLocalizedPath('/about-us')}#our-approach`}
-                            onClick={() => handleSectionClick('our-approach')}
-                            className={`block px-3.5 py-2 rounded-xl text-[13.5px] font-medium transition-colors duration-150 leading-snug ${
-                              isScrolled
-                                ? 'text-forest/85 hover:text-forest hover:bg-forest/5 hover:font-bold'
-                                : 'text-white/85 hover:text-white hover:bg-white/10 hover:font-bold'
-                            }`}
-                          >
-                            {t('navigation.menu.approach', 'Our Approach & Methodology')}
-                          </Link>
-                          <Link
-                            to={`${getLocalizedPath('/about-us')}#why-green-gate`}
-                            onClick={() => handleSectionClick('why-green-gate')}
-                            className={`block px-3.5 py-2 rounded-xl text-[13.5px] font-medium transition-colors duration-150 leading-snug ${
-                              isScrolled
-                                ? 'text-forest/85 hover:text-forest hover:bg-forest/5 hover:font-bold'
-                                : 'text-white/85 hover:text-white hover:bg-white/10 hover:font-bold'
-                            }`}
-                          >
-                            {t('navigation.menu.whyUs', 'Why Green Gate Advisory')}
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  )}
                 </div>
 
                 {/* 6. Contact Direct Link */}
@@ -531,6 +390,337 @@ export default function Header() {
                 </button>
               </div>
             </div>
+
+            {/* Expanded Full-Width Inner Area (Covering the whole container area) */}
+            {activeDropdown && (
+              <div 
+                className="hidden lg:block px-6 sm:px-8 py-5 animate-in fade-in slide-in-from-top-1 duration-200"
+                onMouseEnter={() => {
+                  if (leaveTimerRef.current) {
+                    clearTimeout(leaveTimerRef.current);
+                    leaveTimerRef.current = null;
+                  }
+                }}
+              >
+                {/* 1. Services Full-Width Mega Menu */}
+                {activeDropdown === 'services' && (
+                  <div className="grid grid-cols-12 gap-6 items-stretch">
+                    {/* 7 Services Grid across 9 columns (3 columns of services) */}
+                    <div className="col-span-12 xl:col-span-9 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                      {SERVICES_LIST.map((srv) => {
+                        const IconComponent = SERVICE_ICONS[srv.iconName] || Sparkles;
+                        const title = t(`navigation.servicesMenu.${srv.key}`, SERVICE_TITLES[srv.key] || srv.slug);
+                        const desc = SERVICE_DESCRIPTIONS[srv.key] || '';
+                        return (
+                          <Link
+                            key={srv.key}
+                            to={getLocalizedPath(`/services/${srv.slug}`)}
+                            onClick={() => setActiveDropdown(null)}
+                            className={`flex items-start gap-3 p-3 rounded-2xl transition-all duration-150 group border ${
+                              isScrolled
+                                ? 'border-transparent hover:border-sand-border/80 hover:bg-forest/5'
+                                : 'border-transparent hover:border-white/10 hover:bg-white/10'
+                            }`}
+                          >
+                            <div className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors mt-0.5 ${
+                              isScrolled
+                                ? 'bg-forest/5 text-forest group-hover:bg-forest group-hover:text-gold'
+                                : 'bg-white/10 text-gold-light group-hover:bg-gold group-hover:text-forest-dark'
+                            }`}>
+                              <IconComponent className="w-4 h-4" />
+                            </div>
+                            <div className="min-w-0 flex-1">
+                              <div className={`text-[13.5px] font-bold flex items-center justify-between transition-colors ${
+                                isScrolled ? 'text-forest group-hover:text-deep-green' : 'text-white group-hover:text-gold-light'
+                              }`}>
+                                <span className="truncate">{title}</span>
+                                <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all flex-shrink-0 ml-1 text-gold" />
+                              </div>
+                              {desc && (
+                                <p className={`text-xs leading-relaxed mt-1 line-clamp-2 ${
+                                  isScrolled ? 'text-charcoal-muted' : 'text-white/70'
+                                }`}>
+                                  {desc}
+                                </p>
+                              )}
+                            </div>
+                          </Link>
+                        );
+                      })}
+                    </div>
+
+                    {/* Spotlight Column across 3 columns */}
+                    <div className={`col-span-12 xl:col-span-3 flex flex-col justify-between p-5 rounded-2xl border ${
+                      isScrolled
+                        ? 'bg-sand-surface/80 border-sand-border'
+                        : 'bg-white/5 border-white/10'
+                    }`}>
+                      <div>
+                        <div className="flex items-center gap-2 mb-2">
+                          <span className="w-2 h-2 rounded-full bg-gold"></span>
+                          <span className="text-[11px] font-mono uppercase tracking-wider font-bold text-gold-light">
+                            {t('navigation.institutionalAdvisory', '7 Specialized Practices')}
+                          </span>
+                        </div>
+                        <h4 className={`text-sm font-bold mb-1.5 ${isScrolled ? 'text-forest' : 'text-white'}`}>
+                          Independent Technical & Carbon Advisory
+                        </h4>
+                        <p className={`text-xs leading-relaxed mb-4 ${isScrolled ? 'text-charcoal-muted' : 'text-white/75'}`}>
+                          Guiding sovereign entities, corporations, and developers across carbon compliance, Article 6, and ESG.
+                        </p>
+                      </div>
+
+                      <div className={`space-y-2 pt-3 border-t ${isScrolled ? 'border-sand-border/70' : 'border-white/10'}`}>
+                        <Link
+                          to={getLocalizedPath('/contact')}
+                          onClick={() => setActiveDropdown(null)}
+                          className="w-full inline-flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-gold text-forest-dark text-xs font-bold uppercase tracking-wider hover:bg-gold-light transition-colors shadow-sm"
+                        >
+                          <span>{t('navigation.requestConsultation', 'Request Consultation')}</span>
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </Link>
+                        <Link
+                          to={getLocalizedPath('/services')}
+                          onClick={() => setActiveDropdown(null)}
+                          className={`w-full inline-flex items-center justify-center gap-1.5 py-1 text-xs font-semibold transition-colors ${
+                            isScrolled ? 'text-forest hover:text-deep-green' : 'text-white/80 hover:text-white'
+                          }`}
+                        >
+                          <span>{t('navigation.menu.overview', 'View All 7 Services')}</span>
+                          <ArrowRight className="w-3 h-3" />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* 2. Latest Full-Width Mega Menu */}
+                {activeDropdown === 'latest' && (
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <Link
+                      to={getLocalizedPath('/insights')}
+                      onClick={() => setActiveDropdown(null)}
+                      className={`p-4 rounded-2xl transition-all duration-150 group border ${
+                        isScrolled
+                          ? 'border-transparent hover:border-sand-border/80 hover:bg-forest/5'
+                          : 'border-transparent hover:border-white/10 hover:bg-white/10'
+                      }`}
+                    >
+                      <div className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors mb-3 ${
+                        isScrolled
+                          ? 'bg-forest/5 text-forest group-hover:bg-forest group-hover:text-gold'
+                          : 'bg-white/10 text-gold-light group-hover:bg-gold group-hover:text-forest-dark'
+                      }`}>
+                        <Newspaper className="w-4 h-4" />
+                      </div>
+                      <div className={`text-[13.5px] font-bold flex items-center justify-between mb-1 ${
+                        isScrolled ? 'text-forest' : 'text-white'
+                      }`}>
+                        <span>{t('navigation.menu.news', 'News & Insights')}</span>
+                        <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-gold" />
+                      </div>
+                      <p className={`text-xs leading-relaxed ${isScrolled ? 'text-charcoal-muted' : 'text-white/70'}`}>
+                        Market intelligence, regulatory changes, Article 6 updates, and global carbon trends.
+                      </p>
+                    </Link>
+
+                    <Link
+                      to={getLocalizedPath('/training')}
+                      onClick={() => setActiveDropdown(null)}
+                      className={`p-4 rounded-2xl transition-all duration-150 group border ${
+                        isScrolled
+                          ? 'border-transparent hover:border-sand-border/80 hover:bg-forest/5'
+                          : 'border-transparent hover:border-white/10 hover:bg-white/10'
+                      }`}
+                    >
+                      <div className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors mb-3 ${
+                        isScrolled
+                          ? 'bg-forest/5 text-forest group-hover:bg-forest group-hover:text-gold'
+                          : 'bg-white/10 text-gold-light group-hover:bg-gold group-hover:text-forest-dark'
+                      }`}>
+                        <Calendar className="w-4 h-4" />
+                      </div>
+                      <div className={`text-[13.5px] font-bold flex items-center justify-between mb-1 ${
+                        isScrolled ? 'text-forest' : 'text-white'
+                      }`}>
+                        <span>{t('navigation.menu.events', 'Events & Workshops')}</span>
+                        <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-gold" />
+                      </div>
+                      <p className={`text-xs leading-relaxed ${isScrolled ? 'text-charcoal-muted' : 'text-white/70'}`}>
+                        Executive masterclasses, capacity building workshops, and industry briefing sessions.
+                      </p>
+                    </Link>
+
+                    <Link
+                      to={getLocalizedPath('/insights')}
+                      onClick={() => setActiveDropdown(null)}
+                      className={`p-4 rounded-2xl transition-all duration-150 group border ${
+                        isScrolled
+                          ? 'border-transparent hover:border-sand-border/80 hover:bg-forest/5'
+                          : 'border-transparent hover:border-white/10 hover:bg-white/10'
+                      }`}
+                    >
+                      <div className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors mb-3 ${
+                        isScrolled
+                          ? 'bg-forest/5 text-forest group-hover:bg-forest group-hover:text-gold'
+                          : 'bg-white/10 text-gold-light group-hover:bg-gold group-hover:text-forest-dark'
+                      }`}>
+                        <BookOpen className="w-4 h-4" />
+                      </div>
+                      <div className={`text-[13.5px] font-bold flex items-center justify-between mb-1 ${
+                        isScrolled ? 'text-forest' : 'text-white'
+                      }`}>
+                        <span>{t('navigation.menu.resources', 'Resources & Briefings')}</span>
+                        <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-gold" />
+                      </div>
+                      <p className={`text-xs leading-relaxed ${isScrolled ? 'text-charcoal-muted' : 'text-white/70'}`}>
+                        Technical whitepapers, policy briefings, methodology analyses, and climate toolkits.
+                      </p>
+                    </Link>
+
+                    <Link
+                      to={getLocalizedPath('/contact')}
+                      onClick={() => setActiveDropdown(null)}
+                      className={`p-4 rounded-2xl transition-all duration-150 group border ${
+                        isScrolled
+                          ? 'border-transparent hover:border-sand-border/80 hover:bg-forest/5'
+                          : 'border-transparent hover:border-white/10 hover:bg-white/10'
+                      }`}
+                    >
+                      <div className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors mb-3 ${
+                        isScrolled
+                          ? 'bg-forest/5 text-forest group-hover:bg-forest group-hover:text-gold'
+                          : 'bg-white/10 text-gold-light group-hover:bg-gold group-hover:text-forest-dark'
+                      }`}>
+                        <MessageSquare className="w-4 h-4" />
+                      </div>
+                      <div className={`text-[13.5px] font-bold flex items-center justify-between mb-1 ${
+                        isScrolled ? 'text-forest' : 'text-white'
+                      }`}>
+                        <span>{t('navigation.menu.consultations', 'Consultations')}</span>
+                        <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-gold" />
+                      </div>
+                      <p className={`text-xs leading-relaxed ${isScrolled ? 'text-charcoal-muted' : 'text-white/70'}`}>
+                        Direct inquiries with our senior advisors for specialized institutional requirements.
+                      </p>
+                    </Link>
+                  </div>
+                )}
+
+                {/* 3. About Full-Width Mega Menu */}
+                {activeDropdown === 'about' && (
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <Link
+                      to={`${getLocalizedPath('/about-us')}#who-we-are`}
+                      onClick={() => handleSectionClick('who-we-are')}
+                      className={`p-4 rounded-2xl transition-all duration-150 group border ${
+                        isScrolled
+                          ? 'border-transparent hover:border-sand-border/80 hover:bg-forest/5'
+                          : 'border-transparent hover:border-white/10 hover:bg-white/10'
+                      }`}
+                    >
+                      <div className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors mb-3 ${
+                        isScrolled
+                          ? 'bg-forest/5 text-forest group-hover:bg-forest group-hover:text-gold'
+                          : 'bg-white/10 text-gold-light group-hover:bg-gold group-hover:text-forest-dark'
+                      }`}>
+                        <Building2 className="w-4 h-4" />
+                      </div>
+                      <div className={`text-[13.5px] font-bold flex items-center justify-between mb-1 ${
+                        isScrolled ? 'text-forest' : 'text-white'
+                      }`}>
+                        <span>{t('navigation.menu.whoWeAre', 'About Green Gate Advisory')}</span>
+                        <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-gold" />
+                      </div>
+                      <p className={`text-xs leading-relaxed ${isScrolled ? 'text-charcoal-muted' : 'text-white/70'}`}>
+                        Independent institutional focus, seasoned global leadership, and rigorous governance.
+                      </p>
+                    </Link>
+
+                    <Link
+                      to={`${getLocalizedPath('/about-us')}#purpose-mission`}
+                      onClick={() => handleSectionClick('purpose-mission')}
+                      className={`p-4 rounded-2xl transition-all duration-150 group border ${
+                        isScrolled
+                          ? 'border-transparent hover:border-sand-border/80 hover:bg-forest/5'
+                          : 'border-transparent hover:border-white/10 hover:bg-white/10'
+                      }`}
+                    >
+                      <div className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors mb-3 ${
+                        isScrolled
+                          ? 'bg-forest/5 text-forest group-hover:bg-forest group-hover:text-gold'
+                          : 'bg-white/10 text-gold-light group-hover:bg-gold group-hover:text-forest-dark'
+                      }`}>
+                        <Target className="w-4 h-4" />
+                      </div>
+                      <div className={`text-[13.5px] font-bold flex items-center justify-between mb-1 ${
+                        isScrolled ? 'text-forest' : 'text-white'
+                      }`}>
+                        <span>{t('navigation.menu.purpose', 'Purpose, Mission & Vision')}</span>
+                        <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-gold" />
+                      </div>
+                      <p className={`text-xs leading-relaxed ${isScrolled ? 'text-charcoal-muted' : 'text-white/70'}`}>
+                        Accelerating global decarbonization through high-integrity, bankable climate frameworks.
+                      </p>
+                    </Link>
+
+                    <Link
+                      to={`${getLocalizedPath('/about-us')}#our-approach`}
+                      onClick={() => handleSectionClick('our-approach')}
+                      className={`p-4 rounded-2xl transition-all duration-150 group border ${
+                        isScrolled
+                          ? 'border-transparent hover:border-sand-border/80 hover:bg-forest/5'
+                          : 'border-transparent hover:border-white/10 hover:bg-white/10'
+                      }`}
+                    >
+                      <div className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors mb-3 ${
+                        isScrolled
+                          ? 'bg-forest/5 text-forest group-hover:bg-forest group-hover:text-gold'
+                          : 'bg-white/10 text-gold-light group-hover:bg-gold group-hover:text-forest-dark'
+                      }`}>
+                        <Layers className="w-4 h-4" />
+                      </div>
+                      <div className={`text-[13.5px] font-bold flex items-center justify-between mb-1 ${
+                        isScrolled ? 'text-forest' : 'text-white'
+                      }`}>
+                        <span>{t('navigation.menu.approach', 'Our Approach & Methodology')}</span>
+                        <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-gold" />
+                      </div>
+                      <p className={`text-xs leading-relaxed ${isScrolled ? 'text-charcoal-muted' : 'text-white/70'}`}>
+                        Science-based methodologies, quantitative analytics, and strict regulatory alignment.
+                      </p>
+                    </Link>
+
+                    <Link
+                      to={`${getLocalizedPath('/about-us')}#why-green-gate`}
+                      onClick={() => handleSectionClick('why-green-gate')}
+                      className={`p-4 rounded-2xl transition-all duration-150 group border ${
+                        isScrolled
+                          ? 'border-transparent hover:border-sand-border/80 hover:bg-forest/5'
+                          : 'border-transparent hover:border-white/10 hover:bg-white/10'
+                      }`}
+                    >
+                      <div className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors mb-3 ${
+                        isScrolled
+                          ? 'bg-forest/5 text-forest group-hover:bg-forest group-hover:text-gold'
+                          : 'bg-white/10 text-gold-light group-hover:bg-gold group-hover:text-forest-dark'
+                      }`}>
+                        <Award className="w-4 h-4" />
+                      </div>
+                      <div className={`text-[13.5px] font-bold flex items-center justify-between mb-1 ${
+                        isScrolled ? 'text-forest' : 'text-white'
+                      }`}>
+                        <span>{t('navigation.menu.whyUs', 'Why Green Gate Advisory')}</span>
+                        <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-gold" />
+                      </div>
+                      <p className={`text-xs leading-relaxed ${isScrolled ? 'text-charcoal-muted' : 'text-white/70'}`}>
+                        Proven cross-border track record, institutional credibility, and conflict-free advisory.
+                      </p>
+                    </Link>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         </div>
       </header>
