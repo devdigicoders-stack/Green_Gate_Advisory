@@ -65,7 +65,6 @@ export default function Header() {
   const location = useLocation();
 
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
   const [activeDropdown, setActiveDropdown] = useState(null); // 'services' | 'latest' | 'about' | null
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileExpandedSection, setMobileExpandedSection] = useState(null); // 'services' | 'latest' | 'about' | null
@@ -73,41 +72,22 @@ export default function Header() {
   const headerRef = useRef(null);
   const leaveTimerRef = useRef(null);
   const menuButtonRef = useRef(null);
-  const lastScrollYRef = useRef(0);
 
-  // Directional scroll detection: hide on scroll down, reveal on scroll up
+  // Scroll detection: toggle background style on scroll while keeping navbar permanently fixed at top
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      const lastScrollY = lastScrollYRef.current;
-      const diff = currentScrollY - lastScrollY;
-
-      setIsScrolled(currentScrollY > 20);
-
-      // Always show at the top of the page
-      if (currentScrollY <= 60) {
-        setIsVisible(true);
-      } else if (diff > 8 && currentScrollY > 120 && !activeDropdown && !mobileMenuOpen) {
-        // Scrolling DOWN -> Hide navbar
-        setIsVisible(false);
-      } else if (diff < -6) {
-        // Scrolling UP -> Reveal navbar immediately
-        setIsVisible(true);
-      }
-
-      lastScrollYRef.current = currentScrollY;
+      setIsScrolled(window.scrollY > 20);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [activeDropdown, mobileMenuOpen]);
+  }, []);
 
   // Close menus on route change
   const currentPath = location.pathname;
   useEffect(() => {
     setActiveDropdown(null);
     setMobileMenuOpen(false);
-    setIsVisible(true);
   }, [currentPath]);
 
   // Click outside listener to close dropdowns
@@ -196,13 +176,11 @@ export default function Header() {
 
   return (
     <>
-      {/* Floating Header Wrapper with Smooth Directional Show/Hide on Scroll */}
+      {/* Floating Header Wrapper - Permanently Fixed at Top */}
       <header 
         ref={headerRef}
         onMouseLeave={handleMouseLeave}
-        className={`fixed top-3.5 sm:top-2 left-0 right-0 z-50 px-3 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full pointer-events-none transition-all duration-300 ease-in-out ${
-          isVisible ? 'translate-y-0 opacity-100' : '-translate-y-28 opacity-0 pointer-events-none'
-        }`}
+        className="fixed top-3.5 sm:top-2 left-0 right-0 z-50 px-3 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full pointer-events-none"
       >
         <div className="relative w-full">
           {/* Main Navigation Container - Seamlessly expands across full width when active */}
