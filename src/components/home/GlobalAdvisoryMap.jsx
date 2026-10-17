@@ -1,249 +1,380 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Globe2, MapPin, ArrowRight, CheckCircle2, Shield, Layers, Building } from 'lucide-react';
-import SectionHeader from '../common/SectionHeader';
+import { Link } from 'react-router-dom';
+import { ChevronRight, ExternalLink, MapPin, X, ArrowUpRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import worldData from '../../data/worldMapPaths.json';
 
-const ADVISORY_REGIONS = [
+// Project categories corresponding to EcoSecurities style legend
+const CATEGORIES = [
+  { id: 'all', label: 'All projects', color: '#FFFFFF' },
+  { id: 'carbon', label: 'Carbon Credits', color: '#E5A93C' },
+  { id: 'climate', label: 'Climate projects', color: '#FFFFFF' },
+  { id: 'investment', label: 'Investment-ready projects', color: '#E5A93C' }
+];
+
+// Pins positioned based on the equirectangular projection (1000 x 500 coordinates converted to %)
+// x = (lng + 180) / 360 * 100%, y = (90 - lat) / 180 * 100%
+const PINS = [
+  // Latin America
   {
-    id: 'europe',
-    name: 'Europe & UK',
-    flag: '🇪🇺',
-    role: 'Compliance & Cross-Border Tax Architecture',
-    coordinates: { x: '51%', y: '33%' },
-    focusWorkstreams: [
-      'EU CBAM reporting & embedded emissions audits',
-      'UK ETS & EU ETS compliance modeling',
-      'Corporate Scope 1-3 SBTi roadmap verification'
-    ],
-    sectorsServed: 'Steel, Aluminium, Cement, Chemical Exporters, Institutional Banks',
-    frameworks: 'EU Regulation 2023/956, GHG Protocol Corporate Standard, CSRD/ESRS'
+    id: 'la-1',
+    name: 'Brazil Jurisdictional REDD+ & Bioeconomy',
+    country: 'Brazil',
+    region: 'Latin America',
+    category: 'carbon',
+    type: 'Carbon Credits',
+    x: 32.5, // approx -63 deg lng
+    y: 68.0, // approx -32 deg lat
+    summary: 'High-integrity jurisdictional REDD+ architecture, Verra JNR and ART TREES crediting alignment.',
+    stats: '1.2M+ ha protected • ART TREES standard'
   },
   {
-    id: 'middleEast',
-    name: 'Middle East & GCC',
-    flag: '🇦🇪',
-    role: 'Sovereign Climate Transition & National Registries',
-    coordinates: { x: '58%', y: '44%' },
-    focusWorkstreams: [
-      'National carbon market framework architecture',
-      'Article 6 bilateral pilot transaction advisory',
-      'Clean hydrogen & industrial CCUS policy alignment'
-    ],
-    sectorsServed: 'Sovereign Wealth Funds, Energy Utilities, Heavy Industry',
-    frameworks: 'Paris Agreement Art. 6.2, UNFCCC National Registry Protocols'
+    id: 'la-2',
+    name: 'Colombia Regenerative Agroforestry',
+    country: 'Colombia',
+    region: 'Latin America',
+    category: 'climate',
+    type: 'Climate projects',
+    x: 30.5,
+    y: 48.5,
+    summary: 'Restoration crediting and agroforestry carbon removal verified under Plan Vivo & Gold Standard.',
+    stats: '450k tCO2e ARR • Gold Standard certified'
   },
   {
-    id: 'asiaPacific',
-    name: 'Asia-Pacific',
-    flag: '🇸🇬',
-    role: 'Industrial Decarbonisation & MRV Architecture',
-    coordinates: { x: '75%', y: '54%' },
-    focusWorkstreams: [
-      'Export manufacturing CBAM exposure mitigation',
-      'Digital MRV systems for renewable & thermal efficiency',
-      'Domestic carbon tax & crediting scheme readiness'
-    ],
-    sectorsServed: 'Manufacturing Conglomerates, Renewable IPPs, Port Authorities',
-    frameworks: 'ISO 14064-1/2, Verra VM0007, CDM Transition Guidelines'
+    id: 'la-3',
+    name: 'Chile Green Hydrogen & Renewables',
+    country: 'Chile',
+    region: 'Latin America',
+    category: 'investment',
+    type: 'Investment-ready projects',
+    x: 29.0,
+    y: 72.0,
+    summary: 'Industrial hydrogen transition and bankable export compliance finance structuring.',
+    stats: 'Industrial scale • Article 6.2 bilateral pilot'
+  },
+
+  // Europe & UK
+  {
+    id: 'eu-1',
+    name: 'London & Brussels Regulatory Hub',
+    country: 'UK & European Union',
+    region: 'Europe',
+    category: 'climate',
+    type: 'Climate projects',
+    x: 49.5,
+    y: 26.5,
+    summary: 'Cross-border CBAM reporting, EU ETS compliance modeling, and corporate SBTi verification.',
+    stats: 'EU CBAM & ETS • CSRD compliance'
+  },
+
+  // Middle East & GCC
+  {
+    id: 'me-1',
+    name: 'GCC Sovereign Carbon Architecture',
+    country: 'United Arab Emirates / GCC',
+    region: 'Middle East',
+    category: 'investment',
+    type: 'Investment-ready projects',
+    x: 58.5,
+    y: 43.5,
+    summary: 'National registry frameworks, Article 6 bilateral pilot transactions, and CCUS policy alignment.',
+    stats: 'Sovereign advisory • Article 6.2 & 6.4'
+  },
+
+  // Sub-Saharan Africa
+  {
+    id: 'af-1',
+    name: 'East African Mangrove & Peatland MRV',
+    country: 'Kenya / Tanzania',
+    region: 'Africa',
+    category: 'climate',
+    type: 'Climate projects',
+    x: 57.0,
+    y: 57.5,
+    summary: 'Blue carbon coastal restoration MRV protocols and Green Climate Fund bankable structuring.',
+    stats: 'Blue Carbon • GCF fundable portfolio'
   },
   {
-    id: 'africa',
-    name: 'Sub-Saharan Africa',
-    flag: '🇰🇪',
-    role: 'Nature-Based Solutions & Climate Finance Structuring',
-    coordinates: { x: '56%', y: '60%' },
-    focusWorkstreams: [
-      'Bankable proposal design for Green Climate Fund (GCF)',
-      'High-integrity ARR, Agroforestry & Mangrove MRV Protocols',
-      'Sovereign Article 6 policy & benefit-sharing models'
-    ],
-    sectorsServed: 'National Climate Ministries, Multilateral Facilities, Land Developers',
-    frameworks: 'GCF Investment Framework, Plan Vivo, CCB Standards'
+    id: 'af-2',
+    name: 'Southern Africa Community Agroforestry',
+    country: 'Zambia / Mozambique',
+    region: 'Africa',
+    category: 'carbon',
+    type: 'Carbon Credits',
+    x: 54.0,
+    y: 69.0,
+    summary: 'High-integrity ARR, verified biodiversity safeguards, and equitable benefit-sharing models.',
+    stats: 'Verra VM0007 • CCB Gold distinction'
+  },
+
+  // Asia-Pacific
+  {
+    id: 'ap-1',
+    name: 'Southeast Asia Industrial Decarbonisation',
+    country: 'Singapore & Malaysia',
+    region: 'Asia-Pacific',
+    category: 'climate',
+    type: 'Climate projects',
+    x: 74.5,
+    y: 55.5,
+    summary: 'Export manufacturing CBAM exposure mitigation and digital MRV systems for renewable IPPs.',
+    stats: 'Regional trading hub • Digital MRV'
   },
   {
-    id: 'latinAmerica',
-    name: 'Latin America',
-    flag: '🇧🇷',
-    role: 'Jurisdictional Natural Capital & Forest Carbon MRV',
-    coordinates: { x: '32%', y: '68%' },
-    focusWorkstreams: [
-      'Sub-national jurisdictional REDD+ architecture',
-      'Bioeconomy and regenerative agriculture crediting',
-      'VVB validation readiness & safeguard assessments'
-    ],
-    sectorsServed: 'Forestry Developers, State Governments, Agro-industrial Exporters',
-    frameworks: 'ART TREES Standard, Verra JNR, UNFCCC Cancun Safeguards'
+    id: 'ap-2',
+    name: 'Indonesia Peatland & Ecosystem Restoration',
+    country: 'Indonesia',
+    region: 'Asia-Pacific',
+    category: 'investment',
+    type: 'Investment-ready projects',
+    x: 77.5,
+    y: 58.0,
+    summary: 'Jurisdictional natural capital restoration and sovereign compliance carbon credit issuance.',
+    stats: 'Investment-grade • 2.5M+ tCO2e potential'
+  },
+  {
+    id: 'ap-3',
+    name: 'Vietnam & Mekong Delta NBS',
+    country: 'Vietnam',
+    region: 'Asia-Pacific',
+    category: 'carbon',
+    type: 'Carbon Credits',
+    x: 76.0,
+    y: 47.0,
+    summary: 'Sustainable rice cultivation methane abatement and voluntary carbon market validation.',
+    stats: 'Article 6 bilateral • Verra Verified'
+  },
+  {
+    id: 'ap-4',
+    name: 'Australia Natural Capital Solutions',
+    country: 'Australia',
+    region: 'Oceania',
+    category: 'investment',
+    type: 'Investment-ready projects',
+    x: 85.0,
+    y: 72.0,
+    summary: 'ACCU crediting method alignment, soil carbon measurement, and institutional land portfolios.',
+    stats: 'ACCU scheme • Institutional capital'
   }
 ];
 
 export default function GlobalAdvisoryMap() {
   const { t } = useTranslation();
-  const [activeRegion, setActiveRegion] = useState(ADVISORY_REGIONS[0]);
+  const [selectedFilter, setSelectedFilter] = useState('all');
+  const [activePin, setActivePin] = useState(null);
+
+  const filteredPins = selectedFilter === 'all' 
+    ? PINS 
+    : PINS.filter(p => p.category === selectedFilter);
 
   return (
-    <section className="py-14 sm:py-20 bg-forest-dark text-white relative overflow-hidden">
-      {/* Subtle Ambient Radial Lighting */}
-      <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-forest/20 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-10 w-96 h-96 bg-deep-green/30 rounded-full blur-3xl pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
-        
-        {/* Section Header */}
-        <SectionHeader
-          badge="Global Regulatory Reach"
-          title="International Advisory Footprint & Jurisdictions"
-          subtitle="Providing independent technical, regulatory and climate finance counsel across major international carbon and compliance jurisdictions."
-          light={true}
-        />
-
-        {/* Interactive Workspace */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+    <section className="relative w-full bg-[#00221E] text-white overflow-hidden border-y border-[#0E3B33] select-none">
+      
+      {/* Top Header & Legend Controls (EcoSecurities Exact Style) */}
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-10 pb-4">
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
           
-          {/* Left Column: Interactive Stylized World Vector Map & Region Badges */}
-          <div className="lg:col-span-7 bg-white/5 rounded-3xl border border-white/10 p-6 sm:p-8 flex flex-col justify-between backdrop-blur-md">
-            
-            <div className="flex items-center justify-between pb-4 border-b border-white/10">
-              <div className="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-white/70">
-                <Globe2 className="w-4 h-4 text-white" />
-                <span>Active Advisory Corridors</span>
-              </div>
-              <span className="text-[11px] text-white/60">
-                Select a jurisdiction to inspect workstreams
-              </span>
-            </div>
+          {/* Title & Legend Dots */}
+          <div className="space-y-3.5">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light tracking-tight text-white font-sans">
+              Our Global Activities
+            </h2>
 
-            {/* Stylized Vector World Map Container */}
-            <div className="relative my-6 aspect-[16/9] w-full bg-forest-dark/80 rounded-2xl border border-white/10 overflow-hidden flex items-center justify-center">
-              {/* World Map SVG Silhouette */}
-              <svg 
-                className="w-full h-full opacity-35" 
-                viewBox="0 0 1000 500" 
-                fill="none" 
-                xmlns="http://www.w3.org/2000/svg"
+            {/* Filter Legend Pills / Dots */}
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs sm:text-sm font-light">
+              <button
+                onClick={() => setSelectedFilter('carbon')}
+                className={`inline-flex items-center gap-2 transition-opacity ${
+                  selectedFilter === 'carbon' ? 'opacity-100 font-medium' : 'opacity-70 hover:opacity-100'
+                }`}
               >
-                {/* Continents stylized vectors */}
-                {/* North America */}
-                <path d="M150 80 Q 220 70 300 110 T 260 210 T 200 240 T 130 180 Z" fill="#287F63" />
-                {/* South America */}
-                <path d="M280 260 Q 350 280 340 380 T 290 470 T 250 350 Z" fill="#287F63" />
-                {/* Europe */}
-                <path d="M470 90 Q 560 80 580 150 T 490 200 T 450 140 Z" fill="#287F63" />
-                {/* Africa */}
-                <path d="M470 200 Q 580 200 570 340 T 520 440 T 440 280 Z" fill="#287F63" />
-                {/* Asia */}
-                <path d="M580 90 Q 820 70 850 220 T 720 300 T 580 190 Z" fill="#287F63" />
-                {/* Oceania */}
-                <path d="M780 340 Q 880 330 890 410 T 780 430 Z" fill="#287F63" />
-              </svg>
+                <span className="w-2.5 h-2.5 rounded-full bg-[#E5A93C] shadow-[0_0_8px_rgba(229,169,60,0.8)]" />
+                <span className="text-white/90">Carbon Credits</span>
+              </button>
 
-              {/* Dynamic Region Interactive Pin Buttons */}
-              {ADVISORY_REGIONS.map((region) => {
-                const isSelected = activeRegion.id === region.id;
-                return (
-                  <button
-                    key={region.id}
-                    onClick={() => setActiveRegion(region)}
-                    style={{ left: region.coordinates.x, top: region.coordinates.y }}
-                    aria-label={`Select ${region.name} advisory jurisdiction`}
-                    className={`absolute -translate-x-1/2 -translate-y-1/2 group flex items-center gap-1.5 focus:outline-none`}
-                  >
-                    <span className="relative flex h-5 w-5 items-center justify-center">
-                      <span className={`animate-ping absolute inline-flex h-full w-full rounded-full ${isSelected ? 'bg-white/80 opacity-75' : 'bg-white/30 opacity-40'}`}></span>
-                      <span className={`relative inline-flex rounded-full h-3.5 w-3.5 ${isSelected ? 'bg-white ring-4 ring-white/30' : 'bg-white/80 group-hover:bg-white'}`}></span>
-                    </span>
-                    <span className={`text-[11px] font-semibold px-2 py-0.5 rounded-full backdrop-blur-md border transition-all ${
-                      isSelected 
-                        ? 'bg-white text-forest-dark border-white shadow-md font-bold' 
-                        : 'bg-forest-dark/85 text-white/90 border-white/20 hover:border-white'
-                    }`}>
-                      {region.name}
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
+              <button
+                onClick={() => setSelectedFilter('climate')}
+                className={`inline-flex items-center gap-2 transition-opacity ${
+                  selectedFilter === 'climate' ? 'opacity-100 font-medium' : 'opacity-70 hover:opacity-100'
+                }`}
+              >
+                <span className="w-2.5 h-2.5 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
+                <span className="text-white/90">Climate projects</span>
+              </button>
 
-            {/* Quick Filter Pill Buttons */}
-            <div className="flex flex-wrap gap-2 pt-2">
-              {ADVISORY_REGIONS.map((reg) => (
+              <button
+                onClick={() => setSelectedFilter('investment')}
+                className={`inline-flex items-center gap-2 transition-opacity ${
+                  selectedFilter === 'investment' ? 'opacity-100 font-medium' : 'opacity-70 hover:opacity-100'
+                }`}
+              >
+                <span className="w-2.5 h-2.5 rounded-full bg-[#E5A93C] shadow-[0_0_8px_rgba(229,169,60,0.8)]" />
+                <span className="text-white/90">Investment-ready projects</span>
+              </button>
+
+              {selectedFilter !== 'all' && (
                 <button
-                  key={reg.id}
-                  onClick={() => setActiveRegion(reg)}
-                  className={`px-3.5 py-1.5 rounded-xl text-xs font-medium transition-all ${
-                    activeRegion.id === reg.id
-                      ? 'bg-white text-forest-dark font-bold shadow-md'
-                      : 'bg-white/10 text-white/85 hover:bg-white/15 border border-white/10'
-                  }`}
+                  onClick={() => setSelectedFilter('all')}
+                  className="text-xs text-[#E5A93C] underline hover:text-white transition-colors ml-1"
                 >
-                  <span className="mr-1.5">{reg.flag}</span>
-                  <span>{reg.name}</span>
+                  Show all
                 </button>
-              ))}
+              )}
             </div>
           </div>
 
-          {/* Right Column: Active Jurisdiction Scope Card */}
-          <div className="lg:col-span-5 bg-gradient-to-br from-forest to-forest-dark rounded-3xl border border-white/15 p-7 sm:p-9 flex flex-col justify-between shadow-2xl relative overflow-hidden">
-            <div className="space-y-6">
-              
-              {/* Card Header */}
-              <div className="space-y-2 border-b border-white/10 pb-5">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-bold tracking-wider uppercase bg-white/10 text-white border border-white/15">
-                  <MapPin className="w-3.5 h-3.5 text-white" />
-                  <span>{activeRegion.flag} {activeRegion.name} Jurisdiction</span>
+          {/* Right: Subtitle & "All projects" Button */}
+          <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row items-start sm:items-center md:items-end lg:items-center gap-3 md:gap-4">
+            <span className="text-xs sm:text-sm text-white/70 font-light">
+              Explore our projects around the world
+            </span>
+            <Link
+              to="/services"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded border border-white/25 hover:border-white text-xs sm:text-sm text-white/90 hover:text-white transition-all bg-white/5 hover:bg-white/10 backdrop-blur-sm"
+            >
+              <span>All projects</span>
+              <ChevronRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+
+        </div>
+      </div>
+
+      {/* Main Full-Width Map Stage (Height constrained: 380px mobile, 480px tablet, 520px desktop) */}
+      <div className="relative w-full h-[380px] sm:h-[460px] lg:h-[500px] overflow-hidden">
+        
+        {/* Ocean Background Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#00221E] via-[#012520] to-[#001D19]" />
+
+        {/* Faint Geographic Coordinate Lines (Equator, Tropics & Longitude grid) */}
+        <svg 
+          className="absolute inset-0 w-full h-full pointer-events-none opacity-[0.06]"
+          preserveAspectRatio="none"
+          viewBox="0 0 1000 500"
+        >
+          {/* Latitude Lines */}
+          <line x1="0" y1="125" x2="1000" y2="125" stroke="#FFFFFF" strokeWidth="1" strokeDasharray="3 3" />
+          <line x1="0" y1="250" x2="1000" y2="250" stroke="#FFFFFF" strokeWidth="1" strokeDasharray="4 4" />
+          <line x1="0" y1="375" x2="1000" y2="375" stroke="#FFFFFF" strokeWidth="1" strokeDasharray="3 3" />
+          {/* Longitude Lines */}
+          <line x1="200" y1="0" x2="200" y2="500" stroke="#FFFFFF" strokeWidth="1" strokeDasharray="3 3" />
+          <line x1="400" y1="0" x2="400" y2="500" stroke="#FFFFFF" strokeWidth="1" strokeDasharray="3 3" />
+          <line x1="600" y1="0" x2="600" y2="500" stroke="#FFFFFF" strokeWidth="1" strokeDasharray="3 3" />
+          <line x1="800" y1="0" x2="800" y2="500" stroke="#FFFFFF" strokeWidth="1" strokeDasharray="3 3" />
+        </svg>
+
+        {/* Actual Real Geographic Continents SVG Silhouette (Deep Teal Landmass) */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <svg
+            className="w-full h-full"
+            viewBox="0 0 1000 500"
+            preserveAspectRatio="xMidYMid meet"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            {/* World Landmass Multi-Polygon (Real Earth coordinates from Natural Earth 110m) */}
+            <path
+              d={worldData.combinedPath}
+              fill="#264A47"
+              stroke="#1E3E3B"
+              strokeWidth="0.5"
+              className="transition-colors duration-500"
+            />
+          </svg>
+        </div>
+
+        {/* Interactive Glowing Map Pins Container */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="relative w-full h-full max-w-[1400px] mx-auto">
+            {filteredPins.map((pin) => {
+              const isSelected = activePin?.id === pin.id;
+              const isGold = pin.category === 'carbon' || pin.category === 'investment';
+
+              return (
+                <div
+                  key={pin.id}
+                  style={{ left: `${pin.x}%`, top: `${pin.y}%` }}
+                  className="absolute -translate-x-1/2 -translate-y-1/2 pointer-events-auto"
+                >
+                  <button
+                    onClick={() => setActivePin(isSelected ? null : pin)}
+                    onMouseEnter={() => setActivePin(pin)}
+                    aria-label={pin.name}
+                    className="relative group p-2 focus:outline-none"
+                  >
+                    {/* Pulsing Aura */}
+                    <span
+                      className={`absolute inset-0 rounded-full animate-ping opacity-60 ${
+                        isGold ? 'bg-[#E5A93C]' : 'bg-white'
+                      }`}
+                      style={{ animationDuration: '3s' }}
+                    />
+
+                    {/* Outer Glow Ring on Hover/Selected */}
+                    <span
+                      className={`absolute inset-1 rounded-full transition-transform duration-300 ${
+                        isSelected ? 'scale-150 ring-2 ring-white/50' : 'group-hover:scale-125'
+                      }`}
+                    />
+
+                    {/* Center Solid Dot */}
+                    <span
+                      className={`relative block w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-200 ${
+                        isGold
+                          ? 'bg-[#E5A93C] shadow-[0_0_10px_#E5A93C]'
+                          : 'bg-white shadow-[0_0_10px_#FFFFFF]'
+                      } ${isSelected ? 'scale-125 ring-2 ring-white' : ''}`}
+                    />
+                  </button>
                 </div>
-                <h3 className="font-display font-bold text-2xl text-white">
-                  {activeRegion.role}
-                </h3>
-              </div>
-
-              {/* Technical Workstreams */}
-              <div className="space-y-3">
-                <span className="text-xs font-mono uppercase tracking-wider text-white/70 font-semibold block">
-                  Core Advisory Workstreams:
-                </span>
-                <div className="space-y-2.5">
-                  {activeRegion.focusWorkstreams.map((ws, i) => (
-                    <div key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-sand-surface/90">
-                      <CheckCircle2 className="w-4 h-4 text-white flex-shrink-0 mt-0.5" />
-                      <span>{ws}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Sectors Served */}
-              <div className="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-1.5">
-                <span className="text-[11px] font-mono uppercase tracking-wider text-white/60 font-semibold flex items-center gap-1.5">
-                  <Building className="w-3.5 h-3.5" />
-                  <span>Key Stakeholders & Sectors:</span>
-                </span>
-                <p className="text-xs text-white/90 leading-relaxed font-sans">
-                  {activeRegion.sectorsServed}
-                </p>
-              </div>
-
-              {/* Compliance & Standards Benchmarks */}
-              <div className="space-y-1.5">
-                <span className="text-[11px] font-mono uppercase tracking-wider text-white/60 font-semibold flex items-center gap-1.5">
-                  <Shield className="w-3.5 h-3.5" />
-                  <span>Benchmark Regulations & Frameworks:</span>
-                </span>
-                <p className="text-xs font-mono text-white/95">
-                  {activeRegion.frameworks}
-                </p>
-              </div>
-            </div>
-
-            {/* Fiduciary Assurance Note */}
-            <div className="mt-8 pt-5 border-t border-white/10 flex items-center justify-between text-xs text-white/75 font-sans">
-              <span>Jurisdictional Advisory Capacity</span>
-              <span className="font-mono text-white">Zero Speculative Bias</span>
-            </div>
+              );
+            })}
           </div>
         </div>
 
+        {/* Active Pin Detailed Tooltip / Card (Bottom-left or near pin) */}
+        {activePin && (
+          <div className="absolute z-30 bottom-5 left-4 sm:left-8 max-w-sm sm:max-w-md bg-[#001D19]/95 backdrop-blur-md border border-[#264A47] rounded-xl p-4 sm:p-5 shadow-2xl animate-in fade-in slide-in-from-bottom-2 duration-200">
+            <div className="flex items-start justify-between gap-3">
+              <div className="space-y-1">
+                <div className="flex items-center gap-2">
+                  <span
+                    className="w-2 h-2 rounded-full"
+                    style={{ backgroundColor: activePin.category === 'climate' ? '#FFFFFF' : '#E5A93C' }}
+                  />
+                  <span className="text-[11px] font-mono uppercase tracking-wider text-white/60">
+                    {activePin.type} • {activePin.region}
+                  </span>
+                </div>
+                <h4 className="text-sm sm:text-base font-semibold text-white">
+                  {activePin.name}
+                </h4>
+              </div>
+              <button
+                onClick={() => setActivePin(null)}
+                className="text-white/50 hover:text-white p-1 rounded transition-colors"
+                aria-label="Close details"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+
+            <p className="mt-2 text-xs sm:text-sm text-white/80 leading-relaxed font-sans">
+              {activePin.summary}
+            </p>
+
+            <div className="mt-3 pt-3 border-t border-white/10 flex items-center justify-between text-xs">
+              <span className="font-mono text-[#E5A93C] font-medium">
+                {activePin.stats}
+              </span>
+              
+            </div>
+          </div>
+        )}
+
       </div>
+
+      {/* Subtle bottom fade to blend with page content */}
+      <div className="h-4 bg-gradient-to-b from-[#001D19] to-transparent pointer-events-none" />
     </section>
   );
 }

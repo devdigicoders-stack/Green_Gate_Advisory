@@ -41,7 +41,7 @@ export default function ServiceHero({
   };
 
   return (
-    <section className="relative overflow-hidden bg-forest-dark text-white pt-24 pb-14 sm:pt-36 sm:pb-24">
+    <section className="relative overflow-hidden bg-[#0a1210] text-white pt-24 pb-14 sm:pt-36 sm:pb-24">
       {/* Background Photography & Video with Directional Lighting & Masking */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         {hasVideo ? (
@@ -55,7 +55,7 @@ export default function ServiceHero({
             playsInline
             onTimeUpdate={handleTimeUpdate}
             poster={bgImage}
-            className="w-full h-full object-cover object-center opacity-85 scale-125 transform motion-safe:transition-transform motion-safe:duration-1000"
+            className="w-full h-full object-cover object-center opacity-85 scale-120 transform motion-safe:transition-transform motion-safe:duration-1000"
           >
             <source src={videoSrc} type={String(videoSrc).includes('.mp4') ? 'video/mp4' : 'video/webm'} />
             <img
@@ -69,14 +69,14 @@ export default function ServiceHero({
           <img
             src={bgImage}
             alt={title || "Green Gate Advisory Practice"}
-            className="w-full h-full object-cover object-right sm:object-center opacity-85 scale-102 transform motion-safe:transition-transform motion-safe:duration-1000"
+            className="w-full h-full object-cover object-right sm:object-center opacity-85 scale-105 transform motion-safe:transition-transform motion-safe:duration-1000"
             loading="eager"
           />
         )}
         {/* Mobile vertical gradient for high-contrast mobile readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-forest-dark via-forest-dark/90 to-forest-dark/80 sm:hidden pointer-events-none" />
-        <div className="hidden sm:block absolute inset-0 bg-gradient-to-r from-forest-dark/95 via-forest-dark/75 via-50% to-transparent pointer-events-none" />
-        <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-forest-dark/90 via-transparent to-black/30 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a1210] via-[#0a1210]/80 to-[#0a1210]/60 sm:hidden pointer-events-none" />
+        <div className="hidden sm:block absolute inset-0 bg-gradient-to-r from-[#0a1210]/95 via-[#0a1210]/70 via-50% to-transparent pointer-events-none" />
+        <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-[#0a1210]/90 via-transparent to-black/35 pointer-events-none" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">

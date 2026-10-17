@@ -10,7 +10,7 @@ export default function SectorsHero() {
   const { getLocalizedPath } = useLocale();
 
   return (
-    <section className="relative overflow-hidden bg-forest-dark text-white pt-24 pb-14 sm:pt-36 sm:pb-24">
+    <section className="relative overflow-hidden bg-[#0a1210] text-white pt-24 pb-14 sm:pt-36 sm:pb-24">
       {/* Background Cinematic Video with Photography Fallback & Directional Lighting */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
@@ -19,7 +19,7 @@ export default function SectorsHero() {
           loop
           playsInline
           poster="/images/infrastructure.jpg"
-          className="w-full h-full object-cover object-center opacity-85 scale-102"
+          className="w-full h-full object-cover object-center opacity-85 scale-115"
         >
           <source 
             src={sectorVideo} 
@@ -33,9 +33,9 @@ export default function SectorsHero() {
           />
         </video>
         {/* Mobile vertical gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-forest-dark via-forest-dark/90 to-forest-dark/80 sm:hidden pointer-events-none" />
-        <div className="hidden sm:block absolute inset-0 bg-gradient-to-r from-forest-dark/95 via-forest-dark/80 via-50% to-forest-dark/45 pointer-events-none" />
-        <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-forest-dark/95 via-transparent to-black/35 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a1210] via-[#0a1210]/80 to-[#0a1210]/60 sm:hidden pointer-events-none" />
+        <div className="hidden sm:block absolute inset-0 bg-gradient-to-r from-[#0a1210]/95 via-[#0a1210]/70 via-50% to-transparent pointer-events-none" />
+        <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-[#0a1210]/90 via-transparent to-black/35 pointer-events-none" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
