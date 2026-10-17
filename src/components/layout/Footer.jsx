@@ -144,6 +144,18 @@ export default function Footer() {
             © {new Date().getFullYear()} {t('footer.copyright', 'All rights reserved. Green Gate Advisory.')}
           </div>
 
+          <div className="text-center">
+            Designed and Developed by{' '}
+            <a
+              href="https://www.worknestconnect.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gold-light hover:text-gold transition-colors font-medium underline underline-offset-4"
+            >
+              #TeamWorknestConnect
+            </a>
+          </div>
+
           <div className="flex items-center gap-6 font-display">
             <Link to={getLocalizedPath('/privacy-policy')} className="hover:text-sand-surface transition-colors">
               {t('footer.privacyPolicy', 'Privacy Policy')}
