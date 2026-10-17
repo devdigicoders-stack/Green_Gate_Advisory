@@ -20,7 +20,7 @@ export default function InsightsPage() {
   const articlesList = Array.isArray(rawArticles) ? rawArticles : [];
 
   return (
-    <div className="space-y-20 sm:space-y-28 py-12 sm:py-16">
+    <div className="space-y-12 sm:space-y-16 py-12 sm:py-16">
       <MetaTags 
         title={t('meta.insights.title', 'Climate Insights & Resources | Green Gate Advisory')}
         description={t('meta.insights.description', 'Practical guidance on CBAM, carbon markets, ETS, climate finance, Article 6, nature-based solutions and corporate greenhouse gas accounting.')}

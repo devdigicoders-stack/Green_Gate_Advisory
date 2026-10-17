@@ -8,14 +8,14 @@ export default {
     extend: {
       colors: {
         forest: {
-          DEFAULT: '#123F32',
-          dark: '#0A251D',
-          light: '#1B5242',
+          DEFAULT: '#004D34', // Brand Logo Deep Emerald Green
+          dark: '#003322',    // Logo Rich Dark Green
+          light: '#0A6647',   // Logo Medium Forest Accent
         },
         'deep-green': {
-          DEFAULT: '#1E604A',
-          dark: '#164838',
-          light: '#287F63',
+          DEFAULT: '#004D34',
+          dark: '#002B1D',
+          light: '#0E7A55',
         },
         gold: {
           DEFAULT: '#D2AD67',
@@ -23,18 +23,18 @@ export default {
           light: '#E6C88A',
         },
         sage: {
-          DEFAULT: '#F4F7F1',
-          light: '#FAFBF8',
-          dark: '#E7EDE2',
+          DEFAULT: '#F5F7F4', // Crisp clean background
+          light: '#FAFBF9',
+          dark: '#E7ECE5',
         },
         charcoal: {
-          DEFAULT: '#182A24',
-          muted: '#4A5E55',
-          light: '#6E8077',
+          DEFAULT: '#363939', // Exact Logo Dark Slate/Graphite text color
+          muted: '#525756',   // Balanced secondary text
+          light: '#727977',
         },
         sand: {
-          border: '#DFE7DC',
-          surface: '#F8FAF6',
+          border: '#DCE4DB',
+          surface: '#F8FAF7',
         }
       },
       fontFamily: {

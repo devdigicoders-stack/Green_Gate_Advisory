@@ -15,7 +15,7 @@ export default function TrainingPage() {
   const topicsList = Array.isArray(rawTopics) ? rawTopics : [];
 
   return (
-    <div className="space-y-20 sm:space-y-28 py-12 sm:py-16">
+    <div className="space-y-12 sm:space-y-16 py-12 sm:py-16">
       <MetaTags 
         title={t('meta.training.title', 'Climate, Carbon Markets & Climate Finance Training')}
         description={t('meta.training.description', 'Build practical knowledge through training on carbon markets, CBAM, ETS, climate finance, Article 6, MRV, GHG accounting and climate policy.')}

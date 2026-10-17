@@ -8,6 +8,7 @@ import Differentiators from '../components/about/Differentiators';
 import Expertise from '../components/about/Expertise';
 import WhoWeWorkWith from '../components/about/WhoWeWorkWith';
 import OurApproach from '../components/about/OurApproach';
+import GovernanceBoard from '../components/about/GovernanceBoard';
 import AboutCTA from '../components/about/AboutCTA';
 import { useLocale } from '../hooks/useLocale';
 
@@ -63,7 +64,10 @@ export default function AboutUs() {
       {/* 8. OUR APPROACH */}
       <OurApproach />
 
-      {/* 9. CLOSING CTA */}
+      {/* 9. ADVISORY LEADERSHIP & TECHNICAL GOVERNANCE */}
+      <GovernanceBoard />
+
+      {/* 10. CLOSING CTA */}
       <AboutCTA />
     </>
   );

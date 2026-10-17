@@ -159,20 +159,20 @@ export default function Header() {
         className="fixed top-3.5 sm:top-5 left-0 right-0 z-50 px-3 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full pointer-events-none transition-all duration-300"
       >
         <div className="relative w-full">
-          {/* Main Top Navigation Pill - Stays a stable rounded-full pill */}
+          {/* Main Top Navigation Pill */}
           <div 
             className={`pointer-events-auto w-full transition-all duration-300 ease-out border rounded-full ${
               isScrolled
-                ? 'bg-white/95 backdrop-blur-xl text-forest-dark border-sand-border/80 shadow-xl'
-                : 'bg-forest-dark/75 hover:bg-forest-dark/85 backdrop-blur-xl text-white border-white/20 shadow-lg'
+                ? 'bg-white/95 backdrop-blur-xl text-charcoal border-sand-border/90 shadow-xl'
+                : 'bg-forest/85 hover:bg-forest/90 backdrop-blur-xl text-white border-white/20 shadow-lg'
             }`}
           >
-            <div className="flex items-center justify-between px-4 sm:px-6 py-2.5 sm:py-3">
+            <div className="flex items-center justify-between px-4 sm:px-6 py-2 sm:py-2.5">
               {/* Left: Brand Logo */}
               <div className="flex-shrink-0">
                 <Logo 
                   variant={isScrolled ? 'default' : 'light'} 
-                  imgClassName="h-7 sm:h-8 w-auto" 
+                  imgClassName="h-8 sm:h-9 w-auto" 
                 />
               </div>
 
@@ -193,11 +193,11 @@ export default function Header() {
                     className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
                       activeDropdown === 'services'
                         ? isScrolled 
-                          ? 'bg-forest text-gold shadow-xs' 
-                          : 'bg-white/20 text-white shadow-xs'
+                          ? 'bg-forest text-white shadow-xs' 
+                          : 'bg-white text-forest shadow-xs'
                         : isScrolled
-                          ? 'text-forest-dark hover:text-forest hover:bg-forest/5'
-                          : 'text-white/90 hover:text-white hover:bg-white/10'
+                          ? 'text-charcoal hover:text-forest hover:bg-forest/5'
+                          : 'text-white/95 hover:text-white hover:bg-white/10'
                     }`}
                   >
                     <span>{t('navigation.ourServices', 'Our services')}</span>
@@ -217,10 +217,10 @@ export default function Header() {
                       isActive
                         ? isScrolled
                           ? 'bg-forest/10 text-forest font-bold'
-                          : 'bg-white/15 text-gold-light font-bold'
+                          : 'bg-white/20 text-white font-bold'
                         : isScrolled
-                          ? 'text-forest-dark hover:text-forest hover:bg-forest/5'
-                          : 'text-white/90 hover:text-white hover:bg-white/10'
+                          ? 'text-charcoal hover:text-forest hover:bg-forest/5'
+                          : 'text-white/95 hover:text-white hover:bg-white/10'
                     }`
                   }
                 >
@@ -235,10 +235,10 @@ export default function Header() {
                       isActive
                         ? isScrolled
                           ? 'bg-forest/10 text-forest font-bold'
-                          : 'bg-white/15 text-gold-light font-bold'
+                          : 'bg-white/20 text-white font-bold'
                         : isScrolled
-                          ? 'text-forest-dark hover:text-forest hover:bg-forest/5'
-                          : 'text-white/90 hover:text-white hover:bg-white/10'
+                          ? 'text-charcoal hover:text-forest hover:bg-forest/5'
+                          : 'text-white/95 hover:text-white hover:bg-white/10'
                     }`
                   }
                 >
@@ -257,11 +257,11 @@ export default function Header() {
                     className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
                       activeDropdown === 'latest'
                         ? isScrolled 
-                          ? 'bg-forest text-gold shadow-xs' 
-                          : 'bg-white/20 text-white shadow-xs'
+                          ? 'bg-forest text-white shadow-xs' 
+                          : 'bg-white text-forest shadow-xs'
                         : isScrolled
-                          ? 'text-forest-dark hover:text-forest hover:bg-forest/5'
-                          : 'text-white/90 hover:text-white hover:bg-white/10'
+                          ? 'text-charcoal hover:text-forest hover:bg-forest/5'
+                          : 'text-white/95 hover:text-white hover:bg-white/10'
                     }`}
                   >
                     <span>{t('navigation.latest', 'Latest')}</span>
@@ -285,11 +285,11 @@ export default function Header() {
                     className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
                       activeDropdown === 'about'
                         ? isScrolled 
-                          ? 'bg-forest text-gold shadow-xs' 
-                          : 'bg-white/20 text-white shadow-xs'
+                          ? 'bg-forest text-white shadow-xs' 
+                          : 'bg-white text-forest shadow-xs'
                         : isScrolled
-                          ? 'text-forest-dark hover:text-forest hover:bg-forest/5'
-                          : 'text-white/90 hover:text-white hover:bg-white/10'
+                          ? 'text-charcoal hover:text-forest hover:bg-forest/5'
+                          : 'text-white/95 hover:text-white hover:bg-white/10'
                     }`}
                   >
                     <span>{t('navigation.about', 'About')}</span>
@@ -309,10 +309,10 @@ export default function Header() {
                       isActive
                         ? isScrolled
                           ? 'bg-forest/10 text-forest font-bold'
-                          : 'bg-white/15 text-gold-light font-bold'
+                          : 'bg-white/20 text-white font-bold'
                         : isScrolled
-                          ? 'text-forest-dark hover:text-forest hover:bg-forest/5'
-                          : 'text-white/90 hover:text-white hover:bg-white/10'
+                          ? 'text-charcoal hover:text-forest hover:bg-forest/5'
+                          : 'text-white/95 hover:text-white hover:bg-white/10'
                     }`
                   }
                 >
@@ -331,7 +331,7 @@ export default function Header() {
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                   className={`p-1.5 rounded-lg lg:hidden transition-colors ${
                     isScrolled
-                      ? 'text-forest-dark hover:bg-forest/5'
+                      ? 'text-charcoal hover:text-forest hover:bg-forest/5'
                       : 'text-white hover:bg-white/10'
                   }`}
                   aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}

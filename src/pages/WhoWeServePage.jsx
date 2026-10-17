@@ -21,7 +21,7 @@ export default function WhoWeServePage() {
   const clientsList = Array.isArray(rawClients) ? rawClients : [];
 
   return (
-    <div className="space-y-20 sm:space-y-28 py-12 sm:py-16">
+    <div className="space-y-12 sm:space-y-16 py-12 sm:py-16">
       <MetaTags 
         title={t('meta.whoWeServe.title', 'Who We Serve | Green Gate Advisory')}
         description={t('meta.whoWeServe.description', 'Tailored climate advisory for governments, exporters, companies, project developers, investors, NGOs and international organisations.')}

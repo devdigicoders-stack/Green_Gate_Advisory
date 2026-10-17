@@ -12,7 +12,7 @@ export default function FeaturedSolutions() {
   const solutions = Array.isArray(rawSolutions) ? rawSolutions : [];
 
   return (
-    <section className="py-20 sm:py-28 bg-sage/50 border-b border-sand-border/70">
+    <section className="py-14 sm:py-20 bg-sage/50 border-b border-sand-border/70">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         
         <SectionHeader

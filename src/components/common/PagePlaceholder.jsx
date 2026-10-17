@@ -18,7 +18,7 @@ export default function PagePlaceholder({
   const { getLocalizedPath } = useLocale();
 
   return (
-    <div className="py-16 sm:py-24">
+    <div className="py-14 sm:py-20">
       <MetaTags title={metaTitle || title} description={metaDescription || description} />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">

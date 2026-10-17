@@ -115,7 +115,7 @@ export default function Services() {
       </section>
 
       {/* SECTION 2 — SERVICES INTRODUCTION */}
-      <section className="py-20 sm:py-24 bg-white border-b border-sand-border/70">
+      <section className="py-14 sm:py-20 bg-white border-b border-sand-border/70">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
@@ -168,7 +168,7 @@ export default function Services() {
       </section>
 
       {/* SECTION 3 — SEVEN CORE SERVICE CARDS */}
-      <section className="py-20 sm:py-28 bg-sage/40 border-b border-sand-border/70">
+      <section className="py-14 sm:py-20 bg-sage/40 border-b border-sand-border/70">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           
           <SectionHeader
@@ -224,7 +224,7 @@ export default function Services() {
       </section>
 
       {/* SECTION 4 — INTEGRATED ADVISORY APPROACH */}
-      <section className="py-20 sm:py-28 bg-white border-b border-sand-border/70">
+      <section className="py-14 sm:py-20 bg-white border-b border-sand-border/70">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           
           <SectionHeader
@@ -263,7 +263,7 @@ export default function Services() {
       </section>
 
       {/* SECTION 5 — CONSULTATION CTA */}
-      <section className="py-20 sm:py-28 bg-forest-dark text-white relative overflow-hidden">
+      <section className="py-14 sm:py-20 bg-forest-dark text-white relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-deep-green/30 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute -bottom-10 right-10 w-80 h-80 bg-gold/10 rounded-full blur-2xl pointer-events-none" />
 

@@ -29,7 +29,7 @@ export default function CoreServices() {
   const services = Array.isArray(rawServices) ? rawServices : [];
 
   return (
-    <section className="py-14 sm:py-28 bg-sand-surface/60">
+    <section className="py-14 sm:py-20 bg-sand-surface/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-16">
         
         <SectionHeader

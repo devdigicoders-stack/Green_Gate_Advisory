@@ -17,7 +17,7 @@ export default function ServiceFAQ({
   if (!faqs || faqs.length === 0) return null;
 
   return (
-    <section className="py-20 sm:py-28 bg-sage/30 border-b border-sand-border/70">
+    <section className="py-14 sm:py-20 bg-sage/30 border-b border-sand-border/70">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
         <SectionHeader

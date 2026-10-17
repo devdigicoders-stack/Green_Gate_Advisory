@@ -219,7 +219,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact-form-section" className="py-20 sm:py-28 bg-sage/30 border-b border-sand-border/70">
+    <section id="contact-form-section" className="py-14 sm:py-20 bg-sage/30 border-b border-sand-border/70">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="rounded-3xl bg-white border border-sand-border/90 p-8 sm:p-14 shadow-premium">

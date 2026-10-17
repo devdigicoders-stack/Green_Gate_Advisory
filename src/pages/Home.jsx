@@ -1,9 +1,13 @@
 import { useTranslation } from 'react-i18next';
 import MetaTags from '../components/seo/MetaTags';
 import HeroSection from '../components/home/HeroSection';
+import AdvisoryImpactCounter from '../components/home/AdvisoryImpactCounter';
 import WhatWeDo from '../components/home/WhatWeDo';
 import CoreServices from '../components/home/CoreServices';
+import GlobalAdvisoryMap from '../components/home/GlobalAdvisoryMap';
 import CarbonMarketProcess from '../components/home/CarbonMarketProcess';
+import SectorMatrixGlow from '../components/home/SectorMatrixGlow';
+import AdvisoryEngagements from '../components/home/AdvisoryEngagements';
 import ClimateFinanceSection from '../components/home/ClimateFinanceSection';
 import WhoWeServePreview from '../components/home/WhoWeServePreview';
 import WhyChooseUs from '../components/home/WhyChooseUs';
@@ -46,31 +50,43 @@ export default function Home() {
       {/* 1. HERO SECTION */}
       <HeroSection />
 
-      {/* 2. WHAT WE DO */}
+      {/* 2. ADVISORY IMPACT COUNTER (Fiduciary & Scale Metrics) */}
+      <AdvisoryImpactCounter />
+
+      {/* 3. WHAT WE DO */}
       <WhatWeDo />
 
-      {/* 3. OUR CORE SERVICES */}
+      {/* 4. OUR CORE SERVICES */}
       <CoreServices />
 
-      {/* 4. END-TO-END CARBON MARKET SUPPORT */}
+      {/* 5. GLOBAL JURISDICTION & REGULATORY ADVISORY MAP */}
+      <GlobalAdvisoryMap />
+
+      {/* 6. END-TO-END CARBON MARKET SUPPORT */}
       <CarbonMarketProcess />
 
-      {/* 5. CLIMATE FINANCE: FROM CONCEPT TO FUNDABLE PROPOSAL */}
+      {/* 7. SECTORAL EXPERTISE MATRIX (Ambient Glow Real-Economy Cards) */}
+      <SectorMatrixGlow />
+
+      {/* 8. PRACTICAL ADVISORY ENGAGEMENTS (Filterable Scenario Database) */}
+      <AdvisoryEngagements />
+
+      {/* 9. CLIMATE FINANCE: FROM CONCEPT TO FUNDABLE PROPOSAL */}
       <ClimateFinanceSection />
 
-      {/* 6. WHO WE SERVE */}
+      {/* 9. WHO WE SERVE */}
       <WhoWeServePreview />
 
-      {/* 7. WHY GREEN GATE ADVISORY */}
+      {/* 10. WHY GREEN GATE ADVISORY */}
       <WhyChooseUs />
 
-      {/* 8. FEATURED SOLUTIONS */}
+      {/* 11. FEATURED SOLUTIONS */}
       <FeaturedSolutions />
 
-      {/* 9. INSIGHTS & RESOURCES */}
+      {/* 12. INSIGHTS & RESOURCES */}
       <InsightsPreview />
 
-      {/* 10. FINAL CONSULTATION CTA */}
+      {/* 13. FINAL CONSULTATION CTA */}
       <HomeCTA />
     </>
   );

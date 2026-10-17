@@ -47,7 +47,7 @@ export default function ServiceDetailPage() {
   const faqIndices = SERVICE_FAQ_MAP[slug] || [0];
 
   return (
-    <div className="space-y-20 sm:space-y-28 py-12 sm:py-16">
+    <div className="space-y-12 sm:space-y-16 py-12 sm:py-16">
       <MetaTags 
         title={metaData.title || serviceData.title}
         description={metaData.description || serviceData.intro}

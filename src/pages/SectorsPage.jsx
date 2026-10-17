@@ -13,7 +13,7 @@ export default function SectorsPage() {
   const sectorsList = Array.isArray(rawSectors) ? rawSectors : [];
 
   return (
-    <div className="space-y-20 sm:space-y-28 py-12 sm:py-16">
+    <div className="space-y-12 sm:space-y-16 py-12 sm:py-16">
       <MetaTags 
         title={t('meta.sectors.title', 'Sectors We Support | Green Gate Advisory')}
         description={t('meta.sectors.description', 'Climate, carbon market and environmental advisory for energy, industry, manufacturing, land use, infrastructure and financial sector organisations.')}

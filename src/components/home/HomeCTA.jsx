@@ -8,7 +8,7 @@ export default function HomeCTA() {
   const { getLocalizedPath } = useLocale();
 
   return (
-    <section className="relative overflow-hidden py-24 bg-forest text-white">
+    <section className="relative overflow-hidden py-14 sm:py-20 bg-forest text-white">
       {/* Background Radial Glow & Gradient */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-deep-green/50 via-forest to-forest-dark -z-10" />
       <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-gold/15 blur-3xl pointer-events-none -z-10" />

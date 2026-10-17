@@ -12,7 +12,7 @@ export default function CarbonMarketProcess() {
   const steps = Array.isArray(rawSteps) ? rawSteps : [];
 
   return (
-    <section className="py-24 sm:py-32 bg-forest-dark text-white relative overflow-hidden">
+    <section className="py-14 sm:py-20 bg-forest-dark text-white relative overflow-hidden">
       {/* Background radial accents */}
       <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-gold/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-10 w-96 h-96 bg-deep-green/20 rounded-full blur-3xl pointer-events-none" />

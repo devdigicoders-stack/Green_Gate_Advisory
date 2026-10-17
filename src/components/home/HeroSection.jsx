@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ArrowRight, ChevronDown, ShieldCheck } from 'lucide-react';
 import { useLocale } from '../../hooks/useLocale';
+import homepageVideo from '../../assets/homepage.mp4';
 
 export default function HeroSection() {
   const { t } = useTranslation();
@@ -16,19 +17,33 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-[88vh] sm:min-h-[85vh] lg:min-h-[92vh] flex flex-col justify-between overflow-hidden bg-forest-dark text-white">
-      {/* Background Photography with Sophisticated Directional Lighting */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="/images/hero-canopy.jpg"
-          alt="Temperate rainforest canopy representing sustainable natural capital"
-          className="w-full h-full object-cover object-right sm:object-center opacity-85 scale-102 transform motion-safe:transition-transform motion-safe:duration-1000"
-          loading="eager"
-        />
+      {/* Background Cinematic Video with Photography Fallback & Directional Lighting */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/images/hero-canopy.jpg"
+          className="w-full h-full object-cover object-center opacity-85 scale-102 transform motion-safe:transition-transform motion-safe:duration-1000"
+        >
+          <source 
+            src={homepageVideo} 
+            type="video/mp4" 
+          />
+          {/* Fallback image if video fails to load or low-power mode */}
+          <img
+            src="/images/hero-canopy.jpg"
+            alt="Temperate rainforest canopy representing sustainable natural capital"
+            className="w-full h-full object-cover object-center"
+          />
+        </video>
+
         {/* Mobile vertical gradient: ensures 100% contrast on mobile portrait screens */}
-        <div className="absolute inset-0 bg-gradient-to-t from-forest-dark via-forest-dark/85 to-forest-dark/80 sm:hidden" />
-        {/* Desktop directional cinematic gradient */}
-        <div className="hidden sm:block absolute inset-0 bg-gradient-to-r from-forest-dark/95 via-forest-dark/80 via-45% to-transparent" />
-        <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-forest-dark/90 via-transparent to-black/25" />
+        <div className="absolute inset-0 bg-gradient-to-t from-forest-dark via-forest-dark/85 to-forest-dark/80 sm:hidden pointer-events-none" />
+        {/* Desktop directional cinematic gradient for ultra-crisp typography readability */}
+        <div className="hidden sm:block absolute inset-0 bg-gradient-to-r from-forest-dark/95 via-forest-dark/80 via-50% to-forest-dark/40 pointer-events-none" />
+        <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-forest-dark/95 via-transparent to-black/35 pointer-events-none" />
       </div>
 
       {/* Main Hero Content */}

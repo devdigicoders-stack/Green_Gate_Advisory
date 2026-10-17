@@ -31,7 +31,7 @@ export default function ServicesHubPage() {
   const { getLocalizedPath } = useLocale();
 
   return (
-    <div className="space-y-20 sm:space-y-28 py-12 sm:py-16">
+    <div className="space-y-12 sm:space-y-16 py-12 sm:py-16">
       <MetaTags 
         title={t('meta.services.title', 'Climate Advisory Services | Green Gate Advisory')}
         description={t('meta.services.description', 'Explore carbon market advisory, CBAM and ETS support, climate finance, nature-based solutions, climate policy and corporate climate services.')}

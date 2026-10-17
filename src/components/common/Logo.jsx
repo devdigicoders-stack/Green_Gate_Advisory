@@ -22,7 +22,7 @@ export default function Logo({
       <img
         src={logoSrc}
         alt="Green Gate Advisory"
-        className={`${imgClassName} object-contain transition-transform duration-300 group-hover:scale-102`}
+        className={`${imgClassName} object-contain transition-all duration-300 group-hover:scale-102 ${isLight ? 'brightness-0 invert' : ''}`}
         loading="eager"
         decoding="async"
         onError={(e) => {

@@ -17,7 +17,7 @@ export default function AboutPage() {
   const approachSteps = Array.isArray(rawSteps) ? rawSteps : [];
 
   return (
-    <div className="space-y-20 sm:space-y-28 py-12 sm:py-16">
+    <div className="space-y-12 sm:space-y-16 py-12 sm:py-16">
       <MetaTags 
         title={t('meta.about.title', 'About Green Gate Advisory | Climate & Environmental Consultants')}
         description={t('meta.about.description', 'Learn how Green Gate Advisory connects climate policy, carbon markets, climate finance and practical implementation support for public and private sector clients.')}

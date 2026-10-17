@@ -8,15 +8,15 @@
   }
 
   body {
-    background-color: #F4F7F1;
-    color: #182A24;
+    background-color: #F5F7F4;
+    color: #363939;
     font-family: 'Inter', system-ui, sans-serif;
     overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Plus Jakarta Sans', 'Manrope', system-ui, sans-serif;
-    color: #123F32;
+    color: #004D34;
     letter-spacing: -0.02em;
     overflow-wrap: break-word;
   }
@@ -70,6 +70,15 @@
   /* Text link with underline transition */
   .link-editorial {
     @apply inline-flex items-center gap-1 font-semibold text-deep-green hover:text-forest transition-colors duration-150;
+  }
+
+  /* Consistent Section Vertical Spacing */
+  .section-padding {
+    @apply py-14 sm:py-20;
+  }
+
+  .section-padding-dense {
+    @apply py-12 sm:py-16;
   }
 }
 

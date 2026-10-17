@@ -15,7 +15,7 @@ export default function WhatWeDo() {
   const pillars = Array.isArray(rawPillars) ? rawPillars : [];
 
   return (
-    <section id="what-we-do" className="py-12 sm:py-24 bg-sage/60 border-b border-sand-border/70 scroll-mt-20">
+    <section id="what-we-do" className="py-14 sm:py-20 bg-sage/60 border-b border-sand-border/70 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Two-Column Editorial Composition */}

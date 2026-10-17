@@ -6,6 +6,7 @@ import InsightsHubIntro from '../components/insights/InsightsHubIntro';
 import InsightsCategories from '../components/insights/InsightsCategories';
 import ArticleGrid from '../components/insights/ArticleGrid';
 import ResourceGrid from '../components/insights/ResourceGrid';
+import AdvisoryResourcesHub from '../components/insights/AdvisoryResourcesHub';
 import InsightsRelatedServices from '../components/insights/InsightsRelatedServices';
 import InsightsCTA from '../components/insights/InsightsCTA';
 import { useLocale } from '../hooks/useLocale';
@@ -77,10 +78,13 @@ export default function Insights() {
         {/* Section 5: Downloadable Resources (6 PDF checklists/guides) */}
         <ResourceGrid />
 
-        {/* Section 6: Browse Advisory Topics (6 Services Links) */}
+        {/* Section 6: Executive Research & Statutory Briefings (Downloadable PDF Hub) */}
+        <AdvisoryResourcesHub />
+
+        {/* Section 7: Browse Advisory Topics (6 Services Links) */}
         <InsightsRelatedServices />
 
-        {/* Section 7: Final Consultation CTA */}
+        {/* Section 8: Final Consultation CTA */}
         <InsightsCTA />
       </div>
     </>

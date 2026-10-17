@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { ChevronRight, ShieldCheck } from 'lucide-react';
 import { useLocale } from '../../hooks/useLocale';
+import sectorVideo from '../../assets/sectorpage.mp4';
 
 export default function SectorsHero() {
   const { t } = useTranslation();
@@ -10,16 +11,29 @@ export default function SectorsHero() {
 
   return (
     <section className="relative overflow-hidden bg-forest-dark text-white pt-28 pb-20 sm:pt-36 sm:pb-28">
-      {/* Background Photography with Sophisticated Directional Lighting */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="/images/infrastructure.jpg"
-          alt="Sustainable industrial and natural infrastructure representing cross-sector climate resilience"
-          className="w-full h-full object-cover object-right sm:object-center opacity-85 scale-102"
-          loading="eager"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-forest-dark/95 via-forest-dark/75 via-50% to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/90 via-transparent to-black/30" />
+      {/* Background Cinematic Video with Photography Fallback & Directional Lighting */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/images/infrastructure.jpg"
+          className="w-full h-full object-cover object-center opacity-85 scale-102"
+        >
+          <source 
+            src={sectorVideo} 
+            type="video/mp4" 
+          />
+          {/* Fallback image if video fails to load or low-power mode */}
+          <img
+            src="/images/infrastructure.jpg"
+            alt="Sustainable industrial and natural infrastructure representing cross-sector climate resilience"
+            className="w-full h-full object-cover object-right sm:object-center opacity-85"
+          />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-r from-forest-dark/95 via-forest-dark/80 via-50% to-forest-dark/45 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/95 via-transparent to-black/35 pointer-events-none" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
