@@ -122,7 +122,7 @@ export default function AdvisoryEngagements() {
         <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 p-4 rounded-2xl bg-white border border-sand-border shadow-subtle">
           
           {/* Sector Buttons */}
-          <div className="flex items-center gap-1.5 overflow-x-auto pb-2 md:pb-0 scrollbar-none">
+          <div className="flex items-center gap-1.5 overflow-x-auto py-1 scrollbar-none no-scrollbar">
             <Filter className="w-4 h-4 text-forest-dark ml-2 mr-1 flex-shrink-0 hidden sm:block" />
             {sectorsList.map((sec) => (
               <button

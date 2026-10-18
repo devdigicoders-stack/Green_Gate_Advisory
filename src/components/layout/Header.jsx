@@ -219,6 +219,26 @@ export default function Header() {
                 className="hidden lg:flex items-center justify-center gap-1 xl:gap-2.5 flex-none text-sm sm:text-[14px] font-semibold"
                 aria-label="Main Navigation"
               >
+                {/* 0. Home Link */}
+                <NavLink
+                  to={getLocalizedPath('/')}
+                  end
+                  onMouseEnter={handleItemHoverClear}
+                  className={({ isActive }) =>
+                    `px-3.5 py-1.5 text-sm sm:text-[14px] font-semibold tracking-normal transition-all duration-150 ${
+                      isActive
+                        ? isScrolled
+                          ? 'text-forest font-bold underline underline-offset-4 decoration-2 decoration-forest'
+                          : 'text-white font-bold underline underline-offset-4 decoration-2 decoration-gold'
+                        : isScrolled
+                          ? 'text-forest hover:text-deep-green hover:underline underline-offset-4'
+                          : 'text-white/95 hover:text-white hover:underline underline-offset-4'
+                    }`
+                  }
+                >
+                  {t('navigation.home', 'Home')}
+                </NavLink>
+
                 {/* 1. Our services Trigger */}
                 <div 
                   className="relative"
