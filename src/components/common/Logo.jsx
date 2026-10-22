@@ -27,8 +27,8 @@ export default function Logo({
         decoding="async"
         onError={(e) => {
           // Fallback to static public logo if asset bundle has any path resolution delay
-          if (e.currentTarget.src !== window.location.origin + '/images/logo.png') {
-            e.currentTarget.src = '/images/logo.png';
+          if (e.currentTarget.src !== window.location.origin + '/images/Green_gate_Logo_Concept_01-removebg-preview.png') {
+            e.currentTarget.src = '/images/Green_gate_Logo_Concept_01-removebg-preview.png';
           }
         }}
       />
