@@ -239,7 +239,37 @@ export default function Header() {
                   {t('navigation.home', 'Home')}
                 </NavLink>
 
-                {/* 1. Our services Trigger */}
+                {/* 1. About Us Trigger & Link (Right next to Home) */}
+                <div 
+                  className="relative"
+                  onMouseEnter={() => handleMouseEnter('about')}
+                >
+                  <NavLink
+                    to={getLocalizedPath('/about-us')}
+                    onClick={() => setActiveDropdown(null)}
+                    aria-expanded={activeDropdown === 'about'}
+                    className={({ isActive }) =>
+                      `inline-flex items-center gap-1.5 px-3.5 py-1.5 text-sm sm:text-[14px] font-semibold tracking-normal transition-all duration-150 cursor-pointer ${
+                        isActive || activeDropdown === 'about'
+                          ? isScrolled
+                            ? 'text-forest font-bold underline underline-offset-4 decoration-2 decoration-forest'
+                            : 'text-white font-bold underline underline-offset-4 decoration-2 decoration-gold'
+                          : isScrolled
+                            ? 'text-forest hover:text-deep-green hover:underline underline-offset-4'
+                            : 'text-white/95 hover:text-white hover:underline underline-offset-4'
+                      }`
+                    }
+                  >
+                    <span>{t('navigation.about', 'About Us')}</span>
+                    <ChevronDown 
+                      className={`w-4 h-4 stroke-[2.2] transition-transform duration-200 ${
+                        activeDropdown === 'about' ? 'rotate-180' : ''
+                      }`} 
+                    />
+                  </NavLink>
+                </div>
+
+                {/* 2. Our services Trigger */}
                 <div 
                   className="relative"
                   onMouseEnter={() => handleMouseEnter('services')}
@@ -267,7 +297,7 @@ export default function Header() {
                   </button>
                 </div>
 
-                {/* 2. Sectors */}
+                {/* 3. Sectors */}
                 <NavLink
                   to={getLocalizedPath('/sectors')}
                   onMouseEnter={handleItemHoverClear}
@@ -286,7 +316,7 @@ export default function Header() {
                   {t('navigation.sectors', 'Sectors')}
                 </NavLink>
 
-                {/* 3. Who We Serve */}
+                {/* 4. Who We Serve */}
                 <NavLink
                   to={getLocalizedPath('/who-we-serve')}
                   onMouseEnter={handleItemHoverClear}
@@ -305,7 +335,7 @@ export default function Header() {
                   {t('navigation.whoWeServe', 'Who We Serve')}
                 </NavLink>
 
-                {/* 4. Training Direct Link */}
+                {/* 5. Training Direct Link */}
                 <NavLink
                   to={getLocalizedPath('/training')}
                   onMouseEnter={handleItemHoverClear}
@@ -323,34 +353,6 @@ export default function Header() {
                 >
                   {t('navigation.training', 'Training')}
                 </NavLink>
-
-                {/* 5. About Trigger */}
-                <div 
-                  className="relative"
-                  onMouseEnter={() => handleMouseEnter('about')}
-                >
-                  <button
-                    type="button"
-                    onClick={(e) => handleDropdownClick('about', e)}
-                    aria-expanded={activeDropdown === 'about'}
-                    className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 text-sm sm:text-[14px] font-semibold tracking-normal transition-all duration-150 cursor-pointer ${
-                      activeDropdown === 'about'
-                        ? isScrolled
-                          ? 'text-forest font-bold underline underline-offset-4 decoration-2 decoration-forest'
-                          : 'text-white font-bold underline underline-offset-4 decoration-2 decoration-gold'
-                        : isScrolled
-                          ? 'text-forest hover:text-deep-green hover:underline underline-offset-4'
-                          : 'text-white/95 hover:text-white hover:underline underline-offset-4'
-                    }`}
-                  >
-                    <span>{t('navigation.about', 'About')}</span>
-                    <ChevronDown 
-                      className={`w-4 h-4 stroke-[2.2] transition-transform duration-200 ${
-                        activeDropdown === 'about' ? 'rotate-180' : ''
-                      }`} 
-                    />
-                  </button>
-                </div>
 
                 {/* 6. Contact Direct Link */}
                 <NavLink
@@ -666,7 +668,68 @@ export default function Header() {
                   <span>{t('navigation.home', 'Home')}</span>
                 </Link>
 
-                {/* 2. Our Services (Collapsible Accordion) */}
+                {/* 2. About Us (Right next to Home) */}
+                <div className="rounded-2xl border border-sand-border/80 overflow-hidden bg-sand-surface/40">
+                  <button
+                    type="button"
+                    onClick={() => setMobileExpandedSection(prev => prev === 'about' ? null : 'about')}
+                    className="w-full flex items-center justify-between px-3.5 py-3 text-xs font-bold uppercase tracking-wider text-forest hover:bg-forest/5 transition-colors"
+                  >
+                    <span>{t('navigation.about', 'About Us')}</span>
+                    <ChevronDown 
+                      className={`w-4 h-4 text-forest transition-transform duration-200 ${
+                        mobileExpandedSection === 'about' ? 'rotate-180' : ''
+                      }`} 
+                    />
+                  </button>
+
+                  {mobileExpandedSection === 'about' && (
+                    <div className="px-2.5 pb-2.5 space-y-1 pt-1 border-t border-sand-border/60 bg-white animate-in fade-in duration-150">
+                      <Link 
+                        to={`${getLocalizedPath('/about-us')}#who-we-are`} 
+                        onClick={() => handleSectionClick('who-we-are', true)} 
+                        className="flex items-center gap-2.5 p-2 rounded-xl text-xs font-medium text-forest-dark hover:bg-forest/5"
+                      >
+                        <Building2 className="w-3.5 h-3.5 text-deep-green" />
+                        <span>{t('navigation.menu.whoWeAre', 'About Green Gate Advisory')}</span>
+                      </Link>
+                      <Link 
+                        to={`${getLocalizedPath('/about-us')}#purpose-mission`} 
+                        onClick={() => handleSectionClick('purpose-mission', true)} 
+                        className="flex items-center gap-2.5 p-2 rounded-xl text-xs font-medium text-forest-dark hover:bg-forest/5"
+                      >
+                        <Target className="w-3.5 h-3.5 text-deep-green" />
+                        <span>{t('navigation.menu.purpose', 'Purpose, Mission & Vision')}</span>
+                      </Link>
+                      <Link 
+                        to={`${getLocalizedPath('/about-us')}#our-approach`} 
+                        onClick={() => handleSectionClick('our-approach', true)} 
+                        className="flex items-center gap-2.5 p-2 rounded-xl text-xs font-medium text-forest-dark hover:bg-forest/5"
+                      >
+                        <Layers className="w-3.5 h-3.5 text-deep-green" />
+                        <span>{t('navigation.menu.approach', 'Our Approach & Methodology')}</span>
+                      </Link>
+                      <Link 
+                        to={`${getLocalizedPath('/about-us')}#why-green-gate`} 
+                        onClick={() => handleSectionClick('why-green-gate', true)} 
+                        className="flex items-center gap-2.5 p-2 rounded-xl text-xs font-medium text-forest-dark hover:bg-forest/5"
+                      >
+                        <Award className="w-3.5 h-3.5 text-deep-green" />
+                        <span>{t('navigation.menu.whyUs', 'Why Green Gate Advisory')}</span>
+                      </Link>
+                      <Link
+                        to={getLocalizedPath('/about-us')}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="mt-2 pt-2 border-t border-sand-border/50 flex items-center justify-between px-2.5 py-1.5 text-xs font-bold text-deep-green hover:text-forest"
+                      >
+                        <span>{t('navigation.aboutUsOverview', 'View About Us Overview')}</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
+                    </div>
+                  )}
+                </div>
+
+                {/* 3. Our Services (Collapsible Accordion) */}
                 <div className="rounded-2xl border border-sand-border/80 overflow-hidden bg-sand-surface/40">
                   <button
                     type="button"
@@ -718,7 +781,7 @@ export default function Header() {
                   )}
                 </div>
 
-                {/* 3. Sectors */}
+                {/* 4. Sectors */}
                 <Link
                   to={getLocalizedPath('/sectors')}
                   onClick={() => setMobileMenuOpen(false)}
@@ -727,7 +790,7 @@ export default function Header() {
                   <span>{t('navigation.sectors', 'Sectors')}</span>
                 </Link>
 
-                {/* 4. Who We Serve */}
+                {/* 5. Who We Serve */}
                 <Link
                   to={getLocalizedPath('/who-we-serve')}
                   onClick={() => setMobileMenuOpen(false)}
@@ -736,8 +799,7 @@ export default function Header() {
                   <span>{t('navigation.whoWeServe', 'Who We Serve')}</span>
                 </Link>
 
-                {/* 5. Latest (Collapsible Accordion) */}
-                {/* Direct Training Mobile NavLink */}
+                {/* 6. Training & Workshops */}
                 <NavLink
                   to={getLocalizedPath('/training')}
                   onClick={() => setMobileMenuOpen(false)}
@@ -747,62 +809,7 @@ export default function Header() {
                   <span>{t('navigation.training', 'Training & Workshops')}</span>
                 </NavLink>
 
-
-
-                {/* 7. About (Collapsible Accordion) */}
-                <div className="rounded-2xl border border-sand-border/80 overflow-hidden bg-sand-surface/40">
-                  <button
-                    type="button"
-                    onClick={() => setMobileExpandedSection(prev => prev === 'about' ? null : 'about')}
-                    className="w-full flex items-center justify-between px-3.5 py-3 text-xs font-bold uppercase tracking-wider text-forest hover:bg-forest/5 transition-colors"
-                  >
-                    <span>{t('navigation.about', 'About')}</span>
-                    <ChevronDown 
-                      className={`w-4 h-4 text-forest transition-transform duration-200 ${
-                        mobileExpandedSection === 'about' ? 'rotate-180' : ''
-                      }`} 
-                    />
-                  </button>
-
-                  {mobileExpandedSection === 'about' && (
-                    <div className="px-2.5 pb-2.5 space-y-1 pt-1 border-t border-sand-border/60 bg-white animate-in fade-in duration-150">
-                      <Link 
-                        to={`${getLocalizedPath('/about-us')}#who-we-are`} 
-                        onClick={() => handleSectionClick('who-we-are', true)} 
-                        className="flex items-center gap-2.5 p-2 rounded-xl text-xs font-medium text-forest-dark hover:bg-forest/5"
-                      >
-                        <Building2 className="w-3.5 h-3.5 text-deep-green" />
-                        <span>{t('navigation.menu.whoWeAre', 'About Green Gate Advisory')}</span>
-                      </Link>
-                      <Link 
-                        to={`${getLocalizedPath('/about-us')}#purpose-mission`} 
-                        onClick={() => handleSectionClick('purpose-mission', true)} 
-                        className="flex items-center gap-2.5 p-2 rounded-xl text-xs font-medium text-forest-dark hover:bg-forest/5"
-                      >
-                        <Target className="w-3.5 h-3.5 text-deep-green" />
-                        <span>{t('navigation.menu.purpose', 'Purpose, Mission & Vision')}</span>
-                      </Link>
-                      <Link 
-                        to={`${getLocalizedPath('/about-us')}#our-approach`} 
-                        onClick={() => handleSectionClick('our-approach', true)} 
-                        className="flex items-center gap-2.5 p-2 rounded-xl text-xs font-medium text-forest-dark hover:bg-forest/5"
-                      >
-                        <Layers className="w-3.5 h-3.5 text-deep-green" />
-                        <span>{t('navigation.menu.approach', 'Our Approach & Methodology')}</span>
-                      </Link>
-                      <Link 
-                        to={`${getLocalizedPath('/about-us')}#why-green-gate`} 
-                        onClick={() => handleSectionClick('why-green-gate', true)} 
-                        className="flex items-center gap-2.5 p-2 rounded-xl text-xs font-medium text-forest-dark hover:bg-forest/5"
-                      >
-                        <Award className="w-3.5 h-3.5 text-deep-green" />
-                        <span>{t('navigation.menu.whyUs', 'Why Green Gate Advisory')}</span>
-                      </Link>
-                    </div>
-                  )}
-                </div>
-
-                {/* 8. Contact */}
+                {/* 7. Contact */}
                 <Link
                   to={getLocalizedPath('/contact')}
                   onClick={() => setMobileMenuOpen(false)}
