@@ -59,7 +59,7 @@ export default function WhoWeServePage() {
                     <div className="w-10 h-10 rounded-xl bg-forest/5 text-forest flex items-center justify-center border border-forest/10">
                       <IconComponent className="w-5 h-5" />
                     </div>
-                    <span className="text-xs font-mono font-bold text-gold-dark bg-gold/15 px-2.5 py-1 rounded">
+                    <span className="text-xs sm:text-[13px] font-mono font-bold text-gold-dark bg-gold/15 px-3 py-1 rounded-full border border-gold/20">
                       SEGMENT 0{idx + 1}
                     </span>
                   </div>
@@ -68,11 +68,11 @@ export default function WhoWeServePage() {
                     {client.title}
                   </h2>
 
-                  <div className="text-xs font-bold uppercase tracking-wider text-deep-green">
+                  <div className="text-xs sm:text-sm font-bold uppercase tracking-wider text-deep-green">
                     {client.focus}
                   </div>
 
-                  <p className="text-sm sm:text-base text-charcoal-muted leading-relaxed font-sans">
+                  <p className="text-base sm:text-lg text-charcoal/85 leading-relaxed font-sans font-normal">
                     {client.desc}
                   </p>
 
@@ -82,20 +82,20 @@ export default function WhoWeServePage() {
                       className="btn-primary"
                     >
                       <span>{t('whoWeServe.cta', 'Tell Us About Your Organisation’s Priorities')}</span>
-                      <ArrowRight className="w-4 h-4 text-gold-light" />
+                      <ArrowRight className="w-4.5 h-4.5 text-gold-light" />
                     </Link>
                   </div>
                 </div>
 
                 <div className="lg:col-span-6 bg-sage p-6 sm:p-8 rounded-2xl border border-sand-border space-y-4">
-                  <span className="text-xs font-bold uppercase tracking-wider text-forest font-sans">
+                  <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-forest font-sans block">
                     Core Advisory Capabilities
                   </span>
-                  <ul className="space-y-3 text-xs sm:text-sm text-charcoal">
+                  <ul className="space-y-3 text-sm sm:text-[15px] text-charcoal/90 font-medium">
                     {capabilities.map((cap, cIdx) => (
                       <li key={cIdx} className="flex items-start gap-3">
-                        <CheckCircle2 className="w-4 h-4 text-deep-green flex-shrink-0 mt-0.5" />
-                        <span className="leading-snug">{cap}</span>
+                        <CheckCircle2 className="w-4.5 h-4.5 text-deep-green flex-shrink-0 mt-0.5" />
+                        <span className="leading-relaxed">{cap}</span>
                       </li>
                     ))}
                   </ul>

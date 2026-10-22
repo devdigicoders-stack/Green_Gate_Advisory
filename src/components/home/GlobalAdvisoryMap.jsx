@@ -168,7 +168,7 @@ export default function GlobalAdvisoryMap() {
     : PINS.filter(p => p.category === selectedFilter);
 
   return (
-    <section className="relative w-full bg-[#00221E] text-white overflow-hidden border-y border-[#0E3B33] select-none">
+    <section id="global-coverage" className="relative w-full bg-[#00221E] text-white overflow-hidden border-y border-[#0E3B33] select-none scroll-mt-24">
       
       {/* Top Header & Legend Controls (EcoSecurities Exact Style) */}
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-10 pb-4">

@@ -12,8 +12,8 @@ export default function InsightsPreview() {
   const streams = Array.isArray(rawStreams) ? rawStreams : [];
 
   return (
-    <section className="py-14 sm:py-20 bg-white border-b border-sand-border/70">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+    <section id="insights" className="py-20 sm:py-28 lg:py-32 bg-[#F6F8F5] border-b border-sand-border/60 scroll-mt-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-20">
         
         <SectionHeader
           badge={t('home.insights.eyebrow', 'Knowledge & Briefings')}
@@ -22,22 +22,22 @@ export default function InsightsPreview() {
         />
 
         {/* 8 Knowledge Stream Resource Tiles (Strictly Verified Focus Areas) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
           {streams.map((stream, idx) => (
             <div 
               key={idx}
-              className="p-5 rounded-2xl bg-sage/60 border border-sand-border/80 hover:bg-white hover:border-deep-green/30 hover:shadow-subtle transition-all duration-200 flex flex-col justify-between space-y-3 group"
+              className="p-7 rounded-3xl bg-white border border-sand-border/80 hover:border-forest/30 shadow-subtle hover:shadow-elevated hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between space-y-4 group"
             >
-              <div className="space-y-2">
-                <span className="text-[10px] font-mono font-bold tracking-widest uppercase text-gold-dark">
+              <div className="space-y-3">
+                <span className="text-[11px] font-mono font-bold tracking-widest uppercase text-gold-dark bg-gold/15 px-2.5 py-1 rounded-full border border-gold/20 inline-block">
                   KNOWLEDGE STREAM 0{idx + 1}
                 </span>
 
-                <h3 className="font-display font-bold text-sm text-forest group-hover:text-deep-green transition-colors leading-snug">
+                <h3 className="font-display font-bold text-base sm:text-lg text-forest group-hover:text-deep-green transition-colors leading-snug">
                   {stream.title}
                 </h3>
 
-                <p className="text-xs text-charcoal-muted leading-relaxed font-sans font-light">
+                <p className="text-sm text-charcoal/80 leading-relaxed font-sans font-light">
                   {stream.focus}
                 </p>
               </div>

@@ -78,7 +78,7 @@ export default function Footer() {
           {/* Col 3: Navigation & Governance (3 cols) */}
           <div className="lg:col-span-3 space-y-4">
             <h3 className="text-xs font-mono font-bold uppercase tracking-widest text-gold">
-              {t('footer.quickLinks', 'Overview & Navigation')}
+              {t('footer.quickLinks', 'Quick Links')}
             </h3>
             <ul className="space-y-2 text-[13px] font-display">
               <li>
@@ -93,7 +93,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link to={getLocalizedPath('/services')} className="text-sand-surface/75 hover:text-white transition-colors">
-                  {t('navigation.services', 'Services Overview')}
+                  {t('navigation.services', 'Our Services')}
                 </Link>
               </li>
               <li>
@@ -107,13 +107,18 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to={getLocalizedPath('/insights')} className="text-sand-surface/75 hover:text-white transition-colors">
-                  {t('navigation.insights', 'Insights & Resources')}
+                <Link to={getLocalizedPath('/services/climate-finance-advisory')} className="text-sand-surface/75 hover:text-white transition-colors">
+                  {t('home.climateFinance.eyebrow', 'Climate Finance')}
                 </Link>
               </li>
               <li>
                 <Link to={getLocalizedPath('/training')} className="text-sand-surface/75 hover:text-white transition-colors">
                   {t('navigation.training', 'Training')}
+                </Link>
+              </li>
+              <li>
+                <Link to={getLocalizedPath('/contact?type=expert')} className="text-sand-surface/75 hover:text-white transition-colors">
+                  Join as Expert / Consultant
                 </Link>
               </li>
               <li>

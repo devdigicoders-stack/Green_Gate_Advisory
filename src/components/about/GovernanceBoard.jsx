@@ -64,33 +64,33 @@ export default function GovernanceBoard() {
                   <div className="w-10 h-10 rounded-xl bg-forest/5 border border-forest/10 flex items-center justify-center text-forest">
                     <Award className="w-5 h-5 text-current" />
                   </div>
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-deep-green font-bold bg-white px-2.5 py-0.5 rounded-full border border-sand-border">
+                  <span className="text-xs font-mono uppercase tracking-widest text-deep-green font-bold bg-white px-3 py-1 rounded-full border border-sand-border shadow-xs">
                     {lead.focusArea}
                   </span>
                 </div>
 
                 {/* Role & Name */}
                 <div className="space-y-1">
-                  <h3 className="font-display font-bold text-lg text-forest leading-snug">
+                  <h3 className="font-display font-bold text-lg sm:text-xl text-forest leading-snug">
                     {lead.role}
                   </h3>
-                  <div className="text-xs font-semibold text-deep-green">
+                  <div className="text-xs sm:text-sm font-semibold text-deep-green">
                     {lead.credentials}
                   </div>
                 </div>
 
                 {/* Scope Description */}
-                <p className="text-xs text-charcoal-muted leading-relaxed font-sans font-light">
+                <p className="text-sm sm:text-[15px] text-charcoal/85 leading-relaxed font-sans font-normal">
                   {lead.specialization}
                 </p>
               </div>
 
               {/* Standards Traceability */}
               <div className="pt-4 border-t border-sand-border/80 space-y-1.5">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-charcoal-muted font-bold block">
+                <span className="text-xs font-mono uppercase tracking-widest text-charcoal-muted font-bold block">
                   Governing Protocols:
                 </span>
-                <p className="text-[11px] font-mono text-charcoal leading-tight">
+                <p className="text-xs sm:text-[13px] font-mono text-charcoal leading-relaxed font-medium">
                   {lead.standards}
                 </p>
               </div>
@@ -99,18 +99,18 @@ export default function GovernanceBoard() {
         </div>
 
         {/* Advisory Ethics Principle Card */}
-        <div className="p-7 rounded-3xl bg-gradient-to-r from-forest to-forest-dark text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
-          <div className="space-y-2 max-w-2xl">
-            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-sand-surface">
-              <Scale className="w-4 h-4 text-white" />
+        <div className="p-8 sm:p-9 rounded-3xl bg-gradient-to-r from-forest to-forest-dark text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
+          <div className="space-y-2.5 max-w-2xl">
+            <div className="flex items-center gap-2 text-xs sm:text-[13px] font-bold uppercase tracking-wider text-sand-surface">
+              <Scale className="w-4.5 h-4.5 text-white" />
               <span>Conflict of Interest & Fiduciary Pledge</span>
             </div>
-            <p className="text-xs sm:text-sm text-sand-surface/90 leading-relaxed font-sans font-light">
+            <p className="text-sm sm:text-base text-sand-surface/95 leading-relaxed font-sans font-normal">
               To preserve objectivity, Green Gate Advisory maintains strict separation from market brokerage, carbon credit trading desks, and speculative holding structures. Our counsel is solely driven by empirical science, rigorous verification, and statutory compliance.
             </p>
           </div>
-          <div className="flex items-center gap-2 text-xs font-mono font-bold text-forest-dark bg-white px-4 py-2 rounded-xl whitespace-nowrap shadow-md">
-            <ShieldCheck className="w-4 h-4 text-forest" />
+          <div className="flex items-center gap-2.5 text-sm font-mono font-bold text-forest-dark bg-white px-5 py-2.5 rounded-xl whitespace-nowrap shadow-md">
+            <ShieldCheck className="w-4.5 h-4.5 text-forest" />
             <span>Independent Counsel</span>
           </div>
         </div>

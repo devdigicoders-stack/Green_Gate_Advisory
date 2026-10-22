@@ -202,17 +202,17 @@ export default function Services() {
                       <div className="w-12 h-12 rounded-2xl bg-forest/5 flex items-center justify-center text-forest group-hover:bg-forest group-hover:text-gold transition-colors duration-300">
                         <Icon className="w-6 h-6" />
                       </div>
-                      <span className="text-xs font-mono font-bold tracking-widest text-deep-green bg-sage px-3 py-1 rounded-full border border-forest/5">
+                      <span className="text-xs sm:text-[13px] font-mono font-bold tracking-widest text-deep-green bg-sage px-3 py-1 rounded-full border border-forest/5">
                         PRACTICE {srv.number}
                       </span>
                     </div>
 
                     <div className="space-y-2">
-                      <h3 className="font-display font-bold text-xl text-forest group-hover:text-deep-green transition-colors leading-snug">
+                      <h3 className="font-display font-bold text-xl sm:text-2xl text-forest group-hover:text-deep-green transition-colors leading-snug">
                         {t(`services.items.${srv.key}.shortTitle`, t(`navigation.servicesMenu.${srv.key}`))}
                       </h3>
 
-                      <p className="text-xs sm:text-sm text-charcoal-muted leading-relaxed font-sans font-light line-clamp-4">
+                      <p className="text-sm sm:text-base text-charcoal/85 leading-relaxed font-sans font-normal line-clamp-4">
                         {t(`services.items.${srv.key}.lead`, '')}
                       </p>
                     </div>
@@ -221,10 +221,10 @@ export default function Services() {
                   <div className="pt-4 border-t border-sand-border/50">
                     <Link
                       to={getLocalizedPath(`/services/${srv.slug}`)}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-deep-green hover:text-forest transition-colors group/btn"
+                      className="inline-flex items-center gap-1.5 text-sm font-bold uppercase tracking-wider text-deep-green hover:text-forest transition-colors group/btn"
                     >
                       <span>{t('services.overview.grid.exploreService', 'Explore Service')}</span>
-                      <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
+                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                     </Link>
                   </div>
                 </div>
@@ -253,17 +253,17 @@ export default function Services() {
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-mono font-bold tracking-widest text-deep-green bg-sage px-2.5 py-0.5 rounded-full border border-forest/5">
+                    <span className="text-xs sm:text-[13px] font-mono font-bold tracking-widest text-deep-green bg-sage px-3 py-1 rounded-full border border-forest/5">
                       PILLAR {pil.number || `0${idx + 1}`}
                     </span>
                     <Layers className="w-4 h-4 text-forest/40 group-hover:text-deep-green transition-colors" />
                   </div>
 
-                  <h3 className="font-display font-bold text-base text-forest group-hover:text-deep-green transition-colors">
+                  <h3 className="font-display font-bold text-base sm:text-lg text-forest group-hover:text-deep-green transition-colors">
                     {pil.title}
                   </h3>
 
-                  <p className="text-xs text-charcoal-muted leading-relaxed font-sans font-light">
+                  <p className="text-sm sm:text-[15px] text-charcoal/85 leading-relaxed font-sans font-normal">
                     {pil.description}
                   </p>
                 </div>

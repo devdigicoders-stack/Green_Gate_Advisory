@@ -9,14 +9,14 @@ export default function HeroSection() {
   const { getLocalizedPath } = useLocale();
 
   const scrollToContent = () => {
-    const nextSection = document.getElementById('what-we-do');
+    const nextSection = document.getElementById('about') || document.getElementById('what-we-do');
     if (nextSection) {
       nextSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   return (
-    <section className="relative min-h-[88vh] sm:min-h-[85vh] lg:min-h-[92vh] flex flex-col justify-between overflow-hidden bg-[#0a1210] text-white">
+    <section id="home" className="relative min-h-[88vh] sm:min-h-[85vh] lg:min-h-[92vh] flex flex-col justify-between overflow-hidden bg-[#0B3023] text-white scroll-mt-24">
       {/* Background Cinematic Video with Photography Fallback & Clean Neutral Contrast */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
@@ -39,11 +39,11 @@ export default function HeroSection() {
           />
         </video>
 
-        {/* Mobile vertical gradient: clean neutral charcoal/black overlay instead of heavy green */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a1210] via-[#0a1210]/80 to-[#0a1210]/60 sm:hidden pointer-events-none" />
+        {/* Mobile vertical gradient: clean balanced green overlay instead of heavy black */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0B3023] via-[#0B3023]/80 to-[#0B3023]/60 sm:hidden pointer-events-none" />
         {/* Desktop directional cinematic gradient for ultra-crisp typography readability */}
-        <div className="hidden sm:block absolute inset-0 bg-gradient-to-r from-[#0a1210]/95 via-[#0a1210]/70 via-50% to-transparent pointer-events-none" />
-        <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-[#0a1210]/90 via-transparent to-black/35 pointer-events-none" />
+        <div className="hidden sm:block absolute inset-0 bg-gradient-to-r from-[#0B3023]/95 via-[#0B3023]/75 via-50% to-transparent pointer-events-none" />
+        <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-[#0B3023]/90 via-transparent to-black/25 pointer-events-none" />
       </div>
 
       {/* Main Hero Content */}

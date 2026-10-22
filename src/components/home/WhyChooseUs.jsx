@@ -1,5 +1,8 @@
 import { useTranslation } from 'react-i18next';
+import { ShieldCheck, Scale, FileCheck, LineChart, Compass } from 'lucide-react';
 import SectionHeader from '../common/SectionHeader';
+
+const PILLAR_ICONS = [ShieldCheck, Scale, FileCheck, LineChart, Compass];
 
 export default function WhyChooseUs() {
   const { t } = useTranslation();
@@ -8,8 +11,8 @@ export default function WhyChooseUs() {
   const pillars = Array.isArray(rawPillars) ? rawPillars : [];
 
   return (
-    <section className="py-14 sm:py-20 bg-white border-b border-sand-border/70">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+    <section id="why-us" className="py-20 sm:py-28 lg:py-32 bg-white border-b border-sand-border/60 scroll-mt-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-20">
         
         <SectionHeader
           badge={t('home.whyUs.eyebrow', 'Our Differentiation')}
@@ -18,29 +21,37 @@ export default function WhyChooseUs() {
         />
 
         {/* 5 Distinctive Pillars Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {pillars.map((pillar, idx) => (
-            <div 
-              key={idx}
-              className="p-8 rounded-3xl bg-white border border-sand-border/80 shadow-xs hover:border-deep-green/30 hover:shadow-subtle transition-all duration-300 flex flex-col justify-between space-y-4 group"
-            >
-              <div className="space-y-3">
-                <span className="text-xs font-mono font-bold text-deep-green bg-sage px-3 py-1 rounded-full border border-forest/5">
-                  VALUE {pillar.num || `0${idx + 1}`}
-                </span>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          {pillars.map((pillar, idx) => {
+            const Icon = PILLAR_ICONS[idx % PILLAR_ICONS.length] || ShieldCheck;
+            return (
+              <div 
+                key={idx}
+                className="p-8 sm:p-9 lg:p-10 rounded-3xl bg-[#FAF9F5] border border-sand-border/80 shadow-subtle hover:bg-white hover:border-forest/30 hover:shadow-elevated hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between space-y-6 group"
+              >
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="w-11 h-11 rounded-2xl bg-forest/5 border border-forest/10 flex items-center justify-center text-forest group-hover:bg-forest group-hover:text-gold transition-all duration-300 shadow-xs">
+                      <Icon className="w-5 h-5 text-current" />
+                    </div>
+                    <span className="text-xs sm:text-[13px] font-mono font-bold text-deep-green bg-white px-3.5 py-1 rounded-full border border-sand-border/80 shadow-xs">
+                      VALUE {pillar.num || `0${idx + 1}`}
+                    </span>
+                  </div>
 
-                <h3 className="font-display font-bold text-lg text-forest group-hover:text-deep-green transition-colors leading-snug">
-                  {pillar.title}
-                </h3>
+                  <h3 className="font-display font-bold text-xl sm:text-2xl text-forest group-hover:text-deep-green transition-colors leading-snug">
+                    {pillar.title}
+                  </h3>
 
-                <p className="text-xs sm:text-sm text-charcoal-muted leading-relaxed font-sans font-light">
-                  {pillar.desc}
-                </p>
+                  <p className="text-sm sm:text-base text-charcoal/85 leading-relaxed font-sans font-normal">
+                    {pillar.desc}
+                  </p>
+                </div>
+
+                <div className="w-12 h-1 bg-gold/50 rounded-full group-hover:w-20 group-hover:bg-gold transition-all duration-300" />
               </div>
-
-              <div className="w-12 h-1 bg-gold/40 rounded-full mt-2 group-hover:w-16 group-hover:bg-gold transition-all duration-300" />
-            </div>
-          ))}
+            );
+          })}
         </div>
 
       </div>

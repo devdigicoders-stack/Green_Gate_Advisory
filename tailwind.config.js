@@ -8,14 +8,14 @@ export default {
     extend: {
       colors: {
         forest: {
-          DEFAULT: '#004D34', // Brand Logo Deep Emerald Green
-          dark: '#003322',    // Logo Rich Dark Green
-          light: '#0A6647',   // Logo Medium Forest Accent
+          DEFAULT: '#0E6649', // Fresh balanced emerald green (less dark)
+          dark: '#0B4D36',    // Rich dignified forest green (softened, not pitch black)
+          light: '#188761',   // Vibrant eco-green accent
         },
         'deep-green': {
-          DEFAULT: '#004D34',
-          dark: '#002B1D',
-          light: '#0E7A55',
+          DEFAULT: '#0E6649',
+          dark: '#0B4D36',
+          light: '#188761',
         },
         gold: {
           DEFAULT: '#D2AD67',

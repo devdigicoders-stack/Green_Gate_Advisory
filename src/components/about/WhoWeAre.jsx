@@ -12,8 +12,8 @@ export default function WhoWeAre() {
           
           {/* Left Column: Heading, Subheading & Narrative */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-forest/5 text-deep-green border border-forest/10">
-              <Compass className="w-3.5 h-3.5 text-deep-green" />
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-[13px] font-bold tracking-wider uppercase bg-forest/5 text-deep-green border border-forest/10">
+              <Compass className="w-4 h-4 text-deep-green" />
               <span>{t('about.whoWeAre.eyebrow', 'Who We Are')}</span>
             </div>
 
@@ -21,32 +21,32 @@ export default function WhoWeAre() {
               {t('about.whoWeAre.heading', 'Connecting Strategic Insight, Regulatory Clarity & Practical Execution')}
             </h2>
 
-            <div className="space-y-4 text-sm sm:text-base text-charcoal leading-relaxed font-sans">
-              <p className="font-medium text-forest-dark/90 leading-relaxed">
+            <div className="space-y-4 text-base sm:text-lg text-charcoal leading-relaxed font-sans">
+              <p className="font-medium text-forest-dark/95 leading-relaxed">
                 {t('about.whoWeAre.p1')}
               </p>
 
-              <p className="text-charcoal-muted leading-relaxed">
+              <p className="text-charcoal/80 leading-relaxed font-normal">
                 {t('about.whoWeAre.p2')}
               </p>
             </div>
 
             {/* Core Capability Checklist */}
-            <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm font-semibold text-forest">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-deep-green flex-shrink-0" />
+            <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-sm sm:text-base font-semibold text-forest">
+              <div className="flex items-center gap-2.5">
+                <CheckCircle2 className="w-4.5 h-4.5 text-deep-green flex-shrink-0" />
                 <span>{t('about.whoWeAre.capability1', 'Regulatory Analysis & Compliance')}</span>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-deep-green flex-shrink-0" />
+              <div className="flex items-center gap-2.5">
+                <CheckCircle2 className="w-4.5 h-4.5 text-deep-green flex-shrink-0" />
                 <span>{t('about.whoWeAre.capability2', 'Carbon Project Feasibility & MRV')}</span>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-deep-green flex-shrink-0" />
+              <div className="flex items-center gap-2.5">
+                <CheckCircle2 className="w-4.5 h-4.5 text-deep-green flex-shrink-0" />
                 <span>{t('about.whoWeAre.capability3', 'Climate Finance Structuring')}</span>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-deep-green flex-shrink-0" />
+              <div className="flex items-center gap-2.5">
+                <CheckCircle2 className="w-4.5 h-4.5 text-deep-green flex-shrink-0" />
                 <span>{t('about.whoWeAre.capability4', 'Measurable Implementation Plans')}</span>
               </div>
             </div>
@@ -64,11 +64,11 @@ export default function WhoWeAre() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/70 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <div className="flex items-center gap-2 text-xs font-semibold tracking-wide uppercase text-gold-light mb-1">
-                    <ShieldCheck className="w-3.5 h-3.5 text-gold" />
+                  <div className="flex items-center gap-2 text-xs sm:text-[13px] font-bold tracking-wide uppercase text-gold-light mb-1">
+                    <ShieldCheck className="w-4 h-4 text-gold" />
                     <span>{t('about.whoWeAre.badgeIntegrity', 'Technical Integrity')}</span>
                   </div>
-                  <p className="text-xs text-white/90 font-sans leading-snug">
+                  <p className="text-xs sm:text-sm text-white/95 font-sans leading-relaxed">
                     {t('about.whoWeAre.caption')}
                   </p>
                 </div>

@@ -47,44 +47,44 @@ export default function SectorsPage() {
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono font-bold text-gold-dark bg-gold/15 px-2.5 py-0.5 rounded">
+                  <span className="text-xs sm:text-[13px] font-mono font-bold text-gold-dark bg-gold/15 px-3 py-1 rounded-full border border-gold/20">
                     SECTOR {String(idx + 1).padStart(2, '0')}
                   </span>
                 </div>
 
-                <h2 className="font-heading font-bold text-lg text-forest leading-snug">
+                <h2 className="font-heading font-bold text-xl text-forest leading-snug">
                   {sec.title}
                 </h2>
 
                 {/* Challenges */}
-                <div className="space-y-1">
-                  <span className="text-xs font-bold uppercase tracking-wider text-charcoal-muted flex items-center gap-1.5">
-                    <AlertTriangle className="w-3.5 h-3.5 text-gold-dark" />
+                <div className="space-y-1.5">
+                  <span className="text-xs sm:text-[13px] font-bold uppercase tracking-wider text-charcoal-muted flex items-center gap-1.5">
+                    <AlertTriangle className="w-4 h-4 text-gold-dark" />
                     <span>{t('common.challenges', 'Key Challenges')}</span>
                   </span>
-                  <p className="text-xs sm:text-sm text-charcoal-muted leading-relaxed">
+                  <p className="text-sm sm:text-[15px] text-charcoal/85 leading-relaxed font-normal">
                     {sec.challenge}
                   </p>
                 </div>
 
                 {/* Relevant Services */}
-                <div className="space-y-1">
-                  <span className="text-xs font-bold uppercase tracking-wider text-deep-green flex items-center gap-1.5">
-                    <Layers className="w-3.5 h-3.5 text-deep-green" />
+                <div className="space-y-1.5">
+                  <span className="text-xs sm:text-[13px] font-bold uppercase tracking-wider text-deep-green flex items-center gap-1.5">
+                    <Layers className="w-4 h-4 text-deep-green" />
                     <span>{t('common.ourRole', 'Relevant Services')}</span>
                   </span>
-                  <p className="text-xs sm:text-sm text-charcoal leading-relaxed font-medium">
+                  <p className="text-sm sm:text-[15px] text-forest leading-relaxed font-semibold">
                     {sec.services}
                   </p>
                 </div>
 
                 {/* Deliverables */}
-                <div className="space-y-1">
-                  <span className="text-xs font-bold uppercase tracking-wider text-forest flex items-center gap-1.5">
-                    <FileCheck className="w-3.5 h-3.5 text-forest" />
+                <div className="space-y-1.5">
+                  <span className="text-xs sm:text-[13px] font-bold uppercase tracking-wider text-forest flex items-center gap-1.5">
+                    <FileCheck className="w-4 h-4 text-forest" />
                     <span>{t('common.keyDeliverables', 'Typical Deliverables')}</span>
                   </span>
-                  <p className="text-xs text-charcoal-muted leading-relaxed">
+                  <p className="text-sm text-charcoal/85 leading-relaxed font-normal">
                     {sec.deliverables}
                   </p>
                 </div>

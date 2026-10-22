@@ -38,7 +38,7 @@
   "coreServices": {
     "eyebrow": "Core Capabilities",
     "heading": "Our Core Advisory Services",
-    "subtitle": "Six integrated service pillars connecting regulatory insight, quantitative analysis, and project execution.",
+    "subtitle": "Integrated advisory and capacity-building pillars connecting regulatory insight, quantitative analysis, and project execution.",
     "exploreService": "Explore Service",
     "services": [
       {
@@ -79,6 +79,15 @@
         "title": "Corporate Climate and ESG",
         "summary": "Build a clearer picture of organisational emissions, climate risks and sustainability priorities. Services may include greenhouse gas inventories, Scope 1, 2 and 3 emissions accounting, decarbonisation roadmaps, transition planning, ESG strategy and sustainability reporting readiness.",
         "link": "/services/corporate-climate-esg"
+      },
+      {
+        "key": "training",
+        "title": "Training & Capacity Building",
+        "summary": "Strengthen internal knowledge, compliance capability and project preparation through customized training on carbon markets, Article 6, EU CBAM, emissions trading systems, GHG accounting and climate finance proposal structuring.",
+        "link": "/training",
+        "badge": "Institutional Practice",
+        "cta": "Explore Training & Capacity Building",
+        "tags": ["Executive Masterclasses", "CBAM & ETS Readiness", "Carbon Markets & MRV", "Climate Finance Clinics"]
       }
     ]
   },

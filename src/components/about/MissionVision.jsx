@@ -17,7 +17,7 @@ export default function MissionVision() {
                 <div className="w-12 h-12 rounded-2xl bg-forest/5 flex items-center justify-center text-forest group-hover:bg-forest group-hover:text-gold transition-colors duration-300">
                   <Compass className="w-6 h-6" />
                 </div>
-                <span className="text-[11px] font-mono font-bold tracking-widest uppercase text-gold-dark">
+                <span className="text-xs sm:text-[13px] font-mono font-bold tracking-widest uppercase text-gold-dark">
                   {t('about.missionVision.missionEyebrow', 'Our Driving Mandate')}
                 </span>
               </div>
@@ -26,13 +26,13 @@ export default function MissionVision() {
                 <h3 className="font-display font-bold text-2xl sm:text-3xl text-forest tracking-tight">
                   {t('about.missionVision.missionTitle', 'Our Mission')}
                 </h3>
-                <p className="text-sm sm:text-base text-charcoal-muted leading-relaxed font-sans font-light">
+                <p className="text-base sm:text-lg text-charcoal/85 leading-relaxed font-sans font-normal">
                   {t('about.missionVision.missionText')}
                 </p>
               </div>
             </div>
 
-            <div className="pt-6 border-t border-sand-border/60 flex items-center gap-2 text-xs font-semibold text-deep-green">
+            <div className="pt-6 border-t border-sand-border/60 flex items-center gap-2 text-xs sm:text-sm font-semibold text-deep-green">
               <ShieldCheck className="w-4 h-4 text-gold-dark" />
               <span>{t('about.missionVision.missionFooter', 'Rigorous design, preparation, finance, and reporting')}</span>
             </div>
@@ -45,7 +45,7 @@ export default function MissionVision() {
                 <div className="w-12 h-12 rounded-2xl bg-forest/5 flex items-center justify-center text-forest group-hover:bg-forest group-hover:text-gold transition-colors duration-300">
                   <Eye className="w-6 h-6" />
                 </div>
-                <span className="text-[11px] font-mono font-bold tracking-widest uppercase text-gold-dark">
+                <span className="text-xs sm:text-[13px] font-mono font-bold tracking-widest uppercase text-gold-dark">
                   {t('about.missionVision.visionEyebrow', 'Our Long-Term Horizon')}
                 </span>
               </div>
@@ -54,13 +54,13 @@ export default function MissionVision() {
                 <h3 className="font-display font-bold text-2xl sm:text-3xl text-forest tracking-tight">
                   {t('about.missionVision.visionTitle', 'Our Vision')}
                 </h3>
-                <p className="text-sm sm:text-base text-charcoal-muted leading-relaxed font-sans font-light">
+                <p className="text-base sm:text-lg text-charcoal/85 leading-relaxed font-sans font-normal">
                   {t('about.missionVision.visionText')}
                 </p>
               </div>
             </div>
 
-            <div className="pt-6 border-t border-sand-border/60 flex items-center gap-2 text-xs font-semibold text-deep-green">
+            <div className="pt-6 border-t border-sand-border/60 flex items-center gap-2 text-xs sm:text-sm font-semibold text-deep-green">
               <Sparkles className="w-4 h-4 text-gold-dark" />
               <span>{t('about.missionVision.visionFooter', 'Unlocking opportunities and bankable sustainable projects')}</span>
             </div>

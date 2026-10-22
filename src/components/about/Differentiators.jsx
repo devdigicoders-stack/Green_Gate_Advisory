@@ -48,7 +48,7 @@ export default function Differentiators() {
                     <div className="w-12 h-12 rounded-2xl bg-white border border-sand-border/80 flex items-center justify-center text-forest group-hover:bg-forest group-hover:text-gold transition-colors duration-300 shadow-xs">
                       <Icon className="w-6 h-6" />
                     </div>
-                    <span className="text-xs font-mono font-bold tracking-widest text-gold-dark">
+                    <span className="text-xs sm:text-[13px] font-mono font-bold tracking-widest text-gold-dark">
                       0{idx + 1}
                     </span>
                   </div>
@@ -57,7 +57,7 @@ export default function Differentiators() {
                     {item.title}
                   </h3>
 
-                  <p className="text-sm text-charcoal-muted leading-relaxed font-sans font-light">
+                  <p className="text-base text-charcoal/85 leading-relaxed font-sans font-normal">
                     {item.description}
                   </p>
                 </div>

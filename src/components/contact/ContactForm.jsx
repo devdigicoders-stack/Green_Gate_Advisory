@@ -63,7 +63,10 @@ export default function ContactForm() {
 
   const initialType = (() => {
     const rawType = location.state?.enquiryType || searchParams.get('type') || '';
-    return rawType.toLowerCase() === 'proposal' ? 'proposal' : 'consultation';
+    const cleanType = rawType.toLowerCase();
+    if (cleanType === 'proposal') return 'proposal';
+    if (cleanType === 'expert' || cleanType === 'consultant') return 'expert';
+    return 'consultation';
   })();
 
   const [formData, setFormData] = useState({
@@ -285,15 +288,19 @@ export default function ContactForm() {
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div>
                       <span className="text-xs font-mono font-bold tracking-widest text-gold-dark uppercase block">
-                        {t('contact.form.badge', 'Enquiry Submission')}
+                        {formData.enquiryType === 'expert' 
+                          ? 'Consultant & Expert Pool Registration' 
+                          : t('contact.form.badge', 'Enquiry Submission')}
                       </span>
                       <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-forest tracking-tight">
-                        {t('contact.form.heading', 'Submit Your Advisory Enquiry')}
+                        {formData.enquiryType === 'expert'
+                          ? 'Register with Our Senior Consultant Roster'
+                          : t('contact.form.heading', 'Submit Your Advisory Enquiry')}
                       </h2>
                     </div>
 
                     {/* Enquiry Type Selector Tabs */}
-                    <div className="inline-flex rounded-xl p-1 bg-sage/60 border border-sand-border/80 self-start sm:self-center">
+                    <div className="inline-flex rounded-xl p-1 bg-sage/60 border border-sand-border/80 self-start sm:self-center flex-wrap gap-1">
                       <button
                         type="button"
                         onClick={() => setFormData(p => ({ ...p, enquiryType: 'consultation' }))}
@@ -316,11 +323,24 @@ export default function ContactForm() {
                       >
                         {t('contact.form.enquiryType.proposal', 'Proposal Request')}
                       </button>
+                      <button
+                        type="button"
+                        onClick={() => setFormData(p => ({ ...p, enquiryType: 'expert' }))}
+                        className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                          formData.enquiryType === 'expert'
+                            ? 'bg-forest text-white shadow-xs'
+                            : 'text-charcoal-muted hover:text-forest'
+                        }`}
+                      >
+                        Join Expert Pool
+                      </button>
                     </div>
                   </div>
 
                   <p className="text-xs sm:text-sm text-charcoal-muted leading-relaxed font-sans">
-                    {t('contact.form.subtitle', 'Complete the form below to connect directly with our advisory specialists.')}
+                    {formData.enquiryType === 'expert'
+                      ? 'Submit your technical profile and credentials to collaborate with Green Gate Advisory on international compliance and carbon mandates.'
+                      : t('contact.form.subtitle', 'Complete the form below to connect directly with our advisory specialists.')}
                   </p>
                 </div>
 
@@ -442,7 +462,9 @@ export default function ContactForm() {
                   {/* Role */}
                   <div className="space-y-1.5 sm:col-span-2">
                     <label htmlFor="role" className="block text-xs font-bold uppercase tracking-wider text-forest font-sans">
-                      {t('contact.form.fields.role.label', 'Your Role / Position (Optional)')}
+                      {formData.enquiryType === 'expert'
+                        ? 'Your Specialisation & Credentials'
+                        : t('contact.form.fields.role.label', 'Your Role / Position (Optional)')}
                     </label>
                     <input
                       type="text"
@@ -450,7 +472,9 @@ export default function ContactForm() {
                       name="role"
                       value={formData.role}
                       onChange={handleChange}
-                      placeholder={t('contact.form.fields.role.placeholder', 'e.g., Sustainability Director, Head of Compliance')}
+                      placeholder={formData.enquiryType === 'expert' 
+                        ? 'e.g., Senior MRV Engineer, Article 6 Certifier, Environmental Economist' 
+                        : t('contact.form.fields.role.placeholder', 'e.g., Sustainability Director, Head of Compliance')}
                       className="w-full px-4 py-3 rounded-xl border border-sand-border focus:border-deep-green text-sm text-charcoal bg-white font-sans transition-colors focus:outline-none focus:ring-2 focus:ring-forest/20"
                     />
                   </div>
@@ -458,7 +482,9 @@ export default function ContactForm() {
                   {/* Service of Interest */}
                   <div className="space-y-1.5 sm:col-span-2">
                     <label htmlFor="serviceInterest" className="block text-xs font-bold uppercase tracking-wider text-forest font-sans">
-                      {t('contact.form.fields.serviceInterest.label', 'Service of Interest')} <span className="text-red-500">*</span>
+                      {formData.enquiryType === 'expert'
+                        ? 'Primary Domain of Technical Expertise'
+                        : t('contact.form.fields.serviceInterest.label', 'Service of Interest')} <span className="text-red-500">*</span>
                     </label>
                     <select
                       id="serviceInterest"
@@ -471,7 +497,7 @@ export default function ContactForm() {
                         errors.serviceInterest ? 'border-red-400 bg-red-50/20' : 'border-sand-border focus:border-deep-green'
                       }`}
                     >
-                      <option value="">{t('contact.form.fields.serviceInterest.placeholder', 'Select an advisory service...')}</option>
+                      <option value="">{formData.enquiryType === 'expert' ? 'Select primary technical practice...' : t('contact.form.fields.serviceInterest.placeholder', 'Select an advisory service...')}</option>
                       {SERVICE_OPTIONS.map((opt) => (
                         <option key={opt} value={opt}>
                           {t(`contact.serviceOptions.${opt}`, opt)}
@@ -487,7 +513,9 @@ export default function ContactForm() {
                   <div className="space-y-1.5 sm:col-span-2">
                     <div className="flex justify-between items-center">
                       <label htmlFor="requirementDescription" className="block text-xs font-bold uppercase tracking-wider text-forest font-sans">
-                        {t('contact.form.fields.requirementDescription.label', 'Brief Description of Your Requirement')} <span className="text-red-500">*</span>
+                        {formData.enquiryType === 'expert'
+                          ? 'Summary of Technical Experience, Track Record & Qualifications (or LinkedIn / CV Link)'
+                          : t('contact.form.fields.requirementDescription.label', 'Brief Description of Your Requirement')} <span className="text-red-500">*</span>
                       </label>
                       <span className="text-[11px] text-charcoal-muted font-mono">
                         {formData.requirementDescription.length} / 3000
@@ -500,7 +528,9 @@ export default function ContactForm() {
                       value={formData.requirementDescription}
                       onChange={handleChange}
                       maxLength={3000}
-                      placeholder={t('contact.form.fields.requirementDescription.placeholder', 'Please provide context regarding your organisation’s objectives, project timeline, or specific regulatory challenges...')}
+                      placeholder={formData.enquiryType === 'expert'
+                        ? 'Please describe your relevant certifications, sector expertise, past advisory/MRV mandates, geographic coverage, or paste a link to your online profile / CV...'
+                        : t('contact.form.fields.requirementDescription.placeholder', 'Please provide context regarding your organisation’s objectives, project timeline, or specific regulatory challenges...')}
                       aria-required="true"
                       aria-invalid={Boolean(errors.requirementDescription)}
                       className={`w-full px-4 py-3 rounded-xl border text-sm text-charcoal bg-white font-sans transition-colors focus:outline-none focus:ring-2 focus:ring-forest/20 leading-relaxed ${
@@ -615,9 +645,11 @@ export default function ContactForm() {
                     ) : (
                       <>
                         <span>
-                          {formData.enquiryType === 'proposal'
-                            ? t('contact.form.buttons.submitProposal', 'Request a Proposal')
-                            : t('contact.form.buttons.submitConsultation', 'Request a Consultation')}
+                          {formData.enquiryType === 'expert'
+                            ? 'Submit Expert Application'
+                            : formData.enquiryType === 'proposal'
+                              ? t('contact.form.buttons.submitProposal', 'Request a Proposal')
+                              : t('contact.form.buttons.submitConsultation', 'Request a Consultation')}
                         </span>
                         <Send className="w-4 h-4 text-gold" />
                       </>

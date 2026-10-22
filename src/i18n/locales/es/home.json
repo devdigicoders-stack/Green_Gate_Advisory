@@ -38,7 +38,7 @@
   "coreServices": {
     "eyebrow": "Capacidades Principales",
     "heading": "Nuestros Servicios de Asesoría Principal",
-    "subtitle": "Seis pilares integrados de asesoría que articulan comprensión normativa, análisis cuantitativo y ejecución de proyectos.",
+    "subtitle": "Pilares integrados de asesoría y fortalecimiento institucional que articulan comprensión normativa, análisis cuantitativo y ejecución de proyectos.",
     "exploreService": "Explorar Servicio",
     "services": [
       {
@@ -79,6 +79,15 @@
         "title": "Clima Corporativo y ESG",
         "summary": "Cuantifique con precisión las emisiones corporativas, identifique riesgos climáticos y defina prioridades de sostenibilidad. Servicios: inventarios Alcance 1, 2 y 3, hojas de ruta de descarbonización, planes de transición y reporte ESG.",
         "link": "/services/corporate-climate-esg"
+      },
+      {
+        "key": "training",
+        "title": "Capacitación y Fortalecimiento Institucional",
+        "summary": "Fortalezca el conocimiento interno, la capacidad de cumplimiento normativo y la preparación de proyectos mediante formación especializada en mercados de carbono, Artículo 6, CBAM de la UE, sistemas ETS, contabilidad de GEI y estructuración de finanzas climáticas.",
+        "link": "/training",
+        "badge": "Práctica Institucional",
+        "cta": "Explorar Programas de Capacitación",
+        "tags": ["Clases Magistrales Ejecutivas", "Preparación CBAM y ETS", "Mercados de Carbono y MRV", "Clínicas de Finanzas Climáticas"]
       }
     ]
   },

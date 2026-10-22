@@ -108,8 +108,8 @@ export default function AdvisoryEngagements() {
   }, [selectedSector, searchQuery]);
 
   return (
-    <section className="py-14 sm:py-20 bg-sand-surface border-b border-sand-border/80">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <section id="advisory-engagements" className="py-20 sm:py-28 lg:py-32 bg-white border-b border-sand-border/60 scroll-mt-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-20">
         
         {/* Section Header */}
         <SectionHeader
@@ -119,19 +119,19 @@ export default function AdvisoryEngagements() {
         />
 
         {/* Filters & Search Control Bar */}
-        <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 p-4 rounded-2xl bg-white border border-sand-border shadow-subtle">
+        <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 p-5 rounded-2xl bg-[#FAF9F5] border border-sand-border/80 shadow-subtle">
           
           {/* Sector Buttons */}
-          <div className="flex items-center gap-1.5 overflow-x-auto py-1 scrollbar-none no-scrollbar">
+          <div className="flex items-center gap-2 overflow-x-auto py-1 scrollbar-none no-scrollbar">
             <Filter className="w-4 h-4 text-forest-dark ml-2 mr-1 flex-shrink-0 hidden sm:block" />
             {sectorsList.map((sec) => (
               <button
                 key={sec}
                 onClick={() => setSelectedSector(sec)}
-                className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all ${
+                className={`px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all ${
                   selectedSector === sec
                     ? 'bg-forest text-white shadow-xs'
-                    : 'text-charcoal hover:bg-sage hover:text-forest'
+                    : 'text-charcoal bg-white border border-sand-border hover:bg-sage hover:text-forest'
                 }`}
               >
                 {sec}
@@ -140,14 +140,14 @@ export default function AdvisoryEngagements() {
           </div>
 
           {/* Quick Search */}
-          <div className="relative w-full md:w-64 flex-shrink-0">
-            <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-charcoal-muted" />
+          <div className="relative w-full md:w-72 flex-shrink-0">
+            <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-charcoal-muted" />
             <input
               type="text"
               placeholder="Search engagement, standard..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-4 py-1.5 rounded-xl text-xs bg-sage/60 border border-sand-border focus:outline-none focus:ring-2 focus:ring-forest/30"
+              className="w-full pl-10 pr-4 py-2 rounded-xl text-xs bg-white border border-sand-border focus:outline-none focus:ring-2 focus:ring-forest/30"
             />
           </div>
         </div>
@@ -157,37 +157,37 @@ export default function AdvisoryEngagements() {
           {filteredEngagements.map((eng) => (
             <div
               key={eng.id}
-              className="rounded-3xl bg-white border border-sand-border p-7 shadow-subtle hover:shadow-premium transition-all duration-300 flex flex-col justify-between space-y-5 group"
+              className="rounded-3xl bg-[#FAF9F5] border border-sand-border/80 p-8 sm:p-9 shadow-subtle hover:bg-white hover:border-forest/30 hover:shadow-elevated hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between space-y-6 group"
             >
               <div className="space-y-4">
                 {/* Header Tag Bar */}
-                <div className="flex items-center justify-between text-[11px]">
-                  <span className="font-mono font-bold uppercase tracking-wider text-deep-green bg-sage px-2.5 py-0.5 rounded-full border border-forest/10">
+                <div className="flex items-center justify-between text-xs">
+                  <span className="font-mono font-bold uppercase tracking-wider text-deep-green bg-white px-3 py-1 rounded-full border border-sand-border/80 shadow-xs">
                     {eng.badge}
                   </span>
-                  <div className="flex items-center gap-1 text-charcoal-muted">
-                    <MapPin className="w-3 h-3 text-deep-green" />
+                  <div className="flex items-center gap-1.5 text-charcoal-muted font-medium">
+                    <MapPin className="w-3.5 h-3.5 text-deep-green" />
                     <span>{eng.region}</span>
                   </div>
                 </div>
 
                 {/* Title */}
-                <h3 className="font-display font-bold text-lg sm:text-xl text-forest group-hover:text-deep-green transition-colors leading-snug">
+                <h3 className="font-display font-bold text-xl sm:text-2xl text-forest group-hover:text-deep-green transition-colors leading-snug">
                   {eng.title}
                 </h3>
 
                 {/* Client & Framework */}
-                <div className="space-y-1 text-xs">
+                <div className="space-y-1.5 text-xs sm:text-sm">
                   <div className="text-charcoal font-medium">
                     <span className="text-charcoal-muted">Client: </span>{eng.clientCategory}
                   </div>
-                  <div className="font-mono text-deep-green text-[11px]">
+                  <div className="font-mono text-deep-green text-xs">
                     <span className="text-charcoal-muted">Protocol: </span>{eng.framework}
                   </div>
                 </div>
 
                 {/* Summary */}
-                <p className="text-xs sm:text-sm text-charcoal-muted leading-relaxed font-sans font-light">
+                <p className="text-sm text-charcoal/80 leading-relaxed font-sans font-light">
                   {eng.summary}
                 </p>
 

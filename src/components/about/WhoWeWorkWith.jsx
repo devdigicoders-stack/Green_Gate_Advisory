@@ -54,11 +54,11 @@ export default function WhoWeWorkWith() {
                     <Icon className="w-5 h-5" />
                   </div>
 
-                  <h3 className="font-heading font-bold text-base text-forest group-hover:text-deep-green transition-colors">
+                  <h3 className="font-heading font-bold text-base sm:text-lg text-forest group-hover:text-deep-green transition-colors">
                     {group.title}
                   </h3>
 
-                  <p className="text-xs text-charcoal-muted leading-relaxed font-sans">
+                  <p className="text-sm sm:text-[15px] text-charcoal/85 leading-relaxed font-sans font-normal">
                     {group.description}
                   </p>
                 </div>
@@ -71,10 +71,10 @@ export default function WhoWeWorkWith() {
         <div className="text-center pt-4">
           <Link
             to={getLocalizedPath('/who-we-serve')}
-            className="btn-secondary px-8"
+            className="inline-flex items-center justify-center gap-2.5 px-9 py-4 rounded-full bg-forest text-white font-semibold text-sm sm:text-base tracking-wide uppercase hover:bg-forest-dark transition-all duration-300 shadow-sm hover:shadow-md"
           >
             <span>{t('about.whoWeWorkWith.cta', 'Learn More About Who We Serve')}</span>
-            <ArrowRight className="w-4 h-4 ml-1 text-forest" />
+            <ArrowRight className="w-4.5 h-4.5 ml-1 text-gold" />
           </Link>
         </div>
 

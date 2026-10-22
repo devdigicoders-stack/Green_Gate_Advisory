@@ -4,15 +4,12 @@ import HeroSection from '../components/home/HeroSection';
 import AdvisoryImpactCounter from '../components/home/AdvisoryImpactCounter';
 import WhatWeDo from '../components/home/WhatWeDo';
 import CoreServices from '../components/home/CoreServices';
-import GlobalAdvisoryMap from '../components/home/GlobalAdvisoryMap';
 import CarbonMarketProcess from '../components/home/CarbonMarketProcess';
 import SectorMatrixGlow from '../components/home/SectorMatrixGlow';
-import AdvisoryEngagements from '../components/home/AdvisoryEngagements';
 import ClimateFinanceSection from '../components/home/ClimateFinanceSection';
 import WhoWeServePreview from '../components/home/WhoWeServePreview';
 import WhyChooseUs from '../components/home/WhyChooseUs';
-import FeaturedSolutions from '../components/home/FeaturedSolutions';
-import InsightsPreview from '../components/home/InsightsPreview';
+import ExpertPoolSection from '../components/home/ExpertPoolSection';
 import HomeCTA from '../components/home/HomeCTA';
 import { useLocale } from '../hooks/useLocale';
 
@@ -47,46 +44,37 @@ export default function Home() {
         structuredData={structuredData}
       />
 
-      {/* 1. HERO SECTION */}
+      {/* 1. HERO SECTION (HOME) */}
       <HeroSection />
 
-      {/* 2. ADVISORY IMPACT COUNTER (Fiduciary & Scale Metrics) */}
-      <AdvisoryImpactCounter />
-
-      {/* 3. WHAT WE DO */}
+      {/* 2. ABOUT US / WHAT WE DO (Positioned directly after Home) */}
       <WhatWeDo />
+
+      {/* 3. ADVISORY IMPACT COUNTER (Fiduciary & Scale Metrics) */}
+      <AdvisoryImpactCounter />
 
       {/* 4. OUR CORE SERVICES */}
       <CoreServices />
 
-      {/* 5. GLOBAL JURISDICTION & REGULATORY ADVISORY MAP */}
-      <GlobalAdvisoryMap />
-
-      {/* 6. END-TO-END CARBON MARKET SUPPORT */}
+      {/* 5. END-TO-END CARBON MARKET SUPPORT */}
       <CarbonMarketProcess />
 
-      {/* 7. SECTORAL EXPERTISE MATRIX (Ambient Glow Real-Economy Cards) */}
+      {/* 6. SECTORAL EXPERTISE MATRIX (Ambient Glow Real-Economy Cards) */}
       <SectorMatrixGlow />
 
-      {/* 8. PRACTICAL ADVISORY ENGAGEMENTS (Filterable Scenario Database) */}
-      <AdvisoryEngagements />
-
-      {/* 9. CLIMATE FINANCE: FROM CONCEPT TO FUNDABLE PROPOSAL */}
+      {/* 7. CLIMATE FINANCE: FROM CONCEPT TO FUNDABLE PROPOSAL */}
       <ClimateFinanceSection />
 
-      {/* 9. WHO WE SERVE */}
+      {/* 8. WHO WE SERVE */}
       <WhoWeServePreview />
 
-      {/* 10. WHY GREEN GATE ADVISORY */}
+      {/* 9. WHY GREEN GATE ADVISORY */}
       <WhyChooseUs />
 
-      {/* 11. FEATURED SOLUTIONS */}
-      <FeaturedSolutions />
+      {/* 10. EXPERTS & CONSULTANTS RECRUITMENT ROSTER */}
+      <ExpertPoolSection />
 
-      {/* 12. INSIGHTS & RESOURCES */}
-      <InsightsPreview />
-
-      {/* 13. FINAL CONSULTATION CTA */}
+      {/* 11. FINAL CONSULTATION CTA */}
       <HomeCTA />
     </>
   );

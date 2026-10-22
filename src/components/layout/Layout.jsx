@@ -4,12 +4,12 @@ import Header from './Header';
 import Footer from './Footer';
 
 export default function Layout() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   // Scroll to top on navigation or smooth scroll to hash
   useEffect(() => {
-    if (window.location.hash) {
-      const targetId = window.location.hash.replace('#', '');
+    if (hash || window.location.hash) {
+      const targetId = (hash || window.location.hash).replace('#', '');
       setTimeout(() => {
         const el = document.getElementById(targetId);
         if (el) {
@@ -19,7 +19,7 @@ export default function Layout() {
     } else {
       window.scrollTo({ top: 0, behavior: 'instant' });
     }
-  }, [pathname]);
+  }, [pathname, hash]);
 
   return (
     <div className="flex flex-col min-h-screen bg-sage text-charcoal">

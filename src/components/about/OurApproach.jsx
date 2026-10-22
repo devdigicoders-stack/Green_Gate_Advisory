@@ -33,17 +33,17 @@ export default function OurApproach() {
                   <div className="w-2 h-2 rounded-full bg-deep-green/30 group-hover:bg-deep-green transition-colors" />
                 </div>
 
-                <h3 className="font-display font-bold text-base text-forest group-hover:text-deep-green transition-colors leading-snug">
+                <h3 className="font-display font-bold text-base sm:text-lg text-forest group-hover:text-deep-green transition-colors leading-snug">
                   {st.title}
                 </h3>
 
-                <p className="text-xs text-charcoal-muted leading-relaxed font-sans font-light">
+                <p className="text-sm sm:text-[15px] text-charcoal/85 leading-relaxed font-sans font-normal">
                   {st.description}
                 </p>
               </div>
 
-              <div className="pt-3 border-t border-sand-border/50 flex items-center gap-1.5 text-[11px] font-semibold text-deep-green">
-                <CheckCircle2 className="w-3.5 h-3.5 text-deep-green/60" />
+              <div className="pt-3 border-t border-sand-border/50 flex items-center gap-1.5 text-xs sm:text-[13px] font-mono font-bold text-deep-green">
+                <CheckCircle2 className="w-4 h-4 text-deep-green/70" />
                 <span>{t('about.approach.phase', 'Phase')} {idx + 1}</span>
               </div>
             </div>
@@ -51,8 +51,8 @@ export default function OurApproach() {
         </div>
 
         {/* Responsible Scope Qualification Notice from PDF */}
-        <div className="max-w-3xl mx-auto p-4 sm:p-5 rounded-2xl bg-white border border-sand-border shadow-subtle flex items-start gap-3 text-xs text-charcoal-muted font-sans">
-          <ShieldAlert className="w-4 h-4 text-gold-dark flex-shrink-0 mt-0.5" />
+        <div className="max-w-3xl mx-auto p-5 rounded-2xl bg-white border border-sand-border shadow-subtle flex items-start gap-3 text-sm text-charcoal/85 font-sans leading-relaxed">
+          <ShieldAlert className="w-5 h-5 text-gold-dark flex-shrink-0 mt-0.5" />
           <p className="leading-relaxed">
             {t('about.approach.scopeNotice')}
           </p>

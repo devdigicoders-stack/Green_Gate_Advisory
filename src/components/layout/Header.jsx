@@ -191,7 +191,7 @@ export default function Header() {
               isScrolled
                 ? 'bg-white/95 backdrop-blur-2xl shadow-xl border border-sand-border text-forest'
                 : activeDropdown
-                  ? 'bg-[#00281b]/98 backdrop-blur-2xl border border-white/15 shadow-2xl text-white'
+                  ? 'bg-[#0B3023]/98 backdrop-blur-2xl border border-white/15 shadow-2xl text-white'
                   : 'bg-green-200/20 backdrop-blur-xl border border-white/10 shadow-2xl text-white'
             }`}
           >
@@ -305,33 +305,24 @@ export default function Header() {
                   {t('navigation.whoWeServe', 'Who We Serve')}
                 </NavLink>
 
-                {/* 4. Latest Trigger */}
-                <div 
-                  className="relative"
-                  onMouseEnter={() => handleMouseEnter('latest')}
-                >
-                  <button
-                    type="button"
-                    onClick={(e) => handleDropdownClick('latest', e)}
-                    aria-expanded={activeDropdown === 'latest'}
-                    className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 text-sm sm:text-[14px] font-semibold tracking-normal transition-all duration-150 cursor-pointer ${
-                      activeDropdown === 'latest'
+                {/* 4. Training Direct Link */}
+                <NavLink
+                  to={getLocalizedPath('/training')}
+                  onMouseEnter={handleItemHoverClear}
+                  className={({ isActive }) =>
+                    `px-3.5 py-1.5 text-sm sm:text-[14px] font-semibold tracking-normal transition-all duration-150 ${
+                      isActive
                         ? isScrolled
                           ? 'text-forest font-bold underline underline-offset-4 decoration-2 decoration-forest'
                           : 'text-white font-bold underline underline-offset-4 decoration-2 decoration-gold'
                         : isScrolled
                           ? 'text-forest hover:text-deep-green hover:underline underline-offset-4'
                           : 'text-white/95 hover:text-white hover:underline underline-offset-4'
-                    }`}
-                  >
-                    <span>{t('navigation.latest', 'Latest')}</span>
-                    <ChevronDown 
-                      className={`w-4 h-4 stroke-[2.2] transition-transform duration-200 ${
-                        activeDropdown === 'latest' ? 'rotate-180' : ''
-                      }`} 
-                    />
-                  </button>
-                </div>
+                    }`
+                  }
+                >
+                  {t('navigation.training', 'Training')}
+                </NavLink>
 
                 {/* 5. About Trigger */}
                 <div 
@@ -509,118 +500,7 @@ export default function Header() {
                   </div>
                 )}
 
-                {/* 2. Latest Full-Width Mega Menu */}
-                {activeDropdown === 'latest' && (
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <Link
-                      to={getLocalizedPath('/insights')}
-                      onClick={() => setActiveDropdown(null)}
-                      className={`p-4 rounded-2xl transition-all duration-150 group border ${
-                        isScrolled
-                          ? 'border-transparent hover:border-sand-border/80 hover:bg-forest/5'
-                          : 'border-transparent hover:border-white/10 hover:bg-white/10'
-                      }`}
-                    >
-                      <div className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors mb-3 ${
-                        isScrolled
-                          ? 'bg-forest/5 text-forest group-hover:bg-forest group-hover:text-gold'
-                          : 'bg-white/10 text-gold-light group-hover:bg-gold group-hover:text-forest-dark'
-                      }`}>
-                        <Newspaper className="w-4 h-4" />
-                      </div>
-                      <div className={`text-[13.5px] font-bold flex items-center justify-between mb-1 ${
-                        isScrolled ? 'text-forest' : 'text-white'
-                      }`}>
-                        <span>{t('navigation.menu.news', 'News & Insights')}</span>
-                        <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-gold" />
-                      </div>
-                      <p className={`text-xs leading-relaxed ${isScrolled ? 'text-charcoal-muted' : 'text-white/70'}`}>
-                        Market intelligence, regulatory changes, Article 6 updates, and global carbon trends.
-                      </p>
-                    </Link>
 
-                    <Link
-                      to={getLocalizedPath('/training')}
-                      onClick={() => setActiveDropdown(null)}
-                      className={`p-4 rounded-2xl transition-all duration-150 group border ${
-                        isScrolled
-                          ? 'border-transparent hover:border-sand-border/80 hover:bg-forest/5'
-                          : 'border-transparent hover:border-white/10 hover:bg-white/10'
-                      }`}
-                    >
-                      <div className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors mb-3 ${
-                        isScrolled
-                          ? 'bg-forest/5 text-forest group-hover:bg-forest group-hover:text-gold'
-                          : 'bg-white/10 text-gold-light group-hover:bg-gold group-hover:text-forest-dark'
-                      }`}>
-                        <Calendar className="w-4 h-4" />
-                      </div>
-                      <div className={`text-[13.5px] font-bold flex items-center justify-between mb-1 ${
-                        isScrolled ? 'text-forest' : 'text-white'
-                      }`}>
-                        <span>{t('navigation.menu.events', 'Events & Workshops')}</span>
-                        <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-gold" />
-                      </div>
-                      <p className={`text-xs leading-relaxed ${isScrolled ? 'text-charcoal-muted' : 'text-white/70'}`}>
-                        Executive masterclasses, capacity building workshops, and industry briefing sessions.
-                      </p>
-                    </Link>
-
-                    <Link
-                      to={getLocalizedPath('/insights')}
-                      onClick={() => setActiveDropdown(null)}
-                      className={`p-4 rounded-2xl transition-all duration-150 group border ${
-                        isScrolled
-                          ? 'border-transparent hover:border-sand-border/80 hover:bg-forest/5'
-                          : 'border-transparent hover:border-white/10 hover:bg-white/10'
-                      }`}
-                    >
-                      <div className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors mb-3 ${
-                        isScrolled
-                          ? 'bg-forest/5 text-forest group-hover:bg-forest group-hover:text-gold'
-                          : 'bg-white/10 text-gold-light group-hover:bg-gold group-hover:text-forest-dark'
-                      }`}>
-                        <BookOpen className="w-4 h-4" />
-                      </div>
-                      <div className={`text-[13.5px] font-bold flex items-center justify-between mb-1 ${
-                        isScrolled ? 'text-forest' : 'text-white'
-                      }`}>
-                        <span>{t('navigation.menu.resources', 'Resources & Briefings')}</span>
-                        <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-gold" />
-                      </div>
-                      <p className={`text-xs leading-relaxed ${isScrolled ? 'text-charcoal-muted' : 'text-white/70'}`}>
-                        Technical whitepapers, policy briefings, methodology analyses, and climate toolkits.
-                      </p>
-                    </Link>
-
-                    <Link
-                      to={getLocalizedPath('/contact')}
-                      onClick={() => setActiveDropdown(null)}
-                      className={`p-4 rounded-2xl transition-all duration-150 group border ${
-                        isScrolled
-                          ? 'border-transparent hover:border-sand-border/80 hover:bg-forest/5'
-                          : 'border-transparent hover:border-white/10 hover:bg-white/10'
-                      }`}
-                    >
-                      <div className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors mb-3 ${
-                        isScrolled
-                          ? 'bg-forest/5 text-forest group-hover:bg-forest group-hover:text-gold'
-                          : 'bg-white/10 text-gold-light group-hover:bg-gold group-hover:text-forest-dark'
-                      }`}>
-                        <MessageSquare className="w-4 h-4" />
-                      </div>
-                      <div className={`text-[13.5px] font-bold flex items-center justify-between mb-1 ${
-                        isScrolled ? 'text-forest' : 'text-white'
-                      }`}>
-                        <span>{t('navigation.menu.consultations', 'Consultations')}</span>
-                        <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-gold" />
-                      </div>
-                      <p className={`text-xs leading-relaxed ${isScrolled ? 'text-charcoal-muted' : 'text-white/70'}`}>
-                        Direct inquiries with our senior advisors for specialized institutional requirements.
-                      </p>
-                    </Link>
-                  </div>
-                )}
 
                 {/* 3. About Full-Width Mega Menu */}
                 {activeDropdown === 'about' && (
@@ -857,66 +737,17 @@ export default function Header() {
                 </Link>
 
                 {/* 5. Latest (Collapsible Accordion) */}
-                <div className="rounded-2xl border border-sand-border/80 overflow-hidden bg-sand-surface/40">
-                  <button
-                    type="button"
-                    onClick={() => setMobileExpandedSection(prev => prev === 'latest' ? null : 'latest')}
-                    className="w-full flex items-center justify-between px-3.5 py-3 text-xs font-bold uppercase tracking-wider text-forest hover:bg-forest/5 transition-colors"
-                  >
-                    <span>{t('navigation.latest', 'Latest')}</span>
-                    <ChevronDown 
-                      className={`w-4 h-4 text-forest transition-transform duration-200 ${
-                        mobileExpandedSection === 'latest' ? 'rotate-180' : ''
-                      }`} 
-                    />
-                  </button>
-
-                  {mobileExpandedSection === 'latest' && (
-                    <div className="px-2.5 pb-2.5 space-y-1 pt-1 border-t border-sand-border/60 bg-white animate-in fade-in duration-150">
-                      <Link 
-                        to={getLocalizedPath('/insights')} 
-                        onClick={() => setMobileMenuOpen(false)} 
-                        className="flex items-center gap-2.5 p-2 rounded-xl text-xs font-medium text-forest-dark hover:bg-forest/5"
-                      >
-                        <Newspaper className="w-3.5 h-3.5 text-deep-green" />
-                        <span>{t('navigation.menu.news', 'News & Insights')}</span>
-                      </Link>
-                      <Link 
-                        to={getLocalizedPath('/training')} 
-                        onClick={() => setMobileMenuOpen(false)} 
-                        className="flex items-center gap-2.5 p-2 rounded-xl text-xs font-medium text-forest-dark hover:bg-forest/5"
-                      >
-                        <Calendar className="w-3.5 h-3.5 text-deep-green" />
-                        <span>{t('navigation.menu.events', 'Events & Workshops')}</span>
-                      </Link>
-                      <Link 
-                        to={getLocalizedPath('/insights')} 
-                        onClick={() => setMobileMenuOpen(false)} 
-                        className="flex items-center gap-2.5 p-2 rounded-xl text-xs font-medium text-forest-dark hover:bg-forest/5"
-                      >
-                        <BookOpen className="w-3.5 h-3.5 text-deep-green" />
-                        <span>{t('navigation.menu.resources', 'Resources & Briefings')}</span>
-                      </Link>
-                      <Link 
-                        to={getLocalizedPath('/contact')} 
-                        onClick={() => setMobileMenuOpen(false)} 
-                        className="flex items-center gap-2.5 p-2 rounded-xl text-xs font-medium text-forest-dark hover:bg-forest/5"
-                      >
-                        <MessageSquare className="w-3.5 h-3.5 text-deep-green" />
-                        <span>{t('navigation.menu.consultations', 'Consultations')}</span>
-                      </Link>
-                    </div>
-                  )}
-                </div>
-
-                {/* 6. Training */}
-                <Link
+                {/* Direct Training Mobile NavLink */}
+                <NavLink
                   to={getLocalizedPath('/training')}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-forest hover:bg-forest/5 font-bold text-xs uppercase tracking-wider transition-colors"
+                  className="flex items-center gap-3 px-3.5 py-3 rounded-2xl border border-sand-border/80 bg-white text-xs font-bold uppercase tracking-wider text-forest hover:bg-forest/5 transition-colors"
                 >
-                  <span>{t('navigation.training', 'Training')}</span>
-                </Link>
+                  <Calendar className="w-4 h-4 text-deep-green" />
+                  <span>{t('navigation.training', 'Training & Workshops')}</span>
+                </NavLink>
+
+
 
                 {/* 7. About (Collapsible Accordion) */}
                 <div className="rounded-2xl border border-sand-border/80 overflow-hidden bg-sand-surface/40">

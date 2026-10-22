@@ -26,7 +26,7 @@ export default function AboutUs() {
     "mainEntity": {
       "@type": "ProfessionalService",
       "name": "Green Gate Advisory",
-      "description": "Specialised climate and environmental advisory consultancy supporting governments, businesses, exporters, project developers, investors and institutions.",
+      "description": "Specialised climate and environmental advisory consultancy firm supporting governments, businesses, exporters, project developers, investors and institutions.",
       "url": `https://greengateadvisory.com/${locale}`,
       "inLanguage": locale
     }

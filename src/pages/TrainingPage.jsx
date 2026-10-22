@@ -55,13 +55,13 @@ export default function TrainingPage() {
               className="bg-white p-7 rounded-3xl border border-sand-border shadow-subtle hover:border-deep-green/30 hover:shadow-premium transition-all duration-300 flex flex-col justify-between space-y-4"
             >
               <div className="space-y-3">
-                <span className="text-xs font-mono font-bold text-gold-dark bg-gold/15 px-2.5 py-0.5 rounded">
+                <span className="text-xs sm:text-[13px] font-mono font-bold text-gold-dark bg-gold/15 px-3 py-1 rounded-full border border-gold/20">
                   MODULE {String(idx + 1).padStart(2, '0')}
                 </span>
-                <h3 className="font-heading font-bold text-base text-forest leading-snug">
+                <h3 className="font-heading font-bold text-base sm:text-lg text-forest leading-snug">
                   {topic.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-charcoal-muted leading-relaxed">
+                <p className="text-sm sm:text-[15px] text-charcoal/85 leading-relaxed font-normal">
                   {topic.desc}
                 </p>
               </div>
@@ -69,10 +69,10 @@ export default function TrainingPage() {
               <div className="pt-4 border-t border-sand-border/70">
                 <Link
                   to={getLocalizedPath('/contact')}
-                  className="link-editorial text-xs font-semibold"
+                  className="inline-flex items-center gap-1.5 text-sm font-bold uppercase tracking-wider text-deep-green hover:text-forest transition-colors"
                 >
                   <span>Request Module Syllabus</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>
