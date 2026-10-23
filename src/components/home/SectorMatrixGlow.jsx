@@ -8,7 +8,6 @@ import {
   Trash2, 
   Truck, 
   ArrowRight,
-  ShieldCheck,
   CheckCircle2
 } from 'lucide-react';
 import SectionHeader from '../common/SectionHeader';
@@ -160,17 +159,6 @@ export default function SectorMatrixGlow() {
               </div>
             );
           })}
-        </div>
-
-        {/* Closing Notice */}
-        <div className="p-7 sm:p-8 rounded-2xl bg-white border border-sand-border text-center max-w-3xl mx-auto space-y-2.5 shadow-subtle">
-          <div className="flex items-center justify-center gap-2 text-sm font-bold uppercase tracking-wider text-forest">
-            <ShieldCheck className="w-5 h-5 text-gold-dark" />
-            <span>Fiduciary Scoping Guarantee</span>
-          </div>
-          <p className="text-sm sm:text-base text-charcoal/80 leading-relaxed font-sans font-normal">
-            All advisory engagements are delivered with direct methodology traceability to accredited standards (GHG Protocol, ISO 14064, UNFCCC, EU CBAM Regulation) without speculative bias.
-          </p>
         </div>
 
       </div>

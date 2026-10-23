@@ -3,11 +3,7 @@ import MetaTags from '../components/seo/MetaTags';
 import HeroSection from '../components/home/HeroSection';
 import AdvisoryImpactCounter from '../components/home/AdvisoryImpactCounter';
 import WhatWeDo from '../components/home/WhatWeDo';
-import CoreServices from '../components/home/CoreServices';
 import CarbonMarketProcess from '../components/home/CarbonMarketProcess';
-import SectorMatrixGlow from '../components/home/SectorMatrixGlow';
-import ClimateFinanceSection from '../components/home/ClimateFinanceSection';
-import WhoWeServePreview from '../components/home/WhoWeServePreview';
 import WhyChooseUs from '../components/home/WhyChooseUs';
 import ExpertPoolSection from '../components/home/ExpertPoolSection';
 import HomeCTA from '../components/home/HomeCTA';
@@ -53,22 +49,10 @@ export default function Home() {
       {/* 3. ADVISORY IMPACT COUNTER (Fiduciary & Scale Metrics) */}
       <AdvisoryImpactCounter />
 
-      {/* 4. OUR CORE SERVICES */}
-      <CoreServices />
-
-      {/* 5. END-TO-END CARBON MARKET SUPPORT */}
+      {/* 4. END-TO-END CARBON MARKET SUPPORT */}
       <CarbonMarketProcess />
 
-      {/* 6. SECTORAL EXPERTISE MATRIX (Ambient Glow Real-Economy Cards) */}
-      <SectorMatrixGlow />
-
-      {/* 7. CLIMATE FINANCE: FROM CONCEPT TO FUNDABLE PROPOSAL */}
-      <ClimateFinanceSection />
-
-      {/* 8. WHO WE SERVE */}
-      <WhoWeServePreview />
-
-      {/* 9. WHY GREEN GATE ADVISORY */}
+      {/* 5. WHY GREEN GATE ADVISORY */}
       <WhyChooseUs />
 
       {/* 10. EXPERTS & CONSULTANTS RECRUITMENT ROSTER */}
