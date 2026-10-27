@@ -16,7 +16,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="home" className="relative min-h-[60vh] sm:min-h-[80vh] lg:min-h-[85vh] flex flex-col justify-between overflow-hidden bg-neutral-900 text-white scroll-mt-24">
+    <section id="home" className="relative min-h-[50vh] sm:min-h-[65vh] lg:min-h-[70vh] flex flex-col justify-between overflow-hidden bg-neutral-900 text-white scroll-mt-24">
       {/* Background Cinematic Video with Photography Fallback & Clean Neutral Contrast */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
@@ -46,7 +46,7 @@ export default function HeroSection() {
       </div>
 
       {/* Main Hero Content - Responsive compact height for mobile */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-32 pb-8 sm:pb-12 flex-grow flex flex-col justify-center w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-28 pb-6 sm:pb-10 flex-grow flex flex-col justify-center w-full">
         <div className="max-w-2xl lg:max-w-3xl space-y-3 sm:space-y-6 text-left items-start">
           
           {/* Eyebrow badge - Hidden on mobile to remove text clutter */}
