@@ -64,14 +64,14 @@ export default function LanguageSwitcher({
         aria-label={`Select language, current is ${locale.toUpperCase()}`}
         className={`inline-flex items-center gap-2 px-2.5 py-1.5 rounded-md text-xs font-semibold tracking-wider transition-all duration-200 border ${
           isDark
-            ? 'border-forest/20 text-forest-dark hover:border-forest/50 hover:bg-forest/5 bg-white/70'
+            ? 'border-[#D0D9D0] text-[#1E2522] hover:border-[#019935] hover:text-[#019935] bg-white shadow-xs'
             : 'border-white/35 text-white hover:border-white/70 hover:bg-white/10 bg-white/5'
         }`}
       >
         <FlagIcon className="w-4 h-3 rounded-xs flex-shrink-0 object-cover" />
-        <span className="font-mono text-[11px] font-bold">{locale.toUpperCase()}</span>
+        <span className="font-mono text-[11px] font-bold text-inherit">{locale.toUpperCase()}</span>
         <ChevronDown 
-          className={`w-3 h-3 opacity-80 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} 
+          className={`w-3 h-3 opacity-90 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} 
         />
       </button>
 
@@ -86,14 +86,14 @@ export default function LanguageSwitcher({
             role="menuitem"
             onClick={() => handleSelect('en')}
             className={`w-full px-3 py-2 flex items-center justify-between text-left hover:bg-sage/70 transition-colors ${
-              locale === 'en' ? 'font-bold text-forest bg-sage/40' : 'text-charcoal font-medium'
+              locale === 'en' ? 'font-bold text-black bg-sage/40' : 'text-black font-medium'
             }`}
           >
             <span className="flex items-center gap-2.5">
               <UkFlag className="w-4 h-3 rounded-xs" />
               <span>English</span>
             </span>
-            {locale === 'en' && <Check className="w-3.5 h-3.5 text-forest" />}
+            {locale === 'en' && <Check className="w-3.5 h-3.5 text-black" />}
           </button>
 
           <button
@@ -101,14 +101,14 @@ export default function LanguageSwitcher({
             role="menuitem"
             onClick={() => handleSelect('es')}
             className={`w-full px-3 py-2 flex items-center justify-between text-left hover:bg-sage/70 transition-colors ${
-              locale === 'es' ? 'font-bold text-forest bg-sage/40' : 'text-charcoal font-medium'
+              locale === 'es' ? 'font-bold text-black bg-sage/40' : 'text-black font-medium'
             }`}
           >
             <span className="flex items-center gap-2.5">
               <SpainFlag className="w-4 h-3 rounded-xs" />
               <span>Español</span>
             </span>
-            {locale === 'es' && <Check className="w-3.5 h-3.5 text-forest" />}
+            {locale === 'es' && <Check className="w-3.5 h-3.5 text-black" />}
           </button>
         </div>
       )}

@@ -129,7 +129,7 @@ export default function Header() {
     };
   }, [mobileMenuOpen]);
 
-  // Dropdown hover & click handlers with safety debounce
+  // Dropdown hover & click handlers - Instant open with smooth exit debounce
   const handleMouseEnter = (name) => {
     if (leaveTimerRef.current) {
       clearTimeout(leaveTimerRef.current);
@@ -142,9 +142,10 @@ export default function Header() {
     if (leaveTimerRef.current) {
       clearTimeout(leaveTimerRef.current);
     }
+    // Small graceful threshold so cursor moving into dropdown doesn't flicker
     leaveTimerRef.current = setTimeout(() => {
       setActiveDropdown(null);
-    }, 50);
+    }, 120);
   };
 
   const handleItemHoverClear = () => {
@@ -191,7 +192,7 @@ export default function Header() {
               isScrolled
                 ? 'bg-white/95 backdrop-blur-2xl shadow-xl border border-sand-border text-forest'
                 : activeDropdown
-                  ? 'bg-[#0B3023]/98 backdrop-blur-2xl border border-white/15 shadow-2xl text-white'
+                  ? 'bg-[#017A2A]/98 backdrop-blur-2xl border border-white/20 shadow-2xl text-white'
                   : 'bg-green-200/20 backdrop-blur-xl border border-white/10 shadow-2xl text-white'
             }`}
           >
@@ -216,7 +217,7 @@ export default function Header() {
 
               {/* Center: Desktop Navigation Links (Flex item 2 - Centered) */}
               <nav 
-                className="hidden lg:flex items-center justify-center gap-1 xl:gap-2.5 flex-none text-sm sm:text-[14px] font-semibold"
+                className="hidden lg:flex items-center justify-center gap-1 xl:gap-3 flex-none text-[15px] font-semibold"
                 aria-label="Main Navigation"
               >
                 {/* 0. Home Link */}
@@ -225,7 +226,7 @@ export default function Header() {
                   end
                   onMouseEnter={handleItemHoverClear}
                   className={({ isActive }) =>
-                    `px-3.5 py-1.5 text-sm sm:text-[14px] font-semibold tracking-normal transition-all duration-150 ${
+                    `px-3.5 py-1.5 text-[15px] font-semibold tracking-normal transition-all duration-150 ${
                       isActive
                         ? isScrolled
                           ? 'text-forest font-bold underline underline-offset-4 decoration-2 decoration-forest'
@@ -249,7 +250,7 @@ export default function Header() {
                     onClick={() => setActiveDropdown(null)}
                     aria-expanded={activeDropdown === 'about'}
                     className={({ isActive }) =>
-                      `inline-flex items-center gap-1.5 px-3.5 py-1.5 text-sm sm:text-[14px] font-semibold tracking-normal transition-all duration-150 cursor-pointer ${
+                      `inline-flex items-center gap-1.5 px-3.5 py-1.5 text-[15px] font-semibold tracking-normal transition-all duration-150 cursor-pointer ${
                         isActive || activeDropdown === 'about'
                           ? isScrolled
                             ? 'text-forest font-bold underline underline-offset-4 decoration-2 decoration-forest'
@@ -278,7 +279,7 @@ export default function Header() {
                     type="button"
                     onClick={(e) => handleDropdownClick('services', e)}
                     aria-expanded={activeDropdown === 'services'}
-                    className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 text-sm sm:text-[14px] font-semibold tracking-normal cursor-pointer transition-colors duration-150 ${
+                    className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 text-[15px] font-semibold tracking-normal cursor-pointer transition-colors duration-150 ${
                       activeDropdown === 'services'
                         ? isScrolled
                           ? 'text-forest font-bold underline underline-offset-4 decoration-2 decoration-forest'
@@ -302,7 +303,7 @@ export default function Header() {
                   to={getLocalizedPath('/sectors')}
                   onMouseEnter={handleItemHoverClear}
                   className={({ isActive }) =>
-                    `px-3.5 py-1.5 text-sm sm:text-[14px] font-semibold tracking-normal transition-all duration-150 ${
+                    `px-3.5 py-1.5 text-[15px] font-semibold tracking-normal transition-all duration-150 ${
                       isActive
                         ? isScrolled
                           ? 'text-forest font-bold underline underline-offset-4 decoration-2 decoration-forest'
@@ -321,7 +322,7 @@ export default function Header() {
                   to={getLocalizedPath('/who-we-serve')}
                   onMouseEnter={handleItemHoverClear}
                   className={({ isActive }) =>
-                    `px-3.5 py-1.5 text-sm sm:text-[14px] font-semibold tracking-normal transition-all duration-150 ${
+                    `px-3.5 py-1.5 text-[15px] font-semibold tracking-normal transition-all duration-150 ${
                       isActive
                         ? isScrolled
                           ? 'text-forest font-bold underline underline-offset-4 decoration-2 decoration-forest'
@@ -340,7 +341,7 @@ export default function Header() {
                   to={getLocalizedPath('/training')}
                   onMouseEnter={handleItemHoverClear}
                   className={({ isActive }) =>
-                    `px-3.5 py-1.5 text-sm sm:text-[14px] font-semibold tracking-normal transition-all duration-150 ${
+                    `px-3.5 py-1.5 text-[15px] font-semibold tracking-normal transition-all duration-150 ${
                       isActive
                         ? isScrolled
                           ? 'text-forest font-bold underline underline-offset-4 decoration-2 decoration-forest'
@@ -359,7 +360,7 @@ export default function Header() {
                   to={getLocalizedPath('/contact')}
                   onMouseEnter={handleItemHoverClear}
                   className={({ isActive }) =>
-                    `px-3.5 py-1.5 text-sm sm:text-[14px] font-semibold tracking-normal transition-all duration-150 ${
+                    `px-3.5 py-1.5 text-[15px] font-semibold tracking-normal transition-all duration-150 ${
                       isActive
                         ? isScrolled
                           ? 'text-forest font-bold underline underline-offset-4 decoration-2 decoration-forest'
@@ -399,10 +400,10 @@ export default function Header() {
               </div>
             </div>
 
-            {/* Expanded Full-Width Inner Area (Covering the whole container area) */}
+            {/* Expanded Full-Width Inner Area (Instant Render) */}
             {activeDropdown && (
               <div 
-                className="hidden lg:block px-6 sm:px-8 py-5 animate-in fade-in slide-in-from-top-1 duration-150"
+                className="hidden lg:block px-6 sm:px-8 py-5"
                 onMouseEnter={() => {
                   if (leaveTimerRef.current) {
                     clearTimeout(leaveTimerRef.current);
@@ -438,15 +439,15 @@ export default function Header() {
                               <IconComponent className="w-4 h-4" />
                             </div>
                             <div className="min-w-0 flex-1">
-                              <div className={`text-[13.5px] font-bold flex items-center justify-between transition-colors ${
+                              <div className={`text-[14.5px] font-bold flex items-center justify-between transition-colors ${
                                 isScrolled ? 'text-forest group-hover:text-deep-green' : 'text-white group-hover:text-gold-light'
                               }`}>
                                 <span className="truncate">{title}</span>
                                 <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all flex-shrink-0 ml-1 text-gold" />
                               </div>
                               {desc && (
-                                <p className={`text-xs leading-relaxed mt-1 line-clamp-2 ${
-                                  isScrolled ? 'text-charcoal-muted' : 'text-white/70'
+                                <p className={`text-[13px] leading-relaxed mt-1 line-clamp-2 ${
+                                  isScrolled ? 'text-charcoal-muted' : 'text-white/80'
                                 }`}>
                                   {desc}
                                 </p>

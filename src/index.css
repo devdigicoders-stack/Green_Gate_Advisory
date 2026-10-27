@@ -7,19 +7,34 @@
     color-scheme: light;
   }
 
+  html {
+    font-size: 17px;
+  }
+
   body {
-    background-color: #F5F7F4;
-    color: #363939;
-    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+    background-color: #F8FAF7;
+    color: #2C302E;
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1rem;
+    line-height: 1.75;
     overflow-x: hidden;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.012em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Increase readability of paragraph tags globally across all cards & sections */
+  p {
+    line-height: 1.75;
+    color: #38423E;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
-    color: #1A2321;
+    color: #16241F;
     letter-spacing: -0.025em;
     overflow-wrap: break-word;
+    font-weight: 700;
   }
 
   /* Accessible focus indicators for keyboard navigation */
@@ -39,18 +54,18 @@
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  /* Editorial badge */
+  /* Editorial badge - clearer, readable */
   .badge-editorial {
-    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wide uppercase;
+    @apply inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-semibold tracking-wide uppercase;
   }
 
-  /* Glass Card */
+  /* Glass Card - softer, brighter, not dark/heavy */
   .glass-card {
-    @apply bg-white/95 backdrop-blur-sm border border-sand-border/80 shadow-subtle rounded-2xl transition-all duration-300;
+    @apply bg-white/98 backdrop-blur-sm border border-sand-border/80 shadow-subtle rounded-3xl transition-all duration-300;
   }
 
   .glass-card-hover {
-    @apply glass-card hover:shadow-premium hover:-translate-y-1 hover:border-deep-green/30;
+    @apply glass-card hover:shadow-premium hover:-translate-y-1 hover:border-forest/30;
   }
 
   /* Primary Button */

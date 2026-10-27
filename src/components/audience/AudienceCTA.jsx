@@ -55,7 +55,8 @@ export default function AudienceCTA() {
               <ShieldCheck className="w-4 h-4 text-gold flex-shrink-0" />
               <span>Independent Advisory Notice:</span>
             </span>
-            <span>
+            <span className='text-white
+            '>
               {t('audience.cta.disclaimer', 'Engagement deliverables are structured around verified client priorities and applicable official rules. We do not guarantee funding approvals or carbon credit issuances.')}
             </span>
           </p>

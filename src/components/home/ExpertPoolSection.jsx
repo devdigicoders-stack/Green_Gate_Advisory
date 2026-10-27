@@ -72,7 +72,7 @@ export default function ExpertPoolSection() {
             return (
               <div
                 key={idx}
-                className="group relative rounded-3xl bg-white border border-sand-border/80 p-7 sm:p-8 flex flex-col justify-between space-y-6 hover:border-forest/30 transition-all duration-300 hover:-translate-y-1.5 shadow-subtle hover:shadow-elevated overflow-hidden"
+                className="group relative rounded-3xl bg-white border border-sand-border p-7 sm:p-8 flex flex-col justify-between space-y-6 hover:border-forest/40 transition-all duration-300 hover:-translate-y-1.5 shadow-subtle hover:shadow-elevated overflow-hidden"
               >
                 <div className="space-y-4">
                   {/* Icon & Badge */}
@@ -80,7 +80,7 @@ export default function ExpertPoolSection() {
                     <div className="w-12 h-12 rounded-2xl bg-forest/5 border border-forest/10 flex items-center justify-center text-forest group-hover:bg-forest group-hover:text-gold transition-all duration-300 shadow-xs">
                       <Icon className="w-6 h-6 text-current" />
                     </div>
-                    <span className="text-xs font-mono uppercase tracking-widest text-deep-green font-bold border border-forest/15 px-3 py-1 rounded-full bg-sage/40">
+                    <span className="text-xs sm:text-[13px] font-mono uppercase tracking-widest text-deep-green font-bold border border-forest/15 px-3 py-1 rounded-full bg-sage/60">
                       Roster {idx + 1}
                     </span>
                   </div>
@@ -93,17 +93,17 @@ export default function ExpertPoolSection() {
                     {domain.title}
                   </h3>
 
-                  <p className="text-sm sm:text-[15px] text-charcoal/85 leading-relaxed font-sans font-normal">
+                  <p className="text-[15px] sm:text-base text-charcoal/90 leading-relaxed font-sans font-normal">
                     {domain.description}
                   </p>
 
                   {/* Deliverables checklist */}
-                  <div className="pt-3 border-t border-sand-border/60 space-y-2.5">
-                    <span className="text-xs font-mono uppercase tracking-widest text-charcoal-muted font-bold block">
+                  <div className="pt-3 border-t border-sand-border/70 space-y-2.5">
+                    <span className="text-xs sm:text-[13px] font-mono uppercase tracking-widest text-forest font-bold block">
                       Target Mandate Scope:
                     </span>
                     {domain.deliverables.map((item, dIdx) => (
-                      <div key={dIdx} className="flex items-start gap-2.5 text-sm text-charcoal/90 font-medium">
+                      <div key={dIdx} className="flex items-start gap-2.5 text-sm sm:text-[15px] text-charcoal font-medium">
                         <CheckCircle2 className="w-4 h-4 text-deep-green flex-shrink-0 mt-0.5" />
                         <span className="leading-snug">{item}</span>
                       </div>

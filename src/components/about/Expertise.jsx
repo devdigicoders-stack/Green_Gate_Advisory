@@ -21,27 +21,27 @@ export default function Expertise() {
           subtitle={t('about.expertise.subtitle')}
         />
 
-        {/* 9 Source Expertise Domains in a Premium 3-Column Responsive Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Clean Editorial Technical Advisory Domain Matrix - Non-Card Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10">
           {items.map((item, idx) => (
             <div
               key={idx}
-              className="rounded-3xl bg-white border border-sand-border/90 p-7 shadow-subtle hover:shadow-premium hover:border-deep-green/30 transition-all duration-300 flex flex-col justify-between space-y-5 group"
+              className="group border-b border-sand-border/80 pb-6 flex flex-col justify-between space-y-4 hover:border-deep-green transition-colors"
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono font-bold tracking-widest text-gold-dark">
-                    DOMAIN {item.number || `0${idx + 1}`}
+                  <span className="text-xs font-mono font-bold tracking-widest text-deep-green">
+                    DOMAIN {item.number || (idx < 9 ? `0${idx + 1}` : idx + 1)}
                   </span>
-                  <CheckCircle2 className="w-4 h-4 text-deep-green" />
+                  <CheckCircle2 className="w-4 h-4 text-deep-green/60 group-hover:text-deep-green transition-colors" />
                 </div>
 
-                <h3 className="font-display font-bold text-base sm:text-lg text-forest group-hover:text-deep-green transition-colors leading-snug">
+                <h3 className="font-display font-bold text-lg sm:text-xl text-forest group-hover:text-deep-green transition-colors leading-snug">
                   {item.title}
                 </h3>
               </div>
 
-              <div className="pt-3 border-t border-sand-border/50">
+              <div className="pt-2">
                 <Link
                   to={getLocalizedPath(item.route)}
                   className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-deep-green hover:text-forest transition-colors group/link"

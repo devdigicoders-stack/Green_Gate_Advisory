@@ -83,51 +83,43 @@ export default function TrainingIntro() {
           </div>
         </div>
 
-        {/* 7 Core Capability Support Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pt-4">
-          {PILLARS.map((p) => {
-            const Icon = p.icon;
-            return (
-              <div
-                key={p.key}
-                className="p-6 rounded-3xl bg-sage/30 border border-sand-border/80 hover:bg-white hover:border-deep-green/30 hover:shadow-subtle transition-all duration-300 space-y-3 group"
-              >
-                <div className="w-10 h-10 rounded-xl bg-forest/5 flex items-center justify-center text-forest group-hover:bg-forest group-hover:text-gold transition-colors">
-                  <Icon className="w-5 h-5 text-deep-green group-hover:text-gold" />
-                </div>
-                <h3 className="font-heading font-bold text-base text-forest group-hover:text-deep-green transition-colors">
-                  {p.title}
-                </h3>
-                <p className="text-xs text-charcoal-muted leading-relaxed font-sans">
-                  {p.text}
-                </p>
-              </div>
-            );
-          })}
+        {/* Clean, Non-Card Capability Matrix Layout */}
+        <div className="bg-[#FAFBF9] rounded-2xl border border-sand-border p-6 sm:p-8">
+          <div className="flex items-center justify-between pb-6 border-b border-sand-border mb-6">
+            <span className="text-xs font-mono font-bold tracking-widest text-[#019935] uppercase">
+              Core Technical Competencies & Delivery Disciplines
+            </span>
+            <span className="text-xs text-neutral-500 font-medium hidden sm:inline">
+              Co-Designed • Non-Rigid Curricula
+            </span>
+          </div>
 
-          {/* 8th Delivery Discipline Card */}
-          <div className="p-6 rounded-3xl bg-forest text-white space-y-3 flex flex-col justify-between shadow-subtle">
-            <div className="space-y-2">
-              <span className="text-[10px] font-mono font-bold tracking-widest text-gold uppercase block">
-                DELIVERY STANDARD
-              </span>
-              <h3 className="font-heading font-bold text-base text-white">
-                Co-Designed Programmes
-              </h3>
-              <p className="text-xs text-sand-surface/85 leading-relaxed font-sans font-light">
-                Sessions are structured around participant baselines and operational schedules rather than rigid lecture formats.
-              </p>
-            </div>
-            <div className="pt-3 border-t border-white/15 text-[11px] text-gold-light">
-              Collaborative scoping only
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
+            {PILLARS.map((p) => {
+              const Icon = p.icon;
+              return (
+                <div key={p.key} className="flex items-start gap-4">
+                  <div className="w-9 h-9 rounded-xl bg-white border border-sand-border flex items-center justify-center text-[#019935] flex-shrink-0 mt-0.5 shadow-xs">
+                    <Icon className="w-4 h-4 text-current" />
+                  </div>
+                  <div className="space-y-1">
+                    <h3 className="font-heading font-bold text-sm sm:text-base text-neutral-900 leading-snug">
+                      {p.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed font-sans font-normal">
+                      {p.text}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
 
         {/* Disciplinary Scope Box */}
-        <div className="flex items-center gap-3 p-4 rounded-2xl bg-forest/5 border border-forest/10 text-xs text-charcoal-muted font-sans">
-          <AlertCircle className="w-4 h-4 text-gold flex-shrink-0" />
-          <span>
+        <div className="flex items-start sm:items-center gap-3 p-4.5 rounded-2xl bg-white border border-sand-border text-xs sm:text-[13.5px] text-charcoal/85 font-sans shadow-xs">
+          <AlertCircle className="w-5 h-5 text-gold-dark flex-shrink-0 mt-0.5 sm:mt-0" />
+          <span className="leading-relaxed">
             {t('training.intro.notice', 'Scope discipline: Training scope, format, depth and duration are confirmed collaboratively with the client based on specific learning requirements and existing participant expertise. We do not publish pre-set course fees, rigid curricula or unverified certificates.')}
           </span>
         </div>

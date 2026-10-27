@@ -58,30 +58,30 @@ export default function InsightsPage() {
           {articlesList.map((art) => (
             <div 
               key={art.slug}
-              className="bg-white rounded-3xl p-7 border border-sand-border shadow-subtle hover:shadow-premium hover:border-deep-green/30 transition-all duration-300 flex flex-col justify-between"
+              className="bg-white rounded-3xl p-8 border border-sand-border shadow-subtle hover:shadow-premium hover:border-forest/40 transition-all duration-300 flex flex-col justify-between"
             >
               <div className="space-y-4">
-                <div className="flex items-center justify-between text-xs font-semibold">
+                <div className="flex items-center justify-between text-xs sm:text-[13px] font-bold">
                   <span className="text-deep-green uppercase tracking-wider">{art.category}</span>
                   <span className="text-charcoal-muted">{art.readTime}</span>
                 </div>
 
-                <h3 className="font-heading font-bold text-lg text-forest leading-snug hover:text-deep-green transition-colors">
+                <h3 className="font-heading font-bold text-xl text-forest leading-snug hover:text-deep-green transition-colors">
                   <Link to={getLocalizedPath(`/insights/${art.slug}`)}>
                     {art.title}
                   </Link>
                 </h3>
 
-                <p className="text-xs sm:text-sm text-charcoal-muted leading-relaxed line-clamp-4">
+                <p className="text-sm sm:text-[15px] text-charcoal/85 leading-relaxed font-sans font-normal line-clamp-4">
                   {art.summary}
                 </p>
               </div>
 
               <div className="pt-6 mt-6 border-t border-sand-border/70 flex items-center justify-between">
-                <span className="text-xs font-medium text-charcoal-muted">{art.date}</span>
+                <span className="text-xs sm:text-[13px] font-medium text-charcoal-muted">{art.date}</span>
                 <Link 
                   to={getLocalizedPath(`/insights/${art.slug}`)} 
-                  className="link-editorial text-xs sm:text-sm"
+                  className="link-editorial text-xs sm:text-sm font-bold"
                 >
                   <span>Read Briefing</span>
                   <ArrowRight className="w-4 h-4" />

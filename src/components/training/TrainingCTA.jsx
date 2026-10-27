@@ -8,12 +8,11 @@ export default function TrainingCTA() {
   const { getLocalizedPath } = useLocale();
 
   return (
-    <section className="relative overflow-hidden bg-forest-dark text-white py-14 sm:py-20">
-      {/* Background radial glow & gradient */}
+    <section className="relative overflow-hidden bg-[#141917] text-white py-14 sm:py-20 border-t border-neutral-800">
+      {/* Background subtle glow & gradient */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-forest-dark via-forest to-forest-dark opacity-90" />
-        <div className="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-gold/10 blur-3xl pointer-events-none" />
-        <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-deep-green/30 blur-3xl pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-900 via-[#141917] to-black" />
+        <div className="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-[#019935]/10 blur-3xl pointer-events-none" />
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">

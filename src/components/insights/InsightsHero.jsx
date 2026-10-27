@@ -10,8 +10,8 @@ export default function InsightsHero() {
   const { getLocalizedPath } = useLocale();
 
   return (
-    <section className="relative overflow-hidden bg-[#0B3023] text-white pt-24 pb-14 sm:pt-36 sm:pb-24">
-      {/* Background Photography & Video with Sophisticated Directional Lighting */}
+    <section className="relative overflow-hidden bg-neutral-900 text-white pt-24 pb-14 sm:pt-36 sm:pb-24">
+      {/* Background Photography & Video with Clean Neutral Lighting */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
           key="insights-eco-video"
@@ -25,15 +25,14 @@ export default function InsightsHero() {
           <source src={insightsEcoVideo || '/insights-eco.mp4'} type="video/mp4" />
         </video>
         <img
-          // src="/images/insights-hero.jpg"
           alt="Modern climate research institute and ESG intelligence center"
           className="absolute inset-0 w-full h-full object-cover object-right sm:object-center opacity-85 scale-105 -z-10"
           loading="eager"
         />
-        {/* Mobile vertical gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B3023] via-[#0B3023]/80 to-[#0B3023]/60 sm:hidden pointer-events-none" />
-        <div className="hidden sm:block absolute inset-0 bg-gradient-to-r from-[#0B3023]/95 via-[#0B3023]/75 via-50% to-transparent pointer-events-none" />
-        <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-[#0B3023]/90 via-transparent to-black/25 pointer-events-none" />
+        {/* Neutral contrast gradient overlays */}
+        <div className="absolute inset-0 bg-black/60 sm:hidden pointer-events-none" />
+        <div className="hidden sm:block absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/20 pointer-events-none" />
+        <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/30 pointer-events-none" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
@@ -68,8 +67,8 @@ export default function InsightsHero() {
             {t('insights.hero.title', 'Insights & Resources')}
           </h1>
 
-          <p className="text-sm sm:text-lg lg:text-xl text-sand-surface/90 leading-relaxed font-sans font-light">
-            {t('insights.hero.lead', 'Green Gate Advisory shares practical knowledge to help decision-makers understand climate requirements, carbon markets, climate finance and emerging environmental policy considerations.')}
+          <p className="text-base sm:text-lg text-sand-surface/90 leading-relaxed font-sans font-normal">
+            {t('insights.hero.leadShort', 'Practical briefings and statutory intelligence on carbon markets, CBAM, and climate finance.')}
           </p>
         </motion.div>
 

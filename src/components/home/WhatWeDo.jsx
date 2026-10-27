@@ -118,26 +118,24 @@ export default function WhatWeDo() {
 
         </div>
 
-        {/* Four Integrated Pillars Grid - Single Row across Desktop (4 Columns) */}
-        <div className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+        {/* Four Integrated Pillars - Clean, Coherent Editorial Columns (Not heavy cards) */}
+        <div className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 divide-y sm:divide-y-0 sm:divide-x divide-sand-border pt-4">
           {pillars.map((pillar, idx) => {
             const IconComponent = PILLAR_ICONS[idx % PILLAR_ICONS.length] || Compass;
             return (
               <div 
                 key={idx}
-                className="p-6 sm:p-7 rounded-3xl bg-white border border-sand-border/80 shadow-subtle hover:border-forest/30 hover:shadow-elevated hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between space-y-4 group"
+                className={`space-y-3 ${idx !== 0 ? 'pt-6 sm:pt-0 sm:pl-6 lg:pl-8' : ''}`}
               >
-                <div className="space-y-3">
-                  <div className="w-11 h-11 rounded-2xl bg-forest/5 text-forest flex items-center justify-center group-hover:bg-forest group-hover:text-gold transition-colors duration-300 shadow-xs">
-                    <IconComponent className="w-5 h-5 text-current" />
-                  </div>
-                  <h3 className="font-display font-bold text-lg sm:text-xl text-forest group-hover:text-deep-green transition-colors leading-snug">
-                    {pillar.title}
-                  </h3>
-                  <p className="text-sm sm:text-[15px] text-charcoal/80 leading-relaxed font-sans font-normal">
-                    {pillar.desc}
-                  </p>
+                <div className="w-10 h-10 rounded-xl bg-neutral-100 flex items-center justify-center text-[#019935]">
+                  <IconComponent className="w-5 h-5 text-current" />
                 </div>
+                <h3 className="font-display font-bold text-base sm:text-lg text-neutral-900 leading-snug">
+                  {pillar.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed font-sans font-normal">
+                  {pillar.desc}
+                </p>
               </div>
             );
           })}

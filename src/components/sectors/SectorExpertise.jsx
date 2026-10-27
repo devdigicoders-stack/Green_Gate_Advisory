@@ -48,22 +48,22 @@ export default function SectorExpertise() {
           </div>
         </div>
 
-        {/* 3 Pillars of Sector Calibration */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-6">
+        {/* 3 Pillars of Sector Calibration - Clean Editorial Columns, Not Boxed Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 pt-4 divide-y md:divide-y-0 md:divide-x divide-sand-border">
           {differentiators.map((diff, idx) => {
             const Icon = diff.icon;
             return (
               <div
                 key={idx}
-                className="p-8 rounded-3xl bg-sage/30 border border-sand-border/80 hover:bg-white hover:border-deep-green/30 hover:shadow-subtle transition-all duration-300 space-y-4"
+                className={`space-y-3.5 ${idx !== 0 ? 'pt-6 md:pt-0 md:pl-8 lg:pl-12' : ''}`}
               >
-                <div className="w-12 h-12 rounded-2xl bg-white border border-sand-border flex items-center justify-center text-forest shadow-sm">
-                  <Icon className="w-5 h-5 text-deep-green" />
+                <div className="w-10 h-10 rounded-xl bg-neutral-100 flex items-center justify-center text-[#019935] shadow-xs">
+                  <Icon className="w-5 h-5 text-current" />
                 </div>
-                <h3 className="font-heading font-bold text-lg text-forest">
+                <h3 className="font-heading font-bold text-lg text-neutral-900 leading-snug">
                   {diff.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-charcoal-muted leading-relaxed font-sans">
+                <p className="text-sm text-neutral-600 leading-relaxed font-sans font-normal">
                   {diff.desc}
                 </p>
               </div>
@@ -72,9 +72,9 @@ export default function SectorExpertise() {
         </div>
 
         {/* Advisory Boundaries Notice */}
-        <div className="flex items-center gap-3 p-4 rounded-2xl bg-forest/5 border border-forest/10 text-xs text-charcoal-muted font-sans">
-          <ShieldCheck className="w-4 h-4 text-gold flex-shrink-0" />
-          <span>
+        <div className="flex items-start sm:items-center gap-3 p-4.5 rounded-2xl bg-white border border-sand-border text-xs sm:text-[13.5px] text-charcoal/85 font-sans shadow-xs">
+          <ShieldCheck className="w-5 h-5 text-gold-dark flex-shrink-0 mt-0.5 sm:mt-0" />
+          <span className="leading-relaxed">
             {t('sectors.expertise.notice', 'Scope discipline: All sectoral guidance is strictly aligned with approved methodologies, verified standards (GHG Protocol, ISO 14064, UNFCCC), and jurisdiction-specific statutory instruments.')}
           </span>
         </div>

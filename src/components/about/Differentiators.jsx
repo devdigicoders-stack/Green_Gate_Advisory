@@ -34,33 +34,31 @@ export default function Differentiators() {
           subtitle={t('about.differentiators.subtitle')}
         />
 
-        {/* 6-Card Responsive Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        {/* Clean Editorial Capability Grid - Not Heavy Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10 pt-2">
           {items.map((item, idx) => {
             const Icon = DIFFERENTIATOR_ICONS[idx % DIFFERENTIATOR_ICONS.length];
             return (
               <div
                 key={idx}
-                className="rounded-3xl bg-sage/40 border border-sand-border p-7 sm:p-8 hover:bg-white hover:border-deep-green/30 hover:shadow-premium transition-all duration-300 flex flex-col justify-between space-y-6 group"
+                className="space-y-3.5 pb-6 border-b border-sand-border/70"
               >
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <div className="w-12 h-12 rounded-2xl bg-white border border-sand-border/80 flex items-center justify-center text-forest group-hover:bg-forest group-hover:text-gold transition-colors duration-300 shadow-xs">
-                      <Icon className="w-6 h-6" />
-                    </div>
-                    <span className="text-xs sm:text-[13px] font-mono font-bold tracking-widest text-gold-dark">
-                      0{idx + 1}
-                    </span>
+                <div className="flex items-center justify-between">
+                  <div className="w-10 h-10 rounded-xl bg-neutral-100 flex items-center justify-center text-[#019935] shadow-xs">
+                    <Icon className="w-5 h-5 text-current" />
                   </div>
-
-                  <h3 className="font-display font-bold text-lg sm:text-xl text-forest group-hover:text-deep-green transition-colors">
-                    {item.title}
-                  </h3>
-
-                  <p className="text-base text-charcoal/85 leading-relaxed font-sans font-normal">
-                    {item.description}
-                  </p>
+                  <span className="text-xs font-mono font-bold tracking-widest text-[#019935]">
+                    0{idx + 1}
+                  </span>
                 </div>
+
+                <h3 className="font-display font-bold text-base sm:text-lg text-neutral-900 leading-snug">
+                  {item.title}
+                </h3>
+
+                <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed font-sans font-normal">
+                  {item.description}
+                </p>
               </div>
             );
           })}

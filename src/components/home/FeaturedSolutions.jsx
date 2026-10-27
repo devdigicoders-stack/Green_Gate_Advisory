@@ -36,11 +36,11 @@ export default function FeaturedSolutions() {
                   <CheckCircle2 className="w-5 h-5 text-deep-green group-hover:scale-110 transition-transform" />
                 </div>
 
-                <h3 className="font-display font-bold text-lg sm:text-xl text-forest group-hover:text-deep-green transition-colors leading-snug">
+                <h3 className="font-display font-bold text-xl sm:text-2xl text-forest group-hover:text-deep-green transition-colors leading-snug">
                   {sol.title}
                 </h3>
 
-                <p className="text-sm sm:text-base text-charcoal/80 leading-relaxed font-sans font-light">
+                <p className="text-base sm:text-[17px] text-charcoal/90 leading-relaxed font-sans font-normal">
                   {sol.desc}
                 </p>
               </div>
@@ -48,10 +48,10 @@ export default function FeaturedSolutions() {
               <div className="pt-4 border-t border-sand-border/70">
                 <Link
                   to={getLocalizedPath(sol.link || '/services')}
-                  className="link-editorial text-xs font-semibold flex items-center justify-between w-full"
+                  className="link-editorial text-sm font-semibold flex items-center justify-between w-full"
                 >
                   <span>View solution details</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </div>

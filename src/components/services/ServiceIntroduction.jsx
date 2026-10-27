@@ -33,7 +33,7 @@ export default function ServiceIntroduction({
           {/* Optional Side Content / Key Highlights Card */}
           {sideContent && (
             <div className="lg:col-span-5">
-              <div className="rounded-3xl bg-sage/50 border border-sand-border p-6 sm:p-8 shadow-subtle space-y-4">
+              <div className="rounded-3xl bg-[#F4F6F4] border border-sand-border p-6 sm:p-8 space-y-4">
                 {sideContent}
               </div>
             </div>

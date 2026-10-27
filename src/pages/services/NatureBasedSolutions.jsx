@@ -39,21 +39,21 @@ export default function NatureBasedSolutions() {
 
   const sideCard = (
     <>
-      <div className="flex items-center gap-2 text-forest font-heading font-bold text-sm">
-        <Trees className="w-4 h-4 text-gold-dark" />
+      <div className="flex items-center gap-2 text-forest font-heading font-bold text-base">
+        <Trees className="w-4.5 h-4.5 text-gold-dark" />
         <span>{sideCardData.title || 'Ecosystem Integrity Focus'}</span>
       </div>
-      <p className="text-xs text-charcoal-muted leading-relaxed font-sans">
+      <p className="text-sm sm:text-[14.5px] text-charcoal/85 leading-relaxed font-sans font-normal">
         {sideCardData.desc || 'Targeting terrestrial and coastal ecosystems that integrate climate mitigation, ecological adaptation, biodiversity conservation, and verified community co-benefits.'}
       </p>
       {sidePoints.length > 0 && (
-        <div className="pt-2 flex flex-col gap-2 text-xs font-semibold text-deep-green">
+        <div className="pt-2 flex flex-col gap-2.5 text-xs sm:text-[13.5px] font-semibold text-deep-green">
           {sidePoints.map((pt, idx) => (
             <div key={idx} className="flex items-center gap-2">
               {idx === 0 ? (
-                <Waves className="w-3.5 h-3.5 text-deep-green flex-shrink-0" />
+                <Waves className="w-4 h-4 text-deep-green flex-shrink-0" />
               ) : (
-                <CheckCircle2 className="w-3.5 h-3.5 flex-shrink-0" />
+                <CheckCircle2 className="w-4 h-4 flex-shrink-0 text-deep-green" />
               )}
               <span>{pt}</span>
             </div>

@@ -68,35 +68,34 @@ export default function AdvisoryImpactCounter() {
   return (
     <section id="impact" className="py-16 sm:py-20 lg:py-24 bg-white border-b border-sand-border/60 relative z-10 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Elevated Glassmorphism Counter Container */}
-        <div className="rounded-3xl bg-[#FAF9F5] border border-sand-border/80 shadow-premium p-8 sm:p-12 lg:p-14">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 divide-y sm:divide-y-0 sm:divide-x divide-sand-border/80">
+        {/* Open, Cohesive Stat Layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
           {metrics.map((item, idx) => {
             const Icon = item.icon;
             return (
               <div 
                 key={idx} 
-                className={`flex flex-col justify-between ${idx !== 0 ? 'sm:pl-8 lg:pl-10 pt-6 sm:pt-0' : ''} space-y-4 group`}
+                className="flex flex-col justify-between space-y-3 p-6 rounded-2xl bg-white border border-[#E5EAE5] shadow-xs hover:border-[#019935]/40 transition-colors"
               >
                 <div className="flex items-center justify-between">
-                  <div className="w-11 h-11 rounded-2xl bg-forest/5 border border-forest/10 flex items-center justify-center text-forest group-hover:bg-forest group-hover:text-gold transition-all duration-300 shadow-xs">
+                  <div className="w-10 h-10 rounded-xl bg-neutral-100 flex items-center justify-center text-[#019935]">
                     <Icon className="w-5 h-5 text-current" />
                   </div>
-                  <span className="text-xs font-mono uppercase tracking-widest text-deep-green font-bold bg-white px-3 py-1 rounded-full border border-sand-border/80 shadow-xs">
+                  <span className="text-[11px] font-mono uppercase tracking-wider text-[#019935] font-semibold bg-neutral-100 px-2.5 py-1 rounded-full">
                     {item.unit}
                   </span>
                 </div>
 
-                <div className="space-y-1.5 pt-1">
-                  <div className="font-display font-bold text-2xl sm:text-2xl lg:text-3xl text-forest tracking-tight">
+                <div className="space-y-1 pt-1">
+                  <div className="font-display font-bold text-xl sm:text-2xl text-neutral-900 tracking-tight">
                     {item.value}
                   </div>
-                  <div className="font-heading font-semibold text-sm sm:text-base text-charcoal">
+                  <div className="font-heading font-medium text-xs sm:text-sm text-neutral-500">
                     {item.label}
                   </div>
                 </div>
 
-                <p className="text-sm sm:text-[15px] text-charcoal/85 leading-relaxed font-sans font-normal">
+                <p className="text-xs sm:text-[13px] text-neutral-600 leading-relaxed font-sans font-normal">
                   {item.description}
                 </p>
               </div>
@@ -119,7 +118,6 @@ export default function AdvisoryImpactCounter() {
           </div>
         </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
 }

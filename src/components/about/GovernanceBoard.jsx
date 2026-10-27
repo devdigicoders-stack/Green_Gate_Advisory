@@ -51,26 +51,26 @@ export default function GovernanceBoard() {
           subtitle="Green Gate Advisory is steered by senior environmental economists, accredited GHG validation engineers, and international climate finance specialists."
         />
 
-        {/* 4-Column Professional Stewardship Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        {/* Multidisciplinary Executive Directory - Non-Card Editorial Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 divide-y md:divide-y-0 md:divide-x divide-sand-border/80 pt-4">
           {GOVERNANCE_LEADS.map((lead, idx) => (
             <div
               key={idx}
-              className="rounded-3xl bg-sage/40 border border-sand-border p-7 flex flex-col justify-between space-y-6 hover:bg-white hover:border-deep-green/30 hover:shadow-premium transition-all duration-300"
+              className={`flex flex-col justify-between space-y-6 ${idx !== 0 ? 'md:pl-8 lg:pl-10 pt-6 md:pt-0' : ''}`}
             >
               <div className="space-y-4">
                 {/* Header Icon & Focus Tag */}
                 <div className="flex items-center justify-between">
-                  <div className="w-10 h-10 rounded-xl bg-forest/5 border border-forest/10 flex items-center justify-center text-forest">
+                  <div className="w-10 h-10 rounded-xl bg-forest/5 flex items-center justify-center text-forest">
                     <Award className="w-5 h-5 text-current" />
                   </div>
-                  <span className="text-xs font-mono uppercase tracking-widest text-deep-green font-bold bg-white px-3 py-1 rounded-full border border-sand-border shadow-xs">
+                  <span className="text-[11px] font-mono uppercase tracking-widest text-deep-green font-bold bg-sage/60 px-3 py-1 rounded-full border border-sand-border shadow-xs">
                     {lead.focusArea}
                   </span>
                 </div>
 
                 {/* Role & Name */}
-                <div className="space-y-1">
+                <div className="space-y-1.5">
                   <h3 className="font-display font-bold text-lg sm:text-xl text-forest leading-snug">
                     {lead.role}
                   </h3>
@@ -80,17 +80,17 @@ export default function GovernanceBoard() {
                 </div>
 
                 {/* Scope Description */}
-                <p className="text-sm sm:text-[15px] text-charcoal/85 leading-relaxed font-sans font-normal">
+                <p className="text-[14px] text-charcoal/85 leading-relaxed font-sans font-normal">
                   {lead.specialization}
                 </p>
               </div>
 
               {/* Standards Traceability */}
-              <div className="pt-4 border-t border-sand-border/80 space-y-1.5">
-                <span className="text-xs font-mono uppercase tracking-widest text-charcoal-muted font-bold block">
+              <div className="pt-4 border-t border-sand-border/70 space-y-1">
+                <span className="text-[11px] font-mono uppercase tracking-widest text-forest font-bold block">
                   Governing Protocols:
                 </span>
-                <p className="text-xs sm:text-[13px] font-mono text-charcoal leading-relaxed font-medium">
+                <p className="text-xs font-mono text-charcoal/90 leading-relaxed font-medium">
                   {lead.standards}
                 </p>
               </div>
@@ -98,19 +98,19 @@ export default function GovernanceBoard() {
           ))}
         </div>
 
-        {/* Advisory Ethics Principle Card */}
-        <div className="p-8 sm:p-9 rounded-3xl bg-gradient-to-r from-forest to-forest-dark text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
+        {/* Advisory Ethics Principle Card - Clean Light Warm Surface */}
+        <div className="p-8 sm:p-9 rounded-3xl bg-sand-surface border border-sand-border text-charcoal flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xs">
           <div className="space-y-2.5 max-w-2xl">
-            <div className="flex items-center gap-2 text-xs sm:text-[13px] font-bold uppercase tracking-wider text-sand-surface">
-              <Scale className="w-4.5 h-4.5 text-white" />
+            <div className="flex items-center gap-2 text-xs sm:text-[13px] font-bold uppercase tracking-wider text-deep-green">
+              <Scale className="w-4.5 h-4.5 text-forest" />
               <span>Conflict of Interest & Fiduciary Pledge</span>
             </div>
-            <p className="text-sm sm:text-base text-sand-surface/95 leading-relaxed font-sans font-normal">
+            <p className="text-sm sm:text-base text-charcoal/85 leading-relaxed font-sans font-normal">
               To preserve objectivity, Green Gate Advisory maintains strict separation from market brokerage, carbon credit trading desks, and speculative holding structures. Our counsel is solely driven by empirical science, rigorous verification, and statutory compliance.
             </p>
           </div>
-          <div className="flex items-center gap-2.5 text-sm font-mono font-bold text-forest-dark bg-white px-5 py-2.5 rounded-xl whitespace-nowrap shadow-md">
-            <ShieldCheck className="w-4.5 h-4.5 text-forest" />
+          <div className="flex items-center gap-2.5 text-xs font-mono font-bold text-forest bg-white border border-sand-border px-5 py-2.5 rounded-xl whitespace-nowrap shadow-xs">
+            <ShieldCheck className="w-4 h-4 text-deep-green" />
             <span>Independent Counsel</span>
           </div>
         </div>

@@ -60,8 +60,8 @@ export default function Services() {
       />
 
       {/* SECTION 1 — HERO */}
-      <section className="relative overflow-hidden bg-forest-dark text-white pt-24 pb-14 sm:pt-36 sm:pb-24">
-        {/* Background Photography & Video with Sophisticated Directional Lighting */}
+      <section className="relative overflow-hidden bg-neutral-900 text-white pt-24 pb-14 sm:pt-36 sm:pb-24">
+        {/* Background Photography & Video with Clean Neutral Lighting */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <video
             autoPlay
@@ -78,50 +78,48 @@ export default function Services() {
             className="absolute inset-0 w-full h-full object-cover object-right sm:object-center opacity-85 scale-102 -z-10"
             loading="eager"
           />
-          {/* Mobile vertical gradient */}
-          <div className="absolute inset-0 bg-gradient-to-t from-forest-dark via-forest-dark/90 to-forest-dark/80 sm:hidden pointer-events-none" />
-          <div className="hidden sm:block absolute inset-0 bg-gradient-to-r from-forest-dark/95 via-forest-dark/75 via-50% to-transparent pointer-events-none" />
-          <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-forest-dark/90 via-transparent to-black/30 pointer-events-none" />
+          {/* Neutral contrast gradient overlays */}
+          <div className="absolute inset-0 bg-black/60 sm:hidden pointer-events-none" />
+          <div className="hidden sm:block absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/20 pointer-events-none" />
+          <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/30 pointer-events-none" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
-          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-sans text-sand-surface/75">
+          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-sans text-white/70">
             <Link
               to={getLocalizedPath('/')}
-              className="hover:text-gold transition-colors focus:outline-none focus:underline"
+              className="hover:text-white transition-colors focus:outline-none focus:underline"
             >
               {t('services.overview.hero.breadcrumbHome', 'Home')}
             </Link>
-            <ChevronRight className="w-3.5 h-3.5 text-sand-surface/40" />
-            <span className="text-gold font-medium" aria-current="page">
+            <ChevronRight className="w-3.5 h-3.5 text-white/40" />
+            <span className="text-white font-medium" aria-current="page">
               {t('services.overview.hero.breadcrumbCurrent', 'Services')}
             </span>
           </nav>
 
-          <div className="max-w-3xl space-y-4 sm:space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-semibold tracking-widest uppercase bg-white/10 text-gold-light border border-white/20 backdrop-blur-md">
-              <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-              <span>{t('services.overview.hero.eyebrow', 'Climate & Environmental Advisory')}</span>
+          <div className="max-w-2xl space-y-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase bg-white/10 text-white border border-white/20">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#019935]" />
+              <span>Climate & Environmental Advisory</span>
             </div>
 
-            <h1 className="font-display font-bold text-3xl sm:text-5xl lg:text-6xl xl:text-7xl text-white tracking-tight leading-[1.12]">
-              {t('services.overview.hero.title', 'Our Climate & Environmental Advisory Services')}
+            <h1 className="font-display font-bold text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.12]">
+              {t('services.overview.hero.title', 'Our Advisory Practices')}
             </h1>
 
-            <p className="text-sm sm:text-lg lg:text-xl text-sand-surface/90 leading-relaxed font-sans font-light">
-              {t('services.overview.hero.lead', 'Green Gate Advisory provides specialized advisory support across carbon markets, compliance mechanisms, climate finance, nature-based solutions and corporate sustainability—helping turn climate priorities into practical, measurable action.')}
+            <p className="text-sm sm:text-base lg:text-lg text-white/90 leading-relaxed font-sans font-normal">
+              Specialized advisory support across carbon markets, compliance mechanisms, climate finance, and policy.
             </p>
           </div>
 
-          <div className="pt-5 sm:pt-6 border-t border-white/10 flex flex-wrap items-center gap-3 sm:gap-6 text-xs text-sand-surface/70 font-sans">
+          <div className="pt-4 border-t border-white/15 flex flex-wrap items-center gap-3 sm:gap-6 text-xs text-white/70 font-sans">
             <div className="flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-gold flex-shrink-0" />
+              <ShieldCheck className="w-4 h-4 text-[#019935] flex-shrink-0" />
               <span>Seven core advisory workstreams</span>
             </div>
             <span className="hidden sm:inline text-white/20">|</span>
             <span className="hidden xs:inline">Connecting policy, science, finance and delivery</span>
-            <span className="hidden sm:inline text-white/20">|</span>
-            <span className="hidden md:inline">Zero speculative outcomes or guaranteed credit issuances</span>
           </div>
         </div>
       </section>
@@ -207,12 +205,12 @@ export default function Services() {
                       </span>
                     </div>
 
-                    <div className="space-y-2">
+                    <div className="space-y-3">
                       <h3 className="font-display font-bold text-xl sm:text-2xl text-forest group-hover:text-deep-green transition-colors leading-snug">
                         {t(`services.items.${srv.key}.shortTitle`, t(`navigation.servicesMenu.${srv.key}`))}
                       </h3>
 
-                      <p className="text-sm sm:text-base text-charcoal/85 leading-relaxed font-sans font-normal line-clamp-4">
+                      <p className="text-base sm:text-[17px] text-charcoal/90 leading-relaxed font-sans font-normal">
                         {t(`services.items.${srv.key}.lead`, '')}
                       </p>
                     </div>
@@ -221,10 +219,10 @@ export default function Services() {
                   <div className="pt-4 border-t border-sand-border/50">
                     <Link
                       to={getLocalizedPath(`/services/${srv.slug}`)}
-                      className="inline-flex items-center gap-1.5 text-sm font-bold uppercase tracking-wider text-deep-green hover:text-forest transition-colors group/btn"
+                      className="inline-flex items-center gap-2 text-sm sm:text-base font-bold uppercase tracking-wider text-deep-green hover:text-forest transition-colors group/btn"
                     >
                       <span>{t('services.overview.grid.exploreService', 'Explore Service')}</span>
-                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                      <ArrowRight className="w-4.5 h-4.5 group-hover/btn:translate-x-1.5 transition-transform" />
                     </Link>
                   </div>
                 </div>
@@ -235,9 +233,9 @@ export default function Services() {
         </div>
       </section>
 
-      {/* SECTION 4 — INTEGRATED ADVISORY APPROACH */}
+      {/* SECTION 4 — INTEGRATED ADVISORY APPROACH (Clean Editorial Columns) */}
       <section className="py-14 sm:py-20 bg-white border-b border-sand-border/70">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
 
           <SectionHeader
             badge={t('services.overview.approach.eyebrow', 'Integrated Perspective')}
@@ -245,28 +243,25 @@ export default function Services() {
             subtitle={t('services.overview.approach.p1')}
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 divide-y md:divide-y-0 md:divide-x divide-sand-border pt-2">
             {pillars.map((pil, idx) => (
               <div
                 key={idx}
-                className="p-7 rounded-3xl bg-sage/30 border border-sand-border hover:bg-white hover:border-deep-green/30 hover:shadow-subtle transition-all duration-300 flex flex-col justify-between space-y-4 group"
+                className={`space-y-3 ${idx !== 0 ? 'pt-6 md:pt-0 md:pl-6 lg:pl-8' : ''}`}
               >
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs sm:text-[13px] font-mono font-bold tracking-widest text-deep-green bg-sage px-3 py-1 rounded-full border border-forest/5">
-                      PILLAR {pil.number || `0${idx + 1}`}
-                    </span>
-                    <Layers className="w-4 h-4 text-forest/40 group-hover:text-deep-green transition-colors" />
-                  </div>
-
-                  <h3 className="font-display font-bold text-base sm:text-lg text-forest group-hover:text-deep-green transition-colors">
-                    {pil.title}
-                  </h3>
-
-                  <p className="text-sm sm:text-[15px] text-charcoal/85 leading-relaxed font-sans font-normal">
-                    {pil.description}
-                  </p>
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-mono font-bold tracking-widest text-[#019935] uppercase">
+                    Pillar {pil.number || `0${idx + 1}`}
+                  </span>
                 </div>
+
+                <h3 className="font-display font-bold text-base sm:text-lg text-neutral-900 leading-snug">
+                  {pil.title}
+                </h3>
+
+                <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed font-sans font-normal">
+                  {pil.description}
+                </p>
               </div>
             ))}
           </div>
@@ -275,9 +270,9 @@ export default function Services() {
       </section>
 
       {/* SECTION 5 — CONSULTATION CTA */}
-      <section className="py-14 sm:py-20 bg-forest-dark text-white relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-deep-green/30 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-10 right-10 w-80 h-80 bg-gold/10 rounded-full blur-2xl pointer-events-none" />
+      <section className="py-14 sm:py-20 bg-[#141917] text-white relative overflow-hidden border-t border-neutral-800">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#019935]/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-10 right-10 w-80 h-80 bg-neutral-800/20 rounded-full blur-2xl pointer-events-none" />
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase bg-white/10 text-gold-light border border-white/15 backdrop-blur-sm">

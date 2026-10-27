@@ -10,8 +10,8 @@ export default function AudienceHero() {
   const { getLocalizedPath } = useLocale();
 
   return (
-    <section className="relative overflow-hidden bg-[#0B3023] text-white pt-24 pb-14 sm:pt-36 sm:pb-24">
-      {/* Background Photography & Video with Sophisticated Directional Lighting */}
+    <section className="relative overflow-hidden bg-neutral-900 text-white pt-24 pb-14 sm:pt-36 sm:pb-24">
+      {/* Background Photography & Video with Clean Neutral Lighting */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
           key="service-ets-audience"
@@ -31,10 +31,10 @@ export default function AudienceHero() {
             loading="eager"
           />
         </video>
-        {/* Mobile vertical gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B3023] via-[#0B3023]/80 to-[#0B3023]/60 sm:hidden pointer-events-none" />
-        <div className="hidden sm:block absolute inset-0 bg-gradient-to-r from-[#0B3023]/95 via-[#0B3023]/75 via-50% to-transparent pointer-events-none" />
-        <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-[#0B3023]/90 via-transparent to-black/25 pointer-events-none" />
+        {/* Neutral contrast gradient overlays */}
+        <div className="absolute inset-0 bg-black/60 sm:hidden pointer-events-none" />
+        <div className="hidden sm:block absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/20 pointer-events-none" />
+        <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/30 pointer-events-none" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
@@ -69,8 +69,8 @@ export default function AudienceHero() {
             {t('audience.hero.title', 'Who We Serve')}
           </h1>
 
-          <p className="text-sm sm:text-lg lg:text-xl text-sand-surface/90 leading-relaxed font-sans font-light">
-            {t('audience.hero.lead', 'Green Gate Advisory supports public institutions, industrial exporters, carbon developers, investors and international organisations as they navigate climate complexity, regulatory exposure and sustainable project delivery.')}
+          <p className="text-base sm:text-lg text-sand-surface/90 leading-relaxed font-sans font-normal">
+            {t('audience.hero.leadShort', 'Tailored advisory for governments, industrial operators, project developers, and investors.')}
           </p>
         </motion.div>
 

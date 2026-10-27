@@ -51,81 +51,81 @@ export default function CarbonMarketProcess() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 relative">
               
               {/* Step 1 Schema */}
-              <div className="p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-gold/40 transition-colors space-y-3 relative group">
+              <div className="p-5 sm:p-6 rounded-2xl bg-white/10 border border-white/15 hover:border-gold/50 transition-colors space-y-3 relative group">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono font-bold text-gold bg-gold/15 px-2.5 py-0.5 rounded-md">
+                  <span className="text-xs sm:text-[13px] font-mono font-bold text-gold bg-gold/15 px-2.5 py-1 rounded-md">
                     PHASE 01
                   </span>
-                  <span className="text-[11px] font-mono text-sand-surface/60">Feasibility</span>
+                  <span className="text-xs font-mono text-sand-surface/75">Feasibility</span>
                 </div>
-                <h4 className="font-heading font-bold text-base text-white">
+                <h4 className="font-heading font-bold text-base sm:text-lg text-white">
                   Eligibility & Baseline
                 </h4>
-                <p className="text-xs sm:text-sm text-sand-surface/80 leading-relaxed font-sans">
+                <p className="text-sm text-sand-surface/90 leading-relaxed font-sans font-normal">
                   Methodology applicability screening, additionality analysis, and carbon yield modeling.
                 </p>
-                <div className="pt-2 flex items-center gap-1.5 text-xs text-gold-light font-medium">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-gold" />
+                <div className="pt-2 flex items-center gap-1.5 text-xs sm:text-[13px] text-gold-light font-medium">
+                  <CheckCircle2 className="w-4 h-4 text-gold" />
                   <span>Deliverable: Yield Report</span>
                 </div>
               </div>
 
               {/* Step 2 Schema */}
-              <div className="p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-gold/40 transition-colors space-y-3 relative group">
+              <div className="p-5 sm:p-6 rounded-2xl bg-white/10 border border-white/15 hover:border-gold/50 transition-colors space-y-3 relative group">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono font-bold text-gold bg-gold/15 px-2.5 py-0.5 rounded-md">
+                  <span className="text-xs sm:text-[13px] font-mono font-bold text-gold bg-gold/15 px-2.5 py-1 rounded-md">
                     PHASE 02
                   </span>
-                  <span className="text-[11px] font-mono text-sand-surface/60">Design</span>
+                  <span className="text-xs font-mono text-sand-surface/75">Design</span>
                 </div>
-                <h4 className="font-heading font-bold text-base text-white">
+                <h4 className="font-heading font-bold text-base sm:text-lg text-white">
                   PDD & MRV Protocol
                 </h4>
-                <p className="text-xs sm:text-sm text-sand-surface/80 leading-relaxed font-sans">
+                <p className="text-sm text-sand-surface/90 leading-relaxed font-sans font-normal">
                   Technical Project Design Document drafting, stakeholder consultation, and MRV blueprint.
                 </p>
-                <div className="pt-2 flex items-center gap-1.5 text-xs text-gold-light font-medium">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-gold" />
+                <div className="pt-2 flex items-center gap-1.5 text-xs sm:text-[13px] text-gold-light font-medium">
+                  <CheckCircle2 className="w-4 h-4 text-gold" />
                   <span>Deliverable: Registered PDD</span>
                 </div>
               </div>
 
               {/* Step 3 Schema */}
-              <div className="p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-gold/40 transition-colors space-y-3 relative group">
+              <div className="p-5 sm:p-6 rounded-2xl bg-white/10 border border-white/15 hover:border-gold/50 transition-colors space-y-3 relative group">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono font-bold text-gold bg-gold/15 px-2.5 py-0.5 rounded-md">
+                  <span className="text-xs sm:text-[13px] font-mono font-bold text-gold bg-gold/15 px-2.5 py-1 rounded-md">
                     PHASE 03
                   </span>
-                  <span className="text-[11px] font-mono text-sand-surface/60">Audit</span>
+                  <span className="text-xs font-mono text-sand-surface/75">Audit</span>
                 </div>
-                <h4 className="font-heading font-bold text-base text-white">
+                <h4 className="font-heading font-bold text-base sm:text-lg text-white">
                   VVB Audit & Registry
                 </h4>
-                <p className="text-xs sm:text-sm text-sand-surface/80 leading-relaxed font-sans">
+                <p className="text-sm text-sand-surface/90 leading-relaxed font-sans font-normal">
                   Accredited auditor site visit support, technical response resolution, and standard approval.
                 </p>
-                <div className="pt-2 flex items-center gap-1.5 text-xs text-gold-light font-medium">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-gold" />
+                <div className="pt-2 flex items-center gap-1.5 text-xs sm:text-[13px] text-gold-light font-medium">
+                  <CheckCircle2 className="w-4 h-4 text-gold" />
                   <span>Deliverable: Final Validation</span>
                 </div>
               </div>
 
               {/* Step 4 Schema */}
-              <div className="p-5 rounded-2xl bg-gold/10 border border-gold/30 hover:border-gold transition-colors space-y-3 relative group">
+              <div className="p-5 sm:p-6 rounded-2xl bg-gold/20 border border-gold/40 hover:border-gold transition-colors space-y-3 relative group">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono font-bold text-forest-dark bg-gold px-2.5 py-0.5 rounded-md">
+                  <span className="text-xs sm:text-[13px] font-mono font-bold text-forest-dark bg-gold px-2.5 py-1 rounded-md">
                     PHASE 04
                   </span>
-                  <span className="text-[11px] font-mono text-gold-light">Issuance</span>
+                  <span className="text-xs font-mono text-gold-light font-semibold">Issuance</span>
                 </div>
-                <h4 className="font-heading font-bold text-base text-white">
+                <h4 className="font-heading font-bold text-base sm:text-lg text-white">
                   Credit Issuance & Retainers
                 </h4>
-                <p className="text-xs sm:text-sm text-sand-surface/80 leading-relaxed font-sans">
+                <p className="text-sm text-sand-surface/90 leading-relaxed font-sans font-normal">
                   Serialised registry credit issuance, compliance off-take advisory, and permanent monitoring.
                 </p>
-                <div className="pt-2 flex items-center gap-1.5 text-xs text-gold-light font-medium">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-gold" />
+                <div className="pt-2 flex items-center gap-1.5 text-xs sm:text-[13px] text-gold-light font-medium">
+                  <CheckCircle2 className="w-4 h-4 text-gold" />
                   <span>Milestone: Serialized Credits</span>
                 </div>
               </div>
@@ -134,55 +134,26 @@ export default function CarbonMarketProcess() {
           </div>
         </div>
 
-        {/* 9-Stage Connected Process Grid / Responsive Timeline */}
-        <div className="space-y-8">
-          <div className="text-center font-display font-bold text-xs sm:text-sm uppercase tracking-widest text-forest">
-            {t('home.carbonProcess.timelineTitle', 'Detailed Advisory Milestones Across The 9 Stages')}
+        {/* Streamlined Advisory Focus Summary (Replaces redundant 9 card clutter with clean executive overview) */}
+        <div className="p-8 sm:p-10 rounded-3xl bg-white border border-sand-border shadow-subtle flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="space-y-2 max-w-2xl">
+            <span className="text-xs font-mono font-bold uppercase tracking-widest text-deep-green bg-sage/60 px-3.5 py-1 rounded-full border border-sand-border">
+              Comprehensive Lifecycle
+            </span>
+            <h3 className="font-heading font-bold text-xl sm:text-2xl text-forest">
+              {t('home.carbonProcess.timelineTitle', 'End-to-End Methodological Stewardship')}
+            </h3>
+            <p className="text-sm sm:text-base text-charcoal/85 leading-relaxed font-sans font-normal">
+              Our team accompanies project owners across every milestone—from initial feasibility and additionality documentation to independent validation and registry issuance.
+            </p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {steps.map((step, idx) => {
-              const isFinal = idx === steps.length - 1;
-              return (
-                <div
-                  key={idx}
-                  className={`p-7 sm:p-8 rounded-3xl border transition-all duration-300 flex flex-col justify-between hover:-translate-y-1 ${
-                    isFinal
-                      ? 'bg-gradient-to-br from-gold/15 via-white to-forest/5 border-gold/40 shadow-elevated'
-                      : 'bg-white border-sand-border/80 hover:border-forest/40 hover:shadow-elevated shadow-subtle'
-                  }`}
-                >
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between">
-                      <span className={`text-xs font-mono font-bold px-3 py-1 rounded-full ${
-                        isFinal 
-                          ? 'bg-gold text-forest-dark' 
-                          : 'bg-forest/10 text-forest border border-forest/15'
-                      }`}>
-                        STAGE {step.num || String(idx + 1).padStart(2, '0')}
-                      </span>
-                      <CheckCircle2 className={`w-4 h-4 ${isFinal ? 'text-gold-dark' : 'text-forest/40'}`} />
-                    </div>
-
-                    <h3 className="font-display font-bold text-lg sm:text-xl text-forest leading-snug">
-                      {step.name}
-                    </h3>
-
-                    <p className="text-base text-charcoal/85 leading-relaxed font-sans font-normal">
-                      {step.desc}
-                    </p>
-                  </div>
-
-                  <div className="mt-5 pt-3.5 border-t border-sand-border/60 flex items-center justify-between text-xs sm:text-[13px] font-sans font-medium">
-                    <span className={isFinal ? 'text-forest font-bold' : 'text-charcoal-muted'}>
-                      {isFinal ? 'Milestone: Commercialisation' : `Stage ${idx + 1} of ${steps.length}`}
-                    </span>
-                    {!isFinal && <ArrowRight className="w-4 h-4 text-forest/40" />}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+          <Link
+            to={getLocalizedPath('/services/carbon-market-advisory')}
+            className="btn-primary whitespace-nowrap self-start md:self-center"
+          >
+            <span>Explore Full Carbon Advisory</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
 
         {/* Regulatory Safeguard Notice & Primary CTA */}

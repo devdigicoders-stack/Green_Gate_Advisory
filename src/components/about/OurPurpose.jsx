@@ -8,39 +8,33 @@ export default function OurPurpose() {
     <section id="purpose-mission" className="py-14 sm:py-20 bg-white border-b border-sand-border/70 scroll-mt-24">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Highlighted Editorial Card */}
-        <div className="relative rounded-3xl bg-gradient-to-br from-forest-dark to-forest p-8 sm:p-12 lg:p-16 text-white shadow-elevated overflow-hidden">
-          {/* Subtle Ambient Light Gradients */}
-          <div className="absolute top-0 right-0 w-80 h-80 bg-gold/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-60 h-60 bg-deep-green/30 rounded-full blur-2xl pointer-events-none" />
+        {/* Open Editorial Purpose Manifesto - No Heavy Box */}
+        <div className="space-y-8 text-center max-w-4xl mx-auto py-4">
+          {/* Eyebrow */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase bg-forest/5 text-deep-green border border-forest/15">
+            <Target className="w-3.5 h-3.5 text-deep-green" />
+            <span>{t('about.purpose.eyebrow', 'Our Core Purpose')}</span>
+          </div>
 
-          <div className="relative z-10 space-y-8 text-center max-w-3xl mx-auto">
-            {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase bg-white/10 text-gold-light border border-white/20 backdrop-blur-md">
-              <Target className="w-3.5 h-3.5 text-gold" />
-              <span>{t('about.purpose.eyebrow', 'Our Core Purpose')}</span>
-            </div>
+          {/* Core Purpose Statement */}
+          <blockquote className="font-display font-medium text-2xl sm:text-3xl lg:text-4xl text-forest leading-relaxed tracking-tight">
+            &ldquo;{t('about.purpose.text')}&rdquo;
+          </blockquote>
 
-            {/* Core Purpose Statement from PDF */}
-            <blockquote className="font-display font-medium text-xl sm:text-2xl lg:text-3xl text-white leading-relaxed tracking-tight">
-              &ldquo;{t('about.purpose.text')}&rdquo;
-            </blockquote>
-
-            {/* Anchoring Pillars */}
-            <div className="pt-6 border-t border-white/15 flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs sm:text-sm font-semibold tracking-wide uppercase text-gold-light font-mono">
-              <span className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-gold" />
-                {t('about.purpose.pillar1', 'Technically Credible')}
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-gold" />
-                {t('about.purpose.pillar2', 'Financially Realistic')}
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-gold" />
-                {t('about.purpose.pillar3', 'Measurable Value')}
-              </span>
-            </div>
+          {/* Anchoring Pillars */}
+          <div className="pt-6 border-t border-sand-border flex flex-wrap items-center justify-center gap-6 sm:gap-12 text-xs sm:text-sm font-semibold tracking-wider uppercase text-charcoal font-mono">
+            <span className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-deep-green" />
+              {t('about.purpose.pillar1', 'Technically Credible')}
+            </span>
+            <span className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-deep-green" />
+              {t('about.purpose.pillar2', 'Financially Realistic')}
+            </span>
+            <span className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-deep-green" />
+              {t('about.purpose.pillar3', 'Measurable Value')}
+            </span>
           </div>
         </div>
 

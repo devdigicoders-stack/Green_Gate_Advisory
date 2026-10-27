@@ -152,67 +152,49 @@ export default function AdvisoryEngagements() {
           </div>
         </div>
 
-        {/* Engagements Grid */}
+        {/* Engagements Grid - Clean, Spacious, Less clutter (Max 3 prominent cases displayed, can filter) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {filteredEngagements.map((eng) => (
+          {filteredEngagements.slice(0, 3).map((eng) => (
             <div
               key={eng.id}
-              className="rounded-3xl bg-[#FAF9F5] border border-sand-border/80 p-8 sm:p-9 shadow-subtle hover:bg-white hover:border-forest/30 hover:shadow-elevated hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between space-y-6 group"
+              className="rounded-2xl bg-white border border-sand-border p-7 sm:p-8 shadow-sm hover:border-[#019935]/40 hover:shadow-md transition-all duration-300 flex flex-col justify-between space-y-5"
             >
-              <div className="space-y-4">
+              <div className="space-y-3.5">
                 {/* Header Tag Bar */}
                 <div className="flex items-center justify-between text-xs">
-                  <span className="font-mono font-bold uppercase tracking-wider text-deep-green bg-white px-3 py-1 rounded-full border border-sand-border/80 shadow-xs">
+                  <span className="font-mono font-bold uppercase tracking-wider text-[#019935] bg-neutral-100 px-3 py-1 rounded-full text-[11px]">
                     {eng.badge}
                   </span>
-                  <div className="flex items-center gap-1.5 text-charcoal-muted font-medium">
-                    <MapPin className="w-3.5 h-3.5 text-deep-green" />
+                  <div className="flex items-center gap-1.5 text-neutral-500 font-medium text-xs">
+                    <MapPin className="w-3.5 h-3.5 text-[#019935]" />
                     <span>{eng.region}</span>
                   </div>
                 </div>
 
                 {/* Title */}
-                <h3 className="font-display font-bold text-xl sm:text-2xl text-forest group-hover:text-deep-green transition-colors leading-snug">
+                <h3 className="font-display font-bold text-lg sm:text-xl text-neutral-900 leading-snug">
                   {eng.title}
                 </h3>
 
-                {/* Client & Framework */}
-                <div className="space-y-1.5 text-xs sm:text-sm">
-                  <div className="text-charcoal font-medium">
-                    <span className="text-charcoal-muted">Client: </span>{eng.clientCategory}
-                  </div>
-                  <div className="font-mono text-deep-green text-xs">
-                    <span className="text-charcoal-muted">Protocol: </span>{eng.framework}
-                  </div>
-                </div>
-
-                {/* Summary */}
-                <p className="text-sm text-charcoal/80 leading-relaxed font-sans font-light">
-                  {eng.summary}
+                {/* Framework & Context */}
+                <p className="text-xs font-mono text-neutral-500">
+                  {eng.framework}
                 </p>
 
-                {/* Key Deliverables Bulleted */}
-                <div className="pt-3 border-t border-sand-border/80 space-y-1.5">
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-charcoal-muted font-bold block">
-                    Core Technical Deliverables:
-                  </span>
-                  {eng.deliverables.map((del, dIdx) => (
-                    <div key={dIdx} className="flex items-center gap-2 text-xs text-charcoal font-medium">
-                      <CheckCircle2 className="w-3 h-3 text-deep-green flex-shrink-0" />
-                      <span className="truncate">{del}</span>
-                    </div>
-                  ))}
-                </div>
+                {/* Summary */}
+                <p className="text-sm text-neutral-600 leading-relaxed font-sans">
+                  {eng.summary}
+                </p>
               </div>
 
-              {/* Card Footer Status */}
-              <div className="pt-4 border-t border-sand-border/80 flex items-center justify-between text-xs">
-                <span className="inline-flex items-center gap-1.5 text-deep-green font-semibold">
-                  <span className="w-1.5 h-1.5 rounded-full bg-deep-green"></span>
+              {/* Status Bar */}
+              <div className="pt-4 border-t border-neutral-100 flex items-center justify-between text-xs">
+                <span className="inline-flex items-center gap-1.5 text-[#019935] font-semibold text-xs">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#019935]"></span>
                   {eng.status}
                 </span>
-                <span className="text-[11px] font-mono text-charcoal-muted">
-                  Strict Fiduciary Model
+                <span className="text-[11px] font-mono text-neutral-400">
+                  {eng.sector}
                 </span>
               </div>
             </div>

@@ -39,29 +39,29 @@ export default function CbamAdvisory() {
 
   const sideCard = (
     <>
-      <div className="flex items-center gap-2 text-forest font-heading font-bold text-sm">
-        <ShieldCheck className="w-4 h-4 text-gold-dark" />
+      <div className="flex items-center gap-2 text-forest font-heading font-bold text-base">
+        <ShieldCheck className="w-4.5 h-4.5 text-gold-dark" />
         <span>{sideCardData.title || 'EU Regulatory Scope Focus'}</span>
       </div>
-      <p className="text-xs text-charcoal-muted leading-relaxed font-sans">
+      <p className="text-sm sm:text-[14.5px] text-charcoal/85 leading-relaxed font-sans font-normal">
         {sideCardData.desc || 'Targeting covered sectors including cement, iron & steel, aluminium, fertilisers, electricity, and hydrogen, supporting exporters across supply chains.'}
       </p>
       {sideCardData.mandateTitle && (
-        <div className="p-3 rounded-xl bg-white border border-sand-border text-xs text-charcoal-muted space-y-1.5 font-sans">
-          <div className="flex items-center gap-1.5 font-semibold text-forest">
-            <AlertCircle className="w-3.5 h-3.5 text-gold-dark" />
+        <div className="p-3.5 rounded-2xl bg-white border border-sand-border text-xs sm:text-[13px] text-charcoal space-y-1.5 font-sans">
+          <div className="flex items-center gap-1.5 font-semibold text-forest text-xs sm:text-sm">
+            <AlertCircle className="w-4 h-4 text-gold-dark" />
             <span>{sideCardData.mandateTitle}</span>
           </div>
-          <p className="text-[11px] leading-relaxed">
+          <p className="text-xs sm:text-[13px] text-charcoal-muted leading-relaxed">
             {sideCardData.mandateDesc}
           </p>
         </div>
       )}
       {sidePoints.length > 0 && (
-        <div className="pt-2 flex flex-col gap-1.5 text-xs font-semibold text-deep-green">
+        <div className="pt-2 flex flex-col gap-2 text-xs sm:text-[13.5px] font-semibold text-deep-green">
           {sidePoints.map((pt, idx) => (
             <div key={idx} className="flex items-center gap-2">
-              <CheckCircle2 className="w-3.5 h-3.5 flex-shrink-0" />
+              <CheckCircle2 className="w-4 h-4 flex-shrink-0 text-deep-green" />
               <span>{pt}</span>
             </div>
           ))}

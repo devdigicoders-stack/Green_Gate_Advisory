@@ -10,8 +10,8 @@ export default function SectorsHero() {
   const { getLocalizedPath } = useLocale();
 
   return (
-    <section className="relative overflow-hidden bg-[#0B3023] text-white pt-24 pb-14 sm:pt-36 sm:pb-24">
-      {/* Background Cinematic Video with Photography Fallback & Directional Lighting */}
+    <section className="relative overflow-hidden bg-neutral-900 text-white pt-24 pb-14 sm:pt-36 sm:pb-24">
+      {/* Background Cinematic Video with Photography Fallback & Clean Neutral Lighting */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
           autoPlay
@@ -25,17 +25,16 @@ export default function SectorsHero() {
             src={sectorVideo} 
             type="video/mp4" 
           />
-          {/* Fallback image if video fails to load or low-power mode */}
           <img
             src="/images/infrastructure.jpg"
             alt="Sustainable industrial and natural infrastructure representing cross-sector climate resilience"
             className="w-full h-full object-cover object-right sm:object-center opacity-85"
           />
         </video>
-        {/* Mobile vertical gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B3023] via-[#0B3023]/80 to-[#0B3023]/60 sm:hidden pointer-events-none" />
-        <div className="hidden sm:block absolute inset-0 bg-gradient-to-r from-[#0B3023]/95 via-[#0B3023]/75 via-50% to-transparent pointer-events-none" />
-        <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-[#0B3023]/90 via-transparent to-black/25 pointer-events-none" />
+        {/* Neutral contrast gradient overlays */}
+        <div className="absolute inset-0 bg-black/60 sm:hidden pointer-events-none" />
+        <div className="hidden sm:block absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/20 pointer-events-none" />
+        <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/30 pointer-events-none" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
@@ -70,8 +69,8 @@ export default function SectorsHero() {
             {t('sectors.hero.title', 'Sectors We Support')}
           </h1>
 
-          <p className="text-sm sm:text-lg lg:text-xl text-sand-surface/90 leading-relaxed font-sans font-light">
-            {t('sectors.hero.lead', 'Climate risks, regulation and investment opportunities vary by sector. Green Gate Advisory tailors its advisory approach to the operating context, applicable policy frameworks, available data and intended outcomes of each client.')}
+          <p className="text-base sm:text-lg text-sand-surface/90 leading-relaxed font-sans font-normal">
+            {t('sectors.hero.leadShort', 'Context-specific advisory aligned with sector operations and climate compliance.')}
           </p>
         </motion.div>
 

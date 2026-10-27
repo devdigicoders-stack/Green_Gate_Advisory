@@ -16,8 +16,8 @@ export default function TrainingTopics() {
           subtitle={t('training.topics.subtitle', 'Modular technical subjects tailored to your organisation\'s operational, compliance, or project development priorities.')}
         />
 
-        {/* 11 Topics Responsive Grid (3-col Desktop, 2-col Tablet, 1-col Mobile) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* 11 Topics Editorial Syllabus Rows (2-col Desktop, 1-col Mobile) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
           {TRAINING_TOPICS.map((topic, idx) => (
             <TrainingCard key={topic.id} topic={topic} index={idx} />
           ))}

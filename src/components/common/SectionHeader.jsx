@@ -12,7 +12,7 @@ export default function SectionHeader({
   return (
     <div className={`space-y-5 sm:space-y-6 ${isCentered ? 'text-center mx-auto' : 'text-left'} max-w-4xl ${className}`}>
       {badge && (
-        <div className={`inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full text-xs sm:text-[13px] font-bold tracking-wider uppercase transition-colors ${
+        <div className={`inline-flex items-center gap-2.5 px-5 py-4 rounded-full text-xs sm:text-[13px] font-bold tracking-wider uppercase transition-colors ${
           light 
             ? 'bg-white/10 text-gold-light border border-white/15' 
             : 'bg-forest/5 text-deep-green border border-forest/10'

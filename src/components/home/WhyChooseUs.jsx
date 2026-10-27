@@ -27,14 +27,14 @@ export default function WhyChooseUs() {
             return (
               <div 
                 key={idx}
-                className="p-8 sm:p-9 lg:p-10 rounded-3xl bg-[#FAF9F5] border border-sand-border/80 shadow-subtle hover:bg-white hover:border-forest/30 hover:shadow-elevated hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between space-y-6 group"
+                className="p-8 sm:p-9 lg:p-10 rounded-3xl bg-white border border-sand-border shadow-subtle hover:border-forest/40 hover:shadow-elevated hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between space-y-6 group"
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <div className="w-11 h-11 rounded-2xl bg-forest/5 border border-forest/10 flex items-center justify-center text-forest group-hover:bg-forest group-hover:text-gold transition-all duration-300 shadow-xs">
-                      <Icon className="w-5 h-5 text-current" />
+                    <div className="w-12 h-12 rounded-2xl bg-forest/5 border border-forest/10 flex items-center justify-center text-forest group-hover:bg-forest group-hover:text-gold transition-all duration-300 shadow-xs">
+                      <Icon className="w-6 h-6 text-current" />
                     </div>
-                    <span className="text-xs sm:text-[13px] font-mono font-bold text-deep-green bg-white px-3.5 py-1 rounded-full border border-sand-border/80 shadow-xs">
+                    <span className="text-xs sm:text-[13px] font-mono font-bold text-deep-green bg-sage/60 px-3.5 py-1 rounded-full border border-sand-border/80 shadow-xs">
                       VALUE {pillar.num || `0${idx + 1}`}
                     </span>
                   </div>
@@ -43,7 +43,7 @@ export default function WhyChooseUs() {
                     {pillar.title}
                   </h3>
 
-                  <p className="text-sm sm:text-base text-charcoal/85 leading-relaxed font-sans font-normal">
+                  <p className="text-[15px] sm:text-base text-charcoal/90 leading-relaxed font-sans font-normal">
                     {pillar.desc}
                   </p>
                 </div>

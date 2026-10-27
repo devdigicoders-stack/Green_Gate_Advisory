@@ -8,52 +8,49 @@ export default function HomeCTA() {
   const { getLocalizedPath } = useLocale();
 
   return (
-    <section id="contact" className="relative overflow-hidden py-20 sm:py-28 lg:py-32 bg-forest text-white scroll-mt-24">
-      {/* Background Radial Glow & Gradient */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-deep-green/50 via-forest to-forest-dark -z-10" />
-      <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-gold/15 blur-3xl pointer-events-none -z-10" />
-      <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-deep-green/30 blur-3xl pointer-events-none -z-10" />
+    <section id="contact" className="relative overflow-hidden py-20 sm:py-28 bg-[#F4F6F4] text-[#1E2522] border-t border-[#DCE4DC] scroll-mt-24">
+      {/* Subtle organic light gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-[#F4F6F4] to-[#E9EEE9] -z-10" />
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-10">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
         
         {/* Eyebrow badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-[13px] font-bold tracking-wider uppercase bg-white/10 text-gold-light border border-white/15">
-          <span className="w-1.5 h-1.5 rounded-full bg-gold animate-ping"></span>
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase bg-white text-[#019935] border border-[#D0DCD0] shadow-xs">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#019935]"></span>
           <span>{t('home.cta.eyebrow', 'Advisory Engagement')}</span>
         </div>
 
-        {/* Closing Headline directly from PDF */}
-        <h2 className="font-display font-bold text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.1] max-w-3xl mx-auto">
+        {/* Closing Headline */}
+        <h2 className="font-display font-bold text-3xl sm:text-5xl lg:text-6xl text-[#1E2522] tracking-tight leading-[1.1] max-w-3xl mx-auto">
           {t('home.cta.headline', 'Ready to move from climate complexity to practical action?')}
         </h2>
 
-        {/* Supporting Sentence directly from PDF */}
-        <p className="text-base sm:text-xl text-sand-surface/95 max-w-2xl mx-auto leading-relaxed font-sans font-normal">
-          {t('home.cta.description', 'Contact Green Gate Advisory to discuss your carbon market, CBAM, ETS, climate finance, nature-based solutions or corporate sustainability priorities.')}
+        {/* Concise Supporting Sentence */}
+        <p className="text-base sm:text-lg text-[#55635C] max-w-2xl mx-auto leading-relaxed font-sans font-normal">
+          Contact Green Gate Advisory to discuss your carbon market, CBAM, climate finance, or sustainability priorities.
         </p>
 
-        {/* Action Buttons: Request a Consultation | Contact Our Team */}
-        <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+        {/* Action Buttons */}
+        <div className="pt-3 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             to={getLocalizedPath('/contact')}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-9 py-4 rounded-full bg-gold hover:bg-gold-light text-forest-dark font-semibold text-sm sm:text-base tracking-wide uppercase transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-gold"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 sm:py-4 rounded-full bg-[#019935] hover:bg-[#02B840] text-white font-bold text-sm sm:text-base tracking-wide uppercase transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none"
           >
             <span>{t('home.cta.btnPrimary', 'Request a Consultation')}</span>
-            <ArrowRight className="w-4.5 h-4.5 text-forest-dark" />
+            <ArrowRight className="w-4 h-4 text-white" />
           </Link>
 
           <Link
             to={getLocalizedPath('/contact')}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-9 py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-sm sm:text-base tracking-wide uppercase border border-white/25 backdrop-blur-xs transition-all duration-300"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 sm:py-4 rounded-full bg-white hover:bg-[#FAFBF9] text-[#1E2522] font-semibold text-sm sm:text-base tracking-wide uppercase border border-[#CBD5CB] transition-all duration-300 shadow-xs focus:outline-none"
           >
-            <Mail className="w-4.5 h-4.5 text-gold-light" />
             <span>{t('home.cta.btnSecondary', 'Contact Our Team')}</span>
           </Link>
         </div>
 
-        {/* Regulatory Disclaimer Notice from PDF Page 14 */}
-        <div className="pt-6 border-t border-white/10 max-w-2xl mx-auto text-xs sm:text-sm text-sand-surface/75 leading-relaxed font-sans flex items-start justify-center gap-2">
-          <ShieldAlert className="w-4.5 h-4.5 text-gold-light flex-shrink-0 mt-0.5" />
+        {/* Regulatory Disclaimer Notice */}
+        <div className="pt-6 border-t border-[#DCE4DC] max-w-2xl mx-auto text-xs sm:text-sm text-[#738078] leading-relaxed font-sans flex items-start justify-center gap-2">
+          <ShieldAlert className="w-4.5 h-4.5 text-[#019935] flex-shrink-0 mt-0.5" />
           <p>{t('home.cta.disclaimer')}</p>
         </div>
 

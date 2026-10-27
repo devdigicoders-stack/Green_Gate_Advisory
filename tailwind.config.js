@@ -8,39 +8,39 @@ export default {
     extend: {
       colors: {
         forest: {
-          DEFAULT: '#0E6649', // Fresh balanced emerald green (less dark)
-          dark: '#0B4D36',    // Rich dignified forest green (softened, not pitch black)
-          light: '#188761',   // Vibrant eco-green accent
+          DEFAULT: '#019935', // Exact Logo Fresh Green
+          dark: '#017A2A',    // Medium Clean Green
+          light: '#02B840',   // Bright Green Accent
         },
         'deep-green': {
-          DEFAULT: '#0E6649',
-          dark: '#0B4D36',
-          light: '#188761',
+          DEFAULT: '#019935',
+          dark: '#017A2A',
+          light: '#02B840',
         },
         gold: {
-          DEFAULT: '#D2AD67',
-          dark: '#B8924B',
-          light: '#E6C88A',
+          DEFAULT: '#D4AF37', // Warm metallic gold accent
+          dark: '#B59021',
+          light: '#F3E5AB',
         },
         sage: {
-          DEFAULT: '#F5F7F4', // Crisp clean background
-          light: '#FAFBF9',
-          dark: '#E7ECE5',
+          DEFAULT: '#F8FAF7', // Soft clean white/ivory
+          light: '#FFFFFF',
+          dark: '#EEF4ED',
         },
         charcoal: {
-          DEFAULT: '#363939', // Exact Logo Dark Slate/Graphite text color
-          muted: '#525756',   // Balanced secondary text
-          light: '#727977',
+          DEFAULT: '#2C302E', // High readability dark slate
+          muted: '#5A605D',   // Readable body
+          light: '#9FA1A0',   // Exact Logo Gray
         },
         sand: {
-          border: '#DCE4DB',
-          surface: '#F8FAF7',
+          border: '#E2E8E1',
+          surface: '#FFFFFF',
         }
       },
       fontFamily: {
         sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
-        heading: ['Outfit', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-        display: ['Outfit', '"Plus Jakarta Sans"', '"Space Grotesk"', 'sans-serif'],
+        heading: ['Outfit', 'Syne', '"Plus Jakarta Sans"', 'sans-serif'],
+        display: ['Outfit', 'Syne', '"Space Grotesk"', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
       },
       fontSize: {

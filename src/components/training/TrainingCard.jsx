@@ -21,30 +21,32 @@ export default function TrainingCard({ topic, index = 0 }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.4, delay: Math.min(index * 0.05, 0.3) }}
-      className="rounded-3xl bg-white border border-sand-border/90 p-7 sm:p-8 shadow-subtle hover:border-deep-green/30 hover:shadow-premium transition-all duration-300 flex flex-col justify-between space-y-6 group"
+      className="border-b border-sand-border/80 pb-6 flex flex-col justify-between space-y-4 group hover:border-deep-green transition-colors"
     >
-      <div className="space-y-4">
+      <div className="space-y-3">
         <div className="flex items-center justify-between">
-          <div className="w-12 h-12 rounded-2xl bg-forest/5 flex items-center justify-center text-forest group-hover:bg-forest group-hover:text-gold transition-colors duration-300">
-            <Icon className="w-6 h-6" />
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 rounded-xl bg-forest/5 flex items-center justify-center text-forest group-hover:bg-deep-green group-hover:text-white transition-colors duration-200">
+              <Icon className="w-4.5 h-4.5" />
+            </div>
+            <span className="text-xs font-mono font-bold tracking-widest text-deep-green">
+              MODULE {topic.number}
+            </span>
           </div>
-          <span className="text-xs font-mono font-bold tracking-widest text-gold-dark">
-            MODULE {topic.number}
-          </span>
         </div>
 
-        <div className="space-y-2">
-          <h3 className="font-display font-bold text-xl text-forest group-hover:text-deep-green transition-colors leading-snug">
+        <div className="space-y-1.5">
+          <h3 className="font-display font-bold text-lg sm:text-xl text-forest group-hover:text-deep-green transition-colors leading-snug">
             {title}
           </h3>
-          <p className="text-xs sm:text-sm text-charcoal-muted leading-relaxed font-sans font-light">
+          <p className="text-xs sm:text-sm text-charcoal/80 leading-relaxed font-sans font-normal">
             {desc}
           </p>
         </div>
 
         {/* Expandable Topic Details Scope */}
         {scope && (
-          <div className="pt-2">
+          <div className="pt-1">
             <button
               type="button"
               onClick={() => setIsExpanded(!isExpanded)}
@@ -64,7 +66,7 @@ export default function TrainingCard({ topic, index = 0 }) {
                   transition={{ duration: 0.25 }}
                   className="overflow-hidden"
                 >
-                  <div className="mt-3 p-3.5 rounded-2xl bg-sage/50 border border-sand-border/80 text-xs text-charcoal leading-relaxed font-sans">
+                  <div className="mt-2.5 p-3 rounded-xl bg-[#F4F6F4] border border-sand-border/80 text-xs text-charcoal leading-relaxed font-sans">
                     <span className="font-semibold text-forest block mb-1 uppercase tracking-wider text-[10px]">
                       Curriculum Focus:
                     </span>
@@ -78,7 +80,7 @@ export default function TrainingCard({ topic, index = 0 }) {
       </div>
 
       {/* Enquire Action Link */}
-      <div className="pt-4 border-t border-sand-border/60">
+      <div className="pt-2">
         <Link
           to={getLocalizedPath('/contact?service=training')}
           state={{ serviceInterest: 'Training and Capacity Building', topic: title }}

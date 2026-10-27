@@ -41,7 +41,7 @@ export default function ServiceHero({
   };
 
   return (
-    <section className="relative overflow-hidden bg-[#0B3023] text-white pt-24 pb-14 sm:pt-36 sm:pb-24">
+    <section className="relative overflow-hidden bg-neutral-900 text-white pt-24 pb-14 sm:pt-36 sm:pb-24">
       {/* Background Photography & Video with Directional Lighting & Masking */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         {hasVideo ? (
@@ -73,77 +73,70 @@ export default function ServiceHero({
             loading="eager"
           />
         )}
-        {/* Mobile vertical gradient for high-contrast mobile readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B3023] via-[#0B3023]/80 to-[#0B3023]/60 sm:hidden pointer-events-none" />
-        <div className="hidden sm:block absolute inset-0 bg-gradient-to-r from-[#0B3023]/95 via-[#0B3023]/75 via-50% to-transparent pointer-events-none" />
-        <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-[#0B3023]/90 via-transparent to-black/25 pointer-events-none" />
+        {/* Neutral contrast gradient overlays */}
+        <div className="absolute inset-0 bg-black/60 sm:hidden pointer-events-none" />
+        <div className="hidden sm:block absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/20 pointer-events-none" />
+        <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/30 pointer-events-none" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
 
         {/* Breadcrumb Navigation */}
-        <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-sans text-sand-surface/75">
+        <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs sm:text-[13px] font-sans text-sand-surface/85">
           <Link
             to={getLocalizedPath('/')}
             className="hover:text-gold transition-colors focus:outline-none focus:underline"
           >
             {t('navigation.home', 'Home')}
           </Link>
-          <ChevronRight className="w-3.5 h-3.5 text-sand-surface/40" />
+          <ChevronRight className="w-3.5 h-3.5 text-sand-surface/50" />
           <Link
             to={getLocalizedPath('/services')}
             className="hover:text-gold transition-colors focus:outline-none focus:underline"
           >
             {t('navigation.services', 'Services')}
           </Link>
-          <ChevronRight className="w-3.5 h-3.5 text-sand-surface/40" />
-          <span className="text-gold font-medium truncate max-w-[200px] sm:max-w-none" aria-current="page">
+          <ChevronRight className="w-3.5 h-3.5 text-sand-surface/50" />
+          <span className="text-gold font-semibold truncate max-w-[200px] sm:max-w-none" aria-current="page">
             {shortTitle || title}
           </span>
         </nav>
 
         {/* Content Block */}
-        <div className="max-w-4xl space-y-4 sm:space-y-6">
+        <div className="max-w-3xl space-y-4">
           <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-            <span className="px-3 py-1 rounded-full text-[11px] sm:text-xs font-mono font-bold uppercase tracking-wider bg-gold text-forest-dark">
+            <span className="px-3.5 py-1 rounded-full text-xs sm:text-[13px] font-mono font-bold uppercase tracking-wider bg-gold text-forest-dark">
               PRACTICE {number}
             </span>
             {eyebrow && (
-              <span className="px-3 py-1 sm:px-4 sm:py-1 rounded-full text-[11px] sm:text-xs font-semibold tracking-wider uppercase bg-white/10 text-gold-light border border-white/20 backdrop-blur-md">
+              <span className="px-3.5 py-1 sm:px-4 sm:py-1 rounded-full text-xs sm:text-[13px] font-semibold tracking-wider uppercase bg-white/10 text-gold-light border border-white/20 backdrop-blur-md">
                 {eyebrow}
               </span>
             )}
           </div>
 
-          <h1 className="font-display font-bold text-3xl sm:text-5xl lg:text-6xl xl:text-7xl text-white tracking-tight leading-[1.12]">
+          <h1 className="font-display font-bold text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.12]">
             {title}
           </h1>
 
-          <p className="text-sm sm:text-lg lg:text-xl text-sand-surface/90 leading-relaxed font-sans font-light max-w-3xl">
+          <p className="text-base sm:text-lg text-sand-surface/90 leading-relaxed font-sans font-normal max-w-2xl">
             {lead}
           </p>
         </div>
 
-        {/* Quick Scope Tags & Statutory Standard Strip */}
-        <div className="pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs text-sand-surface/70 font-sans">
-          <div className="flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-gold flex-shrink-0" />
-            <span>Independent technical & regulatory advisory · Verified methodologies</span>
+        {/* Quick Scope Tags Strip */}
+        {quickTags.length > 0 && (
+          <div className="pt-5 border-t border-white/10 flex flex-wrap items-center gap-2">
+            {quickTags.map((tag, idx) => (
+              <span
+                key={idx}
+                className="px-3 py-1 rounded-full bg-white/10 border border-white/15 text-xs text-sand-surface font-medium"
+              >
+                {tag}
+              </span>
+            ))}
           </div>
-
-          {quickTags.length > 0 && (
-            <div className="flex flex-wrap items-center gap-2">
-              {quickTags.map((tag, idx) => (
-                <span
-                  key={idx}
-                  className="px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10 text-[11px] text-sand-surface/80"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          )}
-        </div>
+        )}
 
       </div>
     </section>

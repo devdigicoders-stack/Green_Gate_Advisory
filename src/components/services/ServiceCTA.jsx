@@ -13,10 +13,10 @@ export default function ServiceCTA({
   const { getLocalizedPath } = useLocale();
 
   return (
-    <section className="py-14 sm:py-20 bg-forest-dark text-white relative overflow-hidden">
+    <section className="py-14 sm:py-20 bg-[#141917] text-white relative overflow-hidden border-t border-neutral-800">
       {/* Decorative background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-deep-green/30 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-10 right-10 w-80 h-80 bg-gold/10 rounded-full blur-2xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#019935]/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-10 right-10 w-80 h-80 bg-neutral-800/20 rounded-full blur-2xl pointer-events-none" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
         

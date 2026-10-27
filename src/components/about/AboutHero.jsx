@@ -8,8 +8,8 @@ export default function AboutHero() {
   const { getLocalizedPath } = useLocale();
 
   return (
-    <section className="relative overflow-hidden bg-[#0B3023] text-white pt-24 pb-14 sm:pt-36 sm:pb-24">
-      {/* Background Photography & Video with Sophisticated Directional Lighting */}
+    <section className="relative overflow-hidden bg-neutral-900 text-white pt-24 pb-14 sm:pt-36 sm:pb-24">
+      {/* Background Photography & Video with Clean Neutral Lighting */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
           autoPlay
@@ -26,41 +26,41 @@ export default function AboutHero() {
           className="absolute inset-0 w-full h-full object-cover object-right sm:object-center opacity-85 scale-105 -z-10"
           loading="eager"
         />
-        {/* Mobile vertical gradient: ensures 100% contrast on mobile screens */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B3023] via-[#0B3023]/80 to-[#0B3023]/60 sm:hidden pointer-events-none" />
-        <div className="hidden sm:block absolute inset-0 bg-gradient-to-r from-[#0B3023]/95 via-[#0B3023]/75 via-50% to-transparent pointer-events-none" />
-        <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-[#0B3023]/90 via-transparent to-black/25 pointer-events-none" />
+        {/* Neutral contrast gradient overlays */}
+        <div className="absolute inset-0 bg-black/60 sm:hidden pointer-events-none" />
+        <div className="hidden sm:block absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/20 pointer-events-none" />
+        <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/30 pointer-events-none" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
 
         {/* Breadcrumb Navigation */}
-        <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-sans text-sand-surface/75">
+        <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-sans text-white/70">
           <Link
             to={getLocalizedPath('/')}
-            className="hover:text-gold transition-colors focus:outline-none focus:underline"
+            className="hover:text-white transition-colors focus:outline-none focus:underline"
           >
             {t('about.hero.breadcrumbHome', 'Home')}
           </Link>
-          <ChevronRight className="w-3.5 h-3.5 text-sand-surface/40" />
-          <span className="text-gold font-medium" aria-current="page">
+          <ChevronRight className="w-3.5 h-3.5 text-white/40" />
+          <span className="text-white font-medium" aria-current="page">
             {t('about.hero.breadcrumbCurrent', 'About Us')}
           </span>
         </nav>
 
         {/* Content Block */}
-        <div className="max-w-3xl space-y-4 sm:space-y-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-semibold tracking-widest uppercase bg-white/10 text-gold-light border border-white/20 backdrop-blur-md">
-            <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-            <span>{t('about.hero.eyebrow', 'Specialised Climate Consultancy')}</span>
+        <div className="max-w-2xl space-y-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase bg-white/10 text-white border border-white/20">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#019935]" />
+            <span>Specialised Climate Consultancy</span>
           </div>
 
-          <h1 className="font-display font-bold text-3xl sm:text-5xl lg:text-6xl xl:text-7xl text-white tracking-tight leading-[1.12]">
+          <h1 className="font-display font-bold text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.12]">
             {t('about.hero.title', 'About Green Gate Advisory')}
           </h1>
 
-          <p className="text-sm sm:text-lg lg:text-xl text-sand-surface/90 leading-relaxed font-sans font-light">
-            {t('about.hero.lead', 'Supporting governments, businesses, exporters, project developers, investors and institutions as they respond to climate change, evolving regulation and the transition to a low-carbon, climate-resilient economy.')}
+          <p className="text-base sm:text-lg text-white/90 leading-relaxed font-sans font-normal">
+            Independent advisory connecting climate policy, carbon markets, and project finance.
           </p>
         </div>
 

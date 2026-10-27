@@ -17,38 +17,34 @@ export default function ServiceProcess({
           subtitle={subtitle}
         />
 
-        {/* Process Steps Responsive Layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {/* Clean Process Pathway Timeline - Non-Card Layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((st, idx) => (
             <div
               key={idx}
-              className="relative rounded-3xl bg-sage/40 border border-sand-border p-6 hover:bg-white hover:border-deep-green/30 hover:shadow-subtle transition-all duration-300 flex flex-col justify-between space-y-4 group"
+              className="relative space-y-3 group"
             >
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <span className="text-xl font-mono font-extrabold text-gold">
-                    {st.step || (idx < 9 ? `0${idx + 1}` : idx + 1)}
-                  </span>
-                  {idx < steps.length - 1 ? (
-                    <ArrowRight className="w-4 h-4 text-charcoal-muted/40 group-hover:text-deep-green group-hover:translate-x-0.5 transition-all" />
-                  ) : (
-                    <CheckCircle2 className="w-4 h-4 text-deep-green" />
-                  )}
-                </div>
+              <div className="flex items-center justify-between pb-3 border-b-2 border-sand-border group-hover:border-deep-green transition-colors">
+                <span className="text-xl font-mono font-bold text-deep-green">
+                  {st.step || (idx < 9 ? `0${idx + 1}` : idx + 1)}
+                </span>
+                {idx < steps.length - 1 ? (
+                  <ArrowRight className="w-4 h-4 text-charcoal/40 group-hover:text-deep-green group-hover:translate-x-1 transition-all" />
+                ) : (
+                  <CheckCircle2 className="w-4 h-4 text-deep-green" />
+                )}
+              </div>
 
-                <h3 className="font-display font-bold text-base text-forest group-hover:text-deep-green transition-colors leading-snug">
+              <div className="space-y-1.5 pt-1">
+                <h3 className="font-display font-bold text-base sm:text-lg text-forest group-hover:text-deep-green transition-colors leading-snug">
                   {st.title}
                 </h3>
 
                 {st.desc && (
-                  <p className="text-xs text-charcoal-muted leading-relaxed font-sans font-light">
+                  <p className="text-xs sm:text-sm text-charcoal/80 leading-relaxed font-sans font-normal">
                     {st.desc}
                   </p>
                 )}
-              </div>
-
-              <div className="pt-2 text-[10px] font-mono font-bold tracking-widest uppercase text-gold-dark">
-                STAGE {st.step || (idx < 9 ? `0${idx + 1}` : idx + 1)} OF {steps.length < 10 ? `0${steps.length}` : steps.length}
               </div>
             </div>
           ))}

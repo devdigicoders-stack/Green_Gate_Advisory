@@ -33,17 +33,17 @@ export default function InsightsPreview() {
                   KNOWLEDGE STREAM 0{idx + 1}
                 </span>
 
-                <h3 className="font-display font-bold text-base sm:text-lg text-forest group-hover:text-deep-green transition-colors leading-snug">
+                <h3 className="font-display font-bold text-lg sm:text-xl text-forest group-hover:text-deep-green transition-colors leading-snug">
                   {stream.title}
                 </h3>
 
-                <p className="text-sm text-charcoal/80 leading-relaxed font-sans font-light">
+                <p className="text-[15px] sm:text-base text-charcoal/90 leading-relaxed font-sans font-normal">
                   {stream.focus}
                 </p>
               </div>
 
-              <div className="pt-2 flex items-center gap-1.5 text-xs text-deep-green font-semibold">
-                <CheckCircle2 className="w-3.5 h-3.5 text-deep-green/60" />
+              <div className="pt-2 flex items-center gap-1.5 text-xs sm:text-[13px] text-deep-green font-semibold">
+                <CheckCircle2 className="w-4 h-4 text-deep-green" />
                 <span>Advisory Overview</span>
               </div>
             </div>

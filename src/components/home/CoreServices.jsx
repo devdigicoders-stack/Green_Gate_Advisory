@@ -51,7 +51,7 @@ export default function CoreServices() {
               return (
                 <div 
                   key={srv.key || idx}
-                  className="col-span-1 md:col-span-2 lg:col-span-3 bg-gradient-to-br from-[#0B3023] via-[#0E4733] to-[#082218] text-white rounded-3xl p-8 sm:p-10 lg:p-12 shadow-elevated relative overflow-hidden border border-emerald-500/25 group hover:border-gold/40 transition-all duration-300"
+                  className="col-span-1 md:col-span-2 lg:col-span-3 bg-gradient-to-br from-[#019935] via-[#018A30] to-[#017A2A] text-white rounded-3xl p-8 sm:p-10 lg:p-12 shadow-elevated relative overflow-hidden border border-white/20 group hover:border-gold/40 transition-all duration-300"
                 >
                   {/* Decorative glowing backdrops */}
                   <div className="absolute top-0 right-0 w-96 h-96 bg-gold/10 rounded-full blur-3xl pointer-events-none group-hover:bg-gold/15 transition-all" />

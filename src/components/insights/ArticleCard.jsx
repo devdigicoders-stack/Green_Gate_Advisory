@@ -34,32 +34,32 @@ export default function ArticleCard({ article, index = 0 }) {
 
         <div className="p-7 sm:p-8 space-y-4">
           {/* Metadata bar */}
-          <div className="flex flex-wrap items-center gap-4 text-xs text-charcoal-muted font-sans">
+          <div className="flex flex-wrap items-center gap-4 text-xs sm:text-[13px] text-charcoal/80 font-sans font-medium">
             {article.date && (
               <div className="flex items-center gap-1.5">
-                <Calendar className="w-3.5 h-3.5 text-gold-dark" />
+                <Calendar className="w-4 h-4 text-gold-dark" />
                 <span>{article.date}</span>
               </div>
             )}
             {article.readTime && (
               <div className="flex items-center gap-1.5">
-                <Clock className="w-3.5 h-3.5 text-gold-dark" />
+                <Clock className="w-4 h-4 text-gold-dark" />
                 <span>{article.readTime}</span>
               </div>
             )}
             {article.author && (
               <div className="flex items-center gap-1.5">
-                <User className="w-3.5 h-3.5 text-gold-dark" />
+                <User className="w-4 h-4 text-gold-dark" />
                 <span>{article.author}</span>
               </div>
             )}
           </div>
 
-          <h3 className="font-display font-bold text-xl text-forest group-hover:text-deep-green transition-colors leading-snug">
+          <h3 className="font-display font-bold text-xl sm:text-2xl text-forest group-hover:text-deep-green transition-colors leading-snug">
             {article.title}
           </h3>
 
-          <p className="text-xs sm:text-sm text-charcoal-muted leading-relaxed font-sans font-light line-clamp-3">
+          <p className="text-base sm:text-[16.5px] text-charcoal/90 leading-relaxed font-sans font-normal line-clamp-3">
             {article.summary}
           </p>
         </div>
