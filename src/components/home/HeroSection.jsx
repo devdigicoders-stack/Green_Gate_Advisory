@@ -16,7 +16,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="home" className="relative min-h-[85vh] sm:min-h-[82vh] lg:min-h-[88vh] flex flex-col justify-between overflow-hidden bg-neutral-900 text-white scroll-mt-24">
+    <section id="home" className="relative min-h-[60vh] sm:min-h-[80vh] lg:min-h-[85vh] flex flex-col justify-between overflow-hidden bg-neutral-900 text-white scroll-mt-24">
       {/* Background Cinematic Video with Photography Fallback & Clean Neutral Contrast */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
@@ -25,7 +25,7 @@ export default function HeroSection() {
           loop
           playsInline
           poster="/images/hero-canopy.jpg"
-          className="w-full h-full object-cover object-center opacity-90 scale-115 transform motion-safe:transition-transform motion-safe:duration-1000"
+          className="w-full h-full object-cover object-center opacity-90 scale-105 sm:scale-115 transform motion-safe:transition-transform motion-safe:duration-1000"
         >
           <source 
             src={homepageVideo} 
@@ -45,41 +45,41 @@ export default function HeroSection() {
         <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/30 pointer-events-none" />
       </div>
 
-      {/* Main Hero Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-32 pb-10 sm:pb-12 flex-grow flex flex-col justify-center w-full">
-        <div className="max-w-2xl lg:max-w-3xl space-y-4 sm:space-y-6 text-left items-start">
+      {/* Main Hero Content - Responsive compact height for mobile */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-32 pb-6 sm:pb-12 flex-grow flex flex-col justify-center w-full">
+        <div className="max-w-2xl lg:max-w-3xl space-y-3 sm:space-y-6 text-left items-start">
           
           {/* Eyebrow badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase bg-white/10 text-white border border-white/20 backdrop-blur-md">
-            <span className="w-2 h-2 rounded-full bg-[#019935] animate-pulse"></span>
-            <span>CLIMATE & ENVIRONMENTAL ADVISORY</span>
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] sm:text-xs font-semibold tracking-wider uppercase bg-white/10 text-white border border-white/20 backdrop-blur-md">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#019935] animate-pulse"></span>
+            <span>CLIMATE ADVISORY</span>
           </div>
 
           {/* Primary H1 Headline */}
-          <h1 className="font-display font-bold text-3xl xs:text-4xl sm:text-5xl lg:text-[3.4rem] xl:text-[3.9rem] text-white tracking-tight leading-[1.12]">
+          <h1 className="font-display font-bold text-2xl xs:text-3xl sm:text-5xl lg:text-[3.4rem] xl:text-[3.9rem] text-white tracking-tight leading-[1.14]">
             {t('home.hero.headline', 'Turning Climate Complexity into Strategic Opportunity')}
           </h1>
 
-          {/* Concise Supporting Text */}
-          <p className="text-base sm:text-lg text-white/90 leading-relaxed font-sans max-w-xl font-normal">
-            Strategic advisory across carbon markets, compliance regimes, and climate finance.
+          {/* Concise Supporting Text (hidden on small devices or 1 short line) */}
+          <p className="text-sm sm:text-lg text-white/90 leading-relaxed font-sans max-w-xl font-normal">
+            Strategic advisory across carbon markets and climate finance.
           </p>
 
           {/* Clean Action Buttons */}
-          <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-4 w-full sm:w-auto">
+          <div className="pt-1 sm:pt-2 flex flex-row items-center justify-start gap-3 w-full sm:w-auto">
             <Link
               to={getLocalizedPath('/services')}
-              className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 sm:py-4 rounded-full bg-[#019935] hover:bg-[#02B840] text-white font-bold text-sm tracking-wide uppercase transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none"
+              className="inline-flex items-center justify-center gap-2 px-5 sm:px-7 py-2.5 sm:py-4 rounded-full bg-[#019935] hover:bg-[#02B840] text-white font-bold text-xs sm:text-sm tracking-wide uppercase transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none"
             >
-              <span>{t('home.hero.ctaPrimary', 'Explore Our Services')}</span>
-              <ArrowRight className="w-4 h-4 text-white" />
+              <span>{t('home.hero.ctaPrimary', 'Explore Services')}</span>
+              <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
             </Link>
 
             <Link
               to={getLocalizedPath('/contact')}
-              className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 sm:py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-sm tracking-wide uppercase border border-white/30 backdrop-blur-md transition-all duration-300 focus:outline-none"
+              className="inline-flex items-center justify-center gap-2 px-5 sm:px-7 py-2.5 sm:py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-xs sm:text-sm tracking-wide uppercase border border-white/30 backdrop-blur-md transition-all duration-300 focus:outline-none"
             >
-              <span>{t('home.hero.ctaSecondary', 'Request a Consultation')}</span>
+              <span>{t('home.hero.ctaSecondary', 'Contact Us')}</span>
             </Link>
           </div>
 
