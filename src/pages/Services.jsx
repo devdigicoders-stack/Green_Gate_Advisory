@@ -60,7 +60,7 @@ export default function Services() {
       />
 
       {/* SECTION 1 — HERO */}
-      <section className="relative overflow-hidden bg-neutral-900 text-white pt-24 pb-14 sm:pt-36 sm:pb-24">
+      <section className="relative overflow-hidden bg-neutral-900 text-white pt-20 pb-8 sm:pt-36 sm:pb-24">
         {/* Background Photography & Video with Clean Neutral Lighting */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <video
@@ -84,7 +84,7 @@ export default function Services() {
           <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/30 pointer-events-none" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 sm:space-y-8">
           <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-sans text-white/70">
             <Link
               to={getLocalizedPath('/')}
@@ -98,13 +98,13 @@ export default function Services() {
             </span>
           </nav>
 
-          <div className="max-w-2xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase bg-white/10 text-white border border-white/20">
+          <div className="max-w-2xl space-y-3 sm:space-y-4">
+            <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase bg-white/10 text-white border border-white/20">
               <span className="w-1.5 h-1.5 rounded-full bg-[#019935]" />
               <span>Climate & Environmental Advisory</span>
             </div>
 
-            <h1 className="font-display font-bold text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.12]">
+            <h1 className="font-display font-bold text-2xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.12]">
               {t('services.overview.hero.title', 'Our Advisory Practices')}
             </h1>
 
@@ -113,12 +113,12 @@ export default function Services() {
             </p>
           </div>
 
-          <div className="pt-4 border-t border-white/15 flex flex-wrap items-center gap-3 sm:gap-6 text-xs text-white/70 font-sans">
+          <div className="hidden sm:flex pt-4 border-t border-white/15 flex-wrap items-center gap-3 sm:gap-6 text-xs text-white/70 font-sans">
             <div className="flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-[#019935] flex-shrink-0" />
               <span>Seven core advisory workstreams</span>
             </div>
-            <span className="hidden sm:inline text-white/20">|</span>
+            <span className="inline text-white/20">|</span>
             <span className="hidden xs:inline">Connecting policy, science, finance and delivery</span>
           </div>
         </div>

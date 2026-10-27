@@ -41,7 +41,7 @@ export default function ServiceHero({
   };
 
   return (
-    <section className="relative overflow-hidden bg-neutral-900 text-white pt-24 pb-14 sm:pt-36 sm:pb-24">
+    <section className="relative overflow-hidden bg-neutral-900 text-white pt-20 pb-8 sm:pt-36 sm:pb-24">
       {/* Background Photography & Video with Directional Lighting & Masking */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         {hasVideo ? (
@@ -79,7 +79,7 @@ export default function ServiceHero({
         <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/30 pointer-events-none" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 sm:space-y-8">
 
         {/* Breadcrumb Navigation */}
         <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs sm:text-[13px] font-sans text-sand-surface/85">
@@ -103,30 +103,30 @@ export default function ServiceHero({
         </nav>
 
         {/* Content Block */}
-        <div className="max-w-3xl space-y-4">
+        <div className="max-w-3xl space-y-3 sm:space-y-4">
           <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-            <span className="px-3.5 py-1 rounded-full text-xs sm:text-[13px] font-mono font-bold uppercase tracking-wider bg-gold text-forest-dark">
+            <span className="px-3 py-1 rounded-full text-[11px] sm:text-[13px] font-mono font-bold uppercase tracking-wider bg-gold text-forest-dark">
               PRACTICE {number}
             </span>
             {eyebrow && (
-              <span className="px-3.5 py-1 sm:px-4 sm:py-1 rounded-full text-xs sm:text-[13px] font-semibold tracking-wider uppercase bg-white/10 text-gold-light border border-white/20 backdrop-blur-md">
+              <span className="hidden sm:inline-block px-3.5 py-1 sm:px-4 sm:py-1 rounded-full text-xs sm:text-[13px] font-semibold tracking-wider uppercase bg-white/10 text-gold-light border border-white/20 backdrop-blur-md">
                 {eyebrow}
               </span>
             )}
           </div>
 
-          <h1 className="font-display font-bold text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.12]">
+          <h1 className="font-display font-bold text-2xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.12]">
             {title}
           </h1>
 
-          <p className="text-base sm:text-lg text-sand-surface/90 leading-relaxed font-sans font-normal max-w-2xl">
+          <p className="text-sm sm:text-lg text-sand-surface/90 leading-relaxed font-sans font-normal max-w-2xl">
             {lead}
           </p>
         </div>
 
-        {/* Quick Scope Tags Strip */}
+        {/* Quick Scope Tags Strip - Hidden on mobile to prevent text clutter */}
         {quickTags.length > 0 && (
-          <div className="pt-5 border-t border-white/10 flex flex-wrap items-center gap-2">
+          <div className="hidden sm:flex pt-5 border-t border-white/10 flex-wrap items-center gap-2">
             {quickTags.map((tag, idx) => (
               <span
                 key={idx}

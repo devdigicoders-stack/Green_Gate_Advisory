@@ -8,7 +8,7 @@ export default function AboutHero() {
   const { getLocalizedPath } = useLocale();
 
   return (
-    <section className="relative overflow-hidden bg-neutral-900 text-white pt-24 pb-14 sm:pt-36 sm:pb-24">
+    <section className="relative overflow-hidden bg-neutral-900 text-white pt-20 pb-8 sm:pt-36 sm:pb-24">
       {/* Background Photography & Video with Clean Neutral Lighting */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
@@ -32,7 +32,7 @@ export default function AboutHero() {
         <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/30 pointer-events-none" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 sm:space-y-8">
 
         {/* Breadcrumb Navigation */}
         <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-sans text-white/70">
@@ -49,28 +49,28 @@ export default function AboutHero() {
         </nav>
 
         {/* Content Block */}
-        <div className="max-w-2xl space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase bg-white/10 text-white border border-white/20">
+        <div className="max-w-2xl space-y-3 sm:space-y-4">
+          <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase bg-white/10 text-white border border-white/20">
             <span className="w-1.5 h-1.5 rounded-full bg-[#019935]" />
             <span>Specialised Climate Consultancy</span>
           </div>
 
-          <h1 className="font-display font-bold text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.12]">
+          <h1 className="font-display font-bold text-2xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.12]">
             {t('about.hero.title', 'About Green Gate Advisory')}
           </h1>
 
-          <p className="text-base sm:text-lg text-white/90 leading-relaxed font-sans font-normal">
+          <p className="text-sm sm:text-lg text-white/90 leading-relaxed font-sans font-normal">
             Independent advisory connecting climate policy, carbon markets, and project finance.
           </p>
         </div>
 
-        {/* Advisory Credibility Strip */}
-        <div className="pt-5 sm:pt-6 border-t border-white/10 flex flex-wrap items-center gap-3 sm:gap-6 text-xs text-sand-surface/70 font-sans">
+        {/* Advisory Credibility Strip - Hidden on mobile to prevent text clutter */}
+        <div className="hidden sm:flex pt-5 sm:pt-6 border-t border-white/10 flex-wrap items-center gap-3 sm:gap-6 text-xs text-sand-surface/70 font-sans">
           <div className="flex items-center gap-2">
             <ShieldCheck className="w-4 h-4 text-gold flex-shrink-0" />
             <span>{t('about.hero.credibility1', 'Independent technical, regulatory and finance advisory')}</span>
           </div>
-          <span className="hidden sm:inline text-white/20">|</span>
+          <span className="inline text-white/20">|</span>
           <span className="hidden xs:inline">{t('about.hero.credibility2', 'Connecting policy to practical delivery')}</span>
           <span className="hidden sm:inline text-white/20">|</span>
           <span className="hidden md:inline">{t('about.hero.credibility3', 'Zero speculative claims or guaranteed credit issuances')}</span>
