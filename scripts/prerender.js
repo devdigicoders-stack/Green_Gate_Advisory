@@ -284,9 +284,10 @@ for (const lang of ['en', 'es']) {
     // Inject before </head>
     html = html.replace('</head>', `${metaTags}\n  </head>`);
 
-    // 4. Inject semantic crawlable HTML into #root
-    // React will re-hydrate or mount on client load seamlessly
-    html = html.replace('<div id="root" class="min-h-screen flex flex-col"></div>', `<div id="root" class="min-h-screen flex flex-col">${crawlableHtml}</div>`);
+    // 4. Inject semantic crawlable HTML for SEO search crawlers
+    // Wrapped in <noscript> so that browser clients running JavaScript immediately mount React without flashing raw crawler fallback HTML
+    const noscriptCrawlableHtml = `<noscript>${crawlableHtml}</noscript>`;
+    html = html.replace('<div id="root" class="min-h-screen flex flex-col"></div>', `<div id="root" class="min-h-screen flex flex-col">${noscriptCrawlableHtml}</div>`);
 
     // Determine target output directory
     const targetDir = route.path 
