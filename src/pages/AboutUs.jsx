@@ -9,7 +9,7 @@ import Expertise from '../components/about/Expertise';
 import WhoWeWorkWith from '../components/about/WhoWeWorkWith';
 import OurApproach from '../components/about/OurApproach';
 import GovernanceBoard from '../components/about/GovernanceBoard';
-import AboutCTA from '../components/about/AboutCTA';
+import HomeCTA from '../components/home/HomeCTA';
 import { useLocale } from '../hooks/useLocale';
 
 export default function AboutUs() {
@@ -67,8 +67,8 @@ export default function AboutUs() {
       {/* 9. ADVISORY LEADERSHIP & TECHNICAL GOVERNANCE */}
       <GovernanceBoard />
 
-      {/* 10. CLOSING CTA */}
-      <AboutCTA />
+      {/* 10. ADVISORY ENGAGEMENT CTA */}
+      <HomeCTA />
     </>
   );
 }

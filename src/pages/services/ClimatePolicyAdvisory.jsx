@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import MetaTags from '../../components/seo/MetaTags';
+import ScrollProgressBar from '../../components/common/ScrollProgressBar';
 import ServiceHero from '../../components/services/ServiceHero';
 import ServiceIntroduction from '../../components/services/ServiceIntroduction';
 import ServiceScope from '../../components/services/ServiceScope';
@@ -61,6 +62,7 @@ export default function ClimatePolicyAdvisory() {
 
   return (
     <>
+      <ScrollProgressBar />
       <MetaTags
         title={t('meta.climatePolicy.title', 'Environmental & Climate Policy Advisory | Green Gate Advisory')}
         description={t('meta.climatePolicy.description', 'Policy and technical support for NDCs, National Adaptation Plans, climate governance, carbon pricing, MRV and Paris Agreement transparency frameworks.')}
@@ -106,13 +108,7 @@ export default function ClimatePolicyAdvisory() {
       />
 
       <RelatedServices currentKey="climatePolicy" />
-
-      <ServiceCTA
-        heading={serviceData.ctaHeading}
-        text={serviceData.ctaText}
-        primaryBtnText={serviceData.ctaBtn}
-        disclaimer={serviceData.disclaimer}
-      />
+      <ServiceCTA />
     </>
   );
 }

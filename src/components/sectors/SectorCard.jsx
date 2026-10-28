@@ -50,14 +50,22 @@ export default function SectorCard({ sector, index = 0 }) {
   const Icon = SECTOR_ICONS[sector.id] || Factory;
   const imageSrc = SECTOR_IMAGES[sector.id] || '/images/hero-canopy.jpg';
 
+  const initialMotion = 
+    index % 3 === 0 ? { opacity: 0, x: -50 } :
+    index % 3 === 1 ? { opacity: 0, y: 35 } :
+    { opacity: 0, x: 50 };
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 15 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-50px' }}
-      transition={{ duration: 0.4, delay: Math.min(index * 0.05, 0.3) }}
-      className="rounded-2xl bg-white border border-sand-border overflow-hidden shadow-xs hover:border-deep-green/40 transition-all duration-300 flex flex-col justify-between group"
+      initial={initialMotion}
+      whileInView={{ opacity: 1, x: 0, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.6, ease: 'easeOut', delay: (index % 3) * 0.08 }}
+      className="relative rounded-none bg-white border border-[#DCE8E0] hover:border-[#019935] overflow-hidden shadow-[0_4px_16px_-2px_rgba(0,0,0,0.04)] hover:shadow-[0_16px_36px_-6px_rgba(1,153,53,0.18)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-pointer"
     >
+      {/* Top Green Accent Bar on hover */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-[#019935] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left z-20" />
+
       {/* Editorial Header - Natural Exposure */}
       <div className="relative h-44 overflow-hidden">
         <img 
@@ -70,10 +78,10 @@ export default function SectorCard({ sector, index = 0 }) {
         
         {/* Top Badges */}
         <div className="absolute top-3.5 left-4 right-4 flex items-center justify-between">
-          <span className="text-[11px] font-mono font-bold tracking-widest text-forest-dark bg-white/95 px-3 py-0.5 rounded-full shadow-xs">
+          <span className="text-[11px] font-mono font-bold tracking-widest text-[#019935] bg-white px-2.5 py-1 rounded-none border border-[#CDE8D5] shadow-xs uppercase">
             SECTOR {sector.number}
           </span>
-          <div className="w-8 h-8 rounded-full bg-black/40 backdrop-blur-md text-white flex items-center justify-center">
+          <div className="w-8 h-8 rounded-none bg-black/50 backdrop-blur-md text-white border border-white/20 flex items-center justify-center">
             <Icon className="w-4 h-4" />
           </div>
         </div>
@@ -88,17 +96,17 @@ export default function SectorCard({ sector, index = 0 }) {
 
       <div className="p-6 space-y-4 flex-grow flex flex-col justify-between">
         <div className="space-y-3.5">
-          <p className="text-xs sm:text-sm text-charcoal/85 leading-relaxed font-sans font-normal">
+          <p className="text-xs sm:text-[13px] text-[#4E5E54] leading-relaxed font-sans font-normal">
             {sector.summary}
           </p>
 
           {/* Sector-Specific Considerations */}
-          <div className="p-3 rounded-xl bg-[#F4F6F4] border border-sand-border/70 space-y-1.5 text-charcoal font-sans">
-            <div className="flex items-center gap-1.5 font-bold text-forest text-[11px] uppercase tracking-wider">
-              <AlertCircle className="w-3.5 h-3.5 text-deep-green flex-shrink-0" />
+          <div className="p-3.5 rounded-none bg-[#F4FAF5] border border-[#DCE8E0] hover:border-[#019935] space-y-1.5 text-[#16221A] font-sans transition-colors">
+            <div className="flex items-center gap-1.5 font-mono font-bold text-[#019935] text-[11px] uppercase tracking-wider">
+              <AlertCircle className="w-3.5 h-3.5 text-[#019935] flex-shrink-0" />
               <span>Key Considerations</span>
             </div>
-            <p className="text-xs text-charcoal/80 leading-relaxed font-normal">
+            <p className="text-xs text-[#4E5E54] leading-relaxed font-normal">
               {sector.challenges}
             </p>
           </div>
@@ -109,7 +117,7 @@ export default function SectorCard({ sector, index = 0 }) {
               {sector.services.map((srv, sIdx) => (
                 <span 
                   key={sIdx}
-                  className="px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-white text-forest border border-sand-border"
+                  className="px-2.5 py-0.5 rounded-none text-[11px] font-mono font-medium bg-white text-[#16221A] border border-[#DCE8E0]"
                 >
                   {srv}
                 </span>
@@ -119,10 +127,10 @@ export default function SectorCard({ sector, index = 0 }) {
         </div>
 
         {/* Explore Service Link */}
-        <div className="pt-3 border-t border-sand-border/70">
+        <div className="pt-3.5 border-t border-[#EEF4F0]">
           <Link
             to={getLocalizedPath(sector.serviceSlug ? `/services/${sector.serviceSlug}` : '/services')}
-            className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-deep-green hover:text-forest transition-colors group/link"
+            className="inline-flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-[#019935] hover:text-[#017A2A] transition-colors group/link"
           >
             <span>Explore Relevant Advisory</span>
             <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />

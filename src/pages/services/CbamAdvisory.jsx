@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import MetaTags from '../../components/seo/MetaTags';
+import ScrollProgressBar from '../../components/common/ScrollProgressBar';
 import ServiceHero from '../../components/services/ServiceHero';
 import ServiceIntroduction from '../../components/services/ServiceIntroduction';
 import ServiceScope from '../../components/services/ServiceScope';
@@ -47,9 +48,9 @@ export default function CbamAdvisory() {
         {sideCardData.desc || 'Targeting covered sectors including cement, iron & steel, aluminium, fertilisers, electricity, and hydrogen, supporting exporters across supply chains.'}
       </p>
       {sideCardData.mandateTitle && (
-        <div className="p-3.5 rounded-2xl bg-white border border-sand-border text-xs sm:text-[13px] text-charcoal space-y-1.5 font-sans">
+        <div className="p-3.5 rounded-none bg-white border border-[#DCE8E0] text-xs sm:text-[13px] text-charcoal space-y-1.5 font-sans shadow-2xs">
           <div className="flex items-center gap-1.5 font-semibold text-forest text-xs sm:text-sm">
-            <AlertCircle className="w-4 h-4 text-gold-dark" />
+            <AlertCircle className="w-4 h-4 text-[#019935]" />
             <span>{sideCardData.mandateTitle}</span>
           </div>
           <p className="text-xs sm:text-[13px] text-charcoal-muted leading-relaxed">
@@ -72,6 +73,7 @@ export default function CbamAdvisory() {
 
   return (
     <>
+      <ScrollProgressBar />
       <MetaTags
         title={t('meta.cbam.title', 'CBAM Advisory & EU Carbon Border Adjustment Mechanism Readiness')}
         description={t('meta.cbam.description', 'Prepare for CBAM-related requirements with product screening, embedded emissions data, supplier engagement, reporting processes and carbon-cost risk assessment.')}
@@ -117,13 +119,7 @@ export default function CbamAdvisory() {
       />
 
       <RelatedServices currentKey="cbam" />
-
-      <ServiceCTA
-        heading={serviceData.ctaHeading}
-        text={serviceData.ctaText}
-        primaryBtnText={serviceData.ctaBtn}
-        disclaimer={serviceData.disclaimer}
-      />
+      <ServiceCTA />
     </>
   );
 }

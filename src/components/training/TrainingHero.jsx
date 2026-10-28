@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { ChevronRight, ShieldCheck, GraduationCap, ArrowRight } from 'lucide-react';
+import { GraduationCap, ArrowRight } from 'lucide-react';
 import { useLocale } from '../../hooks/useLocale';
 import trainingEcoVideo from '../../assets/training-eco.mp4';
 
@@ -10,7 +10,7 @@ export default function TrainingHero() {
   const { getLocalizedPath } = useLocale();
 
   return (
-    <section className="relative min-h-[50vh] sm:min-h-[65vh] lg:min-h-[70vh] flex flex-col justify-center overflow-hidden bg-neutral-900 text-white pt-20 pb-8 sm:pt-28 sm:pb-16">
+    <section className="relative min-h-[48vh] sm:min-h-[55vh] lg:min-h-[60vh] flex flex-col justify-center items-center overflow-hidden bg-neutral-900 text-white pt-24 pb-16 sm:pt-32 sm:pb-20 text-center">
       {/* Background Photography & Video with Clean Neutral Lighting */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
@@ -26,74 +26,47 @@ export default function TrainingHero() {
         </video>
         <img
           alt="Executive training, technical capacity building and institutional climate education"
-          className="absolute inset-0 w-full h-full object-cover object-right sm:object-center opacity-85 scale-105 -z-10"
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-85 scale-105 -z-10"
           loading="eager"
         />
         {/* Neutral contrast gradient overlays */}
-        <div className="absolute inset-0 bg-black/60 sm:hidden pointer-events-none" />
-        <div className="hidden sm:block absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/20 pointer-events-none" />
-        <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/30 pointer-events-none" />
+        <div className="absolute inset-0 bg-black/60 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/60 pointer-events-none" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 sm:space-y-8">
-
-        {/* Breadcrumb Navigation */}
-        <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-sans text-sand-surface/75">
-          <Link
-            to={getLocalizedPath('/')}
-            className="hover:text-gold transition-colors focus:outline-none focus:underline"
-          >
-            {t('training.hero.breadcrumbHome', 'Home')}
-          </Link>
-          <ChevronRight className="w-3.5 h-3.5 text-sand-surface/40" />
-          <span className="text-gold font-medium" aria-current="page">
-            {t('training.hero.breadcrumbCurrent', 'Training & Capacity Building')}
-          </span>
-        </nav>
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
 
         {/* Content Block with Elegant Motion Entrance */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="max-w-3xl space-y-3 sm:space-y-6"
+          className="space-y-4 sm:space-y-5 flex flex-col items-center text-center"
         >
-          <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-semibold tracking-widest uppercase bg-white/10 text-gold-light border border-white/20 backdrop-blur-md">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none text-[11px] sm:text-xs font-semibold tracking-widest uppercase bg-white/10 text-gold-light border border-white/20 backdrop-blur-md">
             <GraduationCap className="w-3.5 h-3.5 text-gold" />
             <span>{t('training.hero.eyebrow', 'Institutional Capability')}</span>
           </div>
 
-          <h1 className="font-display font-bold text-2xl sm:text-5xl lg:text-6xl xl:text-7xl text-white tracking-tight leading-[1.12]">
+          <h1 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white tracking-tight leading-tight max-w-3xl">
             {t('training.hero.title', 'Training & Capacity Building')}
           </h1>
 
-          <p className="text-sm sm:text-lg text-sand-surface/90 leading-relaxed font-sans font-normal">
+          <p className="text-sm sm:text-base md:text-lg text-sand-surface/90 leading-relaxed font-sans font-normal max-w-2xl">
             {t('training.hero.leadShort', 'Executive and technical capacity building on carbon markets, CBAM, and climate finance.')}
           </p>
 
-          <div className="pt-2">
+          <div className="pt-2 flex justify-center">
             <Link
               to={getLocalizedPath('/contact?service=training')}
               state={{ serviceInterest: 'Training and Capacity Building' }}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gold hover:bg-gold-light text-forest-dark font-semibold text-xs sm:text-sm tracking-wide uppercase transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-gold"
+              className="inline-flex items-center justify-center gap-2.5 px-7 sm:px-9 py-3.5 sm:py-4 rounded-none bg-gold hover:bg-gold-light text-forest-dark font-bold text-xs sm:text-sm tracking-wider uppercase transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-gold"
             >
               <span>{t('training.hero.primaryBtn', 'Discuss a Training Programme')}</span>
               <ArrowRight className="w-4 h-4 text-forest-dark" />
             </Link>
           </div>
         </motion.div>
-
-        {/* Advisory Quality Notice - Hidden on mobile */}
-        <div className="hidden sm:flex pt-6 border-t border-white/10 flex-wrap items-center gap-6 text-xs text-sand-surface/70 font-sans">
-          <div className="flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-gold flex-shrink-0" />
-            <span>Tailored institutional scope · Zero pre-set course fees or rigid packages</span>
-          </div>
-          <span className="inline text-white/20">|</span>
-          <span>Interactive workshops & executive briefings</span>
-          <span className="hidden sm:inline text-white/20">|</span>
-          <span>Zero unverified completion claims</span>
-        </div>
 
       </div>
     </section>

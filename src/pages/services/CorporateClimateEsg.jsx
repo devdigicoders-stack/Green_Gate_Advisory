@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import MetaTags from '../../components/seo/MetaTags';
+import ScrollProgressBar from '../../components/common/ScrollProgressBar';
 import ServiceHero from '../../components/services/ServiceHero';
 import ServiceIntroduction from '../../components/services/ServiceIntroduction';
 import ServiceScope from '../../components/services/ServiceScope';
@@ -64,6 +65,7 @@ export default function CorporateClimateEsg() {
 
   return (
     <>
+      <ScrollProgressBar />
       <MetaTags
         title={t('meta.corporateClimate.title', 'Corporate Climate Advisory, GHG Accounting & ESG')}
         description={t('meta.corporateClimate.description', 'Understand corporate emissions and climate risks with support for Scope 1, 2 and 3 inventories, decarbonisation roadmaps, transition planning and ESG reporting readiness.')}
@@ -108,13 +110,7 @@ export default function CorporateClimateEsg() {
       />
 
       <RelatedServices currentKey="corporateClimate" />
-
-      <ServiceCTA
-        heading={serviceData.ctaHeading}
-        text={serviceData.ctaText}
-        primaryBtnText={serviceData.ctaBtn}
-        disclaimer={serviceData.disclaimer}
-      />
+      <ServiceCTA />
     </>
   );
 }

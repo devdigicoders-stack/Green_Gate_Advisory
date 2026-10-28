@@ -638,90 +638,97 @@ export default function Header() {
             aria-hidden="true"
           />
 
-          {/* Drawer Panel */}
+          {/* Drawer Panel - Left Slide-In & 100% Full Viewport Height */}
           <div 
-            className="fixed top-0 right-0 bottom-0 w-full max-w-[340px] xs:max-w-sm bg-white shadow-2xl p-5 sm:p-6 flex flex-col justify-between overflow-y-auto animate-in slide-in-from-right duration-300"
+            className="fixed inset-y-0 left-0 h-full h-[100dvh] min-h-screen w-full max-w-[340px] xs:max-w-sm bg-white shadow-2xl p-5 sm:p-6 flex flex-col justify-between overflow-y-auto animate-in slide-in-from-left duration-300 border-r border-[#DCE7DF] z-50 rounded-none"
           >
+            {/* Top green accent strip */}
+            <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#019935] via-[#02B840] to-[#019935]" />
+
             <div>
               {/* Drawer Top Header */}
-              <div className="flex items-center justify-between pb-4 border-b border-sand-border">
+              <div className="flex items-center justify-between pb-4 border-b border-[#E5EFE8]">
                 <div className="flex items-center gap-2">
                   <Logo variant="default" imgClassName="h-7 w-auto" />
                 </div>
                 <button
                   type="button"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="p-2 rounded-xl text-charcoal hover:bg-forest/5 active:bg-forest/10 transition-colors focus:outline-none focus:ring-2 focus:ring-forest"
+                  className="p-2 rounded-none text-[#16221A] hover:bg-[#E8F6ED] hover:text-[#019935] transition-colors focus:outline-none border border-transparent hover:border-[#CDE8D5]"
                   aria-label="Close navigation menu"
                 >
-                  <X className="w-5 h-5 text-forest" />
+                  <X className="w-5 h-5" />
                 </button>
               </div>
 
-              {/* Mobile Navigation Links */}
-              <div className="py-4 space-y-2">
+              {/* Mobile Navigation Links - Unified, Clean & Architectural */}
+              <div className="py-2 font-sans">
                 {/* 1. Home */}
                 <Link
                   to={getLocalizedPath('/')}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-forest hover:bg-forest/5 font-bold text-xs uppercase tracking-wider transition-colors"
+                  className="flex items-center justify-between px-3.5 py-3 rounded-none text-[#16221A] hover:text-[#019935] hover:bg-[#F2F8F4] font-bold text-xs uppercase tracking-wider transition-colors border-b border-[#EEF4F0]"
                 >
                   <span>{t('navigation.home', 'Home')}</span>
                 </Link>
 
-                {/* 2. About Us (Right next to Home) */}
-                <div className="rounded-2xl border border-sand-border/80 overflow-hidden bg-sand-surface/40">
+                {/* 2. About Us (Accordion) */}
+                <div className="border-b border-[#EEF4F0]">
                   <button
                     type="button"
                     onClick={() => setMobileExpandedSection(prev => prev === 'about' ? null : 'about')}
-                    className="w-full flex items-center justify-between px-3.5 py-3 text-xs font-bold uppercase tracking-wider text-forest hover:bg-forest/5 transition-colors"
+                    className={`w-full flex items-center justify-between px-3.5 py-3 rounded-none text-xs font-bold uppercase tracking-wider transition-colors ${
+                      mobileExpandedSection === 'about' 
+                        ? 'text-[#019935] bg-[#F2F8F4]' 
+                        : 'text-[#16221A] hover:text-[#019935] hover:bg-[#F2F8F4]'
+                    }`}
                   >
                     <span>{t('navigation.about', 'About Us')}</span>
                     <ChevronDown 
-                      className={`w-4 h-4 text-forest transition-transform duration-200 ${
+                      className={`w-4 h-4 text-[#019935] transition-transform duration-200 ${
                         mobileExpandedSection === 'about' ? 'rotate-180' : ''
                       }`} 
                     />
                   </button>
 
                   {mobileExpandedSection === 'about' && (
-                    <div className="px-2.5 pb-2.5 space-y-1 pt-1 border-t border-sand-border/60 bg-white animate-in fade-in duration-150">
+                    <div className="pl-4 pr-2 py-2 space-y-1 bg-[#F9FCFA] border-l-2 border-[#019935] animate-in fade-in duration-150">
                       <Link 
                         to={`${getLocalizedPath('/about-us')}#who-we-are`} 
                         onClick={() => handleSectionClick('who-we-are', true)} 
-                        className="flex items-center gap-2.5 p-2 rounded-xl text-xs font-medium text-forest-dark hover:bg-forest/5"
+                        className="flex items-center gap-2.5 p-2 rounded-none text-xs font-medium text-[#2C3B33] hover:text-[#019935] hover:bg-white"
                       >
-                        <Building2 className="w-3.5 h-3.5 text-deep-green" />
+                        <Building2 className="w-3.5 h-3.5 text-[#019935]" />
                         <span>{t('navigation.menu.whoWeAre', 'About Green Gate Advisory')}</span>
                       </Link>
                       <Link 
                         to={`${getLocalizedPath('/about-us')}#purpose-mission`} 
                         onClick={() => handleSectionClick('purpose-mission', true)} 
-                        className="flex items-center gap-2.5 p-2 rounded-xl text-xs font-medium text-forest-dark hover:bg-forest/5"
+                        className="flex items-center gap-2.5 p-2 rounded-none text-xs font-medium text-[#2C3B33] hover:text-[#019935] hover:bg-white"
                       >
-                        <Target className="w-3.5 h-3.5 text-deep-green" />
+                        <Target className="w-3.5 h-3.5 text-[#019935]" />
                         <span>{t('navigation.menu.purpose', 'Purpose, Mission & Vision')}</span>
                       </Link>
                       <Link 
                         to={`${getLocalizedPath('/about-us')}#our-approach`} 
                         onClick={() => handleSectionClick('our-approach', true)} 
-                        className="flex items-center gap-2.5 p-2 rounded-xl text-xs font-medium text-forest-dark hover:bg-forest/5"
+                        className="flex items-center gap-2.5 p-2 rounded-none text-xs font-medium text-[#2C3B33] hover:text-[#019935] hover:bg-white"
                       >
-                        <Layers className="w-3.5 h-3.5 text-deep-green" />
+                        <Layers className="w-3.5 h-3.5 text-[#019935]" />
                         <span>{t('navigation.menu.approach', 'Our Approach & Methodology')}</span>
                       </Link>
                       <Link 
                         to={`${getLocalizedPath('/about-us')}#why-green-gate`} 
                         onClick={() => handleSectionClick('why-green-gate', true)} 
-                        className="flex items-center gap-2.5 p-2 rounded-xl text-xs font-medium text-forest-dark hover:bg-forest/5"
+                        className="flex items-center gap-2.5 p-2 rounded-none text-xs font-medium text-[#2C3B33] hover:text-[#019935] hover:bg-white"
                       >
-                        <Award className="w-3.5 h-3.5 text-deep-green" />
+                        <Award className="w-3.5 h-3.5 text-[#019935]" />
                         <span>{t('navigation.menu.whyUs', 'Why Green Gate Advisory')}</span>
                       </Link>
                       <Link
                         to={getLocalizedPath('/about-us')}
                         onClick={() => setMobileMenuOpen(false)}
-                        className="mt-2 pt-2 border-t border-sand-border/50 flex items-center justify-between px-2.5 py-1.5 text-xs font-bold text-deep-green hover:text-forest"
+                        className="mt-1 pt-1.5 border-t border-[#E5EFE8] flex items-center justify-between px-2 py-1 text-xs font-bold text-[#019935] hover:underline"
                       >
                         <span>{t('navigation.aboutUsOverview', 'View About Us Overview')}</span>
                         <ArrowRight className="w-3.5 h-3.5" />
@@ -730,28 +737,32 @@ export default function Header() {
                   )}
                 </div>
 
-                {/* 3. Our Services (Collapsible Accordion) */}
-                <div className="rounded-2xl border border-sand-border/80 overflow-hidden bg-sand-surface/40">
+                {/* 3. Our Services (Accordion) */}
+                <div className="border-b border-[#EEF4F0]">
                   <button
                     type="button"
                     onClick={() => setMobileExpandedSection(prev => prev === 'services' ? null : 'services')}
-                    className="w-full flex items-center justify-between px-3.5 py-3 text-xs font-bold uppercase tracking-wider text-forest hover:bg-forest/5 transition-colors"
+                    className={`w-full flex items-center justify-between px-3.5 py-3 rounded-none text-xs font-bold uppercase tracking-wider transition-colors ${
+                      mobileExpandedSection === 'services' 
+                        ? 'text-[#019935] bg-[#F2F8F4]' 
+                        : 'text-[#16221A] hover:text-[#019935] hover:bg-[#F2F8F4]'
+                    }`}
                   >
                     <span className="flex items-center gap-2">
                       <span>{t('navigation.ourServices', 'Our Services')}</span>
-                      <span className="px-1.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-forest/10 text-deep-green">
+                      <span className="px-2 py-0.5 rounded-none text-[10px] font-mono font-bold bg-[#E8F6ED] text-[#019935] border border-[#CDE8D5]">
                         7
                       </span>
                     </span>
                     <ChevronDown 
-                      className={`w-4 h-4 text-forest transition-transform duration-200 ${
+                      className={`w-4 h-4 text-[#019935] transition-transform duration-200 ${
                         mobileExpandedSection === 'services' ? 'rotate-180' : ''
                       }`} 
                     />
                   </button>
 
                   {mobileExpandedSection === 'services' && (
-                    <div className="px-2.5 pb-2.5 space-y-1 pt-1 border-t border-sand-border/60 bg-white animate-in fade-in duration-150">
+                    <div className="pl-4 pr-2 py-2 space-y-1 bg-[#F9FCFA] border-l-2 border-[#019935] animate-in fade-in duration-150">
                       {SERVICES_LIST.map((srv) => {
                         const IconComp = SERVICE_ICONS[srv.iconName] || Sparkles;
                         const title = t(`navigation.servicesMenu.${srv.key}`, SERVICE_TITLES[srv.key] || srv.slug);
@@ -760,9 +771,9 @@ export default function Header() {
                             key={srv.key}
                             to={getLocalizedPath(`/services/${srv.slug}`)}
                             onClick={() => setMobileMenuOpen(false)}
-                            className="flex items-center gap-2.5 p-2 rounded-xl text-xs font-medium text-forest-dark hover:bg-forest/5 hover:text-deep-green transition-colors"
+                            className="flex items-center gap-2.5 p-2 rounded-none text-xs font-medium text-[#2C3B33] hover:text-[#019935] hover:bg-white transition-colors"
                           >
-                            <div className="w-7 h-7 rounded-lg bg-forest/5 text-forest flex items-center justify-center flex-shrink-0">
+                            <div className="w-6 h-6 rounded-none bg-[#E8F6ED] text-[#019935] flex items-center justify-center flex-shrink-0">
                               <IconComp className="w-3.5 h-3.5" />
                             </div>
                             <span className="truncate">{title}</span>
@@ -773,7 +784,7 @@ export default function Header() {
                       <Link
                         to={getLocalizedPath('/services')}
                         onClick={() => setMobileMenuOpen(false)}
-                        className="mt-2 pt-2 border-t border-sand-border/50 flex items-center justify-between px-2.5 py-1.5 text-xs font-bold text-deep-green hover:text-forest"
+                        className="mt-1 pt-1.5 border-t border-[#E5EFE8] flex items-center justify-between px-2 py-1 text-xs font-bold text-[#019935] hover:underline"
                       >
                         <span>{t('navigation.menu.overview', 'View All 7 Services')}</span>
                         <ArrowRight className="w-3.5 h-3.5" />
@@ -786,7 +797,7 @@ export default function Header() {
                 <Link
                   to={getLocalizedPath('/sectors')}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-forest hover:bg-forest/5 font-bold text-xs uppercase tracking-wider transition-colors"
+                  className="flex items-center justify-between px-3.5 py-3 rounded-none text-[#16221A] hover:text-[#019935] hover:bg-[#F2F8F4] font-bold text-xs uppercase tracking-wider transition-colors border-b border-[#EEF4F0]"
                 >
                   <span>{t('navigation.sectors', 'Sectors')}</span>
                 </Link>
@@ -795,7 +806,7 @@ export default function Header() {
                 <Link
                   to={getLocalizedPath('/who-we-serve')}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-forest hover:bg-forest/5 font-bold text-xs uppercase tracking-wider transition-colors"
+                  className="flex items-center justify-between px-3.5 py-3 rounded-none text-[#16221A] hover:text-[#019935] hover:bg-[#F2F8F4] font-bold text-xs uppercase tracking-wider transition-colors border-b border-[#EEF4F0]"
                 >
                   <span>{t('navigation.whoWeServe', 'Who We Serve')}</span>
                 </Link>
@@ -804,17 +815,19 @@ export default function Header() {
                 <NavLink
                   to={getLocalizedPath('/training')}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center gap-3 px-3.5 py-3 rounded-2xl border border-sand-border/80 bg-white text-xs font-bold uppercase tracking-wider text-forest hover:bg-forest/5 transition-colors"
+                  className="flex items-center justify-between px-3.5 py-3 rounded-none text-[#16221A] hover:text-[#019935] hover:bg-[#F2F8F4] font-bold text-xs uppercase tracking-wider transition-colors border-b border-[#EEF4F0]"
                 >
-                  <Calendar className="w-4 h-4 text-deep-green" />
-                  <span>{t('navigation.training', 'Training & Workshops')}</span>
+                  <span className="flex items-center gap-2.5">
+                    <Calendar className="w-4 h-4 text-[#019935]" />
+                    <span>{t('navigation.training', 'Training & Workshops')}</span>
+                  </span>
                 </NavLink>
 
                 {/* 7. Contact */}
                 <Link
                   to={getLocalizedPath('/contact')}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-forest hover:bg-forest/5 font-bold text-xs uppercase tracking-wider transition-colors"
+                  className="flex items-center justify-between px-3.5 py-3 rounded-none text-[#16221A] hover:text-[#019935] hover:bg-[#F2F8F4] font-bold text-xs uppercase tracking-wider transition-colors border-b border-[#EEF4F0]"
                 >
                   <span>{t('navigation.contact', 'Contact')}</span>
                 </Link>
@@ -822,19 +835,19 @@ export default function Header() {
             </div>
 
             {/* Drawer Bottom Actions: Consultation CTA & Dual Flag Switcher */}
-            <div className="pt-4 border-t border-sand-border space-y-3.5">
+            <div className="pt-4 border-t border-[#E5EFE8] space-y-3.5">
               <Link
                 to={getLocalizedPath('/contact')}
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full btn-primary rounded-full justify-center py-3 text-xs uppercase tracking-wider font-display flex items-center gap-2 shadow-md"
+                className="w-full inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-none bg-[#019935] hover:bg-[#02B840] text-white font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all group focus:outline-none"
               >
                 <span>{t('navigation.requestConsultation', 'Request Consultation')}</span>
-                <ArrowRight className="w-4 h-4 text-forest-dark" />
+                <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
               </Link>
               
-              {/* Dual Flag Language Toggle - Ultra Thumb-Friendly */}
+              {/* Dual Flag Language Toggle */}
               <div className="space-y-1.5">
-                <span className="text-[11px] font-mono uppercase tracking-wider font-semibold text-charcoal-muted block text-center">
+                <span className="text-[10px] font-mono uppercase tracking-widest font-bold text-[#677A70] block text-center">
                   {t('common.languageLabel', 'Language / Idioma')}
                 </span>
                 <div className="grid grid-cols-2 gap-2">
@@ -844,13 +857,13 @@ export default function Header() {
                       switchLanguage('en');
                       setMobileMenuOpen(false);
                     }}
-                    className={`flex items-center justify-center gap-2 py-2 px-3 rounded-xl text-xs font-bold border transition-colors ${
+                    className={`flex items-center justify-center gap-2 py-2 px-3 rounded-none text-xs font-bold border transition-colors ${
                       locale === 'en'
-                        ? 'bg-forest text-gold border-forest shadow-xs'
-                        : 'bg-sand-surface text-charcoal border-sand-border hover:bg-sand'
+                        ? 'bg-[#019935] text-white border-[#019935] shadow-xs'
+                        : 'bg-white text-[#2C3B33] border-[#DCE5DF] hover:bg-[#F2F8F4] hover:border-[#019935]'
                     }`}
                   >
-                    <UkFlag className="w-4 h-3 rounded-xs flex-shrink-0" />
+                    <UkFlag className="w-4 h-3 rounded-none flex-shrink-0" />
                     <span>English</span>
                   </button>
 
@@ -860,13 +873,13 @@ export default function Header() {
                       switchLanguage('es');
                       setMobileMenuOpen(false);
                     }}
-                    className={`flex items-center justify-center gap-2 py-2 px-3 rounded-xl text-xs font-bold border transition-colors ${
+                    className={`flex items-center justify-center gap-2 py-2 px-3 rounded-none text-xs font-bold border transition-colors ${
                       locale === 'es'
-                        ? 'bg-forest text-gold border-forest shadow-xs'
-                        : 'bg-sand-surface text-charcoal border-sand-border hover:bg-sand'
+                        ? 'bg-[#019935] text-white border-[#019935] shadow-xs'
+                        : 'bg-white text-[#2C3B33] border-[#DCE5DF] hover:bg-[#F2F8F4] hover:border-[#019935]'
                     }`}
                   >
-                    <SpainFlag className="w-4 h-3 rounded-xs flex-shrink-0" />
+                    <SpainFlag className="w-4 h-3 rounded-none flex-shrink-0" />
                     <span>Español</span>
                   </button>
                 </div>

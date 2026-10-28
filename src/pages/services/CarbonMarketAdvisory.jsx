@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import MetaTags from '../../components/seo/MetaTags';
+import ScrollProgressBar from '../../components/common/ScrollProgressBar';
 import ServiceHero from '../../components/services/ServiceHero';
 import ServiceIntroduction from '../../components/services/ServiceIntroduction';
 import ServiceScope from '../../components/services/ServiceScope';
@@ -61,6 +62,7 @@ export default function CarbonMarketAdvisory() {
 
   return (
     <>
+      <ScrollProgressBar />
       <MetaTags
         title={t('meta.carbonMarket.title', 'Carbon Market Advisory & Carbon Credit Project Development')}
         description={t('meta.carbonMarket.description', 'Assess carbon project opportunities and navigate feasibility, methodology selection, project documentation, MRV, validation, registration and carbon credit commercialisation.')}
@@ -106,13 +108,7 @@ export default function CarbonMarketAdvisory() {
       />
 
       <RelatedServices currentKey="carbonMarket" />
-
-      <ServiceCTA
-        heading={serviceData.ctaHeading}
-        text={serviceData.ctaText}
-        primaryBtnText={serviceData.ctaBtn}
-        disclaimer={serviceData.disclaimer}
-      />
+      <ServiceCTA />
     </>
   );
 }

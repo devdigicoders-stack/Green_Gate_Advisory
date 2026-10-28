@@ -108,23 +108,25 @@
   }
 }
 
-/* Custom subtle scrollbar */
+/* Custom animated brand scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 9px;
+  height: 9px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #F4F7F1;
+  background: #EFF5F0;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #C4D1BF;
-  border-radius: 4px;
+  background: linear-gradient(180deg, #019935 0%, #016E26 100%);
+  border-radius: 9999px;
+  border: 2px solid #EFF5F0;
+  transition: all 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #9BB095;
+  background: linear-gradient(180deg, #02B840 0%, #019935 100%);
 }
 
 /* Hide scrollbar utility for clean horizontal scrollable tabs and filter bars */
@@ -139,4 +141,37 @@
 .scrollbar-none {
   -ms-overflow-style: none !important; /* IE and Edge */
   scrollbar-width: none !important; /* Firefox */
+}
+
+/* 3D 180 Degree Flip Card */
+.perspective-1200 {
+  perspective: 1200px;
+}
+
+.flip-card {
+  perspective: 1200px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: translateY(-8px) rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
 }

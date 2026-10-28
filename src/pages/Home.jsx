@@ -1,12 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import MetaTags from '../components/seo/MetaTags';
 import HeroSection from '../components/home/HeroSection';
-import AdvisoryImpactCounter from '../components/home/AdvisoryImpactCounter';
 import WhatWeDo from '../components/home/WhatWeDo';
 import CarbonMarketProcess from '../components/home/CarbonMarketProcess';
 import WhyChooseUs from '../components/home/WhyChooseUs';
-import ExpertPoolSection from '../components/home/ExpertPoolSection';
 import HomeCTA from '../components/home/HomeCTA';
+import OurServices from '../components/home/OurServices';
 import { useLocale } from '../hooks/useLocale';
 
 export default function Home() {
@@ -46,8 +45,8 @@ export default function Home() {
       {/* 2. ABOUT US / WHAT WE DO (Positioned directly after Home) */}
       <WhatWeDo />
 
-      {/* 3. ADVISORY IMPACT COUNTER (Fiduciary & Scale Metrics) */}
-      <AdvisoryImpactCounter />
+      {/* 3. CORE ADVISORY SERVICES (Slow Motion Animated Cards) */}
+      <OurServices />
 
       {/* 4. END-TO-END CARBON MARKET SUPPORT */}
       <CarbonMarketProcess />
@@ -55,10 +54,7 @@ export default function Home() {
       {/* 5. WHY GREEN GATE ADVISORY */}
       <WhyChooseUs />
 
-      {/* 10. EXPERTS & CONSULTANTS RECRUITMENT ROSTER */}
-      <ExpertPoolSection />
-
-      {/* 11. FINAL CONSULTATION CTA */}
+      {/* 6. FINAL CONSULTATION CTA */}
       <HomeCTA />
     </>
   );

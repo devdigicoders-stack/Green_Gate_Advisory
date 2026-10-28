@@ -5,7 +5,7 @@ import AudienceStakeholders from '../components/audience/AudienceStakeholders';
 import AudienceCategories from '../components/audience/AudienceCategories';
 import TailoredAdvisory from '../components/audience/TailoredAdvisory';
 import AudienceSolutions from '../components/audience/AudienceSolutions';
-import AudienceCTA from '../components/audience/AudienceCTA';
+import HomeCTA from '../components/home/HomeCTA';
 import { useLocale } from '../hooks/useLocale';
 
 export default function WhoWeServe() {
@@ -67,8 +67,8 @@ export default function WhoWeServe() {
         {/* Section 5: Relevant Solutions (6 Solutions Grid) */}
         <AudienceSolutions />
 
-        {/* Section 6: Consultation CTA */}
-        <AudienceCTA />
+        {/* Section 6: Advisory Engagement CTA */}
+        <HomeCTA />
       </div>
     </>
   );

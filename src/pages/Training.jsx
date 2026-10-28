@@ -5,7 +5,7 @@ import TrainingIntro from '../components/training/TrainingIntro';
 import TrainingTopics from '../components/training/TrainingTopics';
 import TrainingAudience from '../components/training/TrainingAudience';
 import TrainingApproach from '../components/training/TrainingApproach';
-import TrainingCTA from '../components/training/TrainingCTA';
+import HomeCTA from '../components/home/HomeCTA';
 import { useLocale } from '../hooks/useLocale';
 
 export default function Training() {
@@ -67,8 +67,8 @@ export default function Training() {
         {/* Section 5: Tailored Training Approach (6 Planning Steps) */}
         <TrainingApproach />
 
-        {/* Section 6: Training Enquiry CTA */}
-        <TrainingCTA />
+        {/* Section 6: Advisory Engagement CTA */}
+        <HomeCTA />
       </div>
     </>
   );

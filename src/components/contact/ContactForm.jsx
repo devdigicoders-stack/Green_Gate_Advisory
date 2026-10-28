@@ -222,10 +222,18 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact-form-section" className="py-14 sm:py-20 bg-sage/30 border-b border-sand-border/70">
+    <section id="contact-form-section" className="py-12 sm:py-18 lg:py-20 bg-sage/30 border-b border-sand-border/70 overflow-hidden">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="rounded-3xl bg-white border border-sand-border/90 p-8 sm:p-14 shadow-premium">
+        <motion.div
+          initial={{ opacity: 0, y: 45 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+          className="relative rounded-none bg-white border border-sand-border p-6 sm:p-10 lg:p-12 shadow-xl overflow-hidden"
+        >
+          {/* Top Brand Accent Line */}
+          <div className="absolute top-0 left-0 right-0 h-1.5 bg-[#019935]" />
           
           <AnimatePresence mode="wait">
             {submissionSuccess ? (
@@ -238,7 +246,7 @@ export default function ContactForm() {
                 transition={{ duration: 0.4 }}
                 className="text-center py-8 space-y-6"
               >
-                <div className="w-16 h-16 rounded-full bg-deep-green/10 text-deep-green mx-auto flex items-center justify-center">
+                <div className="w-16 h-16 rounded-none bg-[#019935]/10 text-[#019935] mx-auto flex items-center justify-center">
                   <CheckCircle2 className="w-10 h-10" />
                 </div>
 
@@ -258,7 +266,7 @@ export default function ContactForm() {
                   <button
                     type="button"
                     onClick={handleReset}
-                    className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-forest hover:bg-forest-dark text-white font-sans font-bold text-xs tracking-wider uppercase transition-all shadow-sm hover:shadow inline-flex items-center justify-center gap-2"
+                    className="w-full sm:w-auto px-6 py-3.5 rounded-none bg-[#019935] hover:bg-[#02B840] text-white font-sans font-bold text-xs tracking-wider uppercase transition-all shadow-sm hover:shadow inline-flex items-center justify-center gap-2"
                   >
                     <RefreshCw className="w-4 h-4 text-gold" />
                     <span>{t('contact.form.feedback.submitAnother', 'Submit Another Enquiry')}</span>
@@ -266,7 +274,7 @@ export default function ContactForm() {
 
                   <Link
                     to={getLocalizedPath('/services')}
-                    className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-sage/60 hover:bg-forest/5 text-forest font-sans font-semibold text-xs tracking-wider uppercase border border-sand-border transition-all inline-flex items-center justify-center"
+                    className="w-full sm:w-auto px-6 py-3.5 rounded-none bg-sage/60 hover:bg-forest/5 text-forest font-sans font-semibold text-xs tracking-wider uppercase border border-sand-border transition-all inline-flex items-center justify-center"
                   >
                     <span>{t('navigation.services', 'Explore Services')}</span>
                   </Link>
@@ -284,15 +292,18 @@ export default function ContactForm() {
                 className="space-y-8"
               >
                 {/* Form Header & Objective Selector */}
-                <div className="space-y-4 pb-6 border-b border-sand-border/60">
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div className="space-y-4 pb-6 border-b border-sand-border/70">
+                  <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
                     <div>
-                      <span className="text-xs font-mono font-bold tracking-widest text-gold-dark uppercase block">
-                        {formData.enquiryType === 'expert' 
-                          ? 'Consultant & Expert Pool Registration' 
-                          : t('contact.form.badge', 'Enquiry Submission')}
-                      </span>
-                      <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-forest tracking-tight">
+                      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none text-[11px] font-bold tracking-widest uppercase bg-forest/5 text-forest border border-forest/15">
+                        <span className="w-1.5 h-1.5 rounded-none bg-[#019935]"></span>
+                        <span>
+                          {formData.enquiryType === 'expert' 
+                            ? 'Consultant & Expert Pool Registration' 
+                            : t('contact.form.badge', 'Enquiry Submission')}
+                        </span>
+                      </div>
+                      <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-forest tracking-tight pt-2">
                         {formData.enquiryType === 'expert'
                           ? 'Register with Our Senior Consultant Roster'
                           : t('contact.form.heading', 'Submit Your Advisory Enquiry')}
@@ -300,14 +311,14 @@ export default function ContactForm() {
                     </div>
 
                     {/* Enquiry Type Selector Tabs */}
-                    <div className="inline-flex rounded-xl p-1 bg-sage/60 border border-sand-border/80 self-start sm:self-center flex-wrap gap-1">
+                    <div className="inline-flex rounded-none p-1 bg-sage/50 border border-sand-border self-start lg:self-center flex-wrap gap-1 shadow-xs">
                       <button
                         type="button"
                         onClick={() => setFormData(p => ({ ...p, enquiryType: 'consultation' }))}
-                        className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                        className={`px-3.5 py-2 rounded-none text-xs font-bold uppercase tracking-wider transition-all duration-200 ${
                           formData.enquiryType === 'consultation'
-                            ? 'bg-forest text-white shadow-xs'
-                            : 'text-charcoal-muted hover:text-forest'
+                            ? 'bg-[#019935] text-white shadow-xs'
+                            : 'text-charcoal-muted hover:text-forest hover:bg-white/70'
                         }`}
                       >
                         {t('contact.form.enquiryType.consultation', 'Consultation')}
@@ -315,10 +326,10 @@ export default function ContactForm() {
                       <button
                         type="button"
                         onClick={() => setFormData(p => ({ ...p, enquiryType: 'proposal' }))}
-                        className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                        className={`px-3.5 py-2 rounded-none text-xs font-bold uppercase tracking-wider transition-all duration-200 ${
                           formData.enquiryType === 'proposal'
-                            ? 'bg-forest text-white shadow-xs'
-                            : 'text-charcoal-muted hover:text-forest'
+                            ? 'bg-[#019935] text-white shadow-xs'
+                            : 'text-charcoal-muted hover:text-forest hover:bg-white/70'
                         }`}
                       >
                         {t('contact.form.enquiryType.proposal', 'Proposal Request')}
@@ -326,10 +337,10 @@ export default function ContactForm() {
                       <button
                         type="button"
                         onClick={() => setFormData(p => ({ ...p, enquiryType: 'expert' }))}
-                        className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                        className={`px-3.5 py-2 rounded-none text-xs font-bold uppercase tracking-wider transition-all duration-200 ${
                           formData.enquiryType === 'expert'
-                            ? 'bg-forest text-white shadow-xs'
-                            : 'text-charcoal-muted hover:text-forest'
+                            ? 'bg-[#019935] text-white shadow-xs'
+                            : 'text-charcoal-muted hover:text-forest hover:bg-white/70'
                         }`}
                       >
                         Join Expert Pool
@@ -346,7 +357,7 @@ export default function ContactForm() {
 
                 {/* Server Error Notification Banner */}
                 {serverError && (
-                  <div className="p-4 rounded-2xl bg-red-50 border border-red-200 text-red-800 text-xs sm:text-sm flex items-start gap-3">
+                  <div className="p-4 rounded-none bg-red-50 border border-red-200 text-red-800 text-xs sm:text-sm flex items-start gap-3">
                     <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
                     <div className="space-y-1">
                       <strong className="block font-semibold">
@@ -372,12 +383,12 @@ export default function ContactForm() {
                 </div>
 
                 {/* Form Fields Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
                   
                   {/* Full Name */}
                   <div className="space-y-1.5">
-                    <label htmlFor="fullName" className="block text-xs font-bold uppercase tracking-wider text-forest font-sans">
-                      {t('contact.form.fields.fullName.label', 'Full Name')} <span className="text-red-500">*</span>
+                    <label htmlFor="fullName" className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-forest font-sans">
+                      {t('contact.form.fields.fullName.label', 'Full Name')} <span className="text-red-500 font-bold">*</span>
                     </label>
                     <input
                       type="text"
@@ -388,8 +399,8 @@ export default function ContactForm() {
                       placeholder={t('contact.form.fields.fullName.placeholder', 'Enter your full name')}
                       aria-required="true"
                       aria-invalid={Boolean(errors.fullName)}
-                      className={`w-full px-4 py-3 rounded-xl border text-sm text-charcoal bg-white font-sans transition-colors focus:outline-none focus:ring-2 focus:ring-forest/20 ${
-                        errors.fullName ? 'border-red-400 bg-red-50/20' : 'border-sand-border focus:border-deep-green'
+                      className={`w-full px-4 py-3 sm:py-3.5 rounded-none border text-sm text-charcoal bg-white font-sans transition-all duration-200 focus:outline-none focus:ring-1 focus:ring-[#019935] ${
+                        errors.fullName ? 'border-red-400 bg-red-50/20 focus:border-red-500' : 'border-sand-border focus:border-[#019935]'
                       }`}
                     />
                     {errors.fullName && (
@@ -399,7 +410,7 @@ export default function ContactForm() {
 
                   {/* Organisation */}
                   <div className="space-y-1.5">
-                    <label htmlFor="organisation" className="block text-xs font-bold uppercase tracking-wider text-forest font-sans">
+                    <label htmlFor="organisation" className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-forest font-sans">
                       {t('contact.form.fields.organisation.label', 'Organisation / Company')}
                     </label>
                     <input
@@ -409,14 +420,14 @@ export default function ContactForm() {
                       value={formData.organisation}
                       onChange={handleChange}
                       placeholder={t('contact.form.fields.organisation.placeholder', 'Your organisation name')}
-                      className="w-full px-4 py-3 rounded-xl border border-sand-border focus:border-deep-green text-sm text-charcoal bg-white font-sans transition-colors focus:outline-none focus:ring-2 focus:ring-forest/20"
+                      className="w-full px-4 py-3 sm:py-3.5 rounded-none border border-sand-border focus:border-[#019935] text-sm text-charcoal bg-white font-sans transition-all duration-200 focus:outline-none focus:ring-1 focus:ring-[#019935]"
                     />
                   </div>
 
                   {/* Work Email */}
                   <div className="space-y-1.5">
-                    <label htmlFor="workEmail" className="block text-xs font-bold uppercase tracking-wider text-forest font-sans">
-                      {t('contact.form.fields.workEmail.label', 'Work Email')} <span className="text-red-500">*</span>
+                    <label htmlFor="workEmail" className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-forest font-sans">
+                      {t('contact.form.fields.workEmail.label', 'Work Email')} <span className="text-red-500 font-bold">*</span>
                     </label>
                     <input
                       type="email"
@@ -427,8 +438,8 @@ export default function ContactForm() {
                       placeholder={t('contact.form.fields.workEmail.placeholder', 'name@organisation.com')}
                       aria-required="true"
                       aria-invalid={Boolean(errors.workEmail)}
-                      className={`w-full px-4 py-3 rounded-xl border text-sm text-charcoal bg-white font-sans transition-colors focus:outline-none focus:ring-2 focus:ring-forest/20 ${
-                        errors.workEmail ? 'border-red-400 bg-red-50/20' : 'border-sand-border focus:border-deep-green'
+                      className={`w-full px-4 py-3 sm:py-3.5 rounded-none border text-sm text-charcoal bg-white font-sans transition-all duration-200 focus:outline-none focus:ring-1 focus:ring-[#019935] ${
+                        errors.workEmail ? 'border-red-400 bg-red-50/20 focus:border-red-500' : 'border-sand-border focus:border-[#019935]'
                       }`}
                     />
                     {errors.workEmail && (
@@ -438,8 +449,8 @@ export default function ContactForm() {
 
                   {/* Country / Region */}
                   <div className="space-y-1.5">
-                    <label htmlFor="countryOrRegion" className="block text-xs font-bold uppercase tracking-wider text-forest font-sans">
-                      {t('contact.form.fields.countryOrRegion.label', 'Country / Region')} <span className="text-red-500">*</span>
+                    <label htmlFor="countryOrRegion" className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-forest font-sans">
+                      {t('contact.form.fields.countryOrRegion.label', 'Country / Region')} <span className="text-red-500 font-bold">*</span>
                     </label>
                     <input
                       type="text"
@@ -447,11 +458,11 @@ export default function ContactForm() {
                       name="countryOrRegion"
                       value={formData.countryOrRegion}
                       onChange={handleChange}
-                      placeholder={t('contact.form.fields.countryOrRegion.placeholder', 'e.g., Spain, Germany, Colombia')}
+                      placeholder={t('contact.form.fields.countryOrRegion.placeholder', 'e.g., Spain, Germany, United Kingdom, Colombia')}
                       aria-required="true"
                       aria-invalid={Boolean(errors.countryOrRegion)}
-                      className={`w-full px-4 py-3 rounded-xl border text-sm text-charcoal bg-white font-sans transition-colors focus:outline-none focus:ring-2 focus:ring-forest/20 ${
-                        errors.countryOrRegion ? 'border-red-400 bg-red-50/20' : 'border-sand-border focus:border-deep-green'
+                      className={`w-full px-4 py-3 sm:py-3.5 rounded-none border text-sm text-charcoal bg-white font-sans transition-all duration-200 focus:outline-none focus:ring-1 focus:ring-[#019935] ${
+                        errors.countryOrRegion ? 'border-red-400 bg-red-50/20 focus:border-red-500' : 'border-sand-border focus:border-[#019935]'
                       }`}
                     />
                     {errors.countryOrRegion && (
@@ -461,7 +472,7 @@ export default function ContactForm() {
 
                   {/* Role */}
                   <div className="space-y-1.5 sm:col-span-2">
-                    <label htmlFor="role" className="block text-xs font-bold uppercase tracking-wider text-forest font-sans">
+                    <label htmlFor="role" className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-forest font-sans">
                       {formData.enquiryType === 'expert'
                         ? 'Your Specialisation & Credentials'
                         : t('contact.form.fields.role.label', 'Your Role / Position (Optional)')}
@@ -474,17 +485,17 @@ export default function ContactForm() {
                       onChange={handleChange}
                       placeholder={formData.enquiryType === 'expert' 
                         ? 'e.g., Senior MRV Engineer, Article 6 Certifier, Environmental Economist' 
-                        : t('contact.form.fields.role.placeholder', 'e.g., Sustainability Director, Head of Compliance')}
-                      className="w-full px-4 py-3 rounded-xl border border-sand-border focus:border-deep-green text-sm text-charcoal bg-white font-sans transition-colors focus:outline-none focus:ring-2 focus:ring-forest/20"
+                        : t('contact.form.fields.role.placeholder', 'e.g., Sustainability Director, Head of Compliance, Project Manager')}
+                      className="w-full px-4 py-3 sm:py-3.5 rounded-none border border-sand-border focus:border-[#019935] text-sm text-charcoal bg-white font-sans transition-all duration-200 focus:outline-none focus:ring-1 focus:ring-[#019935]"
                     />
                   </div>
 
                   {/* Service of Interest */}
                   <div className="space-y-1.5 sm:col-span-2">
-                    <label htmlFor="serviceInterest" className="block text-xs font-bold uppercase tracking-wider text-forest font-sans">
+                    <label htmlFor="serviceInterest" className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-forest font-sans">
                       {formData.enquiryType === 'expert'
                         ? 'Primary Domain of Technical Expertise'
-                        : t('contact.form.fields.serviceInterest.label', 'Service of Interest')} <span className="text-red-500">*</span>
+                        : t('contact.form.fields.serviceInterest.label', 'Service of Interest')} <span className="text-red-500 font-bold">*</span>
                     </label>
                     <select
                       id="serviceInterest"
@@ -493,11 +504,11 @@ export default function ContactForm() {
                       onChange={handleChange}
                       aria-required="true"
                       aria-invalid={Boolean(errors.serviceInterest)}
-                      className={`w-full px-4 py-3 rounded-xl border text-sm text-charcoal bg-white font-sans transition-colors focus:outline-none focus:ring-2 focus:ring-forest/20 ${
-                        errors.serviceInterest ? 'border-red-400 bg-red-50/20' : 'border-sand-border focus:border-deep-green'
+                      className={`w-full px-4 py-3 sm:py-3.5 rounded-none border text-sm text-charcoal bg-white font-sans transition-all duration-200 focus:outline-none focus:ring-1 focus:ring-[#019935] ${
+                        errors.serviceInterest ? 'border-red-400 bg-red-50/20 focus:border-red-500' : 'border-sand-border focus:border-[#019935]'
                       }`}
                     >
-                      <option value="">{formData.enquiryType === 'expert' ? 'Select primary technical practice...' : t('contact.form.fields.serviceInterest.placeholder', 'Select an advisory service...')}</option>
+                      <option value="">{formData.enquiryType === 'expert' ? 'Select primary technical practice...' : t('contact.form.fields.serviceInterest.placeholder', 'Select a primary advisory service')}</option>
                       {SERVICE_OPTIONS.map((opt) => (
                         <option key={opt} value={opt}>
                           {t(`contact.serviceOptions.${opt}`, opt)}
@@ -512,10 +523,10 @@ export default function ContactForm() {
                   {/* Description of Requirement */}
                   <div className="space-y-1.5 sm:col-span-2">
                     <div className="flex justify-between items-center">
-                      <label htmlFor="requirementDescription" className="block text-xs font-bold uppercase tracking-wider text-forest font-sans">
+                      <label htmlFor="requirementDescription" className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-forest font-sans">
                         {formData.enquiryType === 'expert'
-                          ? 'Summary of Technical Experience, Track Record & Qualifications (or LinkedIn / CV Link)'
-                          : t('contact.form.fields.requirementDescription.label', 'Brief Description of Your Requirement')} <span className="text-red-500">*</span>
+                          ? 'Summary of Technical Experience, Track Record & Qualifications'
+                          : t('contact.form.fields.requirementDescription.label', 'Brief Description of Your Requirement')} <span className="text-red-500 font-bold">*</span>
                       </label>
                       <span className="text-[11px] text-charcoal-muted font-mono">
                         {formData.requirementDescription.length} / 3000
@@ -533,8 +544,8 @@ export default function ContactForm() {
                         : t('contact.form.fields.requirementDescription.placeholder', 'Please provide context regarding your organisation’s objectives, project timeline, or specific regulatory challenges...')}
                       aria-required="true"
                       aria-invalid={Boolean(errors.requirementDescription)}
-                      className={`w-full px-4 py-3 rounded-xl border text-sm text-charcoal bg-white font-sans transition-colors focus:outline-none focus:ring-2 focus:ring-forest/20 leading-relaxed ${
-                        errors.requirementDescription ? 'border-red-400 bg-red-50/20' : 'border-sand-border focus:border-deep-green'
+                      className={`w-full px-4 py-3 sm:py-3.5 rounded-none border text-sm text-charcoal bg-white font-sans transition-all duration-200 focus:outline-none focus:ring-1 focus:ring-[#019935] leading-relaxed ${
+                        errors.requirementDescription ? 'border-red-400 bg-red-50/20 focus:border-red-500' : 'border-sand-border focus:border-[#019935]'
                       }`}
                     />
                     {errors.requirementDescription && (
@@ -544,7 +555,7 @@ export default function ContactForm() {
 
                   {/* Preferred Contact Method */}
                   <div className="space-y-1.5">
-                    <label htmlFor="preferredContactMethod" className="block text-xs font-bold uppercase tracking-wider text-forest font-sans">
+                    <label htmlFor="preferredContactMethod" className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-forest font-sans">
                       {t('contact.form.fields.preferredContactMethod.label', 'Preferred Contact Method')}
                     </label>
                     <select
@@ -552,7 +563,7 @@ export default function ContactForm() {
                       name="preferredContactMethod"
                       value={formData.preferredContactMethod}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl border border-sand-border focus:border-deep-green text-sm text-charcoal bg-white font-sans transition-colors focus:outline-none focus:ring-2 focus:ring-forest/20"
+                      className="w-full px-4 py-3 sm:py-3.5 rounded-none border border-sand-border focus:border-[#019935] text-sm text-charcoal bg-white font-sans transition-all duration-200 focus:outline-none focus:ring-1 focus:ring-[#019935]"
                     >
                       <option value="Email">{t('contact.form.fields.preferredContactMethod.options.email', 'Email')}</option>
                       <option value="Phone">{t('contact.form.fields.preferredContactMethod.options.phone', 'Telephone Call')}</option>
@@ -568,8 +579,8 @@ export default function ContactForm() {
                       animate={{ opacity: 1, y: 0 }}
                       className="space-y-1.5"
                     >
-                      <label htmlFor="phone" className="block text-xs font-bold uppercase tracking-wider text-forest font-sans">
-                        {t('contact.form.fields.phone.label', 'Direct Telephone Number')} <span className="text-red-500">*</span>
+                      <label htmlFor="phone" className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-forest font-sans">
+                        {t('contact.form.fields.phone.label', 'Direct Telephone Number')} <span className="text-red-500 font-bold">*</span>
                       </label>
                       <input
                         type="tel"
@@ -580,8 +591,8 @@ export default function ContactForm() {
                         placeholder={t('contact.form.fields.phone.placeholder', '+34 600 000 000')}
                         aria-required="true"
                         aria-invalid={Boolean(errors.phone)}
-                        className={`w-full px-4 py-3 rounded-xl border text-sm text-charcoal bg-white font-sans transition-colors focus:outline-none focus:ring-2 focus:ring-forest/20 ${
-                          errors.phone ? 'border-red-400 bg-red-50/20' : 'border-sand-border focus:border-deep-green'
+                        className={`w-full px-4 py-3 sm:py-3.5 rounded-none border text-sm text-charcoal bg-white font-sans transition-all duration-200 focus:outline-none focus:ring-1 focus:ring-[#019935] ${
+                          errors.phone ? 'border-red-400 bg-red-50/20 focus:border-red-500' : 'border-sand-border focus:border-[#019935]'
                         }`}
                       />
                       <span className="text-[11px] text-charcoal-muted block font-sans">
@@ -603,7 +614,7 @@ export default function ContactForm() {
                         checked={formData.privacyAcknowledged}
                         onChange={handleChange}
                         aria-required="true"
-                        className="mt-1 w-4 h-4 rounded text-forest focus:ring-forest border-sand-border"
+                        className="mt-1 w-4 h-4 rounded-none text-[#019935] focus:ring-[#019935] border-sand-border cursor-pointer"
                       />
                       <span className="text-xs sm:text-sm text-charcoal-muted font-sans leading-relaxed">
                         {t('contact.form.fields.privacy.text', 'I acknowledge and agree to the processing of my contact information in accordance with the')}{' '}
@@ -615,7 +626,7 @@ export default function ContactForm() {
                         >
                           {t('contact.form.fields.privacy.linkText', 'Privacy Policy')}
                         </Link>
-                        . <span className="text-red-500">*</span>
+                        . <span className="text-red-500 font-bold">*</span>
                       </span>
                     </label>
                     {errors.privacyAcknowledged && (
@@ -626,8 +637,8 @@ export default function ContactForm() {
                 </div>
 
                 {/* Submit Action Button */}
-                <div className="pt-4 border-t border-sand-border/60 flex flex-col sm:flex-row items-center justify-between gap-4">
-                  <div className="flex items-center gap-2 text-xs text-charcoal-muted font-sans">
+                <div className="pt-6 border-t border-sand-border/70 flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <div className="flex items-center gap-2 text-xs text-charcoal-muted font-sans order-2 sm:order-1">
                     <FileCheck2 className="w-4 h-4 text-gold-dark" />
                     <span>Independent, confidential advisory scoping</span>
                   </div>
@@ -635,7 +646,7 @@ export default function ContactForm() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full sm:w-auto px-9 py-4 rounded-full bg-forest hover:bg-forest-dark disabled:bg-forest/60 text-white font-semibold text-sm tracking-wide uppercase transition-all duration-300 shadow-md hover:shadow-lg inline-flex items-center justify-center gap-2.5 focus:outline-none focus:ring-2 focus:ring-gold"
+                    className="w-full sm:w-auto px-8 sm:px-10 py-3.5 sm:py-4 rounded-none bg-[#019935] hover:bg-[#02B840] disabled:bg-[#019935]/60 text-white font-bold text-xs sm:text-sm tracking-wider uppercase transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5 inline-flex items-center justify-center gap-2.5 focus:outline-none focus:ring-2 focus:ring-gold order-1 sm:order-2"
                   >
                     {isSubmitting ? (
                       <>
@@ -661,7 +672,7 @@ export default function ContactForm() {
             )}
           </AnimatePresence>
 
-        </div>
+        </motion.div>
 
       </div>
     </section>

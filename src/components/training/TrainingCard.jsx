@@ -1,94 +1,117 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { ChevronDown, ArrowRight } from 'lucide-react';
+import { ArrowRight, RotateCw, Sparkles } from 'lucide-react';
 import { useLocale } from '../../hooks/useLocale';
 
 export default function TrainingCard({ topic, index = 0 }) {
   const { t } = useTranslation();
   const { getLocalizedPath } = useLocale();
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isFlipped, setIsFlipped] = useState(false);
 
   const Icon = topic.icon;
   const title = t(`training.topics.items.${topic.key}.title`, topic.id);
   const desc = t(`training.topics.items.${topic.key}.desc`, '');
   const scope = t(`training.topics.items.${topic.key}.scope`, '');
 
+  const colIndex = index % 3;
+  const initialMotion = 
+    colIndex === 0 
+      ? { opacity: 0, x: -50, y: 15 } 
+      : colIndex === 2 
+      ? { opacity: 0, x: 50, y: 15 } 
+      : { opacity: 0, y: 40 };
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 15 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-50px' }}
-      transition={{ duration: 0.4, delay: Math.min(index * 0.05, 0.3) }}
-      className="border-b border-sand-border/80 pb-6 flex flex-col justify-between space-y-4 group hover:border-deep-green transition-colors"
+      initial={initialMotion}
+      whileInView={{ opacity: 1, x: 0, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.6, ease: 'easeOut', delay: (index % 3) * 0.1 }}
+      className="group [perspective:1000px] h-[290px] sm:h-[305px] w-full cursor-pointer"
+      onClick={() => setIsFlipped(!isFlipped)}
     >
-      <div className="space-y-3">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-forest/5 flex items-center justify-center text-forest group-hover:bg-deep-green group-hover:text-white transition-colors duration-200">
-              <Icon className="w-4.5 h-4.5" />
+      {/* 3D Flipper Box with 180-Degree Rotation Animation */}
+      <div
+        className={`relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] ${
+          isFlipped ? '[transform:rotateY(180deg)]' : 'group-hover:[transform:rotateY(180deg)]'
+        }`}
+      >
+        {/* FRONT FACE */}
+        <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] rounded-none bg-white border border-sand-border p-4.5 sm:p-5 flex flex-col justify-between shadow-sm group-hover:shadow-2xl overflow-hidden transition-all duration-300">
+          {/* Top Brand Accent Line */}
+          <div className="absolute top-0 left-0 right-0 h-1 bg-[#019935]" />
+
+          <div className="space-y-2.5">
+            <div className="flex items-center justify-between">
+              <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-none text-[10px] font-mono font-bold tracking-widest text-[#019935] uppercase bg-[#E8F5E9] border border-[#C8E6C9]">
+                <span>MODULE {topic.number}</span>
+              </div>
+
+              <div className="w-8 h-8 rounded-none bg-[#E8F5E9] border border-[#019935]/20 flex items-center justify-center text-[#019935]">
+                <Icon className="w-4 h-4" />
+              </div>
             </div>
-            <span className="text-xs font-mono font-bold tracking-widest text-deep-green">
-              MODULE {topic.number}
+
+            <h3 className="font-display font-bold text-base sm:text-[17px] text-forest leading-snug line-clamp-2">
+              {title}
+            </h3>
+
+            <p className="text-xs text-charcoal-muted leading-relaxed font-sans font-light line-clamp-3">
+              {desc}
+            </p>
+          </div>
+
+          {/* Bottom Flip Prompt */}
+          <div className="pt-2 border-t border-sand-border/70 flex items-center justify-between text-[11px] font-semibold text-[#019935]">
+            <span className="flex items-center gap-1.5">
+              <RotateCw className="w-3 h-3 transition-transform duration-500 group-hover:rotate-180" />
+              <span>View Detailed Scope</span>
+            </span>
+            <span className="text-[10px] font-mono text-charcoal-muted uppercase tracking-wider">
+              180° Flip
             </span>
           </div>
         </div>
 
-        <div className="space-y-1.5">
-          <h3 className="font-display font-bold text-lg sm:text-xl text-forest group-hover:text-deep-green transition-colors leading-snug">
-            {title}
-          </h3>
-          <p className="text-xs sm:text-sm text-charcoal/80 leading-relaxed font-sans font-normal">
-            {desc}
-          </p>
-        </div>
+        {/* BACK FACE (180° FLIPPED) */}
+        <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-none bg-[#0D2E24] text-white border-2 border-[#019935] p-4.5 sm:p-5 flex flex-col justify-between shadow-2xl overflow-hidden">
+          {/* Top Gold Accent Line */}
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#019935] via-[#D4AF37] to-[#019935]" />
 
-        {/* Expandable Topic Details Scope */}
-        {scope && (
-          <div className="pt-1">
-            <button
-              type="button"
-              onClick={() => setIsExpanded(!isExpanded)}
-              aria-expanded={isExpanded}
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-deep-green hover:text-forest transition-colors focus:outline-none"
-            >
-              <span>{isExpanded ? t('training.topics.collapseDetails', 'Hide Scope') : t('training.topics.expandDetails', 'View Detailed Scope')}</span>
-              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`} />
-            </button>
+          <div className="space-y-2">
+            <div className="flex items-center justify-between">
+              <span className="text-[10px] font-mono font-bold tracking-widest text-[#F3E5AB] uppercase">
+                MODULE {topic.number} · CURRICULUM SCOPE
+              </span>
+              <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" />
+            </div>
 
-            <AnimatePresence>
-              {isExpanded && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.25 }}
-                  className="overflow-hidden"
-                >
-                  <div className="mt-2.5 p-3 rounded-xl bg-[#F4F6F4] border border-sand-border/80 text-xs text-charcoal leading-relaxed font-sans">
-                    <span className="font-semibold text-forest block mb-1 uppercase tracking-wider text-[10px]">
-                      Curriculum Focus:
-                    </span>
-                    {scope}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+            <h4 className="font-display font-bold text-sm sm:text-[15px] text-white leading-tight line-clamp-2">
+              {title}
+            </h4>
+
+            <div className="bg-black/50 p-2.5 rounded-none border border-white/20 max-h-[110px] overflow-y-auto">
+              <p className="text-white text-xs sm:text-[12.5px] leading-relaxed font-sans font-normal">
+                {scope || desc}
+              </p>
+            </div>
           </div>
-        )}
-      </div>
 
-      {/* Enquire Action Link */}
-      <div className="pt-2">
-        <Link
-          to={getLocalizedPath('/contact?service=training')}
-          state={{ serviceInterest: 'Training and Capacity Building', topic: title }}
-          className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-deep-green hover:text-forest transition-colors group/link"
-        >
-          <span>{t('training.topics.enquireTopic', 'Enquire About This Topic')}</span>
-          <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
-        </Link>
+          {/* Enquire Button on Back of Card */}
+          <div className="pt-2 border-t border-white/15">
+            <Link
+              to={getLocalizedPath('/contact?service=training')}
+              state={{ serviceInterest: 'Training and Capacity Building', topic: title }}
+              onClick={(e) => e.stopPropagation()}
+              className="w-full inline-flex items-center justify-center gap-2 px-3 py-2 rounded-none bg-[#019935] hover:bg-[#02B840] text-white font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none"
+            >
+              <span>{t('training.topics.enquireTopic', 'Enquire About This Topic')}</span>
+              <ArrowRight className="w-3.5 h-3.5 text-white" />
+            </Link>
+          </div>
+        </div>
       </div>
     </motion.div>
   );

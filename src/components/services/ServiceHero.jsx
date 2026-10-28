@@ -1,7 +1,6 @@
 import { useRef } from 'react';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { ChevronRight, ShieldCheck } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { useLocale } from '../../hooks/useLocale';
 
 const SERVICE_IMAGES = {
@@ -41,7 +40,7 @@ export default function ServiceHero({
   };
 
   return (
-    <section className="relative min-h-[50vh] sm:min-h-[65vh] lg:min-h-[70vh] flex flex-col justify-center overflow-hidden bg-neutral-900 text-white pt-20 pb-8 sm:pt-28 sm:pb-16">
+    <section className="relative min-h-[38vh] sm:min-h-[44vh] lg:min-h-[48vh] flex flex-col justify-center items-center overflow-hidden bg-neutral-950 text-white pt-24 pb-10 sm:pt-28 sm:pb-14 text-center select-none">
       {/* Background Photography & Video with Directional Lighting & Masking */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         {hasVideo ? (
@@ -55,13 +54,13 @@ export default function ServiceHero({
             playsInline
             onTimeUpdate={handleTimeUpdate}
             poster={bgImage}
-            className="w-full h-full object-cover object-center opacity-85 scale-120 transform motion-safe:transition-transform motion-safe:duration-1000"
+            className="w-full h-full object-cover object-center opacity-75 scale-105"
           >
             <source src={videoSrc} type={String(videoSrc).includes('.mp4') ? 'video/mp4' : 'video/webm'} />
             <img
               src={bgImage}
               alt={title || "Green Gate Advisory Practice"}
-              className="w-full h-full object-cover object-right sm:object-center"
+              className="w-full h-full object-cover object-center"
               loading="eager"
             />
           </video>
@@ -69,76 +68,57 @@ export default function ServiceHero({
           <img
             src={bgImage}
             alt={title || "Green Gate Advisory Practice"}
-            className="w-full h-full object-cover object-right sm:object-center opacity-85 scale-105 transform motion-safe:transition-transform motion-safe:duration-1000"
+            className="w-full h-full object-cover object-center opacity-75 scale-105"
             loading="eager"
           />
         )}
-        {/* Neutral contrast gradient overlays */}
-        <div className="absolute inset-0 bg-black/60 sm:hidden pointer-events-none" />
-        <div className="hidden sm:block absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/20 pointer-events-none" />
-        <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/30 pointer-events-none" />
+        {/* Cinematic contrast gradient overlays */}
+        <div className="absolute inset-0 bg-black/60 sm:bg-black/50 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black/85 pointer-events-none" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 sm:space-y-8">
-
-        {/* Breadcrumb Navigation */}
-        <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs sm:text-[13px] font-sans text-sand-surface/85">
-          <Link
-            to={getLocalizedPath('/')}
-            className="hover:text-gold transition-colors focus:outline-none focus:underline"
-          >
-            {t('navigation.home', 'Home')}
-          </Link>
-          <ChevronRight className="w-3.5 h-3.5 text-sand-surface/50" />
-          <Link
-            to={getLocalizedPath('/services')}
-            className="hover:text-gold transition-colors focus:outline-none focus:underline"
-          >
-            {t('navigation.services', 'Services')}
-          </Link>
-          <ChevronRight className="w-3.5 h-3.5 text-sand-surface/50" />
-          <span className="text-gold font-semibold truncate max-w-[200px] sm:max-w-none" aria-current="page">
-            {shortTitle || title}
+      <motion.div
+        initial={{ opacity: 0, y: 25 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3.5 sm:space-y-4 flex flex-col items-center justify-center"
+      >
+        {/* Practice Number + Eyebrow */}
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+          <span className="px-3 py-1 rounded-none text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider bg-[#019935] text-white border border-[#019935] shadow-2xs">
+            PRACTICE {number}
           </span>
-        </nav>
-
-        {/* Content Block */}
-        <div className="max-w-3xl space-y-3 sm:space-y-4">
-          <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-            <span className="px-3 py-1 rounded-full text-[11px] sm:text-[13px] font-mono font-bold uppercase tracking-wider bg-gold text-forest-dark">
-              PRACTICE {number}
+          {eyebrow && (
+            <span className="inline-block px-3 py-1 rounded-none text-[10px] sm:text-xs font-semibold tracking-wider uppercase bg-white/10 text-white border border-white/20 backdrop-blur-md shadow-2xs">
+              {eyebrow}
             </span>
-            {eyebrow && (
-              <span className="hidden sm:inline-block px-3.5 py-1 sm:px-4 sm:py-1 rounded-full text-xs sm:text-[13px] font-semibold tracking-wider uppercase bg-white/10 text-gold-light border border-white/20 backdrop-blur-md">
-                {eyebrow}
-              </span>
-            )}
-          </div>
-
-          <h1 className="font-display font-bold text-2xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.12]">
-            {title}
-          </h1>
-
-          <p className="text-sm sm:text-lg text-sand-surface/90 leading-relaxed font-sans font-normal max-w-2xl">
-            {lead}
-          </p>
+          )}
         </div>
 
-        {/* Quick Scope Tags Strip - Hidden on mobile to prevent text clutter */}
+        {/* Primary Headline - Compact, Reduced Font Size & Centered */}
+        <h1 className="font-display font-bold text-xl sm:text-2xl md:text-3xl lg:text-[34px] text-white tracking-tight leading-snug max-w-2xl mx-auto">
+          {title}
+        </h1>
+
+        {/* Supporting Text */}
+        <p className="text-xs sm:text-sm md:text-base text-white/85 max-w-xl mx-auto leading-relaxed font-sans font-normal">
+          {lead}
+        </p>
+
+        {/* Quick Scope Tags Strip */}
         {quickTags.length > 0 && (
-          <div className="hidden sm:flex pt-5 border-t border-white/10 flex-wrap items-center gap-2">
+          <div className="flex flex-wrap items-center justify-center gap-2 pt-3 sm:pt-4 border-t border-white/15">
             {quickTags.map((tag, idx) => (
               <span
                 key={idx}
-                className="px-3 py-1 rounded-full bg-white/10 border border-white/15 text-xs text-sand-surface font-medium"
+                className="px-2.5 sm:px-3 py-1 rounded-none bg-white/10 border border-white/15 text-[11px] sm:text-xs text-white/80 font-medium"
               >
                 {tag}
               </span>
             ))}
           </div>
         )}
-
-      </div>
+      </motion.div>
     </section>
   );
 }

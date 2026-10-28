@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import MetaTags from '../../components/seo/MetaTags';
+import ScrollProgressBar from '../../components/common/ScrollProgressBar';
 import ServiceHero from '../../components/services/ServiceHero';
 import ServiceIntroduction from '../../components/services/ServiceIntroduction';
 import ServiceScope from '../../components/services/ServiceScope';
@@ -65,6 +66,7 @@ export default function NatureBasedSolutions() {
 
   return (
     <>
+      <ScrollProgressBar />
       <MetaTags
         title={t('meta.natureBased.title', 'Nature-Based Solutions & Blue Carbon Advisory')}
         description={t('meta.natureBased.description', 'Develop nature-based climate initiatives spanning ecosystem restoration, blue carbon, biodiversity, adaptation, resilience and climate finance readiness.')}
@@ -110,13 +112,7 @@ export default function NatureBasedSolutions() {
       />
 
       <RelatedServices currentKey="natureBased" />
-
-      <ServiceCTA
-        heading={serviceData.ctaHeading}
-        text={serviceData.ctaText}
-        primaryBtnText={serviceData.ctaBtn}
-        disclaimer={serviceData.disclaimer}
-      />
+      <ServiceCTA />
     </>
   );
 }

@@ -3,6 +3,7 @@ import { Routes, Route, Navigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Layout from '../components/layout/Layout';
 import { SUPPORTED_LOCALES, DEFAULT_LOCALE } from '../hooks/useLocale';
+import { StandaloneLoader } from '../components/common/PageLoader';
 
 // Primary Pages
 const Home = lazy(() => import('../pages/Home'));
@@ -26,15 +27,7 @@ const ClimatePolicyAdvisory = lazy(() => import('../pages/services/ClimatePolicy
 const CorporateClimateEsg = lazy(() => import('../pages/services/CorporateClimateEsg'));
 
 function PageLoader() {
-  const { t } = useTranslation();
-  return (
-    <div className="min-h-[50vh] flex flex-col items-center justify-center space-y-4">
-      <div className="w-10 h-10 border-2 border-forest/20 border-t-gold rounded-full animate-spin"></div>
-      <span className="text-xs font-semibold tracking-wider uppercase text-charcoal-muted">
-        {t('common.loading', 'Loading Green Gate Advisory...')}
-      </span>
-    </div>
-  );
+  return <StandaloneLoader />;
 }
 
 function LocaleWrapper() {

@@ -5,7 +5,7 @@ import SectorExpertise from '../components/sectors/SectorExpertise';
 import SectorGrid from '../components/sectors/SectorGrid';
 import SectorApproach from '../components/sectors/SectorApproach';
 import SectorRelatedServices from '../components/sectors/SectorRelatedServices';
-import SectorsCTA from '../components/sectors/SectorsCTA';
+import HomeCTA from '../components/home/HomeCTA';
 import { useLocale } from '../hooks/useLocale';
 
 export default function Sectors() {
@@ -67,8 +67,8 @@ export default function Sectors() {
         {/* Section 5: Related Advisory Services */}
         <SectorRelatedServices />
 
-        {/* Section 6: Closing CTA */}
-        <SectorsCTA />
+        {/* Section 6: Advisory Engagement CTA */}
+        <HomeCTA />
       </div>
     </>
   );

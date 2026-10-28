@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import MetaTags from '../../components/seo/MetaTags';
+import ScrollProgressBar from '../../components/common/ScrollProgressBar';
 import ServiceHero from '../../components/services/ServiceHero';
 import ServiceIntroduction from '../../components/services/ServiceIntroduction';
 import ServiceScope from '../../components/services/ServiceScope';
@@ -61,6 +62,7 @@ export default function EtsCarbonPricing() {
 
   return (
     <>
+      <ScrollProgressBar />
       <MetaTags
         title={t('meta.ets.title', 'ETS & Carbon Pricing Advisory | Green Gate Advisory')}
         description={t('meta.ets.description', 'Explore emissions trading system readiness, carbon pricing policy, compliance analysis and Article 6 advisory for public and private sector organisations.')}
@@ -106,13 +108,7 @@ export default function EtsCarbonPricing() {
       />
 
       <RelatedServices currentKey="etsCarbonPricing" />
-
-      <ServiceCTA
-        heading={serviceData.ctaHeading}
-        text={serviceData.ctaText}
-        primaryBtnText={serviceData.ctaBtn}
-        disclaimer={serviceData.disclaimer}
-      />
+      <ServiceCTA />
     </>
   );
 }

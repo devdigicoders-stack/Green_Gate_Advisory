@@ -1,5 +1,7 @@
 import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
 import MetaTags from '../../components/seo/MetaTags';
+import ScrollProgressBar from '../../components/common/ScrollProgressBar';
 import ServiceHero from '../../components/services/ServiceHero';
 import ServiceIntroduction from '../../components/services/ServiceIntroduction';
 import ServiceScope from '../../components/services/ServiceScope';
@@ -62,6 +64,7 @@ export default function ClimateFinanceAdvisory() {
 
   return (
     <>
+      <ScrollProgressBar />
       <MetaTags
         title={t('meta.climateFinance.title', 'Climate Finance Advisory & Funding Proposal Development')}
         description={t('meta.climateFinance.description', 'Prepare climate project concepts and funding proposals with support for climate rationale, theory of change, safeguards, budgets, monitoring and implementation planning.')}
@@ -87,9 +90,15 @@ export default function ClimateFinanceAdvisory() {
       />
 
       {/* Funding Landscape Spotlight Section */}
-      <section className="py-16 bg-white border-b border-sand-border/70">
+      <section className="py-16 bg-white border-b border-sand-border/70 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          <div className="max-w-3xl space-y-3">
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="max-w-3xl space-y-3"
+          >
             <span className="badge-editorial bg-forest/5 text-deep-green border border-forest/10">
               Funding Windows
             </span>
@@ -99,26 +108,36 @@ export default function ClimateFinanceAdvisory() {
             <p className="text-sm text-charcoal-muted leading-relaxed font-sans">
               {serviceData.fundingText}
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {fundingPillars.map((fp, idx) => (
-              <div 
+              <motion.div 
                 key={idx}
-                className="p-5 rounded-2xl bg-sage/50 border border-sand-border flex items-center gap-3 text-xs sm:text-sm font-semibold text-forest shadow-xs"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.5, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
+                className="p-5 rounded-none bg-white border border-[#DCE8E0] hover:border-[#019935] hover:shadow-[0_8px_20px_-4px_rgba(1,153,53,0.15)] hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-3 text-xs sm:text-sm font-semibold text-forest shadow-2xs group"
               >
-                <div className="w-2 h-2 rounded-full bg-gold flex-shrink-0" />
+                <div className="w-2 h-2 rounded-none bg-[#019935] flex-shrink-0 group-hover:bg-gold transition-colors" />
                 <span>{fp}</span>
-              </div>
+              </motion.div>
             ))}
           </div>
 
-          <div className="flex items-start gap-3 p-4 rounded-2xl bg-sage border border-sand-border text-xs text-charcoal-muted font-sans">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="flex items-start gap-3 p-4 rounded-none bg-[#F7FAF7] border border-[#DCE8E0] text-xs text-charcoal-muted font-sans shadow-2xs"
+          >
             <ShieldAlert className="w-4 h-4 text-gold-dark flex-shrink-0 mt-0.5" />
             <p>
               Funding access is subject to country eligibility, accreditation modalities, and funding window operational guidelines.
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -143,13 +162,7 @@ export default function ClimateFinanceAdvisory() {
       />
 
       <RelatedServices currentKey="climateFinance" />
-
-      <ServiceCTA
-        heading={serviceData.ctaHeading}
-        text={serviceData.ctaText}
-        primaryBtnText={serviceData.ctaBtn}
-        disclaimer={serviceData.disclaimer}
-      />
+      <ServiceCTA />
     </>
   );
 }
