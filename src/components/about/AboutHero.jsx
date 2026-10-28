@@ -5,7 +5,7 @@ export default function AboutHero() {
   const { t } = useTranslation();
 
   return (
-    <section className="relative min-h-[38vh] sm:min-h-[44vh] lg:min-h-[48vh] flex flex-col justify-center items-center overflow-hidden bg-neutral-950 text-white pt-24 pb-10 sm:pt-28 sm:pb-14 text-center select-none">
+    <section className="relative min-h-[60vh] flex flex-col justify-center items-center overflow-hidden bg-neutral-950 text-white pt-24 pb-12 sm:pt-28 sm:pb-14 text-center select-none">
       {/* Background Photography & Video with Clean Neutral Lighting */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video

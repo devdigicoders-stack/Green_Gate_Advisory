@@ -10,7 +10,7 @@ export default function InsightsHero() {
   const { getLocalizedPath } = useLocale();
 
   return (
-    <section className="relative min-h-[50vh] sm:min-h-[65vh] lg:min-h-[70vh] flex flex-col justify-center overflow-hidden bg-neutral-900 text-white pt-20 pb-8 sm:pt-28 sm:pb-16">
+    <section className="relative min-h-[60vh] flex flex-col justify-center overflow-hidden bg-neutral-900 text-white pt-24 pb-12 sm:pt-28 sm:pb-16">
       {/* Background Photography & Video with Clean Neutral Lighting */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video

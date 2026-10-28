@@ -6,7 +6,7 @@ export default function ContactHero() {
   const { t } = useTranslation();
 
   return (
-    <section className="relative min-h-[48vh] sm:min-h-[55vh] lg:min-h-[60vh] flex flex-col justify-center items-center overflow-hidden bg-neutral-900 text-white pt-28 pb-20 sm:pt-36 sm:pb-24 text-center">
+    <section className="relative min-h-[60vh] flex flex-col justify-center items-center overflow-hidden bg-neutral-900 text-white pt-24 pb-16 sm:pt-32 sm:pb-20 text-center">
       {/* Background Photography with Clean Neutral Lighting */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <img

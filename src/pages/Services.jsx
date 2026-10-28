@@ -63,7 +63,7 @@ export default function Services() {
       />
 
       {/* SECTION 1 — HERO (Centered, Premium & Compact Typography) */}
-      <section className="relative min-h-[50vh] sm:min-h-[58vh] lg:min-h-[64vh] flex flex-col justify-center overflow-hidden bg-neutral-900 text-white pt-20 pb-12 sm:pt-28 sm:pb-16">
+      <section className="relative min-h-[60vh] flex flex-col justify-center items-center overflow-hidden bg-neutral-900 text-white pt-24 pb-12 sm:pt-28 sm:pb-16">
         {/* Background Photography & Video */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <video

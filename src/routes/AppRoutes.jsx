@@ -3,7 +3,6 @@ import { Routes, Route, Navigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Layout from '../components/layout/Layout';
 import { SUPPORTED_LOCALES, DEFAULT_LOCALE } from '../hooks/useLocale';
-import { StandaloneLoader } from '../components/common/PageLoader';
 
 // Primary Pages
 const Home = lazy(() => import('../pages/Home'));
@@ -26,10 +25,6 @@ const NatureBasedSolutions = lazy(() => import('../pages/services/NatureBasedSol
 const ClimatePolicyAdvisory = lazy(() => import('../pages/services/ClimatePolicyAdvisory'));
 const CorporateClimateEsg = lazy(() => import('../pages/services/CorporateClimateEsg'));
 
-function PageLoader() {
-  return <StandaloneLoader />;
-}
-
 function LocaleWrapper() {
   const { lang } = useParams();
 
@@ -42,7 +37,7 @@ function LocaleWrapper() {
 
 export default function AppRoutes() {
   return (
-    <Suspense fallback={<PageLoader />}>
+    <Suspense fallback={null}>
       <Routes>
         {/* Root redirect to default /en/ */}
         <Route path="/" element={<Navigate to={`/${DEFAULT_LOCALE}`} replace />} />

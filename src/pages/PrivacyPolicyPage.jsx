@@ -42,7 +42,7 @@ export default function PrivacyPolicyPage() {
       />
 
       {/* 1. HERO SECTION (Dark Hero ensures navbar is sharp, transparent, and completely legible) */}
-      <section className="relative min-h-[42vh] sm:min-h-[48vh] lg:min-h-[52vh] flex flex-col justify-center items-center overflow-hidden bg-neutral-900 text-white pt-28 pb-16 sm:pt-36 sm:pb-20 text-center">
+      <section className="relative min-h-[60vh] flex flex-col justify-center items-center overflow-hidden bg-neutral-900 text-white pt-24 pb-12 sm:pt-28 sm:pb-16 text-center">
         {/* Background Photography with Clean Neutral Lighting */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
