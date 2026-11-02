@@ -19,6 +19,7 @@ import ScrollProgressBar from '../components/common/ScrollProgressBar';
 import { useLocale } from '../hooks/useLocale';
 import { SERVICES_LIST } from '../data/servicesList';
 import ServiceCTA from '../components/services/ServiceCTA';
+import sectorVideo from '../assets/sectorpage.mp4';
 
 const ICON_MAP = {
   carbonMarket: Sparkles,
@@ -73,6 +74,7 @@ export default function Services() {
             playsInline
             className="w-full h-full object-cover object-center opacity-85 scale-102"
           >
+            <source src={sectorVideo} type="video/mp4" />
             <source src="/videos/services-hero.webm" type="video/webm" />
           </video>
           <img

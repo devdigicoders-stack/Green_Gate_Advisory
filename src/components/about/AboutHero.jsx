@@ -6,15 +6,17 @@ export default function AboutHero() {
 
   return (
     <section className="relative min-h-[60vh] flex flex-col justify-center items-center overflow-hidden bg-neutral-950 text-white pt-24 pb-12 sm:pt-28 sm:pb-14 text-center select-none">
-      {/* Background Photography & Video with Clean Neutral Lighting */}
+      {/* Background Photography & Video with Clean Neutral Lighting - Pure Nature & Zero People */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
           autoPlay
           muted
           loop
           playsInline
+          poster="/images/about-landscape.jpg"
           className="w-full h-full object-cover object-center opacity-75 scale-105"
         >
+          <source src="/hero-canopy-video.webm" type="video/webm" />
           <source src="/videos/about-hero.webm" type="video/webm" />
         </video>
         <img

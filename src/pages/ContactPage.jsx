@@ -3,20 +3,35 @@ import MetaTags from '../components/seo/MetaTags';
 import ContactHero from '../components/contact/ContactHero';
 import ContactIntroduction from '../components/contact/ContactIntroduction';
 import ContactForm from '../components/contact/ContactForm';
+import ContactLocationMap from '../components/contact/ContactLocationMap';
 import ContactCTA from '../components/contact/ContactCTA';
 import { useLocale } from '../hooks/useLocale';
+import { CONTACT_CONFIG } from '../config/contactConfig';
 
 export default function ContactPage() {
   const { t } = useTranslation();
   const { locale } = useLocale();
 
-  // Structured Data (JSON-LD) for Contact page
+  // Structured Data (JSON-LD) for Contact page with Official Barcelona Address
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     "name": t('contact.meta.title', 'Contact Green Gate Advisory | Request a Climate Advisory Consultation'),
     "description": t('contact.meta.description', 'Contact Green Gate Advisory to discuss carbon markets, CBAM, ETS, climate finance, nature-based solutions, climate policy or corporate sustainability.'),
     "url": `https://greengateadvisory.com/${locale}/contact`,
+    "mainEntity": {
+      "@type": "ProfessionalService",
+      "name": "Green Gate Advisory",
+      "url": `https://greengateadvisory.com/${locale}`,
+      "email": CONTACT_CONFIG.email,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": CONTACT_CONFIG.address.street,
+        "postalCode": CONTACT_CONFIG.address.postalCode,
+        "addressLocality": CONTACT_CONFIG.address.city,
+        "addressCountry": CONTACT_CONFIG.address.countryCode
+      }
+    },
     "publisher": {
       "@type": "Organization",
       "name": "Green Gate Advisory",
@@ -59,7 +74,10 @@ export default function ContactPage() {
         {/* Section 3: Interactive Contact & Proposal Enquiry Form */}
         <ContactForm />
 
-        {/* Section 4: Auxiliary Disclaimers & General Enquiries */}
+        {/* Section 4: Barcelona Headquarters & Interactive Google Maps */}
+        <ContactLocationMap />
+
+        {/* Section 5: Auxiliary Disclaimers & General Enquiries */}
         <ContactCTA />
       </div>
     </>

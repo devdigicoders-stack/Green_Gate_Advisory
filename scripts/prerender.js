@@ -94,7 +94,14 @@ function generateStructuredData(route, lang, meta) {
         "Environmental & Climate Policy",
         "Corporate Climate & ESG"
       ],
-      "inLanguage": lang
+      "inLanguage": lang,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rambla de Catalunya 38, 8°, 1a",
+        "postalCode": "08007",
+        "addressLocality": "Barcelona",
+        "addressCountry": "ES"
+      }
     };
   }
 
@@ -109,7 +116,14 @@ function generateStructuredData(route, lang, meta) {
         "@type": "ProfessionalService",
         "name": "Green Gate Advisory",
         "url": `${BASE_URL}/${lang}`,
-        "inLanguage": lang
+        "inLanguage": lang,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rambla de Catalunya 38, 8°, 1a",
+        "postalCode": "08007",
+        "addressLocality": "Barcelona",
+        "addressCountry": "ES"
+      }
       }
     };
   }
@@ -142,7 +156,14 @@ function generateStructuredData(route, lang, meta) {
         "url": `${BASE_URL}/${lang}`
       },
       "areaServed": "Global",
-      "inLanguage": lang
+      "inLanguage": lang,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rambla de Catalunya 38, 8°, 1a",
+        "postalCode": "08007",
+        "addressLocality": "Barcelona",
+        "addressCountry": "ES"
+      }
     };
   }
 
@@ -152,7 +173,14 @@ function generateStructuredData(route, lang, meta) {
     "name": meta.title,
     "url": url,
     "description": meta.description,
-    "inLanguage": lang
+    "inLanguage": lang,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rambla de Catalunya 38, 8°, 1a",
+        "postalCode": "08007",
+        "addressLocality": "Barcelona",
+        "addressCountry": "ES"
+      }
   };
 }
 

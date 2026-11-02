@@ -1,18 +1,18 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Users } from 'lucide-react';
-import serviceEtsVideo from '../../assets/service-ets.mp4';
+import sectorVideo from '../../assets/sectorpage.mp4';
 
 export default function AudienceHero() {
   const { t } = useTranslation();
 
   return (
     <section className="relative min-h-[60vh] flex flex-col justify-center items-center overflow-hidden bg-neutral-950 text-white pt-24 pb-12 sm:pt-28 sm:pb-14 text-center select-none">
-      {/* Background Photography & Video with Clean Neutral Lighting */}
+      {/* Background Photography & Video - Nature, cities and renewable energy (Zero people/meeting rooms) */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
-          key="service-ets-audience"
-          src={serviceEtsVideo || '/service-ets.mp4'}
+          key="audience-nature-video"
+          src={sectorVideo}
           autoPlay
           muted
           loop
@@ -20,7 +20,7 @@ export default function AudienceHero() {
           poster="/images/forestry.jpg"
           className="w-full h-full object-cover object-center opacity-75 scale-105"
         >
-          <source src={serviceEtsVideo || '/service-ets.mp4'} type="video/mp4" />
+          <source src={sectorVideo} type="video/mp4" />
           <img
             src="/images/forestry.jpg"
             alt="Diverse international forest landscape representing governments, industrial sectors and conservation initiatives"

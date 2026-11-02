@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { ChevronRight, ShieldCheck, BookOpen } from 'lucide-react';
 import { useLocale } from '../../hooks/useLocale';
-import insightsEcoVideo from '../../assets/insights-eco.mp4';
+import sectorVideo from '../../assets/sectorpage.mp4';
 
 export default function InsightsHero() {
   const { t } = useTranslation();
@@ -11,22 +11,24 @@ export default function InsightsHero() {
 
   return (
     <section className="relative min-h-[60vh] flex flex-col justify-center overflow-hidden bg-neutral-900 text-white pt-24 pb-12 sm:pt-28 sm:pb-16">
-      {/* Background Photography & Video with Clean Neutral Lighting */}
+      {/* Background Photography & Video - Clean renewable energy and nature (Zero people/meeting rooms) */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
-          key="insights-eco-video"
-          src={insightsEcoVideo || '/insights-eco.mp4'}
+          key="insights-nature-video"
+          src={sectorVideo}
           autoPlay
           muted
           loop
           playsInline
-          className="w-full h-full object-cover object-center opacity-85 scale-115 transform motion-safe:transition-transform motion-safe:duration-1000"
+          poster="/images/infrastructure.jpg"
+          className="w-full h-full object-cover object-center opacity-85 scale-105 transform motion-safe:transition-transform motion-safe:duration-1000"
         >
-          <source src={insightsEcoVideo || '/insights-eco.mp4'} type="video/mp4" />
+          <source src={sectorVideo} type="video/mp4" />
         </video>
         <img
-          alt="Modern climate research institute and ESG intelligence center"
-          className="absolute inset-0 w-full h-full object-cover object-right sm:object-center opacity-85 scale-105 -z-10"
+          src="/images/infrastructure.jpg"
+          alt="Modern climate infrastructure, renewable energy and sustainable intelligence center"
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-85 scale-105 -z-10"
           loading="eager"
         />
         {/* Neutral contrast gradient overlays */}

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { GraduationCap, ArrowRight } from 'lucide-react';
 import { useLocale } from '../../hooks/useLocale';
-import trainingEcoVideo from '../../assets/training-eco.mp4';
+import sectorVideo from '../../assets/sectorpage.mp4';
 
 export default function TrainingHero() {
   const { t } = useTranslation();
@@ -11,21 +11,23 @@ export default function TrainingHero() {
 
   return (
     <section className="relative min-h-[60vh] flex flex-col justify-center items-center overflow-hidden bg-neutral-900 text-white pt-24 pb-16 sm:pt-32 sm:pb-20 text-center">
-      {/* Background Photography & Video with Clean Neutral Lighting */}
+      {/* Background Photography & Video - Nature, cities and renewable energy (Zero people/meeting rooms) */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
-          key="training-eco-video"
-          src={trainingEcoVideo || '/training-eco.mp4'}
+          key="training-nature-video"
+          src={sectorVideo}
           autoPlay
           muted
           loop
           playsInline
-          className="w-full h-full object-cover object-center opacity-85 scale-115 transform motion-safe:transition-transform motion-safe:duration-1000"
+          poster="/images/infrastructure.jpg"
+          className="w-full h-full object-cover object-center opacity-85 scale-105 transform motion-safe:transition-transform motion-safe:duration-1000"
         >
-          <source src={trainingEcoVideo || '/training-eco.mp4'} type="video/mp4" />
+          <source src={sectorVideo} type="video/mp4" />
         </video>
         <img
-          alt="Executive training, technical capacity building and institutional climate education"
+          src="/images/infrastructure.jpg"
+          alt="Clean infrastructure, renewable energy and sustainable landscape"
           className="absolute inset-0 w-full h-full object-cover object-center opacity-85 scale-105 -z-10"
           loading="eager"
         />

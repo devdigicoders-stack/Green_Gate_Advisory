@@ -13,12 +13,16 @@ import {
   FileText, 
   GraduationCap, 
   UserPlus, 
-  Sprout 
+  Sprout,
+  MapPin,
+  MessageCircle,
+  Phone
 } from 'lucide-react';
 import Logo from '../common/Logo';
 import LanguageSwitcher from '../common/LanguageSwitcher';
 import { useLocale } from '../../hooks/useLocale';
 import { SERVICES_LIST } from '../../data/servicesList';
+import { CONTACT_CONFIG } from '../../config/contactConfig';
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -65,17 +69,50 @@ export default function Footer() {
               {t('footer.brandTagline', 'Green Gate Advisory is an environmental, climate and carbon market advisory consultancy supporting governments, businesses, exporters, project developers, investors and institutions.')}
             </p>
 
-            {/* Email Card with Green Border and Diagonal Arrow */}
-            <div className="pt-1 w-full flex justify-center md:justify-start">
+            {/* Contact Details Stack: Email + Office Address + WhatsApp */}
+            <div className="space-y-2.5 w-full max-w-md">
+              {/* Email Card */}
               <a
-                href="mailto:contact@greengateadvisory.com"
-                className="inline-flex items-center justify-between w-full max-w-md px-5 py-3.5 rounded-none bg-white border border-[#019935] hover:border-[#017A2A] text-[#1F2E26] hover:text-[#019935] shadow-xs hover:shadow-sm transition-all duration-200 group"
+                href={`mailto:${CONTACT_CONFIG.email}`}
+                className="inline-flex items-center justify-between w-full px-4 sm:px-5 py-3 rounded-none bg-white border border-[#019935] hover:border-[#017A2A] text-[#1F2E26] hover:text-[#019935] shadow-2xs hover:shadow-xs transition-all duration-200 group"
               >
                 <div className="flex items-center gap-2.5 sm:gap-3">
-                  <Mail className="w-5 h-5 text-[#019935] flex-shrink-0" />
-                  <span className="text-xs sm:text-sm font-semibold tracking-tight">contact@greengateadvisory.com</span>
+                  <Mail className="w-4.5 h-4.5 text-[#019935] flex-shrink-0" />
+                  <span className="text-xs sm:text-[13.5px] font-semibold tracking-tight">{CONTACT_CONFIG.email}</span>
                 </div>
-                <ArrowUpRight className="w-5 h-5 text-[#019935] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform flex-shrink-0" />
+                <ArrowUpRight className="w-4 h-4 text-[#019935] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform flex-shrink-0" />
+              </a>
+
+              {/* Office Location Card (Barcelona, Spain) */}
+              <a
+                href={CONTACT_CONFIG.address.mapsDirectionsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="View on Google Maps"
+                className="inline-flex items-center justify-between w-full px-4 sm:px-5 py-3 rounded-none bg-white border border-[#D5E6DA] hover:border-[#019935] text-[#1F2E26] hover:text-[#019935] shadow-2xs hover:shadow-xs transition-all duration-200 group text-left"
+              >
+                <div className="flex items-start gap-2.5 sm:gap-3">
+                  <MapPin className="w-4.5 h-4.5 text-[#019935] flex-shrink-0 mt-0.5" />
+                  <div className="text-xs sm:text-[13px] leading-snug">
+                    <span className="font-semibold block text-[#1F2E26]">{CONTACT_CONFIG.address.street}</span>
+                    <span className="text-[#55695D] block">{CONTACT_CONFIG.address.postalCode} {CONTACT_CONFIG.address.city}, {CONTACT_CONFIG.address.country}</span>
+                  </div>
+                </div>
+                <ArrowUpRight className="w-4 h-4 text-[#019935] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform flex-shrink-0" />
+              </a>
+
+              {/* Direct WhatsApp Action Link */}
+              <a
+                href={`https://wa.me/${CONTACT_CONFIG.whatsapp.raw}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-between w-full px-4 sm:px-5 py-2.5 rounded-none bg-[#E7F9EE] border border-[#25D366]/40 hover:border-[#25D366] text-[#0C3B1E] hover:text-[#017A2A] shadow-2xs transition-all duration-200 group"
+              >
+                <div className="flex items-center gap-2.5">
+                  <MessageCircle className="w-4.5 h-4.5 text-[#25D366] flex-shrink-0" />
+                  <span className="text-xs sm:text-[13px] font-semibold">WhatsApp: {CONTACT_CONFIG.whatsapp.display}</span>
+                </div>
+                <span className="text-[11px] font-mono text-[#019935] uppercase tracking-wider font-bold">Chat</span>
               </a>
             </div>
 
@@ -171,7 +208,7 @@ export default function Footer() {
         {/* Bottom Sub-bar - Centered on Mobile */}
         <div className="pt-6 border-t border-[#D5E6DA] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-[13px] text-[#55695D] font-sans text-center sm:text-left">
           <div>
-            © {new Date().getFullYear()} {t('footer.copyright', 'All rights reserved. Green Gate Advisory.')}
+            © {new Date().getFullYear()} {t('footer.copyright', 'All rights reserved. Green Gate Advisory.')} • Barcelona, Spain
           </div>
 
           <div className="text-center">
@@ -180,27 +217,21 @@ export default function Footer() {
               href="https://www.worknestconnect.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#019935] hover:text-[#017A2A] transition-colors font-semibold underline underline-offset-4"
+              className="text-[#019935] hover:text-[#017A2A] underline font-medium transition-colors"
             >
-              #TeamWorknestConnect
+              Worknest Connect
             </a>
           </div>
 
-          <div className="flex items-center justify-center gap-4 font-medium">
-            <Link to={getLocalizedPath('/privacy-policy')} className="text-[#55695D] hover:text-[#019935] transition-colors">
-              {t('footer.privacyPolicy', 'Privacy Policy')}
-            </Link>
-            <span className="text-[#8BA092]">|</span>
-            <button
-              type="button"
-              onClick={scrollToTop}
-              className="inline-flex items-center gap-1.5 text-[#1E2E25] hover:text-[#019935] font-semibold transition-colors focus:outline-none"
-              aria-label="Back to top"
-            >
-              <ArrowUp className="w-3.5 h-3.5 text-[#019935]" />
-              <span>Back to Top</span>
-            </button>
-          </div>
+          <button
+            type="button"
+            onClick={scrollToTop}
+            aria-label="Scroll to top"
+            className="inline-flex items-center gap-2 text-[#019935] hover:text-[#017A2A] transition-colors focus:outline-none group font-medium"
+          >
+            <span>Back to top</span>
+            <ArrowUp className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
+          </button>
         </div>
 
       </div>
