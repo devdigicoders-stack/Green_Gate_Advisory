@@ -9,12 +9,25 @@ export default function ContactHero() {
     <section className="relative min-h-[60vh] flex flex-col justify-center items-center overflow-hidden bg-neutral-900 text-white pt-24 pb-16 sm:pt-32 sm:pb-20 text-center">
       {/* Background Photography with Clean Neutral Lighting */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <img
-          src="/images/contact-hero.jpg"
-          alt="International climate and carbon market technical advisory consultations"
-          className="w-full h-full object-cover object-center opacity-85 scale-102 transform motion-safe:transition-transform motion-safe:duration-1000"
-          loading="eager"
-        />
+        <video
+          key="contact-hero-video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/images/contact-hero.jpg"
+          className="w-full h-full object-cover object-center opacity-85 scale-105 transform motion-safe:transition-transform motion-safe:duration-1000"
+        >
+          <source src="/gemini_generated_video_7a37fb6f.mp4" type="video/mp4" />
+          <source src="/videos/contact-hero.webm" type="video/webm" />
+          <source src="/contactpage.mp4" type="video/mp4" />
+          <img
+            src="/images/contact-hero.jpg"
+            alt="International climate and carbon market technical advisory consultations"
+            className="w-full h-full object-cover object-center opacity-85 scale-102"
+            loading="eager"
+          />
+        </video>
         {/* Neutral contrast gradient overlays */}
         <div className="absolute inset-0 bg-black/60 pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/60 pointer-events-none" />
@@ -45,4 +58,3 @@ export default function ContactHero() {
     </section>
   );
 }
-

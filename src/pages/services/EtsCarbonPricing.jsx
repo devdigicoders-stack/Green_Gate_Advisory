@@ -76,7 +76,8 @@ export default function EtsCarbonPricing() {
         shortTitle={serviceData.shortTitle}
         lead={serviceData.lead}
         quickTags={serviceData.quickTags || ['Emissions Trading Systems', 'Carbon Pricing', 'Article 6 ITMO', 'Allowance Allocation']}
-        videoSrc={serviceEtsVideo || '/service-ets.mp4'}
+        videoSrc="/gemini_generated_video_a6711606.mp4"
+        fallbackVideoSrc={serviceEtsVideo || '/service-ets.mp4'}
         trimDuration={null}
       />
 

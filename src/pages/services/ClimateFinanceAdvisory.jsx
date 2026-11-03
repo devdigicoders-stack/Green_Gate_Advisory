@@ -78,8 +78,8 @@ export default function ClimateFinanceAdvisory() {
         shortTitle={serviceData.shortTitle}
         lead={serviceData.lead}
         quickTags={serviceData.quickTags || ['GCF & GEF', 'Adaptation Fund', 'Blended Finance', 'Theory of Change']}
-        videoSrc={climateFinanceVideo || '/service-climate.mp4'}
-        trimDuration={null}
+        imageSrc="/Gemini_Generated_Image_38v2jk38v2jk38v2.png"
+
       />
 
       <ServiceIntroduction

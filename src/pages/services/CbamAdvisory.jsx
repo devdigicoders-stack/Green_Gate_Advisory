@@ -87,7 +87,8 @@ export default function CbamAdvisory() {
         shortTitle={serviceData.shortTitle}
         lead={serviceData.lead}
         quickTags={serviceData.quickTags || ['EU CBAM', 'Embedded Emissions', 'HS Code Screening', 'Supplier Verification']}
-        videoSrc={cbamVideo || '/services-CBAM.mp4'}
+        videoSrc="/gemini_generated_video_88760edf.mp4"
+        fallbackVideoSrc={cbamVideo || '/services-CBAM.mp4'}
         trimDuration={null}
       />
 

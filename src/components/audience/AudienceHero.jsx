@@ -19,6 +19,7 @@ export default function AudienceHero() {
           poster="/images/forestry.jpg"
           className="w-full h-full object-cover object-center opacity-75 scale-105"
         >
+          <source src="/gemini_generated_video_88371b4e.mp4" type="video/mp4" />
           <source src="/videos/audience-hero.webm" type="video/webm" />
           <source src={serviceEtsVideo} type="video/mp4" />
           <source src="/service-ets.mp4" type="video/mp4" />
