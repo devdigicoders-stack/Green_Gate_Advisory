@@ -76,8 +76,9 @@ export default function CarbonMarketAdvisory() {
         shortTitle={serviceData.shortTitle}
         lead={serviceData.lead}
         quickTags={serviceData.quickTags || ['Voluntary Carbon Market', 'Article 6', 'MRV Systems', 'Registry Guidance']}
-        videoSrc={servicecarbonVideo || '/servicecarbonpage.mp4'}
-        trimDuration={6.0}
+        videoSrc="/hero-canopy-video.webm"
+        fallbackVideoSrc={servicecarbonVideo || '/servicecarbonpage.mp4'}
+        trimDuration={null}
       />
 
       <ServiceIntroduction

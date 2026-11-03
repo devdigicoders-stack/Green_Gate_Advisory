@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { ShieldCheck } from 'lucide-react';
-import sectorVideo from '../../assets/sectorpage.mp4';
+import sectorVideo from '../../assets/services-CBAM.mp4';
 
 export default function SectorsHero() {
   const { t } = useTranslation();
@@ -15,15 +15,21 @@ export default function SectorsHero() {
           muted
           loop
           playsInline
-          poster="/images/infrastructure.jpg"
+          key="sectors-hero-video"
+          poster="/images/sustainable-industry.jpg"
           className="w-full h-full object-cover object-center opacity-75 scale-105"
         >
           <source 
-            src={sectorVideo} 
-            type="video/mp4" 
+            src="/videos/clean-energy-sectors.webm" 
+            type="video/webm" 
+          />
+          <source src={sectorVideo} type="video/mp4" 
+          />
+          <source src="/videos/services-hero.webm" type="video/webm" />
+          <source src="/services-CBAM.mp4" type="video/mp4" 
           />
           <img
-            src="/images/infrastructure.jpg"
+            src="/images/sustainable-industry.jpg"
             alt="Sustainable industrial and natural infrastructure representing cross-sector climate resilience"
             className="w-full h-full object-cover object-center opacity-75"
           />

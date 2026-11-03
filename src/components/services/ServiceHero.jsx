@@ -22,6 +22,7 @@ export default function ServiceHero({
   quickTags = [],
   imageSrc,
   videoSrc,
+  fallbackVideoSrc,
   trimDuration = null
 }) {
   const { t } = useTranslation();
@@ -47,7 +48,7 @@ export default function ServiceHero({
           <video
             key={videoSrc}
             ref={videoRef}
-            src={videoSrc}
+
             autoPlay
             muted
             loop
@@ -56,7 +57,10 @@ export default function ServiceHero({
             poster={bgImage}
             className="w-full h-full object-cover object-center opacity-75 scale-105"
           >
-            <source src={videoSrc} type={String(videoSrc).includes('.mp4') ? 'video/mp4' : 'video/webm'} />
+            <source src={videoSrc} type={String(videoSrc).includes('.webm') ? 'video/webm' : 'video/mp4'} />
+            {fallbackVideoSrc && (
+              <source src={fallbackVideoSrc} type={String(fallbackVideoSrc).includes('.webm') ? 'video/webm' : 'video/mp4'} />
+            )}
             <img
               src={bgImage}
               alt={title || "Green Gate Advisory Practice"}
