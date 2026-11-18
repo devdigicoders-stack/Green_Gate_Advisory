@@ -316,57 +316,65 @@ export default function Services() {
         </div>
       </section>
 
-      {/* SECTION 4 — INTEGRATED ADVISORY APPROACH (GCC Pure White Architectural 4-Column Row) */}
-      <section className="w-full bg-white border-b border-[#e5e7eb] font-['Poppins',sans-serif] py-16 sm:py-20 lg:py-24 overflow-hidden">
-        <div className="w-[90%] max-w-[1680px] mx-auto space-y-14">
+      {/* SECTION 4 — INTEGRATED ADVISORY APPROACH (4 Photo-Topped Cards) */}
+      <section className="w-full bg-white border-b border-[#e5e7eb] font-['Poppins',sans-serif] py-16 sm:py-20 overflow-hidden">
+        <div className="w-[90%] max-w-[1680px] mx-auto space-y-12">
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="text-center max-w-4xl mx-auto flex flex-col items-center"
+            className="text-center max-w-3xl mx-auto flex flex-col items-center"
           >
-            <span className="inline-block w-[70px] h-[2px] bg-[#019934] mb-4" aria-hidden="true" />
-            <span className="text-[13px] sm:text-[14px] font-medium tracking-[0.22em] uppercase text-[#0A7A32]">
+            <span className="inline-block w-[64px] h-[2px] bg-[#019934] mb-4" aria-hidden="true" />
+            <span className="text-[13px] font-medium tracking-[0.22em] uppercase text-[#0A7A32]">
               {t('services.overview.approach.eyebrow', 'Integrated Perspective')}
             </span>
-            <h2 className="mt-3 font-['Poppins',sans-serif] font-light text-[34px] sm:text-[44px] lg:text-[50px] text-[#1A5C3B] leading-[1.16] tracking-[-0.01em]">
-              {t('services.overview.approach.heading', 'Connecting Strategy, Regulation, Finance & Delivery')}
+            <h2 className="mt-3 font-['Poppins',sans-serif] font-light text-[32px] sm:text-[42px] text-[#1A5C3B] leading-[1.16]">
+              {t('services.overview.approach.heading', 'Strategy, Regulation, Finance & Delivery')}
             </h2>
-            {t('services.overview.approach.p1') && (
-              <p className="mt-4 font-['Poppins',sans-serif] font-light text-[16px] sm:text-[19px] text-[#7f7f7f] leading-[1.5] max-w-3xl">
-                {t('services.overview.approach.p1')}
-              </p>
-            )}
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-[#e5e7eb]">
-            {pillars.map((pil, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
-                transition={{ duration: 0.55, delay: idx * 0.08, ease: 'easeOut' }}
-                className="bg-white hover:bg-[#57D182]/[0.12] border-r border-b border-[#e5e7eb] p-7 sm:p-8 space-y-4 transition-colors duration-200"
-              >
-                <div className="font-['Poppins',sans-serif] font-light text-[38px] leading-none text-[#019934]">
-                  {pil.number || `0${idx + 1}`}
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {pillars.map((pil, idx) => {
+              const approachPhotos = [
+                '/images/photo-institutional-forum.jpg',
+                '/images/photo-mrv-monitoring.jpg',
+                '/images/photo-climate-finance.jpg',
+                '/images/photo-green-hydrogen.jpg'
+              ];
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 18 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.12 }}
+                  transition={{ duration: 0.5, delay: idx * 0.06, ease: 'easeOut' }}
+                  className="rounded-[4px] bg-white border border-[#e5e7eb] hover:border-[#019934] overflow-hidden transition-colors duration-200 flex flex-col group"
+                >
+                  <div className="relative aspect-[16/9] overflow-hidden bg-[#E4F6EA]">
+                    <img
+                      src={approachPhotos[idx % approachPhotos.length]}
+                      alt={pil.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      loading="lazy"
+                    />
+                    <span className="absolute top-3 left-3 text-[11px] font-medium tracking-[0.14em] uppercase text-[#1A5C3B] bg-white/92 px-2.5 py-0.5">
+                      {pil.number || `0${idx + 1}`}
+                    </span>
+                  </div>
 
-                <span className="inline-block text-[11px] font-medium tracking-[0.14em] uppercase text-[#1A5C3B] bg-[#57D182]/40 px-2.5 py-0.5">
-                  Pillar {pil.number || `0${idx + 1}`}
-                </span>
-
-                <h3 className="font-['Poppins',sans-serif] font-medium text-[18px] sm:text-[19px] text-[#1A5C3B] leading-snug">
-                  {pil.title}
-                </h3>
-
-                <p className="font-['Poppins',sans-serif] font-light text-[14px] text-[#555555] leading-[1.68]">
-                  {pil.description}
-                </p>
-              </motion.div>
-            ))}
+                  <div className="p-6 space-y-2">
+                    <h3 className="font-['Poppins',sans-serif] font-semibold text-[17.5px] text-[#1A5C3B] leading-snug">
+                      {pil.title}
+                    </h3>
+                    <p className="font-['Poppins',sans-serif] font-light text-[13.5px] text-[#555555] leading-[1.6] line-clamp-2">
+                      {pil.description}
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

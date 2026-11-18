@@ -26,10 +26,6 @@ export default function TrainingTopics() {
           <h2 className="mt-3 font-['Poppins',sans-serif] font-light text-[34px] sm:text-[44px] lg:text-[50px] text-[#1A5C3B] leading-[1.16] tracking-[-0.01em]">
             {t('training.topics.heading', 'Eleven Potential Training Topics')}
           </h2>
-
-          <p className="mt-4 font-['Poppins',sans-serif] font-light text-[16px] sm:text-[19px] text-[#7f7f7f] leading-[1.5] max-w-3xl">
-            {t('training.topics.subtitle', "Modular technical subjects tailored to your organisation's operational, compliance, or project development priorities.")}
-          </p>
         </motion.div>
 
         {/* 11 Topics Interactive Card Grid */}

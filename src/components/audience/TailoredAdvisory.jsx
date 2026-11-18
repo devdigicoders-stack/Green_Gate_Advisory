@@ -1,25 +1,15 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import {
-  Target,
-  Scale,
-  Layers,
-  Sparkles,
-  Database,
-  Users2,
-  FileCheck2,
-  SlidersHorizontal,
-  Info
-} from 'lucide-react';
 
-const DIMENSION_ICONS = [
-  Target,
-  Scale,
-  Layers,
-  Sparkles,
-  Database,
-  Users2,
-  FileCheck2
+const DIMENSION_PHOTOS = [
+  '/images/photo-institutional-forum.jpg',
+  '/images/photo-cbam-industry.jpg',
+  '/images/photo-green-manufacturing.jpg',
+  '/images/photo-carbon-markets.jpg',
+  '/images/photo-mrv-monitoring.jpg',
+  '/images/photo-executive-training.jpg',
+  '/images/photo-climate-finance.jpg',
+  '/images/photo-advisory-office.jpg'
 ];
 
 export default function TailoredAdvisory() {
@@ -29,122 +19,86 @@ export default function TailoredAdvisory() {
   const dimensions = Array.isArray(rawDimensions) ? rawDimensions : [];
 
   return (
-    <section className="relative w-full bg-[#1A5C3B] text-white font-['Poppins',sans-serif] py-20 sm:py-24 overflow-hidden">
-      {/* Subtle Concentric Arc Watermark */}
-      <svg
-        aria-hidden="true"
-        viewBox="0 0 600 600"
-        fill="none"
-        className="pointer-events-none absolute -right-32 -bottom-28 w-[420px] sm:w-[560px] h-auto opacity-[0.06]"
-      >
-        {Array.from({ length: 15 }).map((_, idx) => (
-          <circle
-            key={idx}
-            cx="380"
-            cy="380"
-            r={65 + idx * 24}
-            stroke="#ffffff"
-            strokeWidth="1.25"
-          />
-        ))}
-      </svg>
-
-      <div className="relative z-10 w-[90%] max-w-[1680px] mx-auto space-y-14 sm:space-y-16">
-        {/* Centered GCC Dark-Navy Header */}
+    <section className="relative w-full bg-[#1A5C3B] text-white font-['Poppins',sans-serif] py-16 sm:py-20 overflow-hidden">
+      <div className="relative z-10 w-[90%] max-w-[1680px] mx-auto space-y-12">
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.65, ease: 'easeOut' }}
-          className="text-center max-w-4xl mx-auto flex flex-col items-center"
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          className="text-center max-w-3xl mx-auto flex flex-col items-center"
         >
-          <span className="inline-block w-[70px] h-[2px] bg-[#019934] mb-4" aria-hidden="true" />
-
-          <span className="text-[13px] sm:text-[14px] font-medium tracking-[0.22em] uppercase text-[#57D182]">
+          <span className="inline-block w-[64px] h-[2px] bg-[#019934] mb-4" aria-hidden="true" />
+          <span className="text-[13px] font-medium tracking-[0.22em] uppercase text-[#57D182]">
             {t('audience.adaptation.eyebrow', 'Engagement Flexibility')}
           </span>
-
-          <h2 className="mt-3 font-['Poppins',sans-serif] font-light text-[34px] sm:text-[44px] lg:text-[50px] text-white leading-[1.16] tracking-[-0.01em]">
-            {t('audience.adaptation.heading', 'Tailored to Your Context & Objectives')}
+          <h2 className="mt-3 font-['Poppins',sans-serif] font-light text-[32px] sm:text-[42px] text-white leading-[1.16]">
+            {t('audience.adaptation.heading', 'Tailored to Your Context')}
           </h2>
-
-          <p className="mt-4 font-['Poppins',sans-serif] font-light text-[16px] sm:text-[18.5px] text-white/80 leading-[1.6] max-w-3xl">
-            {t('audience.adaptation.subtitle', "Rather than enforcing a rigid template, Green Gate Advisory adapts its advisory scope to each organisation's unique operating environment.")}
-          </p>
         </motion.div>
 
-        {/* 7 Adaptation Dimensions Grid + 8th Highlighted Philosophy Card */}
+        {/* Photo-Topped Adaptation Dimensions Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
-          {dimensions.map((dim, idx) => {
-            const Icon = DIMENSION_ICONS[idx] || SlidersHorizontal;
+          {dimensions.map((dim, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.12 }}
+              transition={{ duration: 0.5, ease: 'easeOut', delay: (idx % 4) * 0.05 }}
+              className="rounded-[4px] bg-white/[0.05] hover:bg-white/[0.09] border border-white/15 hover:border-[#57D182] overflow-hidden transition-all duration-300 flex flex-col group"
+            >
+              <div className="relative aspect-[16/9] overflow-hidden bg-[#144A2F]">
+                <img
+                  src={DIMENSION_PHOTOS[idx % DIMENSION_PHOTOS.length]}
+                  alt={dim.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                />
+                <span className="absolute top-3 left-3 text-[11px] font-medium tracking-[0.14em] uppercase bg-[#1A5C3B]/90 text-[#57D182] px-2.5 py-0.5">
+                  0{idx + 1}
+                </span>
+              </div>
 
-            return (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
-                transition={{ duration: 0.55, ease: 'easeOut', delay: (idx % 4) * 0.06 }}
-                className="relative p-6 sm:p-7 rounded-none bg-white/[0.04] hover:bg-white/[0.09] border border-white/15 hover:border-[#57D182] transition-all duration-300 flex flex-col justify-between space-y-5 group min-h-[240px]"
-              >
-                <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#019934] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="p-5 sm:p-6 space-y-1.5 flex-1">
+                <h3 className="font-['Poppins',sans-serif] font-medium text-[16.5px] text-white group-hover:text-[#57D182] transition-colors leading-snug">
+                  {dim.title}
+                </h3>
+                <p className="font-['Poppins',sans-serif] font-light text-[13px] text-white/80 leading-[1.58] line-clamp-2">
+                  {dim.desc}
+                </p>
+              </div>
+            </motion.div>
+          ))}
 
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="font-['Poppins',sans-serif] font-light text-[36px] leading-none text-[#57D182]">
-                      0{idx + 1}
-                    </span>
-                    <div className="w-10 h-10 rounded-[5px] bg-[#019934]/15 border border-[#57D182]/35 text-[#57D182] group-hover:bg-[#019934] group-hover:text-white flex items-center justify-center transition-colors duration-200">
-                      <Icon className="w-5 h-5 stroke-[1.6]" />
-                    </div>
-                  </div>
-
-                  <h3 className="font-['Poppins',sans-serif] font-medium text-[17.5px] sm:text-[18.5px] text-white group-hover:text-[#57D182] transition-colors duration-200 leading-snug">
-                    {dim.title}
-                  </h3>
-
-                  <p className="font-['Poppins',sans-serif] font-light text-[13.5px] sm:text-[14px] text-white/75 leading-[1.68]">
-                    {dim.desc}
-                  </p>
-                </div>
-
-                <div className="pt-4 border-t border-white/12 text-[11.5px] font-medium text-[#57D182] flex items-center gap-2">
-                  <span className="inline-block w-3 h-[2px] bg-[#019934]" aria-hidden="true" />
-                  <span>Calibrated advisory scope</span>
-                </div>
-              </motion.div>
-            );
-          })}
-
-          {/* 8th Balancing Summary Card — GCC Signature Diagonal Teal-Emerald Gradient */}
+          {/* 8th Balancing Philosophy Photo Card */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 0.55, ease: 'easeOut', delay: 0.2 }}
-            className="relative p-6 sm:p-7 rounded-none border border-[#57D182]/75 text-white flex flex-col justify-between space-y-5 overflow-hidden min-h-[240px]"
-            style={{
-              background:
-                'linear-gradient(145deg, #126D3D 0%, #078A38 55%, #019934 100%)'
-            }}
+            viewport={{ once: true, amount: 0.12 }}
+            transition={{ duration: 0.5, ease: 'easeOut', delay: 0.18 }}
+            className="rounded-[4px] border border-[#57D182]/75 text-white overflow-hidden flex flex-col"
+            style={{ background: 'linear-gradient(145deg, #126D3D 0%, #078A38 55%, #019934 100%)' }}
           >
-            <div className="space-y-4">
-              <span className="inline-block text-[11px] font-medium tracking-[0.14em] uppercase bg-white text-[#1A5C3B] px-2.5 py-0.5">
-                DELIVERY PHILOSOPHY
+            <div className="relative aspect-[16/9] overflow-hidden">
+              <img
+                src="/images/photo-advisory-office.jpg"
+                alt="Context-Driven Advisory"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <span className="absolute top-3 left-3 text-[10.5px] font-medium tracking-[0.14em] uppercase bg-white text-[#1A5C3B] px-2.5 py-0.5">
+                PHILOSOPHY
               </span>
-
-              <h3 className="font-['Poppins',sans-serif] font-medium text-[20px] text-white leading-snug">
-                Context-Driven Advisory
-              </h3>
-
-              <p className="font-['Poppins',sans-serif] font-light text-[14px] text-white/95 leading-[1.68]">
-                Every advisory engagement is structured directly with client leadership, avoiding generic playbooks and ensuring statutory compliance.
-              </p>
             </div>
 
-            <div className="pt-4 border-t border-white/25 text-[12px] font-medium text-white flex items-center gap-2">
-              <Info className="w-4 h-4 flex-shrink-0 stroke-[1.75]" />
-              <span>Tailored deliverables only</span>
+            <div className="p-5 sm:p-6 space-y-1.5 flex-1">
+              <h3 className="font-['Poppins',sans-serif] font-medium text-[17px] text-white leading-snug">
+                Context-Driven Advisory
+              </h3>
+              <p className="font-['Poppins',sans-serif] font-light text-[13px] text-white/95 leading-[1.58]">
+                Structured directly with client leadership for measurable compliance.
+              </p>
             </div>
           </motion.div>
         </div>
