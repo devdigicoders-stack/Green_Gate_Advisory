@@ -1,14 +1,15 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { 
-  Sparkles, 
-  Scale, 
-  ShieldCheck, 
-  Landmark, 
-  Trees, 
-  FileText, 
-  BarChart3, 
+import {
+  Sparkles,
+  Scale,
+  ShieldCheck,
+  Landmark,
+  Trees,
+  FileText,
+  BarChart3,
   ArrowRight,
   GraduationCap,
   CheckCircle2
@@ -88,37 +89,24 @@ const SERVICES_DATA = [
   }
 ];
 
-// Staggered reveal on scroll
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.08
+      staggerChildren: 0.08,
+      delayChildren: 0.05
     }
   }
 };
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 24 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.75,
-      ease: [0.22, 1, 0.36, 1]
-    }
-  }
-};
-
-const headerVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.85,
+      duration: 0.65,
       ease: [0.22, 1, 0.36, 1]
     }
   }
@@ -127,194 +115,206 @@ const headerVariants = {
 export default function OurServices() {
   const { t } = useTranslation();
   const { getLocalizedPath } = useLocale();
+  const [hoveredSlug, setHoveredSlug] = useState(null);
 
   return (
-    <section 
-      id="services" 
+    <section
+      id="services"
       aria-label="Our Core Advisory Services"
-      className="py-16 sm:py-24 bg-[#F4F8F5] relative overflow-hidden scroll-mt-20"
+      className="relative w-full bg-white font-['Poppins',sans-serif] py-20 sm:py-24 lg:py-28 overflow-hidden scroll-mt-20"
     >
-      {/* Subtle ambient background glow */}
-      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#019935]/5 rounded-full blur-[130px] pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-[450px] h-[450px] bg-emerald-600/5 rounded-full blur-[110px] pointer-events-none" />
+      {/* Subtle Concentric Mint Ripple Watermark (Bottom-Right GCC White Canvas Signature) */}
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 600 600"
+        fill="none"
+        className="pointer-events-none absolute -right-24 -bottom-24 w-[420px] sm:w-[540px] h-auto opacity-30"
+      >
+        {Array.from({ length: 16 }).map((_, idx) => (
+          <circle
+            key={idx}
+            cx="420"
+            cy="420"
+            r={60 + idx * 22}
+            stroke="#57D182"
+            strokeWidth="1"
+            strokeOpacity="0.45"
+          />
+        ))}
+      </svg>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
-        
-        {/* Section Header */}
-        <motion.div 
-          variants={headerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-60px" }}
-          className="text-center max-w-3xl mx-auto space-y-3"
+      <div className="relative z-10 w-[90%] max-w-[1680px] mx-auto space-y-14 sm:space-y-16">
+        {/* Section Header — Exact GCC Light-Weight Navy Display Title + Muted Grey Subtitle */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+          className="text-center max-w-4xl mx-auto flex flex-col items-center"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 text-[11px] font-semibold tracking-wider uppercase bg-[#019935]/10 text-[#019935] border border-[#019935]/25 backdrop-blur-xs">
-            <span className="w-1.5 h-1.5 bg-[#019935] animate-pulse"></span>
-            <span>{t('home.coreServices.eyebrow', 'OUR ADVISORY PRACTICES')}</span>
-          </div>
+          <span className="inline-block w-[70px] h-[2px] bg-[#019934] mb-4" aria-hidden="true" />
 
-          <h2 className="font-display font-bold text-2xl sm:text-3xl lg:text-4xl text-[#1E2522] tracking-tight leading-snug">
+          <span className="text-[13px] sm:text-[14px] font-medium tracking-[0.2em] uppercase text-[#0A7A32]">
+            {t('home.coreServices.eyebrow', 'OUR ADVISORY PRACTICES')}
+          </span>
+
+          <h2 className="mt-3 font-['Poppins',sans-serif] font-light text-[34px] sm:text-[46px] lg:text-[54px] text-[#1A5C3B] leading-[1.15] tracking-[-0.01em]">
             {t('home.coreServices.heading', 'Comprehensive Climate & Carbon Services')}
           </h2>
 
-          <p className="text-sm sm:text-base text-[#4A5550] font-sans leading-relaxed">
+          <p className="mt-4 font-['Poppins',sans-serif] font-light text-[16px] sm:text-[19px] lg:text-[21px] text-[#7f7f7f] leading-[1.45] max-w-3xl">
             {t('home.coreServices.subtitle', 'Connecting deep technical rigor, regulatory foresight, and institutional capital to accelerate measurable climate action.')}
           </p>
         </motion.div>
 
-        {/* 7 Services Grid with 180° Flip Card Motion */}
-        <motion.div 
+        {/* Architectural Mosaic Grid — GCC Flush Mint-Tint Tiles + Sibling Spotlight Hover + Duotone Gradient Feature Card */}
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6"
+          viewport={{ once: true, amount: 0.08 }}
+          onMouseLeave={() => setHoveredSlug(null)}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-white"
         >
-          {SERVICES_DATA.map((srv) => {
+          {SERVICES_DATA.map((srv, index) => {
             const Icon = srv.icon;
+            const isAlternatingMint = index % 2 === 0;
+            const isDimmed = hoveredSlug !== null && hoveredSlug !== srv.slug;
+
             return (
               <motion.div
                 key={srv.slug}
                 variants={cardVariants}
-                className="flip-card min-h-[360px] sm:min-h-[375px] w-full"
+                onMouseEnter={() => setHoveredSlug(srv.slug)}
+                className={`relative border-r border-b border-white transition-all duration-300 ${
+                  isAlternatingMint ? 'bg-[#57D182]/20' : 'bg-[#F4F8F5]'
+                } ${isDimmed ? 'lg:opacity-45' : 'opacity-100'}`}
               >
-                <div className="flip-card-inner shadow-[0_8px_25px_rgba(0,0,0,0.07)] hover:shadow-[0_20px_45px_rgba(0,0,0,0.16)]">
-                  
-                  {/* FRONT FACE (White, Sharp, Clean) */}
-                  <div className="flip-card-front bg-white border border-[#D5E1D8] p-5 sm:p-6 flex flex-col justify-between rounded-none overflow-hidden relative">
-                    {/* Top Green Accent Bar */}
-                    <div className="absolute top-0 left-0 right-0 h-1 bg-[#019935]" />
+                <Link
+                  to={getLocalizedPath(`/services/${srv.slug}`)}
+                  className="group h-full flex flex-col justify-between p-7 sm:p-9 lg:p-10 min-h-[370px] sm:min-h-[395px] focus:outline-none"
+                >
+                  <div className="space-y-5">
+                    {/* Top Row: GCC Translucent Mint Pill Badge + Crisp Teal Icon */}
+                    <div className="flex items-center justify-between gap-3">
+                      <span className="inline-flex items-center gap-2 bg-[#57D182]/50 text-[#1A5C3B] px-2.5 py-1 text-[12px] sm:text-[12.5px] font-medium tracking-[0.04em] uppercase leading-tight">
+                        <span>{srv.number}</span>
+                        <span className="opacity-50">/</span>
+                        <span>{srv.badge}</span>
+                      </span>
 
-                    <div className="space-y-4">
-                      {/* Number Badge + Icon */}
-                      <div className="flex items-center justify-between">
-                        <span className="w-7 h-7 bg-[#E8F5ED] text-[#019935] font-mono text-xs font-bold flex items-center justify-center rounded-none">
-                          {srv.number}
-                        </span>
-
-                        <div className="w-10 h-10 bg-[#F0F6F2] text-[#019935] flex items-center justify-center rounded-none border border-[#D5E4D9]">
-                          <Icon className="w-4.5 h-4.5" />
-                        </div>
-                      </div>
-
-                      {/* Badge & Title */}
-                      <div className="space-y-1.5">
-                        <span className="text-[10.5px] font-mono font-bold tracking-wider uppercase text-[#019935]">
-                          {srv.badge}
-                        </span>
-                        <h3 className="font-display font-bold text-lg sm:text-[19px] text-[#1E2522] leading-snug">
-                          {srv.title}
-                        </h3>
-                      </div>
-
-                      {/* Description */}
-                      <p className="text-[13px] text-[#4E5C54] leading-relaxed font-sans font-normal">
-                        {srv.description}
-                      </p>
-
-                      {/* Key Capabilities Pills */}
-                      <div className="pt-1 flex flex-wrap gap-1.5">
-                        {srv.features.map((feature) => (
-                          <span 
-                            key={feature}
-                            className="inline-flex items-center gap-1 text-[11px] font-medium text-[#2C3831] bg-[#F3F8F4] px-2 py-0.5 rounded-none border border-[#DFEAE2]"
-                          >
-                            <CheckCircle2 className="w-2.5 h-2.5 text-[#019935] flex-shrink-0" />
-                            <span>{feature}</span>
-                          </span>
-                        ))}
-                      </div>
+                      <Icon className="w-6 h-6 text-[#019934] stroke-[1.5] flex-shrink-0 transition-transform duration-300 group-hover:scale-110" />
                     </div>
 
-                    {/* Front Footer Action Link */}
-                    <div className="pt-4 mt-4 border-t border-[#E8EFEA] flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-[#019935]">
-                      <span>EXPLORE PRACTICE</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </div>
+                    {/* Title — Exact GCC #1A5C3B 24px Medium with Underline on Hover */}
+                    <h3 className="font-['Poppins',sans-serif] font-medium text-[21px] sm:text-[23px] lg:text-[24px] text-[#1A5C3B] leading-[1.25] group-hover:underline decoration-[#1A5C3B] decoration-[1.5px] underline-offset-4">
+                      {srv.title}
+                    </h3>
+
+                    {/* Description — GCC 300-Weight Clean Body Copy */}
+                    <p className="font-['Poppins',sans-serif] font-light text-[14.5px] text-[#3C3C3C] leading-[1.65]">
+                      {srv.description}
+                    </p>
+
+                    {/* Key Capabilities List */}
+                    <ul className="pt-1 space-y-2">
+                      {srv.features.map((feature) => (
+                        <li
+                          key={feature}
+                          className="flex items-start gap-2.5 text-[13px] font-normal text-[#1A5C3B]/90 leading-snug"
+                        >
+                          <CheckCircle2 className="w-4 h-4 text-[#019934] stroke-[1.75] flex-shrink-0 mt-0.5" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
 
-                  {/* BACK FACE (Rotated 180deg: Deep Forest Green Scope View) */}
-                  <div className="flip-card-back absolute inset-0 bg-[#0C1F16] text-white border-2 border-[#019935] p-5 sm:p-6 flex flex-col justify-between rounded-none shadow-2xl">
-                    <div className="space-y-3.5">
-                      <div className="flex items-center justify-between border-b border-white/15 pb-2.5">
-                        <span className="font-mono text-xs font-bold text-[#02B840]">
-                          PRACTICE {srv.number}
-                        </span>
-                        <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-white/70 bg-white/10 px-2 py-0.5">
-                          ADVISORY SCOPE
-                        </span>
-                      </div>
-
-                      <h4 className="font-display font-bold text-lg text-white">
-                        {srv.title}
-                      </h4>
-
-                      <div className="space-y-2 pt-1">
-                        <p className="text-xs text-white/80 leading-relaxed font-sans">
-                          Core institutional engagement deliverables:
-                        </p>
-                        <ul className="space-y-1.5 text-xs text-white/95 font-sans">
-                          {srv.features.map((item) => (
-                            <li key={item} className="flex items-center gap-2">
-                              <span className="w-1.5 h-1.5 bg-[#02B840] flex-shrink-0" />
-                              <span>{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-
-                    <div className="pt-3">
-                      <Link
-                        to={getLocalizedPath(`/services/${srv.slug}`)}
-                        className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 bg-[#019935] hover:bg-[#02B840] text-white font-bold text-xs uppercase tracking-wider transition-colors rounded-none shadow-md"
-                      >
-                        <span>Open Full Practice</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </Link>
-                    </div>
+                  {/* Bottom Action Row — Iconic GCC Circular #1A5C3B Arrow Button */}
+                  <div className="pt-7 mt-4 flex items-center justify-between">
+                    <span className="inline-flex items-center gap-3.5">
+                      <span className="w-10 h-10 rounded-full bg-[#1A5C3B] group-hover:bg-[#019934] text-white flex items-center justify-center transition-colors duration-200 flex-shrink-0">
+                        <ArrowRight className="w-4 h-4 stroke-[1.75] group-hover:translate-x-0.5 transition-transform duration-200" />
+                      </span>
+                      <span className="text-[12.5px] font-medium uppercase tracking-[0.14em] text-[#1A5C3B] group-hover:text-[#019934] transition-colors duration-200">
+                        EXPLORE PRACTICE
+                      </span>
+                    </span>
                   </div>
-
-                </div>
+                </Link>
               </motion.div>
             );
           })}
 
-          {/* Special 8th Feature Card: Executive Training & Masterclasses */}
+          {/* Special 8th Feature Card (2 Columns): Exact GCC Deep-Navy-to-Teal Duotone Consultation Card */}
           <motion.div
             variants={cardVariants}
-            whileHover={{ 
-              y: -6, 
-              transition: { duration: 0.35, ease: [0.25, 0.1, 0.25, 1] } 
+            onMouseEnter={() => setHoveredSlug('training-card')}
+            className={`md:col-span-2 lg:col-span-2 relative border-r border-b border-white overflow-hidden transition-opacity duration-300 ${
+              hoveredSlug !== null && hoveredSlug !== 'training-card'
+                ? 'lg:opacity-55'
+                : 'opacity-100'
+            }`}
+            style={{
+              background: 'linear-gradient(125deg, #1A5C3B 0%, #0F7A3D 52%, #019934 100%)'
             }}
-            className="md:col-span-2 lg:col-span-2 group relative rounded-none bg-gradient-to-br from-[#019935] via-[#01842E] to-[#016A25] text-white p-6 sm:p-7 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 shadow-[0_8px_25px_rgba(1,153,53,0.22)] hover:shadow-[0_16px_35px_rgba(1,153,53,0.3)] overflow-hidden border border-white/20"
           >
-            <div className="relative z-10 space-y-2.5 max-w-xl">
-              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 text-[11px] font-semibold tracking-wider uppercase bg-white/15 text-white border border-white/25 rounded-none">
-                <GraduationCap className="w-3.5 h-3.5 text-white" />
-                <span>CAPACITY BUILDING & TRAINING</span>
-              </div>
-              <h3 className="font-display font-bold text-xl sm:text-2xl text-white tracking-tight">
-                Executive Climate & Carbon Masterclasses
-              </h3>
-              <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-sans">
-                Tailored workshops and technical training for corporate leadership, ministry officials, and institutional teams navigating global climate regulations.
-              </p>
-            </div>
+            {/* Subtle White Concentric Arcs Watermark inside Duotone Card */}
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 420 420"
+              fill="none"
+              className="pointer-events-none absolute -right-14 -bottom-14 w-[280px] sm:w-[340px] h-auto opacity-[0.12]"
+            >
+              {Array.from({ length: 10 }).map((_, idx) => (
+                <circle
+                  key={idx}
+                  cx="260"
+                  cy="260"
+                  r={45 + idx * 20}
+                  stroke="#ffffff"
+                  strokeWidth="1.25"
+                />
+              ))}
+            </svg>
 
-            <div className="relative z-10 flex-shrink-0">
-              <Link
-                to={getLocalizedPath('/training')}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-none bg-white text-[#019935] hover:bg-neutral-100 font-bold text-xs tracking-wide uppercase transition-all duration-300 shadow-sm hover:shadow-md focus:outline-none"
-              >
-                <span>View Programs</span>
-                <ArrowRight className="w-3.5 h-3.5 text-[#019935]" />
-              </Link>
+            <div className="relative z-10 h-full p-8 sm:p-10 lg:p-12 flex flex-col justify-between gap-8">
+              <div className="flex items-start justify-between gap-6">
+                <div className="space-y-4 max-w-2xl">
+                  <div className="inline-flex items-center gap-2 text-[12px] sm:text-[13px] font-medium tracking-[0.18em] uppercase text-[#57D182]">
+                    <span className="inline-block w-7 h-[2px] bg-[#57D182]" aria-hidden="true" />
+                    <span>CAPACITY BUILDING &amp; TRAINING</span>
+                  </div>
+
+                  <h3 className="font-['Poppins',sans-serif] font-light text-[28px] sm:text-[34px] lg:text-[38px] text-white leading-[1.2] tracking-[-0.01em]">
+                    Executive Climate &amp; Carbon Masterclasses
+                  </h3>
+
+                  <p className="font-['Poppins',sans-serif] font-light text-[15px] sm:text-[16.5px] text-white/90 leading-[1.65] max-w-xl">
+                    Tailored workshops and technical training for corporate leadership, ministry officials, and institutional teams navigating global climate regulations.
+                  </p>
+                </div>
+
+                {/* Crisp White Line-Art Icon (Exact GCC Consultation Card Icon Placement) */}
+                <div className="hidden sm:flex items-center justify-center flex-shrink-0 text-white/85 pt-2">
+                  <GraduationCap className="w-16 h-16 lg:w-20 lg:h-20 stroke-[1.1]" />
+                </div>
+              </div>
+
+              <div className="flex items-center justify-between pt-2">
+                <Link
+                  to={getLocalizedPath('/training')}
+                  className="inline-flex items-center gap-3 px-6 py-3 rounded-[5px] border border-white/85 bg-transparent hover:bg-white hover:text-[#1A5C3B] text-white font-['Poppins',sans-serif] font-medium text-[14px] sm:text-[15px] tracking-normal transition-all duration-200 group focus:outline-none"
+                >
+                  <span>View Programs</span>
+                  <ArrowRight className="w-4 h-4 stroke-[1.75] group-hover:translate-x-1 transition-transform" />
+                </Link>
+
+                <GraduationCap className="sm:hidden w-10 h-10 text-white/80 stroke-[1.25]" />
+              </div>
             </div>
           </motion.div>
-
         </motion.div>
-
       </div>
     </section>
   );

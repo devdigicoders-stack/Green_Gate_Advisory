@@ -10,11 +10,9 @@ import {
   Trees,
   FileText,
   BarChart3,
-  CheckCircle2,
   Compass
 } from 'lucide-react';
 import MetaTags from '../components/seo/MetaTags';
-import SectionHeader from '../components/common/SectionHeader';
 import ScrollProgressBar from '../components/common/ScrollProgressBar';
 import { useLocale } from '../hooks/useLocale';
 import { SERVICES_LIST } from '../data/servicesList';
@@ -63,16 +61,16 @@ export default function Services() {
         structuredData={structuredData}
       />
 
-      {/* SECTION 1 — HERO (Centered, Premium & Compact Typography) */}
-      <section className="relative min-h-[60vh] flex flex-col justify-center items-center overflow-hidden bg-neutral-900 text-white pt-24 pb-12 sm:pt-28 sm:pb-16">
-        {/* Background Photography & Video */}
+      {/* SECTION 1 — INNER PAGE HERO BANNER (Exact GCC .content-header Architecture) */}
+      <section className="relative w-full min-h-[320px] sm:min-h-[360px] lg:min-h-[395px] flex flex-col justify-between items-center overflow-hidden bg-[#1A5C3B] text-white font-['Poppins',sans-serif] text-center select-none">
+        {/* Preserved Background Photography & Video */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <video
             autoPlay
             muted
             loop
             playsInline
-            className="w-full h-full object-cover object-center opacity-85 scale-102"
+            className="w-full h-full object-cover object-center opacity-80 scale-102"
           >
             <source src={sectorVideo} type="video/mp4" />
             <source src="/videos/services-hero.webm" type="video/webm" />
@@ -80,201 +78,230 @@ export default function Services() {
           <img
             src="/images/sustainable-industry.jpg"
             alt="Sustainable clean industrial technologies and solar installations"
-            className="absolute inset-0 w-full h-full object-cover object-center opacity-85 scale-102 -z-10"
+            className="absolute inset-0 w-full h-full object-cover object-center opacity-80 scale-102 -z-10"
             loading="eager"
           />
-          {/* Neutral contrast gradient overlays */}
-          <div className="absolute inset-0 bg-black/65 sm:hidden pointer-events-none" />
-          <div className="hidden sm:block absolute inset-0 bg-radial-[circle_at_center] from-black/50 via-black/75 to-black/90 pointer-events-none" />
-          <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-neutral-950/80 pointer-events-none" />
+          <div className="absolute inset-0 bg-[#1A5C3B]/50 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/30 to-black/60 pointer-events-none" />
         </div>
 
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5 sm:space-y-6">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none text-xs font-semibold tracking-widest uppercase bg-white/10 text-white backdrop-blur-md border border-white/20 shadow-2xs mx-auto"
-          >
-            <span className="w-2 h-2 rounded-none bg-[#019935] animate-pulse" />
-            <span>Climate & Environmental Advisory Practices</span>
-          </motion.div>
+        {/* Signature GCC Bottom-Left Concentric Thin White Rings Watermark */}
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 480 480"
+          fill="none"
+          className="pointer-events-none absolute -left-24 -bottom-28 w-[280px] sm:w-[360px] lg:w-[440px] h-auto z-[1] opacity-30"
+        >
+          {Array.from({ length: 16 }).map((_, idx) => (
+            <circle
+              key={idx}
+              cx="170"
+              cy="310"
+              r={45 + idx * 17}
+              stroke="#ffffff"
+              strokeWidth="1.15"
+              strokeOpacity={Math.max(0.18, 0.55 - idx * 0.02)}
+            />
+          ))}
+        </svg>
 
-          <motion.h1
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-display font-bold text-xl sm:text-2xl md:text-3xl lg:text-[36px] text-white tracking-tight leading-snug sm:leading-tight max-w-3xl mx-auto"
-          >
+        <div className="h-6 sm:h-8" aria-hidden="true" />
+
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+          className="relative z-10 w-[90%] max-w-4xl mx-auto py-8 sm:py-10 flex flex-col items-center justify-center"
+        >
+          <span className="inline-block w-[64px] h-[3px] bg-white mb-5" aria-hidden="true" />
+
+          <span className="text-[11.5px] sm:text-[12.5px] font-normal tracking-[0.2em] uppercase text-[#57D182] mb-2">
+            Climate &amp; Environmental Advisory Practices
+          </span>
+
+          <h1 className="font-['Poppins',sans-serif] font-medium text-[30px] sm:text-[38px] lg:text-[44px] text-white tracking-[-0.01em] leading-[1.2] max-w-3xl mx-auto">
             {t('services.overview.hero.title', 'Our Advisory Practices')}
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-xs sm:text-sm md:text-base text-white/90 leading-relaxed font-sans font-normal max-w-2xl mx-auto"
-          >
+          <p className="mt-3 text-[14px] sm:text-[15.5px] text-white/85 leading-relaxed font-['Poppins',sans-serif] font-light max-w-2xl mx-auto">
             Specialized advisory support across carbon markets, compliance mechanisms, climate finance, and policy.
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="flex pt-5 border-t border-white/15 flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs text-white/80 font-sans"
-          >
+          <div className="flex mt-5 pt-4 border-t border-white/15 flex-wrap items-center justify-center gap-4 sm:gap-8 text-[12px] sm:text-[13px] text-white/85 font-light">
             <div className="flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-[#019935] flex-shrink-0" />
+              <ShieldCheck className="w-4 h-4 text-[#57D182] stroke-[1.6] flex-shrink-0" />
               <span>Seven core advisory workstreams</span>
             </div>
-            <span className="hidden sm:inline text-white/25">|</span>
+            <span className="hidden sm:inline text-white/30">|</span>
             <div className="flex items-center gap-2">
-              <Sparkles className="w-3.5 h-3.5 text-gold flex-shrink-0" />
+              <Sparkles className="w-4 h-4 text-[#57D182] stroke-[1.6] flex-shrink-0" />
               <span>Connecting policy, science, finance and delivery</span>
             </div>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
+
+        {/* Bottom Centered GCC Breadcrumb */}
+        <nav
+          aria-label="Breadcrumb"
+          className="relative z-10 pb-5 sm:pb-6 flex items-center justify-center gap-2 text-[13px] font-['Poppins',sans-serif] font-normal"
+        >
+          <Link
+            to={getLocalizedPath('/')}
+            className="text-white/70 hover:text-white transition-colors duration-200"
+          >
+            {t('navigation.home', 'Home')}
+          </Link>
+          <span className="text-white/75" aria-hidden="true">&rarr;</span>
+          <span className="text-white">
+            {t('navigation.ourServices', 'Our services')}
+          </span>
+        </nav>
       </section>
 
-      {/* SECTION 2 — SERVICES INTRODUCTION (Left / Right Directional Entrance) */}
-      <section className="py-14 sm:py-20 bg-white border-b border-sand-border/70 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-
-            {/* Left Narrative: Enters from Left */}
+      {/* SECTION 2 — SERVICES INTRODUCTION (GCC Pure White Editorial Split + Teal Dash List) */}
+      <section className="w-full bg-white border-b border-[#e5e7eb] font-['Poppins',sans-serif] py-16 sm:py-20 lg:py-24 overflow-hidden">
+        <div className="w-[90%] max-w-[1680px] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+            {/* Left Narrative */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className="lg:col-span-7 space-y-6"
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.65, ease: 'easeOut' }}
+              className="lg:col-span-7 space-y-5"
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none text-xs font-semibold tracking-wider uppercase bg-[#E8F6ED] text-[#019935] border border-[#CFE8D7]">
-                <span className="w-1.5 h-1.5 rounded-none bg-[#019935]"></span>
+              <div className="inline-flex items-center gap-3 text-[13px] font-medium tracking-[0.2em] uppercase text-[#0A7A32]">
+                <span className="inline-block w-[50px] h-[2px] bg-[#019934]" aria-hidden="true" />
                 <span>{t('services.overview.intro.eyebrow', 'Integrated Capability')}</span>
               </div>
 
-              <h2 className="font-display font-bold text-2xl sm:text-3xl lg:text-4xl text-forest tracking-tight leading-[1.18]">
+              <h2 className="font-['Poppins',sans-serif] font-medium text-[28px] sm:text-[34px] lg:text-[40px] text-[#019934] tracking-[-0.01em] leading-[1.2]">
                 {t('services.overview.intro.heading', 'Navigating Climate Complexity with Technical & Strategic Rigour')}
               </h2>
 
-              <div className="space-y-4 text-sm sm:text-base text-charcoal leading-relaxed font-sans font-normal">
-                <p className="font-medium text-forest-dark/90">
+              <div className="space-y-4">
+                <p className="font-['Poppins',sans-serif] font-medium text-[16px] sm:text-[17.5px] text-[#3C3C3C] leading-[1.7]">
                   {t('services.overview.intro.p1')}
                 </p>
-                <p className="text-charcoal-muted">
+                <p className="font-['Poppins',sans-serif] font-light text-[15px] sm:text-[16px] text-[#555555] leading-[1.75]">
                   {t('services.overview.intro.p2')}
                 </p>
               </div>
             </motion.div>
 
-            {/* Right Tenets Card: Enters from Right */}
+            {/* Right Tenets Card — Exact GCC #f7f7f7 Callout with Teal Horizontal Dash Markers (—) */}
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.65, delay: 0.1, ease: 'easeOut' }}
               className="lg:col-span-5"
             >
-              <div className="rounded-none bg-[#F7FAF7] border border-[#DCE8E0] p-7 sm:p-8 shadow-[0_8px_24px_-4px_rgba(0,0,0,0.04)] space-y-5">
-                <div className="flex items-center gap-3 text-forest font-display font-bold text-lg">
-                  <Compass className="w-5 h-5 text-[#019935]" />
-                  <span>Advisory Tenets</span>
+              <div className="rounded-[4px] bg-[#f7f7f7] border border-[#e5e7eb] border-l-[3px] border-l-[#019934] p-7 sm:p-9 space-y-5">
+                <div className="flex items-center justify-between gap-3">
+                  <h3 className="font-['Poppins',sans-serif] font-semibold text-[20px] text-[#1A5C3B]">
+                    Advisory Tenets
+                  </h3>
+                  <Compass className="w-7 h-7 text-[#cbd5e1] stroke-[1.35]" />
                 </div>
 
-                <ul className="space-y-3.5 text-xs sm:text-sm text-charcoal-muted font-sans font-normal">
-                  <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-[#019935] flex-shrink-0 mt-0.5" />
+                <ul className="space-y-4 text-[14px] sm:text-[14.5px] font-light text-[#555555] leading-[1.68]">
+                  <li className="flex items-start gap-3">
+                    <span className="inline-block w-4 h-[2px] bg-[#019934] mt-2.5 flex-shrink-0" aria-hidden="true" />
                     <span>Rigorous methodology alignment with leading registries and compliance regimes.</span>
                   </li>
-                  <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-[#019935] flex-shrink-0 mt-0.5" />
+                  <li className="flex items-start gap-3">
+                    <span className="inline-block w-4 h-[2px] bg-[#019934] mt-2.5 flex-shrink-0" aria-hidden="true" />
                     <span>Project rationale directly linked to funding criteria and investment mandates.</span>
                   </li>
-                  <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-[#019935] flex-shrink-0 mt-0.5" />
+                  <li className="flex items-start gap-3">
+                    <span className="inline-block w-4 h-[2px] bg-[#019934] mt-2.5 flex-shrink-0" aria-hidden="true" />
                     <span>Transparent disclosure frameworks free from speculative or unverified claims.</span>
                   </li>
                 </ul>
               </div>
             </motion.div>
-
           </div>
         </div>
       </section>
 
-      {/* SECTION 3 — SEVEN CORE SERVICE CARDS (Staggered Directional Scroll Entrance) */}
-      <section className="py-14 sm:py-20 bg-sage/40 border-b border-sand-border/70 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-
+      {/* SECTION 3 — SEVEN CORE SERVICE CARDS (GCC Flat Hairline Cards with Deep Navy Hover) */}
+      <section className="w-full bg-[#f7f7f7] border-b border-[#e5e7eb] font-['Poppins',sans-serif] py-16 sm:py-20 lg:py-24 overflow-hidden">
+        <div className="w-[90%] max-w-[1680px] mx-auto space-y-14">
           <motion.div
-            initial={{ opacity: 0, y: 25 }}
+            initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            className="text-center max-w-4xl mx-auto flex flex-col items-center"
           >
-            <SectionHeader
-              badge={t('services.overview.grid.eyebrow', 'Core Advisory Practices')}
-              title={t('services.overview.grid.heading', 'Seven Specialized Service Workstreams')}
-              subtitle={t('services.overview.grid.subtitle')}
-            />
+            <span className="inline-block w-[70px] h-[2px] bg-[#019934] mb-4" aria-hidden="true" />
+            <span className="text-[13px] sm:text-[14px] font-medium tracking-[0.22em] uppercase text-[#0A7A32]">
+              {t('services.overview.grid.eyebrow', 'Core Advisory Practices')}
+            </span>
+            <h2 className="mt-3 font-['Poppins',sans-serif] font-light text-[34px] sm:text-[44px] lg:text-[50px] text-[#1A5C3B] leading-[1.16] tracking-[-0.01em]">
+              {t('services.overview.grid.heading', 'Seven Specialized Service Workstreams')}
+            </h2>
+            {t('services.overview.grid.subtitle') && (
+              <p className="mt-4 font-['Poppins',sans-serif] font-light text-[16px] sm:text-[19px] text-[#7f7f7f] leading-[1.5] max-w-3xl">
+                {t('services.overview.grid.subtitle')}
+              </p>
+            )}
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
             {SERVICES_LIST.map((srv, idx) => {
               const Icon = ICON_MAP[srv.key] || Sparkles;
-              const col = idx % 3;
-              const initialDirection = col === 0 ? { opacity: 0, x: -45 } : col === 1 ? { opacity: 0, y: 35 } : { opacity: 0, x: 45 };
 
               return (
                 <motion.div
                   key={srv.key}
-                  initial={initialDirection}
-                  whileInView={{ opacity: 1, x: 0, y: 0 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.15 }}
-                  transition={{ 
-                    duration: 0.65, 
-                    delay: (idx % 3) * 0.12, 
-                    ease: [0.16, 1, 0.3, 1] 
-                  }}
-                  className="relative rounded-none bg-white border border-[#DCE8E0] hover:border-[#019935] p-7 sm:p-8 shadow-[0_8px_24px_-4px_rgba(0,0,0,0.05),0_2px_6px_-1px_rgba(0,0,0,0.02)] hover:shadow-[0_18px_40px_-6px_rgba(1,153,53,0.2),0_6px_16px_-2px_rgba(0,0,0,0.06)] hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between space-y-6 group cursor-pointer overflow-hidden"
+                  transition={{ duration: 0.55, delay: (idx % 3) * 0.08, ease: 'easeOut' }}
+                  className="relative rounded-[4px] bg-white border border-[#e5e7eb] hover:border-[#1A5C3B] p-7 sm:p-9 transition-colors duration-300 flex flex-col justify-between space-y-6 group overflow-hidden"
                 >
-                  {/* Slow-motion background slide up from bottom to top */}
-                  <div 
-                    className="absolute inset-0 bg-gradient-to-t from-[#062A17] to-[#0D4429] z-0 transform translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] pointer-events-none" 
+                  {/* Top Teal Accent Bar */}
+                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#019934] z-20" />
+
+                  {/* Smooth Institutional Deep Navy Hover Fill */}
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-0 bg-[#1A5C3B] z-0 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] pointer-events-none"
                   />
 
-                  {/* Card Content Container */}
-                  <div className="relative z-10 space-y-5 flex-1 flex flex-col justify-between">
+                  <div className="relative z-10 flex-1 flex flex-col justify-between space-y-6">
                     <div className="space-y-5">
-                      <div className="flex items-center justify-between">
-                        <div className="w-12 h-12 rounded-none bg-[#E8F6ED] text-[#019935] border border-[#CFE8D7] flex items-center justify-center transition-all duration-300 shadow-2xs group-hover:bg-white group-hover:text-[#019935] group-hover:border-white">
-                          <Icon className="w-6 h-6 transition-colors duration-300" />
-                        </div>
-                        <span className="text-xs sm:text-[13px] font-mono font-bold tracking-widest text-[#019935] bg-[#E8F6ED] px-3 py-1 rounded-none border border-[#CFE8D7] transition-all duration-300 group-hover:bg-white/15 group-hover:text-white group-hover:border-white/30 shadow-2xs">
+                      <div className="flex items-center justify-between gap-3">
+                        <span className="text-[11.5px] font-medium tracking-[0.14em] uppercase text-[#1A5C3B] bg-[#57D182]/40 group-hover:bg-[#019934]/25 group-hover:text-[#57D182] px-3 py-0.5 transition-colors duration-300">
                           PRACTICE {srv.number}
                         </span>
+                        <Icon className="w-7 h-7 text-[#cbd5e1] group-hover:text-[#57D182] stroke-[1.35] transition-colors duration-300" />
                       </div>
 
                       <div className="space-y-3">
-                        <h3 className="font-display font-bold text-xl sm:text-2xl text-[#16221A] group-hover:text-white transition-colors duration-300 leading-snug">
+                        <h3 className="font-['Poppins',sans-serif] font-semibold text-[21px] sm:text-[23px] text-[#1A5C3B] group-hover:text-white transition-colors duration-300 leading-snug">
                           {t(`services.items.${srv.key}.shortTitle`, t(`navigation.servicesMenu.${srv.key}`))}
                         </h3>
 
-                        <p className="text-sm sm:text-base text-[#4E5E54] group-hover:text-white/90 leading-relaxed font-sans font-normal transition-colors duration-300">
+                        <p className="font-['Poppins',sans-serif] font-light text-[14.5px] sm:text-[15px] text-[#555555] group-hover:text-white/85 leading-[1.7] transition-colors duration-300">
                           {t(`services.items.${srv.key}.lead`, '')}
                         </p>
                       </div>
                     </div>
 
-                    <div className="pt-4 border-t border-[#E8EFEA] group-hover:border-white/20">
+                    <div className="pt-4 border-t border-[#efefef] group-hover:border-white/15">
                       <Link
                         to={getLocalizedPath(`/services/${srv.slug}`)}
-                        className="inline-flex items-center gap-2 text-sm sm:text-base font-bold uppercase tracking-wider text-[#019935] group-hover:text-[#4ADE80] transition-colors duration-300 group/btn"
+                        className="inline-flex items-center gap-3 group/btn focus:outline-none"
                       >
-                        <span>{t('services.overview.grid.exploreService', 'Explore Service')}</span>
-                        <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1.5 transition-transform duration-300" />
+                        <span className="w-9 h-9 rounded-full bg-[#1A5C3B] group-hover:bg-[#019934] text-white flex items-center justify-center transition-colors duration-300 flex-shrink-0">
+                          <ArrowRight className="w-4 h-4 stroke-[1.75] group-hover/btn:translate-x-0.5 transition-transform" />
+                        </span>
+                        <span className="text-[13px] font-medium uppercase tracking-[0.12em] text-[#1A5C3B] group-hover:text-[#57D182] transition-colors duration-300">
+                          {t('services.overview.grid.exploreService', 'Explore Service')}
+                        </span>
                       </Link>
                     </div>
                   </div>
@@ -282,58 +309,65 @@ export default function Services() {
               );
             })}
           </div>
-
         </div>
       </section>
 
-      {/* SECTION 4 — INTEGRATED ADVISORY APPROACH (Editorial Columns with Motion) */}
-      <section className="py-14 sm:py-20 bg-white border-b border-sand-border/70 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
-
+      {/* SECTION 4 — INTEGRATED ADVISORY APPROACH (GCC Pure White Architectural 4-Column Row) */}
+      <section className="w-full bg-white border-b border-[#e5e7eb] font-['Poppins',sans-serif] py-16 sm:py-20 lg:py-24 overflow-hidden">
+        <div className="w-[90%] max-w-[1680px] mx-auto space-y-14">
           <motion.div
-            initial={{ opacity: 0, y: 25 }}
+            initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            className="text-center max-w-4xl mx-auto flex flex-col items-center"
           >
-            <SectionHeader
-              badge={t('services.overview.approach.eyebrow', 'Integrated Perspective')}
-              title={t('services.overview.approach.heading', 'Connecting Strategy, Regulation, Finance & Delivery')}
-              subtitle={t('services.overview.approach.p1')}
-            />
+            <span className="inline-block w-[70px] h-[2px] bg-[#019934] mb-4" aria-hidden="true" />
+            <span className="text-[13px] sm:text-[14px] font-medium tracking-[0.22em] uppercase text-[#0A7A32]">
+              {t('services.overview.approach.eyebrow', 'Integrated Perspective')}
+            </span>
+            <h2 className="mt-3 font-['Poppins',sans-serif] font-light text-[34px] sm:text-[44px] lg:text-[50px] text-[#1A5C3B] leading-[1.16] tracking-[-0.01em]">
+              {t('services.overview.approach.heading', 'Connecting Strategy, Regulation, Finance & Delivery')}
+            </h2>
+            {t('services.overview.approach.p1') && (
+              <p className="mt-4 font-['Poppins',sans-serif] font-light text-[16px] sm:text-[19px] text-[#7f7f7f] leading-[1.5] max-w-3xl">
+                {t('services.overview.approach.p1')}
+              </p>
+            )}
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 divide-y md:divide-y-0 md:divide-x divide-sand-border pt-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-[#e5e7eb]">
             {pillars.map((pil, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.6, delay: idx * 0.12, ease: [0.16, 1, 0.3, 1] }}
-                className={`space-y-3 ${idx !== 0 ? 'pt-6 md:pt-0 md:pl-6 lg:pl-8' : ''}`}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.55, delay: idx * 0.08, ease: 'easeOut' }}
+                className="bg-white hover:bg-[#57D182]/[0.12] border-r border-b border-[#e5e7eb] p-7 sm:p-8 space-y-4 transition-colors duration-200"
               >
-                <div className="flex items-center gap-2">
-                  <span className="text-xs font-mono font-bold tracking-widest text-[#019935] uppercase">
-                    Pillar {pil.number || `0${idx + 1}`}
-                  </span>
+                <div className="font-['Poppins',sans-serif] font-light text-[38px] leading-none text-[#019934]">
+                  {pil.number || `0${idx + 1}`}
                 </div>
 
-                <h3 className="font-display font-bold text-base sm:text-lg text-neutral-900 leading-snug">
+                <span className="inline-block text-[11px] font-medium tracking-[0.14em] uppercase text-[#1A5C3B] bg-[#57D182]/40 px-2.5 py-0.5">
+                  Pillar {pil.number || `0${idx + 1}`}
+                </span>
+
+                <h3 className="font-['Poppins',sans-serif] font-medium text-[18px] sm:text-[19px] text-[#1A5C3B] leading-snug">
                   {pil.title}
                 </h3>
 
-                <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed font-sans font-normal">
+                <p className="font-['Poppins',sans-serif] font-light text-[14px] text-[#555555] leading-[1.68]">
                   {pil.description}
                 </p>
               </motion.div>
             ))}
           </div>
-
         </div>
       </section>
 
-      {/* SECTION 5 — MODERN ADVISORY ENGAGEMENT CTA */}
+      {/* SECTION 5 — GCC ADVISORY ENGAGEMENT CTA */}
       <ServiceCTA />
     </>
   );

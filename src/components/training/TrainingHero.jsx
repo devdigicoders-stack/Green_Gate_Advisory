@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { GraduationCap, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { useLocale } from '../../hooks/useLocale';
 import trainingVideo from '../../assets/training-eco.mp4';
 
@@ -10,8 +10,8 @@ export default function TrainingHero() {
   const { getLocalizedPath } = useLocale();
 
   return (
-    <section className="relative min-h-[60vh] flex flex-col justify-center items-center overflow-hidden bg-neutral-900 text-white pt-24 pb-16 sm:pt-32 sm:pb-20 text-center">
-      {/* Background Photography & Video - Climate Knowledge, Ecosystems & Clean Transition */}
+    <section className="relative w-full min-h-[340px] sm:min-h-[380px] lg:min-h-[420px] flex flex-col justify-between items-center overflow-hidden bg-[#1A5C3B] text-white font-['Poppins',sans-serif] text-center select-none">
+      {/* Preserved Background Photography & Video */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
           key="training-hero-video"
@@ -21,7 +21,7 @@ export default function TrainingHero() {
           loop
           playsInline
           poster="/images/training-hero.jpg"
-          className="w-full h-full object-cover object-center opacity-85 scale-105 transform motion-safe:transition-transform motion-safe:duration-1000"
+          className="w-full h-full object-cover object-center opacity-80 scale-105"
         >
           <source src={trainingVideo} type="video/mp4" />
           <source src="/videos/training-hero.webm" type="video/webm" />
@@ -30,49 +30,86 @@ export default function TrainingHero() {
         <img
           src="/images/training-hero.jpg"
           alt="Executive climate training, carbon markets and institutional capacity building"
-          className="absolute inset-0 w-full h-full object-cover object-center opacity-85 scale-105 -z-10"
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-80 scale-105 -z-10"
           loading="eager"
         />
-        {/* Neutral contrast gradient overlays */}
-        <div className="absolute inset-0 bg-black/60 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/60 pointer-events-none" />
+        {/* Clean GCC Vignette Overlay */}
+        <div className="absolute inset-0 bg-[#1A5C3B]/50 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/30 to-black/60 pointer-events-none" />
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+      {/* Signature GCC Bottom-Left Concentric Thin White Rings Watermark */}
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 480 480"
+        fill="none"
+        className="pointer-events-none absolute -left-24 -bottom-28 w-[280px] sm:w-[360px] lg:w-[440px] h-auto z-[1] opacity-30"
+      >
+        {Array.from({ length: 16 }).map((_, idx) => (
+          <circle
+            key={idx}
+            cx="170"
+            cy="310"
+            r={45 + idx * 17}
+            stroke="#ffffff"
+            strokeWidth="1.15"
+            strokeOpacity={Math.max(0.18, 0.55 - idx * 0.02)}
+          />
+        ))}
+      </svg>
 
-        {/* Content Block with Elegant Motion Entrance */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="space-y-4 sm:space-y-5 flex flex-col items-center text-center"
+      <div className="h-6 sm:h-8" aria-hidden="true" />
+
+      {/* Center Content — Exact GCC Short White Bar + Medium White Poppins Title */}
+      <motion.div
+        initial={{ opacity: 0, y: 18 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+        className="relative z-10 w-[90%] max-w-4xl mx-auto py-8 sm:py-10 flex flex-col items-center justify-center"
+      >
+        <span className="inline-block w-[64px] h-[3px] bg-white mb-5" aria-hidden="true" />
+
+        <span className="text-[11.5px] sm:text-[12.5px] font-normal tracking-[0.2em] uppercase text-[#57D182] mb-2">
+          {t('training.hero.eyebrow', 'Institutional Capability')}
+        </span>
+
+        <h1 className="font-['Poppins',sans-serif] font-medium text-[30px] sm:text-[38px] lg:text-[44px] text-white tracking-[-0.01em] leading-[1.2] max-w-3xl mx-auto">
+          {t('training.hero.title', 'Training & Capacity Building')}
+        </h1>
+
+        <p className="mt-3 text-[14px] sm:text-[15.5px] text-white/85 max-w-2xl mx-auto leading-relaxed font-['Poppins',sans-serif] font-light">
+          {t('training.hero.leadShort', 'Executive and technical capacity building on carbon markets, CBAM, and climate finance.')}
+        </p>
+
+        {/* Primary CTA Button — GCC Solid Teal Rounded-[5px] */}
+        <div className="mt-6 flex justify-center">
+          <Link
+            to={getLocalizedPath('/contact?service=training')}
+            state={{ serviceInterest: 'Training and Capacity Building' }}
+            className="inline-flex items-center justify-center gap-2.5 px-7 py-3 rounded-[5px] bg-[#019934] hover:bg-[#017D2B] text-white font-['Poppins',sans-serif] font-normal text-[14.5px] transition-colors duration-200 group focus:outline-none"
+          >
+            <span>{t('training.hero.primaryBtn', 'Discuss a Training Programme')}</span>
+            <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </div>
+      </motion.div>
+
+      {/* Bottom Centered GCC Breadcrumb */}
+      <nav
+        aria-label="Breadcrumb"
+        className="relative z-10 pb-5 sm:pb-6 flex items-center justify-center gap-2 text-[13px] font-['Poppins',sans-serif] font-normal"
+      >
+        <Link
+          to={getLocalizedPath('/')}
+          className="text-white/70 hover:text-white transition-colors duration-200"
         >
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none text-[11px] sm:text-xs font-semibold tracking-widest uppercase bg-white/10 text-gold-light border border-white/20 backdrop-blur-md">
-            <GraduationCap className="w-3.5 h-3.5 text-gold" />
-            <span>{t('training.hero.eyebrow', 'Institutional Capability')}</span>
-          </div>
-
-          <h1 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white tracking-tight leading-tight max-w-3xl">
-            {t('training.hero.title', 'Training & Capacity Building')}
-          </h1>
-
-          <p className="text-sm sm:text-base md:text-lg text-sand-surface/90 leading-relaxed font-sans font-normal max-w-2xl">
-            {t('training.hero.leadShort', 'Executive and technical capacity building on carbon markets, CBAM, and climate finance.')}
-          </p>
-
-          <div className="pt-2 flex justify-center">
-            <Link
-              to={getLocalizedPath('/contact?service=training')}
-              state={{ serviceInterest: 'Training and Capacity Building' }}
-              className="inline-flex items-center justify-center gap-2.5 px-7 sm:px-9 py-3.5 sm:py-4 rounded-none bg-gold hover:bg-gold-light text-forest-dark font-bold text-xs sm:text-sm tracking-wider uppercase transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-gold"
-            >
-              <span>{t('training.hero.primaryBtn', 'Discuss a Training Programme')}</span>
-              <ArrowRight className="w-4 h-4 text-forest-dark" />
-            </Link>
-          </div>
-        </motion.div>
-
-      </div>
+          {t('training.hero.breadcrumbHome', t('navigation.home', 'Home'))}
+        </Link>
+        <span className="text-white/75" aria-hidden="true">&rarr;</span>
+        <span className="text-white">
+          {t('training.hero.breadcrumbCurrent', t('navigation.training', 'Training & Capacity Building'))}
+        </span>
+      </nav>
     </section>
   );
 }

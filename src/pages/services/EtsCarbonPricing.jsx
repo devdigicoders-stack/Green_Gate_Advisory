@@ -40,18 +40,18 @@ export default function EtsCarbonPricing() {
 
   const sideCard = (
     <>
-      <div className="flex items-center gap-2 text-forest font-heading font-bold text-base">
-        <Scale className="w-4.5 h-4.5 text-gold-dark" />
+      <div className="flex items-center gap-2.5 text-[#1A5C3B] font-['Poppins',sans-serif] font-semibold text-[18px]">
+        <Scale className="w-5 h-5 text-[#019934] stroke-[1.6] flex-shrink-0" />
         <span>{sideCardData.title || 'Market Compliance Dynamics'}</span>
       </div>
-      <p className="text-sm sm:text-[14.5px] text-charcoal/85 leading-relaxed font-sans font-normal">
+      <p className="text-[14.5px] text-[#555555] leading-[1.7] font-['Poppins',sans-serif] font-light">
         {sideCardData.desc || 'Compliance carbon markets require rigorous alignment with allowance allocation caps, surrender timelines, price stability mechanisms, and cross-border adjustments.'}
       </p>
       {sidePoints.length > 0 && (
-        <div className="pt-2 flex flex-col gap-2.5 text-xs sm:text-[13.5px] font-semibold text-deep-green">
+        <div className="pt-2 flex flex-col gap-3 text-[13.5px] font-normal text-[#1A5C3B]">
           {sidePoints.map((pt, idx) => (
-            <div key={idx} className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 flex-shrink-0 text-deep-green" />
+            <div key={idx} className="flex items-start gap-3">
+              <span className="inline-block w-4 h-[2px] bg-[#019934] mt-2.5 flex-shrink-0" aria-hidden="true" />
               <span>{pt}</span>
             </div>
           ))}

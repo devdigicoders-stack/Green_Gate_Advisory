@@ -1,41 +1,18 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { 
-  ChevronDown, 
-  Menu, 
-  X, 
-  ArrowRight,
-  Sparkles,
-  Scale,
-  ShieldCheck,
-  Landmark,
-  Trees,
-  FileText,
-  BarChart3,
-  Newspaper,
-  Calendar,
-  BookOpen,
-  MessageSquare,
-  Building2,
-  Target,
-  Layers,
-  Award
+import {
+  ChevronRight,
+  X,
+  ExternalLink,
+  Mail,
+  MessageCircle
 } from 'lucide-react';
 import Logo from '../common/Logo';
-import LanguageSwitcher, { UkFlag, SpainFlag } from '../common/LanguageSwitcher';
+import { UkFlag, SpainFlag } from '../common/LanguageSwitcher';
 import { useLocale } from '../../hooks/useLocale';
 import { SERVICES_LIST } from '../../data/servicesList';
-
-const SERVICE_ICONS = {
-  Sparkles,
-  Scale,
-  ShieldCheck,
-  Landmark,
-  Trees,
-  FileText,
-  BarChart3
-};
+import { CONTACT_CONFIG } from '../../config/contactConfig';
 
 const SERVICE_TITLES = {
   carbonMarket: 'Carbon Market Advisory',
@@ -59,67 +36,63 @@ const SERVICE_DESCRIPTIONS = {
   corporateClimate: 'Scope 1-3 GHG accounting, SBTi net-zero roadmaps & ESG disclosure'
 };
 
+function HamburgerIcon() {
+  return (
+    <span className="flex flex-col justify-between w-[28px] h-[18px]" aria-hidden="true">
+      <span className="block w-full h-[1.75px] bg-current transition-colors duration-200" />
+      <span className="block w-full h-[1.75px] bg-current transition-colors duration-200" />
+      <span className="block w-full h-[1.75px] bg-current transition-colors duration-200" />
+    </span>
+  );
+}
+
 export default function Header() {
   const { t } = useTranslation();
   const { locale, switchLanguage, getLocalizedPath } = useLocale();
   const location = useLocation();
 
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null); // 'services' | 'latest' | 'about' | null
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mobileExpandedSection, setMobileExpandedSection] = useState(null); // 'services' | 'latest' | 'about' | null
-  
-  const headerRef = useRef(null);
-  const leaveTimerRef = useRef(null);
-  const menuButtonRef = useRef(null);
+  const [isSticky, setIsSticky] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [expandedSection, setExpandedSection] = useState(null); // 'about' | 'services' | null
+  const [searchQuery, setSearchQuery] = useState('');
 
-  // Scroll detection: toggle background style on scroll while keeping navbar permanently fixed at top
+  const menuButtonRef = useRef(null);
+  const searchInputRef = useRef(null);
+
+  // Sticky white header appears cleanly after scrolling past the main header
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsSticky(window.scrollY > 140);
     };
-
+    handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close menus on route change
+  // Close drawer on route change
   const currentPath = location.pathname;
   useEffect(() => {
-    setActiveDropdown(null);
-    setMobileMenuOpen(false);
+    setDrawerOpen(false);
+    setExpandedSection(null);
+    setSearchQuery('');
   }, [currentPath]);
 
-  // Click outside listener to close dropdowns
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (headerRef.current && !headerRef.current.contains(e.target)) {
-        setActiveDropdown(null);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  // Keyboard navigation: Escape key closes menus
+  // Escape key closes drawer
   const handleKeyDown = useCallback((e) => {
-    if (e.key === 'Escape') {
-      setActiveDropdown(null);
-      if (mobileMenuOpen) {
-        setMobileMenuOpen(false);
-        menuButtonRef.current?.focus();
-      }
+    if (e.key === 'Escape' && drawerOpen) {
+      setDrawerOpen(false);
+      menuButtonRef.current?.focus();
     }
-  }, [mobileMenuOpen]);
+  }, [drawerOpen]);
 
   useEffect(() => {
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [handleKeyDown]);
 
-  // Lock body scroll on mobile drawer open
+  // Lock body scroll when sliding drawer is open
   useEffect(() => {
-    if (mobileMenuOpen) {
+    if (drawerOpen) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';
@@ -127,46 +100,10 @@ export default function Header() {
     return () => {
       document.body.style.overflow = '';
     };
-  }, [mobileMenuOpen]);
+  }, [drawerOpen]);
 
-  // Dropdown hover & click handlers - Instant open with smooth exit debounce
-  const handleMouseEnter = (name) => {
-    if (leaveTimerRef.current) {
-      clearTimeout(leaveTimerRef.current);
-      leaveTimerRef.current = null;
-    }
-    setActiveDropdown(name);
-  };
-
-  const handleMouseLeave = () => {
-    if (leaveTimerRef.current) {
-      clearTimeout(leaveTimerRef.current);
-    }
-    // Small graceful threshold so cursor moving into dropdown doesn't flicker
-    leaveTimerRef.current = setTimeout(() => {
-      setActiveDropdown(null);
-    }, 120);
-  };
-
-  const handleItemHoverClear = () => {
-    if (leaveTimerRef.current) {
-      clearTimeout(leaveTimerRef.current);
-      leaveTimerRef.current = null;
-    }
-    setActiveDropdown(null);
-  };
-
-  const handleDropdownClick = (name, e) => {
-    e.preventDefault();
-    setActiveDropdown((prev) => (prev === name ? null : name));
-  };
-
-  const handleSectionClick = (targetId, isMobile = false) => {
-    setActiveDropdown(null);
-    if (isMobile) {
-      setMobileMenuOpen(false);
-    }
-    // If already on /about-us, smoothly scroll to element
+  const handleSectionClick = (targetId) => {
+    setDrawerOpen(false);
     if (location.pathname.includes('/about-us')) {
       const el = document.getElementById(targetId);
       if (el) {
@@ -175,720 +112,516 @@ export default function Header() {
     }
   };
 
+  const toggleSubmenu = (key) => {
+    setExpandedSection((prev) => (prev === key ? null : key));
+  };
+
+  // About submenu items (exact existing links & labels)
+  const aboutSubItems = useMemo(() => [
+    {
+      id: 'who-we-are',
+      label: t('navigation.menu.whoWeAre', 'Who We Are'),
+      to: `${getLocalizedPath('/about-us')}#who-we-are`
+    },
+    {
+      id: 'purpose-mission',
+      label: t('navigation.menu.purpose', 'Purpose & Mission'),
+      to: `${getLocalizedPath('/about-us')}#purpose-mission`
+    },
+    {
+      id: 'our-approach',
+      label: t('navigation.menu.approach', 'Our Approach'),
+      to: `${getLocalizedPath('/about-us')}#our-approach`
+    },
+    {
+      id: 'why-green-gate',
+      label: t('navigation.menu.whyUs', 'Why Green Gate'),
+      to: `${getLocalizedPath('/about-us')}#why-green-gate`
+    }
+  ], [t, getLocalizedPath]);
+
+  // Searchable index of existing Green Gate Advisory pages & services
+  const searchableItems = useMemo(() => {
+    const basePages = [
+      { label: t('navigation.home', 'Home'), to: getLocalizedPath('/'), category: '' },
+      { label: t('navigation.about', 'About Us'), to: getLocalizedPath('/about-us'), category: '' },
+      { label: t('navigation.ourServices', 'Our services'), to: getLocalizedPath('/services'), category: '' },
+      { label: t('navigation.sectors', 'Sectors'), to: getLocalizedPath('/sectors'), category: '' },
+      { label: t('navigation.whoWeServe', 'Who We Serve'), to: getLocalizedPath('/who-we-serve'), category: '' },
+      { label: t('navigation.training', 'Training'), to: getLocalizedPath('/training'), category: '' },
+      { label: t('navigation.contact', 'Contact'), to: getLocalizedPath('/contact'), category: '' }
+    ];
+
+    const servicePages = SERVICES_LIST.map((srv) => ({
+      label: t(`navigation.servicesMenu.${srv.key}`, SERVICE_TITLES[srv.key] || srv.slug),
+      desc: SERVICE_DESCRIPTIONS[srv.key] || '',
+      to: getLocalizedPath(`/services/${srv.slug}`),
+      category: t('navigation.ourServices', 'Our services')
+    }));
+
+    return [...basePages, ...servicePages];
+  }, [t, getLocalizedPath]);
+
+  const filteredSearchResults = useMemo(() => {
+    const q = searchQuery.trim().toLowerCase();
+    if (!q) return [];
+    return searchableItems.filter(
+      (item) =>
+        item.label.toLowerCase().includes(q) ||
+        (item.desc && item.desc.toLowerCase().includes(q))
+    );
+  }, [searchQuery, searchableItems]);
+
   return (
     <>
-      {/* Floating Header Wrapper - Permanently Fixed at Top */}
-      <header 
-        ref={headerRef}
-        onMouseLeave={handleMouseLeave}
-        className="fixed top-3.5 sm:top-2 left-0 right-0 z-50 px-3 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full pointer-events-none"
+      {/* Static Two-Tier Institutional Header (Pure White, GCC Reference Architecture) */}
+      <header
+        className="w-full bg-white font-['Poppins',sans-serif] relative z-30"
+        aria-label="Site Header"
       >
-        <div className="relative w-full">
-          {/* Main Navigation Container - Seamlessly expands across full width when active */}
-          <div 
-            className={`pointer-events-auto w-full transition-all duration-150 ease-out ${
-              activeDropdown ? 'rounded-3xl' : 'rounded-full'
-            } ${
-              isScrolled
-                ? 'bg-white/95 backdrop-blur-2xl shadow-xl border border-sand-border text-forest'
-                : activeDropdown
-                  ? 'bg-[#017A2A]/98 backdrop-blur-2xl border border-white/20 shadow-2xl text-white'
-                  : 'bg-green-200/20 backdrop-blur-xl border border-white/10 shadow-2xl text-white'
-            }`}
-          >
-            {/* Top Navigation Row */}
-            <div className={`flex items-center justify-between px-4 sm:px-8 py-2.5 sm:py-3 transition-colors ${
-              activeDropdown 
-                ? isScrolled 
-                  ? 'border-b border-sand-border/80' 
-                  : 'border-b border-white/10' 
-                : ''
-            }`}>
-              {/* Left: Brand Logo (Flex item 1) */}
-              <div 
-                className="flex-1 flex justify-start items-center"
-                onMouseEnter={handleItemHoverClear}
+        {/* Tier 1: Top Utility Bar (.site-topbar) */}
+        <div className="w-full bg-white border-b border-[#efefef]">
+          <div className="w-[90%] max-w-[1680px] mx-auto py-2.5 flex items-center justify-end gap-x-5 xl:gap-x-7 text-[13.5px] leading-[1.3] font-normal text-[#7f7f7f]">
+            {/* Portal / Practice Shortcut Links with subtle external-style icon (Desktop) */}
+            <div className="hidden xl:flex items-center gap-x-7">
+              <Link
+                to={getLocalizedPath('/services/carbon-market-advisory')}
+                className="inline-flex items-center gap-1.5 text-[#7f7f7f] hover:text-[#019934] transition-colors duration-200 whitespace-nowrap"
               >
-                <Logo 
-                  variant={isScrolled ? 'default' : 'light'} 
-                  imgClassName="h-9 sm:h-11 md:h-12 w-auto" 
+                <ExternalLink className="w-3.5 h-3.5 stroke-[1.75] flex-shrink-0" />
+                <span>{t('navigation.topStrip.carbon', 'Carbon Markets & Article 6')}</span>
+              </Link>
+
+              <Link
+                to={getLocalizedPath('/services/cbam-advisory')}
+                className="inline-flex items-center gap-1.5 text-[#7f7f7f] hover:text-[#019934] transition-colors duration-200 whitespace-nowrap"
+              >
+                <ExternalLink className="w-3.5 h-3.5 stroke-[1.75] flex-shrink-0" />
+                <span>{t('navigation.topStrip.cbam', 'EU CBAM Readiness')}</span>
+              </Link>
+
+              <Link
+                to={getLocalizedPath('/services/climate-finance-advisory')}
+                className="inline-flex items-center gap-1.5 text-[#7f7f7f] hover:text-[#019934] transition-colors duration-200 whitespace-nowrap"
+              >
+                <ExternalLink className="w-3.5 h-3.5 stroke-[1.75] flex-shrink-0" />
+                <span>{t('navigation.servicesMenu.climateFinance', 'Climate Finance Advisory')}</span>
+              </Link>
+            </div>
+
+            {/* Utility Direct Page Links (Tablet & Desktop) */}
+            <div className="hidden md:flex items-center gap-x-6 xl:gap-x-7">
+              <Link
+                to={getLocalizedPath('/sectors')}
+                className="text-[#7f7f7f] hover:text-[#019934] transition-colors duration-200 whitespace-nowrap"
+              >
+                {t('navigation.sectors', 'Sectors')}
+              </Link>
+
+              <Link
+                to={getLocalizedPath('/training')}
+                className="text-[#7f7f7f] hover:text-[#019934] transition-colors duration-200 whitespace-nowrap"
+              >
+                {t('navigation.training', 'Training')}
+              </Link>
+
+              <Link
+                to={getLocalizedPath('/contact')}
+                className="text-[#7f7f7f] hover:text-[#019934] transition-colors duration-200 whitespace-nowrap"
+              >
+                {t('navigation.contact', 'Contact')}
+              </Link>
+            </div>
+
+            {/* Right Utility Icons + Compact Language Selector */}
+            <div className="flex items-center gap-x-4 text-[#7f7f7f]">
+              <a
+                href={`mailto:${CONTACT_CONFIG.email}`}
+                aria-label={`Email ${CONTACT_CONFIG.email}`}
+                title={CONTACT_CONFIG.email}
+                className="hover:text-[#019934] transition-colors duration-200"
+              >
+                <Mail className="w-[16px] h-[16px] stroke-[1.75]" />
+              </a>
+
+              <a
+                href={`https://wa.me/${CONTACT_CONFIG.whatsapp.raw}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                title={`WhatsApp: ${CONTACT_CONFIG.whatsapp.display}`}
+                className="hover:text-[#019934] transition-colors duration-200"
+              >
+                <MessageCircle className="w-[16px] h-[16px] stroke-[1.75]" />
+              </a>
+
+              <span className="h-3.5 w-[1px] bg-[#dddddd]" aria-hidden="true" />
+
+              {/* Clean Minimal Inline EN / ES Switcher */}
+              <div className="inline-flex items-center gap-2 text-[12.5px] font-medium" role="group" aria-label="Language switcher">
+                <button
+                  type="button"
+                  onClick={() => switchLanguage('en')}
+                  className={`inline-flex items-center gap-1 transition-colors duration-200 cursor-pointer ${
+                    locale === 'en'
+                      ? 'text-[#019934] font-semibold'
+                      : 'text-[#7f7f7f] hover:text-[#019934]'
+                  }`}
+                >
+                  <UkFlag className="w-3.5 h-2.5 flex-shrink-0" />
+                  <span>EN</span>
+                </button>
+                <span className="text-[#cccccc]">/</span>
+                <button
+                  type="button"
+                  onClick={() => switchLanguage('es')}
+                  className={`inline-flex items-center gap-1 transition-colors duration-200 cursor-pointer ${
+                    locale === 'es'
+                      ? 'text-[#019934] font-semibold'
+                      : 'text-[#7f7f7f] hover:text-[#019934]'
+                  }`}
+                >
+                  <SpainFlag className="w-3.5 h-2.5 flex-shrink-0" />
+                  <span>ES</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Tier 2: Main Header Row (.site-header) — Logo Left, Minimal Teal Hamburger Right */}
+        <div className="w-full bg-white">
+          <div className="w-[90%] max-w-[1680px] mx-auto py-5 sm:py-6 lg:py-7 flex items-center justify-between">
+            <Logo
+              variant="default"
+              imgClassName="h-11 sm:h-14 lg:h-[62px] w-auto"
+            />
+
+            <button
+              ref={menuButtonRef}
+              type="button"
+              onClick={() => setDrawerOpen(true)}
+              aria-label="Open navigation menu"
+              aria-expanded={drawerOpen}
+              className="p-2 -mr-2 text-[#019934] hover:text-[#0A7A32] transition-colors duration-200 cursor-pointer focus:outline-none"
+            >
+              <HamburgerIcon />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Sticky Compact White Header on Scroll (.site-header-sticky) */}
+      <div
+        aria-hidden={!isSticky}
+        className={`fixed top-0 left-0 right-0 z-40 bg-white font-['Poppins',sans-serif] shadow-[0_2px_20px_rgba(26,92,59,0.08)] transition-all duration-300 ease-out ${
+          isSticky
+            ? 'translate-y-0 opacity-100 pointer-events-auto'
+            : '-translate-y-full opacity-0 pointer-events-none'
+        }`}
+      >
+        <div className="w-[90%] max-w-[1680px] mx-auto py-3.5 sm:py-4 lg:py-5 flex items-center justify-between">
+          <Logo
+            variant="default"
+            imgClassName="h-10 sm:h-12 lg:h-[52px] w-auto"
+          />
+
+          <button
+            type="button"
+            tabIndex={isSticky ? 0 : -1}
+            onClick={() => setDrawerOpen(true)}
+            aria-label="Open navigation menu"
+            aria-expanded={drawerOpen}
+            className="p-2 -mr-2 text-[#019934] hover:text-[#0A7A32] transition-colors duration-200 cursor-pointer focus:outline-none"
+          >
+            <HamburgerIcon />
+          </button>
+        </div>
+      </div>
+
+      {/* Off-Canvas Sliding Navigation Drawer (.sliding-menu) */}
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-label="Site Navigation"
+        aria-hidden={!drawerOpen}
+        className={`fixed inset-0 z-50 font-['Poppins',sans-serif] transition-visibility duration-300 ${
+          drawerOpen ? 'visible pointer-events-auto' : 'invisible pointer-events-none'
+        }`}
+      >
+        {/* Subtle Backdrop keeping left side crisp and readable */}
+        <div
+          onClick={() => setDrawerOpen(false)}
+          aria-hidden="true"
+          className={`fixed inset-0 bg-black/15 transition-opacity duration-300 ${
+            drawerOpen ? 'opacity-100' : 'opacity-0'
+          }`}
+        />
+
+        {/* Right-Half White Drawer Panel */}
+        <aside
+          className={`fixed top-0 right-0 bottom-0 w-full sm:w-[75%] md:w-[55%] lg:w-[50%] bg-white shadow-[-12px_0_40px_rgba(0,0,0,0.08)] flex flex-col justify-between overflow-y-auto transition-transform duration-300 ease-out ${
+            drawerOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
+        >
+          <div className="px-6 sm:px-10 lg:px-14 pt-8 sm:pt-10 pb-10">
+            {/* Drawer Top Row: Sharp Rectangular Search Input + Thin Teal Close X */}
+            <div className="flex items-center justify-between gap-5 sm:gap-10">
+              <div className="relative flex-1">
+                <input
+                  ref={searchInputRef}
+                  type="search"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search ..."
+                  aria-label="Search pages and services"
+                  className="w-full h-[50px] sm:h-[54px] px-5 bg-white border border-[#2c2c2c]/60 rounded-none text-[15px] font-normal text-[#3C3C3C] placeholder:text-[#888888] focus:border-[#019934] focus:outline-none transition-colors duration-200"
                 />
               </div>
 
-              {/* Center: Desktop Navigation Links (Flex item 2 - Centered) */}
-              <nav 
-                className="hidden lg:flex items-center justify-center gap-1 xl:gap-3 flex-none text-[15px] font-semibold"
-                aria-label="Main Navigation"
+              <button
+                type="button"
+                onClick={() => setDrawerOpen(false)}
+                aria-label="Close navigation menu"
+                className="p-2 text-[#019934] hover:text-[#1A5C3B] transition-colors duration-200 cursor-pointer flex-shrink-0 focus:outline-none"
               >
-                {/* 0. Home Link */}
+                <X className="w-7 h-7 stroke-[1.5]" />
+              </button>
+            </div>
+
+            {/* Signature Bold Black Horizontal Rule */}
+            <div className="mt-7 sm:mt-8 mb-6 sm:mb-8 h-[3px] w-full bg-[#3C3C3C]" />
+
+            {/* Live Search Results View OR Main Navigation List */}
+            {searchQuery.trim() ? (
+              <div className="space-y-1">
+                {filteredSearchResults.length > 0 ? (
+                  filteredSearchResults.map((item) => (
+                    <Link
+                      key={item.to + item.label}
+                      to={item.to}
+                      onClick={() => setDrawerOpen(false)}
+                      className="block py-3.5 border-b border-[#efefef] group"
+                    >
+                      <div className="text-[20px] sm:text-[22px] font-normal text-[#1A5C3B] group-hover:text-[#57D182] transition-colors duration-200">
+                        {item.label}
+                      </div>
+                      {item.desc && (
+                        <p className="text-[13.5px] font-light text-[#7f7f7f] mt-1 leading-snug">
+                          {item.desc}
+                        </p>
+                      )}
+                    </Link>
+                  ))
+                ) : (
+                  <p className="py-6 text-[16px] font-light text-[#7f7f7f]">
+                    No matching results for &ldquo;{searchQuery}&rdquo;.
+                  </p>
+                )}
+              </div>
+            ) : (
+              <nav aria-label="Main Navigation" className="flex flex-col">
+                {/* 1. Home */}
                 <NavLink
                   to={getLocalizedPath('/')}
                   end
-                  onMouseEnter={handleItemHoverClear}
+                  onClick={() => setDrawerOpen(false)}
                   className={({ isActive }) =>
-                    `px-3.5 py-1.5 text-[15px] font-semibold tracking-normal transition-all duration-150 ${
-                      isActive
-                        ? isScrolled
-                          ? 'text-forest font-bold underline underline-offset-4 decoration-2 decoration-forest'
-                          : 'text-white font-bold underline underline-offset-4 decoration-2 decoration-gold'
-                        : isScrolled
-                          ? 'text-forest hover:text-deep-green hover:underline underline-offset-4'
-                          : 'text-white/95 hover:text-white hover:underline underline-offset-4'
+                    `py-3.5 sm:py-4 text-[22px] sm:text-[26px] md:text-[28px] leading-[1.2] font-normal transition-colors duration-200 ${
+                      isActive ? 'text-[#57D182]' : 'text-[#1A5C3B] hover:text-[#57D182]'
                     }`
                   }
                 >
                   {t('navigation.home', 'Home')}
                 </NavLink>
 
-                {/* 1. About Us Trigger & Link (Right next to Home) */}
-                <div 
-                  className="relative"
-                  onMouseEnter={() => handleMouseEnter('about')}
-                >
-                  <NavLink
-                    to={getLocalizedPath('/about-us')}
-                    onClick={() => setActiveDropdown(null)}
-                    aria-expanded={activeDropdown === 'about'}
-                    className={({ isActive }) =>
-                      `inline-flex items-center gap-1.5 px-3.5 py-1.5 text-[15px] font-semibold tracking-normal transition-all duration-150 cursor-pointer ${
-                        isActive || activeDropdown === 'about'
-                          ? isScrolled
-                            ? 'text-forest font-bold underline underline-offset-4 decoration-2 decoration-forest'
-                            : 'text-white font-bold underline underline-offset-4 decoration-2 decoration-gold'
-                          : isScrolled
-                            ? 'text-forest hover:text-deep-green hover:underline underline-offset-4'
-                            : 'text-white/95 hover:text-white hover:underline underline-offset-4'
-                      }`
-                    }
-                  >
-                    <span>{t('navigation.about', 'About Us')}</span>
-                    <ChevronDown 
-                      className={`w-4 h-4 stroke-[2.2] transition-transform duration-200 ${
-                        activeDropdown === 'about' ? 'rotate-180' : ''
-                      }`} 
-                    />
-                  </NavLink>
-                </div>
-
-                {/* 2. Our services Trigger */}
-                <div 
-                  className="relative"
-                  onMouseEnter={() => handleMouseEnter('services')}
-                >
+                {/* 2. About Us (Expandable Parent) */}
+                <div>
                   <button
                     type="button"
-                    onClick={(e) => handleDropdownClick('services', e)}
-                    aria-expanded={activeDropdown === 'services'}
-                    className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 text-[15px] font-semibold tracking-normal cursor-pointer transition-colors duration-150 ${
-                      activeDropdown === 'services'
-                        ? isScrolled
-                          ? 'text-forest font-bold underline underline-offset-4 decoration-2 decoration-forest'
-                          : 'text-white font-bold underline underline-offset-4 decoration-2 decoration-gold'
-                        : isScrolled
-                          ? 'text-forest hover:text-deep-green hover:underline underline-offset-4'
-                          : 'text-white/95 hover:text-white hover:underline underline-offset-4'
-                    }`}
-                  >
-                    <span>{t('navigation.ourServices', 'Our services')}</span>
-                    <ChevronDown 
-                      className={`w-4 h-4 stroke-[2.2] transition-transform duration-200 ${
-                        activeDropdown === 'services' ? 'rotate-180' : ''
-                      }`} 
-                    />
-                  </button>
-                </div>
-
-                {/* 3. Sectors */}
-                <NavLink
-                  to={getLocalizedPath('/sectors')}
-                  onMouseEnter={handleItemHoverClear}
-                  className={({ isActive }) =>
-                    `px-3.5 py-1.5 text-[15px] font-semibold tracking-normal transition-all duration-150 ${
-                      isActive
-                        ? isScrolled
-                          ? 'text-forest font-bold underline underline-offset-4 decoration-2 decoration-forest'
-                          : 'text-white font-bold underline underline-offset-4 decoration-2 decoration-gold'
-                        : isScrolled
-                          ? 'text-forest hover:text-deep-green hover:underline underline-offset-4'
-                          : 'text-white/95 hover:text-white hover:underline underline-offset-4'
-                    }`
-                  }
-                >
-                  {t('navigation.sectors', 'Sectors')}
-                </NavLink>
-
-                {/* 4. Who We Serve */}
-                <NavLink
-                  to={getLocalizedPath('/who-we-serve')}
-                  onMouseEnter={handleItemHoverClear}
-                  className={({ isActive }) =>
-                    `px-3.5 py-1.5 text-[15px] font-semibold tracking-normal transition-all duration-150 ${
-                      isActive
-                        ? isScrolled
-                          ? 'text-forest font-bold underline underline-offset-4 decoration-2 decoration-forest'
-                          : 'text-white font-bold underline underline-offset-4 decoration-2 decoration-gold'
-                        : isScrolled
-                          ? 'text-forest hover:text-deep-green hover:underline underline-offset-4'
-                          : 'text-white/95 hover:text-white hover:underline underline-offset-4'
-                    }`
-                  }
-                >
-                  {t('navigation.whoWeServe', 'Who We Serve')}
-                </NavLink>
-
-                {/* 5. Training Direct Link */}
-                <NavLink
-                  to={getLocalizedPath('/training')}
-                  onMouseEnter={handleItemHoverClear}
-                  className={({ isActive }) =>
-                    `px-3.5 py-1.5 text-[15px] font-semibold tracking-normal transition-all duration-150 ${
-                      isActive
-                        ? isScrolled
-                          ? 'text-forest font-bold underline underline-offset-4 decoration-2 decoration-forest'
-                          : 'text-white font-bold underline underline-offset-4 decoration-2 decoration-gold'
-                        : isScrolled
-                          ? 'text-forest hover:text-deep-green hover:underline underline-offset-4'
-                          : 'text-white/95 hover:text-white hover:underline underline-offset-4'
-                    }`
-                  }
-                >
-                  {t('navigation.training', 'Training')}
-                </NavLink>
-
-                {/* 6. Contact Direct Link */}
-                <NavLink
-                  to={getLocalizedPath('/contact')}
-                  onMouseEnter={handleItemHoverClear}
-                  className={({ isActive }) =>
-                    `px-3.5 py-1.5 text-[15px] font-semibold tracking-normal transition-all duration-150 ${
-                      isActive
-                        ? isScrolled
-                          ? 'text-forest font-bold underline underline-offset-4 decoration-2 decoration-forest'
-                          : 'text-white font-bold underline underline-offset-4 decoration-2 decoration-gold'
-                        : isScrolled
-                          ? 'text-forest hover:text-deep-green hover:underline underline-offset-4'
-                          : 'text-white/95 hover:text-white hover:underline underline-offset-4'
-                    }`
-                  }
-                >
-                  {t('navigation.contact', 'Contact')}
-                </NavLink>
-              </nav>
-
-              {/* Right: Language Selector & Mobile Trigger (Flex item 3 - Right aligned) */}
-              <div 
-                className="flex-1 flex justify-end items-center gap-3"
-                onMouseEnter={handleItemHoverClear}
-              >
-                <LanguageSwitcher isDark={isScrolled} />
-
-                {/* Mobile Menu Hamburger Button */}
-                <button
-                  ref={menuButtonRef}
-                  type="button"
-                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                  className={`p-1.5 rounded-lg lg:hidden transition-colors ${
-                    isScrolled
-                      ? 'text-forest hover:bg-forest/5'
-                      : 'text-white hover:bg-white/10'
-                  }`}
-                  aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-                  aria-expanded={mobileMenuOpen}
-                >
-                  {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-                </button>
-              </div>
-            </div>
-
-            {/* Expanded Full-Width Inner Area (Instant Render) */}
-            {activeDropdown && (
-              <div 
-                className="hidden lg:block px-6 sm:px-8 py-5"
-                onMouseEnter={() => {
-                  if (leaveTimerRef.current) {
-                    clearTimeout(leaveTimerRef.current);
-                    leaveTimerRef.current = null;
-                  }
-                }}
-              >
-                {/* 1. Services Full-Width Mega Menu */}
-                {activeDropdown === 'services' && (
-                  <div className="grid grid-cols-12 gap-6 items-stretch">
-                    {/* 7 Services Grid across 9 columns (3 columns of services) */}
-                    <div className="col-span-12 xl:col-span-9 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-                      {SERVICES_LIST.map((srv) => {
-                        const IconComponent = SERVICE_ICONS[srv.iconName] || Sparkles;
-                        const title = t(`navigation.servicesMenu.${srv.key}`, SERVICE_TITLES[srv.key] || srv.slug);
-                        const desc = SERVICE_DESCRIPTIONS[srv.key] || '';
-                        return (
-                          <Link
-                            key={srv.key}
-                            to={getLocalizedPath(`/services/${srv.slug}`)}
-                            onClick={() => setActiveDropdown(null)}
-                            className={`flex items-start gap-3 p-3 rounded-2xl transition-all duration-150 group border ${
-                              isScrolled
-                                ? 'border-transparent hover:border-sand-border/80 hover:bg-forest/5'
-                                : 'border-transparent hover:border-white/10 hover:bg-white/10'
-                            }`}
-                          >
-                            <div className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors mt-0.5 ${
-                              isScrolled
-                                ? 'bg-forest/5 text-forest group-hover:bg-forest group-hover:text-gold'
-                                : 'bg-white/10 text-gold-light group-hover:bg-gold group-hover:text-forest-dark'
-                            }`}>
-                              <IconComponent className="w-4 h-4" />
-                            </div>
-                            <div className="min-w-0 flex-1">
-                              <div className={`text-[14.5px] font-bold flex items-center justify-between transition-colors ${
-                                isScrolled ? 'text-forest group-hover:text-deep-green' : 'text-white group-hover:text-gold-light'
-                              }`}>
-                                <span className="truncate">{title}</span>
-                                <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all flex-shrink-0 ml-1 text-gold" />
-                              </div>
-                              {desc && (
-                                <p className={`text-[13px] leading-relaxed mt-1 line-clamp-2 ${
-                                  isScrolled ? 'text-charcoal-muted' : 'text-white/80'
-                                }`}>
-                                  {desc}
-                                </p>
-                              )}
-                            </div>
-                          </Link>
-                        );
-                      })}
-                    </div>
-
-                    {/* Spotlight Column across 3 columns */}
-                    <div className={`col-span-12 xl:col-span-3 flex flex-col justify-between p-5 rounded-2xl border ${
-                      isScrolled
-                        ? 'bg-sand-surface/80 border-sand-border'
-                        : 'bg-white/5 border-white/10'
-                    }`}>
-                      <div>
-                        <div className="flex items-center gap-2 mb-2">
-                          <span className="w-2 h-2 rounded-full bg-gold"></span>
-                          <span className="text-[11px] font-mono uppercase tracking-wider font-bold text-gold-light">
-                            {t('navigation.institutionalAdvisory', '7 Specialized Practices')}
-                          </span>
-                        </div>
-                        <h4 className={`text-sm font-bold mb-1.5 ${isScrolled ? 'text-forest' : 'text-white'}`}>
-                          Independent Technical & Carbon Advisory
-                        </h4>
-                        <p className={`text-xs leading-relaxed mb-4 ${isScrolled ? 'text-charcoal-muted' : 'text-white/75'}`}>
-                          Guiding sovereign entities, corporations, and developers across carbon compliance, Article 6, and ESG.
-                        </p>
-                      </div>
-
-                      <div className={`space-y-2 pt-3 border-t ${isScrolled ? 'border-sand-border/70' : 'border-white/10'}`}>
-                        <Link
-                          to={getLocalizedPath('/contact')}
-                          onClick={() => setActiveDropdown(null)}
-                          className="w-full inline-flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-gold text-forest-dark text-xs font-bold uppercase tracking-wider hover:bg-gold-light transition-colors shadow-sm"
-                        >
-                          <span>{t('navigation.requestConsultation', 'Request Consultation')}</span>
-                          <ArrowRight className="w-3.5 h-3.5" />
-                        </Link>
-                        <Link
-                          to={getLocalizedPath('/services')}
-                          onClick={() => setActiveDropdown(null)}
-                          className={`w-full inline-flex items-center justify-center gap-1.5 py-1 text-xs font-semibold transition-colors ${
-                            isScrolled ? 'text-forest hover:text-deep-green' : 'text-white/80 hover:text-white'
-                          }`}
-                        >
-                          <span>{t('navigation.menu.overview', 'View All 7 Services')}</span>
-                          <ArrowRight className="w-3 h-3" />
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-
-
-                {/* 3. About Full-Width Mega Menu */}
-                {activeDropdown === 'about' && (
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <Link
-                      to={`${getLocalizedPath('/about-us')}#who-we-are`}
-                      onClick={() => handleSectionClick('who-we-are')}
-                      className={`p-4 rounded-2xl transition-all duration-150 group border ${
-                        isScrolled
-                          ? 'border-transparent hover:border-sand-border/80 hover:bg-forest/5'
-                          : 'border-transparent hover:border-white/10 hover:bg-white/10'
-                      }`}
-                    >
-                      <div className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors mb-3 ${
-                        isScrolled
-                          ? 'bg-forest/5 text-forest group-hover:bg-forest group-hover:text-gold'
-                          : 'bg-white/10 text-gold-light group-hover:bg-gold group-hover:text-forest-dark'
-                      }`}>
-                        <Building2 className="w-4 h-4" />
-                      </div>
-                      <div className={`text-[13.5px] font-bold flex items-center justify-between mb-1 ${
-                        isScrolled ? 'text-forest' : 'text-white'
-                      }`}>
-                        <span>{t('navigation.menu.whoWeAre', 'About Green Gate Advisory')}</span>
-                        <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-gold" />
-                      </div>
-                      <p className={`text-xs leading-relaxed ${isScrolled ? 'text-charcoal-muted' : 'text-white/70'}`}>
-                        Independent institutional focus, seasoned global leadership, and rigorous governance.
-                      </p>
-                    </Link>
-
-                    <Link
-                      to={`${getLocalizedPath('/about-us')}#purpose-mission`}
-                      onClick={() => handleSectionClick('purpose-mission')}
-                      className={`p-4 rounded-2xl transition-all duration-150 group border ${
-                        isScrolled
-                          ? 'border-transparent hover:border-sand-border/80 hover:bg-forest/5'
-                          : 'border-transparent hover:border-white/10 hover:bg-white/10'
-                      }`}
-                    >
-                      <div className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors mb-3 ${
-                        isScrolled
-                          ? 'bg-forest/5 text-forest group-hover:bg-forest group-hover:text-gold'
-                          : 'bg-white/10 text-gold-light group-hover:bg-gold group-hover:text-forest-dark'
-                      }`}>
-                        <Target className="w-4 h-4" />
-                      </div>
-                      <div className={`text-[13.5px] font-bold flex items-center justify-between mb-1 ${
-                        isScrolled ? 'text-forest' : 'text-white'
-                      }`}>
-                        <span>{t('navigation.menu.purpose', 'Purpose, Mission & Vision')}</span>
-                        <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-gold" />
-                      </div>
-                      <p className={`text-xs leading-relaxed ${isScrolled ? 'text-charcoal-muted' : 'text-white/70'}`}>
-                        Accelerating global decarbonization through high-integrity, bankable climate frameworks.
-                      </p>
-                    </Link>
-
-                    <Link
-                      to={`${getLocalizedPath('/about-us')}#our-approach`}
-                      onClick={() => handleSectionClick('our-approach')}
-                      className={`p-4 rounded-2xl transition-all duration-150 group border ${
-                        isScrolled
-                          ? 'border-transparent hover:border-sand-border/80 hover:bg-forest/5'
-                          : 'border-transparent hover:border-white/10 hover:bg-white/10'
-                      }`}
-                    >
-                      <div className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors mb-3 ${
-                        isScrolled
-                          ? 'bg-forest/5 text-forest group-hover:bg-forest group-hover:text-gold'
-                          : 'bg-white/10 text-gold-light group-hover:bg-gold group-hover:text-forest-dark'
-                      }`}>
-                        <Layers className="w-4 h-4" />
-                      </div>
-                      <div className={`text-[13.5px] font-bold flex items-center justify-between mb-1 ${
-                        isScrolled ? 'text-forest' : 'text-white'
-                      }`}>
-                        <span>{t('navigation.menu.approach', 'Our Approach & Methodology')}</span>
-                        <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-gold" />
-                      </div>
-                      <p className={`text-xs leading-relaxed ${isScrolled ? 'text-charcoal-muted' : 'text-white/70'}`}>
-                        Science-based methodologies, quantitative analytics, and strict regulatory alignment.
-                      </p>
-                    </Link>
-
-                    <Link
-                      to={`${getLocalizedPath('/about-us')}#why-green-gate`}
-                      onClick={() => handleSectionClick('why-green-gate')}
-                      className={`p-4 rounded-2xl transition-all duration-150 group border ${
-                        isScrolled
-                          ? 'border-transparent hover:border-sand-border/80 hover:bg-forest/5'
-                          : 'border-transparent hover:border-white/10 hover:bg-white/10'
-                      }`}
-                    >
-                      <div className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors mb-3 ${
-                        isScrolled
-                          ? 'bg-forest/5 text-forest group-hover:bg-forest group-hover:text-gold'
-                          : 'bg-white/10 text-gold-light group-hover:bg-gold group-hover:text-forest-dark'
-                      }`}>
-                        <Award className="w-4 h-4" />
-                      </div>
-                      <div className={`text-[13.5px] font-bold flex items-center justify-between mb-1 ${
-                        isScrolled ? 'text-forest' : 'text-white'
-                      }`}>
-                        <span>{t('navigation.menu.whyUs', 'Why Green Gate Advisory')}</span>
-                        <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-gold" />
-                      </div>
-                      <p className={`text-xs leading-relaxed ${isScrolled ? 'text-charcoal-muted' : 'text-white/70'}`}>
-                        Proven cross-border track record, institutional credibility, and conflict-free advisory.
-                      </p>
-                    </Link>
-                  </div>
-                )}
-              </div>
-            )}
-          </div>
-        </div>
-      </header>
-
-      {/* Accessible & Highly Responsive Mobile Navigation Drawer */}
-      {mobileMenuOpen && (
-        <div 
-          className="fixed inset-0 z-50 lg:hidden"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Mobile Navigation"
-        >
-          {/* Backdrop with smooth blur */}
-          <div 
-            className="fixed inset-0 bg-forest-dark/70 backdrop-blur-sm transition-opacity duration-300" 
-            onClick={() => setMobileMenuOpen(false)}
-            aria-hidden="true"
-          />
-
-          {/* Drawer Panel - Left Slide-In & 100% Full Viewport Height */}
-          <div 
-            className="fixed inset-y-0 left-0 h-full h-[100dvh] min-h-screen w-full max-w-[340px] xs:max-w-sm bg-white shadow-2xl p-5 sm:p-6 flex flex-col justify-between overflow-y-auto animate-in slide-in-from-left duration-300 border-r border-[#DCE7DF] z-50 rounded-none"
-          >
-            {/* Top green accent strip */}
-            <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#019935] via-[#02B840] to-[#019935]" />
-
-            <div>
-              {/* Drawer Top Header */}
-              <div className="flex items-center justify-between pb-4 border-b border-[#E5EFE8]">
-                <div className="flex items-center gap-2">
-                  <Logo variant="default" imgClassName="h-7 w-auto" />
-                </div>
-                <button
-                  type="button"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="p-2 rounded-none text-[#16221A] hover:bg-[#E8F6ED] hover:text-[#019935] transition-colors focus:outline-none border border-transparent hover:border-[#CDE8D5]"
-                  aria-label="Close navigation menu"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
-
-              {/* Mobile Navigation Links - Unified, Clean & Architectural */}
-              <div className="py-2 font-sans">
-                {/* 1. Home */}
-                <Link
-                  to={getLocalizedPath('/')}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-between px-3.5 py-3 rounded-none text-[#16221A] hover:text-[#019935] hover:bg-[#F2F8F4] font-bold text-xs uppercase tracking-wider transition-colors border-b border-[#EEF4F0]"
-                >
-                  <span>{t('navigation.home', 'Home')}</span>
-                </Link>
-
-                {/* 2. About Us (Accordion) */}
-                <div className="border-b border-[#EEF4F0]">
-                  <button
-                    type="button"
-                    onClick={() => setMobileExpandedSection(prev => prev === 'about' ? null : 'about')}
-                    className={`w-full flex items-center justify-between px-3.5 py-3 rounded-none text-xs font-bold uppercase tracking-wider transition-colors ${
-                      mobileExpandedSection === 'about' 
-                        ? 'text-[#019935] bg-[#F2F8F4]' 
-                        : 'text-[#16221A] hover:text-[#019935] hover:bg-[#F2F8F4]'
+                    onClick={() => toggleSubmenu('about')}
+                    aria-expanded={expandedSection === 'about'}
+                    className={`w-full py-3.5 sm:py-4 flex items-center justify-between text-left text-[22px] sm:text-[26px] md:text-[28px] leading-[1.2] font-normal transition-colors duration-200 cursor-pointer focus:outline-none ${
+                      expandedSection === 'about'
+                        ? 'text-[#57D182]'
+                        : 'text-[#1A5C3B] hover:text-[#57D182]'
                     }`}
                   >
                     <span>{t('navigation.about', 'About Us')}</span>
-                    <ChevronDown 
-                      className={`w-4 h-4 text-[#019935] transition-transform duration-200 ${
-                        mobileExpandedSection === 'about' ? 'rotate-180' : ''
-                      }`} 
+                    <ChevronRight
+                      className={`w-6 h-6 stroke-[1.5] text-[#3C3C3C] transition-transform duration-200 flex-shrink-0 ${
+                        expandedSection === 'about' ? 'rotate-90 text-[#019934]' : ''
+                      }`}
                     />
                   </button>
 
-                  {mobileExpandedSection === 'about' && (
-                    <div className="pl-4 pr-2 py-2 space-y-1 bg-[#F9FCFA] border-l-2 border-[#019935] animate-in fade-in duration-150">
-                      <Link 
-                        to={`${getLocalizedPath('/about-us')}#who-we-are`} 
-                        onClick={() => handleSectionClick('who-we-are', true)} 
-                        className="flex items-center gap-2.5 p-2 rounded-none text-xs font-medium text-[#2C3B33] hover:text-[#019935] hover:bg-white"
-                      >
-                        <Building2 className="w-3.5 h-3.5 text-[#019935]" />
-                        <span>{t('navigation.menu.whoWeAre', 'About Green Gate Advisory')}</span>
-                      </Link>
-                      <Link 
-                        to={`${getLocalizedPath('/about-us')}#purpose-mission`} 
-                        onClick={() => handleSectionClick('purpose-mission', true)} 
-                        className="flex items-center gap-2.5 p-2 rounded-none text-xs font-medium text-[#2C3B33] hover:text-[#019935] hover:bg-white"
-                      >
-                        <Target className="w-3.5 h-3.5 text-[#019935]" />
-                        <span>{t('navigation.menu.purpose', 'Purpose, Mission & Vision')}</span>
-                      </Link>
-                      <Link 
-                        to={`${getLocalizedPath('/about-us')}#our-approach`} 
-                        onClick={() => handleSectionClick('our-approach', true)} 
-                        className="flex items-center gap-2.5 p-2 rounded-none text-xs font-medium text-[#2C3B33] hover:text-[#019935] hover:bg-white"
-                      >
-                        <Layers className="w-3.5 h-3.5 text-[#019935]" />
-                        <span>{t('navigation.menu.approach', 'Our Approach & Methodology')}</span>
-                      </Link>
-                      <Link 
-                        to={`${getLocalizedPath('/about-us')}#why-green-gate`} 
-                        onClick={() => handleSectionClick('why-green-gate', true)} 
-                        className="flex items-center gap-2.5 p-2 rounded-none text-xs font-medium text-[#2C3B33] hover:text-[#019935] hover:bg-white"
-                      >
-                        <Award className="w-3.5 h-3.5 text-[#019935]" />
-                        <span>{t('navigation.menu.whyUs', 'Why Green Gate Advisory')}</span>
-                      </Link>
+                  {expandedSection === 'about' && (
+                    <div className="pl-5 sm:pl-6 pb-4 pt-1 flex flex-col space-y-2.5 border-l-2 border-[#019934] ml-1 mb-2">
+                      {aboutSubItems.map((sub) => (
+                        <Link
+                          key={sub.id}
+                          to={sub.to}
+                          onClick={() => handleSectionClick(sub.id)}
+                          className="text-[16px] sm:text-[18px] font-light text-[#1A5C3B] hover:text-[#019934] transition-colors duration-200 py-0.5"
+                        >
+                          {sub.label}
+                        </Link>
+                      ))}
                       <Link
                         to={getLocalizedPath('/about-us')}
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="mt-1 pt-1.5 border-t border-[#E5EFE8] flex items-center justify-between px-2 py-1 text-xs font-bold text-[#019935] hover:underline"
+                        onClick={() => setDrawerOpen(false)}
+                        className="text-[15px] sm:text-[16px] font-medium text-[#019934] hover:text-[#0A7A32] transition-colors duration-200 pt-1"
                       >
-                        <span>{t('navigation.aboutUsOverview', 'View About Us Overview')}</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
+                        {t('navigation.about', 'About Us')} →
                       </Link>
                     </div>
                   )}
                 </div>
 
-                {/* 3. Our Services (Accordion) */}
-                <div className="border-b border-[#EEF4F0]">
+                {/* 3. Our services (Expandable Parent) */}
+                <div>
                   <button
                     type="button"
-                    onClick={() => setMobileExpandedSection(prev => prev === 'services' ? null : 'services')}
-                    className={`w-full flex items-center justify-between px-3.5 py-3 rounded-none text-xs font-bold uppercase tracking-wider transition-colors ${
-                      mobileExpandedSection === 'services' 
-                        ? 'text-[#019935] bg-[#F2F8F4]' 
-                        : 'text-[#16221A] hover:text-[#019935] hover:bg-[#F2F8F4]'
+                    onClick={() => toggleSubmenu('services')}
+                    aria-expanded={expandedSection === 'services'}
+                    className={`w-full py-3.5 sm:py-4 flex items-center justify-between text-left text-[22px] sm:text-[26px] md:text-[28px] leading-[1.2] font-normal transition-colors duration-200 cursor-pointer focus:outline-none ${
+                      expandedSection === 'services'
+                        ? 'text-[#57D182]'
+                        : 'text-[#1A5C3B] hover:text-[#57D182]'
                     }`}
                   >
-                    <span className="flex items-center gap-2">
-                      <span>{t('navigation.ourServices', 'Our Services')}</span>
-                      <span className="px-2 py-0.5 rounded-none text-[10px] font-mono font-bold bg-[#E8F6ED] text-[#019935] border border-[#CDE8D5]">
-                        7
-                      </span>
-                    </span>
-                    <ChevronDown 
-                      className={`w-4 h-4 text-[#019935] transition-transform duration-200 ${
-                        mobileExpandedSection === 'services' ? 'rotate-180' : ''
-                      }`} 
+                    <span>{t('navigation.ourServices', 'Our services')}</span>
+                    <ChevronRight
+                      className={`w-6 h-6 stroke-[1.5] text-[#3C3C3C] transition-transform duration-200 flex-shrink-0 ${
+                        expandedSection === 'services' ? 'rotate-90 text-[#019934]' : ''
+                      }`}
                     />
                   </button>
 
-                  {mobileExpandedSection === 'services' && (
-                    <div className="pl-4 pr-2 py-2 space-y-1 bg-[#F9FCFA] border-l-2 border-[#019935] animate-in fade-in duration-150">
-                      {SERVICES_LIST.map((srv) => {
-                        const IconComp = SERVICE_ICONS[srv.iconName] || Sparkles;
-                        const title = t(`navigation.servicesMenu.${srv.key}`, SERVICE_TITLES[srv.key] || srv.slug);
-                        return (
-                          <Link
-                            key={srv.key}
-                            to={getLocalizedPath(`/services/${srv.slug}`)}
-                            onClick={() => setMobileMenuOpen(false)}
-                            className="flex items-center gap-2.5 p-2 rounded-none text-xs font-medium text-[#2C3B33] hover:text-[#019935] hover:bg-white transition-colors"
-                          >
-                            <div className="w-6 h-6 rounded-none bg-[#E8F6ED] text-[#019935] flex items-center justify-center flex-shrink-0">
-                              <IconComp className="w-3.5 h-3.5" />
-                            </div>
-                            <span className="truncate">{title}</span>
-                          </Link>
-                        );
-                      })}
-                      
+                  {expandedSection === 'services' && (
+                    <div className="pl-5 sm:pl-6 pb-4 pt-1 flex flex-col space-y-2.5 border-l-2 border-[#019934] ml-1 mb-2">
+                      {SERVICES_LIST.map((srv) => (
+                        <Link
+                          key={srv.key}
+                          to={getLocalizedPath(`/services/${srv.slug}`)}
+                          onClick={() => setDrawerOpen(false)}
+                          className="text-[16px] sm:text-[18px] font-light text-[#1A5C3B] hover:text-[#019934] transition-colors duration-200 py-0.5"
+                        >
+                          {t(`navigation.servicesMenu.${srv.key}`, SERVICE_TITLES[srv.key] || srv.slug)}
+                        </Link>
+                      ))}
                       <Link
                         to={getLocalizedPath('/services')}
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="mt-1 pt-1.5 border-t border-[#E5EFE8] flex items-center justify-between px-2 py-1 text-xs font-bold text-[#019935] hover:underline"
+                        onClick={() => setDrawerOpen(false)}
+                        className="text-[15px] sm:text-[16px] font-medium text-[#019934] hover:text-[#0A7A32] transition-colors duration-200 pt-1"
                       >
-                        <span>{t('navigation.menu.overview', 'View All 7 Services')}</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
+                        {t('navigation.menu.overview', 'View All Services')} →
                       </Link>
                     </div>
                   )}
                 </div>
 
                 {/* 4. Sectors */}
-                <Link
+                <NavLink
                   to={getLocalizedPath('/sectors')}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-between px-3.5 py-3 rounded-none text-[#16221A] hover:text-[#019935] hover:bg-[#F2F8F4] font-bold text-xs uppercase tracking-wider transition-colors border-b border-[#EEF4F0]"
+                  onClick={() => setDrawerOpen(false)}
+                  className={({ isActive }) =>
+                    `py-3.5 sm:py-4 text-[22px] sm:text-[26px] md:text-[28px] leading-[1.2] font-normal transition-colors duration-200 ${
+                      isActive ? 'text-[#57D182]' : 'text-[#1A5C3B] hover:text-[#57D182]'
+                    }`
+                  }
                 >
-                  <span>{t('navigation.sectors', 'Sectors')}</span>
-                </Link>
+                  {t('navigation.sectors', 'Sectors')}
+                </NavLink>
 
                 {/* 5. Who We Serve */}
-                <Link
+                <NavLink
                   to={getLocalizedPath('/who-we-serve')}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-between px-3.5 py-3 rounded-none text-[#16221A] hover:text-[#019935] hover:bg-[#F2F8F4] font-bold text-xs uppercase tracking-wider transition-colors border-b border-[#EEF4F0]"
+                  onClick={() => setDrawerOpen(false)}
+                  className={({ isActive }) =>
+                    `py-3.5 sm:py-4 text-[22px] sm:text-[26px] md:text-[28px] leading-[1.2] font-normal transition-colors duration-200 ${
+                      isActive ? 'text-[#57D182]' : 'text-[#1A5C3B] hover:text-[#57D182]'
+                    }`
+                  }
                 >
-                  <span>{t('navigation.whoWeServe', 'Who We Serve')}</span>
-                </Link>
+                  {t('navigation.whoWeServe', 'Who We Serve')}
+                </NavLink>
 
-                {/* 6. Training & Workshops */}
+                {/* 6. Training */}
                 <NavLink
                   to={getLocalizedPath('/training')}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-between px-3.5 py-3 rounded-none text-[#16221A] hover:text-[#019935] hover:bg-[#F2F8F4] font-bold text-xs uppercase tracking-wider transition-colors border-b border-[#EEF4F0]"
+                  onClick={() => setDrawerOpen(false)}
+                  className={({ isActive }) =>
+                    `py-3.5 sm:py-4 text-[22px] sm:text-[26px] md:text-[28px] leading-[1.2] font-normal transition-colors duration-200 ${
+                      isActive ? 'text-[#57D182]' : 'text-[#1A5C3B] hover:text-[#57D182]'
+                    }`
+                  }
                 >
-                  <span className="flex items-center gap-2.5">
-                    <Calendar className="w-4 h-4 text-[#019935]" />
-                    <span>{t('navigation.training', 'Training & Workshops')}</span>
-                  </span>
+                  {t('navigation.training', 'Training')}
                 </NavLink>
 
                 {/* 7. Contact */}
-                <Link
+                <NavLink
                   to={getLocalizedPath('/contact')}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-between px-3.5 py-3 rounded-none text-[#16221A] hover:text-[#019935] hover:bg-[#F2F8F4] font-bold text-xs uppercase tracking-wider transition-colors border-b border-[#EEF4F0]"
+                  onClick={() => setDrawerOpen(false)}
+                  className={({ isActive }) =>
+                    `py-3.5 sm:py-4 text-[22px] sm:text-[26px] md:text-[28px] leading-[1.2] font-normal transition-colors duration-200 ${
+                      isActive ? 'text-[#57D182]' : 'text-[#1A5C3B] hover:text-[#57D182]'
+                    }`
+                  }
                 >
-                  <span>{t('navigation.contact', 'Contact')}</span>
-                </Link>
-              </div>
-            </div>
+                  {t('navigation.contact', 'Contact')}
+                </NavLink>
+              </nav>
+            )}
+          </div>
 
-            {/* Drawer Bottom Actions: Consultation CTA & Dual Flag Switcher */}
-            <div className="pt-4 border-t border-[#E5EFE8] space-y-3.5">
-              <Link
-                to={getLocalizedPath('/contact')}
-                onClick={() => setMobileMenuOpen(false)}
-                className="w-full inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-none bg-[#019935] hover:bg-[#02B840] text-white font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all group focus:outline-none"
+          {/* Drawer Footer: Request Consultation & Language Toggle */}
+          <div className="px-6 sm:px-10 lg:px-14 py-6 border-t border-[#efefef] flex flex-wrap items-center justify-between gap-4">
+            <Link
+              to={getLocalizedPath('/contact')}
+              onClick={() => setDrawerOpen(false)}
+              className="inline-flex items-center justify-center px-5 py-2.5 rounded-[5px] bg-[#1A5C3B] hover:bg-[#019934] text-white text-[14px] font-normal transition-colors duration-200"
+            >
+              {t('navigation.requestConsultation', 'Request Consultation')}
+            </Link>
+
+            <div className="inline-flex items-center gap-3 text-[13.5px]">
+              <button
+                type="button"
+                onClick={() => {
+                  switchLanguage('en');
+                  setDrawerOpen(false);
+                }}
+                className={`inline-flex items-center gap-1.5 transition-colors duration-200 cursor-pointer ${
+                  locale === 'en'
+                    ? 'text-[#019934] font-medium'
+                    : 'text-[#7f7f7f] hover:text-[#019934]'
+                }`}
               >
-                <span>{t('navigation.requestConsultation', 'Request Consultation')}</span>
-                <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
-              </Link>
-              
-              {/* Dual Flag Language Toggle */}
-              <div className="space-y-1.5">
-                <span className="text-[10px] font-mono uppercase tracking-widest font-bold text-[#677A70] block text-center">
-                  {t('common.languageLabel', 'Language / Idioma')}
-                </span>
-                <div className="grid grid-cols-2 gap-2">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      switchLanguage('en');
-                      setMobileMenuOpen(false);
-                    }}
-                    className={`flex items-center justify-center gap-2 py-2 px-3 rounded-none text-xs font-bold border transition-colors ${
-                      locale === 'en'
-                        ? 'bg-[#019935] text-white border-[#019935] shadow-xs'
-                        : 'bg-white text-[#2C3B33] border-[#DCE5DF] hover:bg-[#F2F8F4] hover:border-[#019935]'
-                    }`}
-                  >
-                    <UkFlag className="w-4 h-3 rounded-none flex-shrink-0" />
-                    <span>English</span>
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={() => {
-                      switchLanguage('es');
-                      setMobileMenuOpen(false);
-                    }}
-                    className={`flex items-center justify-center gap-2 py-2 px-3 rounded-none text-xs font-bold border transition-colors ${
-                      locale === 'es'
-                        ? 'bg-[#019935] text-white border-[#019935] shadow-xs'
-                        : 'bg-white text-[#2C3B33] border-[#DCE5DF] hover:bg-[#F2F8F4] hover:border-[#019935]'
-                    }`}
-                  >
-                    <SpainFlag className="w-4 h-3 rounded-none flex-shrink-0" />
-                    <span>Español</span>
-                  </button>
-                </div>
-              </div>
+                <UkFlag className="w-4 h-3 flex-shrink-0" />
+                <span>English</span>
+              </button>
+              <span className="text-[#dddddd]">|</span>
+              <button
+                type="button"
+                onClick={() => {
+                  switchLanguage('es');
+                  setDrawerOpen(false);
+                }}
+                className={`inline-flex items-center gap-1.5 transition-colors duration-200 cursor-pointer ${
+                  locale === 'es'
+                    ? 'text-[#019934] font-medium'
+                    : 'text-[#7f7f7f] hover:text-[#019934]'
+                }`}
+              >
+                <SpainFlag className="w-4 h-3 flex-shrink-0" />
+                <span>Español</span>
+              </button>
             </div>
           </div>
-        </div>
-      )}
-
+        </aside>
+      </div>
     </>
   );
 }

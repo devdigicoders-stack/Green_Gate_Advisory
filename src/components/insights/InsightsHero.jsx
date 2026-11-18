@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { ChevronRight, ShieldCheck, BookOpen } from 'lucide-react';
+import { ShieldCheck } from 'lucide-react';
 import { useLocale } from '../../hooks/useLocale';
 import sectorVideo from '../../assets/sectorpage.mp4';
 
@@ -10,8 +10,8 @@ export default function InsightsHero() {
   const { getLocalizedPath } = useLocale();
 
   return (
-    <section className="relative min-h-[60vh] flex flex-col justify-center overflow-hidden bg-neutral-900 text-white pt-24 pb-12 sm:pt-28 sm:pb-16">
-      {/* Background Photography & Video - Clean renewable energy and nature (Zero people/meeting rooms) */}
+    <section className="relative w-full min-h-[340px] sm:min-h-[380px] lg:min-h-[420px] flex flex-col justify-between items-center overflow-hidden bg-[#1A5C3B] text-white font-['Poppins',sans-serif] text-center select-none">
+      {/* Preserved Background Video & Photography */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
           key="insights-nature-video"
@@ -21,72 +21,93 @@ export default function InsightsHero() {
           loop
           playsInline
           poster="/images/infrastructure.jpg"
-          className="w-full h-full object-cover object-center opacity-85 scale-105 transform motion-safe:transition-transform motion-safe:duration-1000"
+          className="w-full h-full object-cover object-center opacity-80 scale-105"
         >
           <source src={sectorVideo} type="video/mp4" />
         </video>
         <img
           src="/images/infrastructure.jpg"
           alt="Modern climate infrastructure, renewable energy and sustainable intelligence center"
-          className="absolute inset-0 w-full h-full object-cover object-center opacity-85 scale-105 -z-10"
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-80 scale-105 -z-10"
           loading="eager"
         />
-        {/* Neutral contrast gradient overlays */}
-        <div className="absolute inset-0 bg-black/60 sm:hidden pointer-events-none" />
-        <div className="hidden sm:block absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/20 pointer-events-none" />
-        <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/30 pointer-events-none" />
+        {/* Clean GCC Vignette Overlay */}
+        <div className="absolute inset-0 bg-[#1A5C3B]/50 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/30 to-black/60 pointer-events-none" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 sm:space-y-8">
+      {/* Signature GCC Bottom-Left Concentric Thin White Rings Watermark */}
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 480 480"
+        fill="none"
+        className="pointer-events-none absolute -left-24 -bottom-28 w-[280px] sm:w-[360px] lg:w-[440px] h-auto z-[1] opacity-30"
+      >
+        {Array.from({ length: 16 }).map((_, idx) => (
+          <circle
+            key={idx}
+            cx="170"
+            cy="310"
+            r={45 + idx * 17}
+            stroke="#ffffff"
+            strokeWidth="1.15"
+            strokeOpacity={Math.max(0.18, 0.55 - idx * 0.02)}
+          />
+        ))}
+      </svg>
 
-        {/* Breadcrumb Navigation */}
-        <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-sans text-sand-surface/75">
-          <Link
-            to={getLocalizedPath('/')}
-            className="hover:text-gold transition-colors focus:outline-none focus:underline"
-          >
-            {t('insights.hero.breadcrumbHome', 'Home')}
-          </Link>
-          <ChevronRight className="w-3.5 h-3.5 text-sand-surface/40" />
-          <span className="text-gold font-medium" aria-current="page">
-            {t('insights.hero.breadcrumbCurrent', 'Insights & Resources')}
-          </span>
-        </nav>
+      <div className="h-6 sm:h-8" aria-hidden="true" />
 
-        {/* Content Block with Elegant Motion Entrance */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="max-w-3xl space-y-3 sm:space-y-6"
-        >
-          <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-semibold tracking-widest uppercase bg-white/10 text-gold-light border border-white/20 backdrop-blur-md">
-            <BookOpen className="w-3.5 h-3.5 text-gold" />
-            <span>{t('insights.hero.eyebrow', 'Knowledge & Technical Publications')}</span>
-          </div>
+      {/* Center Content — Exact GCC Short White Bar + Medium White Poppins Title */}
+      <motion.div
+        initial={{ opacity: 0, y: 18 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+        className="relative z-10 w-[90%] max-w-4xl mx-auto py-8 sm:py-10 flex flex-col items-center justify-center"
+      >
+        <span className="inline-block w-[64px] h-[3px] bg-white mb-5" aria-hidden="true" />
 
-          <h1 className="font-display font-bold text-2xl sm:text-5xl lg:text-6xl xl:text-7xl text-white tracking-tight leading-[1.12]">
-            {t('insights.hero.title', 'Insights & Resources')}
-          </h1>
+        <span className="text-[11.5px] sm:text-[12.5px] font-normal tracking-[0.2em] uppercase text-[#57D182] mb-2">
+          {t('insights.hero.eyebrow', 'Knowledge & Technical Publications')}
+        </span>
 
-          <p className="text-sm sm:text-lg text-sand-surface/90 leading-relaxed font-sans font-normal">
-            {t('insights.hero.leadShort', 'Practical briefings and statutory intelligence on carbon markets, CBAM, and climate finance.')}
-          </p>
-        </motion.div>
+        <h1 className="font-['Poppins',sans-serif] font-medium text-[30px] sm:text-[38px] lg:text-[44px] text-white tracking-[-0.01em] leading-[1.2] max-w-3xl mx-auto">
+          {t('insights.hero.title', 'Insights & Resources')}
+        </h1>
 
-        {/* Advisory Quality Notice - Hidden on mobile */}
-        <div className="hidden sm:flex pt-5 sm:pt-6 border-t border-white/10 flex-wrap items-center gap-3 sm:gap-6 text-xs text-sand-surface/70 font-sans">
-          <div className="flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-gold flex-shrink-0" />
+        <p className="mt-3 text-[14px] sm:text-[15.5px] text-white/85 max-w-2xl mx-auto leading-relaxed font-['Poppins',sans-serif] font-light">
+          {t('insights.hero.leadShort', 'Practical briefings and statutory intelligence on carbon markets, CBAM, and climate finance.')}
+        </p>
+
+        {/* Preserved Advisory Quality Notice Strip */}
+        <div className="hidden sm:flex mt-6 pt-4 border-t border-white/15 flex-wrap items-center justify-center gap-3 sm:gap-5 text-[12px] text-white/75 font-light">
+          <div className="flex items-center gap-1.5">
+            <ShieldCheck className="w-3.5 h-3.5 text-[#57D182] flex-shrink-0" />
             <span>Subject-matter expert review · Current international frameworks</span>
           </div>
-          <span className="inline text-white/20">|</span>
-          <span className="hidden xs:inline">Technical checklists & policy intelligence</span>
-          <span className="hidden sm:inline text-white/20">|</span>
+          <span className="text-white/25">|</span>
+          <span>Technical checklists &amp; policy intelligence</span>
+          <span className="hidden md:inline text-white/25">|</span>
           <span className="hidden md:inline">Zero speculative or unverified claims</span>
         </div>
+      </motion.div>
 
-      </div>
+      {/* Bottom Centered GCC Breadcrumb */}
+      <nav
+        aria-label="Breadcrumb"
+        className="relative z-10 pb-5 sm:pb-6 flex items-center justify-center gap-2 text-[13px] font-['Poppins',sans-serif] font-normal"
+      >
+        <Link
+          to={getLocalizedPath('/')}
+          className="text-white/70 hover:text-white transition-colors duration-200"
+        >
+          {t('insights.hero.breadcrumbHome', 'Home')}
+        </Link>
+        <span className="text-white/75" aria-hidden="true">&rarr;</span>
+        <span className="text-white" aria-current="page">
+          {t('insights.hero.breadcrumbCurrent', 'Insights & Resources')}
+        </span>
+      </nav>
     </section>
   );
 }

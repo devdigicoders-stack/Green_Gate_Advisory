@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { 
-  ArrowRight, 
-  Workflow, 
-  FileText, 
-  Layers, 
-  BarChart3, 
-  Sprout, 
-  Landmark, 
-  FileCheck 
+import {
+  ArrowRight,
+  Workflow,
+  FileText,
+  Layers,
+  BarChart3,
+  Sprout,
+  Landmark,
+  FileCheck
 } from 'lucide-react';
 import { useLocale } from '../../hooks/useLocale';
 
@@ -36,305 +36,262 @@ const PILLARS_DATA = [
   }
 ];
 
+const DELIVERY_STAGES = [
+  {
+    num: '01',
+    stage: 'STAGE 01',
+    title: 'Policy & Rules',
+    sub: 'CBAM • ETS • Article 6',
+    shortSub: 'CBAM • ETS • Art. 6',
+    icon: FileText
+  },
+  {
+    num: '02',
+    stage: 'STAGE 02',
+    title: 'Scientific MRV',
+    sub: 'ISO 14064 • Yields',
+    shortSub: 'ISO 14064 • Yields',
+    icon: Layers
+  },
+  {
+    num: '03',
+    stage: 'STAGE 03',
+    title: 'Bankable Action',
+    sub: 'Capital & Issuance',
+    shortSub: 'Capital & Issuance',
+    icon: BarChart3
+  }
+];
+
 export default function WhatWeDo() {
   const { t } = useTranslation();
   const { getLocalizedPath } = useLocale();
 
   return (
-    <section id="about" className="py-14 sm:py-20 lg:py-24 bg-[#FAFCF9] border-b border-[#E5EDE7] scroll-mt-24 relative overflow-hidden">
+    <section
+      id="about"
+      className="relative w-full bg-[#1A5C3B] text-white font-['Poppins',sans-serif] py-20 sm:py-24 lg:py-28 scroll-mt-24 overflow-hidden"
+    >
       <span id="what-we-do" className="absolute -top-24" />
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14 sm:space-y-16">
-        
-        {/* Two-Column Editorial Composition with Left & Right Entrance */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start overflow-hidden">
-          
-          {/* Left Column: Heading & Descriptive Copy (Enters from Left) */}
-          <motion.div
-            initial={{ opacity: 0, x: -60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
-            className="lg:col-span-6 space-y-5 sm:space-y-6"
-          >
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-[#E8F6ED] text-[#019935] border border-[#CDE8D5] shadow-2xs">
-              <span className="w-2 h-2 rounded-full bg-[#019935]"></span>
-              <span>{t('home.whatWeDo.eyebrow', 'WHAT WE DO')}</span>
-            </div>
 
-            <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-[42px] text-[#16221A] tracking-tight leading-[1.18]">
-              Integrated Climate & <br />
-              <span className="text-[#019935]">Environmental Advisory</span>
+      {/* Subtle Oversized Concentric Arc Watermark (Signature GCC Navy Band Motif) */}
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 640 640"
+        fill="none"
+        className="pointer-events-none absolute -right-32 -top-24 w-[420px] sm:w-[560px] lg:w-[680px] h-auto opacity-[0.07]"
+      >
+        {Array.from({ length: 16 }).map((_, idx) => (
+          <circle
+            key={idx}
+            cx="420"
+            cy="220"
+            r={70 + idx * 24}
+            stroke="#ffffff"
+            strokeWidth="1.25"
+          />
+        ))}
+      </svg>
+
+      <div className="relative z-10 w-[90%] max-w-[1680px] mx-auto">
+        {/* ============================================================
+            UPPER BLOCK: WHO WE ARE / WHAT WE DO (GCC Editorial Navy Style)
+           ============================================================ */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+          className="max-w-[1080px] mx-auto"
+        >
+          {/* Signature GCC 70px x 2px Teal Accent Rule + Tracked Eyebrow */}
+          <div className="flex flex-col items-start sm:items-center sm:text-center mb-8 sm:mb-10">
+            <span className="inline-block w-[70px] h-[2px] bg-[#019934] mb-4" aria-hidden="true" />
+            <span className="text-[13px] sm:text-[14px] font-medium tracking-[0.22em] uppercase text-[#57D182]">
+              {t('home.whatWeDo.eyebrow', 'WHAT WE DO')}
+            </span>
+
+            <h2 className="mt-4 font-['Poppins',sans-serif] font-light text-[34px] sm:text-[46px] lg:text-[56px] text-white leading-[1.15] tracking-[-0.01em]">
+              Integrated Climate &amp;{' '}
+              <span className="text-[#57D182]">Environmental Advisory</span>
             </h2>
+          </div>
 
-            <div className="w-12 h-1 bg-[#019935] rounded-full"></div>
-
-            <p className="text-sm sm:text-base text-[#3C4A42] leading-relaxed font-sans font-normal pt-1">
-              {t('home.whatWeDo.lead', 'Climate regulation, carbon markets and sustainable finance are changing how organisations plan, invest and operate. Green Gate Advisory provides integrated climate and environmental advisory services to help clients understand their obligations, assess opportunities and develop credible pathways to implementation.')}
+          {/* Two Crisp Light-Weight White Editorial Paragraphs (Exact GCC Typography) */}
+          <div className="space-y-6 text-left">
+            <p className="font-['Poppins',sans-serif] font-light text-[16px] sm:text-[19px] lg:text-[21px] text-white/95 leading-[1.65]">
+              {t(
+                'home.whatWeDo.lead',
+                'Climate regulation, carbon markets and sustainable finance are changing how organisations plan, invest and operate. Green Gate Advisory provides integrated climate and environmental advisory services to help clients understand their obligations, assess opportunities and develop credible pathways to implementation.'
+              )}
             </p>
 
-            <p className="text-sm sm:text-base text-[#4E5E54] leading-relaxed font-sans font-normal">
-              {t('home.whatWeDo.paragraph', 'Our work spans voluntary and compliance carbon markets, carbon project development, emissions trading systems, Carbon Border Adjustment Mechanism (CBAM) readiness, climate finance proposal development, nature-based solutions, environmental policy, greenhouse gas accounting and corporate sustainability. We combine technical analysis, regulatory understanding and project-focused thinking to help clients make informed decisions.')}
+            <p className="font-['Poppins',sans-serif] font-light text-[16px] sm:text-[19px] lg:text-[21px] text-white/85 leading-[1.65]">
+              {t(
+                'home.whatWeDo.paragraph',
+                'Our work spans voluntary and compliance carbon markets, carbon project development, emissions trading systems, Carbon Border Adjustment Mechanism (CBAM) readiness, climate finance proposal development, nature-based solutions, environmental policy, greenhouse gas accounting and corporate sustainability. We combine technical analysis, regulatory understanding and project-focused thinking to help clients make informed decisions.'
+              )}
             </p>
+          </div>
 
-            <div className="pt-2">
-              <Link
-                to={getLocalizedPath('/about-us')}
-                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-[#019935] hover:bg-[#02B840] text-white text-xs sm:text-sm font-semibold tracking-wide shadow-md hover:shadow-lg transition-all group focus:outline-none"
-              >
-                <span>{t('home.whatWeDo.learnMore', 'Learn more about our team, approach & mission')}</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
+          {/* Centered Solid Teal CTA Button (Exact GCC 'Get in touch' Button) */}
+          <div className="mt-10 sm:mt-12 flex justify-start sm:justify-center">
+            <Link
+              to={getLocalizedPath('/about-us')}
+              className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-[5px] bg-[#019934] hover:bg-[#017D2B] text-white font-['Poppins',sans-serif] font-normal text-[15px] tracking-normal transition-colors duration-200 group focus:outline-none"
+            >
+              <span>{t('home.whatWeDo.learnMore', 'Learn more about our team, approach & mission')}</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+        </motion.div>
+
+        {/* ============================================================
+            ICONIC GCC HORIZONTAL EYEBROW DIVIDER (LABEL ──────────────)
+           ============================================================ */}
+        <div className="mt-16 sm:mt-20 lg:mt-24 mb-12 sm:mb-14 flex items-center gap-5">
+          <h4 className="font-['Poppins',sans-serif] font-medium text-[13px] sm:text-[14px] tracking-[0.24em] uppercase text-white/55 whitespace-nowrap">
+            PRACTICAL DELIVERY
+          </h4>
+          <div className="h-[1px] flex-1 bg-white/20" aria-hidden="true" />
+        </div>
+
+        {/* ============================================================
+            LOWER BLOCK: ASYMMETRIC SPLIT (GCC Achievements Layout)
+           ============================================================ */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+          {/* Left Column: Airy Light-Weight White Statement + Subtitle */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.65, ease: 'easeOut' }}
+            className="lg:col-span-5 space-y-5"
+          >
+            <h3 className="font-['Poppins',sans-serif] font-light text-[26px] sm:text-[32px] lg:text-[36px] text-white leading-[1.25] tracking-[-0.01em]">
+              Connecting regulatory insight, technical analysis, climate finance, and implementation planning.
+            </h3>
+
+            <p className="font-['Poppins',sans-serif] font-light text-[15px] sm:text-[17px] text-white/80 leading-[1.65]">
+              We turn ambitious climate priorities into structured, bankable, and measurable outcomes.
+            </p>
           </motion.div>
 
-          {/* Right Column: Two Strategic Structured Cards (Enters from Right) */}
+          {/* Right Column: Oversized Teal Stage Counters + Clean Delivery Schema */}
           <motion.div
-            initial={{ opacity: 0, x: 60 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.15 }}
-            className="lg:col-span-6 space-y-6 sm:space-y-7"
+            transition={{ duration: 0.65, delay: 0.12, ease: 'easeOut' }}
+            className="lg:col-span-7 space-y-10"
           >
-            
-            {/* Card 1: PRACTICAL DELIVERY */}
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-              whileHover={{ y: -4 }}
-              className="rounded-none bg-white border border-[#D8E6DD] p-5 sm:p-7 shadow-[0_12px_36px_-6px_rgba(0,0,0,0.08),0_4px_14px_-2px_rgba(0,0,0,0.04)] hover:shadow-[0_22px_48px_-8px_rgba(0,0,0,0.14),0_8px_20px_-3px_rgba(0,0,0,0.07)] transition-all duration-300 space-y-4 relative overflow-hidden group"
-            >
-              {/* Subtle top indicator bar */}
-              <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#019935] via-[#02B840] to-transparent opacity-90" />
-
-              <div className="flex items-center gap-2 text-xs font-mono font-bold tracking-wider uppercase text-[#019935]">
-                <span className="w-1.5 h-3.5 bg-[#019935] rounded-none inline-block" />
-                <span>PRACTICAL DELIVERY</span>
-              </div>
-
-              <h3 className="font-display font-bold text-base sm:text-[17px] text-[#16221A] leading-snug">
-                Connecting regulatory insight, technical analysis, climate finance, and implementation planning.
-              </h3>
-
-              <p className="text-xs sm:text-[13px] text-[#55695D] font-sans leading-relaxed">
-                We turn ambitious climate priorities into structured, bankable, and measurable outcomes.
-              </p>
-
-              {/* 3 Mini Stage Cards: Clean Stack on Phone, 3-Columns on Desktop */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 pt-1">
-                {/* Stage 01 */}
-                <motion.div
-                  whileHover={{ y: -3, scale: 1.02 }}
-                  transition={{ duration: 0.2 }}
-                  className="p-3 sm:p-3.5 rounded-none bg-[#F0F8F3] border border-[#D5EADB] space-y-1.5 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow group/stage cursor-pointer"
-                >
-                  <div className="flex items-center gap-2">
-                    <div className="w-5 h-5 rounded-none bg-[#D9EFE0] text-[#019935] flex items-center justify-center flex-shrink-0 group-hover/stage:bg-[#019935] group-hover/stage:text-white transition-colors duration-200">
-                      <FileText className="w-3 h-3" />
+            {/* 3 Stages in GCC Oversized Teal Numeral Style */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
+              {DELIVERY_STAGES.map((item) => {
+                const IconComp = item.icon;
+                return (
+                  <div
+                    key={item.num}
+                    className="group border-t border-white/15 pt-5 transition-colors duration-200 hover:border-[#57D182]"
+                  >
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="font-['Poppins',sans-serif] font-light text-[44px] sm:text-[52px] leading-none text-[#57D182] tracking-[-0.02em]">
+                        {item.num}
+                      </span>
+                      <IconComp className="w-5 h-5 text-[#57D182]/80 group-hover:text-[#57D182] transition-colors" />
                     </div>
-                    <span className="text-[10px] font-mono font-bold text-[#019935] tracking-wider uppercase">
-                      STAGE 01
-                    </span>
-                  </div>
-                  <div>
-                    <div className="font-bold text-xs sm:text-[13px] text-[#16221A] leading-snug group-hover/stage:text-[#019935] transition-colors">
-                      Policy & Rules
+                    <div className="text-[11px] font-medium tracking-[0.18em] uppercase text-[#57D182] mt-2">
+                      {item.stage}
                     </div>
-                    <div className="text-[11px] sm:text-[10px] text-[#55695D] font-mono pt-0.5">
-                      CBAM • ETS • Article 6
+                    <div className="font-['Poppins',sans-serif] font-medium text-[17px] text-white mt-1 leading-snug">
+                      {item.title}
+                    </div>
+                    <div className="font-['Poppins',sans-serif] font-light text-[13px] text-white/65 mt-1">
+                      {item.sub}
                     </div>
                   </div>
-                </motion.div>
+                );
+              })}
+            </div>
 
-                {/* Stage 02 */}
-                <motion.div
-                  whileHover={{ y: -3, scale: 1.02 }}
-                  transition={{ duration: 0.2 }}
-                  className="p-3 sm:p-3.5 rounded-none bg-[#F0F8F3] border border-[#D5EADB] space-y-1.5 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow group/stage cursor-pointer"
-                >
-                  <div className="flex items-center gap-2">
-                    <div className="w-5 h-5 rounded-none bg-[#D9EFE0] text-[#019935] flex items-center justify-center flex-shrink-0 group-hover/stage:bg-[#019935] group-hover/stage:text-white transition-colors duration-200">
-                      <Layers className="w-3 h-3" />
-                    </div>
-                    <span className="text-[10px] font-mono font-bold text-[#019935] tracking-wider uppercase">
-                      STAGE 02
-                    </span>
-                  </div>
-                  <div>
-                    <div className="font-bold text-xs sm:text-[13px] text-[#16221A] leading-snug group-hover/stage:text-[#019935] transition-colors">
-                      Scientific MRV
-                    </div>
-                    <div className="text-[11px] sm:text-[10px] text-[#55695D] font-mono pt-0.5">
-                      ISO 14064 • Yields
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Stage 03 */}
-                <motion.div
-                  whileHover={{ y: -3, scale: 1.02 }}
-                  transition={{ duration: 0.2 }}
-                  className="p-3 sm:p-3.5 rounded-none bg-[#FFFDF0] border border-[#F5ECC4] space-y-1.5 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow group/stage cursor-pointer"
-                >
-                  <div className="flex items-center gap-2">
-                    <div className="w-5 h-5 rounded-none bg-[#FEF3C7] text-[#D97706] flex items-center justify-center flex-shrink-0 group-hover/stage:bg-[#D97706] group-hover/stage:text-white transition-colors duration-200">
-                      <BarChart3 className="w-3 h-3" />
-                    </div>
-                    <span className="text-[10px] font-mono font-bold text-[#A88015] tracking-wider uppercase">
-                      STAGE 03
-                    </span>
-                  </div>
-                  <div>
-                    <div className="font-bold text-xs sm:text-[13px] text-[#16221A] leading-snug group-hover/stage:text-[#B45309] transition-colors">
-                      Bankable Action
-                    </div>
-                    <div className="text-[11px] sm:text-[10px] text-[#8C6D15] font-mono pt-0.5">
-                      Capital & Issuance
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-            </motion.div>
-
-            {/* Card 2: ADVISORY DELIVERY SCHEMA */}
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.55, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-              whileHover={{ y: -4 }}
-              className="rounded-none bg-white border border-[#D8E6DD] p-5 sm:p-7 shadow-[0_12px_36px_-6px_rgba(0,0,0,0.08),0_4px_14px_-2px_rgba(0,0,0,0.04)] hover:shadow-[0_22px_48px_-8px_rgba(0,0,0,0.14),0_8px_20px_-3px_rgba(0,0,0,0.07)] transition-all duration-300 space-y-4 relative overflow-hidden group"
-            >
-              {/* Subtle top indicator bar */}
-              <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-[#019935] to-transparent opacity-90" />
-
-              <div className="flex flex-col xs:flex-row items-start xs:items-center justify-between gap-2 pb-2 border-b border-[#EEF4F0]">
-                <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase text-[#019935] tracking-wider">
-                  <Workflow className="w-4 h-4 text-[#019935] group-hover:rotate-12 transition-transform duration-300" />
+            {/* Advisory Delivery Schema (Clean Dark-Navy Architectural Card) */}
+            <div className="bg-white/[0.04] border border-white/15 p-5 sm:p-7 rounded-none">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 pb-4 border-b border-white/12">
+                <div className="flex items-center gap-2.5 text-[12px] sm:text-[13px] font-medium uppercase tracking-[0.16em] text-[#57D182]">
+                  <Workflow className="w-4 h-4 text-[#57D182]" />
                   <span>ADVISORY DELIVERY SCHEMA</span>
                 </div>
-                <span className="text-[10px] font-mono text-[#B45309] font-bold bg-[#FFFBEB] px-2.5 py-0.5 rounded-none border border-[#FDE68A] shadow-2xs">
+                <span className="text-[11.5px] font-normal tracking-wide text-white/90 bg-[#019934]/20 border border-[#57D182]/45 px-3 py-1 rounded-[3px]">
                   Methodology Traceability
                 </span>
               </div>
 
               {/* Connected Horizontal Stepper */}
-              <div className="relative pt-3 pb-1">
-                {/* Horizontal Dashed Connecting Line */}
-                <div className="absolute top-[20px] sm:top-[22px] left-[15%] right-[15%] h-0.5 border-t-2 border-dashed border-[#CFDFD4] z-0 pointer-events-none" />
+              <div className="relative pt-6 pb-1">
+                <div
+                  className="hidden sm:block absolute top-[41px] left-[16%] right-[16%] h-[1px] border-t border-dashed border-white/25 pointer-events-none"
+                  aria-hidden="true"
+                />
 
-                <div className="grid grid-cols-3 gap-1 sm:gap-2 text-center relative z-10">
-                  {/* Step 01 */}
-                  <motion.div 
-                    whileHover={{ y: -2 }}
-                    className="flex flex-col items-center space-y-1 group/step cursor-pointer"
-                  >
-                    <motion.div 
-                      whileHover={{ scale: 1.12 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 15 }}
-                      className="w-8 h-8 sm:w-9 sm:h-9 rounded-none bg-[#D4F2DE] text-[#019935] group-hover/step:bg-[#019935] group-hover/step:text-white flex items-center justify-center font-mono font-bold text-xs shadow-sm border border-[#A7DBB7] transition-colors duration-200"
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-4 text-center relative z-10">
+                  {DELIVERY_STAGES.map((step) => (
+                    <div
+                      key={step.num}
+                      className="flex flex-col items-center space-y-1.5 group/step"
                     >
-                      01
-                    </motion.div>
-                    <span className="font-bold text-[11px] sm:text-xs text-[#16221A] group-hover/step:text-[#019935] transition-colors pt-1">
-                      Policy & Rules
-                    </span>
-                    <span className="text-[9px] sm:text-[10px] text-[#55695D] font-mono leading-tight">
-                      CBAM • ETS • Art. 6
-                    </span>
-                  </motion.div>
-
-                  {/* Step 02 */}
-                  <motion.div 
-                    whileHover={{ y: -2 }}
-                    className="flex flex-col items-center space-y-1 group/step cursor-pointer"
-                  >
-                    <motion.div 
-                      whileHover={{ scale: 1.12 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 15 }}
-                      className="w-8 h-8 sm:w-9 sm:h-9 rounded-none bg-[#D4F2DE] text-[#019935] group-hover/step:bg-[#019935] group-hover/step:text-white flex items-center justify-center font-mono font-bold text-xs shadow-sm border border-[#A7DBB7] transition-colors duration-200"
-                    >
-                      02
-                    </motion.div>
-                    <span className="font-bold text-[11px] sm:text-xs text-[#16221A] group-hover/step:text-[#019935] transition-colors pt-1">
-                      Scientific MRV
-                    </span>
-                    <span className="text-[9px] sm:text-[10px] text-[#55695D] font-mono leading-tight">
-                      ISO 14064 • Yields
-                    </span>
-                  </motion.div>
-
-                  {/* Step 03 */}
-                  <motion.div 
-                    whileHover={{ y: -2 }}
-                    className="flex flex-col items-center space-y-1 group/step cursor-pointer"
-                  >
-                    <motion.div 
-                      whileHover={{ scale: 1.12 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 15 }}
-                      className="w-8 h-8 sm:w-9 sm:h-9 rounded-none bg-[#FEF3C7] text-[#D97706] group-hover/step:bg-[#D97706] group-hover/step:text-white flex items-center justify-center font-mono font-bold text-xs shadow-sm border border-[#FCD34D] transition-colors duration-200"
-                    >
-                      03
-                    </motion.div>
-                    <span className="font-bold text-[11px] sm:text-xs text-[#16221A] group-hover/step:text-[#D97706] transition-colors pt-1">
-                      Bankable Action
-                    </span>
-                    <span className="text-[9px] sm:text-[10px] text-[#8C6D15] font-mono leading-tight">
-                      Capital & Issuance
-                    </span>
-                  </motion.div>
+                      <div className="w-9 h-9 rounded-[5px] bg-[#1A5C3B] border border-[#57D182] text-[#57D182] group-hover/step:bg-[#019934] group-hover/step:text-white flex items-center justify-center font-['Poppins',sans-serif] font-medium text-[13px] transition-colors duration-200">
+                        {step.num}
+                      </div>
+                      <span className="font-['Poppins',sans-serif] font-medium text-[14px] text-white pt-1">
+                        {step.title}
+                      </span>
+                      <span className="font-['Poppins',sans-serif] font-light text-[12px] text-white/65 leading-tight">
+                        {step.shortSub}
+                      </span>
+                    </div>
+                  ))}
                 </div>
               </div>
-
-            </motion.div>
-
+            </div>
           </motion.div>
-
         </div>
 
-        {/* Four Integrated Pillars - Architectural Cards with Left & Right Entrance */}
-        <div className="pt-10 sm:pt-12 border-t border-[#E5EDE7] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+        {/* ============================================================
+            FOUR INTEGRATED PILLARS (Clean Institutional Navy Grid)
+           ============================================================ */}
+        <div className="mt-16 sm:mt-20 pt-12 sm:pt-14 border-t border-white/15 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {PILLARS_DATA.map((pillar, index) => {
             const IconComponent = pillar.icon;
             const stepNum = String(index + 1).padStart(2, '0');
-            const initialMotion = 
-              index === 0 
-                ? { opacity: 0, x: -50 } 
-                : index === 3 
-                ? { opacity: 0, x: 50 } 
-                : { opacity: 0, y: 35 };
 
             return (
               <motion.div
                 key={pillar.title}
-                initial={initialMotion}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
-                transition={{ duration: 0.6, delay: (index % 4) * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{ y: -6 }}
-                className="relative rounded-none bg-white border border-[#DFEAE2] hover:border-[#019935]/50 p-6 shadow-[0_8px_24px_-4px_rgba(0,0,0,0.06),0_3px_10px_-2px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_45px_-8px_rgba(1,153,53,0.15),0_8px_20px_-3px_rgba(0,0,0,0.08)] transition-all duration-300 flex flex-col justify-between space-y-4 group cursor-pointer overflow-hidden"
+                transition={{ duration: 0.55, delay: index * 0.08, ease: 'easeOut' }}
+                className="relative bg-white/[0.03] hover:bg-white/[0.07] border border-white/12 hover:border-[#57D182]/70 p-6 sm:p-7 rounded-none transition-all duration-300 flex flex-col justify-between space-y-5 group overflow-hidden"
               >
-                {/* Top Green Accent Indicator on Hover */}
-                <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#019935] to-[#02B840] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {/* Top Teal Hover Indicator Bar */}
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#019934] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                {/* Top Row: Icon + Step Index */}
+                {/* Top Row: Clean Teal Icon + Light Index */}
                 <div className="flex items-center justify-between">
-                  <div className="w-11 h-11 rounded-none bg-[#E8F6ED] text-[#019935] flex items-center justify-center border border-[#CFE8D7] group-hover:bg-[#019935] group-hover:text-white transition-all duration-300 shadow-xs">
-                    <IconComponent className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
+                  <div className="w-11 h-11 rounded-[5px] bg-[#019934]/15 border border-[#57D182]/35 text-[#57D182] group-hover:bg-[#019934] group-hover:text-white flex items-center justify-center transition-colors duration-200">
+                    <IconComponent className="w-5 h-5 stroke-[1.75]" />
                   </div>
-                  <span className="text-xs font-mono font-bold text-[#8EA396] group-hover:text-[#019935] transition-colors">
+                  <span className="font-['Poppins',sans-serif] font-light text-[22px] text-white/35 group-hover:text-[#57D182] transition-colors duration-200">
                     {stepNum}
                   </span>
                 </div>
 
                 {/* Content */}
-                <div className="space-y-2 pt-1">
-                  <h3 className="font-display font-bold text-base text-[#16221A] group-hover:text-[#019935] transition-colors leading-snug">
+                <div className="space-y-2.5">
+                  <h3 className="font-['Poppins',sans-serif] font-medium text-[18px] text-white group-hover:text-[#57D182] transition-colors duration-200 leading-snug">
                     {pillar.title}
                   </h3>
-                  <p className="text-xs sm:text-[13px] text-[#4E5E54] leading-relaxed font-sans font-normal">
+                  <p className="font-['Poppins',sans-serif] font-light text-[14px] text-white/75 leading-[1.65]">
                     {pillar.desc}
                   </p>
                 </div>
@@ -342,7 +299,6 @@ export default function WhatWeDo() {
             );
           })}
         </div>
-
       </div>
     </section>
   );

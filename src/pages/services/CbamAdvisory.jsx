@@ -40,29 +40,29 @@ export default function CbamAdvisory() {
 
   const sideCard = (
     <>
-      <div className="flex items-center gap-2 text-forest font-heading font-bold text-base">
-        <ShieldCheck className="w-4.5 h-4.5 text-gold-dark" />
+      <div className="flex items-center gap-2.5 text-[#1A5C3B] font-['Poppins',sans-serif] font-semibold text-[18px]">
+        <ShieldCheck className="w-5 h-5 text-[#019934] stroke-[1.6] flex-shrink-0" />
         <span>{sideCardData.title || 'EU Regulatory Scope Focus'}</span>
       </div>
-      <p className="text-sm sm:text-[14.5px] text-charcoal/85 leading-relaxed font-sans font-normal">
+      <p className="text-[14.5px] text-[#555555] leading-[1.7] font-['Poppins',sans-serif] font-light">
         {sideCardData.desc || 'Targeting covered sectors including cement, iron & steel, aluminium, fertilisers, electricity, and hydrogen, supporting exporters across supply chains.'}
       </p>
       {sideCardData.mandateTitle && (
-        <div className="p-3.5 rounded-none bg-white border border-[#DCE8E0] text-xs sm:text-[13px] text-charcoal space-y-1.5 font-sans shadow-2xs">
-          <div className="flex items-center gap-1.5 font-semibold text-forest text-xs sm:text-sm">
-            <AlertCircle className="w-4 h-4 text-[#019935]" />
+        <div className="p-4 rounded-[3px] bg-white border border-[#e5e7eb] border-l-[2px] border-l-[#019934] text-[13px] space-y-1.5 font-['Poppins',sans-serif]">
+          <div className="flex items-center gap-2 font-medium text-[#1A5C3B] text-[13.5px]">
+            <AlertCircle className="w-4 h-4 text-[#019934] stroke-[1.75]" />
             <span>{sideCardData.mandateTitle}</span>
           </div>
-          <p className="text-xs sm:text-[13px] text-charcoal-muted leading-relaxed">
+          <p className="text-[13px] font-light text-[#666666] leading-[1.65]">
             {sideCardData.mandateDesc}
           </p>
         </div>
       )}
       {sidePoints.length > 0 && (
-        <div className="pt-2 flex flex-col gap-2 text-xs sm:text-[13.5px] font-semibold text-deep-green">
+        <div className="pt-2 flex flex-col gap-3 text-[13.5px] font-normal text-[#1A5C3B]">
           {sidePoints.map((pt, idx) => (
-            <div key={idx} className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 flex-shrink-0 text-deep-green" />
+            <div key={idx} className="flex items-start gap-3">
+              <span className="inline-block w-4 h-[2px] bg-[#019934] mt-2.5 flex-shrink-0" aria-hidden="true" />
               <span>{pt}</span>
             </div>
           ))}

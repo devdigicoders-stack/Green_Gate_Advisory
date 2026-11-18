@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { 
-  FileText, 
-  Share2, 
-  ShieldCheck, 
-  Landmark, 
-  Layers, 
-  BarChart3, 
-  Compass, 
-  ArrowRight 
+import {
+  FileText,
+  Share2,
+  ShieldCheck,
+  Landmark,
+  Layers,
+  BarChart3,
+  Compass,
+  ArrowRight
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLocale } from '../../hooks/useLocale';
@@ -63,131 +63,107 @@ export default function TrainingIntro() {
   ];
 
   return (
-    <section 
-      className="relative py-10 sm:py-14 lg:py-16 bg-cover bg-center bg-no-repeat overflow-hidden border-b border-sand-border/70"
+    <section
+      className="relative w-full py-16 sm:py-20 lg:py-24 bg-white bg-cover bg-center bg-no-repeat overflow-hidden border-b border-[#e5e7eb] font-['Poppins',sans-serif]"
       style={{ backgroundImage: `url('/images/training-intro-bg.jpg')` }}
     >
-      {/* Light translucent wash so the vibrant eco background image shines through while keeping text clear */}
-      <div className="absolute inset-0 bg-white/30 pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-b from-white/65 via-transparent to-white/65 pointer-events-none" />
+      {/* Preserved Background Image softly washed into GCC Clean Institutional White */}
+      <div className="absolute inset-0 bg-white/90 pointer-events-none" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
-        
-        {/* Editorial Narrative Split with Smooth Left & Right Entrance */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start overflow-hidden">
-          {/* Left Column: Heading & Badge (Enters smoothly from Left) */}
+      <div className="relative z-10 w-[90%] max-w-[1680px] mx-auto space-y-12 sm:space-y-14">
+        {/* Editorial Narrative Split */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
           <motion.div
-            initial={{ opacity: 0, x: -60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
-            className="lg:col-span-6 space-y-2.5 sm:space-y-3"
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.65, ease: 'easeOut' }}
+            className="lg:col-span-5 space-y-4"
           >
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-[#E8F5E9] text-[#019935] border border-[#C8E6C9] text-xs font-bold tracking-wider uppercase shadow-xs">
-              <span className="w-1.5 h-1.5 rounded-none bg-[#019935] animate-pulse"></span>
+            <div className="inline-flex items-center gap-3 text-[13px] font-medium tracking-[0.2em] uppercase text-[#0A7A32]">
+              <span className="inline-block w-[50px] h-[2px] bg-[#019934]" aria-hidden="true" />
               <span>{t('training.intro.eyebrow', 'Knowledge & Institutional Capability')}</span>
             </div>
 
-            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-[38px] tracking-tight leading-[1.15]">
-              <span className="text-[#1A2E22] block">Building Climate Knowledge &</span>
-              <span className="text-[#019935] block">Practical Delivery Capacity</span>
+            <h2 className="font-['Poppins',sans-serif] font-medium text-[28px] sm:text-[34px] lg:text-[40px] tracking-[-0.01em] leading-[1.2]">
+              <span className="text-[#1A5C3B] block">Building Climate Knowledge &amp;</span>
+              <span className="text-[#019934] block">Practical Delivery Capacity</span>
             </h2>
-
-            {/* Green Accent Line */}
-            <div className="w-16 h-1 bg-[#019935] rounded-none"></div>
           </motion.div>
 
-          {/* Right Column: Paragraph Descriptions (Enters smoothly from Right) */}
           <motion.div
-            initial={{ opacity: 0, x: 60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.15 }}
-            className="lg:col-span-6 space-y-3 text-charcoal/85 font-sans text-xs sm:text-sm md:text-base leading-relaxed lg:pt-2"
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.65, delay: 0.1, ease: 'easeOut' }}
+            className="lg:col-span-7 space-y-5"
           >
-            <p>
+            <p className="font-['Poppins',sans-serif] font-light text-[15.5px] sm:text-[16.5px] text-[#555555] leading-[1.75]">
               {t('training.intro.p1', 'Climate regulation, international carbon mechanisms, and sustainable finance requirements demand specialized institutional competencies. Green Gate Advisory designs bespoke training and capacity-building programmes to bridge the gap between high-level climate ambition and day-to-day technical execution.')}
             </p>
-            <p>
+            <p className="font-['Poppins',sans-serif] font-medium text-[15.5px] sm:text-[17px] text-[#1A5C3B] leading-[1.7]">
               {t('training.intro.p2', 'Our training programmes support public ministries, industrial compliance teams, project sponsors, and financial analysts—equipping teams with the technical tools, regulatory clarity, and methodological frameworks needed to deliver credible climate outcomes.')}
             </p>
           </motion.div>
         </div>
 
-        {/* Core Technical Competencies & Delivery Disciplines White Card */}
+        {/* Core Technical Competencies & Delivery Disciplines — GCC Flat Architectural Card */}
         <motion.div
-          initial={{ opacity: 0, y: 35 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.15 }}
+          viewport={{ once: true, amount: 0.12 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="bg-white/95 backdrop-blur-md rounded-none border border-[#D5E5DA] shadow-xl p-5 sm:p-7 lg:p-8 space-y-5 overflow-hidden"
+          className="bg-white rounded-[4px] border border-[#e5e7eb] p-6 sm:p-9 lg:p-10 space-y-7"
         >
-          
           {/* Card Header */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-[#E3EFE6] gap-3">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-5 border-b border-[#efefef] gap-3">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-none bg-[#E8F5E9] flex items-center justify-center text-[#019935] flex-shrink-0 border border-[#019935]/20">
-                <FileText className="w-4 h-4 text-[#019935]" />
-              </div>
-              <h3 className="font-display font-bold text-xs sm:text-sm tracking-wider uppercase text-[#017A2A]">
-                CORE TECHNICAL COMPETENCIES & DELIVERY DISCIPLINES
+              <FileText className="w-5 h-5 text-[#019934] stroke-[1.6] flex-shrink-0" />
+              <h3 className="font-['Poppins',sans-serif] font-medium text-[13px] sm:text-[14px] tracking-[0.16em] uppercase text-[#1A5C3B]">
+                CORE TECHNICAL COMPETENCIES &amp; DELIVERY DISCIPLINES
               </h3>
             </div>
-            
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-[#E8F5E9] text-[#019935] text-xs font-semibold self-start sm:self-auto border border-[#C8E6C9]/70">
-              <Layers className="w-3.5 h-3.5 text-[#019935]" />
+
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-[#57D182]/30 text-[#1A5C3B] text-[12px] font-medium self-start sm:self-auto">
+              <Layers className="w-3.5 h-3.5 text-[#019934] stroke-[1.75]" />
               <span>Co-Designed • Non-Rigid Curricula</span>
             </div>
           </div>
 
-          {/* 7 Pillars Grid with Alternating Left and Right Entrance */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-3.5 sm:gap-4">
-            {PILLARS.map((p, idx) => {
+          {/* 7 Pillars Shared-Hairline Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 border-t border-l border-[#e5e7eb]">
+            {PILLARS.map((p) => {
               const Icon = p.icon;
-              const isEven = idx % 2 === 0;
-
               return (
-                <motion.div
+                <Link
                   key={p.key}
-                  initial={{ opacity: 0, x: isEven ? -40 : 40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, amount: 0.15 }}
-                  transition={{ duration: 0.55, ease: 'easeOut', delay: (idx % 2) * 0.1 }}
+                  to={getLocalizedPath('/contact?service=training')}
+                  state={{ serviceInterest: p.title }}
+                  className="group relative flex items-center justify-between p-5 sm:p-6 bg-[#f9fafb] hover:bg-[#57D182]/[0.14] border-r border-b border-[#e5e7eb] transition-colors duration-200 gap-4 w-full focus:outline-none"
                 >
-                  <Link
-                    to={getLocalizedPath('/contact?service=training')}
-                    state={{ serviceInterest: p.title }}
-                    className="group relative flex items-center justify-between p-3.5 sm:p-4 rounded-none bg-[#F4F9F5] hover:bg-white border border-[#E3EFE6] hover:border-[#019935] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 gap-4 w-full"
-                  >
-                    <div className="flex items-start sm:items-center gap-3 sm:gap-3.5 flex-grow min-w-0">
-                      <div className="w-10 h-10 rounded-none bg-white border border-[#019935]/20 flex items-center justify-center text-[#019935] flex-shrink-0 shadow-xs group-hover:bg-[#019935] group-hover:text-white transition-all duration-300">
-                        <Icon className="w-5 h-5 text-current group-hover:scale-110 transition-transform duration-300" />
-                      </div>
-                      <div className="min-w-0 space-y-0.5">
-                        <h4 className="font-heading font-bold text-sm sm:text-base text-[#1A2E22] leading-snug group-hover:text-[#019935] transition-colors">
-                          {p.title}
-                        </h4>
-                        <p className="text-xs sm:text-[13px] text-charcoal-muted leading-relaxed font-sans font-light">
-                          {p.text}
-                        </p>
-                      </div>
+                  <div className="flex items-start gap-4 flex-grow min-w-0">
+                    <div className="w-10 h-10 rounded-[4px] bg-white border border-[#e5e7eb] group-hover:border-[#019934] flex items-center justify-center text-[#019934] flex-shrink-0 transition-colors duration-200">
+                      <Icon className="w-5 h-5 stroke-[1.5]" />
                     </div>
-
-                    {/* Arrow Indicator */}
-                    <div className="w-8 h-8 rounded-none bg-white border border-[#019935]/20 text-[#019935] flex items-center justify-center flex-shrink-0 group-hover:bg-[#019935] group-hover:text-white transition-all duration-300">
-                      <ArrowRight className="w-4 h-4 text-current group-hover:translate-x-1 transition-transform" />
+                    <div className="min-w-0 space-y-1">
+                      <h4 className="font-['Poppins',sans-serif] font-medium text-[16px] text-[#1A5C3B] leading-snug group-hover:underline decoration-[#1A5C3B] underline-offset-4">
+                        {p.title}
+                      </h4>
+                      <p className="font-['Poppins',sans-serif] font-light text-[13.5px] text-[#555555] leading-[1.6]">
+                        {p.text}
+                      </p>
                     </div>
+                  </div>
 
-                    {/* Bottom Hover Line */}
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#019935] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-                  </Link>
-                </motion.div>
+                  {/* GCC Circular Navy -> Teal Arrow */}
+                  <span className="w-9 h-9 rounded-full bg-[#1A5C3B] group-hover:bg-[#019934] text-white flex items-center justify-center flex-shrink-0 transition-colors duration-200">
+                    <ArrowRight className="w-4 h-4 stroke-[1.75] group-hover:translate-x-0.5 transition-transform" />
+                  </span>
+                </Link>
               );
             })}
           </div>
-
         </motion.div>
-
       </div>
     </section>
   );

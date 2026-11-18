@@ -1,19 +1,19 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { 
-  Zap, 
-  Flame, 
-  Factory, 
-  Box, 
-  Truck, 
-  Sprout, 
-  Waves, 
-  Recycle, 
-  Droplets, 
-  Building2, 
-  Landmark, 
-  ArrowRight, 
-  AlertCircle 
+import {
+  Zap,
+  Flame,
+  Factory,
+  Box,
+  Truck,
+  Sprout,
+  Waves,
+  Recycle,
+  Droplets,
+  Building2,
+  Landmark,
+  ArrowRight,
+  AlertCircle
 } from 'lucide-react';
 import { useLocale } from '../../hooks/useLocale';
 
@@ -50,63 +50,63 @@ export default function SectorCard({ sector, index = 0 }) {
   const Icon = SECTOR_ICONS[sector.id] || Factory;
   const imageSrc = SECTOR_IMAGES[sector.id] || '/images/hero-canopy.jpg';
 
-  const initialMotion = 
-    index % 3 === 0 ? { opacity: 0, x: -50 } :
-    index % 3 === 1 ? { opacity: 0, y: 35 } :
-    { opacity: 0, x: 50 };
-
   return (
     <motion.div
-      initial={initialMotion}
-      whileInView={{ opacity: 1, x: 0, y: 0 }}
-      viewport={{ once: true, amount: 0.15 }}
-      transition={{ duration: 0.6, ease: 'easeOut', delay: (index % 3) * 0.08 }}
-      className="relative rounded-none bg-white border border-[#DCE8E0] hover:border-[#019935] overflow-hidden shadow-[0_4px_16px_-2px_rgba(0,0,0,0.04)] hover:shadow-[0_16px_36px_-6px_rgba(1,153,53,0.18)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-pointer"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.12 }}
+      transition={{ duration: 0.55, ease: 'easeOut', delay: (index % 3) * 0.06 }}
+      className="relative rounded-[4px] bg-white border border-[#e5e7eb] hover:border-[#019934] overflow-hidden transition-colors duration-300 flex flex-col justify-between group font-['Poppins',sans-serif]"
     >
-      {/* Top Green Accent Bar on hover */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-[#019935] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left z-20" />
-
-      {/* Editorial Header - Natural Exposure */}
-      <div className="relative h-44 overflow-hidden">
-        <img 
-          src={imageSrc} 
+      {/* Top Photographic Header with GCC Diagonal Deep-Navy-to-Teal Duotone Overlay */}
+      <div className="relative h-48 overflow-hidden bg-[#1A5C3B]">
+        <img
+          src={imageSrc}
           alt={sector.title}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
-        
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              'linear-gradient(135deg, rgba(26, 92, 59, 0.76) 0%, rgba(14, 124, 60, 0.52) 58%, rgba(1, 153, 52, 0.42) 100%)'
+          }}
+        />
+
         {/* Top Badges */}
-        <div className="absolute top-3.5 left-4 right-4 flex items-center justify-between">
-          <span className="text-[11px] font-mono font-bold tracking-widest text-[#019935] bg-white px-2.5 py-1 rounded-none border border-[#CDE8D5] shadow-xs uppercase">
+        <div className="absolute top-4 left-5 right-5 flex items-center justify-between">
+          <span className="text-[11px] font-medium tracking-[0.16em] text-white bg-[#019934] px-2.5 py-1 uppercase">
             SECTOR {sector.number}
           </span>
-          <div className="w-8 h-8 rounded-none bg-black/50 backdrop-blur-md text-white border border-white/20 flex items-center justify-center">
-            <Icon className="w-4 h-4" />
+          <div className="w-9 h-9 rounded-[4px] bg-white/15 backdrop-blur-xs text-white border border-white/25 flex items-center justify-center">
+            <Icon className="w-4.5 h-4.5 stroke-[1.6]" />
           </div>
         </div>
 
-        {/* Sector Title on image bottom */}
-        <div className="absolute bottom-3.5 left-4 right-4">
-          <h3 className="font-display font-bold text-lg sm:text-xl text-white leading-snug drop-shadow-sm">
+        {/* Sector Title on Image Bottom */}
+        <div className="absolute bottom-4 left-5 right-5">
+          <h3 className="font-['Poppins',sans-serif] font-medium text-[19px] sm:text-[20px] text-white leading-snug">
             {sector.title}
           </h3>
         </div>
       </div>
 
-      <div className="p-6 space-y-4 flex-grow flex flex-col justify-between">
-        <div className="space-y-3.5">
-          <p className="text-xs sm:text-[13px] text-[#4E5E54] leading-relaxed font-sans font-normal">
+      {/* Card Body */}
+      <div className="p-6 sm:p-7 space-y-5 flex-grow flex flex-col justify-between">
+        <div className="space-y-4">
+          <p className="font-['Poppins',sans-serif] font-light text-[14px] text-[#555555] leading-[1.68]">
             {sector.summary}
           </p>
 
-          {/* Sector-Specific Considerations */}
-          <div className="p-3.5 rounded-none bg-[#F4FAF5] border border-[#DCE8E0] hover:border-[#019935] space-y-1.5 text-[#16221A] font-sans transition-colors">
-            <div className="flex items-center gap-1.5 font-mono font-bold text-[#019935] text-[11px] uppercase tracking-wider">
-              <AlertCircle className="w-3.5 h-3.5 text-[#019935] flex-shrink-0" />
+          {/* Sector-Specific Considerations — GCC #f7f7f7 Left-Teal Callout */}
+          <div className="p-4 bg-[#f7f7f7] border border-[#e5e7eb] border-l-[3px] border-l-[#019934] space-y-1.5">
+            <div className="flex items-center gap-1.5 font-medium text-[#1A5C3B] text-[11.5px] uppercase tracking-[0.14em]">
+              <AlertCircle className="w-3.5 h-3.5 text-[#019934] stroke-[1.75] flex-shrink-0" />
               <span>Key Considerations</span>
             </div>
-            <p className="text-xs text-[#4E5E54] leading-relaxed font-normal">
+            <p className="font-['Poppins',sans-serif] font-light text-[13px] text-[#555555] leading-[1.6]">
               {sector.challenges}
             </p>
           </div>
@@ -115,9 +115,9 @@ export default function SectorCard({ sector, index = 0 }) {
           {Array.isArray(sector.services) && sector.services.length > 0 && (
             <div className="flex flex-wrap gap-1.5 pt-1">
               {sector.services.map((srv, sIdx) => (
-                <span 
+                <span
                   key={sIdx}
-                  className="px-2.5 py-0.5 rounded-none text-[11px] font-mono font-medium bg-white text-[#16221A] border border-[#DCE8E0]"
+                  className="px-2.5 py-0.5 text-[11.5px] font-normal bg-[#57D182]/25 text-[#1A5C3B]"
                 >
                   {srv}
                 </span>
@@ -126,14 +126,18 @@ export default function SectorCard({ sector, index = 0 }) {
           )}
         </div>
 
-        {/* Explore Service Link */}
-        <div className="pt-3.5 border-t border-[#EEF4F0]">
+        {/* Explore Service Link — GCC Circular Navy -> Teal Arrow */}
+        <div className="pt-4 border-t border-[#efefef]">
           <Link
             to={getLocalizedPath(sector.serviceSlug ? `/services/${sector.serviceSlug}` : '/services')}
-            className="inline-flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-[#019935] hover:text-[#017A2A] transition-colors group/link"
+            className="inline-flex items-center gap-3 group/link focus:outline-none"
           >
-            <span>Explore Relevant Advisory</span>
-            <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
+            <span className="w-8 h-8 rounded-full bg-[#1A5C3B] group-hover/link:bg-[#019934] text-white flex items-center justify-center transition-colors duration-200 flex-shrink-0">
+              <ArrowRight className="w-3.5 h-3.5 stroke-[1.75] group-hover/link:translate-x-0.5 transition-transform" />
+            </span>
+            <span className="text-[12px] font-medium uppercase tracking-[0.12em] text-[#1A5C3B] group-hover/link:text-[#019934] transition-colors">
+              Explore Relevant Advisory
+            </span>
           </Link>
         </div>
       </div>

@@ -1,16 +1,12 @@
-import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { 
-  ShieldCheck, 
-  Award, 
-  Globe, 
-  Landmark, 
-  Trees, 
-  Scale, 
-  CheckCircle2, 
-  FileCheck 
+import {
+  ShieldCheck,
+  Globe,
+  Landmark,
+  Trees,
+  Scale,
+  FileCheck
 } from 'lucide-react';
-import SectionHeader from '../common/SectionHeader';
 
 const GOVERNANCE_LEADS = [
   {
@@ -52,86 +48,82 @@ const GOVERNANCE_LEADS = [
 ];
 
 export default function GovernanceBoard() {
-  const { t } = useTranslation();
-
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-[#FAFCF9] border-b border-[#E5EDE7] scroll-mt-24 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-14 relative z-10">
-        
-        {/* Section Header */}
+    <section className="relative w-full bg-[#E4F6EA]/55 border-b border-[#C4E7D0] font-['Poppins',sans-serif] py-16 sm:py-20 lg:py-24 scroll-mt-24 overflow-hidden">
+      <div className="relative z-10 w-[90%] max-w-[1680px] mx-auto space-y-12 sm:space-y-14">
+        {/* Centered GCC Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: -25 }}
+          initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
+          transition={{ duration: 0.65, ease: 'easeOut' }}
+          className="text-center max-w-4xl mx-auto flex flex-col items-center"
         >
-          <SectionHeader
-            badge="Advisory Leadership & Governance"
-            title="Multidisciplinary Technical & Fiduciary Stewardship"
-            subtitle="Green Gate Advisory is steered by senior environmental economists, accredited GHG validation engineers, and international climate finance specialists."
-          />
+          <span className="inline-block w-[70px] h-[2px] bg-[#019934] mb-4" aria-hidden="true" />
+
+          <span className="text-[13px] sm:text-[14px] font-medium tracking-[0.22em] uppercase text-[#0A7A32]">
+            Advisory Leadership &amp; Governance
+          </span>
+
+          <h2 className="mt-3 font-['Poppins',sans-serif] font-light text-[34px] sm:text-[44px] lg:text-[50px] text-[#1A5C3B] leading-[1.16] tracking-[-0.01em]">
+            Multidisciplinary Technical &amp; Fiduciary Stewardship
+          </h2>
+
+          <p className="mt-4 font-['Poppins',sans-serif] font-light text-[16px] sm:text-[18.5px] text-[#1A5C3B]/75 leading-[1.55] max-w-3xl">
+            Green Gate Advisory is steered by senior environmental economists, accredited GHG validation engineers, and international climate finance specialists.
+          </p>
         </motion.div>
 
-        {/* 4 Architectural Leadership Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+        {/* 4 Flat White Institutional Leadership Cards (Exact GCC Block C Aesthetic) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {GOVERNANCE_LEADS.map((lead, idx) => {
             const Icon = lead.icon;
-            const initialMotion = 
-              idx === 0 ? { opacity: 0, x: -50 } :
-              idx === 1 ? { opacity: 0, x: -20, y: 25 } :
-              idx === 2 ? { opacity: 0, x: 20, y: 25 } :
-              { opacity: 0, x: 50 };
 
             return (
               <motion.div
                 key={idx}
-                initial={initialMotion}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
-                transition={{ duration: 0.6, delay: idx * 0.1, ease: 'easeOut' }}
-                whileHover={{ y: -6 }}
-                className="relative rounded-none bg-white border border-[#DCE8E0] hover:border-[#019935] p-6 sm:p-7 shadow-[0_6px_20px_-4px_rgba(0,0,0,0.05),0_2px_6px_-1px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_45px_-8px_rgba(1,153,53,0.18),0_6px_16px_-2px_rgba(0,0,0,0.06)] transition-all duration-300 flex flex-col justify-between space-y-5 group cursor-pointer overflow-hidden"
+                transition={{ duration: 0.55, delay: idx * 0.08, ease: 'easeOut' }}
+                className="relative bg-white border border-[#e5e7eb] hover:border-[#019934] rounded-[4px] p-6 sm:p-7 transition-colors duration-200 flex flex-col justify-between space-y-6 group"
               >
-                {/* Top Green Accent Bar on hover */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-[#019935] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                {/* Top Signature Teal Accent Rule */}
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#019934]" />
 
                 <div className="space-y-4">
-                  {/* Top Row: Practice Icon & Domain Tag */}
-                  <div className="flex items-center justify-between">
-                    <div className="w-10 h-10 rounded-none bg-[#E8F6ED] text-[#019935] border border-[#CFE8D7] flex items-center justify-center transition-all duration-300 shadow-2xs group-hover:bg-[#019935] group-hover:text-white group-hover:border-[#019935]">
-                      <Icon className="w-5 h-5 transition-colors duration-300" />
-                    </div>
-
-                    <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-[#019935] bg-[#E8F6ED] px-2.5 py-1 rounded-none border border-[#CDE8D5] shadow-2xs group-hover:bg-[#019935] group-hover:text-white transition-colors duration-300 font-bold">
+                  {/* Top Row: Mint Domain Tag + Thin Muted Line Icon */}
+                  <div className="flex items-start justify-between gap-2">
+                    <span className="text-[11px] font-medium tracking-[0.1em] uppercase text-[#1A5C3B] bg-[#57D182]/40 px-2.5 py-1 leading-tight">
                       {lead.focusArea}
                     </span>
+                    <Icon className="w-7 h-7 text-[#cbd5e1] group-hover:text-[#019934] stroke-[1.35] flex-shrink-0 transition-colors duration-200" />
                   </div>
 
-                  {/* Role Title */}
-                  <div className="space-y-2">
-                    <h3 className="font-display font-bold text-base sm:text-lg text-[#16221A] group-hover:text-[#019935] transition-colors duration-300 leading-snug">
+                  {/* Role Title & Credentials */}
+                  <div className="space-y-3">
+                    <h3 className="font-['Poppins',sans-serif] font-semibold text-[17.5px] sm:text-[18.5px] text-[#1A5C3B] leading-snug">
                       {lead.role}
                     </h3>
 
-                    {/* Credentials Highlight */}
-                    <div className="text-[11px] sm:text-xs font-semibold text-[#017A2A] bg-[#F4FAF5] p-2 border-l-2 border-[#019935] rounded-none leading-relaxed">
+                    <div className="text-[12.5px] font-normal text-[#0A7A32] bg-[#f7f7f7] px-3 py-2 border-l-[2px] border-[#019934] leading-relaxed">
                       {lead.credentials}
                     </div>
                   </div>
 
                   {/* Specialization Description */}
-                  <p className="text-xs sm:text-[13px] text-[#4E5E54] leading-relaxed font-sans font-normal">
+                  <p className="font-['Poppins',sans-serif] font-light text-[13.5px] text-[#555555] leading-[1.68]">
                     {lead.specialization}
                   </p>
                 </div>
 
                 {/* Governing Standards Traceability */}
-                <div className="pt-3.5 border-t border-[#EEF4F0] space-y-1">
-                  <div className="flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-wider text-[#7D9084] font-semibold">
-                    <FileCheck className="w-3.5 h-3.5 text-[#019935]" />
+                <div className="pt-4 border-t border-[#efefef] space-y-1.5">
+                  <div className="flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-[0.12em] text-[#019934]">
+                    <FileCheck className="w-3.5 h-3.5 stroke-[1.75]" />
                     <span>Governing Standards</span>
                   </div>
-                  <p className="text-[11px] font-mono text-[#16221A] leading-relaxed font-medium">
+                  <p className="text-[12px] font-normal text-[#1A5C3B] leading-relaxed">
                     {lead.standards}
                   </p>
                 </div>
@@ -140,30 +132,29 @@ export default function GovernanceBoard() {
           })}
         </div>
 
-        {/* Advisory Ethics Principle Card - Sharp Architectural Banner */}
+        {/* Advisory Ethics Principle Card — GCC Block C Full-Width Document Notice */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.65, ease: 'easeOut' }}
-          className="p-6 sm:p-8 rounded-none bg-white border border-[#DCE8E0] border-l-4 border-l-[#019935] text-[#16221A] flex flex-col sm:flex-row items-center justify-between gap-6 shadow-[0_6px_20px_-4px_rgba(0,0,0,0.05)]"
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          className="p-7 sm:p-9 rounded-[4px] bg-white border border-[#e5e7eb] border-l-[4px] border-l-[#019934] flex flex-col lg:flex-row lg:items-center justify-between gap-6"
         >
-          <div className="space-y-2 max-w-2xl text-left">
-            <div className="flex items-center gap-2 text-xs sm:text-[13px] font-bold uppercase tracking-wider text-[#019935]">
-              <Scale className="w-4 h-4 text-[#019935]" />
-              <span>Conflict of Interest & Fiduciary Pledge</span>
+          <div className="space-y-2.5 max-w-3xl text-left">
+            <div className="flex items-center gap-2.5 text-[13px] font-medium uppercase tracking-[0.16em] text-[#019934]">
+              <Scale className="w-4 h-4 stroke-[1.75]" />
+              <span>Conflict of Interest &amp; Fiduciary Pledge</span>
             </div>
-            <p className="text-xs sm:text-sm text-[#4E5E54] leading-relaxed font-sans font-normal">
+            <p className="font-['Poppins',sans-serif] font-light text-[14.5px] sm:text-[15.5px] text-[#555555] leading-[1.7]">
               To preserve objectivity, Green Gate Advisory maintains strict separation from market brokerage, carbon credit trading desks, and speculative holding structures. Our counsel is solely driven by empirical science, rigorous verification, and statutory compliance.
             </p>
           </div>
 
-          <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#019935] bg-[#E8F6ED] border border-[#CDE8D5] px-4 py-2.5 rounded-none whitespace-nowrap shadow-2xs self-start sm:self-auto">
-            <ShieldCheck className="w-4 h-4 text-[#019935]" />
+          <div className="inline-flex items-center gap-2 text-[13px] font-medium text-[#1A5C3B] bg-[#57D182]/35 px-5 py-2.5 rounded-[3px] whitespace-nowrap self-start lg:self-auto">
+            <ShieldCheck className="w-4 h-4 text-[#019934] stroke-[1.75]" />
             <span>Independent Counsel</span>
           </div>
         </motion.div>
-
       </div>
     </section>
   );

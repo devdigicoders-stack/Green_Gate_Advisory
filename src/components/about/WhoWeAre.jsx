@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { ShieldCheck, Compass, CheckCircle2, Award, BarChart3, Scale, Layers } from 'lucide-react';
+import { ShieldCheck, Award, BarChart3, Scale, Layers } from 'lucide-react';
 
 export default function WhoWeAre() {
   const { t } = useTranslation();
@@ -33,121 +33,106 @@ export default function WhoWeAre() {
   ];
 
   return (
-    <section id="who-we-are" className="py-14 sm:py-20 lg:py-24 bg-[#FAFCFA] border-b border-[#E3ECE6] scroll-mt-24 relative overflow-hidden">
-      {/* Subtle background architectural grid accent */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#01993508_1px,transparent_1px),linear-gradient(to_bottom,#01993508_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
+    <section
+      id="who-we-are"
+      className="w-full bg-white font-['Poppins',sans-serif] py-16 sm:py-20 lg:py-24 scroll-mt-24 relative overflow-hidden"
+    >
+      <div className="w-[90%] max-w-[1680px] mx-auto space-y-10 sm:space-y-12">
+        {/* Top Full-Width Teal Intro Block (Exact GCC About Block A Style) */}
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.65, ease: 'easeOut' }}
+          className="space-y-5 max-w-5xl"
+        >
+          <div className="inline-flex items-center gap-3 text-[13px] font-medium tracking-[0.2em] uppercase text-[#0A7A32]">
+            <span className="inline-block w-[50px] h-[2px] bg-[#019934]" aria-hidden="true" />
+            <span>{t('about.whoWeAre.eyebrow', 'Who We Are')}</span>
+          </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center overflow-hidden">
-          
-          {/* Left Column: Heading, Subheading & Narrative (Enters from Left) */}
+          <h2 className="font-['Poppins',sans-serif] font-medium text-[28px] sm:text-[36px] lg:text-[42px] text-[#019934] leading-[1.2] tracking-[-0.01em]">
+            {t('about.whoWeAre.heading', 'Connecting Strategic Insight, Regulatory Clarity & Practical Execution')}
+          </h2>
+
+          {/* Full-Width Medium-Weight Lead Summary Paragraph */}
+          <p className="font-['Poppins',sans-serif] font-medium text-[16.5px] sm:text-[18px] text-[#3C3C3C] leading-[1.68]">
+            {t('about.whoWeAre.p1')}
+          </p>
+        </motion.div>
+
+        {/* Asymmetric 2-Column Editorial Split (~62% Left Text & Sector Grid / ~38% Right Clean Photo) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+          {/* Left Column: Editorial Body Copy + GCC Bordered Hairline 2x2 Capability Grid */}
           <motion.div
-            initial={{ opacity: 0, x: -60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
-            className="lg:col-span-7 space-y-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.65, ease: 'easeOut' }}
+            className="lg:col-span-7 space-y-8"
           >
-            
-            {/* Eyebrow badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none text-[11px] sm:text-xs font-bold tracking-widest uppercase bg-[#019935]/10 text-[#019935] border border-[#019935]/25 shadow-xs">
-              <Compass className="w-3.5 h-3.5 text-[#019935] flex-shrink-0" />
-              <span>{t('about.whoWeAre.eyebrow', 'Who We Are')}</span>
-            </div>
+            <p className="font-['Poppins',sans-serif] font-light text-[15.5px] sm:text-[16.5px] text-[#3C3C3C] leading-[1.75]">
+              {t('about.whoWeAre.p2')}
+            </p>
 
-            {/* Main Headline */}
-            <h2 className="font-display font-bold text-2xl sm:text-3xl lg:text-4xl text-[#0B2816] tracking-tight leading-[1.2]">
-              {t('about.whoWeAre.heading', 'Connecting Strategic Insight, Regulatory Clarity & Practical Execution')}
-            </h2>
-
-            {/* Accent divider */}
-            <div className="w-12 h-0.5 bg-[#019935]" />
-
-            {/* Narrative paragraphs */}
-            <div className="space-y-4 text-sm sm:text-base text-[#3A4D42] leading-relaxed font-sans">
-              <p className="font-medium text-[#1A3826] leading-relaxed bg-white/70 p-4 border-l-2 border-[#019935] border border-y-[#E3ECE6] border-r-[#E3ECE6] rounded-none shadow-xs">
-                {t('about.whoWeAre.p1')}
-              </p>
-
-              <p className="text-[#4E6155] leading-relaxed font-normal">
-                {t('about.whoWeAre.p2')}
-              </p>
-            </div>
-
-            {/* Core Capabilities - Architectural 2x2 Grid */}
-            <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+            {/* GCC-Style Shared-Hairline Bordered 2x2 Grid (#f9fafb cells, 1px #e5e7eb lines) */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 border-t border-l border-[#e5e7eb]">
               {capabilities.map((cap) => {
                 const IconComponent = cap.icon;
                 return (
-                  <div 
+                  <div
                     key={cap.num}
-                    className="group relative bg-white border border-[#E3ECE6] hover:border-[#019935] p-4 rounded-none transition-all duration-300 shadow-xs hover:shadow-md"
+                    className="group bg-[#f9fafb] hover:bg-[#57D182]/[0.12] border-r border-b border-[#e5e7eb] p-6 transition-colors duration-200 flex flex-col justify-between space-y-3"
                   >
-                    <div className="flex items-start gap-3">
-                      <div className="w-8 h-8 rounded-none bg-[#F4FAF5] border border-[#019935]/20 flex items-center justify-center flex-shrink-0 text-[#019935] group-hover:bg-[#019935] group-hover:text-white transition-colors duration-300">
-                        <IconComponent className="w-4 h-4" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center justify-between gap-1 mb-1">
-                          <h3 className="text-xs sm:text-[13px] font-bold text-[#0B2816] tracking-tight leading-snug group-hover:text-[#019935] transition-colors">
-                            {cap.title}
-                          </h3>
-                          <span className="text-[10px] font-mono text-[#019935]/60 font-semibold">{cap.num}</span>
-                        </div>
-                        <p className="text-[11px] sm:text-xs text-[#5D7064] leading-relaxed font-normal">
-                          {cap.desc}
-                        </p>
-                      </div>
+                    <div className="flex items-center justify-between gap-2">
+                      <IconComponent className="w-5 h-5 text-[#019934] stroke-[1.6] flex-shrink-0" />
+                      <span className="text-[12px] font-medium text-[#1A5C3B]/45 group-hover:text-[#019934] transition-colors">
+                        {cap.num}
+                      </span>
                     </div>
-                    {/* Hover accent bottom line */}
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#019935] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                    <div className="space-y-1.5">
+                      <h3 className="font-['Poppins',sans-serif] font-medium text-[15.5px] text-[#1A5C3B] leading-snug">
+                        {cap.title}
+                      </h3>
+                      <p className="font-['Poppins',sans-serif] font-light text-[13.5px] text-[#666666] leading-[1.6]">
+                        {cap.desc}
+                      </p>
+                    </div>
                   </div>
                 );
               })}
             </div>
-
           </motion.div>
 
-          {/* Right Column: Visual Frame with Architectural Layering (Enters from Right) */}
+          {/* Right Column: Clean Sharp-Cornered Editorial Photograph (Exact GCC About Block A Style) */}
           <motion.div
-            initial={{ opacity: 0, x: 60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.15 }}
-            className="lg:col-span-5 relative mt-4 lg:mt-0"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.65, delay: 0.1, ease: 'easeOut' }}
+            className="lg:col-span-5 space-y-0"
           >
-            {/* Subtle background border frame offset for layered architectural feel */}
-            <div className="hidden sm:block absolute -bottom-3 -right-3 w-full h-full border-2 border-[#019935]/30 -z-0 rounded-none pointer-events-none" />
+            <div className="aspect-[4/3] w-full overflow-hidden rounded-none bg-[#f7f7f7]">
+              <img
+                src="/images/sustainable-industry.jpg"
+                alt={t('about.whoWeAre.imageAlt')}
+                className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-103"
+                loading="lazy"
+              />
+            </div>
 
-            <div className="relative z-10 bg-white p-2.5 sm:p-3 border border-[#DCE7DF] shadow-lg rounded-none">
-              <div className="aspect-[4/3] rounded-none overflow-hidden relative group">
-                <img
-                  src="/images/sustainable-industry.jpg"
-                  alt={t('about.whoWeAre.imageAlt')}
-                  className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                />
-                
-                {/* Contrast overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent pointer-events-none" />
-                
-                {/* Overlay Card Details */}
-                <div className="absolute bottom-0 inset-x-0 p-4 sm:p-5 text-white bg-black/40 backdrop-blur-sm border-t border-white/10">
-                  <div className="flex items-center gap-2 text-xs sm:text-[13px] font-bold tracking-wide uppercase text-[#4ADE80] mb-1.5">
-                    <ShieldCheck className="w-4 h-4 text-[#019935] flex-shrink-0" />
-                    <span>{t('about.whoWeAre.badgeIntegrity', 'Technical Integrity')}</span>
-                  </div>
-                  <p className="text-xs sm:text-[13px] text-white/95 font-sans leading-relaxed">
-                    {t('about.whoWeAre.caption')}
-                  </p>
-                </div>
+            {/* Clean Architectural Caption Panel below Photo */}
+            <div className="bg-[#f7f7f7] border border-t-0 border-[#e5e7eb] border-l-[3px] border-l-[#019934] p-5 sm:p-6 space-y-2">
+              <div className="flex items-center gap-2 text-[12px] font-medium tracking-[0.14em] uppercase text-[#019934]">
+                <ShieldCheck className="w-4 h-4 stroke-[1.75] flex-shrink-0" />
+                <span>{t('about.whoWeAre.badgeIntegrity', 'Technical Integrity')}</span>
               </div>
+              <p className="font-['Poppins',sans-serif] font-light text-[13.5px] sm:text-[14px] text-[#444444] leading-[1.65]">
+                {t('about.whoWeAre.caption')}
+              </p>
             </div>
           </motion.div>
-
         </div>
-
       </div>
     </section>
   );

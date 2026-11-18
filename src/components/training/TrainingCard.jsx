@@ -15,100 +15,86 @@ export default function TrainingCard({ topic, index = 0 }) {
   const desc = t(`training.topics.items.${topic.key}.desc`, '');
   const scope = t(`training.topics.items.${topic.key}.scope`, '');
 
-  const colIndex = index % 3;
-  const initialMotion = 
-    colIndex === 0 
-      ? { opacity: 0, x: -50, y: 15 } 
-      : colIndex === 2 
-      ? { opacity: 0, x: 50, y: 15 } 
-      : { opacity: 0, y: 40 };
-
   return (
     <motion.div
-      initial={initialMotion}
-      whileInView={{ opacity: 1, x: 0, y: 0 }}
-      viewport={{ once: true, amount: 0.15 }}
-      transition={{ duration: 0.6, ease: 'easeOut', delay: (index % 3) * 0.1 }}
-      className="group [perspective:1000px] h-[290px] sm:h-[305px] w-full cursor-pointer"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.12 }}
+      transition={{ duration: 0.55, ease: 'easeOut', delay: (index % 3) * 0.06 }}
+      className="group [perspective:1000px] h-[300px] sm:h-[315px] w-full cursor-pointer font-['Poppins',sans-serif]"
       onClick={() => setIsFlipped(!isFlipped)}
     >
-      {/* 3D Flipper Box with 180-Degree Rotation Animation */}
+      {/* 3D Flipper Box */}
       <div
         className={`relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] ${
           isFlipped ? '[transform:rotateY(180deg)]' : 'group-hover:[transform:rotateY(180deg)]'
         }`}
       >
-        {/* FRONT FACE */}
-        <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] rounded-none bg-white border border-sand-border p-4.5 sm:p-5 flex flex-col justify-between shadow-sm group-hover:shadow-2xl overflow-hidden transition-all duration-300">
-          {/* Top Brand Accent Line */}
-          <div className="absolute top-0 left-0 right-0 h-1 bg-[#019935]" />
+        {/* FRONT FACE — GCC Flat White Hairline Card */}
+        <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] rounded-[4px] bg-white border border-[#e5e7eb] p-6 sm:p-7 flex flex-col justify-between overflow-hidden">
+          <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#019934]" />
 
-          <div className="space-y-2.5">
-            <div className="flex items-center justify-between">
-              <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-none text-[10px] font-mono font-bold tracking-widest text-[#019935] uppercase bg-[#E8F5E9] border border-[#C8E6C9]">
-                <span>MODULE {topic.number}</span>
-              </div>
+          <div className="space-y-3.5">
+            <div className="flex items-center justify-between gap-2">
+              <span className="inline-block px-2.5 py-0.5 text-[11px] font-medium tracking-[0.14em] text-[#1A5C3B] uppercase bg-[#57D182]/40">
+                MODULE {topic.number}
+              </span>
 
-              <div className="w-8 h-8 rounded-none bg-[#E8F5E9] border border-[#019935]/20 flex items-center justify-center text-[#019935]">
-                <Icon className="w-4 h-4" />
-              </div>
+              <Icon className="w-6 h-6 text-[#cbd5e1] group-hover:text-[#019934] stroke-[1.4] transition-colors" />
             </div>
 
-            <h3 className="font-display font-bold text-base sm:text-[17px] text-forest leading-snug line-clamp-2">
+            <h3 className="font-['Poppins',sans-serif] font-semibold text-[18px] sm:text-[19px] text-[#1A5C3B] leading-snug line-clamp-2">
               {title}
             </h3>
 
-            <p className="text-xs text-charcoal-muted leading-relaxed font-sans font-light line-clamp-3">
+            <p className="font-['Poppins',sans-serif] font-light text-[13.5px] text-[#555555] leading-[1.68] line-clamp-3">
               {desc}
             </p>
           </div>
 
-          {/* Bottom Flip Prompt */}
-          <div className="pt-2 border-t border-sand-border/70 flex items-center justify-between text-[11px] font-semibold text-[#019935]">
+          <div className="pt-3 border-t border-[#efefef] flex items-center justify-between text-[12px] font-medium text-[#019934]">
             <span className="flex items-center gap-1.5">
-              <RotateCw className="w-3 h-3 transition-transform duration-500 group-hover:rotate-180" />
+              <RotateCw className="w-3.5 h-3.5 transition-transform duration-500 group-hover:rotate-180" />
               <span>View Detailed Scope</span>
             </span>
-            <span className="text-[10px] font-mono text-charcoal-muted uppercase tracking-wider">
+            <span className="text-[11px] font-normal text-[#7f7f7f] uppercase tracking-[0.1em]">
               180° Flip
             </span>
           </div>
         </div>
 
-        {/* BACK FACE (180° FLIPPED) */}
-        <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-none bg-[#0D2E24] text-white border-2 border-[#019935] p-4.5 sm:p-5 flex flex-col justify-between shadow-2xl overflow-hidden">
-          {/* Top Gold Accent Line */}
-          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#019935] via-[#D4AF37] to-[#019935]" />
+        {/* BACK FACE — Exact GCC Deep Institutional Navy #1A5C3B Panel */}
+        <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-[4px] bg-[#1A5C3B] text-white border border-[#019934] p-6 sm:p-7 flex flex-col justify-between overflow-hidden">
+          <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#019934]" />
 
-          <div className="space-y-2">
+          <div className="space-y-3">
             <div className="flex items-center justify-between">
-              <span className="text-[10px] font-mono font-bold tracking-widest text-[#F3E5AB] uppercase">
+              <span className="text-[11px] font-medium tracking-[0.16em] text-[#57D182] uppercase">
                 MODULE {topic.number} · CURRICULUM SCOPE
               </span>
-              <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" />
+              <Sparkles className="w-4 h-4 text-[#57D182] stroke-[1.6]" />
             </div>
 
-            <h4 className="font-display font-bold text-sm sm:text-[15px] text-white leading-tight line-clamp-2">
+            <h4 className="font-['Poppins',sans-serif] font-medium text-[16px] sm:text-[17px] text-white leading-snug line-clamp-2">
               {title}
             </h4>
 
-            <div className="bg-black/50 p-2.5 rounded-none border border-white/20 max-h-[110px] overflow-y-auto">
-              <p className="text-white text-xs sm:text-[12.5px] leading-relaxed font-sans font-normal">
+            <div className="bg-white/[0.06] p-3.5 rounded-[3px] border border-white/15 max-h-[115px] overflow-y-auto">
+              <p className="text-white/90 text-[13px] leading-[1.65] font-['Poppins',sans-serif] font-light">
                 {scope || desc}
               </p>
             </div>
           </div>
 
-          {/* Enquire Button on Back of Card */}
-          <div className="pt-2 border-t border-white/15">
+          <div className="pt-3 border-t border-white/15">
             <Link
               to={getLocalizedPath('/contact?service=training')}
               state={{ serviceInterest: 'Training and Capacity Building', topic: title }}
               onClick={(e) => e.stopPropagation()}
-              className="w-full inline-flex items-center justify-center gap-2 px-3 py-2 rounded-none bg-[#019935] hover:bg-[#02B840] text-white font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none"
+              className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-[5px] bg-[#019934] hover:bg-[#017D2B] text-white font-['Poppins',sans-serif] font-normal text-[13.5px] transition-colors duration-200 focus:outline-none"
             >
               <span>{t('training.topics.enquireTopic', 'Enquire About This Topic')}</span>
-              <ArrowRight className="w-3.5 h-3.5 text-white" />
+              <ArrowRight className="w-4 h-4 text-white" />
             </Link>
           </div>
         </div>

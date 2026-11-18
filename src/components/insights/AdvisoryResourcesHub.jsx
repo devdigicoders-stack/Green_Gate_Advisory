@@ -1,15 +1,11 @@
 import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { 
-  FileDown, 
-  FileText, 
-  Download, 
-  CheckCircle2, 
-  Sparkles, 
-  Lock,
-  ArrowRight
+import { motion } from 'framer-motion';
+import {
+  FileDown,
+  Download,
+  CheckCircle2,
+  Lock
 } from 'lucide-react';
-import SectionHeader from '../common/SectionHeader';
 
 const BRIEFINGS_DATA = [
   {
@@ -59,7 +55,6 @@ const BRIEFINGS_DATA = [
 ];
 
 export default function AdvisoryResourcesHub() {
-  const { t } = useTranslation();
   const [downloadModal, setDownloadModal] = useState(null);
   const [downloadSuccess, setDownloadSuccess] = useState(false);
   const [emailInput, setEmailInput] = useState('');
@@ -82,116 +77,159 @@ export default function AdvisoryResourcesHub() {
   };
 
   return (
-    <section className="py-14 sm:py-20 bg-sage/40 border-b border-sand-border/70">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        
-        {/* Section Header */}
-        <SectionHeader
-          badge="Executive Research & Briefings"
-          title="Downloadable Technical Manuals & Policy Primers"
-          subtitle="Equipping corporate sustainability executives, legal counsel and policymakers with actionable compliance blueprints and climate finance templates."
-        />
+    <section className="relative w-full py-20 sm:py-24 bg-[#1A5C3B] text-white font-['Poppins',sans-serif] overflow-hidden">
+      {/* Subtle Concentric Arc Watermark */}
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 600 600"
+        fill="none"
+        className="pointer-events-none absolute -right-32 -top-24 w-[420px] sm:w-[560px] h-auto opacity-[0.06]"
+      >
+        {Array.from({ length: 15 }).map((_, idx) => (
+          <circle
+            key={idx}
+            cx="380"
+            cy="220"
+            r={65 + idx * 24}
+            stroke="#ffffff"
+            strokeWidth="1.25"
+          />
+        ))}
+      </svg>
+
+      <div className="relative z-10 w-[90%] max-w-[1680px] mx-auto space-y-14 sm:space-y-16">
+        {/* Centered GCC Dark-Navy Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          className="text-center max-w-4xl mx-auto flex flex-col items-center"
+        >
+          <span className="inline-block w-[70px] h-[2px] bg-[#019934] mb-4" aria-hidden="true" />
+
+          <span className="text-[13px] sm:text-[14px] font-medium tracking-[0.22em] uppercase text-[#57D182]">
+            Executive Research &amp; Briefings
+          </span>
+
+          <h2 className="mt-3 font-['Poppins',sans-serif] font-light text-[34px] sm:text-[44px] lg:text-[50px] text-white leading-[1.16] tracking-[-0.01em]">
+            Downloadable Technical Manuals &amp; Policy Primers
+          </h2>
+
+          <p className="mt-4 font-['Poppins',sans-serif] font-light text-[16px] sm:text-[18.5px] text-white/80 leading-[1.6] max-w-3xl">
+            Equipping corporate sustainability executives, legal counsel and policymakers with actionable compliance blueprints and climate finance templates.
+          </p>
+        </motion.div>
 
         {/* 4 Downloadable Research Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-          {BRIEFINGS_DATA.map((doc) => (
-            <div
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {BRIEFINGS_DATA.map((doc, idx) => (
+            <motion.div
               key={doc.id}
-              className="rounded-3xl bg-white border border-sand-border p-7 flex flex-col justify-between space-y-5 hover:border-deep-green/30 hover:shadow-premium transition-all duration-300 group"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.12 }}
+              transition={{ duration: 0.5, ease: 'easeOut', delay: idx * 0.06 }}
+              className="relative bg-white/[0.04] hover:bg-white/[0.08] border border-white/15 hover:border-[#019934] rounded-none p-7 flex flex-col justify-between space-y-6 transition-all duration-300 group"
             >
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#019934] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
               <div className="space-y-4">
                 {/* Header Tag */}
-                <div className="flex items-center justify-between text-[11px]">
-                  <span className="font-mono font-bold uppercase tracking-wider text-forest bg-sage px-2.5 py-0.5 rounded-full border border-forest/10">
+                <div className="flex items-center justify-between gap-2 text-[11px]">
+                  <span className="font-medium uppercase tracking-[0.12em] text-[#57D182] bg-[#019934]/20 px-2.5 py-0.5">
                     {doc.badge}
                   </span>
-                  <span className="text-charcoal-muted font-mono">{doc.pages}</span>
+                  <span className="text-white/60 font-light">{doc.pages}</span>
                 </div>
 
                 {/* Title */}
-                <h3 className="font-display font-bold text-lg text-forest group-hover:text-deep-green transition-colors leading-snug">
+                <h3 className="font-['Poppins',sans-serif] font-medium text-[18px] text-white group-hover:text-[#57D182] transition-colors leading-snug">
                   {doc.title}
                 </h3>
 
                 {/* Edition */}
-                <div className="text-xs font-semibold text-deep-green">
+                <div className="text-[12.5px] font-medium text-[#57D182]">
                   {doc.edition}
                 </div>
 
                 {/* Summary */}
-                <p className="text-xs text-charcoal-muted leading-relaxed font-sans font-light">
+                <p className="text-[13.5px] text-white/75 leading-[1.68] font-light">
                   {doc.summary}
                 </p>
 
-                {/* Topics Covered */}
-                <div className="pt-3 border-t border-sand-border/80 space-y-1.5">
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-charcoal-muted font-bold block">
+                {/* Topics Covered — GCC Teal Horizontal Dash List */}
+                <div className="pt-4 border-t border-white/12 space-y-2">
+                  <span className="text-[10.5px] uppercase tracking-[0.16em] text-[#57D182] font-medium block">
                     Key Topics Covered:
                   </span>
                   {doc.topics.map((top, tIdx) => (
-                    <div key={tIdx} className="flex items-center gap-2 text-xs text-charcoal">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-deep-green flex-shrink-0" />
-                      <span className="truncate">{top}</span>
+                    <div key={tIdx} className="flex items-start gap-2.5 text-[12.5px] text-white/85 font-light">
+                      <span className="inline-block w-3 h-[1.5px] bg-[#019934] flex-shrink-0 mt-[9px]" aria-hidden="true" />
+                      <span>{top}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Action Button */}
-              <div className="pt-4 border-t border-sand-border/80">
+              <div className="pt-4 border-t border-white/12">
                 <button
                   type="button"
                   onClick={() => handleOpenDownload(doc)}
-                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-forest text-white font-semibold text-xs hover:bg-forest-light active:bg-forest-dark transition-all duration-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-forest/30"
+                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-[5px] bg-[#019934] hover:bg-[#017D2B] text-white font-['Poppins',sans-serif] font-normal text-[13.5px] transition-colors duration-200 focus:outline-none"
                 >
-                  <Download className="w-3.5 h-3.5" />
+                  <Download className="w-4 h-4" />
                   <span>Download Briefing</span>
                 </button>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
-        {/* Modal for simulated download capture */}
+        {/* Modal for simulated download capture — GCC Clean White Architectural Modal */}
         {downloadModal && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-forest-dark/70 backdrop-blur-sm animate-in fade-in">
-            <div className="bg-white rounded-3xl border border-sand-border p-7 sm:p-9 max-w-md w-full space-y-5 shadow-2xl relative">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#1A5C3B]/75 backdrop-blur-sm text-[#3C3C3C]">
+            <div className="bg-white rounded-[4px] border border-[#e5e7eb] p-7 sm:p-9 max-w-md w-full space-y-5 relative overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#019934]" />
+
               <button
                 type="button"
                 onClick={() => setDownloadModal(null)}
-                className="absolute top-5 right-5 text-charcoal-muted hover:text-forest text-lg font-bold"
+                className="absolute top-5 right-5 text-[#019934] hover:text-[#1A5C3B] text-lg font-medium transition-colors"
+                aria-label="Close modal"
               >
                 ✕
               </button>
 
-              <div className="w-10 h-10 rounded-xl bg-forest/5 border border-forest/10 flex items-center justify-center text-forest">
-                <FileDown className="w-5 h-5" />
+              <div className="w-11 h-11 rounded-[5px] bg-[#57D182]/20 text-[#019934] flex items-center justify-center">
+                <FileDown className="w-5 h-5 stroke-[1.7]" />
               </div>
 
               <div className="space-y-1.5">
-                <span className="text-[10px] font-mono uppercase tracking-wider text-deep-green font-bold bg-sage px-2 py-0.5 rounded">
+                <span className="inline-block text-[11px] uppercase tracking-[0.14em] text-[#0A7A32] font-medium bg-[#57D182]/25 px-2.5 py-0.5">
                   {downloadModal.edition}
                 </span>
-                <h3 className="font-display font-bold text-xl text-forest">
+                <h3 className="font-['Poppins',sans-serif] font-semibold text-[20px] text-[#1A5C3B] leading-snug">
                   {downloadModal.title}
                 </h3>
               </div>
 
               {downloadSuccess ? (
-                <div className="p-4 rounded-2xl bg-forest/5 border border-forest/15 text-center space-y-2">
-                  <CheckCircle2 className="w-8 h-8 text-deep-green mx-auto" />
-                  <div className="font-bold text-sm text-forest">Briefing Dispatched!</div>
-                  <p className="text-xs text-charcoal-muted">
+                <div className="p-5 rounded-[4px] bg-[#57D182]/12 border border-[#019934]/30 text-center space-y-2">
+                  <CheckCircle2 className="w-8 h-8 text-[#019934] mx-auto stroke-[1.7]" />
+                  <div className="font-semibold text-[15px] text-[#1A5C3B]">Briefing Dispatched!</div>
+                  <p className="text-[13px] text-[#555555] font-light leading-relaxed">
                     Check your inbox or download initiation. Thank you for reading Green Gate Advisory technical research.
                   </p>
                 </div>
               ) : (
                 <form onSubmit={handleDownloadSubmit} className="space-y-4">
-                  <p className="text-xs text-charcoal-muted font-sans font-light">
+                  <p className="text-[13.5px] text-[#555555] font-light leading-relaxed">
                     Enter your professional email to receive the direct PDF document and technical methodology updates.
                   </p>
-                  <div>
-                    <label className="text-[11px] font-semibold text-charcoal block mb-1">
+                  <div className="space-y-1.5">
+                    <label className="text-[12px] font-medium uppercase tracking-[0.08em] text-[#1A5C3B] block">
                       Professional Work Email:
                     </label>
                     <input
@@ -200,17 +238,17 @@ export default function AdvisoryResourcesHub() {
                       placeholder="executive@organization.com"
                       value={emailInput}
                       onChange={(e) => setEmailInput(e.target.value)}
-                      className="w-full px-4 py-2.5 rounded-xl border border-sand-border text-xs focus:outline-none focus:ring-2 focus:ring-forest/30"
+                      className="w-full px-4 py-3 rounded-[4px] border border-[#d9dfe5] focus:border-[#019934] text-[13.5px] text-[#3C3C3C] focus:outline-none focus:ring-1 focus:ring-[#019934]"
                     />
                   </div>
                   <button
                     type="submit"
-                    className="w-full py-3 rounded-xl bg-forest text-white font-semibold text-xs tracking-wider uppercase hover:bg-forest-light transition-all shadow-md"
+                    className="w-full py-3 rounded-[5px] bg-[#1A5C3B] hover:bg-[#019934] text-white font-['Poppins',sans-serif] font-normal text-[14px] transition-colors duration-200"
                   >
-                    Confirm & Download PDF
+                    Confirm &amp; Download PDF
                   </button>
-                  <div className="flex items-center justify-center gap-1.5 text-[11px] text-charcoal-muted">
-                    <Lock className="w-3 h-3 text-deep-green" />
+                  <div className="flex items-center justify-center gap-1.5 text-[12px] text-[#7f7f7f] font-light">
+                    <Lock className="w-3.5 h-3.5 text-[#019934]" />
                     <span>Strict Confidentiality • No Spam</span>
                   </div>
                 </form>
@@ -218,7 +256,6 @@ export default function AdvisoryResourcesHub() {
             </div>
           </div>
         )}
-
       </div>
     </section>
   );

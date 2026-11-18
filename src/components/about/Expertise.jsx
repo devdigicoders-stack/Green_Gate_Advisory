@@ -1,19 +1,18 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { 
-  ArrowRight, 
-  Globe, 
-  Scale, 
-  ShieldCheck, 
-  Landmark, 
-  TrendingUp, 
-  Leaf, 
-  FileText, 
-  BarChart3, 
-  GraduationCap 
+import {
+  ArrowRight,
+  Globe,
+  Scale,
+  ShieldCheck,
+  Landmark,
+  TrendingUp,
+  Leaf,
+  FileText,
+  BarChart3,
+  GraduationCap
 } from 'lucide-react';
-import SectionHeader from '../common/SectionHeader';
 import { useLocale } from '../../hooks/useLocale';
 
 const DOMAIN_ICONS = [
@@ -36,86 +35,82 @@ export default function Expertise() {
   const items = Array.isArray(rawItems) ? rawItems : [];
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-[#FAFCF9] border-b border-[#E5EDE7] relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16 relative z-10">
-        
+    <section className="w-full bg-[#f7f7f7] border-b border-[#e5e7eb] font-['Poppins',sans-serif] py-16 sm:py-20 lg:py-24">
+      <div className="w-[90%] max-w-[1680px] mx-auto space-y-12 sm:space-y-14">
+        {/* Centered GCC Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: -25 }}
+          initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
+          transition={{ duration: 0.65, ease: 'easeOut' }}
+          className="text-center max-w-4xl mx-auto flex flex-col items-center"
         >
-          <SectionHeader
-            badge={t('about.expertise.eyebrow', 'Technical Advisory Domains')}
-            title={t('about.expertise.heading', 'Our Areas of Expertise')}
-            subtitle={t('about.expertise.subtitle')}
-          />
+          <span className="inline-block w-[70px] h-[2px] bg-[#019934] mb-4" aria-hidden="true" />
+
+          <span className="text-[13px] sm:text-[14px] font-medium tracking-[0.22em] uppercase text-[#0A7A32]">
+            {t('about.expertise.eyebrow', 'Technical Advisory Domains')}
+          </span>
+
+          <h2 className="mt-3 font-['Poppins',sans-serif] font-light text-[34px] sm:text-[44px] lg:text-[50px] text-[#1A5C3B] leading-[1.16] tracking-[-0.01em]">
+            {t('about.expertise.heading', 'Our Areas of Expertise')}
+          </h2>
+
+          {t('about.expertise.subtitle') && (
+            <p className="mt-4 font-['Poppins',sans-serif] font-light text-[16px] sm:text-[19px] text-[#7f7f7f] leading-[1.5] max-w-3xl">
+              {t('about.expertise.subtitle')}
+            </p>
+          )}
         </motion.div>
 
-        {/* 9 High-Impact Architectural Technical Advisory Domain Cards with Left & Right Entrance */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+        {/* 9 Technical Advisory Domains — Exact GCC Block B Shared-Hairline Bordered Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-[#e5e7eb]">
           {items.map((item, idx) => {
             const Icon = DOMAIN_ICONS[idx % DOMAIN_ICONS.length] || ShieldCheck;
             const domainNumber = item.number || (idx < 9 ? `0${idx + 1}` : idx + 1);
-            const colIndex = idx % 3;
-            const initialMotion = 
-              colIndex === 0 
-                ? { opacity: 0, x: -50 } 
-                : colIndex === 2 
-                ? { opacity: 0, x: 50 } 
-                : { opacity: 0, y: 40 };
 
             return (
               <motion.div
                 key={idx}
-                initial={initialMotion}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
-                transition={{ duration: 0.6, ease: 'easeOut', delay: (idx % 3) * 0.1 }}
+                transition={{ duration: 0.5, ease: 'easeOut', delay: (idx % 3) * 0.06 }}
+                className="border-r border-b border-[#e5e7eb] bg-white hover:bg-[#57D182]/[0.16] transition-colors duration-200"
               >
                 <Link
                   to={getLocalizedPath(item.route)}
-                  className="relative rounded-none bg-white border border-[#DCE8E0] hover:border-[#019935] p-6 sm:p-7 min-h-[210px] sm:min-h-[230px] shadow-[0_10px_30px_-5px_rgba(0,0,0,0.06),0_2px_8px_-2px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_45px_-8px_rgba(1,153,53,0.2),0_6px_16px_-2px_rgba(0,0,0,0.06)] hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between space-y-5 group cursor-pointer overflow-hidden block w-full h-full"
+                  className="group p-7 sm:p-8 min-h-[220px] sm:min-h-[240px] flex flex-col justify-between space-y-6 block w-full h-full focus:outline-none"
                 >
-                {/* Slow-motion background slide up from bottom to top */}
-                <div 
-                  className="absolute inset-0 bg-gradient-to-t from-[#062A17] to-[#0D4429] z-0 transform translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] pointer-events-none" 
-                />
+                  <div className="space-y-4">
+                    {/* Top Row: Mint Pill Domain Tag + Clean Teal Line Icon */}
+                    <div className="flex items-center justify-between gap-3">
+                      <span className="text-[11.5px] font-medium tracking-[0.14em] uppercase text-[#1A5C3B] bg-[#57D182]/40 px-2.5 py-0.5">
+                        DOMAIN {domainNumber}
+                      </span>
 
-                {/* Card Content Container (z-10 to stay above sliding background) */}
-                <div className="relative z-10 space-y-5 flex-1 flex flex-col justify-between">
-                  
-                  {/* Top Row: Domain Tag + Static Icon (No Rotation) */}
-                  <div className="flex items-center justify-between">
-                    <span className="text-[11px] sm:text-xs font-mono font-bold tracking-widest text-[#019935] bg-[#E8F6ED] px-3.5 py-1 rounded-none border border-[#CDE8D5] transition-all duration-300 group-hover:bg-white/15 group-hover:text-white group-hover:border-white/30 shadow-2xs">
-                      DOMAIN {domainNumber}
+                      <Icon className="w-6 h-6 text-[#019934] stroke-[1.5] flex-shrink-0 transition-transform duration-200 group-hover:scale-110" />
+                    </div>
+
+                    {/* Domain Title — Navy Medium with GCC Hover Underline */}
+                    <h3 className="font-['Poppins',sans-serif] font-medium text-[17px] sm:text-[18.5px] text-[#1A5C3B] leading-[1.4] group-hover:underline decoration-[#1A5C3B] decoration-[1.5px] underline-offset-4">
+                      {item.title}
+                    </h3>
+                  </div>
+
+                  {/* Bottom Action Row — GCC Circular Navy -> Teal Arrow */}
+                  <div className="flex items-center gap-3 pt-2">
+                    <span className="w-9 h-9 rounded-full bg-[#1A5C3B] group-hover:bg-[#019934] text-white flex items-center justify-center transition-colors duration-200 flex-shrink-0">
+                      <ArrowRight className="w-4 h-4 stroke-[1.75] group-hover:translate-x-0.5 transition-transform" />
                     </span>
-
-                    <div className="w-10 h-10 rounded-none bg-[#E8F6ED] text-[#019935] border border-[#CFE8D7] flex items-center justify-center transition-all duration-300 shadow-2xs group-hover:bg-white group-hover:text-[#019935] group-hover:border-white">
-                      <Icon className="w-5 h-5 transition-colors duration-300" />
-                    </div>
+                    <span className="text-[12.5px] font-medium uppercase tracking-[0.12em] text-[#1A5C3B] group-hover:text-[#019934] transition-colors duration-200">
+                      {t('about.expertise.exploreService', 'Explore Service')}
+                    </span>
                   </div>
-
-                  {/* Title with Reduced, Refined Font Size */}
-                  <h3 className="font-display font-semibold sm:font-bold text-[14px] sm:text-[15.5px] text-[#16221A] group-hover:text-white transition-colors duration-300 leading-snug sm:leading-relaxed">
-                    {item.title}
-                  </h3>
-
-                  {/* Bottom Action Strip */}
-                  <div className="pt-4 border-t border-[#E8EFEA] group-hover:border-white/20 flex items-center justify-between text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#019935] group-hover:text-white transition-colors duration-500">
-                    <span>{t('about.expertise.exploreService', 'Explore Service')}</span>
-                    <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-none bg-[#E8F6ED] group-hover:bg-white/20 text-[#019935] group-hover:text-white flex items-center justify-center transition-all duration-300">
-                      <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transform group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-
-                </div>
-              </Link>
-            </motion.div>
-          );
-        })}
+                </Link>
+              </motion.div>
+            );
+          })}
         </div>
-
       </div>
     </section>
   );

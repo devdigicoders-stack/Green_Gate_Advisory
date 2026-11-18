@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
 import { ArrowRight, ShieldCheck } from 'lucide-react';
 import { useLocale } from '../../hooks/useLocale';
 
@@ -8,59 +9,83 @@ export default function InsightsCTA() {
   const { getLocalizedPath } = useLocale();
 
   return (
-    <section className="relative overflow-hidden bg-forest-dark text-white py-14 sm:py-20">
-      {/* Background radial glow & gradient */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-forest-dark via-forest to-forest-dark opacity-90" />
-        <div className="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-gold/10 blur-3xl pointer-events-none" />
-        <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-deep-green/30 blur-3xl pointer-events-none" />
-      </div>
+    <section className="relative w-full bg-[#E4F6EA]/55 font-['Poppins',sans-serif] py-16 sm:py-20 lg:py-24 overflow-hidden">
+      {/* Subtle Concentric White Arc Watermark */}
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 600 600"
+        fill="none"
+        className="pointer-events-none absolute -left-24 -bottom-24 w-[380px] sm:w-[480px] h-auto opacity-45"
+      >
+        {Array.from({ length: 14 }).map((_, idx) => (
+          <circle
+            key={idx}
+            cx="180"
+            cy="420"
+            r={55 + idx * 24}
+            stroke="#ffffff"
+            strokeWidth="1.2"
+          />
+        ))}
+      </svg>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
-        
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase bg-white/10 text-gold-light border border-white/15 backdrop-blur-sm">
-          <span>{t('insights.cta.eyebrow', 'Technical Advisory Support')}</span>
-        </div>
+      <div className="relative z-10 w-[90%] max-w-[1280px] mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          className="relative bg-white rounded-[4px] border border-[#019934]/35 px-7 py-12 sm:px-14 sm:py-16 text-center space-y-7 overflow-hidden"
+        >
+          {/* Top Accent Bar */}
+          <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#019934]" />
 
-        <h2 className="font-display font-bold text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.12] max-w-3xl mx-auto">
-          {t('insights.cta.heading', 'Need Guidance on a Climate or Environmental Challenge?')}
-        </h2>
-
-        <p className="text-base sm:text-xl text-sand-surface/90 max-w-2xl mx-auto font-sans font-light leading-relaxed">
-          {t('insights.cta.description', 'Whether preparing for CBAM compliance, developing a carbon credit project, or structuring a multilateral funding proposal, our advisory team provides tailored technical support.')}
-        </p>
-
-        {/* Buttons: Explore Our Services & Request a Consultation */}
-        <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link
-            to={getLocalizedPath('/services')}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-gold hover:bg-gold-light text-forest-dark font-semibold text-sm tracking-wide uppercase transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-gold"
-          >
-            <span>{t('insights.cta.primaryBtn', 'Explore Our Services')}</span>
-            <ArrowRight className="w-4 h-4 text-forest-dark" />
-          </Link>
-
-          <Link
-            to={getLocalizedPath('/contact')}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-sm tracking-wide uppercase border border-white/25 backdrop-blur-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white"
-          >
-            <span>{t('insights.cta.secondaryBtn', 'Request a Consultation')}</span>
-          </Link>
-        </div>
-
-        {/* Professional Caution Disclaimer */}
-        <div className="pt-8 border-t border-white/10 flex items-center justify-center text-xs text-sand-surface/75 font-sans max-w-4xl mx-auto text-center leading-relaxed">
-          <p className="inline-flex items-center justify-center flex-wrap gap-x-2 gap-y-1">
-            <span className="inline-flex items-center gap-1.5 font-medium text-white whitespace-nowrap">
-              <ShieldCheck className="w-4 h-4 text-gold flex-shrink-0" />
-              <span>Independent Advisory Notice:</span>
+          <div className="flex flex-col items-center space-y-3">
+            <span className="inline-block w-[64px] h-[2px] bg-[#019934]" aria-hidden="true" />
+            <span className="text-[12.5px] sm:text-[13.5px] font-medium tracking-[0.22em] uppercase text-[#0A7A32]">
+              {t('insights.cta.eyebrow', 'Technical Advisory Support')}
             </span>
-            <span>
-              {t('insights.cta.disclaimer', 'Recommendations reflect current statutory frameworks and accredited methodologies without speculative commitments.')}
-            </span>
+          </div>
+
+          <h2 className="font-['Poppins',sans-serif] font-light text-[30px] sm:text-[42px] lg:text-[48px] text-[#1A5C3B] tracking-[-0.01em] leading-[1.18] max-w-3xl mx-auto">
+            {t('insights.cta.heading', 'Need Guidance on a Climate or Environmental Challenge?')}
+          </h2>
+
+          <p className="font-['Poppins',sans-serif] font-light text-[15.5px] sm:text-[17.5px] text-[#555555] max-w-2xl mx-auto leading-[1.7]">
+            {t('insights.cta.description', 'Whether preparing for CBAM compliance, developing a carbon credit project, or structuring a multilateral funding proposal, our advisory team provides tailored technical support.')}
           </p>
-        </div>
 
+          {/* GCC Button Pair (.btn-style1 + .btn-style2) */}
+          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              to={getLocalizedPath('/services')}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-[5px] bg-[#1A5C3B] hover:bg-[#019934] text-white font-['Poppins',sans-serif] font-normal text-[15px] transition-colors duration-200 group focus:outline-none"
+            >
+              <span>{t('insights.cta.primaryBtn', 'Explore Our Services')}</span>
+              <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
+            </Link>
+
+            <Link
+              to={getLocalizedPath('/contact')}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-[5px] bg-transparent border border-[#019934] text-[#019934] hover:bg-[#019934] hover:text-white font-['Poppins',sans-serif] font-normal text-[15px] transition-colors duration-200 focus:outline-none"
+            >
+              <span>{t('insights.cta.secondaryBtn', 'Request a Consultation')}</span>
+            </Link>
+          </div>
+
+          {/* Professional Caution Disclaimer */}
+          <div className="pt-6 border-t border-[#efefef] flex items-center justify-center text-[12.5px] text-[#555555] font-light max-w-4xl mx-auto text-center leading-relaxed">
+            <p className="inline-flex items-center justify-center flex-wrap gap-x-2 gap-y-1">
+              <span className="inline-flex items-center gap-1.5 font-medium text-[#1A5C3B] whitespace-nowrap">
+                <ShieldCheck className="w-4 h-4 text-[#019934] flex-shrink-0" />
+                <span>Independent Advisory Notice:</span>
+              </span>
+              <span>
+                {t('insights.cta.disclaimer', 'Recommendations reflect current statutory frameworks and accredited methodologies without speculative commitments.')}
+              </span>
+            </p>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

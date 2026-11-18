@@ -1,22 +1,12 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { 
-  Mail, 
-  ArrowUpRight, 
-  ArrowUp, 
-  ShieldCheck, 
-  Home, 
-  Users, 
-  Settings, 
-  Layers, 
-  Users2, 
-  FileText, 
-  GraduationCap, 
-  UserPlus, 
+import {
+  Mail,
+  ArrowUp,
+  ShieldCheck,
   Sprout,
   MapPin,
-  MessageCircle,
-  Phone
+  MessageCircle
 } from 'lucide-react';
 import Logo from '../common/Logo';
 import LanguageSwitcher from '../common/LanguageSwitcher';
@@ -33,207 +23,253 @@ export default function Footer() {
   };
 
   const QUICK_LINKS = [
-    { label: t('navigation.home', 'Home'), path: '/', icon: Home },
-    { label: t('navigation.about', 'About Us'), path: '/about-us', icon: Users },
-    { label: t('navigation.services', 'Services'), path: '/services', icon: Settings },
-    { label: t('navigation.sectors', 'Sectors'), path: '/sectors', icon: Layers },
-    { label: t('navigation.whoWeServe', 'Who We Serve'), path: '/who-we-serve', icon: Users2 },
-    { label: 'Capital & Proposals', path: '/services/climate-finance-advisory', icon: FileText },
-    { label: t('navigation.training', 'Training'), path: '/training', icon: GraduationCap },
-    { label: 'Join as Expert / Consultant', path: '/contact?type=expert', icon: UserPlus },
-    { label: t('navigation.contact', 'Contact'), path: '/contact', icon: Mail },
-    { label: t('footer.privacyPolicy', 'Privacy Policy'), path: '/privacy-policy', icon: ShieldCheck, isHighlighted: true },
+    { label: t('navigation.home', 'Home'), path: '/' },
+    { label: t('navigation.about', 'About Us'), path: '/about-us' },
+    { label: t('navigation.services', 'Services'), path: '/services' },
+    { label: t('navigation.sectors', 'Sectors'), path: '/sectors' },
+    { label: t('navigation.whoWeServe', 'Who We Serve'), path: '/who-we-serve' },
+    { label: 'Capital & Proposals', path: '/services/climate-finance-advisory' },
+    { label: t('navigation.training', 'Training'), path: '/training' },
+    { label: 'Join as Expert / Consultant', path: '/contact?type=expert' },
+    { label: t('navigation.contact', 'Contact'), path: '/contact' },
+    { label: t('footer.privacyPolicy', 'Privacy Policy'), path: '/privacy-policy', isHighlighted: true }
   ];
 
+  const quickLinksCol1 = QUICK_LINKS.slice(0, 5);
+  const quickLinksCol2 = QUICK_LINKS.slice(5);
+
   return (
-    <footer className="relative bg-[#EEF5EF] text-[#1E2E25] pt-14 pb-10 sm:pt-20 sm:pb-12 border-t border-[#D0E2D5] overflow-hidden font-sans">
-      {/* Generated Botanical Background Texture with Soft Mist Overlay */}
-      <div 
-        className="absolute inset-0 z-0 bg-cover bg-center pointer-events-none opacity-40 mix-blend-multiply" 
+    <footer className="relative w-full bg-[#1A5C3B] text-white font-['Poppins',sans-serif] pt-16 sm:pt-20 lg:pt-24 pb-10 sm:pb-12 overflow-hidden">
+      {/* Preserved Botanical Background Texture softly blended into Deep Navy */}
+      <div
+        className="absolute inset-0 z-0 bg-cover bg-center pointer-events-none opacity-[0.06] mix-blend-luminosity"
         style={{ backgroundImage: `url('/images/footer-bg.jpg')` }}
       />
-      <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#F3F8F4]/80 via-[#EEF5EF]/60 to-[#E8F3EB]/85 pointer-events-none" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Main Architectural Columns Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-14 pb-12 sm:pb-14">
-          
-          {/* Col 1: Brand & Purpose (5 cols) - Centered on Mobile */}
-          <div className="lg:col-span-5 space-y-5 flex flex-col items-center md:items-start text-center md:text-left">
-            <div className="flex justify-center md:justify-start w-full">
-              <Logo variant="default" imgClassName="h-12 sm:h-14 w-auto" />
-            </div>
-            
-            <p className="text-[#38493F] text-sm sm:text-[14.5px] leading-relaxed max-w-md font-normal mx-auto md:mx-0">
-              {t('footer.brandTagline', 'Green Gate Advisory is an environmental, climate and carbon market advisory consultancy supporting governments, businesses, exporters, project developers, investors and institutions.')}
-            </p>
+      <div className="relative z-10 w-[90%] max-w-[1680px] mx-auto">
+        {/* ============================================================
+            UPPER ZONE: GCC ASYMMETRIC 2-ZONE INSTITUTIONAL GRID
+           ============================================================ */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 pb-14 sm:pb-16">
+          {/* LEFT ZONE (~58%): Link Columns + Direct Teal-Icon Contact Grid */}
+          <div className="lg:col-span-7 flex flex-col justify-between space-y-12 sm:space-y-14">
+            {/* Upper Link Columns (Exact GCC Mint Uppercase Headers + Crisp White Light Links) */}
+            <div className="grid grid-cols-1 sm:grid-cols-12 gap-10 sm:gap-8">
+              {/* Key Services Column */}
+              <div className="sm:col-span-6 space-y-5">
+                <h3 className="font-['Poppins',sans-serif] text-[13.5px] font-medium uppercase tracking-[0.14em] text-[#57D182]">
+                  {t('footer.keyServices', 'KEY SERVICES')}
+                </h3>
 
-            {/* Contact Details Stack: Email + Office Address + WhatsApp */}
-            <div className="space-y-2.5 w-full max-w-md">
-              {/* Email Card */}
-              <a
-                href={`mailto:${CONTACT_CONFIG.email}`}
-                className="inline-flex items-center justify-between w-full px-4 sm:px-5 py-3 rounded-none bg-white border border-[#019935] hover:border-[#017A2A] text-[#1F2E26] hover:text-[#019935] shadow-2xs hover:shadow-xs transition-all duration-200 group"
-              >
-                <div className="flex items-center gap-2.5 sm:gap-3">
-                  <Mail className="w-4.5 h-4.5 text-[#019935] flex-shrink-0" />
-                  <span className="text-xs sm:text-[13.5px] font-semibold tracking-tight">{CONTACT_CONFIG.email}</span>
+                <ul className="space-y-3">
+                  {SERVICES_LIST.map((srv) => (
+                    <li key={srv.key}>
+                      <Link
+                        to={getLocalizedPath(`/services/${srv.slug}`)}
+                        className="text-[14.5px] font-light text-white/95 hover:text-[#57D182] transition-colors duration-200 inline-block leading-snug"
+                      >
+                        {t(`navigation.servicesMenu.${srv.key}`, srv.slug)}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Quick Links Columns (Balanced 2-Subcolumn Layout matching GCC 3-Column Rhythm) */}
+              <div className="sm:col-span-6 space-y-5">
+                <h3 className="font-['Poppins',sans-serif] text-[13.5px] font-medium uppercase tracking-[0.14em] text-[#57D182]">
+                  {t('footer.quickLinks', 'QUICK LINKS')}
+                </h3>
+
+                <div className="grid grid-cols-2 gap-x-6 gap-y-3">
+                  <ul className="space-y-3">
+                    {quickLinksCol1.map((item) => (
+                      <li key={item.label}>
+                        <Link
+                          to={getLocalizedPath(item.path)}
+                          className="text-[14.5px] font-light text-white/95 hover:text-[#57D182] transition-colors duration-200 inline-block leading-snug"
+                        >
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <ul className="space-y-3">
+                    {quickLinksCol2.map((item) => (
+                      <li key={item.label}>
+                        <Link
+                          to={getLocalizedPath(item.path)}
+                          className={`text-[14.5px] transition-colors duration-200 inline-block leading-snug ${
+                            item.isHighlighted
+                              ? 'font-normal text-[#57D182] hover:text-white'
+                              : 'font-light text-white/95 hover:text-[#57D182]'
+                          }`}
+                        >
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <ArrowUpRight className="w-4 h-4 text-[#019935] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform flex-shrink-0" />
-              </a>
+              </div>
+            </div>
 
-              {/* Office Location Card (Barcelona, Spain) */}
+            {/* Direct Contact Grid (Exact GCC Thin Teal Line-Icons Above Clean Labels) */}
+            <div className="space-y-7 pt-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-7">
+                {/* WhatsApp Direct */}
+                <a
+                  href={`https://wa.me/${CONTACT_CONFIG.whatsapp.raw}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block space-y-2 focus:outline-none"
+                >
+                  <MessageCircle className="w-7 h-7 text-[#57D182] stroke-[1.35] group-hover:text-[#57D182] transition-colors" />
+                  <div className="text-[13.5px] font-light text-white/70">
+                    WhatsApp · Chat
+                  </div>
+                  <div className="text-[15px] font-light text-white group-hover:text-[#57D182] transition-colors">
+                    {CONTACT_CONFIG.whatsapp.display}
+                  </div>
+                </a>
+
+                {/* Email Direct */}
+                <a
+                  href={`mailto:${CONTACT_CONFIG.email}`}
+                  className="group block space-y-2 focus:outline-none"
+                >
+                  <Mail className="w-7 h-7 text-[#57D182] stroke-[1.35] group-hover:text-[#57D182] transition-colors" />
+                  <div className="text-[13.5px] font-light text-white/70">
+                    Email
+                  </div>
+                  <div className="text-[15px] font-light text-white group-hover:text-[#57D182] transition-colors break-all">
+                    {CONTACT_CONFIG.email}
+                  </div>
+                </a>
+              </div>
+
+              {/* Headquarters Location */}
               <a
                 href={CONTACT_CONFIG.address.mapsDirectionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 title="View on Google Maps"
-                className="inline-flex items-center justify-between w-full px-4 sm:px-5 py-3 rounded-none bg-white border border-[#D5E6DA] hover:border-[#019935] text-[#1F2E26] hover:text-[#019935] shadow-2xs hover:shadow-xs transition-all duration-200 group text-left"
+                className="group block space-y-2 max-w-xl focus:outline-none"
               >
-                <div className="flex items-start gap-2.5 sm:gap-3">
-                  <MapPin className="w-4.5 h-4.5 text-[#019935] flex-shrink-0 mt-0.5" />
-                  <div className="text-xs sm:text-[13px] leading-snug">
-                    <span className="font-semibold block text-[#1F2E26]">{CONTACT_CONFIG.address.street}</span>
-                    <span className="text-[#55695D] block">{CONTACT_CONFIG.address.postalCode} {CONTACT_CONFIG.address.city}, {CONTACT_CONFIG.address.country}</span>
-                  </div>
+                <MapPin className="w-7 h-7 text-[#57D182] stroke-[1.35] group-hover:text-[#57D182] transition-colors" />
+                <div className="text-[14.5px] font-light text-white/85 group-hover:text-[#57D182] transition-colors leading-relaxed">
+                  {CONTACT_CONFIG.address.street}, {CONTACT_CONFIG.address.postalCode} {CONTACT_CONFIG.address.city}, {CONTACT_CONFIG.address.country}
                 </div>
-                <ArrowUpRight className="w-4 h-4 text-[#019935] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform flex-shrink-0" />
               </a>
+            </div>
+          </div>
 
-              {/* Direct WhatsApp Action Link */}
-              <a
-                href={`https://wa.me/${CONTACT_CONFIG.whatsapp.raw}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-between w-full px-4 sm:px-5 py-2.5 rounded-none bg-[#E7F9EE] border border-[#25D366]/40 hover:border-[#25D366] text-[#0C3B1E] hover:text-[#017A2A] shadow-2xs transition-all duration-200 group"
-              >
+          {/* RIGHT ZONE (~42%): Two Stacked Elevated Navy Glass Cards (Exact GCC Footer Card Style) */}
+          <div className="lg:col-span-5 flex flex-col justify-between gap-6">
+            {/* Elevated Card 1: Brand Statement & Language Selector */}
+            <div className="bg-[#246E49]/70 border border-white/15 rounded-[12px] p-7 sm:p-8 shadow-[0_12px_30px_rgba(14,58,36,0.22)] space-y-5">
+              <div className="flex items-center justify-between gap-4 flex-wrap">
+                <Logo variant="white" imgClassName="h-11 sm:h-13 w-auto" />
                 <div className="flex items-center gap-2.5">
-                  <MessageCircle className="w-4.5 h-4.5 text-[#25D366] flex-shrink-0" />
-                  <span className="text-xs sm:text-[13px] font-semibold">WhatsApp: {CONTACT_CONFIG.whatsapp.display}</span>
+                  <span className="text-[12.5px] font-light text-white/70">Language / Idioma:</span>
+                  <LanguageSwitcher isDark={false} />
                 </div>
-                <span className="text-[11px] font-mono text-[#019935] uppercase tracking-wider font-bold">Chat</span>
-              </a>
+              </div>
+
+              <p className="font-['Poppins',sans-serif] text-[14px] font-light text-white/85 leading-[1.7]">
+                {t(
+                  'footer.brandTagline',
+                  'Green Gate Advisory is an environmental, climate and carbon market advisory consultancy supporting governments, businesses, exporters, project developers, investors and institutions.'
+                )}
+              </p>
             </div>
 
-            {/* Language Switcher */}
-            <div className="pt-1 flex items-center justify-center md:justify-start gap-3 w-full">
-              <span className="text-sm text-[#46594E] font-medium">Language / Idioma:</span>
-              <LanguageSwitcher isDark={true} />
+            {/* Elevated Card 2: Governance Safeguard & Independence Notice */}
+            <div className="bg-[#246E49]/70 border border-white/15 rounded-[12px] p-7 sm:p-8 shadow-[0_12px_30px_rgba(14,58,36,0.22)] space-y-5">
+              <div className="flex items-start gap-3.5">
+                <ShieldCheck className="w-6 h-6 text-[#57D182] stroke-[1.5] flex-shrink-0 mt-0.5" />
+                <p className="font-['Poppins',sans-serif] text-[13.5px] font-light text-white/90 leading-[1.65]">
+                  {t(
+                    'footer.confidentiality',
+                    'Case studies and specific client references are published only following formal verification and client consent.'
+                  )}
+                </p>
+              </div>
+
+              <div className="border-t border-white/12 pt-5 flex items-start gap-3.5">
+                <Sprout className="w-6 h-6 text-[#57D182] stroke-[1.5] flex-shrink-0 mt-0.5" />
+                <p className="font-['Poppins',sans-serif] text-[13px] font-light text-white/75 leading-[1.65]">
+                  {t(
+                    'footer.disclaimer',
+                    'Green Gate Advisory provides independent technical, regulatory and project advisory. We do not provide guaranteed funding outcomes or carbon credit issuances, which remain subject to independent registries and funding bodies.'
+                  )}
+                </p>
+              </div>
             </div>
-
-            {/* Regulatory Safeguard Notice Box */}
-            <div className="flex items-start gap-3.5 p-4 sm:p-5 rounded-none bg-[#E8F6ED]/90 border border-[#CDE8D5] text-xs sm:text-[13px] text-[#3D5245] leading-relaxed shadow-2xs text-left max-w-md mx-auto md:mx-0">
-              <ShieldCheck className="w-5 h-5 text-[#019935] flex-shrink-0 mt-0.5" />
-              <span>
-                {t('footer.confidentiality', 'Case studies and specific client references are published only following formal verification and client consent.')}
-              </span>
-            </div>
-          </div>
-
-          {/* Col 2: Key Services (4 cols) - Centered on Mobile */}
-          <div className="lg:col-span-4 space-y-4 flex flex-col items-center md:items-start text-center md:text-left">
-            <div className="space-y-1.5 pb-1 flex flex-col items-center md:items-start w-full">
-              <h3 className="text-xs sm:text-[13px] font-mono font-bold uppercase tracking-wider text-[#019935]">
-                {t('footer.keyServices', 'KEY SERVICES')}
-              </h3>
-              <div className="w-8 h-0.5 bg-[#019935] rounded-none mx-auto md:mx-0" />
-            </div>
-
-            <ul className="space-y-3 font-sans w-full flex flex-col items-center md:items-start">
-              {SERVICES_LIST.map((srv) => (
-                <li key={srv.key}>
-                  <Link
-                    to={getLocalizedPath(`/services/${srv.slug}`)}
-                    className="text-[#2A3B31] hover:text-[#019935] transition-colors duration-150 inline-flex items-center gap-3 group py-0.5 text-sm sm:text-[14.5px]"
-                  >
-                    <span className="w-6 h-6 rounded-none bg-[#D8F3E3] text-[#019935] text-xs font-mono font-bold flex items-center justify-center flex-shrink-0 group-hover:bg-[#019935] group-hover:text-white transition-colors">
-                      {srv.number}
-                    </span>
-                    <span className="group-hover:translate-x-1 transition-transform duration-150 font-medium text-left">
-                      {t(`navigation.servicesMenu.${srv.key}`, srv.slug)}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Col 3: Navigation & Governance (3 cols) - Centered on Mobile */}
-          <div className="lg:col-span-3 space-y-4 flex flex-col items-center md:items-start text-center md:text-left">
-            <div className="space-y-1.5 pb-1 flex flex-col items-center md:items-start w-full">
-              <h3 className="text-xs sm:text-[13px] font-mono font-bold uppercase tracking-wider text-[#019935]">
-                {t('footer.quickLinks', 'QUICK LINKS')}
-              </h3>
-              <div className="w-9 h-0.5 bg-[#019935] rounded-none mx-auto md:mx-0" />
-            </div>
-
-            <ul className="space-y-2.5 font-sans w-full flex flex-col items-center md:items-start">
-              {QUICK_LINKS.map((item) => {
-                const Icon = item.icon;
-                const isHighlight = item.isHighlighted;
-                return (
-                  <li key={item.label}>
-                    <Link
-                      to={getLocalizedPath(item.path)}
-                      className={`inline-flex items-center gap-3 py-0.5 text-sm sm:text-[14.5px] transition-colors group ${
-                        isHighlight 
-                          ? 'text-[#019935] font-bold hover:text-[#017A2A]' 
-                          : 'text-[#2A3B31] hover:text-[#019935] font-medium'
-                      }`}
-                    >
-                      <Icon className={`w-4 h-4 flex-shrink-0 transition-transform group-hover:scale-110 ${
-                        isHighlight ? 'text-[#019935]' : 'text-[#4A5D52]'
-                      }`} />
-                      <span className="group-hover:translate-x-0.5 transition-transform text-left">
-                        {item.label}
-                      </span>
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-
-        </div>
-
-        {/* Regulatory Disclaimer Banner with Sprout Icon - Centered on Mobile */}
-        <div className="pt-6 pb-6 border-t border-[#D5E6DA] flex flex-col sm:flex-row items-center text-center sm:text-left gap-3 sm:gap-4 text-xs sm:text-[13px] text-[#475C50] leading-relaxed font-sans">
-          <Sprout className="w-6 h-6 text-[#019935] flex-shrink-0" />
-          <div className="border-t sm:border-t-0 sm:border-l border-[#C2D9C9] pt-2 sm:pt-0 sm:pl-4">
-            <p>{t('footer.disclaimer', 'Green Gate Advisory provides independent technical, regulatory and project advisory. We do not provide guaranteed funding outcomes or carbon credit issuances, which remain subject to independent registries and funding bodies.')}</p>
           </div>
         </div>
 
-        {/* Bottom Sub-bar - Centered on Mobile */}
-        <div className="pt-6 border-t border-[#D5E6DA] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-[13px] text-[#55695D] font-sans text-center sm:text-left">
-          <div>
-            © {new Date().getFullYear()} {t('footer.copyright', 'All rights reserved. Green Gate Advisory.')} • Barcelona, Spain
+        {/* ============================================================
+            BOTTOM LEGAL BAR (Exact GCC Logo + Divider + Copyright + Circular Teal GO TO TOP)
+           ============================================================ */}
+        <div className="pt-8 border-t border-white/12 flex flex-col lg:flex-row items-center justify-between gap-6">
+          {/* Left: White Monochrome Logo + Thin Vertical Divider + Copyright */}
+          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-center sm:text-left">
+            <Logo variant="white" imgClassName="h-9 sm:h-10 w-auto" />
+            <span className="hidden sm:block h-8 w-[1px] bg-white/25" aria-hidden="true" />
+            <div className="text-[13.5px] font-light text-white/70">
+              © {new Date().getFullYear()} {t('footer.copyright', 'All rights reserved. Green Gate Advisory.')} • Barcelona, Spain
+            </div>
           </div>
 
-          <div className="text-center">
+          {/* Center: Credit Link */}
+          <div className="text-[13px] font-light text-white/70 text-center">
             Designed and Developed by{' '}
             <a
               href="https://www.worknestconnect.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#019935] hover:text-[#017A2A] underline font-medium transition-colors"
+              className="text-[#57D182] hover:text-[#57D182] transition-colors duration-200"
             >
               Worknest Connect
             </a>
           </div>
 
-          <button
-            type="button"
-            onClick={scrollToTop}
-            aria-label="Scroll to top"
-            className="inline-flex items-center gap-2 text-[#019935] hover:text-[#017A2A] transition-colors focus:outline-none group font-medium"
-          >
-            <span>Back to top</span>
-            <ArrowUp className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
-          </button>
-        </div>
+          {/* Right: Teal Quick Contact Icons + Iconic GCC Circular Outline Back-to-Top Button */}
+          <div className="flex items-center gap-6">
+            <div className="flex items-center gap-4 text-[#57D182]">
+              <a
+                href={`mailto:${CONTACT_CONFIG.email}`}
+                aria-label={`Email ${CONTACT_CONFIG.email}`}
+                className="hover:text-[#57D182] transition-colors duration-200"
+              >
+                <Mail className="w-5 h-5 stroke-[1.6]" />
+              </a>
+              <a
+                href={`https://wa.me/${CONTACT_CONFIG.whatsapp.raw}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                className="hover:text-[#57D182] transition-colors duration-200"
+              >
+                <MessageCircle className="w-5 h-5 stroke-[1.6]" />
+              </a>
+            </div>
 
+            <button
+              type="button"
+              onClick={scrollToTop}
+              aria-label="Scroll to top"
+              className="inline-flex items-center gap-3 text-[12px] font-normal uppercase tracking-[0.16em] text-white/75 hover:text-[#57D182] transition-colors duration-200 group cursor-pointer focus:outline-none"
+            >
+              <span>Back to top</span>
+              <span className="w-10 h-10 rounded-full border border-[#57D182] text-[#57D182] group-hover:bg-[#019934] group-hover:text-white flex items-center justify-center transition-all duration-200">
+                <ArrowUp className="w-4 h-4 stroke-[1.6] group-hover:-translate-y-0.5 transition-transform" />
+              </span>
+            </button>
+          </div>
+        </div>
       </div>
     </footer>
   );

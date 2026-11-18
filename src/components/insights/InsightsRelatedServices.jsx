@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { 
-  Sparkles, 
-  Scale, 
-  ShieldCheck, 
-  Landmark, 
-  Trees, 
-  BarChart3, 
-  ArrowRight 
+import { motion } from 'framer-motion';
+import {
+  Sparkles,
+  Scale,
+  ShieldCheck,
+  Landmark,
+  Trees,
+  BarChart3,
+  ArrowRight
 } from 'lucide-react';
-import SectionHeader from '../common/SectionHeader';
 import { useLocale } from '../../hooks/useLocale';
 
 const RELATED_PRACTICES = [
@@ -68,55 +68,83 @@ export default function InsightsRelatedServices() {
   const { getLocalizedPath } = useLocale();
 
   return (
-    <section className="py-14 sm:py-20 bg-white border-b border-sand-border/70">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-        
-        <SectionHeader
-          badge={t('insights.relatedServices.badge', 'Advisory Practice')}
-          title={t('insights.relatedServices.heading', 'Browse Interconnected Advisory Practices')}
-          subtitle={t('insights.relatedServices.subtitle', 'Connect research and technical knowledge directly to our six dedicated implementation practices.')}
-        />
+    <section className="w-full py-16 sm:py-20 lg:py-24 bg-white border-b border-[#e5e7eb] font-['Poppins',sans-serif] overflow-hidden">
+      <div className="w-[90%] max-w-[1680px] mx-auto space-y-14 sm:space-y-16">
+        {/* Centered GCC Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          className="text-center max-w-4xl mx-auto flex flex-col items-center"
+        >
+          <span className="inline-block w-[70px] h-[2px] bg-[#019934] mb-4" aria-hidden="true" />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {RELATED_PRACTICES.map((practice) => {
+          <span className="text-[13px] sm:text-[14px] font-medium tracking-[0.22em] uppercase text-[#0A7A32]">
+            {t('insights.relatedServices.badge', 'Advisory Practice')}
+          </span>
+
+          <h2 className="mt-3 font-['Poppins',sans-serif] font-light text-[34px] sm:text-[44px] lg:text-[50px] text-[#1A5C3B] leading-[1.16] tracking-[-0.01em]">
+            {t('insights.relatedServices.heading', 'Browse Interconnected Advisory Practices')}
+          </h2>
+
+          <p className="mt-4 font-['Poppins',sans-serif] font-light text-[16px] sm:text-[18.5px] text-[#7f7f7f] leading-[1.5] max-w-3xl">
+            {t('insights.relatedServices.subtitle', 'Connect research and technical knowledge directly to our six dedicated implementation practices.')}
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+          {RELATED_PRACTICES.map((practice, idx) => {
             const Icon = practice.icon;
             const title = t(`services.items.${practice.key}.title`, practice.fallbackTitle);
             const lead = t(`services.items.${practice.key}.lead`, practice.fallbackLead);
 
             return (
-              <Link
+              <motion.div
                 key={practice.key}
-                to={getLocalizedPath(`/services/${practice.slug}`)}
-                className="rounded-3xl bg-sage/30 border border-sand-border/80 p-7 sm:p-8 shadow-subtle hover:bg-white hover:border-deep-green/30 hover:shadow-premium transition-all duration-300 flex flex-col justify-between space-y-6 group"
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.12 }}
+                transition={{ duration: 0.5, ease: 'easeOut', delay: (idx % 3) * 0.06 }}
               >
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <div className="w-12 h-12 rounded-2xl bg-white border border-sand-border flex items-center justify-center text-forest group-hover:bg-forest group-hover:text-gold transition-colors duration-300 shadow-sm">
-                      <Icon className="w-6 h-6 text-deep-green group-hover:text-gold" />
+                <Link
+                  to={getLocalizedPath(`/services/${practice.slug}`)}
+                  className="relative h-full rounded-[4px] bg-white border border-[#e5e7eb] hover:border-[#019934] p-7 sm:p-8 transition-colors duration-200 flex flex-col justify-between space-y-6 group overflow-hidden"
+                >
+                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#019934]" />
+
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <span className="font-['Poppins',sans-serif] font-light text-[34px] leading-none text-[#019934]">
+                        {practice.number}
+                      </span>
+                      <Icon className="w-7 h-7 text-[#cbd5e1] group-hover:text-[#019934] stroke-[1.35] transition-colors duration-200" />
                     </div>
-                    <span className="text-xs font-mono font-bold tracking-widest text-gold-dark">
+
+                    <span className="inline-block px-2.5 py-0.5 text-[11px] font-medium tracking-[0.14em] uppercase text-[#1A5C3B] bg-[#57D182]/35">
                       PRACTICE {practice.number}
                     </span>
+
+                    <h3 className="font-['Poppins',sans-serif] font-semibold text-[19px] sm:text-[20px] text-[#1A5C3B] group-hover:text-[#019934] transition-colors leading-snug">
+                      {title}
+                    </h3>
+
+                    <p className="font-['Poppins',sans-serif] font-light text-[14px] text-[#555555] leading-[1.68] line-clamp-3">
+                      {lead}
+                    </p>
                   </div>
 
-                  <h3 className="font-heading font-extrabold text-xl text-forest group-hover:text-deep-green transition-colors leading-snug">
-                    {title}
-                  </h3>
-
-                  <p className="text-xs sm:text-sm text-charcoal-muted leading-relaxed font-sans line-clamp-3">
-                    {lead}
-                  </p>
-                </div>
-
-                <div className="pt-4 border-t border-sand-border/60 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-deep-green group-hover:text-forest transition-colors">
-                  <span>{t('insights.relatedServices.exploreService', 'Explore Service Practice')}</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </Link>
+                  <div className="pt-4 border-t border-[#efefef] flex items-center justify-between text-[13.5px] font-medium text-[#1A5C3B] group-hover:text-[#019934] transition-colors">
+                    <span>{t('insights.relatedServices.exploreService', 'Explore Service Practice')}</span>
+                    <span className="w-8 h-8 rounded-full bg-[#1A5C3B] group-hover:bg-[#019934] text-white flex items-center justify-center transition-colors duration-200">
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </span>
+                  </div>
+                </Link>
+              </motion.div>
             );
           })}
         </div>
-
       </div>
     </section>
   );

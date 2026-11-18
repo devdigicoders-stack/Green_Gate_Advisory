@@ -1,14 +1,12 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { 
-  Search, 
-  Target, 
-  GitBranch, 
-  FileCheck, 
-  TrendingUp, 
-  ArrowRight 
+import {
+  Search,
+  Target,
+  GitBranch,
+  FileCheck,
+  TrendingUp
 } from 'lucide-react';
-import SectionHeader from '../common/SectionHeader';
 
 const STAGE_ICONS = [
   Search,
@@ -25,83 +23,88 @@ export default function OurApproach() {
   const steps = Array.isArray(rawSteps) ? rawSteps : [];
 
   return (
-    <section id="our-approach" className="py-14 sm:py-20 lg:py-24 bg-[#FAFCF9] border-b border-[#E5EDE7] scroll-mt-24 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-14 relative z-10">
-        
+    <section
+      id="our-approach"
+      className="w-full bg-white border-b border-[#e5e7eb] font-['Poppins',sans-serif] py-16 sm:py-20 lg:py-24 scroll-mt-24"
+    >
+      <div className="w-[90%] max-w-[1680px] mx-auto space-y-12 sm:space-y-14">
+        {/* Centered GCC Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: -25 }}
+          initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
+          transition={{ duration: 0.65, ease: 'easeOut' }}
+          className="text-center max-w-4xl mx-auto flex flex-col items-center"
         >
-          <SectionHeader
-            badge={t('about.approach.eyebrow', 'Structured Methodology')}
-            title={t('about.approach.heading', 'Our Approach')}
-            subtitle={t('about.approach.subtitle')}
-          />
+          <span className="inline-block w-[70px] h-[2px] bg-[#019934] mb-4" aria-hidden="true" />
+
+          <span className="text-[13px] sm:text-[14px] font-medium tracking-[0.22em] uppercase text-[#0A7A32]">
+            {t('about.approach.eyebrow', 'Structured Methodology')}
+          </span>
+
+          <h2 className="mt-3 font-['Poppins',sans-serif] font-light text-[34px] sm:text-[44px] lg:text-[50px] text-[#1A5C3B] leading-[1.16] tracking-[-0.01em]">
+            {t('about.approach.heading', 'Our Approach')}
+          </h2>
+
+          {t('about.approach.subtitle') && (
+            <p className="mt-4 font-['Poppins',sans-serif] font-light text-[16px] sm:text-[19px] text-[#7f7f7f] leading-[1.5] max-w-3xl">
+              {t('about.approach.subtitle')}
+            </p>
+          )}
         </motion.div>
 
-        {/* 5-Stage Process: Sequential Cards with Left & Right Entrance */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-4.5 lg:gap-5">
+        {/* 5-Stage Sequential GCC Shared-Hairline Architectural Row */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 border-t border-l border-[#e5e7eb]">
           {steps.map((st, idx) => {
             const Icon = STAGE_ICONS[idx % STAGE_ICONS.length] || Search;
             const phaseNum = st.step || `0${idx + 1}`;
-            const initialMotion = 
-              idx === 0 
-                ? { opacity: 0, x: -50 } 
-                : idx === 1 
-                ? { opacity: 0, x: -20, y: 25 } 
-                : idx === 2 
-                ? { opacity: 0, y: 40 } 
-                : idx === 3 
-                ? { opacity: 0, x: 20, y: 25 } 
-                : { opacity: 0, x: 50 };
 
             return (
               <motion.div
                 key={idx}
-                initial={initialMotion}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
-                transition={{ duration: 0.6, ease: 'easeOut', delay: (idx % 5) * 0.08 }}
-                className="relative rounded-none bg-white border border-[#DCE8E0] hover:border-[#019935] p-5 sm:p-5.5 lg:p-5 min-h-[220px] sm:min-h-[250px] lg:min-h-[290px] shadow-[0_4px_16px_-2px_rgba(0,0,0,0.04)] hover:shadow-[0_16px_36px_-6px_rgba(1,153,53,0.18)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-pointer overflow-hidden"
+                transition={{ duration: 0.55, ease: 'easeOut', delay: idx * 0.06 }}
+                className="relative bg-white hover:bg-[#57D182]/[0.14] border-r border-b border-[#e5e7eb] p-6 sm:p-7 min-h-[260px] lg:min-h-[300px] transition-colors duration-200 flex flex-col justify-between group"
               >
-                {/* Top Accent line on hover */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-[#019935] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                {/* Top Teal Hover Accent Line */}
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#019934] opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
 
-                <div className="space-y-3.5 sm:space-y-4">
-                  {/* Phase Number Badge + Icon Container */}
-                  <div className="flex items-center justify-between">
-                    <span className="text-[11px] font-mono font-bold tracking-widest text-[#019935] bg-[#E8F6ED] px-2.5 py-1 rounded-none border border-[#CDE8D5] shadow-2xs group-hover:bg-[#019935] group-hover:text-white transition-colors duration-300">
-                      PHASE {phaseNum}
+                <div className="space-y-4">
+                  {/* Oversized Light Teal Numeral + Muted Line Icon */}
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="font-['Poppins',sans-serif] font-light text-[36px] leading-none text-[#019934]">
+                      {phaseNum}
                     </span>
-
-                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-none bg-[#F4FAF5] text-[#019935] border border-[#CFE8D7] flex items-center justify-center transition-all duration-300 shadow-2xs group-hover:bg-[#019935] group-hover:text-white group-hover:border-[#019935]">
-                      <Icon className="w-4 h-4 sm:w-4.5 sm:h-4.5" />
-                    </div>
+                    <Icon className="w-6 h-6 text-[#cbd5e1] group-hover:text-[#019934] stroke-[1.4] transition-colors duration-200" />
                   </div>
 
-                  {/* Title & Description with Aligned Min-Height on Desktop */}
+                  {/* Phase Pill */}
+                  <span className="inline-block text-[11px] font-medium tracking-[0.14em] uppercase text-[#1A5C3B] bg-[#57D182]/40 px-2.5 py-0.5">
+                    PHASE {phaseNum}
+                  </span>
+
+                  {/* Title & Description */}
                   <div className="space-y-2">
-                    <h3 className="font-display font-bold text-[15px] sm:text-base text-[#16221A] group-hover:text-[#019935] transition-colors duration-300 leading-snug lg:min-h-[42px] lg:flex lg:items-center">
+                    <h3 className="font-['Poppins',sans-serif] font-medium text-[16.5px] sm:text-[17.5px] text-[#1A5C3B] leading-snug lg:min-h-[46px] lg:flex lg:items-center">
                       {st.title}
                     </h3>
 
-                    <p className="text-xs sm:text-[13px] text-[#4E5E54] leading-relaxed font-sans font-normal">
+                    <p className="font-['Poppins',sans-serif] font-light text-[13.5px] text-[#666666] leading-[1.65]">
                       {st.description}
                     </p>
                   </div>
                 </div>
 
                 {/* Bottom Sequence Indicator */}
-                <div className="pt-3 mt-4 border-t border-[#EEF4F0] text-[11px] font-mono font-semibold text-[#5D7064] group-hover:text-[#019935] transition-colors uppercase tracking-wider">
+                <div className="pt-4 mt-5 border-t border-[#efefef] text-[11.5px] font-medium text-[#7f7f7f] group-hover:text-[#1A5C3B] transition-colors uppercase tracking-[0.12em]">
                   <span>Stage {idx + 1} of 5</span>
                 </div>
               </motion.div>
             );
           })}
         </div>
-
       </div>
     </section>
   );

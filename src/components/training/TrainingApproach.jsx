@@ -1,83 +1,80 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
-import SectionHeader from '../common/SectionHeader';
 import { TRAINING_APPROACH_STEPS } from '../../data/trainingData';
 
 export default function TrainingApproach() {
   const { t } = useTranslation();
 
   return (
-    <section className="py-14 sm:py-20 bg-sage/30 border-b border-sand-border/70 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-        
+    <section className="w-full bg-[#E4F6EA]/55 border-b border-[#C4E7D0] font-['Poppins',sans-serif] py-16 sm:py-20 lg:py-24 overflow-hidden">
+      <div className="w-[90%] max-w-[1680px] mx-auto space-y-14 sm:space-y-16">
+        {/* Centered GCC Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: -25 }}
+          initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
+          className="text-center max-w-4xl mx-auto flex flex-col items-center"
         >
-          <SectionHeader
-            badge={t('training.approach.badge', 'Collaborative Scoping')}
-            title={t('training.approach.heading', 'Our Tailored Training Approach')}
-            subtitle={t('training.approach.subtitle', 'A structured six-step framework for designing purposeful, outcome-oriented learning engagements.')}
-          />
+          <span className="inline-block w-[70px] h-[2px] bg-[#019934] mb-4" aria-hidden="true" />
+
+          <span className="text-[13px] sm:text-[14px] font-medium tracking-[0.22em] uppercase text-[#0A7A32]">
+            {t('training.approach.badge', 'Collaborative Scoping')}
+          </span>
+
+          <h2 className="mt-3 font-['Poppins',sans-serif] font-light text-[34px] sm:text-[44px] lg:text-[50px] text-[#1A5C3B] leading-[1.16] tracking-[-0.01em]">
+            {t('training.approach.heading', 'Our Tailored Training Approach')}
+          </h2>
+
+          <p className="mt-4 font-['Poppins',sans-serif] font-light text-[16px] sm:text-[18.5px] text-[#1A5C3B]/75 leading-[1.5] max-w-3xl">
+            {t('training.approach.subtitle', 'A structured six-step framework for designing purposeful, outcome-oriented learning engagements.')}
+          </p>
         </motion.div>
 
-        {/* 6 Steps Grid with Left and Right Entrance */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* 6 Steps Grid — GCC Flat White Cards on Pale Mint */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
           {TRAINING_APPROACH_STEPS.map((step, idx) => {
             const Icon = step.icon;
             const title = t(`training.approach.items.${step.key}.title`, step.key);
             const desc = t(`training.approach.items.${step.key}.desc`, '');
-            const colIndex = idx % 3;
-            const initialMotion = 
-              colIndex === 0 
-                ? { opacity: 0, x: -60 } 
-                : colIndex === 2 
-                ? { opacity: 0, x: 60 } 
-                : { opacity: 0, y: 50 };
 
             return (
               <motion.div
                 key={step.key}
-                initial={initialMotion}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
-                transition={{ duration: 0.65, ease: 'easeOut', delay: (idx % 3) * 0.12 }}
-                className="relative bg-white rounded-none border border-sand-border/90 p-8 shadow-md hover:shadow-2xl transition-all duration-300 ease-out hover:-translate-y-2 flex flex-col justify-between space-y-6 group overflow-hidden hover:border-[#019935]/40"
+                transition={{ duration: 0.55, ease: 'easeOut', delay: (idx % 3) * 0.08 }}
+                className="relative bg-white rounded-[4px] border border-[#e5e7eb] hover:border-[#019934] p-7 sm:p-8 transition-colors duration-200 flex flex-col justify-between space-y-6 group overflow-hidden"
               >
-                {/* Top Green Accent Bar on Hover */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-transparent group-hover:bg-[#019935] transition-colors duration-300" />
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#019934]" />
 
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="text-2xl font-mono font-bold text-gold-dark/60 group-hover:text-[#019935] transition-colors">
+                    <span className="font-['Poppins',sans-serif] font-light text-[36px] leading-none text-[#019934]">
                       {step.number}
                     </span>
-                    <div className="w-10 h-10 rounded-none bg-forest/5 flex items-center justify-center text-forest group-hover:bg-[#019935] group-hover:text-white transition-all duration-300 group-hover:scale-105">
-                      <Icon className="w-5 h-5 text-deep-green group-hover:text-white transition-colors duration-300" />
-                    </div>
+                    <Icon className="w-7 h-7 text-[#cbd5e1] group-hover:text-[#019934] stroke-[1.35] transition-colors duration-200" />
                   </div>
 
-                  <h3 className="font-heading font-extrabold text-lg text-forest group-hover:text-[#019935] transition-colors leading-snug">
+                  <h3 className="font-['Poppins',sans-serif] font-semibold text-[19px] sm:text-[20px] text-[#1A5C3B] leading-snug">
                     {title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-charcoal-muted leading-relaxed font-sans">
+                  <p className="font-['Poppins',sans-serif] font-light text-[14px] text-[#555555] leading-[1.68]">
                     {desc}
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-sand-border/60 flex items-center gap-1.5 text-xs font-semibold text-deep-green">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-gold-dark flex-shrink-0" />
+                <div className="pt-4 border-t border-[#efefef] text-[12px] font-medium text-[#019934] flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 stroke-[1.75] flex-shrink-0" />
                   <span>Aligned scoping step</span>
                 </div>
               </motion.div>
             );
           })}
         </div>
-
       </div>
     </section>
   );

@@ -23,7 +23,7 @@ export default function Layout() {
   }, [pathname, hash]);
 
   return (
-    <div className="flex flex-col min-h-screen bg-sage text-charcoal">
+    <div className="flex flex-col min-h-screen bg-white text-[#3C3C3C] font-['Poppins',sans-serif]">
       <Header />
       <main className="flex-grow">
         <Outlet />

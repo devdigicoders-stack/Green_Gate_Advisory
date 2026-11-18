@@ -46,29 +46,31 @@ export default function WhatsAppButton() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="mb-3 max-w-xs sm:max-w-sm bg-white rounded-none border border-sand-border shadow-2xl p-4 text-left relative"
+            className="mb-3 max-w-xs sm:max-w-sm bg-white rounded-[4px] border border-[#e5e7eb] shadow-xl p-4 text-left relative font-['Poppins',sans-serif] overflow-hidden"
           >
+            <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#019934]" />
+
             <div className="flex items-start justify-between gap-3">
-              <div className="flex items-center gap-2 text-[#019935] font-bold text-xs uppercase tracking-wider">
+              <div className="flex items-center gap-2 text-[#1A5C3B] font-semibold text-xs uppercase tracking-[0.12em]">
                 <WhatsAppIcon className="w-4 h-4 fill-[#25D366]" />
                 <span>Green Gate Advisory</span>
               </div>
               <button
                 type="button"
                 onClick={() => setIsOpen(false)}
-                className="text-charcoal-muted hover:text-charcoal p-0.5 transition-colors"
+                className="text-[#7f7f7f] hover:text-[#1A5C3B] p-0.5 transition-colors"
                 aria-label="Close"
               >
                 <X className="w-4 h-4" />
               </button>
             </div>
-            
-            <p className="mt-2 text-xs text-charcoal/90 leading-relaxed font-sans">
+
+            <p className="mt-2 text-[12.5px] text-[#555555] leading-relaxed font-light">
               {tooltipText}
             </p>
 
-            <div className="mt-3 pt-2.5 border-t border-sand-border flex items-center justify-between">
-              <span className="text-[11px] text-charcoal-muted font-mono">
+            <div className="mt-3 pt-2.5 border-t border-[#efefef] flex items-center justify-between">
+              <span className="text-[11.5px] text-[#7f7f7f] font-light">
                 {CONTACT_CONFIG.whatsapp.display}
               </span>
               <a
@@ -76,7 +78,7 @@ export default function WhatsAppButton() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setHasInteracted(true)}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-[11px] uppercase tracking-wider rounded-none shadow-sm transition-all"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-[#019934] hover:bg-[#1A5C3B] text-white font-normal text-[11.5px] rounded-[4px] transition-colors"
               >
                 <WhatsAppIcon className="w-3.5 h-3.5 fill-white" />
                 <span>{isSpanish ? 'Abrir Chat' : 'Start Chat'}</span>
@@ -98,12 +100,12 @@ export default function WhatsAppButton() {
         >
           {/* Subtle pulse ring */}
           <span className="absolute -inset-1 rounded-full bg-[#25D366] opacity-30 animate-ping pointer-events-none" />
-          
+
           <WhatsAppIcon className="w-7 h-7 sm:w-8 sm:h-8 fill-white relative z-10" />
         </a>
 
         {/* Hover Pill Label on Desktop */}
-        <div className="hidden md:block absolute right-full mr-3 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap bg-neutral-900 text-white text-xs font-semibold px-3 py-1.5 shadow-md">
+        <div className="hidden md:block absolute right-full mr-3 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap bg-[#1A5C3B] text-white font-['Poppins',sans-serif] text-[12px] font-normal px-3.5 py-1.5 rounded-[4px] shadow-md">
           {label}
         </div>
       </div>

@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { ShieldCheck, Mail, Scale } from 'lucide-react';
+import { ShieldCheck, Mail, Scale, Check } from 'lucide-react';
 
 export default function ContactCTA() {
   const { t } = useTranslation();
@@ -19,7 +19,7 @@ export default function ContactCTA() {
           {t('contact.auxiliary.directEmailText', 'For corporate inquiries or formal vendor communications, email our administrative team at')}{' '}
           <a
             href="mailto:contact@greengateadvisory.com"
-            className="text-deep-green font-semibold underline hover:text-forest"
+            className="text-[#1A5C3B] font-medium underline decoration-[#019934] underline-offset-2 hover:text-[#019934] transition-colors"
           >
             contact@greengateadvisory.com
           </a>.
@@ -34,52 +34,51 @@ export default function ContactCTA() {
   ];
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-white border-b border-sand-border/70 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+    <section className="w-full bg-[#f7f7f7] font-['Poppins',sans-serif] py-16 sm:py-20 lg:py-24 overflow-hidden">
+      <div className="w-[90%] max-w-[1680px] mx-auto">
+        {/* Exact GCC 3-Column Directory Style (Icon + Navy Heading + Short Teal Bar + Checkmark Scope) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-12">
           {CARDS.map((card, idx) => {
             const Icon = card.icon;
-            const initialMotion = 
-              idx === 0 
-                ? { opacity: 0, x: -60 } 
-                : idx === 2 
-                ? { opacity: 0, x: 60 } 
-                : { opacity: 0, y: 50 };
 
             return (
               <motion.div
                 key={idx}
-                initial={initialMotion}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.65, ease: 'easeOut', delay: idx * 0.12 }}
-                className="relative p-6 sm:p-8 rounded-none bg-sage/20 border border-sand-border hover:border-[#019935]/50 hover:bg-white shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 ease-out flex flex-col justify-between space-y-6 group overflow-hidden"
+                transition={{ duration: 0.55, ease: 'easeOut', delay: idx * 0.08 }}
+                className="flex flex-col justify-between pb-8 border-b border-[#dddddd] space-y-5"
               >
-                {/* Top Brand Accent Line on Hover */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-transparent group-hover:bg-[#019935] transition-colors duration-300" />
-
                 <div className="space-y-4">
-                  <div className="w-12 h-12 rounded-none bg-forest/5 border border-forest/10 flex items-center justify-center text-forest group-hover:bg-[#019935] group-hover:border-[#019935] transition-all duration-300 shadow-xs">
-                    <Icon className="w-5 h-5 text-deep-green group-hover:text-white group-hover:scale-110 transition-all duration-300" />
+                  {/* Header Row: Crisp Navy Icon + Semibold Navy Title */}
+                  <div className="flex items-center gap-3">
+                    <Icon className="w-5 h-5 text-[#1A5C3B] stroke-[1.7] flex-shrink-0" />
+                    <h3 className="font-['Poppins',sans-serif] font-semibold text-[18px] sm:text-[19px] text-[#1A5C3B] leading-snug">
+                      {card.title}
+                    </h3>
                   </div>
-                  <h3 className="font-display font-bold text-lg sm:text-xl text-forest group-hover:text-deep-green transition-colors leading-snug">
-                    {card.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-charcoal-muted leading-relaxed font-sans font-light">
-                    {card.text}
-                  </p>
+
+                  {/* Signature Short GCC Teal Horizontal Accent Bar */}
+                  <span className="block w-[48px] h-[3px] bg-[#019934]" aria-hidden="true" />
+
+                  {/* Description with GCC Thin Teal Checkmark */}
+                  <div className="flex items-start gap-2.5 pt-1">
+                    <Check className="w-4 h-4 text-[#019934] stroke-[2] flex-shrink-0 mt-1" />
+                    <p className="font-['Poppins',sans-serif] font-light text-[14.5px] text-[#3C3C3C] leading-[1.7]">
+                      {card.text}
+                    </p>
+                  </div>
                 </div>
 
-                <div className="pt-4 border-t border-sand-border/60 flex items-center gap-2 text-[11px] font-bold tracking-wider uppercase text-forest/90 font-sans">
-                  <span className="w-1.5 h-1.5 rounded-none bg-[#019935]" />
+                <div className="pt-2 flex items-center gap-2 text-[12px] font-medium text-[#0A7A32]">
+                  <span className="inline-block w-3.5 h-[2px] bg-[#019934]" aria-hidden="true" />
                   <span>Professional Practice Standard</span>
                 </div>
               </motion.div>
             );
           })}
         </div>
-
       </div>
     </section>
   );

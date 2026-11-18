@@ -1,116 +1,120 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { 
-  Building2, 
-  Factory, 
-  Sparkles, 
-  Landmark, 
-  Globe2, 
-  CheckCircle2 
+import {
+  Building2,
+  Factory,
+  Sparkles,
+  Landmark,
+  Globe2,
+  CheckCircle2
 } from 'lucide-react';
 
 const AUDIENCE_QUICK_CHIPS = [
-  { icon: Building2, label: 'Governments & Public Institutions' },
-  { icon: Factory, label: 'Companies, Manufacturers & Exporters' },
-  { icon: Sparkles, label: 'Carbon Project Developers' },
-  { icon: Landmark, label: 'Investors & Financial Institutions' },
-  { icon: Globe2, label: 'International NGOs & Research' }
+  { id: 'governments', icon: Building2, label: 'Governments & Public Institutions' },
+  { id: 'companies', icon: Factory, label: 'Companies, Manufacturers & Exporters' },
+  { id: 'developers', icon: Sparkles, label: 'Carbon Project Developers' },
+  { id: 'investors', icon: Landmark, label: 'Investors & Financial Institutions' },
+  { id: 'international-ngos', icon: Globe2, label: 'International NGOs & Research' }
 ];
 
 export default function AudienceStakeholders() {
   const { t } = useTranslation();
 
+  const scrollToCategory = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-white border-b border-[#E5EDE7] relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14 sm:space-y-16">
-        
-        {/* Editorial Narrative Split */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-          <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
+    <section className="w-full bg-white border-b border-[#e5e7eb] font-['Poppins',sans-serif] py-16 sm:py-20 lg:py-24 relative overflow-hidden">
+      <div className="w-[90%] max-w-[1680px] mx-auto space-y-14 sm:space-y-16">
+        {/* Editorial Narrative Split — Exact GCC Inner Page Teal Heading + Light Copy */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 0.65, ease: 'easeOut' }}
-            className="lg:col-span-5 space-y-3.5"
+            className="lg:col-span-5 space-y-4"
           >
-            <span className="inline-block px-3 py-1 rounded-none text-xs font-mono font-bold tracking-widest uppercase bg-[#E8F6ED] text-[#019935] border border-[#CDE8D5]">
-              {t('audience.intro.eyebrow', 'Client Diversity')}
-            </span>
-            <h2 className="font-display font-bold text-2xl sm:text-3xl lg:text-4xl text-[#16221A] tracking-tight leading-snug">
+            <div className="inline-flex items-center gap-3 text-[13px] font-medium tracking-[0.2em] uppercase text-[#0A7A32]">
+              <span className="inline-block w-[50px] h-[2px] bg-[#019934]" aria-hidden="true" />
+              <span>{t('audience.intro.eyebrow', 'Client Diversity')}</span>
+            </div>
+            <h2 className="font-['Poppins',sans-serif] font-medium text-[28px] sm:text-[34px] lg:text-[40px] text-[#019934] tracking-[-0.01em] leading-[1.2]">
               {t('audience.intro.heading', 'Tailored Advisory for Distinct Institutional Mandates')}
             </h2>
           </motion.div>
 
-          <motion.div 
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.65, ease: 'easeOut' }}
-            className="lg:col-span-7 space-y-4 text-[#4E5E54] font-sans text-sm sm:text-base leading-relaxed"
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.65, delay: 0.1, ease: 'easeOut' }}
+            className="lg:col-span-7 space-y-5"
           >
-            <p>
+            <p className="font-['Poppins',sans-serif] font-light text-[15.5px] sm:text-[16.5px] text-[#555555] leading-[1.75]">
               {t('audience.intro.p1', 'Organisations encounter climate imperatives from diverse vantage points. A sovereign government designing compliance carbon pricing requires different analytical frameworks than an exporter calculating embedded emissions for the EU CBAM, or an institutional investor assessing transition risk across an infrastructure portfolio.')}
             </p>
-            <p className="text-[#16221A] font-medium">
-              {t('audience.intro.p2', 'We tailor our technical, regulatory, and finance advisory to each client\'s specific operational context, institutional maturity, and strategic objectives.')}
+            <p className="font-['Poppins',sans-serif] font-medium text-[15.5px] sm:text-[17px] text-[#1A5C3B] leading-[1.7]">
+              {t('audience.intro.p2', "We tailor our technical, regulatory, and finance advisory to each client's specific operational context, institutional maturity, and strategic objectives.")}
             </p>
           </motion.div>
         </div>
 
-        {/* 5 Core Audience Anchor Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-5 pt-2">
+        {/* 5 Core Audience Anchor Cards — GCC Shared-Hairline Architectural Row */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 border-t border-l border-[#e5e7eb]">
           {AUDIENCE_QUICK_CHIPS.map((chip, idx) => {
             const Icon = chip.icon;
-            const initialMotion = 
-              idx === 0 ? { opacity: 0, x: -45 } :
-              idx === 1 ? { opacity: 0, x: -20, y: 25 } :
-              idx === 2 ? { opacity: 0, y: 35 } :
-              idx === 3 ? { opacity: 0, x: 20, y: 25 } :
-              { opacity: 0, x: 45 };
 
             return (
-              <motion.div 
-                key={idx}
-                initial={initialMotion}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
+              <motion.button
+                type="button"
+                key={chip.id}
+                onClick={() => scrollToCategory(chip.id)}
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
-                transition={{ duration: 0.6, ease: 'easeOut', delay: idx * 0.08 }}
-                className="relative rounded-none bg-white border border-[#DCE8E0] hover:border-[#019935] p-5 shadow-[0_4px_16px_-2px_rgba(0,0,0,0.04)] hover:shadow-[0_16px_36px_-6px_rgba(1,153,53,0.18)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between space-y-4 group cursor-pointer overflow-hidden min-h-[160px]"
+                transition={{ duration: 0.5, ease: 'easeOut', delay: idx * 0.06 }}
+                className="relative text-left bg-[#f9fafb] hover:bg-[#57D182]/[0.16] border-r border-b border-[#e5e7eb] p-6 transition-colors duration-200 flex flex-col justify-between space-y-5 group cursor-pointer min-h-[175px] focus:outline-none"
               >
-                {/* Top Green Accent Bar on hover */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-[#019935] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#019934] opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
 
-                <div className="w-10 h-10 rounded-none bg-[#E8F6ED] text-[#019935] border border-[#CDE8D5] flex items-center justify-center transition-all duration-300 shadow-2xs group-hover:bg-[#019935] group-hover:text-white group-hover:border-[#019935]">
-                  <Icon className="w-5 h-5 transition-colors duration-300" />
+                <div className="flex items-center justify-between w-full">
+                  <span className="font-['Poppins',sans-serif] font-light text-[32px] leading-none text-[#019934]">
+                    0{idx + 1}
+                  </span>
+                  <Icon className="w-6 h-6 text-[#cbd5e1] group-hover:text-[#019934] stroke-[1.4] transition-colors duration-200" />
                 </div>
 
-                <div className="space-y-1">
-                  <span className="text-[10px] font-mono font-bold text-[#019935] uppercase tracking-wider block">
+                <div className="space-y-1.5">
+                  <span className="inline-block text-[10.5px] font-medium tracking-[0.14em] uppercase text-[#1A5C3B] bg-[#57D182]/40 px-2 py-0.5">
                     GROUP 0{idx + 1}
                   </span>
-                  <span className="font-display font-bold text-xs sm:text-[13px] text-[#16221A] group-hover:text-[#019935] transition-colors leading-snug block">
+                  <span className="font-['Poppins',sans-serif] font-medium text-[14.5px] text-[#1A5C3B] group-hover:underline decoration-[#1A5C3B] underline-offset-4 leading-snug block pt-1">
                     {chip.label}
                   </span>
                 </div>
-              </motion.div>
+              </motion.button>
             );
           })}
         </div>
 
-        {/* Advisory Principle Banner */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
+        {/* Advisory Principle Banner — GCC .boxed-para Framed Callout */}
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="flex items-center gap-3 p-5 sm:p-6 rounded-none bg-white border border-[#DCE8E0] border-l-4 border-l-[#019935] text-xs sm:text-sm text-[#4E5E54] font-sans shadow-[0_4px_16px_-2px_rgba(0,0,0,0.04)]"
+          transition={{ duration: 0.55, ease: 'easeOut' }}
+          className="flex items-start sm:items-center gap-4 p-6 sm:p-7 rounded-[4px] bg-[#57D182]/[0.08] border border-[#019934]/50 border-l-[4px] border-l-[#019934] text-[14px] sm:text-[14.5px] font-light text-[#3C3C3C]"
         >
-          <CheckCircle2 className="w-5 h-5 text-[#019935] flex-shrink-0" />
-          <span className="leading-relaxed">
+          <CheckCircle2 className="w-5 h-5 text-[#019934] stroke-[1.6] flex-shrink-0 mt-0.5 sm:mt-0" />
+          <span className="leading-[1.7]">
             {t('audience.stakeholders.notice', 'Engagement integrity: Our recommendations reflect client realities without claiming guaranteed financial access, project approvals, or regulatory exemptions.')}
           </span>
         </motion.div>
-
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { useLocale } from '../../hooks/useLocale';
@@ -41,21 +42,20 @@ export default function ServiceHero({
   };
 
   return (
-    <section className="relative min-h-[60vh] flex flex-col justify-center items-center overflow-hidden bg-neutral-950 text-white pt-24 pb-12 sm:pt-28 sm:pb-14 text-center select-none">
-      {/* Background Photography & Video with Directional Lighting & Masking */}
+    <section className="relative w-full min-h-[330px] sm:min-h-[370px] lg:min-h-[410px] flex flex-col justify-between items-center overflow-hidden bg-[#1A5C3B] text-white font-['Poppins',sans-serif] text-center select-none">
+      {/* Preserved Background Photography & Video */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         {hasVideo ? (
           <video
             key={videoSrc}
             ref={videoRef}
-
             autoPlay
             muted
             loop
             playsInline
             onTimeUpdate={handleTimeUpdate}
             poster={bgImage}
-            className="w-full h-full object-cover object-center opacity-75 scale-105"
+            className="w-full h-full object-cover object-center opacity-80 scale-105"
           >
             <source src={videoSrc} type={String(videoSrc).includes('.webm') ? 'video/webm' : 'video/mp4'} />
             {fallbackVideoSrc && (
@@ -63,7 +63,7 @@ export default function ServiceHero({
             )}
             <img
               src={bgImage}
-              alt={title || "Green Gate Advisory Practice"}
+              alt={title || 'Green Gate Advisory Practice'}
               className="w-full h-full object-cover object-center"
               loading="eager"
             />
@@ -71,51 +71,80 @@ export default function ServiceHero({
         ) : (
           <img
             src={bgImage}
-            alt={title || "Green Gate Advisory Practice"}
-            className="w-full h-full object-cover object-center opacity-75 scale-105"
+            alt={title || 'Green Gate Advisory Practice'}
+            className="w-full h-full object-cover object-center opacity-80 scale-105"
             loading="eager"
           />
         )}
-        {/* Cinematic contrast gradient overlays */}
-        <div className="absolute inset-0 bg-black/60 sm:bg-black/50 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black/85 pointer-events-none" />
+        {/* Clean GCC Institutional Vignette Overlay */}
+        <div className="absolute inset-0 bg-[#1A5C3B]/50 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/30 to-black/60 pointer-events-none" />
       </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 25 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3.5 sm:space-y-4 flex flex-col items-center justify-center"
+      {/* Signature GCC Bottom-Left Concentric Thin White Rings Watermark */}
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 480 480"
+        fill="none"
+        className="pointer-events-none absolute -left-24 -bottom-28 w-[280px] sm:w-[360px] lg:w-[440px] h-auto z-[1] opacity-30"
       >
+        {Array.from({ length: 16 }).map((_, idx) => (
+          <circle
+            key={idx}
+            cx="170"
+            cy="310"
+            r={45 + idx * 17}
+            stroke="#ffffff"
+            strokeWidth="1.15"
+            strokeOpacity={Math.max(0.18, 0.55 - idx * 0.02)}
+          />
+        ))}
+      </svg>
+
+      {/* Top spacer */}
+      <div className="h-6 sm:h-8" aria-hidden="true" />
+
+      {/* Center Editorial Content — Exact GCC Short White Bar + Medium White Title */}
+      <motion.div
+        initial={{ opacity: 0, y: 18 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+        className="relative z-10 w-[90%] max-w-4xl mx-auto py-8 sm:py-10 flex flex-col items-center justify-center"
+      >
+        {/* Signature Short White Horizontal Accent Bar */}
+        <span className="inline-block w-[64px] h-[3px] bg-white mb-5" aria-hidden="true" />
+
         {/* Practice Number + Eyebrow */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-          <span className="px-3 py-1 rounded-none text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider bg-[#019935] text-white border border-[#019935] shadow-2xs">
+        <div className="flex flex-wrap items-center justify-center gap-2.5 mb-3">
+          <span className="px-3 py-0.5 text-[11px] font-medium uppercase tracking-[0.16em] bg-[#019934] text-white">
             PRACTICE {number}
           </span>
           {eyebrow && (
-            <span className="inline-block px-3 py-1 rounded-none text-[10px] sm:text-xs font-semibold tracking-wider uppercase bg-white/10 text-white border border-white/20 backdrop-blur-md shadow-2xs">
+            <span className="text-[11.5px] sm:text-[12.5px] font-normal tracking-[0.18em] uppercase text-[#57D182]">
               {eyebrow}
             </span>
           )}
         </div>
 
-        {/* Primary Headline - Compact, Reduced Font Size & Centered */}
-        <h1 className="font-display font-bold text-xl sm:text-2xl md:text-3xl lg:text-[34px] text-white tracking-tight leading-snug max-w-2xl mx-auto">
+        {/* Primary Banner H1 — Exact GCC Medium White Poppins */}
+        <h1 className="font-['Poppins',sans-serif] font-medium text-[28px] sm:text-[36px] lg:text-[42px] text-white tracking-[-0.01em] leading-[1.2] max-w-3xl mx-auto">
           {title}
         </h1>
 
-        {/* Supporting Text */}
-        <p className="text-xs sm:text-sm md:text-base text-white/85 max-w-xl mx-auto leading-relaxed font-sans font-normal">
-          {lead}
-        </p>
+        {/* Supporting Lead Text */}
+        {lead && (
+          <p className="mt-3 text-[14px] sm:text-[15.5px] text-white/85 max-w-2xl mx-auto leading-relaxed font-['Poppins',sans-serif] font-light">
+            {lead}
+          </p>
+        )}
 
         {/* Quick Scope Tags Strip */}
         {quickTags.length > 0 && (
-          <div className="flex flex-wrap items-center justify-center gap-2 pt-3 sm:pt-4 border-t border-white/15">
+          <div className="flex flex-wrap items-center justify-center gap-2 mt-5 pt-4 border-t border-white/15">
             {quickTags.map((tag, idx) => (
               <span
                 key={idx}
-                className="px-2.5 sm:px-3 py-1 rounded-none bg-white/10 border border-white/15 text-[11px] sm:text-xs text-white/80 font-medium"
+                className="px-3 py-1 bg-white/10 border border-white/20 text-[11.5px] sm:text-[12px] text-white/90 font-light"
               >
                 {tag}
               </span>
@@ -123,6 +152,28 @@ export default function ServiceHero({
           </div>
         )}
       </motion.div>
+
+      {/* Bottom Centered GCC Breadcrumb Trail */}
+      <nav
+        aria-label="Breadcrumb"
+        className="relative z-10 pb-5 sm:pb-6 flex flex-wrap items-center justify-center gap-2 text-[13px] font-['Poppins',sans-serif] font-normal px-4"
+      >
+        <Link
+          to={getLocalizedPath('/')}
+          className="text-white/70 hover:text-white transition-colors duration-200"
+        >
+          {t('navigation.home', 'Home')}
+        </Link>
+        <span className="text-white/75" aria-hidden="true">&rarr;</span>
+        <Link
+          to={getLocalizedPath('/services')}
+          className="text-white/70 hover:text-white transition-colors duration-200"
+        >
+          {t('navigation.ourServices', 'Our services')}
+        </Link>
+        <span className="text-white/75" aria-hidden="true">&rarr;</span>
+        <span className="text-white">{shortTitle || title}</span>
+      </nav>
     </section>
   );
 }

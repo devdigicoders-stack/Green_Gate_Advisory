@@ -64,7 +64,7 @@ export default function ContactPage() {
         structuredData={structuredData}
       />
 
-      <div className="bg-sand-surface min-h-screen">
+      <div className="bg-white min-h-screen">
         {/* Section 1: Hero */}
         <ContactHero />
 

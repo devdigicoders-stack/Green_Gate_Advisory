@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { Compass, Eye, ShieldCheck, Sparkles, CheckCircle2, ArrowUpRight } from 'lucide-react';
+import { Compass, Eye, ShieldCheck, Sparkles } from 'lucide-react';
 
 export default function MissionVision() {
   const { t } = useTranslation();
@@ -18,53 +18,51 @@ export default function MissionVision() {
   ];
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-[#F8FAF9] border-b border-[#E3ECE6] relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 overflow-hidden">
-          
-          {/* Mission Card (Enters from Left) */}
+    <section className="w-full bg-[#f7f7f7] border-y border-[#e5e7eb] font-['Poppins',sans-serif] py-16 sm:py-20 lg:py-24">
+      <div className="w-[90%] max-w-[1680px] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-10">
+          {/* Mission Card — Exact GCC Block C Document Card Style */}
           <motion.div
-            initial={{ opacity: 0, x: -60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
-            className="relative rounded-none bg-white border border-[#DCE7DF] p-7 sm:p-9 lg:p-10 shadow-sm hover:shadow-2xl hover:border-[#019935] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between space-y-7 group"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.65, ease: 'easeOut' }}
+            className="group bg-white border border-[#e5e7eb] hover:border-[#019934] rounded-[4px] p-8 sm:p-10 transition-colors duration-200 flex flex-col justify-between space-y-8"
           >
-            {/* Top Accent line on hover */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-[#019935] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-
             <div className="space-y-6">
-              <div className="flex items-center justify-between">
-                <div className="w-12 h-12 rounded-none bg-[#F4FAF5] border border-[#019935]/20 flex items-center justify-center text-[#019935] group-hover:bg-[#019935] group-hover:text-white transition-all duration-300 shadow-xs">
-                  <Compass className="w-6 h-6 transform group-hover:rotate-45 transition-transform duration-500" />
+              {/* Header Row: Navy Title Left, Thin Muted Grey Line Icon Right */}
+              <div className="flex items-start justify-between gap-4">
+                <div className="space-y-2">
+                  <span className="inline-block text-[12px] font-medium tracking-[0.18em] uppercase text-[#019934]">
+                    {t('about.missionVision.missionEyebrow', 'Our Driving Mandate')}
+                  </span>
+                  <h3 className="font-['Poppins',sans-serif] font-semibold text-[24px] sm:text-[28px] text-[#1A5C3B] leading-snug">
+                    {t('about.missionVision.missionTitle', 'Our Mission')}
+                  </h3>
                 </div>
-                <span className="text-[11px] font-mono font-bold tracking-widest uppercase text-[#019935] bg-[#019935]/10 px-3 py-1 border border-[#019935]/20 rounded-none">
-                  {t('about.missionVision.missionEyebrow', 'Our Driving Mandate')}
-                </span>
+                <Compass className="w-9 h-9 text-[#cbd5e1] group-hover:text-[#019934] stroke-[1.25] flex-shrink-0 transition-colors duration-200" />
               </div>
 
-              <div className="space-y-3">
-                <h3 className="font-display font-bold text-2xl sm:text-3xl text-[#0B2816] tracking-tight group-hover:text-[#019935] transition-colors">
-                  {t('about.missionVision.missionTitle', 'Our Mission')}
-                </h3>
-                <p className="text-sm sm:text-base text-[#3A4D42] leading-relaxed font-sans font-normal">
-                  {t('about.missionVision.missionText')}
-                </p>
-              </div>
+              <p className="font-['Poppins',sans-serif] font-light text-[15px] sm:text-[16px] text-[#555555] leading-[1.72]">
+                {t('about.missionVision.missionText')}
+              </p>
 
-              {/* Added Rich Data: 3 Execution Disciplines */}
-              <div className="pt-2 space-y-2.5">
-                <h4 className="text-[11px] font-mono font-bold tracking-wider uppercase text-[#019935]">
+              {/* Sub-section with GCC Short Teal Dash Markers (—) */}
+              <div className="pt-2 space-y-4">
+                <h4 className="text-[12px] font-medium tracking-[0.18em] uppercase text-[#019934]">
                   CORE OPERATIONAL DISCIPLINES
                 </h4>
-                <div className="space-y-2">
+                <div className="space-y-3.5">
                   {missionDisciplines.map((item, idx) => (
-                    <div key={idx} className="flex items-start gap-2.5 p-2.5 bg-[#F9FBFA] border border-[#E8EFEA] rounded-none group-hover:border-[#019935]/30 transition-colors">
-                      <CheckCircle2 className="w-4 h-4 text-[#019935] flex-shrink-0 mt-0.5" />
+                    <div key={idx} className="flex items-start gap-3">
+                      <span className="inline-block w-4 h-[2px] bg-[#019934] mt-2.5 flex-shrink-0" aria-hidden="true" />
                       <div className="min-w-0">
-                        <span className="text-xs font-bold text-[#0B2816] block">{item.title}</span>
-                        <span className="text-[11px] text-[#5D7064] leading-relaxed block">{item.desc}</span>
+                        <span className="text-[14.5px] font-medium text-[#1A5C3B] block leading-snug">
+                          {item.title}
+                        </span>
+                        <span className="text-[13.5px] font-light text-[#666666] leading-[1.6] block mt-0.5">
+                          {item.desc}
+                        </span>
                       </div>
                     </div>
                   ))}
@@ -72,58 +70,55 @@ export default function MissionVision() {
               </div>
             </div>
 
-            {/* Bottom Footer Note */}
-            <div className="pt-5 border-t border-[#E8EFEA] flex items-center justify-between text-xs font-semibold text-[#019935]">
-              <div className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-[#019935]" />
-                <span>{t('about.missionVision.missionFooter', 'Rigorous design, preparation, finance, and reporting')}</span>
-              </div>
-              <ArrowUpRight className="w-4 h-4 text-[#019935] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            {/* Subtle GCC Soft-Grey Bottom Bar */}
+            <div className="bg-[#f5f5f5] px-5 py-3.5 rounded-[3px] flex items-center gap-2.5 text-[13px] font-normal text-[#1A5C3B]">
+              <ShieldCheck className="w-4 h-4 text-[#019934] flex-shrink-0 stroke-[1.75]" />
+              <span>{t('about.missionVision.missionFooter', 'Rigorous design, preparation, finance, and reporting')}</span>
             </div>
           </motion.div>
 
-          {/* Vision Card (Enters from Right) */}
+          {/* Vision Card — Exact GCC Block C Document Card Style */}
           <motion.div
-            initial={{ opacity: 0, x: 60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.15 }}
-            className="relative rounded-none bg-white border border-[#DCE7DF] p-7 sm:p-9 lg:p-10 shadow-sm hover:shadow-2xl hover:border-[#019935] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between space-y-7 group"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.65, delay: 0.1, ease: 'easeOut' }}
+            className="group bg-white border border-[#e5e7eb] hover:border-[#019934] rounded-[4px] p-8 sm:p-10 transition-colors duration-200 flex flex-col justify-between space-y-8"
           >
-            {/* Top Accent line on hover */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-[#019935] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-
             <div className="space-y-6">
-              <div className="flex items-center justify-between">
-                <div className="w-12 h-12 rounded-none bg-[#F4FAF5] border border-[#019935]/20 flex items-center justify-center text-[#019935] group-hover:bg-[#019935] group-hover:text-white transition-all duration-300 shadow-xs">
-                  <Eye className="w-6 h-6 transform group-hover:scale-110 transition-transform duration-500" />
+              {/* Header Row: Navy Title Left, Thin Muted Grey Line Icon Right */}
+              <div className="flex items-start justify-between gap-4">
+                <div className="space-y-2">
+                  <span className="inline-block text-[12px] font-medium tracking-[0.18em] uppercase text-[#019934]">
+                    {t('about.missionVision.visionEyebrow', 'Our Long-Term Horizon')}
+                  </span>
+                  <h3 className="font-['Poppins',sans-serif] font-semibold text-[24px] sm:text-[28px] text-[#1A5C3B] leading-snug">
+                    {t('about.missionVision.visionTitle', 'Our Vision')}
+                  </h3>
                 </div>
-                <span className="text-[11px] font-mono font-bold tracking-widest uppercase text-[#019935] bg-[#019935]/10 px-3 py-1 border border-[#019935]/20 rounded-none">
-                  {t('about.missionVision.visionEyebrow', 'Our Long-Term Horizon')}
-                </span>
+                <Eye className="w-9 h-9 text-[#cbd5e1] group-hover:text-[#019934] stroke-[1.25] flex-shrink-0 transition-colors duration-200" />
               </div>
 
-              <div className="space-y-3">
-                <h3 className="font-display font-bold text-2xl sm:text-3xl text-[#0B2816] tracking-tight group-hover:text-[#019935] transition-colors">
-                  {t('about.missionVision.visionTitle', 'Our Vision')}
-                </h3>
-                <p className="text-sm sm:text-base text-[#3A4D42] leading-relaxed font-sans font-normal">
-                  {t('about.missionVision.visionText')}
-                </p>
-              </div>
+              <p className="font-['Poppins',sans-serif] font-light text-[15px] sm:text-[16px] text-[#555555] leading-[1.72]">
+                {t('about.missionVision.visionText')}
+              </p>
 
-              {/* Added Rich Data: 3 Strategic Horizon Targets */}
-              <div className="pt-2 space-y-2.5">
-                <h4 className="text-[11px] font-mono font-bold tracking-wider uppercase text-[#019935]">
+              {/* Sub-section with GCC Short Teal Dash Markers (—) */}
+              <div className="pt-2 space-y-4">
+                <h4 className="text-[12px] font-medium tracking-[0.18em] uppercase text-[#019934]">
                   STRATEGIC HORIZON TARGETS
                 </h4>
-                <div className="space-y-2">
+                <div className="space-y-3.5">
                   {visionTargets.map((item, idx) => (
-                    <div key={idx} className="flex items-start gap-2.5 p-2.5 bg-[#F9FBFA] border border-[#E8EFEA] rounded-none group-hover:border-[#019935]/30 transition-colors">
-                      <Sparkles className="w-4 h-4 text-[#019935] flex-shrink-0 mt-0.5" />
+                    <div key={idx} className="flex items-start gap-3">
+                      <span className="inline-block w-4 h-[2px] bg-[#019934] mt-2.5 flex-shrink-0" aria-hidden="true" />
                       <div className="min-w-0">
-                        <span className="text-xs font-bold text-[#0B2816] block">{item.title}</span>
-                        <span className="text-[11px] text-[#5D7064] leading-relaxed block">{item.desc}</span>
+                        <span className="text-[14.5px] font-medium text-[#1A5C3B] block leading-snug">
+                          {item.title}
+                        </span>
+                        <span className="text-[13.5px] font-light text-[#666666] leading-[1.6] block mt-0.5">
+                          {item.desc}
+                        </span>
                       </div>
                     </div>
                   ))}
@@ -131,18 +126,13 @@ export default function MissionVision() {
               </div>
             </div>
 
-            {/* Bottom Footer Note */}
-            <div className="pt-5 border-t border-[#E8EFEA] flex items-center justify-between text-xs font-semibold text-[#019935]">
-              <div className="flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-[#019935]" />
-                <span>{t('about.missionVision.visionFooter', 'Unlocking opportunities and bankable sustainable projects')}</span>
-              </div>
-              <ArrowUpRight className="w-4 h-4 text-[#019935] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            {/* Subtle GCC Soft-Grey Bottom Bar */}
+            <div className="bg-[#f5f5f5] px-5 py-3.5 rounded-[3px] flex items-center gap-2.5 text-[13px] font-normal text-[#1A5C3B]">
+              <Sparkles className="w-4 h-4 text-[#019934] flex-shrink-0 stroke-[1.75]" />
+              <span>{t('about.missionVision.visionFooter', 'Unlocking opportunities and bankable sustainable projects')}</span>
             </div>
           </motion.div>
-
         </div>
-
       </div>
     </section>
   );

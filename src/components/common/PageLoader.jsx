@@ -54,10 +54,29 @@ export default function RouteTransitionLoader() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2, ease: 'easeInOut' }}
-          className="fixed inset-0 z-[99999] bg-[#06180E] flex flex-col items-center justify-center p-6 select-none pointer-events-auto"
+          className="fixed inset-0 z-[99999] bg-[#1A5C3B] font-['Poppins',sans-serif] flex flex-col items-center justify-center p-6 select-none pointer-events-auto overflow-hidden"
         >
-          {/* Subtle Ambient Radial Lighting */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(1,153,53,0.22)_0%,rgba(6,24,14,0.95)_70%)] pointer-events-none" />
+          {/* Subtle GCC Concentric Arc Watermark */}
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 600 600"
+            fill="none"
+            className="pointer-events-none absolute -left-24 -bottom-24 w-[440px] sm:w-[560px] h-auto opacity-[0.08]"
+          >
+            {Array.from({ length: 15 }).map((_, idx) => (
+              <circle
+                key={idx}
+                cx="200"
+                cy="400"
+                r={55 + idx * 24}
+                stroke="#ffffff"
+                strokeWidth="1.2"
+              />
+            ))}
+          </svg>
+
+          {/* Subtle Brand-Green Ambient Glow */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(1,153,52,0.24)_0%,rgba(26,92,59,0.96)_70%)] pointer-events-none" />
 
           <div className="relative z-10 flex flex-col items-center space-y-6 max-w-sm text-center">
             {/* Animated Brand Logo */}
@@ -70,30 +89,30 @@ export default function RouteTransitionLoader() {
               <img
                 src={logoWhite}
                 alt="Green Gate Advisory"
-                className="h-14 sm:h-16 w-auto object-contain brightness-0 invert drop-shadow-[0_8px_24px_rgba(1,153,53,0.35)]"
+                className="h-14 sm:h-16 w-auto object-contain brightness-0 invert"
                 onError={(e) => {
                   e.currentTarget.src = '/images/Green_gate_Logo_Concept_01-removebg-preview.png';
                 }}
               />
             </motion.div>
 
-            {/* High-Precision Scanning Progress Line */}
-            <div className="w-52 sm:w-64 h-[2.5px] bg-white/10 relative overflow-hidden rounded-none">
+            {/* High-Precision Scanning Progress Line — GCC Teal */}
+            <div className="w-52 sm:w-64 h-[2.5px] bg-white/15 relative overflow-hidden rounded-none">
               <motion.div
                 key={location.pathname}
                 initial={{ width: '0%' }}
                 animate={{ width: '100%' }}
                 transition={{ duration: 0.95, ease: 'easeInOut' }}
-                className="h-full bg-gradient-to-r from-[#019935] via-[#4ADE80] to-[#019935] shadow-[0_0_12px_#019935]"
+                className="h-full bg-gradient-to-r from-[#019934] via-[#57D182] to-[#019934]"
               />
             </div>
 
             {/* Brand Label & Tagline */}
             <div className="space-y-1.5 pt-0.5">
-              <div className="text-[11px] sm:text-xs font-mono font-bold tracking-[0.25em] text-[#019935] uppercase">
+              <div className="text-[11.5px] sm:text-[12.5px] font-medium tracking-[0.25em] text-[#57D182] uppercase">
                 GREEN GATE ADVISORY
               </div>
-              <p className="text-[12px] sm:text-[13px] text-white/70 font-sans font-light tracking-wide">
+              <p className="text-[12.5px] sm:text-[13.5px] text-white/75 font-light tracking-wide">
                 Strategic Climate Execution
               </p>
             </div>
