@@ -19,6 +19,16 @@ import { SERVICES_LIST } from '../data/servicesList';
 import ServiceCTA from '../components/services/ServiceCTA';
 import sectorVideo from '../assets/sectorpage.mp4';
 
+const SERVICE_IMAGES = {
+  carbonMarket: '/images/photo-carbon-markets.jpg',
+  etsCarbonPricing: '/images/photo-ets-pricing.jpg',
+  cbam: '/images/photo-cbam-industry.jpg',
+  climateFinance: '/images/photo-climate-finance.jpg',
+  natureBased: '/images/forestry.jpg',
+  climatePolicy: '/images/photo-climate-policy.jpg',
+  corporateClimate: '/images/photo-corporate-esg.jpg'
+};
+
 const ICON_MAP = {
   carbonMarket: Sparkles,
   etsCarbonPricing: Scale,
@@ -180,16 +190,13 @@ export default function Services() {
               </h2>
 
               <div className="space-y-4">
-                <p className="font-['Poppins',sans-serif] font-medium text-[16px] sm:text-[17.5px] text-[#3C3C3C] leading-[1.7]">
+                <p className="font-['Poppins',sans-serif] font-light text-[15.5px] sm:text-[17px] text-[#3C3C3C] leading-[1.72]">
                   {t('services.overview.intro.p1')}
-                </p>
-                <p className="font-['Poppins',sans-serif] font-light text-[15px] sm:text-[16px] text-[#555555] leading-[1.75]">
-                  {t('services.overview.intro.p2')}
                 </p>
               </div>
             </motion.div>
 
-            {/* Right Tenets Card — Exact GCC #f7f7f7 Callout with Teal Horizontal Dash Markers (—) */}
+            {/* Right Editorial Photo + Compact Tenets */}
             <motion.div
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -197,110 +204,107 @@ export default function Services() {
               transition={{ duration: 0.65, delay: 0.1, ease: 'easeOut' }}
               className="lg:col-span-5"
             >
-              <div className="rounded-[4px] bg-[#f7f7f7] border border-[#e5e7eb] border-l-[3px] border-l-[#019934] p-7 sm:p-9 space-y-5">
-                <div className="flex items-center justify-between gap-3">
-                  <h3 className="font-['Poppins',sans-serif] font-semibold text-[20px] text-[#1A5C3B]">
+              <div className="rounded-[4px] bg-[#f7f7f7] border border-[#e5e7eb] overflow-hidden">
+                <div className="aspect-[16/9] w-full overflow-hidden bg-[#E4F6EA]">
+                  <img
+                    src="/images/photo-advisory-office.jpg"
+                    alt="Green Gate Advisory climate and environmental consulting"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="p-6 sm:p-7 space-y-3 border-t-2 border-t-[#019934]">
+                  <h3 className="font-['Poppins',sans-serif] font-semibold text-[18px] text-[#1A5C3B]">
                     Advisory Tenets
                   </h3>
-                  <Compass className="w-7 h-7 text-[#cbd5e1] stroke-[1.35]" />
+                  <ul className="space-y-2.5 text-[13.5px] font-light text-[#555555] leading-[1.6]">
+                    <li className="flex items-start gap-2.5">
+                      <span className="inline-block w-3.5 h-[2px] bg-[#019934] mt-2.5 flex-shrink-0" aria-hidden="true" />
+                      <span>Methodology alignment with leading registries and compliance regimes.</span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <span className="inline-block w-3.5 h-[2px] bg-[#019934] mt-2.5 flex-shrink-0" aria-hidden="true" />
+                      <span>Bankable project structuring linked to global climate funds.</span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <span className="inline-block w-3.5 h-[2px] bg-[#019934] mt-2.5 flex-shrink-0" aria-hidden="true" />
+                      <span>Transparent, audit-ready disclosures with zero speculative claims.</span>
+                    </li>
+                  </ul>
                 </div>
-
-                <ul className="space-y-4 text-[14px] sm:text-[14.5px] font-light text-[#555555] leading-[1.68]">
-                  <li className="flex items-start gap-3">
-                    <span className="inline-block w-4 h-[2px] bg-[#019934] mt-2.5 flex-shrink-0" aria-hidden="true" />
-                    <span>Rigorous methodology alignment with leading registries and compliance regimes.</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="inline-block w-4 h-[2px] bg-[#019934] mt-2.5 flex-shrink-0" aria-hidden="true" />
-                    <span>Project rationale directly linked to funding criteria and investment mandates.</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="inline-block w-4 h-[2px] bg-[#019934] mt-2.5 flex-shrink-0" aria-hidden="true" />
-                    <span>Transparent disclosure frameworks free from speculative or unverified claims.</span>
-                  </li>
-                </ul>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 3 — SEVEN CORE SERVICE CARDS (GCC Flat Hairline Cards with Deep Navy Hover) */}
-      <section className="w-full bg-[#f7f7f7] border-b border-[#e5e7eb] font-['Poppins',sans-serif] py-16 sm:py-20 lg:py-24 overflow-hidden">
-        <div className="w-[90%] max-w-[1680px] mx-auto space-y-14">
+      {/* SECTION 3 — SEVEN CORE SERVICE CARDS WITH BESPOKE COVER PHOTOS */}
+      <section className="w-full bg-[#f7f7f7] border-b border-[#e5e7eb] font-['Poppins',sans-serif] py-16 sm:py-20 overflow-hidden">
+        <div className="w-[90%] max-w-[1680px] mx-auto space-y-12">
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="text-center max-w-4xl mx-auto flex flex-col items-center"
+            className="text-center max-w-3xl mx-auto flex flex-col items-center"
           >
-            <span className="inline-block w-[70px] h-[2px] bg-[#019934] mb-4" aria-hidden="true" />
-            <span className="text-[13px] sm:text-[14px] font-medium tracking-[0.22em] uppercase text-[#0A7A32]">
+            <span className="inline-block w-[64px] h-[2px] bg-[#019934] mb-4" aria-hidden="true" />
+            <span className="text-[13px] font-medium tracking-[0.22em] uppercase text-[#0A7A32]">
               {t('services.overview.grid.eyebrow', 'Core Advisory Practices')}
             </span>
-            <h2 className="mt-3 font-['Poppins',sans-serif] font-light text-[34px] sm:text-[44px] lg:text-[50px] text-[#1A5C3B] leading-[1.16] tracking-[-0.01em]">
+            <h2 className="mt-3 font-['Poppins',sans-serif] font-light text-[34px] sm:text-[44px] text-[#1A5C3B] leading-[1.16]">
               {t('services.overview.grid.heading', 'Seven Specialized Service Workstreams')}
             </h2>
-            {t('services.overview.grid.subtitle') && (
-              <p className="mt-4 font-['Poppins',sans-serif] font-light text-[16px] sm:text-[19px] text-[#7f7f7f] leading-[1.5] max-w-3xl">
-                {t('services.overview.grid.subtitle')}
-              </p>
-            )}
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
             {SERVICES_LIST.map((srv, idx) => {
-              const Icon = ICON_MAP[srv.key] || Sparkles;
+              const photo = SERVICE_IMAGES[srv.key] || '/images/photo-carbon-markets.jpg';
 
               return (
                 <motion.div
                   key={srv.key}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.15 }}
-                  transition={{ duration: 0.55, delay: (idx % 3) * 0.08, ease: 'easeOut' }}
-                  className="relative rounded-[4px] bg-white border border-[#e5e7eb] hover:border-[#1A5C3B] p-7 sm:p-9 transition-colors duration-300 flex flex-col justify-between space-y-6 group overflow-hidden"
+                  viewport={{ once: true, amount: 0.12 }}
+                  transition={{ duration: 0.5, delay: (idx % 3) * 0.06, ease: 'easeOut' }}
+                  className="rounded-[4px] bg-white border border-[#e5e7eb] hover:border-[#019934] transition-colors duration-200 flex flex-col justify-between group overflow-hidden"
                 >
-                  {/* Top Teal Accent Bar */}
-                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#019934] z-20" />
-
-                  {/* Smooth Institutional Deep Navy Hover Fill */}
-                  <div
-                    aria-hidden="true"
-                    className="absolute inset-0 bg-[#1A5C3B] z-0 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] pointer-events-none"
-                  />
-
-                  <div className="relative z-10 flex-1 flex flex-col justify-between space-y-6">
-                    <div className="space-y-5">
-                      <div className="flex items-center justify-between gap-3">
-                        <span className="text-[11.5px] font-medium tracking-[0.14em] uppercase text-[#1A5C3B] bg-[#57D182]/40 group-hover:bg-[#019934]/25 group-hover:text-[#57D182] px-3 py-0.5 transition-colors duration-300">
-                          PRACTICE {srv.number}
-                        </span>
-                        <Icon className="w-7 h-7 text-[#cbd5e1] group-hover:text-[#57D182] stroke-[1.35] transition-colors duration-300" />
-                      </div>
-
-                      <div className="space-y-3">
-                        <h3 className="font-['Poppins',sans-serif] font-semibold text-[21px] sm:text-[23px] text-[#1A5C3B] group-hover:text-white transition-colors duration-300 leading-snug">
-                          {t(`services.items.${srv.key}.shortTitle`, t(`navigation.servicesMenu.${srv.key}`))}
-                        </h3>
-
-                        <p className="font-['Poppins',sans-serif] font-light text-[14.5px] sm:text-[15px] text-[#555555] group-hover:text-white/85 leading-[1.7] transition-colors duration-300">
-                          {t(`services.items.${srv.key}.lead`, '')}
-                        </p>
-                      </div>
+                  <div>
+                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#E4F6EA]">
+                      <img
+                        src={photo}
+                        alt={t(`services.items.${srv.key}.shortTitle`, srv.key)}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        loading="lazy"
+                      />
+                      <span className="absolute top-3.5 left-3.5 text-[11px] font-medium tracking-[0.14em] uppercase text-[#1A5C3B] bg-white/92 px-2.5 py-0.5">
+                        PRACTICE {srv.number}
+                      </span>
                     </div>
 
-                    <div className="pt-4 border-t border-[#efefef] group-hover:border-white/15">
+                    <div className="p-6 sm:p-7 space-y-2.5">
+                      <h3 className="font-['Poppins',sans-serif] font-semibold text-[19px] sm:text-[21px] text-[#1A5C3B] group-hover:text-[#019934] transition-colors leading-snug">
+                        {t(`services.items.${srv.key}.shortTitle`, t(`navigation.servicesMenu.${srv.key}`))}
+                      </h3>
+
+                      <p className="font-['Poppins',sans-serif] font-light text-[14px] text-[#555555] leading-[1.65] line-clamp-2">
+                        {t(`services.items.${srv.key}.lead`, '')}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="px-6 sm:px-7 pb-6">
+                    <div className="pt-4 border-t border-[#efefef]">
                       <Link
                         to={getLocalizedPath(`/services/${srv.slug}`)}
-                        className="inline-flex items-center gap-3 group/btn focus:outline-none"
+                        className="inline-flex items-center justify-between w-full group/btn focus:outline-none"
                       >
-                        <span className="w-9 h-9 rounded-full bg-[#1A5C3B] group-hover:bg-[#019934] text-white flex items-center justify-center transition-colors duration-300 flex-shrink-0">
-                          <ArrowRight className="w-4 h-4 stroke-[1.75] group-hover/btn:translate-x-0.5 transition-transform" />
-                        </span>
-                        <span className="text-[13px] font-medium uppercase tracking-[0.12em] text-[#1A5C3B] group-hover:text-[#57D182] transition-colors duration-300">
+                        <span className="text-[12.5px] font-medium uppercase tracking-[0.12em] text-[#1A5C3B] group-hover/btn:text-[#019934] transition-colors">
                           {t('services.overview.grid.exploreService', 'Explore Service')}
+                        </span>
+                        <span className="w-9 h-9 rounded-full bg-[#1A5C3B] group-hover/btn:bg-[#019934] text-white flex items-center justify-center transition-colors duration-200">
+                          <ArrowRight className="w-4 h-4 stroke-[1.75] group-hover/btn:translate-x-0.5 transition-transform" />
                         </span>
                       </Link>
                     </div>
