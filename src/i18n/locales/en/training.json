@@ -5,16 +5,17 @@
   },
   "hero": {
     "breadcrumbHome": "Home",
-    "breadcrumbCurrent": "Training & Capacity Building",
+    "breadcrumbCurrent": "Training",
     "eyebrow": "Institutional Capability",
-    "title": "Training & Capacity Building",
-    "lead": "Green Gate Advisory supports training and capacity-building programmes tailored to the knowledge requirements of public institutions, businesses, exporters, project teams and other stakeholders. Training formats, scope and depth are discussed and confirmed based on institutional objectives.",
+    "title": "Training, E-Training & Capacity Building",
+    "leadShort": "Executive and technical capacity building on carbon markets, CBAM, and climate finance, delivered physically and remotely.",
+    "lead": "Green Gate Advisory delivers bespoke training, e-training, and institutional capacity-building programmes conducted both physically on-site and remotely. Delivery formats, scope, and depth are tailored to the precise operational and strategic objectives of public institutions, enterprises, and project teams.",
     "primaryBtn": "Discuss a Training Programme"
   },
   "intro": {
     "eyebrow": "Knowledge & Institutional Capability",
     "heading": "Building Climate Knowledge & Practical Delivery Capacity",
-    "p1": "Climate regulation, international carbon mechanisms, and sustainable finance requirements demand specialized institutional competencies. Green Gate Advisory designs bespoke training and capacity-building programmes to bridge the gap between high-level climate ambition and day-to-day technical execution.",
+    "p1": "Climate regulation, international carbon mechanisms, and sustainable finance requirements demand specialized institutional competencies. Green Gate Advisory designs bespoke training and e-training programmes—delivered both physically on-site and remotely—to bridge the gap between high-level climate ambition and day-to-day technical execution.",
     "p2": "Our training programmes support public ministries, industrial compliance teams, project sponsors, and financial analysts—equipping teams with the technical tools, regulatory clarity, and methodological frameworks needed to deliver credible climate outcomes.",
     "pillars": {
       "policy": "National climate policy design, NDC alignment, and international negotiation mechanics",

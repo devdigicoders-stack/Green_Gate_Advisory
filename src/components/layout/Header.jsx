@@ -13,6 +13,7 @@ import { UkFlag, SpainFlag } from '../common/LanguageSwitcher';
 import { useLocale } from '../../hooks/useLocale';
 import { SERVICES_LIST } from '../../data/servicesList';
 import { CONTACT_CONFIG } from '../../config/contactConfig';
+import { openOutlookCompose } from '../../utils/emailHandler';
 
 const SERVICE_TITLES = {
   carbonMarket: 'Carbon Market Advisory',
@@ -236,9 +237,15 @@ export default function Header() {
             {/* Right Utility Icons + Compact Language Selector */}
             <div className="flex items-center gap-x-4 text-[#7f7f7f]">
               <a
-                href={`mailto:${CONTACT_CONFIG.email}`}
-                aria-label={`Email ${CONTACT_CONFIG.email}`}
-                title={CONTACT_CONFIG.email}
+                href={`https://outlook.office.com/mail/deeplink/compose?to=${encodeURIComponent(CONTACT_CONFIG.email)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  openOutlookCompose({ to: CONTACT_CONFIG.email });
+                }}
+                aria-label={`Email via Outlook ${CONTACT_CONFIG.email}`}
+                title={`Email via Outlook: ${CONTACT_CONFIG.email}`}
                 className="hover:text-[#019934] transition-colors duration-200"
               >
                 <Mail className="w-[16px] h-[16px] stroke-[1.75]" />

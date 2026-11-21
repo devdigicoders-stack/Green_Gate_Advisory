@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 import { useLocale } from '../../hooks/useLocale';
 import { CONTACT_CONFIG } from '../../config/contactConfig';
+import { openOutlookCompose } from '../../utils/emailHandler';
 
 export default function ContactLocationMap() {
   const { isSpanish } = useLocale();
@@ -98,7 +99,13 @@ export default function ContactLocationMap() {
               </h3>
               <div className="pt-1">
                 <a
-                  href={`mailto:${CONTACT_CONFIG.email}`}
+                  href={`https://outlook.office.com/mail/deeplink/compose?to=${encodeURIComponent(CONTACT_CONFIG.email)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    openOutlookCompose({ to: CONTACT_CONFIG.email });
+                  }}
                   className="font-['Poppins',sans-serif] font-light text-[15px] text-[#57D182] hover:text-white transition-colors break-all"
                 >
                   {CONTACT_CONFIG.email}

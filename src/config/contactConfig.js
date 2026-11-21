@@ -11,7 +11,7 @@ export const CONTACT_CONFIG = {
     countryCode: 'ES',
     fullFormatted: 'Rambla de Catalunya 38, 8°, 1a, 08007 Barcelona, Spain',
     mapsEmbedUrl: 'https://maps.google.com/maps?q=Rambla%20de%20Catalunya%2038%2C%2008007%20Barcelona%2C%20Spain&t=m&z=16&output=embed&iwloc=near',
-    mapsDirectionsUrl: 'https://www.google.com/maps/search/?api=1&query=Rambla+de+Catalunya+38+08007+Barcelona+Spain'
+    mapsDirectionsUrl: 'https://maps.app.goo.gl/LfbSbp2cDenwBg6f8'
   },
   email: 'contact@greengateadvisory.com',
   

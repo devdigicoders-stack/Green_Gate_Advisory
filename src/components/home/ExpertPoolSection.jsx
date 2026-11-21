@@ -61,7 +61,7 @@ export default function ExpertPoolSection() {
         <SectionHeader
           badge={t('home.expertPool.eyebrow', 'Talent & Consultant Recruitment')}
           title={t('home.expertPool.heading', 'Join Our Advisory Pool of Experts & Senior Consultants')}
-          subtitle={t('home.expertPool.subtitle', 'We partner with accredited technical specialists, independent certifiers, and climate economists across global jurisdictions to deliver complex mandates.')}
+          subtitle={t('home.expertPool.subtitle', 'Green Gate Advisory invites national and international consultants and experts to join our pool of experts. We are open for any form of collaboration with individual experts, consultancy firms, governmental institutions, and international organizations to deliver complex mandates.')}
           light={false}
         />
 

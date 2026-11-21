@@ -5,16 +5,17 @@
   },
   "hero": {
     "breadcrumbHome": "Inicio",
-    "breadcrumbCurrent": "Capacitación y Fortalecimiento de Capacidades",
+    "breadcrumbCurrent": "Training",
     "eyebrow": "Capacidad Institucional",
-    "title": "Capacitación y Fortalecimiento de Capacidades",
-    "lead": "Green Gate Advisory apoya programas de capacitación y desarrollo de capacidades adaptados a las necesidades de conocimiento de instituciones públicas, empresas, exportadores, equipos de proyectos y otros actores clave. El formato, alcance y profundidad se analizan y confirman según los objetivos institucionales.",
+    "title": "Capacitación, E-Training y Fortalecimiento de Capacidades",
+    "leadShort": "Desarrollo de capacidades técnicas y ejecutivas en mercados de carbono, CBAM y finanzas climáticas, impartido física y remotamente.",
+    "lead": "Green Gate Advisory ofrece programas de capacitación, e-training y desarrollo de capacidades institucionales impartidos tanto de forma presencial (físicamente) como de forma remota. El formato de entrega, alcance y profundidad se adaptan rigurosamente a los objetivos estratégicos de instituciones públicas, empresas y equipos de proyectos.",
     "primaryBtn": "Analizar un Programa de Capacitación"
   },
   "intro": {
     "eyebrow": "Conocimiento y Capacidad Institucional",
     "heading": "Desarrollando Conocimiento Climático y Capacidad Práctica de Ejecución",
-    "p1": "La regulación climática, los mecanismos internacionales de carbono y las finanzas sostenibles exigen competencias institucionales altamente especializadas. Green Gate Advisory diseña programas de capacitación a medida para cerrar la brecha entre la ambición climática estratégica y la ejecución técnica operativa.",
+    "p1": "La regulación climática, los mecanismos internacionales de carbono y las finanzas sostenibles exigen competencias institucionales altamente especializadas. Green Gate Advisory diseña programas de formación presencial y e-training a medida —impartidos tanto físicamente como de manera remota— para cerrar la brecha entre la ambición climática estratégica y la ejecución técnica operativa.",
     "p2": "Nuestros programas de capacitación respaldan a ministerios públicos, equipos de cumplimiento industrial, promotores de proyectos y analistas financieros, dotándolos de herramientas técnicas, claridad regulatoria y marcos metodológicos para generar resultados climáticos verificables.",
     "pillars": {
       "policy": "Diseño de políticas climáticas nacionales, alineación con NDC y mecánica de negociaciones internacionales",

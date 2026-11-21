@@ -1,17 +1,18 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Users, Laptop, CheckCircle2 } from 'lucide-react';
 import { useLocale } from '../../hooks/useLocale';
 
 const COMPETENCIES = [
+  'Physical On-Site Workshops',
+  'Remote E-Training Clinics',
   'Climate Policy & NDCs',
   'Carbon Market Mechanisms',
   'Compliance & EU CBAM',
   'Climate Finance Access',
   'Project Preparation & MRV',
-  'GHG Emissions Accounting',
-  'Environmental Governance'
+  'GHG Emissions Accounting'
 ];
 
 export default function TrainingIntro() {
@@ -45,6 +46,29 @@ export default function TrainingIntro() {
             <p className="font-['Poppins',sans-serif] font-light text-[15.5px] sm:text-[16.5px] text-[#555555] leading-[1.72]">
               {t('training.intro.p1', 'Bespoke executive and technical training for ministries, industrial compliance teams, project sponsors, and financial analysts.')}
             </p>
+
+            {/* Clear Dual Delivery Format Box: Physical & Remote E-Training */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
+              <div className="p-4 rounded-[6px] bg-[#F4F8F5] border border-[#d9dfe5] space-y-1.5">
+                <div className="flex items-center gap-2.5 text-[#1A5C3B] font-medium text-[15px]">
+                  <Users className="w-5 h-5 text-[#019934] flex-shrink-0" />
+                  <span>Physical Training</span>
+                </div>
+                <p className="text-[13px] text-[#555555] font-light leading-snug">
+                  In-person, on-site institutional workshops, ministerial delegations, and intensive boardroom clinics.
+                </p>
+              </div>
+
+              <div className="p-4 rounded-[6px] bg-[#F4F8F5] border border-[#d9dfe5] space-y-1.5">
+                <div className="flex items-center gap-2.5 text-[#1A5C3B] font-medium text-[15px]">
+                  <Laptop className="w-5 h-5 text-[#019934] flex-shrink-0" />
+                  <span>Remote E-Training</span>
+                </div>
+                <p className="text-[13px] text-[#555555] font-light leading-snug">
+                  Interactive online webinars, digital MRV tool clinics, and remote modular capacity building across time zones.
+                </p>
+              </div>
+            </div>
 
             {/* Clean Core Competency Chips */}
             <div className="flex flex-wrap gap-2 pt-1">

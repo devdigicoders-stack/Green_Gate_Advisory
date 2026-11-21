@@ -74,11 +74,11 @@ export default function TrainingHero() {
         </span>
 
         <h1 className="font-['Poppins',sans-serif] font-medium text-[30px] sm:text-[38px] lg:text-[44px] text-white tracking-[-0.01em] leading-[1.2] max-w-3xl mx-auto">
-          {t('training.hero.title', 'Training & Capacity Building')}
+          {t('training.hero.title', 'Training, E-Training & Capacity Building')}
         </h1>
 
         <p className="mt-3 text-[14px] sm:text-[15.5px] text-white/85 max-w-2xl mx-auto leading-relaxed font-['Poppins',sans-serif] font-light">
-          {t('training.hero.leadShort', 'Executive and technical capacity building on carbon markets, CBAM, and climate finance.')}
+          {t('training.hero.leadShort', 'Executive and technical capacity building on carbon markets, CBAM, and climate finance, delivered physically and remotely.')}
         </p>
 
         {/* Primary CTA Button — GCC Solid Teal Rounded-[5px] */}
@@ -107,7 +107,7 @@ export default function TrainingHero() {
         </Link>
         <span className="text-white/75" aria-hidden="true">&rarr;</span>
         <span className="text-white">
-          {t('training.hero.breadcrumbCurrent', t('navigation.training', 'Training & Capacity Building'))}
+          {t('training.hero.breadcrumbCurrent', 'Training')}
         </span>
       </nav>
     </section>

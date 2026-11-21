@@ -745,9 +745,9 @@
   },
   "training": {
     "badge": "Capacity Building",
-    "title": "Climate, Carbon Markets & Climate Finance Training",
-    "lead": "Green Gate Advisory supports training and capacity-building programmes designed around the knowledge needs of public institutions, businesses, exporters, project teams and other stakeholders.",
-    "formatsNote": "Training formats, duration, and curriculum depth are tailored to organizational objectives, prior knowledge, and regional regulatory environments.",
+    "title": "Climate, Carbon Markets, E-Training & Climate Finance",
+    "lead": "Green Gate Advisory provides training and e-training programmes, delivered both physically on-site and remotely, designed around the knowledge needs of public institutions, businesses, exporters, project teams and other stakeholders.",
+    "formatsNote": "We deliver training physically and remotely. Formats, duration, and curriculum depth are tailored to organizational objectives, prior knowledge, and regional regulatory environments.",
     "topicsTitle": "Potential Training Topics",
     "topics": [
       {
@@ -903,7 +903,7 @@
     ]
   },
   "footer": {
-    "brandTagline": "Environmental, climate and carbon market advisory consultancy supporting governments, businesses, exporters, project developers, investors and institutions.",
+    "brandTagline": "Green Gate Advisory is an environmental, climate and carbon market advisory consultancy firm supporting governments, businesses, exporters, project developers, investors and institutions.",
     "pillarsTitle": "Core Advisory Services",
     "quickLinksTitle": "Navigation",
     "contactTitle": "Advisory Inquiries",

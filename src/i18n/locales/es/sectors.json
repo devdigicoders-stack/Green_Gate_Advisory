@@ -101,13 +101,13 @@
       "serviceSlug": "nature-based-solutions"
     },
     {
-      "id": "biodiversity-coastal-ecosystems",
+      "id": "blue-economy",
       "number": "07",
-      "title": "Biodiversidad, Zonas Costeras y Restauración Ecosistémica",
+      "title": "Economía Azul (Blue Economy)",
       "iconName": "Waves",
-      "summary": "Autoridades costeras, organizaciones conservacionistas y promotores de proyectos que implementan programas de carbono azul y adaptación.",
-      "challenges": "Financiamiento para conservación de manglares y humedales, métricas de ganancia neta en biodiversidad, distribución comunitaria y resiliencia.",
-      "services": ["Asesoría en Carbono Azul", "Soluciones Basadas en la Naturaleza", "Propuestas de Financiamiento"],
+      "summary": "Industrias marítimas, autoridades costeras y empresas oceánicas que promueven el uso sostenible de los recursos marinos para el desarrollo económico y la salud de los océanos.",
+      "challenges": "Estructuración de capital para la economía azul, planificación espacial marina, descarbonización oceánica y financiamiento de carbono azul.",
+      "services": ["Economía Azul y Finanzas Oceánicas", "Asesoría en Carbono Azul", "Resiliencia Ecosistémica Marina"],
       "serviceSlug": "nature-based-solutions"
     },
     {

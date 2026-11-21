@@ -101,13 +101,13 @@
       "serviceSlug": "nature-based-solutions"
     },
     {
-      "id": "biodiversity-coastal-ecosystems",
+      "id": "blue-economy",
       "number": "07",
-      "title": "Biodiversity, Coastal Zones and Ecosystem Restoration",
+      "title": "Blue Economy",
       "iconName": "Waves",
-      "summary": "Coastal authorities, conservancies, and project sponsors establishing blue carbon and ecosystem-based adaptation programmes.",
-      "challenges": "Mangrove and wetland conservation finance, biodiversity net-gain metrics, community benefit-sharing, and climate adaptation resilience.",
-      "services": ["Blue Carbon Advisory", "Nature-Based Solutions", "Climate Finance Proposals"],
+      "summary": "Maritime industries, coastal authorities, ocean enterprises, and project developers advancing the sustainable use of ocean and marine resources for economic growth, improved livelihoods, and ocean ecosystem health.",
+      "challenges": "Blue economy capital structuring, marine spatial planning, ocean decarbonisation, sustainable fisheries and coastal tourism alignment, and high-integrity blue carbon crediting.",
+      "services": ["Blue Economy & Ocean Finance", "Blue Carbon Advisory", "Marine Ecosystem Resilience"],
       "serviceSlug": "nature-based-solutions"
     },
     {

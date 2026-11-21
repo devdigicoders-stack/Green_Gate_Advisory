@@ -293,42 +293,42 @@ export default function ContactForm() {
               >
                 {/* Form Header & Objective Selector */}
                 <div className="space-y-4 pb-6 border-b border-[#efefef]">
-                  <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-5">
-                    <div className="space-y-2">
+                  <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                    <div className="space-y-2 flex-1 min-w-0">
                       <div className="inline-flex items-center gap-3 text-[12px] font-medium tracking-[0.2em] uppercase text-[#0A7A32]">
                         <span className="inline-block w-[40px] h-[2px] bg-[#019934]" aria-hidden="true" />
                         <span>
                           {formData.enquiryType === 'expert'
-                            ? 'Consultant & Expert Pool Registration'
+                            ? 'Join Our Pool of Experts · Senior Consultant Roster'
                             : t('contact.form.badge', 'Enquiry Submission')}
                         </span>
                       </div>
-                      <h2 className="font-['Poppins',sans-serif] font-medium text-[26px] sm:text-[32px] text-[#1A5C3B] tracking-[-0.01em] leading-snug">
+                      <h2 className="font-['Poppins',sans-serif] font-medium text-[24px] sm:text-[30px] lg:text-[32px] text-[#1A5C3B] tracking-[-0.01em] leading-snug">
                         {formData.enquiryType === 'expert'
-                          ? 'Register with Our Senior Consultant Roster'
+                          ? 'Join Our Pool of Experts & Senior Consultant Roster'
                           : t('contact.form.heading', 'Submit Your Advisory Enquiry')}
                       </h2>
                     </div>
 
-                    {/* Enquiry Type Selector Tabs */}
-                    <div className="inline-flex rounded-[4px] p-1 bg-[#F4F8F5] border border-[#e5e7eb] self-start lg:self-center flex-wrap gap-1">
+                    {/* Enquiry Type Selector Tabs - Strictly Single Line on Tablet/Desktop with no wrapping */}
+                    <div className="inline-flex items-center rounded-[5px] p-1 bg-[#F4F8F5] border border-[#e5e7eb] flex-nowrap flex-shrink-0 self-start lg:self-center overflow-x-auto max-w-full">
                       <button
                         type="button"
                         onClick={() => setFormData(p => ({ ...p, enquiryType: 'consultation' }))}
-                        className={`px-4 py-2 rounded-[3px] text-[12.5px] font-medium transition-colors duration-200 ${
+                        className={`px-3.5 sm:px-4 py-2 rounded-[4px] text-[12.5px] sm:text-[13px] font-medium whitespace-nowrap transition-colors duration-200 cursor-pointer ${
                           formData.enquiryType === 'consultation'
-                            ? 'bg-[#1A5C3B] text-white'
+                            ? 'bg-[#1A5C3B] text-white shadow-xs'
                             : 'text-[#555555] hover:text-[#1A5C3B] hover:bg-white'
                         }`}
                       >
-                        {t('contact.form.enquiryType.consultation', 'Consultation')}
+                        {t('contact.form.enquiryType.consultation', 'Advisory Consultation')}
                       </button>
                       <button
                         type="button"
                         onClick={() => setFormData(p => ({ ...p, enquiryType: 'proposal' }))}
-                        className={`px-4 py-2 rounded-[3px] text-[12.5px] font-medium transition-colors duration-200 ${
+                        className={`px-3.5 sm:px-4 py-2 rounded-[4px] text-[12.5px] sm:text-[13px] font-medium whitespace-nowrap transition-colors duration-200 cursor-pointer ${
                           formData.enquiryType === 'proposal'
-                            ? 'bg-[#1A5C3B] text-white'
+                            ? 'bg-[#1A5C3B] text-white shadow-xs'
                             : 'text-[#555555] hover:text-[#1A5C3B] hover:bg-white'
                         }`}
                       >
@@ -337,9 +337,9 @@ export default function ContactForm() {
                       <button
                         type="button"
                         onClick={() => setFormData(p => ({ ...p, enquiryType: 'expert' }))}
-                        className={`px-4 py-2 rounded-[3px] text-[12.5px] font-medium transition-colors duration-200 ${
+                        className={`px-3.5 sm:px-4 py-2 rounded-[4px] text-[12.5px] sm:text-[13px] font-medium whitespace-nowrap transition-colors duration-200 cursor-pointer ${
                           formData.enquiryType === 'expert'
-                            ? 'bg-[#1A5C3B] text-white'
+                            ? 'bg-[#1A5C3B] text-white shadow-xs'
                             : 'text-[#555555] hover:text-[#1A5C3B] hover:bg-white'
                         }`}
                       >
@@ -350,7 +350,7 @@ export default function ContactForm() {
 
                   <p className="text-[14px] sm:text-[15px] text-[#555555] leading-[1.7] font-['Poppins',sans-serif] font-light">
                     {formData.enquiryType === 'expert'
-                      ? 'Submit your technical profile and credentials to collaborate with Green Gate Advisory on international compliance and carbon mandates.'
+                      ? 'Green Gate Advisory invites national and international consultants and experts to join our pool of experts. We are open for any form of collaboration with individual experts, consultancy firms, governmental institutions, and international organizations.'
                       : t('contact.form.subtitle', 'Complete the form below to connect directly with our advisory specialists.')}
                   </p>
                 </div>

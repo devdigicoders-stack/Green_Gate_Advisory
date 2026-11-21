@@ -5,14 +5,29 @@ import {
   ArrowUp,
   ShieldCheck,
   Sprout,
-  MapPin,
-  MessageCircle
+  MapPin
 } from 'lucide-react';
 import Logo from '../common/Logo';
 import LanguageSwitcher from '../common/LanguageSwitcher';
 import { useLocale } from '../../hooks/useLocale';
 import { SERVICES_LIST } from '../../data/servicesList';
 import { CONTACT_CONFIG } from '../../config/contactConfig';
+import { openOutlookCompose } from '../../utils/emailHandler';
+
+// Official WhatsApp Vector Icon Component
+function WhatsAppLogo({ className = 'w-6 h-6' }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.456 5.711 1.457h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  );
+}
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -30,7 +45,7 @@ export default function Footer() {
     { label: t('navigation.whoWeServe', 'Who We Serve'), path: '/who-we-serve' },
     { label: 'Capital & Proposals', path: '/services/climate-finance-advisory' },
     { label: t('navigation.training', 'Training'), path: '/training' },
-    { label: 'Join as Expert / Consultant', path: '/contact?type=expert' },
+    { label: 'Register with Consultant Roster', path: '/contact?type=expert', isHighlighted: true },
     { label: t('navigation.contact', 'Contact'), path: '/contact' },
     { label: t('footer.privacyPolicy', 'Privacy Policy'), path: '/privacy-policy', isHighlighted: true }
   ];
@@ -115,53 +130,74 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Direct Contact Grid (Exact GCC Thin Teal Line-Icons Above Clean Labels) */}
-            <div className="space-y-7 pt-2">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-7">
+            {/* Direct Contact Grid (Horizontal icon + label + value layout) */}
+            <div className="pt-2 border-t border-white/10">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-7 items-start pt-4">
                 {/* WhatsApp Direct */}
                 <a
                   href={`https://wa.me/${CONTACT_CONFIG.whatsapp.raw}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block space-y-2 focus:outline-none"
+                  className="group flex items-start gap-3.5 focus:outline-none"
                 >
-                  <MessageCircle className="w-7 h-7 text-[#57D182] stroke-[1.35] group-hover:text-[#57D182] transition-colors" />
-                  <div className="text-[13.5px] font-light text-white/70">
-                    WhatsApp · Chat
+                  <div className="w-10 h-10 rounded-lg bg-[#246E49]/80 border border-white/15 flex items-center justify-center flex-shrink-0 group-hover:border-[#57D182] transition-colors mt-0.5">
+                    <WhatsAppLogo className="w-5 h-5 fill-[#57D182]" />
                   </div>
-                  <div className="text-[15px] font-light text-white group-hover:text-[#57D182] transition-colors">
-                    {CONTACT_CONFIG.whatsapp.display}
+                  <div className="space-y-0.5 min-w-0">
+                    <div className="text-[12.5px] font-light text-white/70 uppercase tracking-wider">
+                      WhatsApp · Chat
+                    </div>
+                    <div className="text-[14.5px] font-medium text-white group-hover:text-[#57D182] transition-colors truncate">
+                      {CONTACT_CONFIG.whatsapp.display}
+                    </div>
                   </div>
                 </a>
 
-                {/* Email Direct */}
+                {/* Email Direct - Opens Strictly in Outlook */}
                 <a
-                  href={`mailto:${CONTACT_CONFIG.email}`}
-                  className="group block space-y-2 focus:outline-none"
+                  href={`https://outlook.office.com/mail/deeplink/compose?to=${encodeURIComponent(CONTACT_CONFIG.email)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    openOutlookCompose({ to: CONTACT_CONFIG.email });
+                  }}
+                  className="group flex items-start gap-3.5 focus:outline-none"
                 >
-                  <Mail className="w-7 h-7 text-[#57D182] stroke-[1.35] group-hover:text-[#57D182] transition-colors" />
-                  <div className="text-[13.5px] font-light text-white/70">
-                    Email
+                  <div className="w-10 h-10 rounded-lg bg-[#246E49]/80 border border-white/15 flex items-center justify-center flex-shrink-0 group-hover:border-[#57D182] transition-colors mt-0.5">
+                    <Mail className="w-5 h-5 text-[#57D182] stroke-[1.6]" />
                   </div>
-                  <div className="text-[15px] font-light text-white group-hover:text-[#57D182] transition-colors break-all">
-                    {CONTACT_CONFIG.email}
+                  <div className="space-y-0.5 min-w-0">
+                    <div className="text-[12.5px] font-light text-white/70 uppercase tracking-wider">
+                      Email
+                    </div>
+                    <div className="text-[14px] font-medium text-white group-hover:text-[#57D182] transition-colors break-words">
+                      {CONTACT_CONFIG.email}
+                    </div>
+                  </div>
+                </a>
+
+                {/* Headquarters Location */}
+                <a
+                  href={CONTACT_CONFIG.address.mapsDirectionsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="View on Google Maps"
+                  className="group flex items-start gap-3.5 focus:outline-none"
+                >
+                  <div className="w-10 h-10 rounded-lg bg-[#246E49]/80 border border-white/15 flex items-center justify-center flex-shrink-0 group-hover:border-[#57D182] transition-colors mt-0.5">
+                    <MapPin className="w-5 h-5 text-[#57D182] stroke-[1.6]" />
+                  </div>
+                  <div className="space-y-0.5 min-w-0">
+                    <div className="text-[12.5px] font-light text-white/70 uppercase tracking-wider">
+                      Location
+                    </div>
+                    <div className="text-[13.5px] font-light text-white/85 group-hover:text-[#57D182] transition-colors leading-relaxed">
+                      {CONTACT_CONFIG.address.street}, {CONTACT_CONFIG.address.postalCode} {CONTACT_CONFIG.address.city}, {CONTACT_CONFIG.address.country}
+                    </div>
                   </div>
                 </a>
               </div>
-
-              {/* Headquarters Location */}
-              <a
-                href={CONTACT_CONFIG.address.mapsDirectionsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                title="View on Google Maps"
-                className="group block space-y-2 max-w-xl focus:outline-none"
-              >
-                <MapPin className="w-7 h-7 text-[#57D182] stroke-[1.35] group-hover:text-[#57D182] transition-colors" />
-                <div className="text-[14.5px] font-light text-white/85 group-hover:text-[#57D182] transition-colors leading-relaxed">
-                  {CONTACT_CONFIG.address.street}, {CONTACT_CONFIG.address.postalCode} {CONTACT_CONFIG.address.city}, {CONTACT_CONFIG.address.country}
-                </div>
-              </a>
             </div>
           </div>
 
@@ -180,7 +216,7 @@ export default function Footer() {
               <p className="font-['Poppins',sans-serif] text-[14px] font-light text-white/85 leading-[1.7]">
                 {t(
                   'footer.brandTagline',
-                  'Green Gate Advisory is an environmental, climate and carbon market advisory consultancy supporting governments, businesses, exporters, project developers, investors and institutions.'
+                  'Green Gate Advisory is an environmental, climate and carbon market advisory consultancy firm supporting governments, businesses, exporters, project developers, investors and institutions.'
                 )}
               </p>
             </div>
@@ -240,8 +276,14 @@ export default function Footer() {
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-4 text-[#57D182]">
               <a
-                href={`mailto:${CONTACT_CONFIG.email}`}
-                aria-label={`Email ${CONTACT_CONFIG.email}`}
+                href={`https://outlook.office.com/mail/deeplink/compose?to=${encodeURIComponent(CONTACT_CONFIG.email)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  openOutlookCompose({ to: CONTACT_CONFIG.email });
+                }}
+                aria-label={`Email in Outlook ${CONTACT_CONFIG.email}`}
                 className="hover:text-[#57D182] transition-colors duration-200"
               >
                 <Mail className="w-5 h-5 stroke-[1.6]" />
@@ -253,7 +295,7 @@ export default function Footer() {
                 aria-label="WhatsApp"
                 className="hover:text-[#57D182] transition-colors duration-200"
               >
-                <MessageCircle className="w-5 h-5 stroke-[1.6]" />
+                <WhatsAppLogo className="w-5 h-5 fill-current" />
               </a>
             </div>
 
