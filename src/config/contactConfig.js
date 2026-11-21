@@ -22,7 +22,7 @@ export const CONTACT_CONFIG = {
   },
   whatsapp: {
     // Number format for wa.me API (digits only with country code 34 for Spain)
-    raw: (import.meta.env.VITE_WHATSAPP_NUMBER || '34600000000').replace(/[^0-9]/g, ''),
+    raw: (import.meta.env.VITE_WHATSAPP_NUMBER || '+34 697 76 80 14').replace(/[^0-9]/g, ''),
     display: '+34 697 76 80 14',
     defaultMessageEn: 'Hello Green Gate Advisory, I would like to enquire about your climate and carbon market advisory services.',
     defaultMessageEs: 'Hola Green Gate Advisory, me gustaría consultar sobre sus servicios de asesoría climática y mercados de carbono.'
