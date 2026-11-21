@@ -259,7 +259,7 @@ export default function Header() {
                 title={`WhatsApp: ${CONTACT_CONFIG.whatsapp.display}`}
                 className="hover:text-[#019934] transition-colors duration-200"
               >
-                <MessageCircle className="w-[16px] h-[16px] stroke-[1.75]" />
+                <MessageCircle className="w-[18px] h-[18px] stroke-[1.8]" />
               </a>
 
               <span className="h-3.5 w-[1px] bg-[#dddddd]" aria-hidden="true" />

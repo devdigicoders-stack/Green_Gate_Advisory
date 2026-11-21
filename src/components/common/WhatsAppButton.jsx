@@ -36,7 +36,7 @@ export default function WhatsAppButton() {
     : 'Have questions about climate advisory? Message our specialists directly.';
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end print:hidden select-none">
+    <div className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end print:hidden select-none">
       
       {/* Floating Prompt Bubble on First Visit */}
       <AnimatePresence>
@@ -46,7 +46,7 @@ export default function WhatsAppButton() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="mb-3 max-w-xs sm:max-w-sm bg-white rounded-[4px] border border-[#e5e7eb] shadow-xl p-4 text-left relative font-['Poppins',sans-serif] overflow-hidden"
+            className="mb-3 max-w-[280px] sm:max-w-sm bg-white rounded-[6px] border border-[#e5e7eb] shadow-xl p-4 text-left relative font-['Poppins',sans-serif] overflow-hidden"
           >
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#019934]" />
 
@@ -88,7 +88,7 @@ export default function WhatsAppButton() {
         )}
       </AnimatePresence>
 
-      {/* Main Trigger Button */}
+      {/* Main Trigger Button - Balanced Size */}
       <div className="relative group">
         <a
           href={waUrl}
@@ -96,12 +96,12 @@ export default function WhatsAppButton() {
           rel="noopener noreferrer"
           aria-label={label}
           onClick={() => setHasInteracted(true)}
-          className="relative flex items-center justify-center w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[#25D366]/40"
+          className="relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white shadow-[0_4px_18px_rgba(37,211,102,0.4)] hover:shadow-[0_8px_25px_rgba(37,211,102,0.55)] hover:scale-105 active:scale-95 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[#25D366]/40"
         >
           {/* Subtle pulse ring */}
           <span className="absolute -inset-1 rounded-full bg-[#25D366] opacity-30 animate-ping pointer-events-none" />
 
-          <WhatsAppIcon className="w-7 h-7 sm:w-8 sm:h-8 fill-white relative z-10" />
+          <WhatsAppIcon className="w-6 h-6 sm:w-7 sm:h-7 fill-white relative z-10 drop-shadow-sm" />
         </a>
 
         {/* Hover Pill Label on Desktop */}
