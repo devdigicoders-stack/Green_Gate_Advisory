@@ -2,15 +2,15 @@ import { useState, useEffect } from 'react';
 import { useLocation, useSearchParams, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Send, 
-  CheckCircle2, 
-  AlertCircle, 
-  Clock, 
-  Phone, 
-  Mail, 
+import {
+  Send,
+  CheckCircle2,
+  AlertCircle,
+  Clock,
+  Phone,
+  Mail,
   FileCheck2,
-  RefreshCw 
+  RefreshCw
 } from 'lucide-react';
 import { useLocale } from '../../hooks/useLocale';
 import { submitEnquiry } from '../../services/enquiryApi';
@@ -56,8 +56,8 @@ export default function ContactForm() {
 
   // Resolve initial prefilled values from URL query or location state
   const initialService = resolveServiceFromParam(
-    location.state?.serviceInterest || 
-    location.state?.service || 
+    location.state?.serviceInterest ||
+    location.state?.service ||
     searchParams.get('service')
   );
 
@@ -315,33 +315,30 @@ export default function ContactForm() {
                       <button
                         type="button"
                         onClick={() => setFormData(p => ({ ...p, enquiryType: 'consultation' }))}
-                        className={`px-3.5 sm:px-4 py-2 rounded-[4px] text-[12.5px] sm:text-[13px] font-medium whitespace-nowrap transition-colors duration-200 cursor-pointer ${
-                          formData.enquiryType === 'consultation'
+                        className={`px-3.5 sm:px-4 py-2 rounded-[4px] text-[12.5px] sm:text-[13px] font-medium whitespace-nowrap transition-colors duration-200 cursor-pointer ${formData.enquiryType === 'consultation'
                             ? 'bg-[#1A5C3B] text-white shadow-xs'
                             : 'text-[#555555] hover:text-[#1A5C3B] hover:bg-white'
-                        }`}
+                          }`}
                       >
                         {t('contact.form.enquiryType.consultation', 'Advisory Consultation')}
                       </button>
                       <button
                         type="button"
                         onClick={() => setFormData(p => ({ ...p, enquiryType: 'proposal' }))}
-                        className={`px-3.5 sm:px-4 py-2 rounded-[4px] text-[12.5px] sm:text-[13px] font-medium whitespace-nowrap transition-colors duration-200 cursor-pointer ${
-                          formData.enquiryType === 'proposal'
+                        className={`px-3.5 sm:px-4 py-2 rounded-[4px] text-[12.5px] sm:text-[13px] font-medium whitespace-nowrap transition-colors duration-200 cursor-pointer ${formData.enquiryType === 'proposal'
                             ? 'bg-[#1A5C3B] text-white shadow-xs'
                             : 'text-[#555555] hover:text-[#1A5C3B] hover:bg-white'
-                        }`}
+                          }`}
                       >
                         {t('contact.form.enquiryType.proposal', 'Proposal Request')}
                       </button>
                       <button
                         type="button"
                         onClick={() => setFormData(p => ({ ...p, enquiryType: 'expert' }))}
-                        className={`px-3.5 sm:px-4 py-2 rounded-[4px] text-[12.5px] sm:text-[13px] font-medium whitespace-nowrap transition-colors duration-200 cursor-pointer ${
-                          formData.enquiryType === 'expert'
+                        className={`px-3.5 sm:px-4 py-2 rounded-[4px] text-[12.5px] sm:text-[13px] font-medium whitespace-nowrap transition-colors duration-200 cursor-pointer ${formData.enquiryType === 'expert'
                             ? 'bg-[#1A5C3B] text-white shadow-xs'
                             : 'text-[#555555] hover:text-[#1A5C3B] hover:bg-white'
-                        }`}
+                          }`}
                       >
                         Join Expert Pool
                       </button>
@@ -399,9 +396,8 @@ export default function ContactForm() {
                       placeholder={t('contact.form.fields.fullName.placeholder', 'Enter your full name')}
                       aria-required="true"
                       aria-invalid={Boolean(errors.fullName)}
-                      className={`w-full px-4 py-3 rounded-[4px] border text-[14px] text-[#3C3C3C] placeholder:text-[#94a3b8] bg-white font-['Poppins',sans-serif] font-light transition-colors duration-200 focus:outline-none focus:ring-1 focus:ring-[#019934] ${
-                        errors.fullName ? 'border-red-400 bg-red-50/20 focus:border-red-500' : 'border-[#d9dfe5] focus:border-[#019934]'
-                      }`}
+                      className={`w-full px-4 py-3 rounded-[4px] border text-[14px] text-[#3C3C3C] placeholder:text-[#94a3b8] bg-white font-['Poppins',sans-serif] font-light transition-colors duration-200 focus:outline-none focus:ring-1 focus:ring-[#019934] ${errors.fullName ? 'border-red-400 bg-red-50/20 focus:border-red-500' : 'border-[#d9dfe5] focus:border-[#019934]'
+                        }`}
                     />
                     {errors.fullName && (
                       <p className="text-[12px] text-red-600">{errors.fullName}</p>
@@ -438,9 +434,8 @@ export default function ContactForm() {
                       placeholder={t('contact.form.fields.workEmail.placeholder', 'name@organisation.com')}
                       aria-required="true"
                       aria-invalid={Boolean(errors.workEmail)}
-                      className={`w-full px-4 py-3 rounded-[4px] border text-[14px] text-[#3C3C3C] placeholder:text-[#94a3b8] bg-white font-['Poppins',sans-serif] font-light transition-colors duration-200 focus:outline-none focus:ring-1 focus:ring-[#019934] ${
-                        errors.workEmail ? 'border-red-400 bg-red-50/20 focus:border-red-500' : 'border-[#d9dfe5] focus:border-[#019934]'
-                      }`}
+                      className={`w-full px-4 py-3 rounded-[4px] border text-[14px] text-[#3C3C3C] placeholder:text-[#94a3b8] bg-white font-['Poppins',sans-serif] font-light transition-colors duration-200 focus:outline-none focus:ring-1 focus:ring-[#019934] ${errors.workEmail ? 'border-red-400 bg-red-50/20 focus:border-red-500' : 'border-[#d9dfe5] focus:border-[#019934]'
+                        }`}
                     />
                     {errors.workEmail && (
                       <p className="text-[12px] text-red-600">{errors.workEmail}</p>
@@ -461,9 +456,8 @@ export default function ContactForm() {
                       placeholder={t('contact.form.fields.countryOrRegion.placeholder', 'e.g., Spain, Germany, United Kingdom, Colombia')}
                       aria-required="true"
                       aria-invalid={Boolean(errors.countryOrRegion)}
-                      className={`w-full px-4 py-3 rounded-[4px] border text-[14px] text-[#3C3C3C] placeholder:text-[#94a3b8] bg-white font-['Poppins',sans-serif] font-light transition-colors duration-200 focus:outline-none focus:ring-1 focus:ring-[#019934] ${
-                        errors.countryOrRegion ? 'border-red-400 bg-red-50/20 focus:border-red-500' : 'border-[#d9dfe5] focus:border-[#019934]'
-                      }`}
+                      className={`w-full px-4 py-3 rounded-[4px] border text-[14px] text-[#3C3C3C] placeholder:text-[#94a3b8] bg-white font-['Poppins',sans-serif] font-light transition-colors duration-200 focus:outline-none focus:ring-1 focus:ring-[#019934] ${errors.countryOrRegion ? 'border-red-400 bg-red-50/20 focus:border-red-500' : 'border-[#d9dfe5] focus:border-[#019934]'
+                        }`}
                     />
                     {errors.countryOrRegion && (
                       <p className="text-[12px] text-red-600">{errors.countryOrRegion}</p>
@@ -504,9 +498,8 @@ export default function ContactForm() {
                       onChange={handleChange}
                       aria-required="true"
                       aria-invalid={Boolean(errors.serviceInterest)}
-                      className={`w-full px-4 py-3 rounded-[4px] border text-[14px] text-[#3C3C3C] bg-white font-['Poppins',sans-serif] font-light transition-colors duration-200 focus:outline-none focus:ring-1 focus:ring-[#019934] ${
-                        errors.serviceInterest ? 'border-red-400 bg-red-50/20 focus:border-red-500' : 'border-[#d9dfe5] focus:border-[#019934]'
-                      }`}
+                      className={`w-full px-4 py-3 rounded-[4px] border text-[14px] text-[#3C3C3C] bg-white font-['Poppins',sans-serif] font-light transition-colors duration-200 focus:outline-none focus:ring-1 focus:ring-[#019934] ${errors.serviceInterest ? 'border-red-400 bg-red-50/20 focus:border-red-500' : 'border-[#d9dfe5] focus:border-[#019934]'
+                        }`}
                     >
                       <option value="">{formData.enquiryType === 'expert' ? 'Select primary technical practice...' : t('contact.form.fields.serviceInterest.placeholder', 'Select a primary advisory service')}</option>
                       {SERVICE_OPTIONS.map((opt) => (
@@ -544,9 +537,8 @@ export default function ContactForm() {
                         : t('contact.form.fields.requirementDescription.placeholder', 'Please provide context regarding your organisation’s objectives, project timeline, or specific regulatory challenges...')}
                       aria-required="true"
                       aria-invalid={Boolean(errors.requirementDescription)}
-                      className={`w-full px-4 py-3 rounded-[4px] border text-[14px] text-[#3C3C3C] placeholder:text-[#94a3b8] bg-white font-['Poppins',sans-serif] font-light transition-colors duration-200 focus:outline-none focus:ring-1 focus:ring-[#019934] leading-[1.68] ${
-                        errors.requirementDescription ? 'border-red-400 bg-red-50/20 focus:border-red-500' : 'border-[#d9dfe5] focus:border-[#019934]'
-                      }`}
+                      className={`w-full px-4 py-3 rounded-[4px] border text-[14px] text-[#3C3C3C] placeholder:text-[#94a3b8] bg-white font-['Poppins',sans-serif] font-light transition-colors duration-200 focus:outline-none focus:ring-1 focus:ring-[#019934] leading-[1.68] ${errors.requirementDescription ? 'border-red-400 bg-red-50/20 focus:border-red-500' : 'border-[#d9dfe5] focus:border-[#019934]'
+                        }`}
                     />
                     {errors.requirementDescription && (
                       <p className="text-[12px] text-red-600">{errors.requirementDescription}</p>
@@ -588,12 +580,11 @@ export default function ContactForm() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        placeholder={t('contact.form.fields.phone.placeholder', '+34 600 000 000')}
+                        placeholder={t('contact.form.fields.phone.placeholder', '+34 697 76 80 14')}
                         aria-required="true"
                         aria-invalid={Boolean(errors.phone)}
-                        className={`w-full px-4 py-3 rounded-[4px] border text-[14px] text-[#3C3C3C] placeholder:text-[#94a3b8] bg-white font-['Poppins',sans-serif] font-light transition-colors duration-200 focus:outline-none focus:ring-1 focus:ring-[#019934] ${
-                          errors.phone ? 'border-red-400 bg-red-50/20 focus:border-red-500' : 'border-[#d9dfe5] focus:border-[#019934]'
-                        }`}
+                        className={`w-full px-4 py-3 rounded-[4px] border text-[14px] text-[#3C3C3C] placeholder:text-[#94a3b8] bg-white font-['Poppins',sans-serif] font-light transition-colors duration-200 focus:outline-none focus:ring-1 focus:ring-[#019934] ${errors.phone ? 'border-red-400 bg-red-50/20 focus:border-red-500' : 'border-[#d9dfe5] focus:border-[#019934]'
+                          }`}
                       />
                       <span className="text-[11.5px] text-[#7f7f7f] block font-light">
                         {t('contact.form.fields.phone.hint', 'Include country dialling code for international routing.')}

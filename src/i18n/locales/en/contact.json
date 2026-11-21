@@ -106,7 +106,7 @@
       },
       "phone": {
         "label": "Direct Telephone Number",
-        "placeholder": "+34 600 000 000",
+        "placeholder": "+34 697 76 80 14",
         "required": "Telephone number is required when telephone is selected.",
         "hint": "Include country dialling code for international routing."
       },

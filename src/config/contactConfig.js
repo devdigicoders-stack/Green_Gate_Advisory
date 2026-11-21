@@ -14,7 +14,7 @@ export const CONTACT_CONFIG = {
     mapsDirectionsUrl: 'https://maps.app.goo.gl/LfbSbp2cDenwBg6f8'
   },
   email: 'contact@greengateadvisory.com',
-  
+
   // Spanish direct contact lines (configured via ENV or defaults)
   phone: {
     raw: import.meta.env.VITE_PHONE_NUMBER || '+34 930 000 000',
@@ -23,7 +23,7 @@ export const CONTACT_CONFIG = {
   whatsapp: {
     // Number format for wa.me API (digits only with country code 34 for Spain)
     raw: (import.meta.env.VITE_WHATSAPP_NUMBER || '34600000000').replace(/[^0-9]/g, ''),
-    display: '+34 600 000 000',
+    display: '+34 697 76 80 14',
     defaultMessageEn: 'Hello Green Gate Advisory, I would like to enquire about your climate and carbon market advisory services.',
     defaultMessageEs: 'Hola Green Gate Advisory, me gustaría consultar sobre sus servicios de asesoría climática y mercados de carbono.'
   }

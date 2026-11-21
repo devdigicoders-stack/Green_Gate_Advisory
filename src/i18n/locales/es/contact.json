@@ -106,7 +106,7 @@
       },
       "phone": {
         "label": "Número de Teléfono Directo",
-        "placeholder": "+34 600 000 000",
+        "placeholder": "+34 697 76 80 14",
         "required": "El número de teléfono es obligatorio si selecciona contacto telefónico.",
         "hint": "Incluya el prefijo de marcación internacional."
       },
