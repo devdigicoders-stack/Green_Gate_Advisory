@@ -842,7 +842,7 @@
       "successTitle": "Consulta Recibida con Éxito",
       "successMessage": "Gracias por contactar a Green Gate Advisory. Hemos recibido su información. Nuestro equipo revisará los antecedentes y se pondrá en contacto utilizando los canales indicados.",
       "errorTitle": "Aviso de Envío",
-      "errorMessage": "No fue posible registrar su solicitud en este momento. Por favor verifique los campos requeridos o contáctenos directamente a contact@greengateadvisory.com."
+      "errorMessage": "No fue posible registrar su solicitud en este momento. Por favor verifique los campos requeridos o contáctenos directamente a info@greengateadvisory.com."
     }
   },
   "faqs": {
@@ -907,7 +907,7 @@
     "pillarsTitle": "Servicios Principales",
     "quickLinksTitle": "Navegación",
     "contactTitle": "Consultas de Asesoría",
-    "contactEmail": "contact@greengateadvisory.com",
+    "contactEmail": "info@greengateadvisory.com",
     "rights": "Todos los derechos reservados. Green Gate Advisory.",
     "disclaimer": "Green Gate Advisory presta asesoría técnica, regulatoria y de proyectos independiente. No garantiza la obtención de fondos ni la emisión de créditos de carbono, las cuales quedan sujetas a estándares y secretarías independientes.",
     "confidentialityNote": "Los casos de estudio y referencias específicas de clientes se publican únicamente tras verificación formal y consentimiento expreso."

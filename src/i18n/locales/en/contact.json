@@ -126,7 +126,7 @@
       "successMessage": "Thank you for contacting Green Gate Advisory. Your enquiry has been received. Our team will review the information provided and follow up using the contact details you supplied.",
       "submitAnother": "Submit Another Enquiry",
       "errorTitle": "Submission Error",
-      "defaultError": "An error occurred while submitting your enquiry. Please check your network connection or contact contact@greengateadvisory.com directly."
+      "defaultError": "An error occurred while submitting your enquiry. Please check your network connection or contact info@greengateadvisory.com directly."
     }
   },
   "serviceOptions": {

@@ -70,7 +70,7 @@ export async function submitEnquiry(payload) {
     console.error('[API Connection Error]:', err.message);
     return {
       success: false,
-      error: 'Unable to reach the advisory server. Please check your connection or contact contact@greengateadvisory.com directly.'
+      error: 'Unable to reach the advisory server. Please check your connection or contact info@greengateadvisory.com directly.'
     };
   }
 }

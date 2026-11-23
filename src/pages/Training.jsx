@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { Mail } from 'lucide-react';
 import MetaTags from '../components/seo/MetaTags';
 import TrainingHero from '../components/training/TrainingHero';
 import TrainingIntro from '../components/training/TrainingIntro';
@@ -69,6 +70,20 @@ export default function Training() {
 
         {/* Section 6: Advisory Engagement CTA */}
         <HomeCTA />
+
+        {/* Training & Careers Contact Banner */}
+        <div className="w-full bg-[#F4F8F5] border-t border-[#d9dfe5] py-4 text-center">
+          <p className="text-[13px] text-[#555555] font-light flex items-center justify-center gap-2 flex-wrap px-4">
+            <span>Direct training &amp; trainer career enquiries:</span>
+            <a
+              href="mailto:career@greengateadvisory.com?subject=Training%20and%20Capacity%20Building%20Enquiry"
+              className="inline-flex items-center gap-1.5 text-[#1A5C3B] hover:text-[#019934] font-medium transition-colors"
+            >
+              <Mail className="w-3.5 h-3.5 text-[#019934]" />
+              <span>career@greengateadvisory.com</span>
+            </a>
+          </p>
+        </div>
       </div>
     </>
   );

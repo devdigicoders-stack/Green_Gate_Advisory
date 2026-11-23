@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { 
-  Users, 
-  Sparkles, 
-  ShieldCheck, 
-  Landmark, 
-  Trees, 
-  ArrowRight, 
-  Briefcase, 
-  Globe2, 
-  CheckCircle2 
+import {
+  Users,
+  Sparkles,
+  ShieldCheck,
+  Landmark,
+  Trees,
+  ArrowRight,
+  Briefcase,
+  Globe2,
+  CheckCircle2
 } from 'lucide-react';
 import SectionHeader from '../common/SectionHeader';
 import { useLocale } from '../../hooks/useLocale';
@@ -56,7 +56,7 @@ export default function ExpertPoolSection() {
       <div className="absolute bottom-0 left-10 w-[400px] h-[400px] bg-forest/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-20 relative z-10">
-        
+
         {/* Section Header */}
         <SectionHeader
           badge={t('home.expertPool.eyebrow', 'Talent & Consultant Recruitment')}
@@ -125,7 +125,7 @@ export default function ExpertPoolSection() {
           <div className="absolute bottom-0 left-0 w-80 h-80 bg-deep-green/40 rounded-full blur-2xl pointer-events-none" />
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            
+
             <div className="lg:col-span-8 space-y-4">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-bold tracking-wider uppercase bg-white/10 text-gold-light border border-white/15">
                 <Users className="w-4 h-4 text-gold" />
@@ -166,7 +166,7 @@ export default function ExpertPoolSection() {
               </Link>
 
               <a
-                href="mailto:contact@greengateadvisory.com?subject=Expert%20Network%20Application%20-%20Curriculum%20Vitae"
+                href="mailto:info@greengateadvisory.com?subject=Expert%20Network%20Application%20-%20Curriculum%20Vitae"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-semibold tracking-wide border border-white/15 transition-colors w-full text-center"
               >
                 <span>Email CV Directly</span>

@@ -842,7 +842,7 @@
       "successTitle": "Enquiry Received",
       "successMessage": "Thank you for contacting Green Gate Advisory. Your enquiry has been received. Our team will review the information provided and follow up using the contact details you supplied.",
       "errorTitle": "Submission Notice",
-      "errorMessage": "Unable to send your enquiry right now. Please verify all required fields or reach out directly via contact@greengateadvisory.com."
+      "errorMessage": "Unable to send your enquiry right now. Please verify all required fields or reach out directly via info@greengateadvisory.com."
     }
   },
   "faqs": {
@@ -907,7 +907,7 @@
     "pillarsTitle": "Core Advisory Services",
     "quickLinksTitle": "Navigation",
     "contactTitle": "Advisory Inquiries",
-    "contactEmail": "contact@greengateadvisory.com",
+    "contactEmail": "info@greengateadvisory.com",
     "rights": "All rights reserved. Green Gate Advisory.",
     "disclaimer": "Green Gate Advisory provides independent technical, regulatory and project advisory. We do not provide guaranteed funding outcomes or carbon credit issuances, which remain subject to independent registries and funding bodies.",
     "confidentialityNote": "Case studies and specific client references are published only following formal verification and client consent."

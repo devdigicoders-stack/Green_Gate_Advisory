@@ -13,7 +13,7 @@ export const CONTACT_CONFIG = {
     mapsEmbedUrl: 'https://maps.google.com/maps?q=Rambla%20de%20Catalunya%2038%2C%2008007%20Barcelona%2C%20Spain&t=m&z=16&output=embed&iwloc=near',
     mapsDirectionsUrl: 'https://maps.app.goo.gl/LfbSbp2cDenwBg6f8'
   },
-  email: 'contact@greengateadvisory.com',
+  email: 'info@greengateadvisory.com',
 
   // Spanish direct contact lines (configured via ENV or defaults)
   phone: {

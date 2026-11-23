@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { ArrowRight, Users, Laptop, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Users, Laptop, CheckCircle2, Mail } from 'lucide-react';
 import { useLocale } from '../../hooks/useLocale';
 
 const COMPETENCIES = [
@@ -83,7 +83,7 @@ export default function TrainingIntro() {
               ))}
             </div>
 
-            <div className="pt-2">
+            <div className="pt-2 flex flex-wrap items-center gap-4">
               <Link
                 to={getLocalizedPath('/contact?service=training')}
                 state={{ serviceInterest: 'Training and Capacity Building' }}
@@ -92,6 +92,14 @@ export default function TrainingIntro() {
                 <span>{t('training.hero.primaryBtn', 'Discuss a Training Programme')}</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
+
+              <a
+                href="mailto:career@greengateadvisory.com?subject=Enquiry%20-%20Training%20%26%20Capacity%20Building"
+                className="inline-flex items-center gap-2 text-[13.5px] text-[#1A5C3B] hover:text-[#019934] font-medium transition-colors py-2"
+              >
+                <Mail className="w-4 h-4 text-[#019934]" />
+                <span>career@greengateadvisory.com</span>
+              </a>
             </div>
           </motion.div>
 

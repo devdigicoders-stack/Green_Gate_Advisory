@@ -18,10 +18,10 @@ export default function ContactCTA() {
         <>
           {t('contact.auxiliary.directEmailText', 'For corporate inquiries or formal vendor communications, email our administrative team at')}{' '}
           <a
-            href="mailto:contact@greengateadvisory.com"
+            href="mailto:info@greengateadvisory.com"
             className="text-[#1A5C3B] font-medium underline decoration-[#019934] underline-offset-2 hover:text-[#019934] transition-colors"
           >
-            contact@greengateadvisory.com
+            info@greengateadvisory.com
           </a>.
         </>
       )
